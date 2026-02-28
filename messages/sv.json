@@ -26,7 +26,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 Rescan. Alla rättigheter förbehållna.",
+    "copyright": "© 2026 Rescan. Alla rättigheter förbehållna.",
     "nav": {
       "work": "Arbete",
       "about": "Om oss",
@@ -37,6 +37,10 @@
       "instagram": "Instagram",
       "linkedin": "LinkedIn",
       "twitter": "Twitter"
+    },
+    "legal": {
+      "privacy": "Integritetspolicy",
+      "cookies": "Cookiepolicy"
     }
   },
   "common": {

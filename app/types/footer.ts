@@ -3,6 +3,11 @@ export type FooterNavLink = {
   labelKey: string;
 };
 
+export type LegalLink = {
+  href: string;
+  labelKey: string;
+};
+
 export type SocialPlatform = 'instagram' | 'linkedin' | 'twitter';
 
 export type SocialLinkConfig = {
