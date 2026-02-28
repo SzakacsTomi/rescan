@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion, useInView } from 'framer-motion';
-import Link from 'next/link';
-import { useRef, useState } from 'react';
-import type { SectionConfig } from '@/app/types/section';
+import { motion, useInView } from "framer-motion";
+import Link from "next/link";
+import { useRef, useState } from "react";
+import type { SectionConfig } from "@/app/types/section";
 
 type SectionCardProps = {
   section: SectionConfig;
@@ -27,11 +27,11 @@ export const SectionCard = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.6 });
 
-  // Lazy initializer: runs once on the client, avoids extra render.
+  // Lazy initializer - runs once on the client, avoids extra render.
   // Defaults to true on SSR (hover device assumed).
   const [isHoverDevice] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return true;
-    return window.matchMedia('(hover: hover)').matches;
+    if (typeof window === "undefined") return true;
+    return window.matchMedia("(hover: hover)").matches;
   });
 
   // On touch devices: activate when scrolled into view
@@ -49,11 +49,7 @@ export const SectionCard = ({
       className="relative overflow-hidden min-h-[50vh] lg:min-h-screen"
       style={{ background: section.gradient }}
     >
-      <Link
-        href={section.href}
-        className="absolute inset-0 z-10"
-        aria-label={title}
-      />
+      <Link href={section.href} className="absolute inset-0 z-10" aria-label={title} />
 
       {/* Default title – visible when inactive */}
       <motion.div
