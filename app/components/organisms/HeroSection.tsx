@@ -8,7 +8,7 @@ export const HeroSection = async () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center">
       <HeroText headline={t('headline')} subheadline={t('subheadline')} />
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
         <ScrollArrow targetId="sections" />
       </div>
     </section>

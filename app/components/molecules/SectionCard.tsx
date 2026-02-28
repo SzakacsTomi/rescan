@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
+import { useRef, useState } from 'react';
 import type { SectionConfig } from '@/app/types/section';
 
 type SectionCardProps = {
@@ -23,14 +24,28 @@ export const SectionCard = ({
   title,
   description,
 }: SectionCardProps) => {
-  const flexValue = isHovered ? 2 : anyHovered ? 0.75 : 1;
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { amount: 0.6 });
+
+  // Lazy initializer: runs once on the client, avoids extra render.
+  // Defaults to true on SSR (hover device assumed).
+  const [isHoverDevice] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    return window.matchMedia('(hover: hover)').matches;
+  });
+
+  // On touch devices: activate when scrolled into view
+  // On hover devices: activate on mouse hover
+  const isActive = isHoverDevice ? isHovered : isInView;
+  const flexValue = isHoverDevice ? (isHovered ? 2 : anyHovered ? 0.75 : 1) : 1;
 
   return (
     <motion.div
+      ref={ref}
       animate={{ flex: flexValue }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      onHoverStart={onHoverStart}
-      onHoverEnd={onHoverEnd}
+      onHoverStart={isHoverDevice ? onHoverStart : undefined}
+      onHoverEnd={isHoverDevice ? onHoverEnd : undefined}
       className="relative overflow-hidden min-h-[50vh] lg:min-h-screen"
       style={{ background: section.gradient }}
     >
@@ -40,19 +55,19 @@ export const SectionCard = ({
         aria-label={title}
       />
 
-      {/* Default title – always visible */}
+      {/* Default title – visible when inactive */}
       <motion.div
-        animate={{ opacity: isHovered ? 0 : 1 }}
+        animate={{ opacity: isActive ? 0 : 1 }}
         transition={{ duration: 0.2 }}
         className="absolute bottom-8 left-8"
       >
         <h2 className="text-2xl font-bold text-white">{title}</h2>
       </motion.div>
 
-      {/* Hover overlay with full content */}
+      {/* Full content overlay – visible when active */}
       <motion.div
-        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 16 }}
-        transition={{ duration: 0.3, delay: isHovered ? 0.1 : 0 }}
+        animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 16 }}
+        transition={{ duration: 0.3, delay: isActive ? 0.1 : 0 }}
         className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
       >
         <h2 className="text-3xl font-bold text-white mb-3">{title}</h2>

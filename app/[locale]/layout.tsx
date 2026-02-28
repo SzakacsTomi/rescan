@@ -48,8 +48,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <header className="fixed top-0 right-0 z-50 p-6">
-            <LanguageSwitcher />
+          <header className="fixed top-0 left-0 right-0 z-50">
+            <div className="max-w-480 mx-auto px-6 py-5 flex justify-end">
+              <LanguageSwitcher />
+            </div>
           </header>
           {children}
         </NextIntlClientProvider>
