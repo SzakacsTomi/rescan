@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "title": "Rescan – Creative Studio",
+    "description": "We craft compelling visual identities for forward-thinking brands."
+  },
+  "site": {
+    "name": "Rescan"
+  },
+  "hero": {
+    "headline": "Bold ideas,\nperfect execution.",
+    "subheadline": "We craft compelling visual identities for forward-thinking brands.",
+    "scrollHint": "Scroll to explore"
+  },
+  "sections": {
+    "branding": {
+      "title": "Branding",
+      "description": "Strategic brand identity and visual systems that tell your story."
+    },
+    "digital": {
+      "title": "Digital",
+      "description": "Web and digital experiences that engage and convert."
+    },
+    "print": {
+      "title": "Print",
+      "description": "Premium print design that leaves a lasting impression."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Rescan. All rights reserved.",
+    "nav": {
+      "work": "Work",
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "common": {
+    "switchLanguage": "Svenska"
+  }
+}

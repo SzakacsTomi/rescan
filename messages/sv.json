@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "title": "Rescan – Kreativ Studio",
+    "description": "Vi skapar övertygande visuella identiteter för framåtblickande varumärken."
+  },
+  "site": {
+    "name": "Rescan"
+  },
+  "hero": {
+    "headline": "Djärva idéer,\nperfekt utförande.",
+    "subheadline": "Vi skapar övertygande visuella identiteter för framåtblickande varumärken.",
+    "scrollHint": "Bläddra för att utforska"
+  },
+  "sections": {
+    "branding": {
+      "title": "Varumärke",
+      "description": "Strategisk varumärkesidentitet och visuella system som berättar din historia."
+    },
+    "digital": {
+      "title": "Digital",
+      "description": "Webb- och digitala upplevelser som engagerar och konverterar."
+    },
+    "print": {
+      "title": "Print",
+      "description": "Premium tryckt design som lämnar ett bestående intryck."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Rescan. Alla rättigheter förbehållna.",
+    "nav": {
+      "work": "Arbete",
+      "about": "Om oss",
+      "services": "Tjänster",
+      "contact": "Kontakt"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "common": {
+    "switchLanguage": "English"
+  }
+}
