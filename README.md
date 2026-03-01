@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rescan — Corporate Website
+
+Official website for **Rescan**, a 3D scanning company offering commercial portfolios, industrial manufacturing, and 2D/3D model production services.
+
+Built with Next.js App Router, Tailwind CSS v4, and full English/Swedish localisation.
+
+---
+
+## Tech Stack
+
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 |
+| Styling | Tailwind CSS v4 + shadcn/ui |
+| Animations | Framer Motion |
+| i18n | next-intl (EN, SV) |
+| Icons | Lucide React |
+| Testing | Vitest + Testing Library |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js v18+
+- npm, yarn, pnpm, or bun
+
+### Install & run
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+/app
+├── [locale]/
+│   ├── (pages)/
+│   │   ├── about/
+│   │   ├── contact/
+│   │   ├── commercial-portfolios/
+│   │   ├── industrial-manufacturing/
+│   │   ├── model-production/
+│   │   └── projects/
+│   ├── layout.tsx          # Locale layout (html, body, fonts, i18n provider)
+│   └── page.tsx            # Home page
+├── components/
+│   ├── atoms/              # Basic UI building blocks
+│   ├── molecules/          # Composite components
+│   ├── organisms/          # Complex sections (NavBar, Footer, HeroSection)
+│   └── templates/          # Page-level layouts
+├── types/
+└── globals.css
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/config
+├── nav.ts                  # Navigation links
+├── footer.ts               # Footer links & legal
+├── sections.ts             # Section cards config
+└── site.ts                 # Site metadata
 
-## Deploy on Vercel
+/i18n
+├── routing.ts              # Locale routing
+├── navigation.ts           # i18n navigation helpers
+└── request.ts              # Message loading
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/messages
+├── en.json                 # English translations
+└── sv.json                 # Swedish translations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/public
+├── assets/                 # Logo and brand assets
+└── pdfs/                   # Privacy Policy, Cookie Policy
+```
+
+---
+
+## Internationalisation
+
+The site supports **English (en)** and **Swedish (sv)**. English is the default locale.
+
+- Routes: `/en/about`, `/sv/about`, etc.
+- Translations live in [messages/en.json](messages/en.json) and [messages/sv.json](messages/sv.json)
+- Locale routing is handled by `next-intl` middleware in [proxy.ts](proxy.ts)
+
+To add a new translation key, update both JSON files and reference it with `useTranslations()` in client components or `getTranslations()` in server components.
+
+---
+
+## Component Architecture
+
+Components follow **Atomic Design**:
+
+- **Atoms** — smallest units: `Logo`, `ScrollArrow`, `SocialLink`, `LanguageSwitcher`
+- **Molecules** — combinations: `NavLinks`, `SectionCard`, `HeroText`, `MobileMenu`, `FooterNav`
+- **Organisms** — full sections: `NavBar`, `Footer`, `HeroSection`, `SectionsGrid`
+- **Templates** — page wrappers: `HomeTemplate`
+
+---
+
+## Pages & Routes
+
+| Route | Description |
+|---|---|
+| `/` | Home — hero + section cards |
+| `/commercial-portfolios` | Commercial portfolio services |
+| `/industrial-manufacturing` | Industrial manufacturing services |
+| `/model-production` | 2D/3D model production services |
+| `/projects` | Project showcase |
+| `/about` | About the company |
+| `/contact` | Contact page |
+
+All routes are available under both locale prefixes (`/en/...`, `/sv/...`).
+
+---
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Push to `main` triggers an automatic production deployment.
+
+No environment variables are required for the base setup.
