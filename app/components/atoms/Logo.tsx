@@ -11,7 +11,6 @@ export const Logo = () => {
         height={0}
         priority
         sizes="100vw"
-        objectFit="covers"
         className="w-auto h-auto"
       />
     </div>

@@ -43,6 +43,14 @@
       "cookies": "Cookiepolicy"
     }
   },
+  "nav": {
+    "commercial": "Kommersiellt",
+    "industrial": "Industri",
+    "modelProduction": "3D-modellering",
+    "projects": "Projekt",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
   "common": {
     "switchLanguage": "English"
   }

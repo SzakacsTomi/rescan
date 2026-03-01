@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { Montserrat } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
-import { LanguageSwitcher } from '@/app/components/atoms/LanguageSwitcher';
 import '../globals.css';
 
 const montserrat = Montserrat({
@@ -44,11 +43,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale}>
       <body className={`${montserrat.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <header className="fixed top-0 left-0 right-0 z-50">
-            <div className="max-w-480 mx-auto px-6 py-5 flex justify-end">
-              <LanguageSwitcher />
-            </div>
-          </header>
           {children}
         </NextIntlClientProvider>
       </body>

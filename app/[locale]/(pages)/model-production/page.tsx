@@ -1,5 +1,3 @@
-import { HomeTemplate } from "@/app/components/templates/HomeTemplate";
-
 export default function ModelProductionPage() {
-  return <HomeTemplate />;
+  return <div>Model production page</div>;
 }

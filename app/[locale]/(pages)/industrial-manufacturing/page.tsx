@@ -1,5 +1,3 @@
-import { HomeTemplate } from "@/app/components/templates/HomeTemplate";
-
 export default function IndustrialManufacturingPage() {
-  return <HomeTemplate />;
+  return <div>Industrial page</div>;
 }
