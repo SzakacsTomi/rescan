@@ -1,19 +1,15 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { LanguageSwitcher } from '@/app/components/atoms/LanguageSwitcher';
 import '../globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
 type LocaleLayoutProps = {
@@ -46,7 +42,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <header className="fixed top-0 left-0 right-0 z-50">
             <div className="max-w-480 mx-auto px-6 py-5 flex justify-end">

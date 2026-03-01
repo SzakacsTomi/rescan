@@ -42,6 +42,7 @@ export const SectionCard = ({
   return (
     <motion.div
       ref={ref}
+      initial={{ flex: 1 }}
       animate={{ flex: flexValue }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       onHoverStart={isHoverDevice ? onHoverStart : undefined}
@@ -51,7 +52,6 @@ export const SectionCard = ({
     >
       <Link href={section.href} className="absolute inset-0 z-10" aria-label={title} />
 
-      {/* Default title – visible when inactive */}
       <motion.div
         animate={{ opacity: isActive ? 0 : 1 }}
         transition={{ duration: 0.2 }}
@@ -60,11 +60,10 @@ export const SectionCard = ({
         <h2 className="text-2xl font-bold text-white">{title}</h2>
       </motion.div>
 
-      {/* Full content overlay – visible when active */}
       <motion.div
         animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 16 }}
         transition={{ duration: 0.3, delay: isActive ? 0.1 : 0 }}
-        className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+        className="absolute inset-0 flex flex-col justify-end p-8 bg-linear-to-t from-black/70 via-black/20 to-transparent"
       >
         <h2 className="text-3xl font-bold text-white mb-3">{title}</h2>
         <p className="text-white/80 text-base max-w-xs leading-relaxed">{description}</p>

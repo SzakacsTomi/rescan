@@ -1,15 +1,15 @@
-import { getTranslations } from 'next-intl/server';
-import { Logo } from '@/app/components/atoms/Logo';
-import { SocialLink } from '@/app/components/atoms/SocialLink';
-import { FooterNav } from '@/app/components/molecules/FooterNav';
-import { footerNavLinks, legalLinks, socialLinks } from '@/config/footer';
+import { getTranslations } from "next-intl/server";
+import { SocialLink } from "@/app/components/atoms/SocialLink";
+import { FooterNav } from "@/app/components/molecules/FooterNav";
+import { footerNavLinks, legalLinks, socialLinks } from "@/config/footer";
+import { Logo } from "../atoms/Logo";
 
 export const Footer = async () => {
-  const t = await getTranslations('footer');
+  const t = await getTranslations("footer");
 
   const resolvedNavLinks = footerNavLinks.map((link) => ({
     ...link,
-    label: t(`nav.${link.labelKey}` as 'nav.work' | 'nav.about' | 'nav.services' | 'nav.contact'),
+    label: t(`nav.${link.labelKey}` as "nav.work" | "nav.about" | "nav.services" | "nav.contact"),
   }));
 
   return (
@@ -28,14 +28,19 @@ export const Footer = async () => {
             <SocialLink
               key={social.platform}
               config={social}
-              label={t(`social.${social.labelKey}` as 'social.instagram' | 'social.linkedin' | 'social.twitter')}
+              label={t(
+                `social.${social.labelKey}` as
+                  | "social.instagram"
+                  | "social.linkedin"
+                  | "social.twitter",
+              )}
             />
           ))}
         </div>
       </div>
 
       <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <p className="text-foreground/40 text-sm">{t('copyright')}</p>
+        <p className="text-foreground/40 text-sm">{t("copyright")}</p>
 
         <div className="flex items-center gap-4">
           {legalLinks.map((link) => (
@@ -46,7 +51,7 @@ export const Footer = async () => {
               rel="noopener noreferrer"
               className="text-foreground/40 hover:text-foreground/70 transition-colors text-sm"
             >
-              {t(`legal.${link.labelKey}` as 'legal.privacy' | 'legal.cookies')}
+              {t(`legal.${link.labelKey}` as "legal.privacy" | "legal.cookies")}
             </a>
           ))}
         </div>
