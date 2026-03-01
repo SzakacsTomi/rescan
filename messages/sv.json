@@ -12,11 +12,11 @@
     "scrollHint": "Bläddra för att utforska"
   },
   "sections": {
-    "commercial": {
+    "commercialPortfolios": {
       "title": "Kommersiella Fastigheter",
       "description": "För kapitalförvaltare och fastighetsägare som hanterar återkommande uppgraderingar över flera fastigheter."
     },
-    "industrial": {
+    "industrialManufacturing": {
       "title": "Industri & Tillverkning",
       "description": "För ingenjörs- och driftteam som installerar ny utrustning eller planerar ombyggnationer."
     },

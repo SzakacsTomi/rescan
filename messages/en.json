@@ -12,11 +12,11 @@
     "scrollHint": "Scroll to explore"
   },
   "sections": {
-    "commercial": {
+    "commercialPortfolios": {
       "title": "Commercial Portfolios",
       "description": "For asset managers and property owners managing recurring upgrades across multiple properties."
     },
-    "industrial": {
+    "industrialManufacturing": {
       "title": "Industrial & Manufacturing",
       "description": "For engineering and facility teams installing new equipment or planning retrofits."
     },
