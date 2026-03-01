@@ -12,17 +12,17 @@
     "scrollHint": "Bläddra för att utforska"
   },
   "sections": {
-    "branding": {
-      "title": "Varumärke",
-      "description": "Strategisk varumärkesidentitet och visuella system som berättar din historia."
+    "commercial": {
+      "title": "Kommersiella Fastigheter",
+      "description": "För kapitalförvaltare och fastighetsägare som hanterar återkommande uppgraderingar över flera fastigheter."
     },
-    "digital": {
-      "title": "Digital",
-      "description": "Webb- och digitala upplevelser som engagerar och konverterar."
+    "industrial": {
+      "title": "Industri & Tillverkning",
+      "description": "För ingenjörs- och driftteam som installerar ny utrustning eller planerar ombyggnationer."
     },
-    "print": {
-      "title": "Print",
-      "description": "Premium tryckt design som lämnar ett bestående intryck."
+    "modelProduction": {
+      "title": "2D/3D Modellproduktion",
+      "description": "För arkitekter, konsulter och scanningföretag som behöver pålitlig modellproduktionskapacitet."
     }
   },
   "footer": {

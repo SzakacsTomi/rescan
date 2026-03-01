@@ -42,7 +42,6 @@ export const SectionCard = ({
   return (
     <motion.div
       ref={ref}
-      initial={{ flex: 1 }}
       animate={{ flex: flexValue }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       onHoverStart={isHoverDevice ? onHoverStart : undefined}
@@ -66,7 +65,7 @@ export const SectionCard = ({
         className="absolute inset-0 flex flex-col justify-end p-8 bg-linear-to-t from-black/70 via-black/20 to-transparent"
       >
         <h2 className="text-3xl font-bold text-white mb-3">{title}</h2>
-        <p className="text-white/80 text-base max-w-xs leading-relaxed">{description}</p>
+        <p className="text-white/80 text-base max-w-sm leading-relaxed">{description}</p>
       </motion.div>
     </motion.div>
   );

@@ -12,17 +12,17 @@
     "scrollHint": "Scroll to explore"
   },
   "sections": {
-    "branding": {
-      "title": "Branding",
-      "description": "Strategic brand identity and visual systems that tell your story."
+    "commercial": {
+      "title": "Commercial Portfolios",
+      "description": "For asset managers and property owners managing recurring upgrades across multiple properties."
     },
-    "digital": {
-      "title": "Digital",
-      "description": "Web and digital experiences that engage and convert."
+    "industrial": {
+      "title": "Industrial & Manufacturing",
+      "description": "For engineering and facility teams installing new equipment or planning retrofits."
     },
-    "print": {
-      "title": "Print",
-      "description": "Premium print design that leaves a lasting impression."
+    "modelProduction": {
+      "title": "2D/3D Model Production",
+      "description": "For architects, consultants and scanning firms needing reliable model production capacity."
     }
   },
   "footer": {
