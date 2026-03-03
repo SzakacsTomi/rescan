@@ -27,6 +27,7 @@
   },
   "footer": {
     "copyright": "© 2026 Rescan. Alla rättigheter förbehållna.",
+    "tagline": "3D-skanning för den byggda miljön.",
     "nav": {
       "work": "Arbete",
       "about": "Om oss",
@@ -53,5 +54,49 @@
   },
   "common": {
     "switchLanguage": "English"
+  },
+  "sectorPage": {
+    "commercial": {
+      "hero": {
+        "headline": "Varje fastighet,\ndokumenterad exakt.",
+        "subheadline": "Pålitlig 3D-skanning för kapitalförvaltare som inte har råd med överraskningar i sin portfölj.",
+        "primaryCta": "Boka ett samtal",
+        "secondaryCta": "Se projekt"
+      },
+      "coreRisk": {
+        "headline": "Föråldrad dokumentation tömmer tyst din portfölj.",
+        "body": "De flesta kapitalförvaltare arbetar med planritningar som är år gamla. När en renovering överskrider budgeten eller en hyresgästs anpassning stöter på oväntade väggar är grundorsaken vanligtvis densamma: datan du litade på var felaktig. Det gapet mellan vad som dokumenterats och vad som faktiskt finns är där kostnaderna samlas — och växer."
+      },
+      "friction": {
+        "headline": "Friktionen du lärt dig leva med",
+        "point0": {
+          "title": "Upprepade platsbesök",
+          "description": "Varje underhållscykel, renoveringsoffert eller hyresöversyn utlöser en ny uppmätning. Samma fastigheter mäts om och om igen."
+        },
+        "point1": {
+          "title": "Versionskoas mellan team",
+          "description": "Arkitekter, entreprenörer och driftteam arbetar utifrån olika ritningar. Avvikelser dyker upp sent — och kostsamt."
+        },
+        "point2": {
+          "title": "Ingen gemensam sanning",
+          "description": "Dokumentation är spridd över e-posttrådar, gamla CAD-filer och föråldrade PDF:er. Ingen vet vilken version som gäller."
+        }
+      },
+      "strategicValue": {
+        "headline": "En skanning. Alla team samlade.",
+        "valueA": {
+          "title": "Minska omarbetningskostnader",
+          "description": "Exakta som-byggt-data innebär färre överraskningar under byggnation eller inredning — och betydligt färre kostsamma ändringsordrar."
+        },
+        "valueB": {
+          "title": "Snabba upp varje projektfas",
+          "description": "När team utgår från verifierad data förkortas planeringscykler, godkännanden går snabbare och platsöverraskningar minskar."
+        }
+      },
+      "differentiator": {
+        "headline": "Du borde inte behöva mäta samma fastighet två gånger.",
+        "subheadline": "Rescan levererar scan-till-BIM-resultat som hela ditt team kan lita på — under hela tillgångens livscykel."
+      }
+    }
   }
 }

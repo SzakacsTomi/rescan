@@ -27,6 +27,7 @@
   },
   "footer": {
     "copyright": "© 2026 Rescan. All rights reserved.",
+    "tagline": "3D scanning for the built environment.",
     "nav": {
       "work": "Work",
       "about": "About",
@@ -53,5 +54,49 @@
   },
   "common": {
     "switchLanguage": "Svenska"
+  },
+  "sectorPage": {
+    "commercial": {
+      "hero": {
+        "headline": "Every property,\ndocumented precisely.",
+        "subheadline": "Reliable 3D scanning for asset managers who can't afford surprises across their portfolio.",
+        "primaryCta": "Book a Call",
+        "secondaryCta": "View Projects"
+      },
+      "coreRisk": {
+        "headline": "Outdated documentation is silently draining your portfolio.",
+        "body": "Most asset managers are working with floor plans that are years out of date. When a refurbishment exceeds budget or a tenant fit-out hits unexpected walls, the root cause is usually the same: the data you trusted was wrong. That gap between what's documented and what's real is where costs accumulate — and compound."
+      },
+      "friction": {
+        "headline": "The friction you've learned to live with",
+        "point0": {
+          "title": "Repeated site visits",
+          "description": "Every maintenance cycle, refurbishment quote, or lease review triggers another survey. The same properties get measured again and again."
+        },
+        "point1": {
+          "title": "Version chaos across teams",
+          "description": "Architects, contractors, and facility managers work from different drawings. Discrepancies surface late — and expensively."
+        },
+        "point2": {
+          "title": "No single source of truth",
+          "description": "Documentation is scattered across email threads, old CAD files, and outdated PDFs. No one knows which version is current."
+        }
+      },
+      "strategicValue": {
+        "headline": "One scan. Every team aligned.",
+        "valueA": {
+          "title": "Reduce rework costs",
+          "description": "Precise as-built data means fewer surprises during construction or fit-out — and far fewer costly change orders."
+        },
+        "valueB": {
+          "title": "Accelerate every project phase",
+          "description": "When teams start from verified data, planning cycles shorten, approvals move faster, and on-site surprises drop."
+        }
+      },
+      "differentiator": {
+        "headline": "You shouldn't need to resurvey the same property twice.",
+        "subheadline": "Rescan delivers scan-to-BIM outputs that your entire team can trust — for the full lifecycle of the asset."
+      }
+    }
   }
 }

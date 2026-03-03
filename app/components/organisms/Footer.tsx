@@ -1,29 +1,37 @@
 import { getTranslations } from "next-intl/server";
 import { SocialLink } from "@/app/components/atoms/SocialLink";
-import { FooterNav } from "@/app/components/molecules/FooterNav";
-import { footerNavLinks, legalLinks, socialLinks } from "@/config/footer";
+import { legalLinks, socialLinks } from "@/config/footer";
 import { Logo } from "../atoms/Logo";
 
 export const Footer = async () => {
   const t = await getTranslations("footer");
 
-  const resolvedNavLinks = footerNavLinks.map((link) => ({
-    ...link,
-    label: t(`nav.${link.labelKey}` as "nav.work" | "nav.about" | "nav.services" | "nav.contact"),
-  }));
-
   return (
-    <footer className="w-full bg-background border-t border-border py-12 px-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        <div>
+    <footer className="w-full bg-background border-t border-border">
+      <div className="px-6 py-12 grid grid-cols-1 sm:grid-cols-3 items-center gap-8">
+        <div className="flex flex-col gap-2">
           <Logo />
+          <p className="text-foreground/45 text-sm leading-relaxed">{t("tagline")}</p>
         </div>
 
-        <div>
-          <FooterNav links={resolvedNavLinks} />
+        <div className="flex flex-col items-start sm:items-center gap-1.5">
+          <p className="text-foreground/40 text-sm">{t("copyright")}</p>
+          <div className="flex items-center gap-3">
+            {legalLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/40 hover:text-foreground/70 transition-colors text-sm"
+              >
+                {t(`legal.${link.labelKey}` as "legal.privacy" | "legal.cookies")}
+              </a>
+            ))}
+          </div>
         </div>
 
-        <div className="flex flex-row md:justify-end gap-4 items-center">
+        <div className="flex gap-6 sm:justify-end">
           {socialLinks.map((social) => (
             <SocialLink
               key={social.platform}
@@ -34,25 +42,8 @@ export const Footer = async () => {
                   | "social.linkedin"
                   | "social.twitter",
               )}
+              size="lg"
             />
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <p className="text-foreground/40 text-sm">{t("copyright")}</p>
-
-        <div className="flex items-center gap-4">
-          {legalLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/40 hover:text-foreground/70 transition-colors text-sm"
-            >
-              {t(`legal.${link.labelKey}` as "legal.privacy" | "legal.cookies")}
-            </a>
           ))}
         </div>
       </div>
