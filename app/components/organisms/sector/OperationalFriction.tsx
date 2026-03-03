@@ -1,5 +1,5 @@
-import { PainPointCard } from '@/app/components/molecules/PainPointCard';
-import type { LucideIcon } from 'lucide-react';
+import { PainPointCard } from "@/app/components/molecules/PainPointCard";
+import type { LucideIcon } from "lucide-react";
 
 type FrictionPoint = {
   icon: LucideIcon;
@@ -20,9 +20,9 @@ export const OperationalFriction = ({ headline, points }: OperationalFrictionPro
           {headline}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {points.map((point, i) => (
+          {points.map((point) => (
             <PainPointCard
-              key={i}
+              key={point.title}
               icon={point.icon}
               title={point.title}
               description={point.description}
