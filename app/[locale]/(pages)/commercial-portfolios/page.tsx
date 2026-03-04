@@ -48,6 +48,8 @@ export default async function CommercialPortfoliosPage() {
       body: t('namedCase.body'),
       metric: t('namedCase.metric'),
       metricLabel: t('namedCase.metricLabel'),
+      quote: t('namedCase.quote'),
+      quoteAuthor: t('namedCase.quoteAuthor'),
     },
     logoWall: {
       headline: t('logoWall.headline'),

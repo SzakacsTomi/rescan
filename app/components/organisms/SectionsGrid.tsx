@@ -5,12 +5,14 @@ import { useTranslations } from "next-intl";
 import { sectionsConfig } from "@/config/sections";
 import { useState } from "react";
 
+export const SECTIONS_ID = "sections";
+
 export const SectionsGrid = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const t = useTranslations("sections");
 
   return (
-    <section className="flex flex-col lg:flex-row w-full" aria-label="Project categories">
+    <section id={SECTIONS_ID} className="flex flex-col lg:flex-row w-full" aria-label="Project categories">
       {sectionsConfig.map((section) => (
         <SectionCard
           key={section.id}

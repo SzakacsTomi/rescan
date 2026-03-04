@@ -1,3 +1,5 @@
+export const CORE_RISK_ID = "core-risk";
+
 type CoreRiskProps = {
   headline: string;
   body: string;
@@ -5,7 +7,7 @@ type CoreRiskProps = {
 
 export const CoreRisk = ({ headline, body }: CoreRiskProps) => {
   return (
-    <section className="py-24 px-6">
+    <section id={CORE_RISK_ID} className="py-24 px-6">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-8">
           {headline}

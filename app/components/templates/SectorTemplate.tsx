@@ -44,6 +44,8 @@ export const SectorTemplate = ({ config, translations: tr }: SectorTemplateProps
         body={tr.namedCase.body}
         metric={tr.namedCase.metric}
         metricLabel={tr.namedCase.metricLabel}
+        quote={tr.namedCase.quote}
+        quoteAuthor={tr.namedCase.quoteAuthor}
       />
       <LogoWall headline={tr.logoWall.headline} logos={config.logoWall.logos} />
       <Metrics items={tr.metrics.items.map((item, i) => ({ ...item, value: config.metrics.items[i].value }))} />

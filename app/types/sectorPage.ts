@@ -56,6 +56,8 @@ export type SectorPageTranslations = {
     body: string;
     metric: string;
     metricLabel: string;
+    quote?: string;
+    quoteAuthor?: string;
   };
   logoWall: {
     headline: string;

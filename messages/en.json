@@ -58,81 +58,83 @@
   "sectorPage": {
     "commercial": {
       "hero": {
-        "headline": "Every property,\ndocumented precisely.",
-        "subheadline": "Reliable 3D scanning for asset managers who can't afford surprises across their portfolio.",
-        "primaryCta": "Book a Call",
+        "headline": "Certainty across\nyour property portfolio",
+        "subheadline": "Accurate building data for property management, renovation and upgrades across multiple commercial sites.",
+        "primaryCta": "Discuss your portfolio",
         "secondaryCta": "View Projects"
       },
       "coreRisk": {
-        "headline": "Outdated documentation is silently draining your portfolio.",
-        "body": "Most asset managers are working with floor plans that are years out of date. When a refurbishment exceeds budget or a tenant fit-out hits unexpected walls, the root cause is usually the same: the data you trusted was wrong. That gap between what's documented and what's real is where costs accumulate — and compound."
+        "headline": "When you manage multiple properties, small errors don't stay small.",
+        "body": "Across a portfolio, documentation is rarely consistent. Some sites have updated drawings. Some don't. Measurements differ. Standards vary between assets. Consultants reinterpret information each time a project starts. Teams return to site to double-check. Similar buildings require repeated measurement work. One mistake is manageable. Repeated across 15 or 40 properties, it becomes recurring cost, delay and frustration."
       },
       "friction": {
-        "headline": "The friction you've learned to live with",
+        "headline": "Three problems that compound across your portfolio",
         "point0": {
-          "title": "Repeated site visits",
-          "description": "Every maintenance cycle, refurbishment quote, or lease review triggers another survey. The same properties get measured again and again."
+          "title": "Reduce dependency on physical site visits",
+          "description": "When properties are spread across cities or regions, verification usually means travel. High-accuracy 3D capture allows verified building conditions to be reviewed remotely — without returning to site."
         },
         "point1": {
-          "title": "Version chaos across teams",
-          "description": "Architects, contractors, and facility managers work from different drawings. Discrepancies surface late — and expensively."
+          "title": "Don't rediscover the building every time",
+          "description": "Too often, each project begins with the same question: 'Do we have reliable drawings for this site?' We structure digital models so they remain usable across the portfolio for every future project."
         },
         "point2": {
-          "title": "No single source of truth",
-          "description": "Documentation is scattered across email threads, old CAD files, and outdated PDFs. No one knows which version is current."
+          "title": "Avoid coordination friction before projects begin",
+          "description": "Many as-built models are delivered as a single combined file. When required, RESCAN structures models by discipline — architecture, plumbing, ventilation and electrical — in Revit or Archicad."
         }
       },
       "strategicValue": {
-        "headline": "One scan. Every team aligned.",
+        "headline": "One verified foundation. Every project starts from known conditions.",
         "valueA": {
-          "title": "Reduce rework costs",
-          "description": "Precise as-built data means fewer surprises during construction or fit-out — and far fewer costly change orders."
+          "title": "Remote access to verified building data",
+          "description": "Dimensions, layouts and systems can be checked without returning to site. Fewer interruptions. Faster decisions. Less repeated effort across locations."
         },
         "valueB": {
-          "title": "Accelerate every project phase",
-          "description": "When teams start from verified data, planning cycles shorten, approvals move faster, and on-site surprises drop."
+          "title": "Models structured for the portfolio lifecycle",
+          "description": "Delivered for use across the portfolio and integration with existing property management systems. Used for tenant adaptations, planned maintenance, system upgrades and lease-driven changes."
         }
       },
       "differentiator": {
-        "headline": "You shouldn't need to resurvey the same property twice.",
-        "subheadline": "Rescan delivers scan-to-BIM outputs that your entire team can trust — for the full lifecycle of the asset."
+        "headline": "Proven in commercial environments.",
+        "subheadline": "250+ commercial and industrial projects delivered. 1.8M+ m² digitally captured. Including retail units, office buildings and mixed-use commercial assets across Sweden and beyond."
       },
       "namedCase": {
-        "label": "Case Study",
-        "headline": "One portfolio. One source of truth.",
-        "body": "A Nordic asset manager standardised on Rescan across 250+ properties. The result: a single verified dataset shared across all project teams — from day one of every refurbishment cycle. Change orders dropped. Planning timelines shortened. Rework costs fell.",
-        "metric": "250+",
-        "metricLabel": "properties scanned"
+        "label": "Portfolio case",
+        "headline": "Carlqvist Property — 56 commercial properties digitised across Sweden",
+        "body": "Carlqvist Property engaged RESCAN to digitise its mixed commercial portfolio of 56 properties across Sweden. The objective was not a single refurbishment project — it was to create one consistent, reliable digital foundation across all assets. Each property was captured and structured into accurate digital documentation, forming a centralised archive of verified building data.",
+        "quote": "We now have a clear and reliable overview across all properties. It saves time and reduces uncertainty whenever a new project starts.",
+        "quoteAuthor": "Eddie Carlqvist, CEO",
+        "metric": "56",
+        "metricLabel": "commercial properties digitised"
       },
       "logoWall": {
         "headline": "Trusted by leading real estate teams"
       },
       "metrics": {
-        "item0": { "label": "properties scanned" },
-        "item1": { "label": "sq metres documented" },
-        "item2": { "label": "active clients" },
-        "item3": { "label": "average NPS" }
+        "item0": { "label": "commercial projects delivered" },
+        "item1": { "label": "m² digitally captured" },
+        "item2": { "label": "properties in a single portfolio" },
+        "item3": { "label": "average client satisfaction" }
       },
       "fitNotFit": {
-        "headline": "Is Rescan right for you?",
+        "headline": "Who this is designed for",
         "bestFit": {
-          "title": "Best Fit For",
-          "item0": "Asset managers with 5 or more properties",
-          "item1": "Teams running recurring refurbishment cycles",
-          "item2": "Owners preparing for lease renegotiations",
-          "item3": "Firms integrating scan data into BIM workflows"
+          "title": "Designed for",
+          "item0": "Asset managers responsible for multiple properties",
+          "item1": "Commercial property owners managing recurring upgrades",
+          "item2": "Expansion and refurbishment teams",
+          "item3": "Technical managers seeking consistent building data"
         },
         "notFit": {
-          "title": "Not Designed For",
-          "item0": "Single one-off residential projects",
-          "item1": "Teams without an existing documentation process",
-          "item2": "Projects where as-built accuracy is not required"
+          "title": "Not designed for",
+          "item0": "Residential properties or single-building projects",
+          "item1": "Teams without a need for accurate as-built data",
+          "item2": "One-off projects with no future documentation needs"
         }
       },
       "finalCta": {
-        "headline": "Ready to close the documentation gap?",
-        "subheadline": "Talk to a scanning specialist and find out what Rescan can do for your portfolio.",
-        "cta": "Book a Consultation"
+        "headline": "Start with conditions you can trust.",
+        "subheadline": "If you manage several properties and want to reduce repeated uncertainty across sites, we can define the right scope for your portfolio.",
+        "cta": "Schedule a portfolio discussion"
       }
     }
   }
