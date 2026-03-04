@@ -16,6 +16,15 @@ export type SectorPageConfig = {
   friction: {
     painPoints: readonly PainPointConfig[];
   };
+  logoWall: {
+    logos: readonly { name: string; src: string }[];
+  };
+  metrics: {
+    items: readonly { value: string }[];
+  };
+  finalCta: {
+    ctaHref: string;
+  };
 };
 
 export type SectorPageTranslations = {
@@ -40,5 +49,34 @@ export type SectorPageTranslations = {
   differentiator: {
     headline: string;
     subheadline: string;
+  };
+  namedCase: {
+    label: string;
+    headline: string;
+    body: string;
+    metric: string;
+    metricLabel: string;
+  };
+  logoWall: {
+    headline: string;
+  };
+  metrics: {
+    items: Array<{ label: string }>;
+  };
+  fitNotFit: {
+    headline: string;
+    bestFit: {
+      title: string;
+      items: string[];
+    };
+    notFit: {
+      title: string;
+      items: string[];
+    };
+  };
+  finalCta: {
+    headline: string;
+    subheadline: string;
+    cta: string;
   };
 };

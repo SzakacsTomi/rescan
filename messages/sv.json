@@ -96,6 +96,43 @@
       "differentiator": {
         "headline": "Du borde inte behöva mäta samma fastighet två gånger.",
         "subheadline": "Rescan levererar scan-till-BIM-resultat som hela ditt team kan lita på — under hela tillgångens livscykel."
+      },
+      "namedCase": {
+        "label": "Fallstudie",
+        "headline": "En portfölj. En enda källa till sanning.",
+        "body": "En nordisk kapitalförvaltare standardiserade på Rescan över 250+ fastigheter. Resultatet: ett enda verifierat dataset delat med alla projektteam — från dag ett i varje renoveringscykel. Ändringsordrar minskade. Planeringstider förkortades. Omarbetningskostnader föll.",
+        "metric": "250+",
+        "metricLabel": "skannade fastigheter"
+      },
+      "logoWall": {
+        "headline": "Anlitad av ledande fastighetsteam"
+      },
+      "metrics": {
+        "item0": { "label": "skannade fastigheter" },
+        "item1": { "label": "kvm dokumenterade" },
+        "item2": { "label": "aktiva kunder" },
+        "item3": { "label": "genomsnittligt NPS" }
+      },
+      "fitNotFit": {
+        "headline": "Passar Rescan dig?",
+        "bestFit": {
+          "title": "Passar bäst för",
+          "item0": "Kapitalförvaltare med 5 eller fler fastigheter",
+          "item1": "Team med återkommande renoveringscykler",
+          "item2": "Ägare som förbereder hyresomförhandlingar",
+          "item3": "Företag som integrerar skandata i BIM-arbetsflöden"
+        },
+        "notFit": {
+          "title": "Inte utformat för",
+          "item0": "Enstaka bostadsprojekt",
+          "item1": "Team utan befintlig dokumentationsprocess",
+          "item2": "Projekt där som-byggt-noggrannhet inte krävs"
+        }
+      },
+      "finalCta": {
+        "headline": "Redo att stänga dokumentationsgapet?",
+        "subheadline": "Prata med en skanningspecialist och ta reda på vad Rescan kan göra för din portfölj.",
+        "cta": "Boka en konsultation"
       }
     }
   }

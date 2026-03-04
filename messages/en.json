@@ -96,6 +96,43 @@
       "differentiator": {
         "headline": "You shouldn't need to resurvey the same property twice.",
         "subheadline": "Rescan delivers scan-to-BIM outputs that your entire team can trust — for the full lifecycle of the asset."
+      },
+      "namedCase": {
+        "label": "Case Study",
+        "headline": "One portfolio. One source of truth.",
+        "body": "A Nordic asset manager standardised on Rescan across 250+ properties. The result: a single verified dataset shared across all project teams — from day one of every refurbishment cycle. Change orders dropped. Planning timelines shortened. Rework costs fell.",
+        "metric": "250+",
+        "metricLabel": "properties scanned"
+      },
+      "logoWall": {
+        "headline": "Trusted by leading real estate teams"
+      },
+      "metrics": {
+        "item0": { "label": "properties scanned" },
+        "item1": { "label": "sq metres documented" },
+        "item2": { "label": "active clients" },
+        "item3": { "label": "average NPS" }
+      },
+      "fitNotFit": {
+        "headline": "Is Rescan right for you?",
+        "bestFit": {
+          "title": "Best Fit For",
+          "item0": "Asset managers with 5 or more properties",
+          "item1": "Teams running recurring refurbishment cycles",
+          "item2": "Owners preparing for lease renegotiations",
+          "item3": "Firms integrating scan data into BIM workflows"
+        },
+        "notFit": {
+          "title": "Not Designed For",
+          "item0": "Single one-off residential projects",
+          "item1": "Teams without an existing documentation process",
+          "item2": "Projects where as-built accuracy is not required"
+        }
+      },
+      "finalCta": {
+        "headline": "Ready to close the documentation gap?",
+        "subheadline": "Talk to a scanning specialist and find out what Rescan can do for your portfolio.",
+        "cta": "Book a Consultation"
       }
     }
   }

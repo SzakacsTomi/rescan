@@ -1,5 +1,10 @@
 import { CoreRisk } from '@/app/components/organisms/sector/CoreRisk';
 import { Differentiator } from '@/app/components/organisms/sector/Differentiator';
+import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
+import { FitNotFit } from '@/app/components/organisms/sector/FitNotFit';
+import { LogoWall } from '@/app/components/organisms/sector/LogoWall';
+import { Metrics } from '@/app/components/organisms/sector/Metrics';
+import { NamedCase } from '@/app/components/organisms/sector/NamedCase';
 import { OperationalFriction } from '@/app/components/organisms/sector/OperationalFriction';
 import { SectorHero } from '@/app/components/organisms/sector/SectorHero';
 import { StrategicValue } from '@/app/components/organisms/sector/StrategicValue';
@@ -32,6 +37,26 @@ export const SectorTemplate = ({ config, translations: tr }: SectorTemplateProps
       <Differentiator
         headline={tr.differentiator.headline}
         subheadline={tr.differentiator.subheadline}
+      />
+      <NamedCase
+        label={tr.namedCase.label}
+        headline={tr.namedCase.headline}
+        body={tr.namedCase.body}
+        metric={tr.namedCase.metric}
+        metricLabel={tr.namedCase.metricLabel}
+      />
+      <LogoWall headline={tr.logoWall.headline} logos={config.logoWall.logos} />
+      <Metrics items={tr.metrics.items.map((item, i) => ({ ...item, value: config.metrics.items[i].value }))} />
+      <FitNotFit
+        headline={tr.fitNotFit.headline}
+        bestFit={tr.fitNotFit.bestFit}
+        notFit={tr.fitNotFit.notFit}
+      />
+      <FinalCTA
+        headline={tr.finalCta.headline}
+        subheadline={tr.finalCta.subheadline}
+        cta={tr.finalCta.cta}
+        ctaHref={config.finalCta.ctaHref}
       />
     </>
   );
