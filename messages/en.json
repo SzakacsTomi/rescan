@@ -55,6 +55,82 @@
   "common": {
     "switchLanguage": "Svenska"
   },
+  "aboutPage": {
+    "hero": {
+      "headline": "We bring precision\nto the built environment.",
+      "subheadline": "3D scanning for asset managers, engineers, and architects who need data they can rely on.",
+      "primaryCta": "See Our Work",
+      "secondaryCta": "Get in Touch"
+    },
+    "mission": {
+      "headline": "Why Rescan exists",
+      "body": "Buildings are rarely as they appear on paper. Drawings go out of date. Renovations happen without documentation. When projects begin from outdated information, the cost compounds — in delays, revisits, and rework.\n\nRescan was founded to solve that. We capture buildings as they actually are, and deliver structured digital models that teams can rely on — not just for the current project, but for every one that follows."
+    },
+    "capabilities": {
+      "headline": "What we do",
+      "cap0": {
+        "title": "Accurate As-Built Capture",
+        "description": "We measure and document buildings as they exist today — with millimetre-level accuracy using professional 3D scanning equipment."
+      },
+      "cap1": {
+        "title": "Structured Digital Models",
+        "description": "Point clouds, 2D drawings, or full BIM models in Revit or Archicad — structured by discipline and ready for immediate use."
+      },
+      "cap2": {
+        "title": "Portfolio-Scale Delivery",
+        "description": "Consistent methodology and documentation across multiple sites. One reliable digital foundation for every property in your portfolio."
+      }
+    },
+    "cta": {
+      "headline": "Ready to work from data you can trust?",
+      "primaryCta": "Book a Consultation",
+      "secondaryCta": "See Our Projects"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "headline": "Let's discuss\nyour project.",
+      "subheadline": "Tell us what you're working on and we'll get back to you within one business day."
+    },
+    "details": {
+      "headline": "Get in touch",
+      "intro": "We work with asset managers, engineering teams, and architects across Scandinavia. If you have a project or portfolio in mind, we'd like to hear about it.",
+      "emailLabel": "Email",
+      "email": "hello@rescan.se",
+      "locationLabel": "Based in",
+      "location": "Stockholm, Sweden",
+      "responseLabel": "Response time",
+      "response": "Within one business day"
+    },
+    "form": {
+      "headline": "Send us a message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "company": "Company",
+      "companyPlaceholder": "Your company",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+46 ...",
+      "service": "Service of interest",
+      "servicePlaceholder": "Select a service",
+      "serviceOptions": {
+        "commercial": "Commercial Portfolios",
+        "industrial": "Industrial & Manufacturing",
+        "modelling": "3D Modelling",
+        "other": "Other / Not sure"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your project or question...",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "successTitle": "Message sent",
+      "successMessage": "Thank you — we'll be in touch within one business day.",
+      "errorMessage": "Something went wrong. Please try again or email us directly.",
+      "required": "Please fill in all required fields.",
+      "invalidEmail": "Please enter a valid email address."
+    }
+  },
   "sectorPage": {
     "commercial": {
       "hero": {

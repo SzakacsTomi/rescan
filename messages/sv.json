@@ -55,6 +55,82 @@
   "common": {
     "switchLanguage": "English"
   },
+  "aboutPage": {
+    "hero": {
+      "headline": "Vi levererar precision\ntill den byggda miljön.",
+      "subheadline": "3D-skanning för kapitalförvaltare, ingenjörer och arkitekter som behöver data de kan lita på.",
+      "primaryCta": "Se vårt arbete",
+      "secondaryCta": "Kontakta oss"
+    },
+    "mission": {
+      "headline": "Varför Rescan finns",
+      "body": "Byggnader är sällan som de ser ut på papper. Ritningar bli inaktuella. Renoveringar genomförs utan dokumentation. När projekt börjar från föråldrad information förstärks kostnaderna — i förseningar, återbesök och omarbetning.\n\nRescan grundades för att lösa det. Vi dokumenterar byggnader som de faktiskt är och levererar strukturerade digitala modeller som team kan förlita sig på — inte bara för det aktuella projektet, utan för varje projekt som följer."
+    },
+    "capabilities": {
+      "headline": "Vad vi gör",
+      "cap0": {
+        "title": "Exakt som-byggt-dokumentation",
+        "description": "Vi mäter och dokumenterar byggnader som de existerar idag — med millimeterprecision med professionell 3D-skanningsutrustning."
+      },
+      "cap1": {
+        "title": "Strukturerade digitala modeller",
+        "description": "Punktmoln, 2D-ritningar eller fullständiga BIM-modeller i Revit eller Archicad — strukturerade per disciplin och redo för omedelbar användning."
+      },
+      "cap2": {
+        "title": "Leverans i portföljskala",
+        "description": "Konsekvent metodik och dokumentation över flera objekt. En tillförlitlig digital grund för varje fastighet i din portfölj."
+      }
+    },
+    "cta": {
+      "headline": "Redo att arbeta med data du kan lita på?",
+      "primaryCta": "Boka ett samtal",
+      "secondaryCta": "Se våra projekt"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "headline": "Vi diskuterar\ngärna ditt projekt.",
+      "subheadline": "Berätta vad du arbetar med så återkommer vi inom en arbetsdag."
+    },
+    "details": {
+      "headline": "Kontakta oss",
+      "intro": "Vi arbetar med kapitalförvaltare, ingenjörsteam och arkitekter i Skandinavien. Om du har ett projekt eller en portfölj i åtanke berättar vi gärna mer.",
+      "emailLabel": "E-post",
+      "email": "hello@rescan.se",
+      "locationLabel": "Baserade i",
+      "location": "Stockholm, Sverige",
+      "responseLabel": "Svarstid",
+      "response": "Inom en arbetsdag"
+    },
+    "form": {
+      "headline": "Skicka ett meddelande",
+      "name": "Namn",
+      "namePlaceholder": "Ditt namn",
+      "company": "Företag",
+      "companyPlaceholder": "Ditt företag",
+      "email": "E-post",
+      "emailPlaceholder": "din@email.com",
+      "phone": "Telefon",
+      "phonePlaceholder": "+46 ...",
+      "service": "Tjänst av intresse",
+      "servicePlaceholder": "Välj en tjänst",
+      "serviceOptions": {
+        "commercial": "Kommersiella Fastigheter",
+        "industrial": "Industri & Tillverkning",
+        "modelling": "3D-modellering",
+        "other": "Annat / Vet ej"
+      },
+      "message": "Meddelande",
+      "messagePlaceholder": "Beskriv ditt projekt eller din fråga...",
+      "submit": "Skicka meddelande",
+      "submitting": "Skickar...",
+      "successTitle": "Meddelande skickat",
+      "successMessage": "Tack — vi återkommer inom en arbetsdag.",
+      "errorMessage": "Något gick fel. Försök igen eller maila oss direkt.",
+      "required": "Fyll i alla obligatoriska fält.",
+      "invalidEmail": "Ange en giltig e-postadress."
+    }
+  },
   "sectorPage": {
     "commercial": {
       "hero": {

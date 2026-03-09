@@ -22,7 +22,7 @@ export const NamedCase = ({ label, headline, body, metric, metricLabel, quote, q
           <p className="text-foreground/65 leading-relaxed">{body}</p>
           {quote && (
             <blockquote className="mt-8 border-l-2 border-primary pl-6">
-              <p className="text-lg italic text-foreground/80 leading-relaxed">"{quote}"</p>
+              <p className="text-lg italic text-foreground/80 leading-relaxed">&ldquo;{quote}&rdquo;</p>
               {quoteAuthor && (
                 <footer className="mt-3 text-sm font-semibold text-foreground/50 tracking-wide">
                   — {quoteAuthor}
