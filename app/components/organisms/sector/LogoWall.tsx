@@ -51,7 +51,7 @@ export const LogoWall = ({ headline, logos }: LogoWallProps) => {
                 width={200}
                 height={48}
                 unoptimized
-                className="h-8 w-auto object-contain grayscale opacity-60"
+                className="h-28 w-auto object-contain"
               />
             </div>
           ))}
