@@ -135,81 +135,87 @@
     "commercial": {
       "hero": {
         "headline": "Säkerhet över\ndin fastighetsportfölj",
-        "subheadline": "Korrekt byggnadsdata för fastighetsförvaltning, renovering och uppgraderingar över flera kommersiella objekt.",
+        "subheadline": "Verifierad byggnadsdata för fastighetsportföljer — som stöder den dagliga driften och framtida projekt.",
         "primaryCta": "Diskutera din portfölj",
         "secondaryCta": "Se projekt"
       },
       "coreRisk": {
         "headline": "När du förvaltar flera fastigheter stannar inte små fel vid det.",
-        "body": "Över en portfölj är dokumentationen sällan konsekvent. Vissa objekt har uppdaterade ritningar. Andra inte. Mått skiljer sig. Standarder varierar mellan tillgångar. Konsulter omtolkar information varje gång ett projekt startar. Team återvänder till platsen för att dubbelkontrollera. Liknande byggnader kräver upprepad uppmätning. Ett misstag är hanterbart. Upprepat över 15 eller 40 fastigheter blir det återkommande kostnad, försening och frustration."
+        "body": "Över en fastighetsportfölj är byggnadsdokumentationen sällan konsekvent.\nVissa fastigheter har uppdaterade ritningar. Andra inte.\nMått skiljer sig. Standarder varierar mellan objekt.\nNär ett projekt startar behöver konsulter ofta omtolka befintlig dokumentation eller återvända till platsen för att verifiera förhållanden.\nFör en byggnad är det hanterbart.\nUpprepat över 15, 30 eller 50 fastigheter blir det återkommande kostnad, försening och frustration."
       },
       "friction": {
-        "headline": "Tre problem som förstärks i din portfölj",
+        "headline": "Varför detta mönster upprepas i fastighetsportföljer",
+        "body": "I många portföljer uppdateras byggnadsdokumentationen bara när ett projekt tvingar fram det.\nEn renovering inleds. En teknisk uppgradering planeras. Eller konsulter upptäcker att ritningarna inte kan litas på.\nFörst då mäts eller dokumenteras byggnaden på nytt.\nDetta fungerar för ett enskilt projekt.\nÖver en portfölj innebär det att samma verifieringsarbete återkommer varje gång något förändras.",
         "point0": {
-          "title": "Minska beroendet av fysiska platsbesök",
-          "description": "När fastigheter är spridda över städer eller regioner innebär verifiering vanligtvis resor. Högprecisions-3D-insamling gör att verifierade byggnadsförhållanden kan granskas på distans — utan att återvända till platsen."
+          "title": "Sluta skicka team tillbaka till platsen för att verifiera ritningar",
+          "description": "När fastigheter är spridda över städer eller regioner innebär verifiering vanligtvis resor.\nHögprecisions-3D-insamling gör att verifierade byggnadsförhållanden kan granskas på distans — utan att återvända till platsen.\nTeam kan kontrollera mått, layouter och system från kontoret innan arbetet börjar."
         },
         "point1": {
-          "title": "Sluta återupptäcka byggnaden varje gång",
-          "description": "För ofta börjar varje projekt med samma fråga: 'Har vi tillförlitliga ritningar för det här objektet?' Vi strukturerar digitala modeller så att de förblir användbara i hela portföljen för varje framtida projekt."
+          "title": "Sluta återupptäcka byggnaden varje gång ett projekt startar",
+          "description": "Många projekt börjar med samma fråga: \"Har vi faktiskt tillförlitliga ritningar för den här byggnaden?\"\nOm svaret är osäkert återvänder team till platsen för att mäta utrymmen, verifiera mått och kontrollera byggnadsinstallationer.\nNär exakt digital dokumentation redan finns kan projekt starta omedelbart från verifierade förhållanden."
         },
         "point2": {
-          "title": "Undvik koordineringsproblem innan projekt börjar",
-          "description": "Många som-byggt-modeller levereras som en enda kombinerad fil. Vid behov strukturerar RESCAN modeller per disciplin — arkitektur, VVS och el — i Revit eller Archicad."
+          "title": "Ge konsulter modeller de faktiskt kan arbeta med",
+          "description": "Många som-byggt-modeller levereras som en enda kombinerad fil. I praktiken skapar detta koordineringsproblem.\nVid behov strukturerar RESCAN modeller per disciplin — arkitektur, VVS och el — levererade i Revit eller Archicad för att passa konsulternas arbetsflöden."
         }
       },
       "strategicValue": {
-        "headline": "En verifierad grund. Varje projekt börjar från kända förhållanden.",
+        "headline": "En gemensam grund. Varje projekt börjar från kända förhållanden.",
         "valueA": {
-          "title": "Fjärrtillgång till verifierad byggnadsdata",
-          "description": "Mått, layouter och system kan kontrolleras utan att återvända till platsen. Färre avbrott. Snabbare beslut. Mindre upprepat arbete över objekt."
+          "title": "Tydlig byggnadsdokumentation för hela portföljen",
+          "description": "Varje fastighet dokumenteras med samma struktur och standarder.\nFastighetsförvaltare och tekniska team kan komma åt tillförlitlig byggnadsdokumentation för varje objekt — inte en blandning av föråldrade ritningar och inkonsekvent material.\nDetta gör det enklare att förstå byggnadsförhållanden, planera uppgraderingar och förvalta fastigheter i portföljen.\nIstället för osäkerhet arbetar team från konsekvent dokumentation över alla objekt."
         },
         "valueB": {
-          "title": "Modeller strukturerade för portföljens livscykel",
-          "description": "Levererade för användning i hela portföljen och integration med befintliga fastighetsförvaltningssystem. Används för hyresgästanpassningar, planerat underhåll, systemuppgraderingar och hyresrelaterade förändringar."
+          "title": "Framtida projekt startar från kända förhållanden",
+          "description": "När renoverings- eller uppgraderingsprojekt börjar kan konsulter och interna team starta från verifierad byggnadsdokumentation.\nIstället för att mäta om byggnader eller tolka föråldrade ritningar börjar projekt med korrekta befintliga förhållanden.\nOm byggnader förändras över tid kan dokumentationen uppdateras snarare än återskapas från grunden.\nDetta minskar osäkerhet och hjälper projekt att gå snabbare."
         }
       },
       "differentiator": {
-        "headline": "Bevisat i kommersiella miljöer.",
-        "subheadline": "250+ kommersiella och industriella projekt levererade. 1,8M+ m² digitalt insamlade. Inklusive butikslokaler, kontorsbyggnader och blandat kommersiellt bruk i Sverige och utanför."
+        "headline": "Erfarenhet från kommersiella fastighetsportföljer i Sverige och utanför",
+        "subheadline": "250+ kommersiella projekt levererade · 1,8M+ m² digitalt insamlade"
       },
       "namedCase": {
         "label": "Portföljfall",
-        "headline": "Carlqvist Fastigheter — 56 kommersiella fastigheter digitaliserade i Sverige",
-        "body": "Carlqvist Fastigheter anlitade RESCAN för att digitalisera sin blandade kommersiella portfölj med 56 fastigheter i Sverige. Målet var inte ett enskilt renoveringsprojekt — det var att skapa en konsekvent, tillförlitlig digital grund för alla tillgångar. Varje fastighet dokumenterades och strukturerades i korrekt digital dokumentation, vilket bildade ett centraliserat arkiv med verifierad byggnadsdata.",
-        "quote": "Vi har nu en tydlig och tillförlitlig överblick över alla fastigheter. Det sparar tid och minskar osäkerheten varje gång ett nytt projekt startar.",
-        "quoteAuthor": "Eddie Carlqvist, VD",
+        "headline": "Carlqvist Fastigheter — 56 kommersiella fastigheter dokumenterade i Sverige",
+        "body": "Carlqvist Fastigheter kontaktade RESCAN för att dokumentera sin portfölj med 56 kommersiella fastigheter i Sverige.\nMålet var inte ett enskilt renoveringsprojekt, utan att skapa tillförlitlig dokumentation för hela portföljen.\nVarje fastighet dokumenterades i korrekt digital byggnadsdokumentation och skapade en konsekvent referenspunkt för portföljen.",
+        "bulletIntro": "Idag kan deras team:",
+        "bullet0": "komma åt dokumentation för varje fastighet",
+        "bullet1": "granska byggnadsplaner och mått på distans",
+        "bullet2": "minska upprepade platsbesök vid renoverings- och uppgraderingsprojekt",
+        "bullet3": "starta projekt från verifierad byggnadsdokumentation",
+        "quote": "Konsekvent dokumentation för alla fastigheter sparar oss både tid och pengar. Det ger oss en tydlig överblick över portföljen och tar bort mycket osäkerhet när vi planerar förändringar.",
+        "quoteAuthor": "Eddie Carlqvist, VD, Carlqvist Fastigheter",
         "metric": "56",
-        "metricLabel": "kommersiella fastigheter digitaliserade"
+        "metricLabel": "kommersiella fastigheter dokumenterade"
       },
       "logoWall": {
         "headline": "Anlitad av ledande fastighetsteam"
       },
       "metrics": {
-        "item0": { "label": "kommersiella projekt levererade" },
+        "item0": { "label": "projekt levererade" },
         "item1": { "label": "m² digitalt insamlade" },
-        "item2": { "label": "fastigheter i en enda portfölj" },
-        "item3": { "label": "genomsnittlig kundnöjdhet" }
+        "item2": { "label": "portföljer, 40+ fastigheter vardera" },
+        "item3": { "label": "fastighetssektorer" }
       },
       "fitNotFit": {
-        "headline": "Vem detta är utformat för",
+        "headline": "Vem detta är för",
         "bestFit": {
-          "title": "Utformat för",
+          "title": "Passar för",
           "item0": "Kapitalförvaltare ansvariga för flera fastigheter",
-          "item1": "Kommersiella fastighetsägare med återkommande uppgraderingar",
-          "item2": "Expansions- och renoveringsteam",
-          "item3": "Tekniska förvaltare som söker konsekvent byggnadsdata"
+          "item1": "Kommersiella fastighetsägare som förvaltar fastighetsportföljer",
+          "item2": "Expansionsteam som verkar på flera orter",
+          "item3": "Tekniska förvaltare ansvariga för byggnadsdokumentation"
         },
         "notFit": {
-          "title": "Inte utformat för",
-          "item0": "Bostadsfastigheter eller enstaka byggnadsprojekt",
-          "item1": "Team utan behov av korrekt som-byggt-data",
-          "item2": "Engångsprojekt utan framtida dokumentationsbehov"
+          "title": "Passar inte för",
+          "item0": "Bostadsfastigheter",
+          "item1": "Enskilda privata byggnader",
+          "item2": "Engångsmätningar"
         }
       },
       "finalCta": {
-        "headline": "Börja med förhållanden du kan lita på.",
-        "subheadline": "Om du förvaltar flera fastigheter och vill minska upprepad osäkerhet över objekten, kan vi definiera rätt scope för din portfölj.",
+        "headline": "Diskutera din portfölj",
+        "subheadline": "Om du förvaltar flera kommersiella eller industriella fastigheter och vill ha tillförlitlig byggnadsdokumentation för hela portföljen, kan vi definiera lämpligt scope.",
         "cta": "Boka en portföljdiskussion"
       }
     }

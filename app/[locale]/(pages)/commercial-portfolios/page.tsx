@@ -19,6 +19,7 @@ export default async function CommercialPortfoliosPage() {
     },
     friction: {
       headline: t('friction.headline'),
+      body: t('friction.body'),
       points: [
         { title: t('friction.point0.title'), description: t('friction.point0.description') },
         { title: t('friction.point1.title'), description: t('friction.point1.description') },
@@ -46,6 +47,13 @@ export default async function CommercialPortfoliosPage() {
       label: t('namedCase.label'),
       headline: t('namedCase.headline'),
       body: t('namedCase.body'),
+      bulletIntro: t('namedCase.bulletIntro'),
+      bulletPoints: [
+        t('namedCase.bullet0'),
+        t('namedCase.bullet1'),
+        t('namedCase.bullet2'),
+        t('namedCase.bullet3'),
+      ],
       metric: t('namedCase.metric'),
       metricLabel: t('namedCase.metricLabel'),
       quote: t('namedCase.quote'),

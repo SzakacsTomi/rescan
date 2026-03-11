@@ -40,6 +40,7 @@ export type SectorPageTranslations = {
   };
   friction: {
     headline: string;
+    body?: string;
     points: Array<{ title: string; description: string }>;
   };
   strategicValue: {
@@ -54,6 +55,8 @@ export type SectorPageTranslations = {
     label: string;
     headline: string;
     body: string;
+    bulletIntro?: string;
+    bulletPoints?: string[];
     metric: string;
     metricLabel: string;
     quote?: string;

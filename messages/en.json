@@ -135,81 +135,87 @@
     "commercial": {
       "hero": {
         "headline": "Certainty across\nyour property portfolio",
-        "subheadline": "Accurate building data for property management, renovation and upgrades across multiple commercial sites.",
+        "subheadline": "Verified building data across property portfolios — supporting daily operations and future projects.",
         "primaryCta": "Discuss your portfolio",
         "secondaryCta": "View Projects"
       },
       "coreRisk": {
         "headline": "When you manage multiple properties, small errors don't stay small.",
-        "body": "Across a portfolio, documentation is rarely consistent. Some sites have updated drawings. Some don't. Measurements differ. Standards vary between assets. Consultants reinterpret information each time a project starts. Teams return to site to double-check. Similar buildings require repeated measurement work. One mistake is manageable. Repeated across 15 or 40 properties, it becomes recurring cost, delay and frustration."
+        "body": "Across a property portfolio, building documentation is rarely consistent.\nSome properties have updated drawings. Some don't.\nMeasurements differ. Standards vary between assets.\nWhen a project begins, consultants often need to reinterpret existing documentation or return to site to verify conditions.\nFor one building this is manageable.\nRepeated across 15, 30 or 50 properties, it becomes recurring cost, delay and frustration."
       },
       "friction": {
-        "headline": "Three problems that compound across your portfolio",
+        "headline": "Why this cycle repeats across property portfolios",
+        "body": "In many portfolios, building documentation is only updated when a project forces the issue.\nA refurbishment begins. A technical upgrade is planned. Or consultants discover the drawings cannot be trusted.\nOnly then is the building measured or documented again.\nThis approach works for a single project.\nAcross a portfolio, it means the same verification work returns every time something changes.",
         "point0": {
-          "title": "Reduce dependency on physical site visits",
-          "description": "When properties are spread across cities or regions, verification usually means travel. High-accuracy 3D capture allows verified building conditions to be reviewed remotely — without returning to site."
+          "title": "Stop sending teams back to site to verify drawings",
+          "description": "When properties are spread across cities or regions, verification usually means travel.\nHigh-accuracy 3D capture allows verified building conditions to be reviewed remotely — without returning to site.\nTeams can check dimensions, layouts and systems from the office before work begins."
         },
         "point1": {
-          "title": "Don't rediscover the building every time",
-          "description": "Too often, each project begins with the same question: 'Do we have reliable drawings for this site?' We structure digital models so they remain usable across the portfolio for every future project."
+          "title": "Stop rediscovering the building every time a project starts",
+          "description": "Many projects begin with the same question: \"Do we actually have reliable drawings for this building?\"\nIf the answer is uncertain, teams return to site to measure spaces, verify dimensions and check building systems.\nWhen exact digital documentation already exists, projects can start immediately from verified building conditions."
         },
         "point2": {
-          "title": "Avoid coordination friction before projects begin",
-          "description": "Many as-built models are delivered as a single combined file. When required, RESCAN structures models by discipline — architecture, plumbing, ventilation and electrical — in Revit or Archicad."
+          "title": "Give consultants models they can actually work with",
+          "description": "Many as-built models are delivered as a single combined file. In practice, this creates coordination problems.\nWhen required, RESCAN structures models by discipline — architecture, plumbing, ventilation and electrical — delivered in Revit or Archicad to match consultant workflows."
         }
       },
       "strategicValue": {
         "headline": "One verified foundation. Every project starts from known conditions.",
         "valueA": {
-          "title": "Remote access to verified building data",
-          "description": "Dimensions, layouts and systems can be checked without returning to site. Fewer interruptions. Faster decisions. Less repeated effort across locations."
+          "title": "Clear building documentation across the entire portfolio",
+          "description": "Each property is documented using the same structure and standards.\nAsset managers and technical teams can access reliable building documentation for every site — not a mix of outdated drawings and inconsistent files.\nThis makes it easier to understand building conditions, plan upgrades and manage properties across the portfolio.\nInstead of uncertainty, teams work from consistent documentation across all locations."
         },
         "valueB": {
-          "title": "Models structured for the portfolio lifecycle",
-          "description": "Delivered for use across the portfolio and integration with existing property management systems. Used for tenant adaptations, planned maintenance, system upgrades and lease-driven changes."
+          "title": "Future projects start from known conditions",
+          "description": "When refurbishment or upgrade projects begin, consultants and internal teams can start from verified building documentation.\nInstead of re-measuring buildings or interpreting outdated drawings, projects begin with accurate existing conditions.\nIf buildings change over time, the documentation can be updated rather than recreated from scratch.\nThis reduces uncertainty and helps projects move faster."
         }
       },
       "differentiator": {
-        "headline": "Proven in commercial environments.",
-        "subheadline": "250+ commercial and industrial projects delivered. 1.8M+ m² digitally captured. Including retail units, office buildings and mixed-use commercial assets across Sweden and beyond."
+        "headline": "Experience across multi-site commercial portfolios in Sweden and beyond",
+        "subheadline": "250+ commercial projects delivered · 1.8M+ m² digitally captured"
       },
       "namedCase": {
         "label": "Portfolio case",
-        "headline": "Carlqvist Property — 56 commercial properties digitised across Sweden",
-        "body": "Carlqvist Property engaged RESCAN to digitise its mixed commercial portfolio of 56 properties across Sweden. The objective was not a single refurbishment project — it was to create one consistent, reliable digital foundation across all assets. Each property was captured and structured into accurate digital documentation, forming a centralised archive of verified building data.",
-        "quote": "We now have a clear and reliable overview across all properties. It saves time and reduces uncertainty whenever a new project starts.",
-        "quoteAuthor": "Eddie Carlqvist, CEO",
+        "headline": "Carlqvist Property — 56 commercial properties documented across Sweden",
+        "body": "Carlqvist Property contacted RESCAN to document its portfolio of 56 commercial properties across Sweden.\nThe objective was not a single renovation project, but to create reliable documentation across the entire portfolio.\nEach property was captured and structured into accurate digital building documentation, creating a consistent reference point for the portfolio.",
+        "bulletIntro": "Today their team can:",
+        "bullet0": "access documentation for every property",
+        "bullet1": "review building layouts and dimensions remotely",
+        "bullet2": "reduce repeated site visits during renovation and upgrade projects",
+        "bullet3": "start projects from verified building documentation",
+        "quote": "Consistent documentation across all properties saves us both time and money. It gives us a clear overview of the portfolio and removes a lot of uncertainty when planning changes.",
+        "quoteAuthor": "Eddie Carlqvist, CEO, Carlqvist Property",
         "metric": "56",
-        "metricLabel": "commercial properties digitised"
+        "metricLabel": "commercial properties documented"
       },
       "logoWall": {
         "headline": "Trusted by leading real estate teams"
       },
       "metrics": {
-        "item0": { "label": "commercial projects delivered" },
+        "item0": { "label": "projects delivered" },
         "item1": { "label": "m² digitally captured" },
-        "item2": { "label": "properties in a single portfolio" },
-        "item3": { "label": "average client satisfaction" }
+        "item2": { "label": "portfolios, 40+ properties each" },
+        "item3": { "label": "property sectors served" }
       },
       "fitNotFit": {
-        "headline": "Who this is designed for",
+        "headline": "Who this is for",
         "bestFit": {
-          "title": "Designed for",
+          "title": "Suitable for",
           "item0": "Asset managers responsible for multiple properties",
-          "item1": "Commercial property owners managing recurring upgrades",
-          "item2": "Expansion and refurbishment teams",
-          "item3": "Technical managers seeking consistent building data"
+          "item1": "Commercial property owners managing property portfolios",
+          "item2": "Expansion teams operating across multiple sites",
+          "item3": "Technical managers responsible for building documentation"
         },
         "notFit": {
-          "title": "Not designed for",
-          "item0": "Residential properties or single-building projects",
-          "item1": "Teams without a need for accurate as-built data",
-          "item2": "One-off projects with no future documentation needs"
+          "title": "Not suitable for",
+          "item0": "Residential properties",
+          "item1": "Single private buildings",
+          "item2": "One-off building surveys"
         }
       },
       "finalCta": {
-        "headline": "Start with conditions you can trust.",
-        "subheadline": "If you manage several properties and want to reduce repeated uncertainty across sites, we can define the right scope for your portfolio.",
+        "headline": "Discuss your portfolio",
+        "subheadline": "If you manage multiple commercial or industrial properties and want reliable building documentation across your portfolio, we can define the appropriate scope.",
         "cta": "Schedule a portfolio discussion"
       }
     }

@@ -35,8 +35,8 @@ export const commercialSectorConfig: SectorPageConfig = {
     items: [
       { value: '250+' },
       { value: '1.8M+' },
-      { value: '56' },
-      { value: '4.9' },
+      { value: '3' },
+      { value: '2' },
     ],
   },
   finalCta: {

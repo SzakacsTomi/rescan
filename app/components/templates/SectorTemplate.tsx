@@ -32,7 +32,7 @@ export const SectorTemplate = ({ config, translations: tr }: SectorTemplateProps
         scrollTargetId={config.hero.scrollTargetId}
       />
       <CoreRisk headline={tr.coreRisk.headline} body={tr.coreRisk.body} />
-      <OperationalFriction headline={tr.friction.headline} points={frictionPoints} />
+      <OperationalFriction headline={tr.friction.headline} body={tr.friction.body} points={frictionPoints} />
       <StrategicValue headline={tr.strategicValue.headline} values={tr.strategicValue.values} />
       <Differentiator
         headline={tr.differentiator.headline}
@@ -42,6 +42,8 @@ export const SectorTemplate = ({ config, translations: tr }: SectorTemplateProps
         label={tr.namedCase.label}
         headline={tr.namedCase.headline}
         body={tr.namedCase.body}
+        bulletIntro={tr.namedCase.bulletIntro}
+        bulletPoints={tr.namedCase.bulletPoints}
         metric={tr.namedCase.metric}
         metricLabel={tr.namedCase.metricLabel}
         quote={tr.namedCase.quote}
