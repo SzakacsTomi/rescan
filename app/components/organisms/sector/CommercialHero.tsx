@@ -37,7 +37,7 @@ function buildRow(images: string[], rowIdx: number, prefix: string) {
   ];
 }
 
-type HoverState = { id: string; src: string } | null;
+type ImageState = { id: string; src: string } | null;
 
 export const CommercialHero = ({
   headline,
@@ -47,7 +47,7 @@ export const CommercialHero = ({
   scrollTargetId,
   images,
 }: CommercialHeroProps) => {
-  const [hovered, setHovered] = useState<HoverState>(null);
+  const [hovered, setHovered] = useState<ImageState>(null);
 
   const rows = ROW_CONFIGS.map((cfg, rowIdx) => ({
     ...cfg,
@@ -65,14 +65,18 @@ export const CommercialHero = ({
           style={{ gap: GAP, height: totalRowsHeight, width: "100%" }}
         >
           {rows.map((row) => (
-            <div key={row.duration + row.reverse} className="relative overflow-hidden" style={{ height: IMAGE_H }}>
+            <div
+              key={row.duration + row.reverse}
+              className="relative overflow-hidden"
+              style={{ height: IMAGE_H }}
+            >
               <div
                 className="flex w-max h-full"
                 style={{
                   gap: GAP,
                   animation: `marquee ${row.duration} linear infinite`,
                   animationDirection: row.reverse ? "reverse" : "normal",
-                  animationPlayState: hovered ? "paused" : "running",
+                  animationPlayState: "running",
                 }}
               >
                 {row.track.map(({ id, src }) => (
@@ -84,20 +88,13 @@ export const CommercialHero = ({
                     style={{
                       width: IMAGE_W,
                       height: IMAGE_H,
-                      opacity: hovered !== null && hovered.id !== id ? 0.35 : 1,
-                      transition: "opacity 200ms ease",
-                      boxShadow: hovered?.id === id ? "0 0 0 2px rgba(255,255,255,0.55)" : "none",
+                      filter: hovered !== null && hovered.id !== id ? "brightness(0.58)" : "none",
+                      transition: "filter 200ms ease",
                     }}
                     onMouseEnter={() => setHovered({ id, src })}
                     onMouseLeave={() => setHovered(null)}
                   >
-                    <Image
-                      src={src}
-                      alt=""
-                      fill
-                      sizes={`${IMAGE_W}px`}
-                      className="object-cover"
-                    />
+                    <Image src={src} alt="" fill sizes={`${IMAGE_W}px`} className="object-cover" />
                   </button>
                 ))}
               </div>
@@ -106,12 +103,15 @@ export const CommercialHero = ({
         </div>
       </div>
 
-      {/* Dark overlay for text readability */}
+      {/* Subtle uniform overlay over the carousel */}
+      <div className="absolute inset-0 pointer-events-none bg-[rgba(5,10,30,0.15)]" />
+
+      {/* Radial overlay — extra dark behind the text */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(5,10,30,0.7) 0%, rgba(5,10,30,0.45) 50%, rgba(5,10,30,0.7) 100%)",
+            "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(5,10,30,0.5) 0%, rgba(5,10,30,0.0) 100%)",
         }}
       />
 
@@ -132,7 +132,7 @@ export const CommercialHero = ({
           </Link>
           <Link
             href={secondaryCta.href}
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg border border-white/25 text-white font-semibold text-sm tracking-wide hover:bg-white/10 transition-colors w-full sm:w-auto"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg border border-white/40 bg-white/10 backdrop-blur-sm text-white font-semibold text-sm tracking-wide hover:bg-white/20 transition-colors w-full sm:w-auto"
           >
             {secondaryCta.label}
           </Link>
@@ -148,20 +148,13 @@ export const CommercialHero = ({
         {hovered && (
           <motion.div
             className="fixed bottom-8 right-8 z-50 pointer-events-none rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/15"
-            style={{ width: 480, height: 320 }}
-            initial={{ opacity: 0, y: 12 }}
+            style={{ width: 400, height: 265 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.25, ease: [0.32, 0.72, 0, 1] }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
           >
-            <Image
-              src={hovered.src}
-              alt=""
-              fill
-              sizes="480px"
-              className="object-cover"
-              priority
-            />
+            <Image src={hovered.src} alt="" fill sizes="480px" className="object-cover" priority />
           </motion.div>
         )}
       </AnimatePresence>
