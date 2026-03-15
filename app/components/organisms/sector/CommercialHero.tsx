@@ -80,7 +80,7 @@ export const CommercialHero = ({
                     key={id}
                     type="button"
                     tabIndex={-1}
-                    className="shrink-0 relative cursor-pointer rounded-lg overflow-hidden"
+                    className="shrink-0 relative cursor-default md:cursor-pointer rounded-lg overflow-hidden pointer-events-none md:pointer-events-auto"
                     style={{
                       width: IMAGE_W,
                       height: IMAGE_H,
