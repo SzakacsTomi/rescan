@@ -88,7 +88,7 @@ export const CommercialHero = ({
                     style={{
                       width: IMAGE_W,
                       height: IMAGE_H,
-                      filter: hovered !== null && hovered.id !== id ? "brightness(0.58)" : "none",
+                      filter: hovered !== null && hovered.id === id ? "brightness(1)" : "brightness(0.58)",
                       transition: "filter 200ms ease",
                     }}
                     onMouseEnter={() => setHovered({ id, src })}
