@@ -13,9 +13,11 @@ import type { SectorPageConfig, SectorPageTranslations } from '@/app/types/secto
 type SectorTemplateProps = {
   config: SectorPageConfig;
   translations: SectorPageTranslations;
+  heroOverride?: React.ReactNode;
+  afterHero?: React.ReactNode;
 };
 
-export const SectorTemplate = ({ config, translations: tr }: SectorTemplateProps) => {
+export const SectorTemplate = ({ config, translations: tr, heroOverride, afterHero }: SectorTemplateProps) => {
   const frictionPoints = config.friction.painPoints.map((pt, i) => ({
     icon: pt.icon,
     title: tr.friction.points[i].title,
@@ -24,13 +26,16 @@ export const SectorTemplate = ({ config, translations: tr }: SectorTemplateProps
 
   return (
     <>
-      <SectorHero
-        headline={tr.hero.headline}
-        subheadline={tr.hero.subheadline}
-        primaryCta={{ label: tr.hero.primaryCta, href: config.hero.primaryCtaHref }}
-        secondaryCta={{ label: tr.hero.secondaryCta, href: config.hero.secondaryCtaHref }}
-        scrollTargetId={config.hero.scrollTargetId}
-      />
+      {heroOverride ?? (
+        <SectorHero
+          headline={tr.hero.headline}
+          subheadline={tr.hero.subheadline}
+          primaryCta={{ label: tr.hero.primaryCta, href: config.hero.primaryCtaHref }}
+          secondaryCta={{ label: tr.hero.secondaryCta, href: config.hero.secondaryCtaHref }}
+          scrollTargetId={config.hero.scrollTargetId}
+        />
+      )}
+      {afterHero}
       <CoreRisk headline={tr.coreRisk.headline} body={tr.coreRisk.body} />
       <OperationalFriction headline={tr.friction.headline} body={tr.friction.body} points={frictionPoints} />
       <StrategicValue headline={tr.strategicValue.headline} values={tr.strategicValue.values} />
