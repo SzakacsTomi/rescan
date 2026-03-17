@@ -1,8 +1,7 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 import { ScrollArrow } from "@/app/components/atoms/ScrollArrow";
 import { Link } from "@/i18n/navigation";
 
@@ -15,29 +14,40 @@ type CommercialHeroProps = {
   images: string[];
 };
 
-const IMAGE_W = 220;
-const IMAGE_H = 140;
-const GAP = 8;
+const MIN_W = 310;
+const MAX_W = 440;
+const GAP = 10;
+const ROW_HEIGHT = 220;
+const MAX_IMAGES = 30;
 
 const ROW_CONFIGS = [
-  { duration: "60s", reverse: false },
-  { duration: "78s", reverse: true },
-  { duration: "52s", reverse: false },
-  { duration: "70s", reverse: true },
-  { duration: "64s", reverse: false },
+  { duration: "55s" },
+  { duration: "70s" },
+  { duration: "48s" },
+  { duration: "65s" },
 ];
 
-function buildRow(images: string[], rowIdx: number, prefix: string) {
-  const slice = images.filter((_, i) => i % 5 === rowIdx);
-  const srcs = slice.length >= 3 ? slice : images.slice(rowIdx * 4, rowIdx * 4 + 4);
-  const safe = srcs.length > 0 ? srcs : images;
-  return [
-    ...safe.map((src, i) => ({ src, id: `${prefix}-a-${i}` })),
-    ...safe.map((src, i) => ({ src, id: `${prefix}-b-${i}` })),
-  ];
+function seededWidth(index: number): number {
+  const hash = ((index * 2654435761) >>> 0) % 1000;
+  return MIN_W + Math.round((hash / 999) * (MAX_W - MIN_W));
 }
 
-type ImageState = { id: string; src: string } | null;
+function buildRow(images: string[], rowIdx: number, totalRows: number) {
+  const slice = images.filter((_, i) => i % totalRows === rowIdx);
+  const safe = slice.length > 0 ? slice : images;
+  return [
+    ...safe.map((src, i) => ({
+      src,
+      id: `r${rowIdx}-a-${i}`,
+      width: seededWidth(rowIdx * 100 + i),
+    })),
+    ...safe.map((src, i) => ({
+      src,
+      id: `r${rowIdx}-b-${i}`,
+      width: seededWidth(rowIdx * 100 + i),
+    })),
+  ];
+}
 
 export const CommercialHero = ({
   headline,
@@ -47,55 +57,46 @@ export const CommercialHero = ({
   scrollTargetId,
   images,
 }: CommercialHeroProps) => {
-  const [hovered, setHovered] = useState<ImageState>(null);
+  const limitedImages = images.slice(0, MAX_IMAGES);
 
   const rows = ROW_CONFIGS.map((cfg, rowIdx) => ({
     ...cfg,
-    track: buildRow(images, rowIdx, `r${rowIdx}`),
+    track: buildRow(limitedImages, rowIdx, ROW_CONFIGS.length),
   }));
 
-  const totalRowsHeight = 5 * IMAGE_H + 4 * GAP;
+  const totalRowsHeight = ROW_CONFIGS.length * ROW_HEIGHT + (ROW_CONFIGS.length - 1) * GAP;
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
-      {/* Background: 5 rows of images */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none">
-        <div
-          className="flex flex-col pointer-events-auto"
-          style={{ gap: GAP, height: totalRowsHeight, width: "100%" }}
-        >
+      {/* Background: rows of scrolling images */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
+        <div className="flex flex-col" style={{ gap: GAP, height: totalRowsHeight, width: "100%" }}>
           {rows.map((row) => (
             <div
-              key={row.duration + row.reverse}
+              key={row.duration}
               className="relative overflow-hidden"
-              style={{ height: IMAGE_H }}
+              style={{ height: ROW_HEIGHT }}
             >
               <div
                 className="flex w-max h-full"
                 style={{
                   gap: GAP,
                   animation: `marquee ${row.duration} linear infinite`,
-                  animationDirection: row.reverse ? "reverse" : "normal",
-                  animationPlayState: "running",
                 }}
               >
-                {row.track.map(({ id, src }) => (
-                  <button
+                {row.track.map(({ id, src, width }) => (
+                  <motion.div
                     key={id}
-                    type="button"
-                    tabIndex={-1}
-                    className="shrink-0 relative cursor-default md:cursor-pointer rounded-lg overflow-hidden pointer-events-none md:pointer-events-auto"
+                    className="shrink-0 relative rounded-lg overflow-hidden"
                     style={{
-                      width: IMAGE_W,
-                      height: IMAGE_H,
-                      filter: hovered !== null && hovered.id === id ? "brightness(1)" : "brightness(0.58)",
-                      transition: "filter 200ms ease",
+                      width,
+                      height: ROW_HEIGHT,
                     }}
-                    onMouseEnter={() => setHovered({ id, src })}
-                    onMouseLeave={() => setHovered(null)}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
                   >
-                    <Image src={src} alt="" fill sizes={`${IMAGE_W}px`} className="object-cover" />
-                  </button>
+                    <Image src={src} alt="" fill sizes={`${width}px`} className="object-cover" />
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -103,10 +104,10 @@ export const CommercialHero = ({
         </div>
       </div>
 
-      {/* Subtle uniform overlay over the carousel */}
-      <div className="absolute inset-0 pointer-events-none bg-[rgba(5,10,30,0.15)]" />
+      {/* Subtle uniform overlay */}
+      <div className="absolute inset-0 pointer-events-none bg-[rgba(5,10,30,0.25)]" />
 
-      {/* Radial overlay — extra dark behind the text */}
+      {/* Radial shade behind the text */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -142,22 +143,6 @@ export const CommercialHero = ({
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
         <ScrollArrow targetId={scrollTargetId} className="text-white hover:text-white/65" />
       </div>
-
-      {/* Corner preview on hover */}
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            className="fixed bottom-8 right-8 z-50 pointer-events-none rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/15"
-            style={{ width: 400, height: 265 }}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
-          >
-            <Image src={hovered.src} alt="" fill sizes="480px" className="object-cover" priority />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
