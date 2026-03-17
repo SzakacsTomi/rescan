@@ -18,7 +18,6 @@ type CommercialHeroProps = {
 const MIN_W = 310;
 const MAX_W = 440;
 const GAP = 10;
-const ROW_HEIGHT = 220;
 const MAX_IMAGES = 30;
 
 const ROW_CONFIGS = [
@@ -53,8 +52,8 @@ function buildRow(images: string[], rowIdx: number, totalRows: number) {
 function CarouselImage({ src, width }: { src: string; width: number }) {
   return (
     <motion.div
-      className="shrink-0 relative rounded-lg overflow-hidden"
-      style={{ width, height: ROW_HEIGHT }}
+      className="shrink-0 relative rounded-lg overflow-hidden h-full"
+      style={{ width }}
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
     >
@@ -87,19 +86,13 @@ export const CommercialHero = ({
     track: buildRow(limitedImages, rowIdx, ROW_CONFIGS.length),
   }));
 
-  const totalRowsHeight = ROW_CONFIGS.length * ROW_HEIGHT + (ROW_CONFIGS.length - 1) * GAP;
-
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
       {/* Background: rows of scrolling images */}
       <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
-        <div className="flex flex-col" style={{ gap: GAP, height: totalRowsHeight, width: "100%" }}>
+        <div className="flex flex-col h-full w-full" style={{ gap: GAP }}>
           {rows.map((row) => (
-            <div
-              key={row.duration}
-              className="relative overflow-hidden"
-              style={{ height: ROW_HEIGHT }}
-            >
+            <div key={row.duration} className="relative overflow-hidden flex-1">
               <div
                 className="flex w-max h-full"
                 style={{
@@ -117,7 +110,7 @@ export const CommercialHero = ({
       </div>
 
       {/* Subtle uniform overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-[rgba(5,10,30,0.25)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[rgba(5,10,30,0.6)]" />
 
       {/* Radial shade behind the text */}
       <div
