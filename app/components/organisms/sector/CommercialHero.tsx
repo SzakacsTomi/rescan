@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 import { ScrollArrow } from "@/app/components/atoms/ScrollArrow";
 import { Link } from "@/i18n/navigation";
 
@@ -49,6 +50,28 @@ function buildRow(images: string[], rowIdx: number, totalRows: number) {
   ];
 }
 
+function CarouselImage({ src, width }: { src: string; width: number }) {
+  return (
+    <motion.div
+      className="shrink-0 relative rounded-lg overflow-hidden"
+      style={{ width, height: ROW_HEIGHT }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
+    >
+      <Image
+        src={src}
+        alt=""
+        fill
+        sizes={`${width}px`}
+        className="object-cover opacity-0 transition-opacity duration-500"
+        onLoad={(e) => {
+          (e.target as HTMLImageElement).classList.replace("opacity-0", "opacity-100");
+        }}
+      />
+    </motion.div>
+  );
+}
+
 export const CommercialHero = ({
   headline,
   subheadline,
@@ -85,18 +108,7 @@ export const CommercialHero = ({
                 }}
               >
                 {row.track.map(({ id, src, width }) => (
-                  <motion.div
-                    key={id}
-                    className="shrink-0 relative rounded-lg overflow-hidden"
-                    style={{
-                      width,
-                      height: ROW_HEIGHT,
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-                  >
-                    <Image src={src} alt="" fill sizes={`${width}px`} className="object-cover" />
-                  </motion.div>
+                  <CarouselImage key={id} src={src} width={width} />
                 ))}
               </div>
             </div>
