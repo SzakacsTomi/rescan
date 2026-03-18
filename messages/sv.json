@@ -128,7 +128,12 @@
       "successMessage": "Tack — vi återkommer inom en arbetsdag.",
       "errorMessage": "Något gick fel. Försök igen eller maila oss direkt.",
       "required": "Fyll i alla obligatoriska fält.",
-      "invalidEmail": "Ange en giltig e-postadress."
+      "invalidEmail": "Ange en giltig e-postadress.",
+      "consentBefore": "Jag samtycker till att Rescan behandlar mina personuppgifter för att svara på min förfrågan. Se vår ",
+      "consentLinkText": "integritetspolicy",
+      "consentAfter": ".",
+      "consentRequired": "Du måste samtycka till databehandling innan du skickar.",
+      "captchaError": "Vänligen slutför verifieringen."
     }
   },
   "sectorPage": {

@@ -5,7 +5,7 @@ import { contactNotificationHtml } from "@/app/emails/contact-notification";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
-  errorKey?: "required" | "invalidEmail" | "generic";
+  errorKey?: "required" | "invalidEmail" | "generic" | "captcha" | "consent";
 };
 
 export async function submitContact(
@@ -19,6 +19,11 @@ export async function submitContact(
   const service = (formData.get("service") as string | null)?.trim() ?? "";
   const message = (formData.get("message") as string | null)?.trim() ?? "";
 
+  const consent = formData.get("consent") as string | null;
+  if (consent !== "on") {
+    return { status: "error", errorKey: "consent" };
+  }
+
   if (!name || !company || !email || !message) {
     return { status: "error", errorKey: "required" };
   }
@@ -26,6 +31,29 @@ export async function submitContact(
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return { status: "error", errorKey: "invalidEmail" };
+  }
+
+  const turnstileToken = formData.get("cf-turnstile-response") as string | null;
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    if (!turnstileToken) {
+      return { status: "error", errorKey: "captcha" };
+    }
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          secret: turnstileSecret,
+          response: turnstileToken,
+        }),
+      },
+    );
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      return { status: "error", errorKey: "captcha" };
+    }
   }
 
   const apiKey = process.env.RESEND_API_KEY;

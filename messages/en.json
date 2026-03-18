@@ -128,7 +128,12 @@
       "successMessage": "Thank you — we'll be in touch within one business day.",
       "errorMessage": "Something went wrong. Please try again or email us directly.",
       "required": "Please fill in all required fields.",
-      "invalidEmail": "Please enter a valid email address."
+      "invalidEmail": "Please enter a valid email address.",
+      "consentBefore": "I consent to Rescan processing my personal data to respond to my inquiry. See our ",
+      "consentLinkText": "Privacy Policy",
+      "consentAfter": ".",
+      "consentRequired": "You must consent to data processing before submitting.",
+      "captchaError": "Please complete the verification challenge."
     }
   },
   "sectorPage": {

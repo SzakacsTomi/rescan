@@ -46,6 +46,11 @@ export default async function ContactPage() {
       errorMessage: t('form.errorMessage'),
       required: t('form.required'),
       invalidEmail: t('form.invalidEmail'),
+      consentBefore: t('form.consentBefore'),
+      consentLinkText: t('form.consentLinkText'),
+      consentAfter: t('form.consentAfter'),
+      consentRequired: t('form.consentRequired'),
+      captchaError: t('form.captchaError'),
     },
   };
 

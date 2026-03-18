@@ -1,13 +1,17 @@
 'use client';
 
-import { useActionState, useId, useState } from 'react';
+import { useActionState, useId, useRef, useState } from 'react';
+
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import { motion } from 'framer-motion';
 import { CheckCircle, ChevronDown } from 'lucide-react';
+
 import { submitContact, type ContactFormState } from '@/app/actions/contact';
 import { cn } from '@/lib/utils';
+
 import { type FormTranslations, validateContactForm } from './contactSchema';
-import { errorInputClass, inputClass, labelClass } from './formStyles';
 import { FieldError } from './FieldError';
+import { errorInputClass, inputClass, labelClass } from './formStyles';
 import { SubmitButton } from './SubmitButton';
 
 const INITIAL_STATE: ContactFormState = { status: 'idle' };
@@ -16,6 +20,8 @@ export const ContactForm = ({ t }: { t: FormTranslations }) => {
   const [state, formAction] = useActionState(submitContact, INITIAL_STATE);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [selectFocused, setSelectFocused] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const nameId = useId();
   const companyId = useId();
@@ -23,6 +29,7 @@ export const ContactForm = ({ t }: { t: FormTranslations }) => {
   const phoneId = useId();
   const serviceId = useId();
   const messageId = useId();
+  const consentId = useId();
 
   const getMsg = (key: string) => (key === 'invalidEmail' ? t.invalidEmail : t.required);
 
@@ -41,7 +48,11 @@ export const ContactForm = ({ t }: { t: FormTranslations }) => {
       ? t.required
       : state.errorKey === 'invalidEmail'
         ? t.invalidEmail
-        : t.errorMessage;
+        : state.errorKey === 'consent'
+          ? t.consentRequired
+          : state.errorKey === 'captcha'
+            ? t.captchaError
+            : t.errorMessage;
 
   if (state.status === 'success') {
     return (
@@ -64,7 +75,16 @@ export const ContactForm = ({ t }: { t: FormTranslations }) => {
       <form
         action={formAction}
         onSubmit={(e) => {
-          const errs = validateContactForm(new FormData(e.currentTarget));
+          const fd = new FormData(e.currentTarget);
+          const errs = validateContactForm(fd);
+          const consentChecked = fd.get('consent') === 'on';
+          if (!consentChecked) {
+            const allErrs = errs ?? {};
+            allErrs.consent = 'required';
+            e.preventDefault();
+            setFieldErrors(allErrs);
+            return;
+          }
           if (errs) {
             e.preventDefault();
             setFieldErrors(errs);
@@ -181,6 +201,38 @@ export const ContactForm = ({ t }: { t: FormTranslations }) => {
           />
           <FieldError msg={fieldErrors.message ? getMsg(fieldErrors.message) : undefined} />
         </div>
+
+        <div className="flex items-start gap-3">
+          <input
+            id={consentId}
+            name="consent"
+            type="checkbox"
+            className="mt-1 h-4 w-4 rounded border-border accent-primary cursor-pointer"
+            onChange={() => clearError('consent')}
+          />
+          <label htmlFor={consentId} className="text-sm text-muted-foreground cursor-pointer">
+            {t.consentBefore}
+            <a
+              href="/pdfs/privacy-policy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-foreground hover:text-primary transition-colors"
+            >
+              {t.consentLinkText}
+            </a>
+            {t.consentAfter}
+          </label>
+        </div>
+        <FieldError msg={fieldErrors.consent ? t.consentRequired : undefined} />
+
+        {siteKey && (
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={siteKey}
+            options={{ theme: 'light', size: 'flexible' }}
+            onError={() => turnstileRef.current?.reset()}
+          />
+        )}
 
         {state.status === 'error' && (
           <p className="text-sm text-destructive rounded-lg bg-destructive/10 px-4 py-3">

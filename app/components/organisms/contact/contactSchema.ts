@@ -27,6 +27,11 @@ export type FormTranslations = {
   errorMessage: string;
   required: string;
   invalidEmail: string;
+  consentBefore: string;
+  consentLinkText: string;
+  consentAfter: string;
+  consentRequired: string;
+  captchaError: string;
 };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
