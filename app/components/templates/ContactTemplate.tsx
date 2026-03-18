@@ -24,7 +24,7 @@ export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
     <>
       <ContactHero />
 
-      <section className="py-24 px-6 bg-background">
+      <section className="py-12 sm:py-24 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-16 lg:gap-20">
             <ContactDetails
