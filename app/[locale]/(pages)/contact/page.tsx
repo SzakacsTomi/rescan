@@ -5,10 +5,6 @@ export default async function ContactPage() {
   const t = await getTranslations('contactPage');
 
   const translations = {
-    hero: {
-      headline: t('hero.headline'),
-      subheadline: t('hero.subheadline'),
-    },
     details: {
       headline: t('details.headline'),
       intro: t('details.intro'),

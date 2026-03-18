@@ -5,10 +5,6 @@ import type { FormTranslations } from '@/app/components/organisms/contact/contac
 
 type ContactTemplateProps = {
   translations: {
-    hero: {
-      headline: string;
-      subheadline: string;
-    };
     details: {
       headline: string;
       intro: string;
@@ -26,7 +22,7 @@ type ContactTemplateProps = {
 export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
   return (
     <>
-      <ContactHero headline={tr.hero.headline} subheadline={tr.hero.subheadline} />
+      <ContactHero />
 
       <section className="py-24 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
