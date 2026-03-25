@@ -136,6 +136,79 @@
       "captchaError": "Vänligen slutför verifieringen."
     }
   },
+  "projectsPage": {
+    "hero": {
+      "headline": "Våra projekt",
+      "subheadline": "Ett urval av 3D-skannings- och digital dokumentationsprojekt inom kommersiella, industriella och arkitektoniska sektorer."
+    },
+    "backToProjects": "Tillbaka till projekt",
+    "project0": {
+      "title": "Carlqvist-portföljen",
+      "description": "56 kommersiella fastigheter dokumenterade i hela Sverige.",
+      "detail": {
+        "client": "Carlqvist Fastigheter",
+        "location": "Sverige (rikstäckande)",
+        "sector": "Kommersiella Fastigheter",
+        "scope": "56 kommersiella fastigheter",
+        "body": "Carlqvist Fastigheter behövde konsekvent som-byggt-dokumentation för hela sin portfölj med 56 kommersiella fastigheter. Vi levererade strukturerade 3D-skanningar och BIM-modeller för varje objekt och skapade en enhetlig digital grund för löpande fastighetsförvaltning och framtida renoveringsprojekt."
+      }
+    },
+    "project1": {
+      "title": "OMYA Industrianläggning",
+      "description": "Fullständig digitalisering av anläggning för ombyggnadsplanering.",
+      "detail": {
+        "client": "OMYA",
+        "location": "Göteborg, Sverige",
+        "sector": "Industri & Tillverkning",
+        "scope": "12 000 m² produktionsanläggning",
+        "body": "OMYA behövde exakt dokumentation av sin produktionsanläggning för att planera en större utrustningsombyggnad. Vi fångade hela anläggningen med millimeterprecision, vilket möjliggjorde för ingenjörsteamet att designa nya installationer utan kostsamma platsbesök."
+      }
+    },
+    "project2": {
+      "title": "Kalmarhem Bostäder",
+      "description": "Portföljövergripande skanning för renoveringsplanering.",
+      "detail": {
+        "client": "Kalmarhem",
+        "location": "Kalmar, Sverige",
+        "sector": "Bostadsportfölj",
+        "scope": "32 bostadsbyggnader",
+        "body": "Kalmarhem anlitade oss för att skapa exakta som-byggt-modeller för 32 bostadsbyggnader inför ett flerårigt renoveringsprogram. Den digitala dokumentationen möjliggjorde för arkitekter och ingenjörer att påbörja projekteringsarbete direkt från verifierade byggnadsförhållanden."
+      }
+    },
+    "project3": {
+      "title": "Nivika Kontorskomplex",
+      "description": "BIM-modeller för samordning av hyresgästanpassningar.",
+      "detail": {
+        "client": "Nivika",
+        "location": "Växjö, Sverige",
+        "sector": "Kommersiella Kontor",
+        "scope": "8 500 m² kontorskomplex",
+        "body": "Nivika behövde detaljerade BIM-modeller för att samordna flera hyresgästanpassningar i ett nyförvärvat kontorskomplex. Våra strukturerade Revit-modeller — uppdelade per disciplin — möjliggjorde för konsulter att arbeta parallellt utan konflikter."
+      }
+    },
+    "project4": {
+      "title": "INGKA Butiker",
+      "description": "Standardiserad dokumentation för butikskedjor.",
+      "detail": {
+        "client": "INGKA Group",
+        "location": "Skandinavien",
+        "sector": "Detaljhandel",
+        "scope": "14 butiker",
+        "body": "INGKA Group behövde konsekvent byggnadsdokumentation för 14 butiker som stöd för sina hållbarhets- och renoveringsprogram. Vi etablerade en standardiserad skanningsmetodik och levererade enhetliga digitala modeller för varje objekt."
+      }
+    },
+    "project5": {
+      "title": "Vida Sågverk",
+      "description": "Som-byggt-dokumentation för expansion av produktionslinje.",
+      "detail": {
+        "client": "Vida",
+        "location": "Alvesta, Sverige",
+        "sector": "Industri",
+        "scope": "18 000 m² träbearbetningsanläggning",
+        "body": "Vida planerade en större expansion av sin träbearbetningslinje och behövde exakt dokumentation av den befintliga anläggningen. Vår 3D-skanning fångade komplex industriell geometri som traditionella mätmetoder inte kunde uppnå, vilket möjliggjorde säker planering för den nya produktionslayouten."
+      }
+    }
+  },
   "sectorPage": {
     "commercial": {
       "hero": {

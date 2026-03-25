@@ -136,6 +136,79 @@
       "captchaError": "Please complete the verification challenge."
     }
   },
+  "projectsPage": {
+    "hero": {
+      "headline": "Our projects",
+      "subheadline": "A selection of 3D scanning and digital documentation projects across commercial, industrial and architectural sectors."
+    },
+    "backToProjects": "Back to projects",
+    "project0": {
+      "title": "Carlqvist Portfolio",
+      "description": "56 commercial properties documented across Sweden.",
+      "detail": {
+        "client": "Carlqvist Property",
+        "location": "Sweden (nationwide)",
+        "sector": "Commercial Real Estate",
+        "scope": "56 commercial properties",
+        "body": "Carlqvist Property needed consistent as-built documentation across their entire portfolio of 56 commercial properties. We delivered structured 3D scans and BIM models for every site, creating a unified digital foundation for ongoing facility management and future renovation projects."
+      }
+    },
+    "project1": {
+      "title": "OMYA Industrial Plant",
+      "description": "Full plant digitisation for retrofit planning.",
+      "detail": {
+        "client": "OMYA",
+        "location": "Gothenburg, Sweden",
+        "sector": "Industrial & Manufacturing",
+        "scope": "12,000 m² production facility",
+        "body": "OMYA required precise documentation of their production facility to plan a major equipment retrofit. We captured the entire plant with millimetre-level accuracy, enabling the engineering team to design new installations without costly site revisits."
+      }
+    },
+    "project2": {
+      "title": "Kalmarhem Housing",
+      "description": "Portfolio-wide scanning for renovation planning.",
+      "detail": {
+        "client": "Kalmarhem",
+        "location": "Kalmar, Sweden",
+        "sector": "Residential Portfolio",
+        "scope": "32 residential buildings",
+        "body": "Kalmarhem engaged us to create accurate as-built models for 32 residential buildings ahead of a multi-year renovation programme. The digital documentation enabled architects and engineers to begin design work immediately from verified building conditions."
+      }
+    },
+    "project3": {
+      "title": "Nivika Office Complex",
+      "description": "BIM models for tenant fit-out coordination.",
+      "detail": {
+        "client": "Nivika",
+        "location": "Växjö, Sweden",
+        "sector": "Commercial Office",
+        "scope": "8,500 m² office complex",
+        "body": "Nivika needed detailed BIM models to coordinate multiple tenant fit-outs across a newly acquired office complex. Our structured Revit models — separated by discipline — allowed consultants to work concurrently without conflicts."
+      }
+    },
+    "project4": {
+      "title": "INGKA Retail Stores",
+      "description": "Standardised documentation across retail locations.",
+      "detail": {
+        "client": "INGKA Group",
+        "location": "Scandinavia",
+        "sector": "Retail",
+        "scope": "14 retail locations",
+        "body": "INGKA Group required consistent building documentation across 14 retail locations to support their sustainability and renovation programmes. We established a standardised scanning methodology and delivered uniform digital models for every site."
+      }
+    },
+    "project5": {
+      "title": "Vida Timber Mill",
+      "description": "As-built capture for production line expansion.",
+      "detail": {
+        "client": "Vida",
+        "location": "Alvesta, Sweden",
+        "sector": "Industrial",
+        "scope": "18,000 m² timber processing facility",
+        "body": "Vida planned a major expansion of their timber processing line and needed precise documentation of the existing facility. Our 3D scanning captured complex industrial geometry that traditional measurement methods could not achieve, enabling confident planning for the new production layout."
+      }
+    }
+  },
   "sectorPage": {
     "commercial": {
       "hero": {
