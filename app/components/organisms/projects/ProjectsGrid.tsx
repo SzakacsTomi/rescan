@@ -18,13 +18,12 @@ export const ProjectsGrid = ({ projects, translations, onSelect }: ProjectsGridP
   return (
     <section className="px-6 sm:px-8 lg:px-12 py-16 sm:py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <ProjectCard
             key={project.id}
             project={project}
             title={translations[project.id]?.title ?? ''}
             description={translations[project.id]?.description ?? ''}
-            index={index}
             onClick={() => onSelect(project.id)}
           />
         ))}

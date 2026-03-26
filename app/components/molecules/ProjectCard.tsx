@@ -1,35 +1,46 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import type { ProjectConfig } from '@/config/projects';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import type { ProjectConfig } from "@/config/projects";
 
 type ProjectCardProps = {
   project: ProjectConfig;
   title: string;
   description: string;
-  index: number;
   onClick: () => void;
 };
 
-export const ProjectCard = ({ project, title, description, index, onClick }: ProjectCardProps) => {
+export const ProjectCard = ({ project, title, description, onClick }: ProjectCardProps) => {
   return (
     <motion.button
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.4 }}
       onClick={onClick}
-      className="group relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer text-left"
+      className="group relative w-full aspect-4/3 rounded-2xl overflow-hidden cursor-pointer text-left"
       style={{ background: project.gradient }}
     >
+      {project.image && (
+        <Image
+          src={project.image}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      )}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500" />
 
       <motion.div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          boxShadow: '0 0 0 1px rgba(255,255,255,0.15) inset',
+          boxShadow: "0 0 0 1px rgba(255,255,255,0.15) inset",
         }}
       />
+
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
 
       <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
         <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
@@ -42,6 +53,7 @@ export const ProjectCard = ({ project, title, description, index, onClick }: Pro
 
       <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/0 group-hover:bg-white/10 transition-all duration-500 flex items-center justify-center">
         <svg
+          aria-hidden="true"
           className="w-4 h-4 text-white/0 group-hover:text-white/70 transition-all duration-500 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           fill="none"
           viewBox="0 0 24 24"

@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, MapPin, Building2, Maximize2, Users } from 'lucide-react';
-import type { ProjectConfig } from '@/config/projects';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { ArrowLeft, MapPin, Building2, Maximize2, Users } from "lucide-react";
+import type { ProjectConfig } from "@/config/projects";
 
 type ProjectDetailProps = {
   project: ProjectConfig | null;
@@ -21,13 +22,18 @@ type ProjectDetailProps = {
 };
 
 const META_ITEMS = [
-  { key: 'client' as const, icon: Users },
-  { key: 'location' as const, icon: MapPin },
-  { key: 'sector' as const, icon: Building2 },
-  { key: 'scope' as const, icon: Maximize2 },
+  { key: "client" as const, icon: Users },
+  { key: "location" as const, icon: MapPin },
+  { key: "sector" as const, icon: Building2 },
+  { key: "scope" as const, icon: Maximize2 },
 ];
 
-export const ProjectDetail = ({ project, translations, backLabel, onClose }: ProjectDetailProps) => {
+export const ProjectDetail = ({
+  project,
+  translations,
+  backLabel,
+  onClose,
+}: ProjectDetailProps) => {
   return (
     <AnimatePresence mode="wait">
       {project && translations && (
@@ -38,11 +44,33 @@ export const ProjectDetail = ({ project, translations, backLabel, onClose }: Pro
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
           className="fixed inset-0 z-50 overflow-y-auto overscroll-contain -webkit-overflow-scrolling-touch"
-          style={{ WebkitOverflowScrolling: 'touch' }}
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
           <div className="min-h-screen flex flex-col">
-            <div className="relative h-[50vh] sm:h-[60vh] shrink-0" style={{ background: project.gradient }}>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
+            <div
+              className="relative h-[60vh] sm:h-[70vh] shrink-0"
+              style={{ background: project.gradient }}
+            >
+              {project.video ? (
+                <video
+                  src={project.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : project.image ? (
+                <Image
+                  src={project.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                  priority
+                />
+              ) : null}
+              <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/60" />
               <button
                 type="button"
                 onClick={onClose}
