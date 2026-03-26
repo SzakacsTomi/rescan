@@ -143,69 +143,168 @@
     },
     "backToProjects": "Back to projects",
     "project0": {
-      "title": "Carlqvist Portfolio",
-      "description": "56 commercial properties documented across Sweden.",
+      "title": "Multi-Tenant Office — Jönköping",
+      "description": "Lease-ready floor plans for tenant adaptation.",
       "detail": {
-        "client": "Carlqvist Property",
-        "location": "Sweden (nationwide)",
-        "sector": "Commercial Real Estate",
-        "scope": "56 commercial properties",
-        "body": "Carlqvist Property needed consistent as-built documentation across their entire portfolio of 56 commercial properties. We delivered structured 3D scans and BIM models for every site, creating a unified digital foundation for ongoing facility management and future renovation projects."
+        "client": "Confidential",
+        "location": "Jönköping, Sweden",
+        "sector": "Commercial",
+        "scope": "Lease-ready 2D DWG floor plans",
+        "body": "The property lacked accurate documentation required for upcoming tenant modifications. Without verified floor plans, redesign decisions carried rework and delay risk. RESCAN produced lease-ready 2D drawings to support confident planning and execution."
       }
     },
     "project1": {
-      "title": "OMYA Industrial Plant",
-      "description": "Full plant digitisation for retrofit planning.",
+      "title": "Office & Warehouse — Växjö",
+      "description": "Verified floor plans for mixed office and warehouse facility.",
       "detail": {
-        "client": "OMYA",
-        "location": "Gothenburg, Sweden",
-        "sector": "Industrial & Manufacturing",
-        "scope": "12,000 m² production facility",
-        "body": "OMYA required precise documentation of their production facility to plan a major equipment retrofit. We captured the entire plant with millimetre-level accuracy, enabling the engineering team to design new installations without costly site revisits."
+        "client": "Confidential",
+        "location": "Växjö, Sweden",
+        "sector": "Commercial",
+        "scope": "Lease-ready 2D DWG floor plans",
+        "body": "The combined office and warehouse facility lacked reliable drawings ahead of planned tenant adjustments. Inaccurate documentation increased the risk of coordination errors between administrative and operational areas. RESCAN delivered verified lease-ready floor plans to support controlled planning and minimize disruption."
       }
     },
     "project2": {
-      "title": "Kalmarhem Housing",
-      "description": "Portfolio-wide scanning for renovation planning.",
+      "title": "Apartment Building — Jönköping",
+      "description": "Facade renovation and area verification for permit approval.",
       "detail": {
-        "client": "Kalmarhem",
-        "location": "Kalmar, Sweden",
-        "sector": "Residential Portfolio",
-        "scope": "32 residential buildings",
-        "body": "Kalmarhem engaged us to create accurate as-built models for 32 residential buildings ahead of a multi-year renovation programme. The digital documentation enabled architects and engineers to begin design work immediately from verified building conditions."
+        "client": "Confidential",
+        "location": "Jönköping, Sweden",
+        "sector": "Commercial (Residential Rental Asset)",
+        "scope": "Full 2D DWG floor plan documentation (sqm verified), facade elevation drawings for building permit submission",
+        "body": "The property required accurate documentation ahead of planned facade restoration and budget control. Existing drawings did not provide reliable area data or facade detail for permit submission. RESCAN delivered verified floor plans with exact sqm calculations and detailed facade drawings to support renovation planning, contract validation, and building approval."
       }
     },
     "project3": {
-      "title": "Nivika Office Complex",
-      "description": "BIM models for tenant fit-out coordination.",
+      "title": "Multi-Tenant Office — Växjö",
+      "description": "Verified floor plans for planned indoor modifications.",
       "detail": {
-        "client": "Nivika",
+        "client": "Confidential",
         "location": "Växjö, Sweden",
-        "sector": "Commercial Office",
-        "scope": "8,500 m² office complex",
-        "body": "Nivika needed detailed BIM models to coordinate multiple tenant fit-outs across a newly acquired office complex. Our structured Revit models — separated by discipline — allowed consultants to work concurrently without conflicts."
+        "sector": "Commercial",
+        "scope": "Verified 2D DWG floor plans (sqm controlled), updated documentation for tenant adaptation",
+        "body": "Prior to planned interior updates, the building's existing drawings did not reflect current layouts. This created uncertainty in space allocation and cost estimation. RESCAN produced verified floor plans with controlled area measurements to provide a reliable foundation for redesign and budget planning."
       }
     },
     "project4": {
-      "title": "INGKA Retail Stores",
-      "description": "Standardised documentation across retail locations.",
+      "title": "Office Headquarters — Älmhult",
+      "description": "Full-scale documentation for spatial modernisation.",
       "detail": {
-        "client": "INGKA Group",
-        "location": "Scandinavia",
-        "sector": "Retail",
-        "scope": "14 retail locations",
-        "body": "INGKA Group required consistent building documentation across 14 retail locations to support their sustainability and renovation programmes. We established a standardised scanning methodology and delivered uniform digital models for every site."
+        "client": "Confidential",
+        "location": "Älmhult, Sweden",
+        "sector": "Commercial",
+        "scope": "Full-scale verified 2D DWG floor plan documentation, updated drawings reflecting current building conditions",
+        "body": "The headquarters had undergone multiple renovations over the years, but the drawings had never been consistently updated. This created uncertainty ahead of planned upgrades to installations and office areas. RESCAN delivered fully verified 2D DWG documentation reflecting the building's current condition, providing a reliable foundation for structured modernisation."
       }
     },
     "project5": {
-      "title": "Vida Timber Mill",
-      "description": "As-built capture for production line expansion.",
+      "title": "Electrical Substation — Austria",
+      "description": "3D BIM model for modernisation and capacity upgrade.",
       "detail": {
-        "client": "Vida",
-        "location": "Alvesta, Sweden",
+        "client": "Confidential",
+        "location": "Austria",
         "sector": "Industrial",
-        "scope": "18,000 m² timber processing facility",
-        "body": "Vida planned a major expansion of their timber processing line and needed precise documentation of the existing facility. Our 3D scanning captured complex industrial geometry that traditional measurement methods could not achieve, enabling confident planning for the new production layout."
+        "scope": "Coordinated 3D BIM model reflecting existing conditions, digital model prepared for upgrade and expansion planning",
+        "body": "Increasing electricity demand required the existing substation to be modernized and prepared for future expansion. However, reliable digital documentation of the facility was lacking. RESCAN delivered a coordinated 3D BIM model aligned to current conditions, providing a dependable foundation for upgrade planning and technical development."
+      }
+    },
+    "project6": {
+      "title": "Mining Processing Facility — USA",
+      "description": "Coordinated BIM model for retrofit within active production.",
+      "detail": {
+        "client": "Confidential",
+        "location": "USA",
+        "sector": "Industrial",
+        "scope": "Full-scale coordinated 3D BIM model reflecting existing conditions, digital model prepared for retrofit design and clash coordination",
+        "body": "Planned retrofit works within the processing facility demanded precise documentation of complex conveyor and structural systems. Inaccurate or incomplete records posed significant clash and downtime risk. RESCAN produced a coordinated 3D BIM model to support structured engineering and minimise disruption during upgrade."
+      }
+    },
+    "project7": {
+      "title": "Electrical Substation II — Austria",
+      "description": "BIM model for infrastructure upgrade and equipment replacement.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Austria",
+        "sector": "Industrial",
+        "scope": "Full-scale coordinated 3D BIM model of existing facility, digital model prepared for engineering and installation planning",
+        "body": "The substation required infrastructure upgrades and equipment replacement within an existing operational environment. Accurate spatial and structural documentation was necessary to ensure safe integration of new systems. RESCAN delivered a coordinated 3D BIM model reflecting actual site conditions, supporting controlled engineering and minimizing installation risk."
+      }
+    },
+    "project8": {
+      "title": "Mining Processing Facility II — USA",
+      "description": "Detailed modelling of conveyor systems for retrofit coordination.",
+      "detail": {
+        "client": "Confidential",
+        "location": "USA",
+        "sector": "Industrial",
+        "scope": "Full-scale coordinated 3D BIM model of processing systems, model prepared for retrofit design and installation coordination",
+        "body": "As part of the broader retrofit program, this section of the processing facility required detailed modelling of conveyor systems and structural elements. Accurate documentation was essential to integrate new equipment without disrupting ongoing operations. RESCAN delivered a coordinated 3D BIM model to support precise engineering and controlled implementation."
+      }
+    },
+    "project9": {
+      "title": "Mining Processing Facility — Sweden",
+      "description": "Full-site point cloud for phased modernisation planning.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Sweden",
+        "sector": "Industrial",
+        "scope": "High-resolution registered point cloud of the full facility, structured dataset prepared for future modelling and engineering phases",
+        "body": "Prior to initiating phased upgrades, the facility required precise capture of structures and process equipment. Without dependable spatial data, retrofit planning carried significant uncertainty. RESCAN provided a full-site point cloud to serve as the foundation for future modelling and coordinated modernization works."
+      }
+    },
+    "project10": {
+      "title": "Vehicle Inspection Facility — Jönköping",
+      "description": "Updated documentation for energy efficiency improvements.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Jönköping, Sweden",
+        "sector": "Commercial",
+        "scope": "Verified 2D DWG floor plan and facade documentation, updated drawings reflecting existing building conditions",
+        "body": "As part of long-term asset improvement, the property required updated documentation before implementing energy efficiency measures. Without accurate floor plans, upgrade planning carried unnecessary uncertainty. RESCAN provided controlled 2D digital documentation aligned with existing conditions to support informed investment decisions."
+      }
+    },
+    "project11": {
+      "title": "Mixed-Use Property — Växjö",
+      "description": "Comprehensive documentation across retail, office, residential and parking.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Växjö, Sweden",
+        "sector": "Commercial",
+        "scope": "Full-scale verified 2D DWG documentation, coordinated floor plans across retail, office, residential and parking areas, area-controlled drawings for renovation and contract management",
+        "body": "The mixed-use property included retail units, offices, residential apartments and an underground parking garage, creating significant spatial and contractual complexity. Prior to renovation, the contractor required precise and unified documentation across all tenant areas. RESCAN delivered comprehensive verified 2D documentation aligned to actual conditions, enabling controlled renovation planning and accurate contract management."
+      }
+    },
+    "project12": {
+      "title": "Retail & Hotel Property — Växjö",
+      "description": "Verified drawings for renovation within active hotel and retail operations.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Växjö, Sweden",
+        "sector": "Commercial",
+        "scope": "Verified 2D DWG floor plan documentation, digitized and structured drawings prepared for renovation and modernization planning",
+        "body": "The property combines ground-floor retail units with hotel operations across upper floors, creating significant coordination complexity. Prior to renovation and modernization initiatives, reliable and structured digital documentation was required. RESCAN delivered verified 2D drawings aligned to existing conditions, supporting controlled planning while accommodating ongoing commercial activity."
+      }
+    },
+    "project13": {
+      "title": "Historic Church — Växjö",
+      "description": "High-detail 3D BIM model for restoration and fire safety.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Växjö, Sweden",
+        "sector": "Cultural & Public Asset",
+        "scope": "Full-scale coordinated 3D BIM model, high-detail digital documentation prepared for restoration and fire safety planning",
+        "body": "Prior to planned restoration works and the installation of new fire safety systems, the church required comprehensive high-detail documentation. Due to the building's historical value, accurate recording of architectural elements was critical to protect heritage integrity during intervention. RESCAN delivered a full-scale 3D BIM model aligned to existing conditions, providing a controlled foundation for restoration planning and technical upgrades."
+      }
+    },
+    "project14": {
+      "title": "Manufacturing Facility — Tingsryd",
+      "description": "3D BIM model for modernisation and building permit preparation.",
+      "detail": {
+        "client": "Confidential",
+        "location": "Tingsryd, Sweden",
+        "sector": "Industrial",
+        "scope": "Coordinated 3D BIM model reflecting existing conditions, digital model prepared for modernization planning and building permit application",
+        "body": "Prior to modernization of the 14,000+ m² industrial facility, dependable documentation was required to support engineering decisions and building permit approval. Inaccurate or fragmented records increased the risk of delays and coordination errors. RESCAN produced a full-scale 3D BIM model to provide a controlled foundation for redevelopment and regulatory submission."
       }
     }
   },

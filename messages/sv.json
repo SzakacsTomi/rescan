@@ -143,69 +143,168 @@
     },
     "backToProjects": "Tillbaka till projekt",
     "project0": {
-      "title": "Carlqvist-portföljen",
-      "description": "56 kommersiella fastigheter dokumenterade i hela Sverige.",
+      "title": "Flerhyresgästkontor — Jönköping",
+      "description": "Uthyrningsklara planritningar för hyresgästanpassning.",
       "detail": {
-        "client": "Carlqvist Fastigheter",
-        "location": "Sverige (rikstäckande)",
-        "sector": "Kommersiella Fastigheter",
-        "scope": "56 kommersiella fastigheter",
-        "body": "Carlqvist Fastigheter behövde konsekvent som-byggt-dokumentation för hela sin portfölj med 56 kommersiella fastigheter. Vi levererade strukturerade 3D-skanningar och BIM-modeller för varje objekt och skapade en enhetlig digital grund för löpande fastighetsförvaltning och framtida renoveringsprojekt."
+        "client": "Konfidentiell",
+        "location": "Jönköping, Sverige",
+        "sector": "Kommersiellt",
+        "scope": "Uthyrningsklara 2D DWG-planritningar",
+        "body": "Fastigheten saknade korrekta ritningar inför kommande hyresgästanpassningar. Utan verifierade planritningar medförde omgestaltningsbeslut risk för omarbetning och förseningar. RESCAN producerade uthyrningsklara 2D-ritningar för att stödja trygg planering och genomförande."
       }
     },
     "project1": {
-      "title": "OMYA Industrianläggning",
-      "description": "Fullständig digitalisering av anläggning för ombyggnadsplanering.",
+      "title": "Kontor & Lager — Växjö",
+      "description": "Verifierade planritningar för kombinerad kontors- och lageranläggning.",
       "detail": {
-        "client": "OMYA",
-        "location": "Göteborg, Sverige",
-        "sector": "Industri & Tillverkning",
-        "scope": "12 000 m² produktionsanläggning",
-        "body": "OMYA behövde exakt dokumentation av sin produktionsanläggning för att planera en större utrustningsombyggnad. Vi fångade hela anläggningen med millimeterprecision, vilket möjliggjorde för ingenjörsteamet att designa nya installationer utan kostsamma platsbesök."
+        "client": "Konfidentiell",
+        "location": "Växjö, Sverige",
+        "sector": "Kommersiellt",
+        "scope": "Uthyrningsklara 2D DWG-planritningar",
+        "body": "Den kombinerade kontors- och lageranläggningen saknade tillförlitliga ritningar inför planerade hyresgästjusteringar. Felaktig dokumentation ökade risken för samordningsfel mellan administrativa och operativa ytor. RESCAN levererade verifierade uthyrningsklara planritningar för att stödja kontrollerad planering och minimera störningar."
       }
     },
     "project2": {
-      "title": "Kalmarhem Bostäder",
-      "description": "Portföljövergripande skanning för renoveringsplanering.",
+      "title": "Flerfamiljshus — Jönköping",
+      "description": "Fasadrenovering och ytverifiering för bygglovsansökan.",
       "detail": {
-        "client": "Kalmarhem",
-        "location": "Kalmar, Sverige",
-        "sector": "Bostadsportfölj",
-        "scope": "32 bostadsbyggnader",
-        "body": "Kalmarhem anlitade oss för att skapa exakta som-byggt-modeller för 32 bostadsbyggnader inför ett flerårigt renoveringsprogram. Den digitala dokumentationen möjliggjorde för arkitekter och ingenjörer att påbörja projekteringsarbete direkt från verifierade byggnadsförhållanden."
+        "client": "Konfidentiell",
+        "location": "Jönköping, Sverige",
+        "sector": "Kommersiellt (Bostadshyresfastighet)",
+        "scope": "Fullständig 2D DWG-planritningsdokumentation (kvm-verifierad), fasadelevationsritningar för bygglovsansökan",
+        "body": "Fastigheten krävde korrekt dokumentation inför planerad fasadrestaurering och budgetkontroll. Befintliga ritningar gav inte tillförlitliga ytuppgifter eller fasaddetaljer för bygglovsansökan. RESCAN levererade verifierade planritningar med exakta kvm-beräkningar och detaljerade fasadritningar för att stödja renoveringsplanering, avtalskontroll och bygglovsansökan."
       }
     },
     "project3": {
-      "title": "Nivika Kontorskomplex",
-      "description": "BIM-modeller för samordning av hyresgästanpassningar.",
+      "title": "Flerhyresgästkontor — Växjö",
+      "description": "Verifierade planritningar för planerade inomhusändringar.",
       "detail": {
-        "client": "Nivika",
+        "client": "Konfidentiell",
         "location": "Växjö, Sverige",
-        "sector": "Kommersiella Kontor",
-        "scope": "8 500 m² kontorskomplex",
-        "body": "Nivika behövde detaljerade BIM-modeller för att samordna flera hyresgästanpassningar i ett nyförvärvat kontorskomplex. Våra strukturerade Revit-modeller — uppdelade per disciplin — möjliggjorde för konsulter att arbeta parallellt utan konflikter."
+        "sector": "Kommersiellt",
+        "scope": "Verifierade 2D DWG-planritningar (kvm-kontrollerade), uppdaterad dokumentation för hyresgästanpassning",
+        "body": "Inför planerade interiöra uppdateringar återspeglade byggnadens befintliga ritningar inte aktuella planlösningar. Detta skapade osäkerhet kring ytutnyttjande och kostnadsberäkningar. RESCAN producerade verifierade planritningar med kontrollerade ytmått för att ge ett tillförlitligt underlag för omgestaltning och budgetplanering."
       }
     },
     "project4": {
-      "title": "INGKA Butiker",
-      "description": "Standardiserad dokumentation för butikskedjor.",
+      "title": "Kontorshuvudkontor — Älmhult",
+      "description": "Fullskalig dokumentation för rumslig modernisering.",
       "detail": {
-        "client": "INGKA Group",
-        "location": "Skandinavien",
-        "sector": "Detaljhandel",
-        "scope": "14 butiker",
-        "body": "INGKA Group behövde konsekvent byggnadsdokumentation för 14 butiker som stöd för sina hållbarhets- och renoveringsprogram. Vi etablerade en standardiserad skanningsmetodik och levererade enhetliga digitala modeller för varje objekt."
+        "client": "Konfidentiell",
+        "location": "Älmhult, Sverige",
+        "sector": "Kommersiellt",
+        "scope": "Fullskalig verifierad 2D DWG-planritningsdokumentation, uppdaterade ritningar som återspeglar aktuellt byggnadsskick",
+        "body": "Huvudkontoret hade genomgått flera renoveringar under åren, men ritningarna hade aldrig uppdaterats konsekvent. Detta skapade osäkerhet inför planerade uppgraderingar av installationer och kontorsytor. RESCAN levererade fullständigt verifierad 2D DWG-dokumentation som återspeglar byggnadens nuvarande skick och ger ett tillförlitligt underlag för strukturerad modernisering."
       }
     },
     "project5": {
-      "title": "Vida Sågverk",
-      "description": "Som-byggt-dokumentation för expansion av produktionslinje.",
+      "title": "Elstation — Österrike",
+      "description": "3D BIM-modell för modernisering och kapacitetsuppgradering.",
       "detail": {
-        "client": "Vida",
-        "location": "Alvesta, Sverige",
+        "client": "Konfidentiell",
+        "location": "Österrike",
         "sector": "Industri",
-        "scope": "18 000 m² träbearbetningsanläggning",
-        "body": "Vida planerade en större expansion av sin träbearbetningslinje och behövde exakt dokumentation av den befintliga anläggningen. Vår 3D-skanning fångade komplex industriell geometri som traditionella mätmetoder inte kunde uppnå, vilket möjliggjorde säker planering för den nya produktionslayouten."
+        "scope": "Samordnad 3D BIM-modell som återspeglar befintliga förhållanden, digital modell förberedd för uppgraderings- och expansionsplanering",
+        "body": "Ökande elbehov krävde att den befintliga stationen moderniserades och förbereddes för framtida expansion. Tillförlitlig digital dokumentation av anläggningen saknades dock. RESCAN levererade en samordnad 3D BIM-modell anpassad till aktuella förhållanden, som ger ett pålitligt underlag för uppgraderingsplanering och teknisk utveckling."
+      }
+    },
+    "project6": {
+      "title": "Gruvbearbetningsanläggning — USA",
+      "description": "Samordnad BIM-modell för ombyggnad inom aktiv produktion.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "USA",
+        "sector": "Industri",
+        "scope": "Fullskalig samordnad 3D BIM-modell som återspeglar befintliga förhållanden, digital modell förberedd för ombyggnadsdesign och kollisionskontroll",
+        "body": "Planerade ombyggnadsarbeten inom bearbetningsanläggningen krävde exakt dokumentation av komplexa transport- och konstruktionssystem. Felaktiga eller ofullständiga underlag medförde betydande risk för kollisioner och driftstopp. RESCAN producerade en samordnad 3D BIM-modell för att stödja strukturerad projektering och minimera störningar under uppgraderingen."
+      }
+    },
+    "project7": {
+      "title": "Elstation II — Österrike",
+      "description": "BIM-modell för infrastrukturuppgradering och utrustningsbyte.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Österrike",
+        "sector": "Industri",
+        "scope": "Fullskalig samordnad 3D BIM-modell av befintlig anläggning, digital modell förberedd för projektering och installationsplanering",
+        "body": "Stationen krävde infrastrukturuppgraderingar och utrustningsbyte inom en befintlig driftsmiljö. Korrekt rumslig och strukturell dokumentation var nödvändig för att säkerställa säker integration av nya system. RESCAN levererade en samordnad 3D BIM-modell som återspeglar faktiska platsförhållanden, som stöd för kontrollerad projektering och minimerad installationsrisk."
+      }
+    },
+    "project8": {
+      "title": "Gruvbearbetningsanläggning II — USA",
+      "description": "Detaljerad modellering av transportörsystem för ombyggnadssamordning.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "USA",
+        "sector": "Industri",
+        "scope": "Fullskalig samordnad 3D BIM-modell av processystem, modell förberedd för ombyggnadsdesign och installationssamordning",
+        "body": "Som del av det bredare ombyggnadsprogrammet krävde denna sektion av bearbetningsanläggningen detaljerad modellering av transportörsystem och konstruktionselement. Korrekt dokumentation var avgörande för att integrera ny utrustning utan att störa pågående produktion. RESCAN levererade en samordnad 3D BIM-modell för att stödja exakt projektering och kontrollerat genomförande."
+      }
+    },
+    "project9": {
+      "title": "Gruvbearbetningsanläggning — Sverige",
+      "description": "Fullskaligt punktmoln för fasad moderniseringsplanering.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Sverige",
+        "sector": "Industri",
+        "scope": "Högupplöst registrerat punktmoln av hela anläggningen, strukturerad datamängd förberedd för framtida modellerings- och projekteringsfaser",
+        "body": "Innan fasade uppgraderingar inleddes krävde anläggningen exakt inmätning av konstruktioner och processutrustning. Utan tillförlitlig rumslig data medförde ombyggnadsplanering betydande osäkerhet. RESCAN tillhandahöll ett fullskaligt punktmoln som underlag för framtida modellering och samordnade moderniseringsarbeten."
+      }
+    },
+    "project10": {
+      "title": "Fordonsbesiktningsanläggning — Jönköping",
+      "description": "Uppdaterad dokumentation för energieffektiviseringsåtgärder.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Jönköping, Sverige",
+        "sector": "Kommersiellt",
+        "scope": "Verifierade 2D DWG-planritningar och fasaddokumentation, uppdaterade ritningar som återspeglar befintligt byggnadsskick",
+        "body": "Som del av långsiktig fastighetsförbättring krävde fastigheten uppdaterad dokumentation innan energieffektiviseringsåtgärder genomfördes. Utan korrekta planritningar medförde uppgraderingsplanering onödig osäkerhet. RESCAN tillhandahöll kontrollerad 2D digital dokumentation anpassad till befintliga förhållanden för att stödja välgrundade investeringsbeslut."
+      }
+    },
+    "project11": {
+      "title": "Blandad Fastighet — Växjö",
+      "description": "Omfattande dokumentation för butik, kontor, bostad och parkering.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Växjö, Sverige",
+        "sector": "Kommersiellt",
+        "scope": "Fullskalig verifierad 2D DWG-dokumentation, samordnade planritningar för butik, kontor, bostad och parkering, ytkontrollerade ritningar för renovering och avtalshantering",
+        "body": "Den blandade fastigheten omfattade butiksenheter, kontor, bostadslägenheter och ett underjordiskt parkeringsgarage, vilket skapade betydande rumslig och avtalsmässig komplexitet. Inför renovering krävde entreprenören exakt och enhetlig dokumentation över alla hyresområden. RESCAN levererade omfattande verifierad 2D-dokumentation anpassad till faktiska förhållanden, vilket möjliggjorde kontrollerad renoveringsplanering och korrekt avtalshantering."
+      }
+    },
+    "project12": {
+      "title": "Butik & Hotell — Växjö",
+      "description": "Verifierade ritningar för renovering inom aktiv hotell- och butiksverksamhet.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Växjö, Sverige",
+        "sector": "Kommersiellt",
+        "scope": "Verifierad 2D DWG-planritningsdokumentation, digitaliserade och strukturerade ritningar förberedda för renoverings- och moderniseringsplanering",
+        "body": "Fastigheten kombinerar butiksenheter på bottenvåningen med hotellverksamhet på övervåningarna, vilket skapar betydande samordningskomplexitet. Inför renoverings- och moderniseringsinitiativ krävdes tillförlitlig och strukturerad digital dokumentation. RESCAN levererade verifierade 2D-ritningar anpassade till befintliga förhållanden, som stöd för kontrollerad planering med hänsyn till pågående kommersiell verksamhet."
+      }
+    },
+    "project13": {
+      "title": "Historisk Kyrka — Växjö",
+      "description": "Högdetaljerad 3D BIM-modell för restaurering och brandskydd.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Växjö, Sverige",
+        "sector": "Kultur & Offentlig Tillgång",
+        "scope": "Fullskalig samordnad 3D BIM-modell, högdetaljerad digital dokumentation förberedd för restaurerings- och brandskyddsplanering",
+        "body": "Inför planerade restaureringsarbeten och installation av nya brandskyddssystem krävde kyrkan omfattande högdetaljerad dokumentation. På grund av byggnadens kulturhistoriska värde var korrekt registrering av arkitektoniska element avgörande för att skydda kulturarvsintegritet under ingrepp. RESCAN levererade en fullskalig 3D BIM-modell anpassad till befintliga förhållanden, som ger ett kontrollerat underlag för restaureringsplanering och tekniska uppgraderingar."
+      }
+    },
+    "project14": {
+      "title": "Tillverkningsanläggning — Tingsryd",
+      "description": "3D BIM-modell för modernisering och bygglovsberedning.",
+      "detail": {
+        "client": "Konfidentiell",
+        "location": "Tingsryd, Sverige",
+        "sector": "Industri",
+        "scope": "Samordnad 3D BIM-modell som återspeglar befintliga förhållanden, digital modell förberedd för moderniseringsplanering och bygglovsansökan",
+        "body": "Inför modernisering av den 14 000+ m² stora industrianläggningen krävdes tillförlitlig dokumentation för att stödja projekteringsbeslut och bygglovsgodkännande. Felaktiga eller fragmenterade underlag ökade risken för förseningar och samordningsfel. RESCAN producerade en fullskalig 3D BIM-modell som ger ett kontrollerat underlag för ombyggnad och myndighetsinlämning."
       }
     }
   },

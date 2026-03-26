@@ -40,12 +40,13 @@ export const ProjectDetail = ({ project, translations, backLabel, onClose }: Pro
           className="fixed inset-0 z-50 overflow-y-auto overscroll-contain -webkit-overflow-scrolling-touch"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
-          <div className="min-h-screen">
-            <div className="relative h-[50vh] sm:h-[60vh]" style={{ background: project.gradient }}>
+          <div className="min-h-screen flex flex-col">
+            <div className="relative h-[50vh] sm:h-[60vh] shrink-0" style={{ background: project.gradient }}>
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
               <button
+                type="button"
                 onClick={onClose}
-                className="absolute top-6 left-6 z-10 flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium"
+                className="fixed top-6 left-6 z-10 flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium"
               >
                 <ArrowLeft className="w-4 h-4" />
                 {backLabel}
@@ -62,35 +63,33 @@ export const ProjectDetail = ({ project, translations, backLabel, onClose }: Pro
               </div>
             </div>
 
-            <div className="bg-slate-950 px-8 sm:px-12 py-12">
-              <div className="max-w-4xl">
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25, duration: 0.4 }}
-                  className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12"
-                >
-                  {META_ITEMS.map(({ key, icon: Icon }) => (
-                    <div key={key}>
-                      <div className="flex items-center gap-2 text-white/40 text-xs uppercase tracking-wider mb-1.5">
-                        <Icon className="w-3.5 h-3.5" />
-                        {key}
-                      </div>
-                      <p className="text-white text-sm font-medium">{translations.detail[key]}</p>
+            <div className="bg-slate-950 px-8 sm:px-12 lg:px-16 py-12 flex-1">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.4 }}
+                className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12"
+              >
+                {META_ITEMS.map(({ key, icon: Icon }) => (
+                  <div key={key}>
+                    <div className="flex items-center gap-2 text-white/40 text-xs uppercase tracking-wider mb-1.5">
+                      <Icon className="w-3.5 h-3.5" />
+                      {key}
                     </div>
-                  ))}
-                </motion.div>
+                    <p className="text-white text-sm font-medium">{translations.detail[key]}</p>
+                  </div>
+                ))}
+              </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.35, duration: 0.4 }}
-                >
-                  <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl">
-                    {translations.detail.body}
-                  </p>
-                </motion.div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.4 }}
+              >
+                <p className="text-white/70 text-base sm:text-lg leading-relaxed w-full lg:max-w-[50%]">
+                  {translations.detail.body}
+                </p>
+              </motion.div>
             </div>
           </div>
         </motion.div>
