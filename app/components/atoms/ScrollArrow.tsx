@@ -11,7 +11,7 @@ type ScrollArrowProps = {
 };
 
 export const ScrollArrow = ({ targetId, className }: ScrollArrowProps) => {
-  const t = useTranslations("hero");
+  const t = useTranslations("homePage");
 
   const handleClick = () => {
     const target = document.getElementById(targetId);
@@ -21,7 +21,7 @@ export const ScrollArrow = ({ targetId, className }: ScrollArrowProps) => {
   return (
     <motion.button
       onClick={handleClick}
-      aria-label={t("scrollHint")}
+      aria-label={t("hero.scrollHint")}
       animate={{ y: [0, 8, 0] }}
       transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       className={cn(
@@ -29,7 +29,7 @@ export const ScrollArrow = ({ targetId, className }: ScrollArrowProps) => {
         className,
       )}
     >
-      <span className="text-xs font-medium tracking-widest uppercase">{t("scrollHint")}</span>
+      <span className="text-xs font-medium tracking-widest uppercase">{t("hero.scrollHint")}</span>
       <ChevronDown className="w-5 h-5 stroke-[2.5]" />
     </motion.button>
   );
