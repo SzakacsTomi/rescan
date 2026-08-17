@@ -1,7 +1,6 @@
 export const navLinks = [
-  { href: '/commercial-portfolios', labelKey: 'commercial' },
-  { href: '/industrial-manufacturing', labelKey: 'industrial' },
-  { href: '/model-production', labelKey: 'modelProduction' },
+  { href: '/retail-chains', labelKey: 'retail' },
+  { href: '/logistics-warehouses', labelKey: 'logistics' },
   { href: '/projects', labelKey: 'projects' },
   { href: '/about', labelKey: 'about' },
   { href: '/contact', labelKey: 'contact' },

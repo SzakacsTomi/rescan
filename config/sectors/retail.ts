@@ -1,20 +1,13 @@
-import { FileQuestion, GitBranch, RotateCcw } from 'lucide-react';
 import type { SectorPageConfig } from '@/app/types/sectorPage';
 import { CORE_RISK_ID } from '@/app/components/organisms/sector/CoreRisk';
 
-export const commercialSectorConfig: SectorPageConfig = {
-  id: 'commercial',
+export const retailSectorConfig: SectorPageConfig = {
+  id: 'retail',
   hero: {
     primaryCtaHref: '/contact',
     secondaryCtaHref: '/projects',
     scrollTargetId: CORE_RISK_ID,
-  },
-  friction: {
-    painPoints: [
-      { icon: RotateCcw },
-      { icon: GitBranch },
-      { icon: FileQuestion },
-    ],
+    imagesFolder: 'commercial-page',
   },
   logoWall: {
     logos: [

@@ -4,6 +4,9 @@ export type SectorHeroConfig = {
   primaryCtaHref: string;
   secondaryCtaHref: string;
   scrollTargetId: string;
+  /** Cloudinary folder backing the hero carousel. Named remotely — renaming the
+   *  route does not rename the folder. */
+  imagesFolder?: string;
 };
 
 export type PainPointConfig = {
@@ -13,13 +16,13 @@ export type PainPointConfig = {
 export type SectorPageConfig = {
   id: string;
   hero: SectorHeroConfig;
-  friction: {
+  friction?: {
     painPoints: readonly PainPointConfig[];
   };
-  logoWall: {
+  logoWall?: {
     logos: readonly { name: string; src: string }[];
   };
-  metrics: {
+  metrics?: {
     items: readonly { value: string }[];
   };
   finalCta: {
@@ -27,6 +30,11 @@ export type SectorPageConfig = {
   };
 };
 
+/**
+ * Every block except `hero` and `finalCta` is optional: the two sector briefs ask for
+ * different sections in the same order, so the template renders what it is given rather
+ * than forcing each page to fill in sections its brief does not have.
+ */
 export type SectorPageTranslations = {
   hero: {
     headline: string;
@@ -34,24 +42,32 @@ export type SectorPageTranslations = {
     primaryCta: string;
     secondaryCta: string;
   };
-  coreRisk: {
+  coreRisk?: {
     headline: string;
     body: string;
   };
-  friction: {
+  /** Logistics section 3 — the information-gap-to-cost sequence. */
+  consequenceChain?: {
+    headline: string;
+    body?: string;
+    steps: string[];
+    footnote?: string;
+  };
+  friction?: {
     headline: string;
     body?: string;
     points: Array<{ title: string; description: string }>;
   };
-  strategicValue: {
+  strategicValue?: {
     headline: string;
+    body?: string;
     values: Array<{ title: string; description: string }>;
   };
-  differentiator: {
+  differentiator?: {
     headline: string;
     subheadline: string;
   };
-  namedCase: {
+  namedCase?: {
     label: string;
     headline: string;
     body: string;
@@ -62,13 +78,19 @@ export type SectorPageTranslations = {
     quote?: string;
     quoteAuthor?: string;
   };
-  logoWall: {
+  /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`. */
+  proof?: {
+    headline: string;
+    items: Array<{ figure: string; statement: string }>;
+    cta?: { label: string; href: string };
+  };
+  logoWall?: {
     headline: string;
   };
-  metrics: {
+  metrics?: {
     items: Array<{ label: string }>;
   };
-  fitNotFit: {
+  fitNotFit?: {
     headline: string;
     bestFit: {
       title: string;
@@ -81,7 +103,7 @@ export type SectorPageTranslations = {
   };
   finalCta: {
     headline: string;
-    subheadline: string;
+    subheadline?: string;
     cta: string;
   };
 };

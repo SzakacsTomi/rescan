@@ -1,14 +1,15 @@
-import { CommercialHero } from "@/app/components/organisms/sector/CommercialHero";
-import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
-import type { SectorPageTranslations } from "@/app/types/sectorPage";
-import { commercialSectorConfig } from "@/config/sectors/commercial";
-import { getCloudinaryFolderImages } from "@/lib/cloudinary";
 import { getTranslations } from "next-intl/server";
 
-export default async function CommercialPortfoliosPage() {
+import { CarouselHero } from "@/app/components/organisms/sector/CarouselHero";
+import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
+import type { SectorPageTranslations } from "@/app/types/sectorPage";
+import { retailSectorConfig } from "@/config/sectors/retail";
+import { getCloudinaryFolderImages } from "@/lib/cloudinary";
+
+export default async function RetailChainsPage() {
   const [t, carouselImages] = await Promise.all([
-    getTranslations("sectorPage.commercial"),
-    getCloudinaryFolderImages("commercial-page"),
+    getTranslations("sectorPage.retail"),
+    getCloudinaryFolderImages(retailSectorConfig.hero.imagesFolder ?? ""),
   ]);
 
   const translations: SectorPageTranslations = {
@@ -22,27 +23,13 @@ export default async function CommercialPortfoliosPage() {
       headline: t("coreRisk.headline"),
       body: t("coreRisk.body"),
     },
-    friction: {
-      headline: t("friction.headline"),
-      body: t("friction.body"),
-      points: [
-        { title: t("friction.point0.title"), description: t("friction.point0.description") },
-        { title: t("friction.point1.title"), description: t("friction.point1.description") },
-        { title: t("friction.point2.title"), description: t("friction.point2.description") },
-      ],
-    },
     strategicValue: {
       headline: t("strategicValue.headline"),
-      values: [
-        {
-          title: t("strategicValue.valueA.title"),
-          description: t("strategicValue.valueA.description"),
-        },
-        {
-          title: t("strategicValue.valueB.title"),
-          description: t("strategicValue.valueB.description"),
-        },
-      ],
+      body: t("strategicValue.body"),
+      values: (["valueA", "valueB", "valueC", "valueD"] as const).map((key) => ({
+        title: t(`strategicValue.${key}.title`),
+        description: t(`strategicValue.${key}.description`),
+      })),
     },
     differentiator: {
       headline: t("differentiator.headline"),
@@ -68,9 +55,8 @@ export default async function CommercialPortfoliosPage() {
       headline: t("logoWall.headline"),
     },
     metrics: {
-      items: commercialSectorConfig.metrics.items.map((item, i) => ({
+      items: (retailSectorConfig.metrics?.items ?? []).map((_, i) => ({
         label: t(`metrics.item${i}.label`),
-        ...item,
       })),
     },
     fitNotFit: {
@@ -95,28 +81,27 @@ export default async function CommercialPortfoliosPage() {
     },
     finalCta: {
       headline: t("finalCta.headline"),
-      subheadline: t("finalCta.subheadline"),
       cta: t("finalCta.cta"),
     },
   };
 
   return (
     <SectorTemplate
-      config={commercialSectorConfig}
+      config={retailSectorConfig}
       translations={translations}
       heroOverride={
-        <CommercialHero
+        <CarouselHero
           headline={translations.hero.headline}
           subheadline={translations.hero.subheadline}
           primaryCta={{
             label: translations.hero.primaryCta,
-            href: commercialSectorConfig.hero.primaryCtaHref,
+            href: retailSectorConfig.hero.primaryCtaHref,
           }}
           secondaryCta={{
             label: translations.hero.secondaryCta,
-            href: commercialSectorConfig.hero.secondaryCtaHref,
+            href: retailSectorConfig.hero.secondaryCtaHref,
           }}
-          scrollTargetId={commercialSectorConfig.hero.scrollTargetId}
+          scrollTargetId={retailSectorConfig.hero.scrollTargetId}
           images={carouselImages}
         />
       }

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ScrollArrow } from "@/app/components/atoms/ScrollArrow";
 import { Link } from "@/i18n/navigation";
 
-type CommercialHeroProps = {
+type CarouselHeroProps = {
   headline: string;
   subheadline: string;
   primaryCta: { label: string; href: string };
@@ -71,14 +71,14 @@ function CarouselImage({ src, width }: { src: string; width: number }) {
   );
 }
 
-export const CommercialHero = ({
+export const CarouselHero = ({
   headline,
   subheadline,
   primaryCta,
   secondaryCta,
   scrollTargetId,
   images,
-}: CommercialHeroProps) => {
+}: CarouselHeroProps) => {
   const limitedImages = images.slice(0, MAX_IMAGES);
 
   const rows = ROW_CONFIGS.map((cfg, rowIdx) => ({
