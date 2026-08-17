@@ -1,28 +1,23 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import { ProjectsHero } from '@/app/components/organisms/projects/ProjectsHero';
+import type { ProjectCardCopy } from '@/app/components/molecules/ProjectCard';
+import {
+  ProjectDetail,
+  type ProjectDetailCopy,
+} from '@/app/components/organisms/projects/ProjectDetail';
 import { ProjectsGrid } from '@/app/components/organisms/projects/ProjectsGrid';
-import { ProjectDetail } from '@/app/components/organisms/projects/ProjectDetail';
+import { ProjectsHero } from '@/app/components/organisms/projects/ProjectsHero';
+import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
 import { projects } from '@/config/projects';
-
-type ProjectTranslation = {
-  title: string;
-  description: string;
-  detail: {
-    client: string;
-    location: string;
-    sector: string;
-    scope: string;
-    body: string;
-  };
-};
 
 type ProjectsTemplateProps = {
   translations: {
-    hero: { headline: string; subheadline: string };
+    hero: { headline: string; subheadline: string; cta: string };
+    finalCta: { headline: string; subheadline: string; cta: string };
     backToProjects: string;
-    projects: Record<string, ProjectTranslation>;
+    cards: Record<string, ProjectCardCopy>;
+    details: Record<string, ProjectDetailCopy>;
   };
 };
 
@@ -55,26 +50,25 @@ export const ProjectsTemplate = ({ translations }: ProjectsTemplateProps) => {
   }, [selectedId]);
 
   const selectedProject = selectedId ? projects.find((p) => p.id === selectedId) ?? null : null;
-  const selectedTranslation = selectedId ? translations.projects[selectedId] ?? null : null;
+  const selectedDetail = selectedId ? translations.details[selectedId] ?? null : null;
 
   return (
     <div className="min-h-screen bg-slate-950">
       <ProjectsHero
         headline={translations.hero.headline}
         subheadline={translations.hero.subheadline}
+        cta={translations.hero.cta}
       />
-      <ProjectsGrid
-        projects={projects}
-        translations={translations.projects}
-        onSelect={handleSelect}
+      <ProjectsGrid projects={projects} copy={translations.cards} onSelect={handleSelect} />
+      <FinalCTA
+        headline={translations.finalCta.headline}
+        subheadline={translations.finalCta.subheadline}
+        cta={translations.finalCta.cta}
+        ctaHref="/contact"
       />
       <ProjectDetail
         project={selectedProject}
-        translations={
-          selectedTranslation
-            ? { title: selectedTranslation.title, detail: selectedTranslation.detail }
-            : null
-        }
+        translations={selectedDetail}
         backLabel={translations.backToProjects}
         onClose={handleClose}
       />

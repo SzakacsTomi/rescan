@@ -1,29 +1,30 @@
 'use client';
 
-import { ProjectCard } from '@/app/components/molecules/ProjectCard';
+import { isPending, placeholdersVisible } from '@/app/components/atoms/Pending';
+import { ProjectCard, type ProjectCardCopy } from '@/app/components/molecules/ProjectCard';
 import type { ProjectConfig } from '@/config/projects';
-
-type ProjectTranslation = {
-  title: string;
-  description: string;
-};
 
 type ProjectsGridProps = {
   projects: ProjectConfig[];
-  translations: Record<string, ProjectTranslation>;
+  copy: Record<string, ProjectCardCopy>;
   onSelect: (id: string) => void;
 };
 
-export const ProjectsGrid = ({ projects, translations, onSelect }: ProjectsGridProps) => {
+export const ProjectsGrid = ({ projects, copy, onSelect }: ProjectsGridProps) => {
+  // A case study whose copy has not arrived would render as a blank tile — but on
+  // preview it is exactly what the client needs to see.
+  const visible = placeholdersVisible
+    ? projects
+    : projects.filter((project) => !isPending(copy[project.id]?.title ?? ''));
+
   return (
     <section className="px-6 sm:px-8 lg:px-12 py-16 sm:py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+        {visible.map((project) => (
           <ProjectCard
             key={project.id}
             project={project}
-            title={translations[project.id]?.title ?? ''}
-            description={translations[project.id]?.description ?? ''}
+            copy={copy[project.id]}
             onClick={() => onSelect(project.id)}
           />
         ))}

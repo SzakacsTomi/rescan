@@ -1,11 +1,32 @@
+export type ProjectSector = 'retail' | 'logistics';
+
 export type ProjectConfig = {
   id: string;
   gradient: string;
   image?: string;
   video?: string;
+  /** Set only on entries written to the case-study format the Projects brief defines.
+   *  Its presence is what switches the card and the detail view to that format. */
+  sector?: ProjectSector;
 };
 
+/**
+ * The two `case*` entries demonstrate the case-study format the client asked for; their
+ * copy is still `[[TODO]]`, so they appear on preview and are skipped in production.
+ * The fifteen entries below them predate the repositioning and are unchanged — see
+ * OPEN-ITEMS.md for the decision still owed on them.
+ */
 export const projects: ProjectConfig[] = [
+  {
+    id: 'caseRetail0',
+    sector: 'retail',
+    gradient: 'linear-gradient(135deg, #16213e 0%, #0f3460 60%, #1a1a2e 100%)',
+  },
+  {
+    id: 'caseLogistics0',
+    sector: 'logistics',
+    gradient: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 60%, #0d0d0d 100%)',
+  },
   {
     id: 'project0',
     gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
