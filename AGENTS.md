@@ -10,8 +10,6 @@ Warehouses**. Six client copy-briefs drive this — they live in `docs/briefs/` 
 the source of truth for page structure and wording. Read the relevant one before
 touching a page.
 
-Current state of the work: `PROGRESS.md`. Open questions for the client: `OPEN-ITEMS.md`.
-
 A visual redesign is being imported from a claude.ai Design project ("Hero section
 redesign feedback"), synced via the `DesignSync` MCP tool / `/design-sync` skill.
 `Rescan Redesign.dc.html` is the target state; `Rescan Current.dc.html` mirrors what's
@@ -58,7 +56,8 @@ without being asked.
 | List open placeholders | `yarn todos` (`--md` for markdown)       |
 
 Verify UI work against a running server. Do not report a change as working on the
-strength of a passing build alone.
+strength of a passing build alone. Once `yarn dev` is running, leave it running —
+do not stop it after finishing a task; the user keeps it up across tasks.
 
 ## Gotchas specific to this repo
 
@@ -163,7 +162,7 @@ missing or untrustworthy building information
   Client Components: `const t = useTranslations('namespace')`.
 - Locale routing is next-intl middleware in `proxy.ts`.
 - Copy-briefs arrive in English only. Swedish is our translation and is pending client
-  review — see `OPEN-ITEMS.md`.
+  review.
 
 ## Placeholders
 
@@ -199,8 +198,7 @@ detected and would leak the brackets to production — split it into a sentence 
 whole, or into two keys.
 
 `yarn todos` reports every open slot grouped by page, and flags **locale drift** — a
-key filled in one catalogue but still pending in the other. That report is what feeds
-`OPEN-ITEMS.md`; do not maintain a second list by hand.
+key filled in one catalogue but still pending in the other.
 
 ## Conventions
 
@@ -266,4 +264,3 @@ bundled together.
 - [ ] Missing client data marked `[[TODO: …]]` and rendered through `Pending`
 - [ ] New components sit in the right atomic tier and import only upward
 - [ ] Interactive changes exercised in a browser, not just compiled
-- [ ] `PROGRESS.md` updated; anything newly blocked added to `OPEN-ITEMS.md`
