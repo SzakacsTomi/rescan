@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { Reveal } from "@/app/components/atoms/Reveal";
+import { NumberedValueCard } from "@/app/components/molecules/NumberedValueCard";
 import { ValueCard } from "@/app/components/molecules/ValueCard";
 import { cn } from "@/lib/utils";
 
@@ -12,11 +14,43 @@ type StrategicValueProps = {
   body?: string;
   values: ValueItem[];
   /** Optional supporting visual. Without one the list runs full width rather than
-   *  leaving an empty box beside it. */
+   *  leaving an empty box beside it. Ignored when `layout` is `"grid"`. */
   aside?: ReactNode;
+  /** `"grid"` is the redesign's numbered-card treatment, on a tinted section
+   *  background. Omit for the original stacked-card list. */
+  layout?: "grid";
 };
 
-export const StrategicValue = ({ headline, body, values, aside }: StrategicValueProps) => {
+export const StrategicValue = ({ headline, body, values, aside, layout }: StrategicValueProps) => {
+  if (layout === "grid") {
+    return (
+      <section className="bg-muted py-[120px] px-6">
+        <div className="max-w-5xl mx-auto">
+          <Reveal>
+            <h2 className="max-w-[720px] text-[28px] leading-tight font-bold tracking-[-0.03em] sm:text-[32px] lg:text-[38px]">
+              {headline}
+            </h2>
+          </Reveal>
+          {body && (
+            <Reveal>
+              <p className="mt-5 max-w-[680px] text-[17px] leading-[1.7] text-foreground/60">{body}</p>
+            </Reveal>
+          )}
+          <div className="grid grid-cols-1 gap-px bg-border mt-14 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value, i) => (
+              <NumberedValueCard
+                key={value.title}
+                index={i}
+                title={value.title}
+                description={value.description}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-24 px-6">
       <div className="max-w-5xl mx-auto">

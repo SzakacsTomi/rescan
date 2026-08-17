@@ -599,14 +599,20 @@
   "sectorPage": {
     "retail": {
       "hero": {
+        "eyebrow": "Sector 01 — Retail Chains",
         "headline": "Reduce repeat site visits\nacross your retail portfolio.",
         "subheadline": "Give designers, contractors and property teams more of the information they need without repeatedly sending someone back to the store.",
         "primaryCta": "Discuss your retail portfolio",
         "secondaryCta": "View Projects"
       },
       "coreRisk": {
+        "eyebrow": "The core risk",
         "headline": "The expensive part is having to go back.",
-        "body": "A missing dimension or unanswered site question may seem minor.\nAcross dozens or hundreds of stores, it means more travel, more scheduling, more coordination and more design time.\nOne unnecessary return visit is a nuisance.\nRepeated across a portfolio, it becomes a cost."
+        "body": "A missing dimension or unanswered site question may seem minor.\nAcross dozens or hundreds of stores, it means more travel, more scheduling, more coordination and more design time.\nOne unnecessary return visit is a nuisance.\nRepeated across a portfolio, it becomes a cost.",
+        "proof": {
+          "label": "One portfolio, one visit each",
+          "caption": "56 commercial properties documented for Carlqvist Property across Sweden."
+        }
       },
       "strategicValue": {
         "headline": "Capture once. Refer back when questions appear.",
@@ -692,6 +698,7 @@
         "secondaryCta": "View Projects"
       },
       "coreRisk": {
+        "eyebrow": "The core risk",
         "headline": "The bigger the facility, the more expensive incomplete information becomes.",
         "body": "Large logistics warehouses can combine structure, services, equipment, mezzanines and years of alterations across enormous areas.\nHistoric drawings and isolated measurements may only show part of that picture.\nWhen important conditions are missing, design teams have to make assumptions."
       },

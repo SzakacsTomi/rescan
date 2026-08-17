@@ -1,10 +1,13 @@
 import { getTranslations } from "next-intl/server";
 
 import { CarouselHero } from "@/app/components/organisms/sector/CarouselHero";
+import { ProofGrid } from "@/app/components/molecules/ProofGrid";
 import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
 import type { SectorPageTranslations } from "@/app/types/sectorPage";
 import { retailSectorConfig } from "@/config/sectors/retail";
 import { getCloudinaryFolderImages } from "@/lib/cloudinary";
+
+const PROOF_GRID_CELL_COUNT = 56;
 
 export default async function RetailChainsPage() {
   const [t, carouselImages] = await Promise.all([
@@ -14,12 +17,14 @@ export default async function RetailChainsPage() {
 
   const translations: SectorPageTranslations = {
     hero: {
+      eyebrow: t("hero.eyebrow"),
       headline: t("hero.headline"),
       subheadline: t("hero.subheadline"),
       primaryCta: t("hero.primaryCta"),
       secondaryCta: t("hero.secondaryCta"),
     },
     coreRisk: {
+      eyebrow: t("coreRisk.eyebrow"),
       headline: t("coreRisk.headline"),
       body: t("coreRisk.body"),
     },
@@ -91,6 +96,7 @@ export default async function RetailChainsPage() {
       translations={translations}
       heroOverride={
         <CarouselHero
+          eyebrow={translations.hero.eyebrow}
           headline={translations.hero.headline}
           subheadline={translations.hero.subheadline}
           primaryCta={{
@@ -101,8 +107,14 @@ export default async function RetailChainsPage() {
             label: translations.hero.secondaryCta,
             href: retailSectorConfig.hero.secondaryCtaHref,
           }}
-          scrollTargetId={retailSectorConfig.hero.scrollTargetId}
           images={carouselImages}
+        />
+      }
+      coreRiskAside={
+        <ProofGrid
+          label={t("coreRisk.proof.label")}
+          caption={t("coreRisk.proof.caption")}
+          cellCount={PROOF_GRID_CELL_COUNT}
         />
       }
     />

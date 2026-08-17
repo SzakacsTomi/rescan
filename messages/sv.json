@@ -599,14 +599,20 @@
   "sectorPage": {
     "retail": {
       "hero": {
+        "eyebrow": "Sektor 01 — Butikskedjor",
         "headline": "Minska antalet återbesök\ni ditt butiksbestånd.",
         "subheadline": "Ge projektörer, entreprenörer och fastighetsteam mer av den information de behöver utan att gång på gång skicka någon tillbaka till butiken.",
         "primaryCta": "Diskutera ditt butiksbestånd",
         "secondaryCta": "Se projekt"
       },
       "coreRisk": {
+        "eyebrow": "Den dyra risken",
         "headline": "Det dyra är att behöva åka tillbaka.",
-        "body": "Ett saknat mått eller en obesvarad fråga om platsen kan verka som en småsak.\nÖver dussintals eller hundratals butiker innebär det mer resor, mer planering, mer samordning och mer projekteringstid.\nEtt onödigt återbesök är en irritation.\nUpprepat över ett helt bestånd blir det en kostnad."
+        "body": "Ett saknat mått eller en obesvarad fråga om platsen kan verka som en småsak.\nÖver dussintals eller hundratals butiker innebär det mer resor, mer planering, mer samordning och mer projekteringstid.\nEtt onödigt återbesök är en irritation.\nUpprepat över ett helt bestånd blir det en kostnad.",
+        "proof": {
+          "label": "Ett bestånd, ett besök vardera",
+          "caption": "56 kommersiella fastigheter dokumenterade för Carlqvist Fastigheter i hela Sverige."
+        }
       },
       "strategicValue": {
         "headline": "Dokumentera en gång. Gå tillbaka när frågorna dyker upp.",
@@ -692,6 +698,7 @@
         "secondaryCta": "Se projekt"
       },
       "coreRisk": {
+        "eyebrow": "Den dyra risken",
         "headline": "Ju större anläggning, desto dyrare blir ofullständig information.",
         "body": "Stora logistiklager kan kombinera stomme, installationer, utrustning, entresolplan och år av ombyggnader över enorma ytor.\nHistoriska ritningar och enstaka inmätningar visar ofta bara en del av den bilden.\nNär viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
       },

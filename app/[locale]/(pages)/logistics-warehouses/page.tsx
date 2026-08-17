@@ -18,6 +18,7 @@ export default async function LogisticsWarehousesPage() {
       secondaryCta: t("hero.secondaryCta"),
     },
     coreRisk: {
+      eyebrow: t("coreRisk.eyebrow"),
       headline: t("coreRisk.headline"),
       body: t("coreRisk.body"),
     },

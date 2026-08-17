@@ -9,6 +9,9 @@ export const retailSectorConfig: SectorPageConfig = {
     scrollTargetId: CORE_RISK_ID,
     imagesFolder: 'commercial-page',
   },
+  strategicValue: {
+    layout: 'grid',
+  },
   logoWall: {
     logos: [
       { name: 'Alhansa', src: '/assets/logos/alhansa.png' },

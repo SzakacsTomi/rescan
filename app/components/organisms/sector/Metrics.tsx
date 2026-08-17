@@ -2,6 +2,8 @@
 
 import CountUp from "react-countup";
 
+import { Reveal } from "@/app/components/atoms/Reveal";
+
 type MetricItem = {
   value: string;
   label: string;
@@ -21,13 +23,13 @@ function parseValue(raw: string): { end: number; suffix: string; decimals: numbe
 
 export const Metrics = ({ items }: MetricsProps) => {
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
         {items.map((item) => {
           const { end, suffix, decimals } = parseValue(item.value);
           return (
-            <div key={item.label} className="flex flex-col gap-2">
-              <span className="text-4xl sm:text-5xl font-bold tracking-tight">
+            <Reveal key={item.label} className="flex flex-col gap-3">
+              <span className="text-4xl sm:text-5xl lg:text-[52px] font-bold tracking-[-0.04em] leading-none">
                 <CountUp
                   end={end}
                   suffix={suffix}
@@ -37,8 +39,8 @@ export const Metrics = ({ items }: MetricsProps) => {
                   scrollSpyOnce
                 />
               </span>
-              <span className="text-sm text-foreground/50 leading-snug">{item.label}</span>
-            </div>
+              <span className="text-sm text-foreground/50 leading-[1.4]">{item.label}</span>
+            </Reveal>
           );
         })}
       </div>

@@ -19,6 +19,12 @@ export type SectorPageConfig = {
   friction?: {
     painPoints: readonly PainPointConfig[];
   };
+  /** Presentational only — which arrangement `StrategicValue` renders in.
+   *  `'grid'` is the numbered-card treatment the redesign introduced for Retail;
+   *  omitting it keeps a page's current stacked-list rendering. */
+  strategicValue?: {
+    layout?: 'grid';
+  };
   logoWall?: {
     logos: readonly { name: string; src: string }[];
   };
@@ -41,8 +47,11 @@ export type SectorPageTranslations = {
     subheadline: string;
     primaryCta: string;
     secondaryCta: string;
+    /** Mono sector label above the headline — e.g. "Sector 01 — Retail Chains". */
+    eyebrow?: string;
   };
   coreRisk?: {
+    eyebrow: string;
     headline: string;
     body: string;
   };

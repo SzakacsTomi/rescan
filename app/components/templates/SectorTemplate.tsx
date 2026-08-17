@@ -18,9 +18,18 @@ type SectorTemplateProps = {
   translations: SectorPageTranslations;
   heroOverride?: React.ReactNode;
   afterHero?: React.ReactNode;
+  /** Supporting visual for `CoreRisk`, e.g. a `ProofGrid` — page-specific, so it is
+   *  passed in rather than added to `SectorPageTranslations`. */
+  coreRiskAside?: React.ReactNode;
 };
 
-export const SectorTemplate = ({ config, translations: tr, heroOverride, afterHero }: SectorTemplateProps) => {
+export const SectorTemplate = ({
+  config,
+  translations: tr,
+  heroOverride,
+  afterHero,
+  coreRiskAside,
+}: SectorTemplateProps) => {
   const painPoints = config.friction?.painPoints;
   const frictionPoints =
     tr.friction && painPoints
@@ -44,7 +53,14 @@ export const SectorTemplate = ({ config, translations: tr, heroOverride, afterHe
       )}
       {afterHero}
 
-      {tr.coreRisk && <CoreRisk headline={tr.coreRisk.headline} body={tr.coreRisk.body} />}
+      {tr.coreRisk && (
+        <CoreRisk
+          eyebrow={tr.coreRisk.eyebrow}
+          headline={tr.coreRisk.headline}
+          body={tr.coreRisk.body}
+          aside={coreRiskAside}
+        />
+      )}
 
       {tr.consequenceChain && (
         <ConsequenceSection
@@ -69,6 +85,7 @@ export const SectorTemplate = ({ config, translations: tr, heroOverride, afterHe
           headline={tr.strategicValue.headline}
           body={tr.strategicValue.body}
           values={tr.strategicValue.values}
+          layout={config.strategicValue?.layout}
         />
       )}
 

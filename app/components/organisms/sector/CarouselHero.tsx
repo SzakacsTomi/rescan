@@ -1,40 +1,39 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import { ScrollArrow } from "@/app/components/atoms/ScrollArrow";
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Link } from "@/i18n/navigation";
 
 type CarouselHeroProps = {
+  eyebrow?: string;
   headline: string;
   subheadline: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
-  scrollTargetId: string;
   images: string[];
 };
 
-const MIN_W = 310;
-const MAX_W = 440;
-const GAP = 10;
-const MAX_IMAGES = 30;
+const MIN_W = 240;
+const MAX_W = 360;
+const GAP = 8;
+const MAX_IMAGES = 24;
 
-const ROW_CONFIGS = [
-  { duration: "55s" },
-  { duration: "70s" },
-  { duration: "48s" },
-  { duration: "65s" },
-];
+const ROW_CONFIGS = [{ duration: "200s" }, { duration: "140s" }, { duration: "201s" }];
 
 function seededWidth(index: number): number {
   const hash = ((index * 2654435761) >>> 0) % 1000;
   return MIN_W + Math.round((hash / 999) * (MAX_W - MIN_W));
 }
 
-function buildRow(images: string[], rowIdx: number, totalRows: number) {
-  const slice = images.filter((_, i) => i % totalRows === rowIdx);
-  const safe = slice.length > 0 ? slice : images;
+/** Every row gets the full image list, just rotated to a different start, so a small
+ *  Cloudinary folder still reads as a dense, continuous strip in each row rather than
+ *  thinning out three ways. */
+function buildRow(images: string[], rowIdx: number) {
+  const rotated = [...images.slice(rowIdx), ...images.slice(0, rowIdx)];
+  const safe = rotated.length > 0 ? rotated : images;
   return [
     ...safe.map((src, i) => ({
       src,
@@ -51,12 +50,7 @@ function buildRow(images: string[], rowIdx: number, totalRows: number) {
 
 function CarouselImage({ src, width }: { src: string; width: number }) {
   return (
-    <motion.div
-      className="shrink-0 relative rounded-lg overflow-hidden h-full"
-      style={{ width }}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-    >
+    <div className="relative h-full shrink-0 overflow-hidden" style={{ width }}>
       <Image
         src={src}
         alt=""
@@ -67,38 +61,66 @@ function CarouselImage({ src, width }: { src: string; width: number }) {
           (e.target as HTMLImageElement).classList.replace("opacity-0", "opacity-100");
         }}
       />
-    </motion.div>
+    </div>
   );
 }
 
 export const CarouselHero = ({
+  eyebrow,
   headline,
   subheadline,
   primaryCta,
   secondaryCta,
-  scrollTargetId,
   images,
 }: CarouselHeroProps) => {
   const limitedImages = images.slice(0, MAX_IMAGES);
 
   const rows = ROW_CONFIGS.map((cfg, rowIdx) => ({
     ...cfg,
-    track: buildRow(limitedImages, rowIdx, ROW_CONFIGS.length),
+    track: buildRow(limitedImages, rowIdx),
   }));
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
-      {/* Background: rows of scrolling images */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
-        <div className="flex flex-col h-full w-full" style={{ gap: GAP }}>
+    <section className="grid grid-cols-1 border-b border-border lg:min-h-[86vh] lg:grid-cols-[minmax(0,1fr)_44%]">
+      <div className="flex flex-col justify-center gap-10 px-6 py-16 lg:ml-auto lg:max-w-205 lg:pt-28 lg:pb-24">
+        <div>
+          {eyebrow && <MonoLabel className="text-primary">{eyebrow}</MonoLabel>}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-7 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-[-0.03em] text-balance whitespace-pre-line"
+          >
+            {headline}
+          </motion.h1>
+          <p className="mt-7 max-w-155 text-[19px] leading-[1.65] text-foreground/60">
+            {subheadline}
+          </p>
+        </div>
+        <div className="flex items-center gap-6">
+          <Link
+            href={primaryCta.href}
+            className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
+          >
+            {primaryCta.label}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <Link
+            href={secondaryCta.href}
+            className="border-b border-foreground/25 pb-0.5 text-sm font-semibold text-foreground hover:border-foreground/50"
+          >
+            {secondaryCta.label}
+          </Link>
+        </div>
+      </div>
+
+      <div className="relative h-72 overflow-hidden bg-[#020409] sm:h-96 lg:h-auto">
+        <div className="absolute inset-0 flex flex-col gap-2 py-2">
           {rows.map((row) => (
-            <div key={row.duration} className="relative overflow-hidden flex-1">
+            <div key={row.duration} className="relative flex-1 overflow-hidden">
               <div
-                className="flex w-max h-full"
-                style={{
-                  gap: GAP,
-                  animation: `marquee ${row.duration} linear infinite`,
-                }}
+                className="flex h-full w-max"
+                style={{ gap: GAP, animation: `marquee ${row.duration} linear infinite` }}
               >
                 {row.track.map(({ id, src, width }) => (
                   <CarouselImage key={id} src={src} width={width} />
@@ -107,46 +129,7 @@ export const CarouselHero = ({
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Subtle uniform overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-[rgba(5,10,30,0.6)]" />
-
-      {/* Radial shade behind the text */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(5,10,30,0.5) 0%, rgba(5,10,30,0.0) 100%)",
-        }}
-      />
-
-      {/* Hero content */}
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6 whitespace-pre-line">
-          {headline}
-        </h1>
-        <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
-          {subheadline}
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href={primaryCta.href}
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm tracking-wide hover:bg-primary/90 transition-colors w-full sm:w-auto"
-          >
-            {primaryCta.label}
-          </Link>
-          <Link
-            href={secondaryCta.href}
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg border border-white/40 bg-white/10 backdrop-blur-sm text-white font-semibold text-sm tracking-wide hover:bg-white/20 transition-colors w-full sm:w-auto"
-          >
-            {secondaryCta.label}
-          </Link>
-        </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-        <ScrollArrow targetId={scrollTargetId} className="text-white hover:text-white/65" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,4,9,0.85)_0%,rgba(2,4,9,0.15)_40%,rgba(2,4,9,0.15)_100%)]" />
       </div>
     </section>
   );
