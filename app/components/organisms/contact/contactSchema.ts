@@ -1,25 +1,45 @@
 import { z } from 'zod';
 
+/**
+ * Fields come from the Contact brief. Two deviations, both recorded in OPEN-ITEMS.md:
+ * the brief's list has no Name and no Email (an enquiry with no reply address cannot be
+ * answered, so both are kept), and the old Phone field is gone because the brief asks to
+ * avoid anything not needed for the first conversation.
+ */
+
+export const SECTOR_OPTIONS = ['retail', 'logistics', 'other'] as const;
+export const TIMING_OPTIONS = ['within1Month', 'oneToThree', 'threeToSix', 'later'] as const;
+
+export type SectorOption = (typeof SECTOR_OPTIONS)[number];
+export type TimingOption = (typeof TIMING_OPTIONS)[number];
+
 export type FormTranslations = {
   headline: string;
+  sector: string;
+  sectorPlaceholder: string;
+  sectorOptions: Record<SectorOption, string>;
   name: string;
   namePlaceholder: string;
-  company: string;
-  companyPlaceholder: string;
   email: string;
   emailPlaceholder: string;
-  phone: string;
-  phonePlaceholder: string;
-  service: string;
-  servicePlaceholder: string;
-  serviceOptions: {
-    commercial: string;
-    industrial: string;
-    modelling: string;
-    other: string;
-  };
-  message: string;
-  messagePlaceholder: string;
+  company: string;
+  companyPlaceholder: string;
+  role: string;
+  rolePlaceholder: string;
+  scale: string;
+  scalePlaceholder: string;
+  scaleHelp: string;
+  decision: string;
+  decisionPlaceholder: string;
+  decisionHelp: string;
+  incomplete: string;
+  incompletePlaceholder: string;
+  incompleteHelp: string;
+  timing: string;
+  timingPlaceholder: string;
+  timingOptions: Record<TimingOption, string>;
+  additionalContext: string;
+  additionalContextPlaceholder: string;
   submit: string;
   submitting: string;
   successTitle: string;
@@ -36,23 +56,37 @@ export type FormTranslations = {
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const requiredText = z.string().min(1, 'required');
+
 export const contactSchema = z.object({
-  name: z.string().min(1, 'required'),
-  company: z.string().min(1, 'required'),
-  email: z
-    .string()
-    .min(1, 'required')
-    .refine((v) => emailRegex.test(v), 'invalidEmail'),
-  message: z.string().min(1, 'required'),
+  sector: requiredText,
+  name: requiredText,
+  email: requiredText.refine((v) => emailRegex.test(v), 'invalidEmail'),
+  company: requiredText,
+  role: requiredText,
+  scale: requiredText,
+  decision: requiredText,
+  incomplete: requiredText,
+  timing: requiredText,
 });
 
+/** Field order matters: it decides which error the user is scrolled to first. */
+export const CONTACT_FIELDS = [
+  'sector',
+  'name',
+  'email',
+  'company',
+  'role',
+  'scale',
+  'decision',
+  'incomplete',
+  'timing',
+] as const;
+
 export function validateContactForm(fd: FormData): Record<string, string> | null {
-  const result = contactSchema.safeParse({
-    name: fd.get('name'),
-    company: fd.get('company'),
-    email: fd.get('email'),
-    message: fd.get('message'),
-  });
+  const result = contactSchema.safeParse(
+    Object.fromEntries(CONTACT_FIELDS.map((field) => [field, fd.get(field)])),
+  );
   if (!result.success) {
     const errs: Record<string, string> = {};
     for (const issue of result.error.issues) {

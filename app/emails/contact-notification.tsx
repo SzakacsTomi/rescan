@@ -1,29 +1,47 @@
 interface ContactEmailProps {
+  sector: string;
   name: string;
-  company: string;
   email: string;
-  phone?: string;
-  service?: string;
-  message: string;
+  company: string;
+  role: string;
+  scale: string;
+  decision: string;
+  incomplete: string;
+  timing: string;
+  additionalContext?: string;
 }
 
 export function contactNotificationHtml({
+  sector,
   name,
-  company,
   email,
-  phone,
-  service,
-  message,
+  company,
+  role,
+  scale,
+  decision,
+  incomplete,
+  timing,
+  additionalContext,
 }: ContactEmailProps): string {
   const escapeHtml = (str: string) =>
     str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
   const rows = [
+    { label: "Sector", value: sector },
     { label: "Name", value: name },
-    { label: "Company", value: company },
     { label: "Email", value: email },
-    ...(phone ? [{ label: "Phone", value: phone }] : []),
-    ...(service ? [{ label: "Service", value: service }] : []),
+    { label: "Company", value: company },
+    { label: "Role", value: role },
+    { label: "Scale", value: scale },
+    { label: "Timing", value: timing },
+  ];
+
+  // The two qualification questions are the point of the form — they get their own
+  // blocks rather than being squeezed into the details table.
+  const answers = [
+    { label: "What project or decision will the information support?", value: decision },
+    { label: "What happens if the information is incomplete?", value: incomplete },
+    ...(additionalContext ? [{ label: "Additional context", value: additionalContext }] : []),
   ];
 
   return `<!DOCTYPE html>
@@ -71,7 +89,7 @@ export function contactNotificationHtml({
                   .map(
                     ({ label, value }) => `
                 <tr>
-                  <td style="padding:12px 0;border-bottom:1px solid #E5EAF5;width:110px;vertical-align:top;">
+                  <td style="padding:12px 0;border-bottom:1px solid #E5EAF5;width:130px;vertical-align:top;">
                     <span style="font-size:12px;font-weight:600;color:#141E3D;opacity:0.5;text-transform:uppercase;letter-spacing:0.5px;">${escapeHtml(label)}</span>
                   </td>
                   <td style="padding:12px 0 12px 16px;border-bottom:1px solid #E5EAF5;vertical-align:top;">
@@ -88,15 +106,20 @@ export function contactNotificationHtml({
             </td>
           </tr>
 
-          <!-- Message -->
+          <!-- Qualification answers -->
+          ${answers
+            .map(
+              ({ label, value }) => `
           <tr>
-            <td style="padding:0 40px 32px;">
+            <td style="padding:0 40px 24px;">
               <p style="margin:0 0 8px;font-size:12px;font-weight:600;color:#141E3D;opacity:0.5;text-transform:uppercase;letter-spacing:0.5px;">
-                Message
+                ${escapeHtml(label)}
               </p>
-              <div style="background-color:#f7f8fb;border-radius:6px;padding:20px;font-size:14px;color:#141E3D;line-height:1.6;white-space:pre-wrap;">${escapeHtml(message)}</div>
+              <div style="background-color:#f7f8fb;border-radius:6px;padding:20px;font-size:14px;color:#141E3D;line-height:1.6;white-space:pre-wrap;">${escapeHtml(value)}</div>
             </td>
-          </tr>
+          </tr>`,
+            )
+            .join("")}
 
           <!-- CTA -->
           <tr>
@@ -111,8 +134,7 @@ export function contactNotificationHtml({
           <tr>
             <td style="background-color:#f7f8fb;padding:24px 40px;text-align:center;border-top:1px solid #E5EAF5;">
               <p style="margin:0;font-size:12px;color:#141E3D;opacity:0.4;line-height:1.6;">
-                Rescan &mdash; 3D scanning for the built environment<br />
-                Stockholm, Sweden
+                Rescan &mdash; building information for retail chains and logistics warehouses
               </p>
             </td>
           </tr>

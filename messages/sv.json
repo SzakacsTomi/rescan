@@ -102,38 +102,61 @@
       "responseLabel": "Svarstid",
       "response": "Inom en arbetsdag"
     },
+    "steps": {
+      "identity": "Vem du är",
+      "property": "Fastigheten",
+      "decision": "Beslutet",
+      "risk": "Vad som står på spel",
+      "timing": "Tidplan"
+    },
     "form": {
-      "headline": "Skicka ett meddelande",
+      "headline": "Projektförfrågan",
+      "sector": "Sektor",
+      "sectorPlaceholder": "Välj sektor",
+      "sectorOptions": {
+        "retail": "Butikskedjor",
+        "logistics": "Logistiklager",
+        "other": "Annat"
+      },
       "name": "Namn",
       "namePlaceholder": "Ditt namn",
+      "email": "E-post",
+      "emailPlaceholder": "din@epost.se",
       "company": "Företag",
       "companyPlaceholder": "Ditt företag",
-      "email": "E-post",
-      "emailPlaceholder": "din@email.com",
-      "phone": "Telefon",
-      "phonePlaceholder": "+46 ...",
-      "service": "Tjänst av intresse",
-      "servicePlaceholder": "Välj en tjänst",
-      "serviceOptions": {
-        "commercial": "Kommersiella Fastigheter",
-        "industrial": "Industri & Tillverkning",
-        "modelling": "3D-modellering",
-        "other": "Annat / Vet ej"
+      "role": "Din roll",
+      "rolePlaceholder": "t.ex. fastighetschef",
+      "scale": "Antal butiker eller ungefärlig lagerstorlek",
+      "scalePlaceholder": "t.ex. 42 butiker, eller 38 000 m²",
+      "scaleHelp": "En ungefärlig siffra räcker i det här skedet.",
+      "decision": "Vilket projekt eller beslut ska informationen stödja?",
+      "decisionPlaceholder": "Beskriv projektet eller beslutet som detta ska stödja.",
+      "decisionHelp": "Till exempel: ombyggnad, etablering, omdesign, retrofit, integration av utrustning, förändringar i anläggningen eller planering av beståndet.",
+      "incomplete": "Vad händer om informationen är ofullständig?",
+      "incompletePlaceholder": "Beskriv vad ofullständig information skulle kosta er.",
+      "incompleteHelp": "Till exempel: extra platsbesök, antaganden i projekteringen, omprojektering, samordningsproblem, förseningar eller ytterligare utredning.",
+      "timing": "Önskad tidplan",
+      "timingPlaceholder": "Välj tidsram",
+      "timingOptions": {
+        "within1Month": "Inom en månad",
+        "oneToThree": "1–3 månader",
+        "threeToSix": "3–6 månader",
+        "later": "Senare, eller inte bestämt"
       },
-      "message": "Meddelande",
-      "messagePlaceholder": "Beskriv ditt projekt eller din fråga...",
-      "submit": "Skicka meddelande",
+      "additionalContext": "Övrig information",
+      "additionalContextPlaceholder": "Något annat som hjälper oss förstå projektet.",
+      "submit": "Diskutera mitt projekt",
       "submitting": "Skickar...",
-      "successTitle": "Meddelande skickat",
-      "successMessage": "Tack — vi återkommer inom en arbetsdag.",
-      "errorMessage": "Något gick fel. Försök igen eller maila oss direkt.",
+      "successTitle": "Förfrågan skickad",
+      "successMessage": "Tack — vi hör av oss inom en arbetsdag.",
+      "errorMessage": "Något gick fel. Försök igen eller mejla oss direkt.",
       "required": "Fyll i alla obligatoriska fält.",
       "invalidEmail": "Ange en giltig e-postadress.",
-      "consentBefore": "Jag samtycker till att Rescan behandlar mina personuppgifter för att svara på min förfrågan. Se vår ",
+      "consentBefore": "Jag samtycker till att Rescan behandlar mina personuppgifter för att besvara min förfrågan. Se vår ",
       "consentLinkText": "integritetspolicy",
       "consentAfter": ".",
       "consentRequired": "Du måste samtycka till databehandling innan du skickar.",
-      "captchaError": "Vänligen slutför verifieringen."
+      "captchaError": "Slutför verifieringen."
     }
   },
   "projectsPage": {
@@ -369,10 +392,18 @@
         "headline": "Anlitad av ledande fastighetsteam"
       },
       "metrics": {
-        "item0": { "label": "projekt levererade" },
-        "item1": { "label": "m² digitalt insamlade" },
-        "item2": { "label": "portföljer, 40+ fastigheter vardera" },
-        "item3": { "label": "fastighetssektorer" }
+        "item0": {
+          "label": "projekt levererade"
+        },
+        "item1": {
+          "label": "m² digitalt insamlade"
+        },
+        "item2": {
+          "label": "portföljer, 40+ fastigheter vardera"
+        },
+        "item3": {
+          "label": "fastighetssektorer"
+        }
       },
       "fitNotFit": {
         "headline": "Vem detta är för",

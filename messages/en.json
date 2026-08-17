@@ -102,34 +102,57 @@
       "responseLabel": "Response time",
       "response": "Within one business day"
     },
+    "steps": {
+      "identity": "Who you are",
+      "property": "The property",
+      "decision": "The decision",
+      "risk": "What's at risk",
+      "timing": "Timing"
+    },
     "form": {
-      "headline": "Send us a message",
+      "headline": "Project enquiry",
+      "sector": "Sector",
+      "sectorPlaceholder": "Select a sector",
+      "sectorOptions": {
+        "retail": "Retail Chains",
+        "logistics": "Logistics Warehouses",
+        "other": "Other"
+      },
       "name": "Name",
       "namePlaceholder": "Your name",
-      "company": "Company",
-      "companyPlaceholder": "Your company",
       "email": "Email",
       "emailPlaceholder": "your@email.com",
-      "phone": "Phone",
-      "phonePlaceholder": "+46 ...",
-      "service": "Service of interest",
-      "servicePlaceholder": "Select a service",
-      "serviceOptions": {
-        "commercial": "Commercial Portfolios",
-        "industrial": "Industrial & Manufacturing",
-        "modelling": "3D Modelling",
-        "other": "Other / Not sure"
+      "company": "Company",
+      "companyPlaceholder": "Your company",
+      "role": "Your role",
+      "rolePlaceholder": "e.g. Property Director",
+      "scale": "Number of retail locations or approximate warehouse size",
+      "scalePlaceholder": "e.g. 42 stores, or 38,000 m²",
+      "scaleHelp": "A rough figure is enough at this stage.",
+      "decision": "What project or decision will the information support?",
+      "decisionPlaceholder": "Describe the project or decision this needs to support.",
+      "decisionHelp": "For example: refurbishment, rollout, redesign, retrofit, equipment integration, facility changes or portfolio planning.",
+      "incomplete": "What happens if the information is incomplete?",
+      "incompletePlaceholder": "Describe what incomplete information would cost you.",
+      "incompleteHelp": "For example: additional site visits, design assumptions, redesign, coordination problems, delay or additional investigation.",
+      "timing": "Required timing",
+      "timingPlaceholder": "Select a timeframe",
+      "timingOptions": {
+        "within1Month": "Within a month",
+        "oneToThree": "1–3 months",
+        "threeToSix": "3–6 months",
+        "later": "Later, or not yet decided"
       },
-      "message": "Message",
-      "messagePlaceholder": "Describe your project or question...",
-      "submit": "Send message",
+      "additionalContext": "Additional context",
+      "additionalContextPlaceholder": "Anything else that would help us understand the project.",
+      "submit": "Discuss my project",
       "submitting": "Sending...",
-      "successTitle": "Message sent",
+      "successTitle": "Enquiry sent",
       "successMessage": "Thank you — we'll be in touch within one business day.",
       "errorMessage": "Something went wrong. Please try again or email us directly.",
       "required": "Please fill in all required fields.",
       "invalidEmail": "Please enter a valid email address.",
-      "consentBefore": "I consent to Rescan processing my personal data to respond to my inquiry. See our ",
+      "consentBefore": "I consent to Rescan processing my personal data to respond to my enquiry. See our ",
       "consentLinkText": "Privacy Policy",
       "consentAfter": ".",
       "consentRequired": "You must consent to data processing before submitting.",
@@ -369,10 +392,18 @@
         "headline": "Trusted by leading real estate teams"
       },
       "metrics": {
-        "item0": { "label": "projects delivered" },
-        "item1": { "label": "m² digitally captured" },
-        "item2": { "label": "portfolios, 40+ properties each" },
-        "item3": { "label": "property sectors served" }
+        "item0": {
+          "label": "projects delivered"
+        },
+        "item1": {
+          "label": "m² digitally captured"
+        },
+        "item2": {
+          "label": "portfolios, 40+ properties each"
+        },
+        "item3": {
+          "label": "property sectors served"
+        }
       },
       "fitNotFit": {
         "headline": "Who this is for",
