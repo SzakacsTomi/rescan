@@ -89,18 +89,35 @@
   },
   "contactPage": {
     "hero": {
-      "headline": "Vi diskuterar\ngärna ditt projekt.",
-      "subheadline": "Berätta vad du arbetar med så återkommer vi inom en arbetsdag."
+      "headline": "Berätta vad du behöver förstå inför nästa beslut.",
+      "subheadline": "Den användbara utgångspunkten är inte specifikationen för inmätningen.\nDet är fastigheten, projektet och vad ofullständig information kan kosta dig."
     },
     "details": {
-      "headline": "Kontakta oss",
-      "intro": "Vi arbetar med kapitalförvaltare, ingenjörsteam och arkitekter i Skandinavien. Om du har ett projekt eller en portfölj i åtanke berättar vi gärna mer.",
       "emailLabel": "E-post",
-      "email": "hello@rescan.se",
+      "email": "info@rescan.se",
       "locationLabel": "Baserade i",
-      "location": "Stockholm, Sverige",
+      "location": "Växjö, Sverige",
       "responseLabel": "Svarstid",
       "response": "Inom en arbetsdag"
+    },
+    "map": {
+      "title": "Karta som visar RESCANs kontor i Växjö, Sverige",
+      "locationLabel": "Plats",
+      "address": "Rådjursvägen 1, 352 45 Växjö",
+      "coordinatesLabel": "Koordinater",
+      "coordinates": "56.8777° N · 14.7894° E",
+      "openInMaps": "Öppna Rådjursvägen 1 i Google Maps"
+    },
+    "bestFit": {
+      "headline": "Passar bäst för",
+      "item0": "Butiksprogram över flera platser",
+      "item1": "Stora eller komplexa logistiklagerprojekt",
+      "item2": "Projekt där extra besök, omprojektering eller förseningar innebär verklig kostnad",
+      "disqualifier0": "Inte privata bostäder.",
+      "disqualifier1": "Inte enstaka uppdrag med låg budget."
+    },
+    "rail": {
+      "label": "Avsnitt i förfrågan"
     },
     "steps": {
       "identity": "Vem du är",

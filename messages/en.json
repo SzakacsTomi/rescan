@@ -89,18 +89,35 @@
   },
   "contactPage": {
     "hero": {
-      "headline": "Let's discuss\nyour project.",
-      "subheadline": "Tell us what you're working on and we'll get back to you within one business day."
+      "headline": "Tell us what you need to understand before the next decision.",
+      "subheadline": "The useful starting point is not the scanning specification.\nIt is the property, the project and what incomplete information could cost you."
     },
     "details": {
-      "headline": "Get in touch",
-      "intro": "We work with asset managers, engineering teams, and architects across Scandinavia. If you have a project or portfolio in mind, we'd like to hear about it.",
       "emailLabel": "Email",
-      "email": "hello@rescan.se",
+      "email": "info@rescan.se",
       "locationLabel": "Based in",
-      "location": "Stockholm, Sweden",
+      "location": "Växjö, Sweden",
       "responseLabel": "Response time",
       "response": "Within one business day"
+    },
+    "map": {
+      "title": "Map showing RESCAN's office in Växjö, Sweden",
+      "locationLabel": "Location",
+      "address": "Rådjursvägen 1, 352 45 Växjö",
+      "coordinatesLabel": "Coordinates",
+      "coordinates": "56.8777° N · 14.7894° E",
+      "openInMaps": "Open Rådjursvägen 1 in Google Maps"
+    },
+    "bestFit": {
+      "headline": "Best fit",
+      "item0": "Multi-site retail programmes",
+      "item1": "Large or complex logistics warehouse projects",
+      "item2": "Projects where additional visits, redesign or delay carry meaningful cost",
+      "disqualifier0": "Not private residential work.",
+      "disqualifier1": "Not low-budget one-off surveys."
+    },
+    "rail": {
+      "label": "Enquiry sections"
     },
     "steps": {
       "identity": "Who you are",
