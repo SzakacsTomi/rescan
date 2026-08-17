@@ -1,8 +1,8 @@
-import { Check, X } from 'lucide-react';
+import { Check, X } from "lucide-react";
 
-import { MonoLabel } from '@/app/components/atoms/MonoLabel';
-import { Reveal } from '@/app/components/atoms/Reveal';
-import { cn } from '@/lib/utils';
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { Reveal } from "@/app/components/atoms/Reveal";
+import { cn } from "@/lib/utils";
 
 type FitGroup = {
   title: string;
@@ -15,8 +15,8 @@ type FitNotFitProps = {
   notFit: FitGroup;
 };
 
-const SECTION_BG = '#020409';
-const FIT_ACCENT_CLASS = 'text-[#7ee2b8]';
+const SECTION_BG = "#020409";
+const FIT_ACCENT_CLASS = "text-[#7ee2b8]";
 
 export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
   return (
@@ -29,7 +29,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
         </Reveal>
         <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <MonoLabel className={cn('border-b border-white/20 pb-5', FIT_ACCENT_CLASS)}>
+            <MonoLabel className={cn("border-b border-white/20 pb-5", FIT_ACCENT_CLASS)}>
               {bestFit.title}
             </MonoLabel>
             <ul className="flex flex-col">
@@ -40,7 +40,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
                   className="flex gap-4 border-b border-white/8 py-5 text-[17px] leading-snug text-white/82"
                 >
                   <Check
-                    className={cn('mt-0.5 h-[18px] w-[18px] shrink-0', FIT_ACCENT_CLASS)}
+                    className={cn("mt-0.5 h-4.5 w-4.5 shrink-0", FIT_ACCENT_CLASS)}
                     strokeWidth={2.5}
                   />
                   {item}
@@ -59,7 +59,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
                   key={item}
                   className="flex gap-4 border-b border-white/8 py-5 text-[17px] leading-snug text-white/40"
                 >
-                  <X className="mt-0.5 h-[18px] w-[18px] shrink-0 text-white/35" strokeWidth={2.5} />
+                  <X className="mt-0.5 h-4.5 w-4.5 shrink-0 text-white/35" strokeWidth={2.5} />
                   {item}
                 </Reveal>
               ))}

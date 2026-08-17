@@ -94,7 +94,7 @@ export const SectionCard = ({
 
         <div>
           <h3 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h3>
-          <p className="mt-3 max-w-[460px] text-lg font-medium text-white/80">{lead}</p>
+          <p className="mt-3 max-w-115 text-lg font-medium text-white/80">{lead}</p>
 
           <div
             className="overflow-hidden transition-[max-height,opacity] duration-500"
@@ -103,7 +103,7 @@ export const SectionCard = ({
               opacity: isActive ? 1 : 0,
             }}
           >
-            <p className="mt-5 max-w-[520px] whitespace-pre-line text-sm leading-relaxed text-white/60">
+            <p className="mt-5 max-w-130 whitespace-pre-line text-sm leading-relaxed text-white/60">
               {description}
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2.5">
