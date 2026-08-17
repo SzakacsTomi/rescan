@@ -1,39 +1,101 @@
 {
   "metadata": {
-    "title": "Rescan – Kreativ Studio",
-    "description": "Vi skapar övertygande visuella identiteter för framåtblickande varumärken."
+    "title": "Rescan — Byggnadsinformation för butikskedjor och logistiklager",
+    "description": "Pålitlig information om befintliga förhållanden för butikskedjor och logistiklager, så att projektteam kan besluta tidigare och behöva återvända till platsen mer sällan."
   },
   "site": {
     "name": "Rescan"
   },
-  "hero": {
-    "headline": "Djärva idéer,\nperfekt utförande.",
-    "subheadline": "Vi skapar övertygande visuella identiteter för framåtblickande varumärken.",
-    "scrollHint": "Bläddra för att utforska"
-  },
-  "sections": {
-    "commercialPortfolios": {
-      "title": "Kommersiella Fastigheter",
-      "description": "För kapitalförvaltare och fastighetsägare som hanterar återkommande uppgraderingar över flera fastigheter."
+  "homePage": {
+    "hero": {
+      "headline": "Vet vad som finns där innan\nbristande information kostar\ntid och pengar.",
+      "subheadline": "RESCAN skapar pålitlig byggnadsinformation för butikskedjor och logistiklager – och ger projektteam det underlag de behöver innan obesvarade frågor om platsen blir till återbesök, omprojektering eller förseningar.",
+      "primaryCta": "Diskutera ett projekt",
+      "scrollHint": "Skrolla för att utforska"
     },
-    "industrialManufacturing": {
-      "title": "Industri & Tillverkning",
-      "description": "För ingenjörs- och driftteam som installerar ny utrustning eller planerar ombyggnationer."
+    "sectorSplit": {
+      "headline": "Två sektorer. Två kostsamma problem."
     },
-    "modelProduction": {
-      "title": "2D/3D Modellproduktion",
-      "description": "För arkitekter, konsulter och scanningföretag som behöver pålitlig modellproduktionskapacitet."
+    "sectors": {
+      "retailChains": {
+        "title": "Butikskedjor",
+        "lead": "Färre platsbesök. Mindre spilld tid över hela beståndet.",
+        "description": "När en projektör, entreprenör eller fastighetsteam måste åka tillbaka till en butik bara för att bekräfta befintliga förhållanden är kostnaden större än själva besöket.\nResor, planering och förlorad projekteringstid mångdubblas över dussintals eller hundratals platser.\nRESCAN hjälper till att fånga mer av det teamen kommer att behöva redan från början.",
+        "step0": "Bristande information",
+        "step1": "ännu ett besök",
+        "step2": "förlorad tid",
+        "step3": "ökad kostnad för beståndet",
+        "cta": "Utforska butikskedjor"
+      },
+      "logisticsWarehouses": {
+        "title": "Logistiklager",
+        "lead": "Förstå hela lagret innan du bygger om en del av det.",
+        "description": "Stora logistikanläggningar är svåra att förstå utifrån fragmenterade ritningar och enstaka inmätningar.\nNär befintliga förhållanden missas smyger sig antaganden in i projekteringen – och kan senare bli kollisioner, omprojektering, ytterligare utredning och förseningar.\nRESCAN ger projektteam en pålitlig bild av anläggningen innan de problemen förs vidare.",
+        "step0": "Bristande information",
+        "step1": "antaganden",
+        "step2": "omprojektering eller utredning",
+        "step3": "förlorad projekttid",
+        "cta": "Utforska logistiklager"
+      }
+    },
+    "proof": {
+      "headline": "Bevisat i verkliga fastigheter.",
+      "item0": {
+        "figure": "[[TODO: retail locations captured, e.g. 120+]]",
+        "statement": "[[TODO: one short proof statement about the retail programme]]"
+      },
+      "item1": {
+        "figure": "[[TODO: largest logistics facility in m²]]",
+        "statement": "[[TODO: one short statement showing scale or complexity]]"
+      },
+      "item2": {
+        "figure": "[[TODO: repeat programme or repeat client metric]]",
+        "statement": "[[TODO: one short supporting statement]]"
+      },
+      "item3": {
+        "figure": "[[TODO: delivery, QA or geographic proof]]",
+        "statement": "[[TODO: one short supporting statement]]"
+      },
+      "cta": "Se projekt"
+    },
+    "informationValue": {
+      "headline": "Byggnadsinformation ska fortsätta besvara frågor även efter platsbesöket.",
+      "point0": {
+        "title": "Dokumentera för återkommande användning",
+        "description": "Ge projektteam information de kan gå tillbaka till när nya frågor dyker upp."
+      },
+      "point1": {
+        "title": "Håll det enhetligt över flera platser",
+        "description": "Ett upprepbart arbetssätt spelar roll när en plats blir tio, femtio eller hundra."
+      },
+      "point2": {
+        "title": "Stöd arbetet som följer",
+        "description": "Skapa byggnadsinformation som arkitekter, ingenjörer, entreprenörer och fastighetsteam faktiskt kan använda när beslut ska fattas."
+      },
+      "cta": "Varför RESCAN"
+    },
+    "qualification": {
+      "headline": "Byggt för projekt där felaktiga antaganden om befintliga förhållanden får konsekvenser.",
+      "bestFit": {
+        "title": "RESCAN fokuserar på",
+        "item0": "Butikskedjor som hanterar flera platser",
+        "item1": "Stora eller komplexa logistiklagerprojekt",
+        "item2": "Projekt där ofullständig information kan skapa extra besök, omprojektering eller förseningar"
+      },
+      "notFit": {
+        "title": "Fokuserar inte på",
+        "item0": "Privata bostäder",
+        "item1": "Enstaka uppdrag med låg budget"
+      }
+    },
+    "finalCta": {
+      "headline": "Vad behöver du förstå inför nästa beslut?",
+      "cta": "Diskutera ditt projekt"
     }
   },
   "footer": {
     "copyright": "© 2026 Rescan. Alla rättigheter förbehållna.",
-    "tagline": "3D-skanning för den byggda miljön.",
-    "nav": {
-      "work": "Arbete",
-      "about": "Om oss",
-      "services": "Tjänster",
-      "contact": "Kontakt"
-    },
+    "tagline": "Pålitlig byggnadsinformation för butikskedjor och logistiklager.",
     "social": {
       "instagram": "Instagram",
       "linkedin": "LinkedIn",
@@ -45,15 +107,17 @@
     }
   },
   "nav": {
-    "commercial": "Kommersiellt",
-    "industrial": "Industri",
-    "modelProduction": "3D-modellering",
+    "retail": "Butikskedjor",
+    "logistics": "Logistiklager",
     "projects": "Projekt",
+    "whyRescan": "Varför RESCAN",
     "about": "Om oss",
     "contact": "Kontakt"
   },
   "common": {
-    "switchLanguage": "English"
+    "switchLanguage": "English",
+    "viewProjects": "Se projekt",
+    "proof": "Bevis"
   },
   "aboutPage": {
     "hero": {
@@ -85,6 +149,82 @@
       "headline": "Redo att arbeta med data du kan lita på?",
       "primaryCta": "Boka ett samtal",
       "secondaryCta": "Se våra projekt"
+    }
+  },
+  "whyRescanPage": {
+    "hero": {
+      "headline": "Byggnadsinformation\nditt projektteam kan lita på.",
+      "subheadline": "RESCAN stödjer butikskedjor och logistiklagerteam där information om befintliga förhållanden behöver vara användbar långt efter att platsbesöket är avslutat.",
+      "cta": "Diskutera ett projekt"
+    },
+    "corePrinciple": {
+      "headline": "Inmätningen är bara utgångspunkten.",
+      "body": "Informationen kan senare användas av arkitekter, ingenjörer, entreprenörer, projektledare, fastighetsteam och driftteam.\nOm de teamen fortfarande måste ifrågasätta grundläggande befintliga förhållanden kvarstår en betydande osäkerhet.\nMålet är inte enbart att dokumentera byggnaden.\nDet är att skapa information som människor kan fortsätta använda när beslut ska fattas."
+    },
+    "pillars": {
+      "headline": "Varför RESCAN",
+      "pillar0": {
+        "title": "Upprepbarhet",
+        "lead": "Enhetlighet spelar roll när arbetet upprepas.",
+        "body": "Butiksbestånd och återkommande program behöver mer än en samling osammanhängande inmätningar.\nEtt upprepbart arbetssätt hjälper olika projektteam att utgå från en mer enhetlig informationsbas över flera platser.",
+        "proof": "[[TODO: verified multi-site or repeat-programme evidence — locations under one programme, repeat clients, standardised outputs]]"
+      },
+      "pillar1": {
+        "title": "Täckning",
+        "lead": "Minska luckorna som skickar tillbaka teamen.",
+        "body": "Ju fler relevanta befintliga förhållanden som fångas ordentligt, desto färre grundläggande frågor kräver en ny fysisk utredning.\nFör butikskedjor kan det betyda färre onödiga återbesök. För logistikanläggningar kan det betyda färre luckor in i projektering och samordning.",
+        "proof": "[[TODO: verified capture methodology, coverage example or project evidence — avoid absolutes like \"complete capture\"]]"
+      },
+      "pillar2": {
+        "title": "Användbarhet i nästa led",
+        "lead": "Informationen ska fungera för dem som fattar nästa beslut.",
+        "body": "Byggnadsinformation behöver stödja de arkitekter, ingenjörer, entreprenörer och fastighetsteam som använder den senare.\nJu starkare informationen är från början, desto mindre tid behöver de teamen lägga på att bygga upp sin förståelse av byggnaden på nytt.",
+        "proof": "[[TODO: factual explanation of deliverables and how downstream teams actually use them]]"
+      },
+      "pillar3": {
+        "title": "Kvalitetskontroll",
+        "lead": "Projektbeslut bygger på pålitlig information.",
+        "body": "När byggnadsdata blir underlag för projektering, samordning eller ombyggnadsbeslut spelar kvalitetskontroll roll.",
+        "proof": "[[TODO: how RESCAN checks its work — review steps, tolerances, delivery standard. This replaces \"high quality\"]]"
+      }
+    },
+    "proof": {
+      "headline": "Bevis framför påståenden.",
+      "item0": {
+        "figure": "[[TODO: retail locations delivered, e.g. 120+]]",
+        "statement": "[[TODO: one short supporting fact]]"
+      },
+      "item1": {
+        "figure": "[[TODO: logistics facility floor area in m²]]",
+        "statement": "[[TODO: one short supporting fact]]"
+      },
+      "item2": {
+        "figure": "[[TODO: repeat programme or repeat business evidence]]",
+        "statement": "[[TODO: one short supporting fact]]"
+      },
+      "item3": {
+        "figure": "[[TODO: verified QA or delivery metric]]",
+        "statement": "[[TODO: one short supporting fact]]"
+      },
+      "cta": "Se projekt"
+    },
+    "focused": {
+      "headline": "Fokuserat med avsikt.",
+      "bestFit": {
+        "title": "RESCAN är byggt för",
+        "item0": "Butiksprogram över flera platser",
+        "item1": "Stora eller komplexa logistikanläggningar",
+        "item2": "Projekt där bristfällig information om befintliga förhållanden skapar verklig kostnad längre fram"
+      },
+      "notFit": {
+        "title": "Inte byggt för",
+        "item0": "Privata bostäder",
+        "item1": "Enstaka uppdrag med låg budget"
+      }
+    },
+    "finalCta": {
+      "headline": "Berätta vilket beslut byggnadsinformationen behöver stödja.",
+      "cta": "Diskutera ditt projekt"
     }
   },
   "contactPage": {
@@ -178,10 +318,65 @@
   },
   "projectsPage": {
     "hero": {
-      "headline": "Våra projekt",
-      "subheadline": "Ett urval av 3D-skannings- och digital dokumentationsprojekt inom kommersiella, industriella och arkitektoniska sektorer."
+      "headline": "Beviset är det som händer efter att byggnaden är dokumenterad.",
+      "subheadline": "En stor inmätning eller detaljerad modell visar teknisk förmåga. Den viktigare frågan är vad informationen hjälpte kunden att undvika, göra snabbare eller besluta tidigare.",
+      "cta": "Diskutera ditt projekt"
+    },
+    "finalCta": {
+      "headline": "Har du ett liknande bestånd eller en liknande anläggning?",
+      "subheadline": "Berätta vilket beslut som hänger på att de befintliga förhållandena stämmer.",
+      "cta": "Diskutera ditt projekt"
     },
     "backToProjects": "Tillbaka till projekt",
+    "sectorLabels": {
+      "retail": "Butikskedjor",
+      "logistics": "Logistiklager"
+    },
+    "caseStudy": {
+      "situation": "Situationen",
+      "informationGap": "Informationsluckan",
+      "cost": "Kostnaden för att låta det vara",
+      "established": "Vad RESCAN fastställde",
+      "changed": "Vad som förändrades",
+      "keyProof": "Nyckelbevis",
+      "viewProject": "Se projekt"
+    },
+    "caseRetail0": {
+      "title": "[[TODO: retail chain client or programme name]]",
+      "scale": "[[TODO: number of locations, e.g. 42 locations]]",
+      "region": "[[TODO: region or location]]",
+      "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
+      "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
+      "caseStudy": {
+        "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
+        "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
+        "cost": "[[TODO: the specific commercial consequence of leaving it unresolved — not \"accurate data was important\"]]",
+        "established": "[[TODO: what existing-condition information was captured and delivered]]",
+        "changed": "[[TODO: the verified downstream outcome — what the client could now do faster, remotely or with fewer visits]]",
+        "proof0": "[[TODO: number of locations, e.g. 42 locations]]",
+        "proof1": "[[TODO: region or countries covered]]",
+        "proof2": "[[TODO: relevant programme or delivery metric]]",
+        "proof3": "[[TODO: verified outcome metric, if available]]"
+      }
+    },
+    "caseLogistics0": {
+      "title": "[[TODO: logistics client or programme name]]",
+      "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
+      "region": "[[TODO: region or location]]",
+      "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
+      "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
+      "caseStudy": {
+        "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
+        "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
+        "cost": "[[TODO: the specific commercial consequence of leaving it unresolved — not \"accurate data was important\"]]",
+        "established": "[[TODO: what existing-condition information was captured and delivered]]",
+        "changed": "[[TODO: the verified downstream outcome — what the client could now do faster, remotely or with fewer visits]]",
+        "proof0": "[[TODO: facility floor area, e.g. 38,000 m²]]",
+        "proof1": "[[TODO: region or countries covered]]",
+        "proof2": "[[TODO: relevant programme or delivery metric]]",
+        "proof3": "[[TODO: verified outcome metric, if available]]"
+      }
+    },
     "project0": {
       "title": "Flerhyresgästkontor — Jönköping",
       "description": "Uthyrningsklara planritningar för hyresgästanpassning.",
@@ -349,47 +544,40 @@
     }
   },
   "sectorPage": {
-    "commercial": {
+    "retail": {
       "hero": {
-        "headline": "Säkerhet över\ndin fastighetsportfölj",
-        "subheadline": "Verifierad byggnadsdata för fastighetsportföljer — som stöder den dagliga driften och framtida projekt.",
-        "primaryCta": "Diskutera din portfölj",
+        "headline": "Minska antalet återbesök\ni ditt butiksbestånd.",
+        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam mer av den information de behöver utan att gång på gång skicka någon tillbaka till butiken.",
+        "primaryCta": "Diskutera ditt butiksbestånd",
         "secondaryCta": "Se projekt"
       },
       "coreRisk": {
-        "headline": "När du förvaltar flera fastigheter stannar inte små fel vid det.",
-        "body": "Över en fastighetsportfölj är byggnadsdokumentationen sällan konsekvent.\nVissa fastigheter har uppdaterade ritningar. Andra inte.\nMått skiljer sig. Standarder varierar mellan objekt.\nNär ett projekt startar behöver konsulter ofta omtolka befintlig dokumentation eller återvända till platsen för att verifiera förhållanden.\nFör en byggnad är det hanterbart.\nUpprepat över 15, 30 eller 50 fastigheter blir det återkommande kostnad, försening och frustration."
-      },
-      "friction": {
-        "headline": "Varför detta mönster upprepas i fastighetsportföljer",
-        "body": "I många portföljer uppdateras byggnadsdokumentationen bara när ett projekt tvingar fram det.\nEn renovering inleds. En teknisk uppgradering planeras. Eller konsulter upptäcker att ritningarna inte kan litas på.\nFörst då mäts eller dokumenteras byggnaden på nytt.\nDetta fungerar för ett enskilt projekt.\nÖver en portfölj innebär det att samma verifieringsarbete återkommer varje gång något förändras.",
-        "point0": {
-          "title": "Sluta skicka team tillbaka till platsen för att verifiera ritningar",
-          "description": "När fastigheter är spridda över städer eller regioner innebär verifiering vanligtvis resor.\nHögprecisions-3D-insamling gör att verifierade byggnadsförhållanden kan granskas på distans — utan att återvända till platsen.\nTeam kan kontrollera mått, layouter och system från kontoret innan arbetet börjar."
-        },
-        "point1": {
-          "title": "Sluta återupptäcka byggnaden varje gång ett projekt startar",
-          "description": "Många projekt börjar med samma fråga: \"Har vi faktiskt tillförlitliga ritningar för den här byggnaden?\"\nOm svaret är osäkert återvänder team till platsen för att mäta utrymmen, verifiera mått och kontrollera byggnadsinstallationer.\nNär exakt digital dokumentation redan finns kan projekt starta omedelbart från verifierade förhållanden."
-        },
-        "point2": {
-          "title": "Ge konsulter modeller de faktiskt kan arbeta med",
-          "description": "Många som-byggt-modeller levereras som en enda kombinerad fil. I praktiken skapar detta koordineringsproblem.\nVid behov strukturerar RESCAN modeller per disciplin — arkitektur, VVS och el — levererade i Revit eller Archicad för att passa konsulternas arbetsflöden."
-        }
+        "headline": "Det dyra är att behöva åka tillbaka.",
+        "body": "Ett saknat mått eller en obesvarad fråga om platsen kan verka som en småsak.\nÖver dussintals eller hundratals butiker innebär det mer resor, mer planering, mer samordning och mer projekteringstid.\nEtt onödigt återbesök är en irritation.\nUpprepat över ett helt bestånd blir det en kostnad."
       },
       "strategicValue": {
-        "headline": "En gemensam grund. Varje projekt börjar från kända förhållanden.",
+        "headline": "Dokumentera en gång. Gå tillbaka när frågorna dyker upp.",
+        "body": "RESCAN skapar en pålitlig dokumentation av varje plats så att projektteam kan besvara fler frågor utifrån den information som redan finns.",
         "valueA": {
-          "title": "Tydlig byggnadsdokumentation för hela portföljen",
-          "description": "Varje fastighet dokumenteras med samma struktur och standarder.\nFastighetsförvaltare och tekniska team kan komma åt tillförlitlig byggnadsdokumentation för varje objekt — inte en blandning av föråldrade ritningar och inkonsekvent material.\nDetta gör det enklare att förstå byggnadsförhållanden, planera uppgraderingar och förvalta fastigheter i portföljen.\nIstället för osäkerhet arbetar team från konsekvent dokumentation över alla objekt."
+          "title": "Färre återbesök",
+          "description": "Minska onödiga resor som bara görs för att verifiera befintliga förhållanden."
         },
         "valueB": {
-          "title": "Framtida projekt startar från kända förhållanden",
-          "description": "När renoverings- eller uppgraderingsprojekt börjar kan konsulter och interna team starta från verifierad byggnadsdokumentation.\nIstället för att mäta om byggnader eller tolka föråldrade ritningar börjar projekt med korrekta befintliga förhållanden.\nOm byggnader förändras över tid kan dokumentationen uppdateras snarare än återskapas från grunden.\nDetta minskar osäkerhet och hjälper projekt att gå snabbare."
+          "title": "Snabbare svar under projekteringen",
+          "description": "Ge teamen en dokumentation de kan gå tillbaka till när frågor dyker upp."
+        },
+        "valueC": {
+          "title": "Mindre dubbelarbete",
+          "description": "Minska upprepade resor, planering och inmätning i flera projekt."
+        },
+        "valueD": {
+          "title": "Mer enhetlig information",
+          "description": "Ge olika team en pålitlig utgångspunkt i hela beståndet."
         }
       },
       "differentiator": {
-        "headline": "Erfarenhet från kommersiella fastighetsportföljer i Sverige och utanför",
-        "subheadline": "250+ kommersiella projekt levererade · 1,8M+ m² digitalt insamlade"
+        "headline": "Värdet mångdubblas över hela kedjan.",
+        "subheadline": "Ett onödigt besök är en irritation. Upprepat över dussintals eller hundratals platser blir det en kostnad för hela beståndet. Enhetlig byggnadsinformation ger teamen en starkare utgångspunkt i stället för att de gång på gång måste bygga upp sin förståelse av samma platser."
       },
       "namedCase": {
         "label": "Portföljfall",
@@ -406,42 +594,119 @@
         "metricLabel": "kommersiella fastigheter dokumenterade"
       },
       "logoWall": {
-        "headline": "Anlitad av ledande fastighetsteam"
+        "headline": "Anlitade av fastighetsteam som hanterar flera platser"
       },
       "metrics": {
         "item0": {
-          "label": "projekt levererade"
+          "label": "levererade projekt"
         },
         "item1": {
-          "label": "m² digitalt insamlade"
+          "label": "m² digitalt dokumenterade"
         },
         "item2": {
-          "label": "portföljer, 40+ fastigheter vardera"
+          "label": "bestånd med 40+ fastigheter vardera"
         },
         "item3": {
           "label": "fastighetssektorer"
         }
       },
       "fitNotFit": {
-        "headline": "Vem detta är för",
+        "headline": "Passar bäst för",
         "bestFit": {
-          "title": "Passar för",
-          "item0": "Kapitalförvaltare ansvariga för flera fastigheter",
-          "item1": "Kommersiella fastighetsägare som förvaltar fastighetsportföljer",
-          "item2": "Expansionsteam som verkar på flera orter",
-          "item3": "Tekniska förvaltare ansvariga för byggnadsdokumentation"
+          "title": "RESCAN är byggt för",
+          "item0": "Butikskedjor som hanterar flera platser",
+          "item1": "Program för ombyggnad, etablering och omdesign",
+          "item2": "Team där återbesök innebär en verklig kostnad",
+          "item3": "Byggnadsinformation som stödjer återkommande fastighetsbeslut"
         },
         "notFit": {
-          "title": "Passar inte för",
-          "item0": "Bostadsfastigheter",
-          "item1": "Enskilda privata byggnader",
-          "item2": "Engångsmätningar"
+          "title": "Inte byggt för",
+          "item0": "Privata bostäder",
+          "item1": "Enstaka uppdrag med låg budget",
+          "item2": "Enskilda fristående byggnader"
         }
       },
       "finalCta": {
-        "headline": "Diskutera din portfölj",
-        "subheadline": "Om du förvaltar flera kommersiella eller industriella fastigheter och vill ha tillförlitlig byggnadsdokumentation för hela portföljen, kan vi definiera lämpligt scope.",
-        "cta": "Boka en portföljdiskussion"
+        "headline": "Hur ofta åker ditt team tillbaka till platsen för information som redan kunde ha funnits?",
+        "cta": "Diskutera ditt butiksbestånd"
+      }
+    },
+    "logistics": {
+      "hero": {
+        "headline": "Förstå hela lagret\ninnan du bygger om en del av det.",
+        "subheadline": "RESCAN ger projektteam en pålitlig bild av stora och komplexa logistikanläggningar innan ofullständig information blir till antaganden, omprojektering och förseningar.",
+        "primaryCta": "Diskutera ditt lagerprojekt",
+        "secondaryCta": "Se projekt"
+      },
+      "coreRisk": {
+        "headline": "Ju större anläggning, desto dyrare blir ofullständig information.",
+        "body": "Stora logistiklager kan kombinera stomme, installationer, utrustning, entresolplan och år av ombyggnader över enorma ytor.\nHistoriska ritningar och enstaka inmätningar visar ofta bara en del av den bilden.\nNär viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
+      },
+      "consequenceChain": {
+        "headline": "Antaganden blir dyrare ju längre projektet går.",
+        "step0": "Ofullständig information",
+        "step1": "Antaganden i projekteringen",
+        "step2": "Samordningsproblem",
+        "step3": "Kollisioner eller omprojektering",
+        "step4": "Ytterligare utredning",
+        "step5": "Förlorad tid och högre projektkostnad",
+        "footnote": "Ju tidigare de befintliga förhållandena är kända, desto enklare är de att projektera kring."
+      },
+      "strategicValue": {
+        "headline": "Ge projekteringsteamet en pålitlig bild av anläggningen.",
+        "body": "RESCAN skapar en användbar dokumentation av det befintliga lagret så att projektteam förstår vad som finns där innan de beslutar om förändringar.",
+        "valueA": {
+          "title": "Färre antaganden",
+          "description": "Ge projektörerna ett starkare underlag för sina beslut."
+        },
+        "valueB": {
+          "title": "Tidigare kännedom om begränsningar",
+          "description": "Förstå viktiga befintliga förhållanden innan mer arbete bygger på dem."
+        },
+        "valueC": {
+          "title": "Mindre upprepad utredning",
+          "description": "Besvara fler frågor utifrån den byggnadsinformation som redan finns."
+        }
+      },
+      "proof": {
+        "headline": "Bevisat i stora och komplexa anläggningar.",
+        "item0": {
+          "figure": "[[TODO: floor area of the largest logistics facility delivered, e.g. 38,000 m²]]",
+          "statement": "[[TODO: what was being planned, and what made the facility complex]]"
+        },
+        "item1": {
+          "figure": "[[TODO: a second complex facility — the headline figure that makes it recognisable]]",
+          "statement": "[[TODO: what decision depended on understanding those conditions]]"
+        },
+        "item2": {
+          "figure": "[[TODO: a delivery or coordination metric for logistics work]]",
+          "statement": "[[TODO: verified downstream outcome — investigation avoided, constraint found early]]"
+        },
+        "item3": {
+          "figure": "[[TODO: retrofit or redevelopment context metric]]",
+          "statement": "[[TODO: one short supporting fact]]"
+        },
+        "cta": "Se projekt"
+      },
+      "fitNotFit": {
+        "headline": "Passar bäst för",
+        "bestFit": {
+          "title": "RESCAN passar för",
+          "item0": "Stora eller komplexa logistiklagerprojekt",
+          "item1": "Ombyggnad, omutveckling och integration av utrustning",
+          "item2": "Anläggningar där konsekvenser i projekteringen innebär verklig kostnad",
+          "item3": "Projekt där befintliga förhållanden är svåra att fastställa utifrån ritningar"
+        },
+        "notFit": {
+          "title": "Passar inte för",
+          "item0": "Privata bostäder",
+          "item1": "Enstaka uppdrag med låg budget",
+          "item2": "Inmätning utan efterföljande projektering"
+        }
+      },
+      "finalCta": {
+        "headline": "Stor anläggning. Litet utrymme för dyra antaganden.",
+        "cta": "Diskutera ditt lagerprojekt"
       }
     }
   }
