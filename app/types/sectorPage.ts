@@ -81,7 +81,7 @@ export type SectorPageTranslations = {
   /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`. */
   proof?: {
     headline: string;
-    items: Array<{ figure: string; statement: string }>;
+    items: Array<{ slot: string; figure: string; statement?: string }>;
     cta?: { label: string; href: string };
   };
   logoWall?: {

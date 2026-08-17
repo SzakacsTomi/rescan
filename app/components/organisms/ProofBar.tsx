@@ -1,19 +1,23 @@
 import { ArrowRight } from "lucide-react";
-import { isPending, Pending, placeholdersVisible } from "@/app/components/atoms/Pending";
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { Pending, isPending } from "@/app/components/atoms/Pending";
+import { Reveal } from "@/app/components/atoms/Reveal";
 import { Link } from "@/i18n/navigation";
 
 /**
- * Shared by the Home "Proven on real properties." section and the Why RESCAN
- * "Proof over claims." bar — both briefs ask for the same thing: a large figure with one
- * short supporting statement, and no technical vanity metrics.
+ * Shared by the Home "Proven on real properties." section, the sector pages, and the
+ * Why RESCAN "Proof over claims." bar — all four ask for the same thing: a labelled
+ * slot with a large figure, and no technical vanity metrics.
  *
  * Figures are strings, not numbers: the briefs write them as "42+ locations" and
- * "38,000 m²", and until the client supplies them they are `[[TODO: …]]` markers.
+ * "38,000 m²", and until the client supplies them they are `[[TODO: …]]` markers —
+ * shown unconditionally via `Pending`, matching the design, rather than hidden.
  */
 
 type ProofItem = {
+  slot: string;
   figure: string;
-  statement: string;
+  statement?: string;
 };
 
 type ProofBarProps = {
@@ -26,44 +30,37 @@ type ProofBarProps = {
 };
 
 export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
-  // With no figures supplied yet, the section would render as a headline over nothing.
-  // Preview still shows the empty slots so the client can see what to send.
-  const everySlotPending = items.every(
-    (item) => isPending(item.figure) && isPending(item.statement),
-  );
-  if (everySlotPending && !placeholdersVisible) {
-    return null;
-  }
-
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-12">
-          {headline}
-        </h2>
+    <section className="bg-secondary px-6 py-24 sm:px-8 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-5xl">
+        <Reveal className="flex flex-wrap items-end justify-between gap-6">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{headline}</h2>
+          {cta && !isPending(cta.label) && (
+            <Link
+              href={cta.href}
+              className="inline-flex items-center gap-2 font-semibold text-primary transition-all hover:gap-3.5"
+            >
+              {cta.label}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          )}
+        </Reveal>
 
-        <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
+        <dl className="mt-14 grid grid-cols-1 gap-px bg-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
-            <div key={i} className="flex flex-col gap-3">
-              <dt className="text-3xl sm:text-4xl font-bold tracking-tight leading-none">
+            <Reveal key={i} className="flex flex-col gap-3.5 bg-secondary px-6 py-7">
+              <MonoLabel as="dt" className="text-foreground/45">{item.slot}</MonoLabel>
+              <dd className="flex flex-col gap-2.5">
                 <Pending>{item.figure}</Pending>
-              </dt>
-              <dd className="text-sm text-foreground/55 leading-snug">
-                <Pending>{item.statement}</Pending>
+                {item.statement && (
+                  <span className="text-[13px] leading-relaxed text-foreground/50">
+                    <Pending>{item.statement}</Pending>
+                  </span>
+                )}
               </dd>
-            </div>
+            </Reveal>
           ))}
         </dl>
-
-        {cta && !isPending(cta.label) && (
-          <Link
-            href={cta.href}
-            className="mt-12 inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all"
-          >
-            {cta.label}
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        )}
       </div>
     </section>
   );

@@ -36,8 +36,8 @@ export default async function WhyRescanPage() {
       proof={{
         headline: t("proof.headline"),
         items: Array.from({ length: PROOF_ITEM_COUNT }, (_, i) => ({
+          slot: t(`proof.item${i}.slot`),
           figure: t(`proof.item${i}.figure`),
-          statement: t(`proof.item${i}.statement`),
         })),
         cta: { label: t("proof.cta"), href: "/projects" },
       }}

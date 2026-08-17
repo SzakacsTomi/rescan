@@ -39,10 +39,12 @@
       }
     },
     "sectorSplit": {
-      "headline": "Two sectors. Two expensive problems."
+      "headline": "Two sectors. Two expensive problems.",
+      "routeLabel": "Choose your route"
     },
     "sectors": {
       "retailChains": {
+        "index": "01 / Retail",
         "title": "Retail Chains",
         "lead": "Fewer site visits. Less wasted time across the portfolio.",
         "description": "When a designer, contractor or property team has to return to a store just to confirm existing conditions, the cost is bigger than the visit.\nTravel, scheduling and lost design time multiply across dozens or hundreds of locations.\nRESCAN helps capture more of what teams will need from the start.",
@@ -53,6 +55,7 @@
         "cta": "Explore Retail Chains"
       },
       "logisticsWarehouses": {
+        "index": "02 / Logistics",
         "title": "Logistics Warehouses",
         "lead": "Understand the whole warehouse before you redesign part of it.",
         "description": "Large logistics facilities are difficult to understand from fragmented drawings and isolated measurements.\nWhen existing conditions are missed, assumptions enter the design—and can later become clashes, redesign, additional investigation and delay.\nRESCAN gives project teams a dependable view of the facility before those problems move downstream.",
@@ -63,27 +66,52 @@
         "cta": "Explore Logistics Warehouses"
       }
     },
+    "costLadder": {
+      "eyebrow": "02 — What it costs",
+      "headline": "One missing answer rarely stays one missing answer.",
+      "item0": {
+        "label": "A question nobody can answer from the drawings",
+        "tag": "day one"
+      },
+      "item1": {
+        "label": "An assumption enters the design",
+        "tag": "week two"
+      },
+      "item2": {
+        "label": "Another visit, or a redesign",
+        "tag": "month two"
+      },
+      "item3": {
+        "label": "Lost time, across every location",
+        "tag": "the invoice"
+      }
+    },
     "proof": {
       "headline": "Proven on real properties.",
       "item0": {
+        "slot": "Retail programme",
         "figure": "[[TODO: retail locations captured, e.g. 120+]]",
         "statement": "[[TODO: one short proof statement about the retail programme]]"
       },
       "item1": {
+        "slot": "Largest facility",
         "figure": "[[TODO: largest logistics facility in m²]]",
         "statement": "[[TODO: one short statement showing scale or complexity]]"
       },
       "item2": {
+        "slot": "Repeat work",
         "figure": "[[TODO: repeat programme or repeat client metric]]",
         "statement": "[[TODO: one short supporting statement]]"
       },
       "item3": {
+        "slot": "Delivery & QA",
         "figure": "[[TODO: delivery, QA or geographic proof]]",
         "statement": "[[TODO: one short supporting statement]]"
       },
       "cta": "View Projects"
     },
     "informationValue": {
+      "eyebrow": "03 — After the visit",
       "headline": "Building information should keep answering questions after the site visit.",
       "point0": {
         "title": "Capture for repeated use",
@@ -102,7 +130,7 @@
     "qualification": {
       "headline": "Built for projects where getting the existing conditions wrong has consequences.",
       "bestFit": {
-        "title": "RESCAN is focused on",
+        "title": "Focused on",
         "item0": "Retail chains managing multiple locations",
         "item1": "Large or complex logistics warehouse projects",
         "item2": "Projects where incomplete information can create additional visits, redesign or delay"
@@ -216,20 +244,20 @@
     "proof": {
       "headline": "Proof over claims.",
       "item0": {
-        "figure": "[[TODO: retail locations delivered, e.g. 120+]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Retail delivered",
+        "figure": "[[TODO: retail locations delivered, e.g. 120+]]"
       },
       "item1": {
-        "figure": "[[TODO: logistics facility floor area in m²]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Logistics scale",
+        "figure": "[[TODO: logistics facility floor area in m²]]"
       },
       "item2": {
-        "figure": "[[TODO: repeat programme or repeat business evidence]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Repeat business",
+        "figure": "[[TODO: repeat programme or repeat business evidence]]"
       },
       "item3": {
-        "figure": "[[TODO: verified QA or delivery metric]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "QA & delivery",
+        "figure": "[[TODO: verified QA or delivery metric]]"
       },
       "cta": "View Projects"
     },
@@ -696,18 +724,22 @@
       "proof": {
         "headline": "Proven across large and complex facilities.",
         "item0": {
+          "slot": "Facility scale",
           "figure": "[[TODO: floor area of the largest logistics facility delivered, e.g. 38,000 m²]]",
           "statement": "[[TODO: what was being planned, and what made the facility complex]]"
         },
         "item1": {
+          "slot": "Complex facility",
           "figure": "[[TODO: a second complex facility — the headline figure that makes it recognisable]]",
           "statement": "[[TODO: what decision depended on understanding those conditions]]"
         },
         "item2": {
+          "slot": "Delivery & coordination",
           "figure": "[[TODO: a delivery or coordination metric for logistics work]]",
           "statement": "[[TODO: verified downstream outcome — investigation avoided, constraint found early]]"
         },
         "item3": {
+          "slot": "Retrofit context",
           "figure": "[[TODO: retrofit or redevelopment context metric]]",
           "statement": "[[TODO: one short supporting fact]]"
         },

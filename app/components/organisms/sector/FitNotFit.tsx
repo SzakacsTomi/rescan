@@ -1,5 +1,9 @@
 import { Check, X } from 'lucide-react';
 
+import { MonoLabel } from '@/app/components/atoms/MonoLabel';
+import { Reveal } from '@/app/components/atoms/Reveal';
+import { cn } from '@/lib/utils';
+
 type FitGroup = {
   title: string;
   items: string[];
@@ -11,41 +15,53 @@ type FitNotFitProps = {
   notFit: FitGroup;
 };
 
+const SECTION_BG = '#020409';
+const FIT_ACCENT_CLASS = 'text-[#7ee2b8]';
+
 export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
   return (
-    <section className="py-24 px-6 bg-muted/30">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-12">{headline}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 rounded-xl border border-border bg-background">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-7 h-7 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
-                <Check className="w-3.5 h-3.5 text-emerald-500" />
-              </div>
-              <h3 className="font-semibold text-foreground">{bestFit.title}</h3>
-            </div>
-            <ul className="flex flex-col gap-3.5">
+    <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-28" style={{ background: SECTION_BG }}>
+      <div className="mx-auto max-w-5xl">
+        <Reveal>
+          <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            {headline}
+          </h2>
+        </Reveal>
+        <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <MonoLabel className={cn('border-b border-white/20 pb-5', FIT_ACCENT_CLASS)}>
+              {bestFit.title}
+            </MonoLabel>
+            <ul className="flex flex-col">
               {bestFit.items.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-foreground/65">
-                  <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
+                <Reveal
+                  as="li"
+                  key={item}
+                  className="flex gap-4 border-b border-white/8 py-5 text-[17px] leading-snug text-white/82"
+                >
+                  <Check
+                    className={cn('mt-0.5 h-[18px] w-[18px] shrink-0', FIT_ACCENT_CLASS)}
+                    strokeWidth={2.5}
+                  />
                   {item}
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
-          <div className="p-8 rounded-xl border border-border bg-background">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-7 h-7 rounded-full bg-destructive/10 flex items-center justify-center shrink-0">
-                <X className="w-3.5 h-3.5 text-destructive" />
-              </div>
-              <h3 className="font-semibold text-foreground">{notFit.title}</h3>
-            </div>
-            <ul className="flex flex-col gap-3.5">
+          <div>
+            <MonoLabel className="border-b border-white/20 pb-5 text-white/45">
+              {notFit.title}
+            </MonoLabel>
+            <ul className="flex flex-col">
               {notFit.items.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-foreground/65">
-                  <X className="w-4 h-4 text-destructive mt-0.5 shrink-0" />
+                <Reveal
+                  as="li"
+                  key={item}
+                  className="flex gap-4 border-b border-white/8 py-5 text-[17px] leading-snug text-white/40"
+                >
+                  <X className="mt-0.5 h-[18px] w-[18px] shrink-0 text-white/35" strokeWidth={2.5} />
                   {item}
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>

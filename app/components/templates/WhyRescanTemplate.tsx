@@ -15,7 +15,7 @@ type WhyRescanTemplateProps = {
   };
   proof: {
     headline: string;
-    items: Array<{ figure: string; statement: string }>;
+    items: Array<{ slot: string; figure: string }>;
     cta: { label: string; href: string };
   };
   focused: {
