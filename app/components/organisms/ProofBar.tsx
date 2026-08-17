@@ -1,7 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
-import { Pending, isPending } from "@/app/components/atoms/Pending";
 import { Reveal } from "@/app/components/atoms/Reveal";
+import { isPending } from "@/app/components/atoms/Pending";
+import { CountUp } from "@/app/components/molecules/CountUp";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -11,7 +12,8 @@ import { Link } from "@/i18n/navigation";
  *
  * Figures are strings, not numbers: the briefs write them as "42+ locations" and
  * "38,000 m²", and until the client supplies them they are `[[TODO: …]]` markers —
- * shown unconditionally via `Pending`, matching the design, rather than hidden.
+ * shown unconditionally via `Pending`, matching the design, rather than hidden. Once a
+ * real figure lands, its number counts up from zero as the band scrolls into view.
  */
 
 type ProofItem = {
@@ -29,16 +31,18 @@ type ProofBarProps = {
   };
 };
 
+const SECTION_GRADIENT = "linear-gradient(135deg, #1a1a2e 0%, #16213e 52%, #0f3460 100%)";
+
 export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
   return (
-    <section className="bg-secondary px-6 py-24 sm:px-8 lg:px-10 lg:py-28">
+    <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-28" style={{ background: SECTION_GRADIENT }}>
       <div className="mx-auto max-w-5xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{headline}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{headline}</h2>
           {cta && !isPending(cta.label) && (
             <Link
               href={cta.href}
-              className="inline-flex items-center gap-2 font-semibold text-primary transition-all hover:gap-3.5"
+              className="inline-flex items-center gap-2 font-semibold text-[#89b4f5] transition-all hover:gap-3.5"
             >
               {cta.label}
               <ArrowRight className="w-4 h-4" />
@@ -46,15 +50,15 @@ export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
           )}
         </Reveal>
 
-        <dl className="mt-14 grid grid-cols-1 gap-px bg-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="mt-14 grid grid-cols-1 gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
           {items.map((item, i) => (
-            <Reveal key={i} className="flex flex-col gap-3.5 bg-secondary px-6 py-7">
-              <MonoLabel as="dt" className="text-foreground/45">{item.slot}</MonoLabel>
+            <Reveal key={i} className="flex flex-col gap-3.5 lg:pl-8 lg:first:pl-0">
+              <MonoLabel as="dt" className="text-white/40">{item.slot}</MonoLabel>
               <dd className="flex flex-col gap-2.5">
-                <Pending>{item.figure}</Pending>
+                <CountUp value={item.figure} className="text-3xl font-bold tracking-tight text-white sm:text-4xl" />
                 {item.statement && (
-                  <span className="text-[13px] leading-relaxed text-foreground/50">
-                    <Pending>{item.statement}</Pending>
+                  <span className="text-[13px] leading-relaxed text-white/55">
+                    <CountUp value={item.statement} />
                   </span>
                 )}
               </dd>
