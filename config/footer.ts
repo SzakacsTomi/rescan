@@ -1,11 +1,4 @@
-import type { FooterNavLink, LegalLink, SocialLinkConfig } from "@/app/types/footer";
-
-export const footerNavLinks: FooterNavLink[] = [
-  { href: "/work", labelKey: "work" },
-  { href: "/about", labelKey: "about" },
-  { href: "/services", labelKey: "services" },
-  { href: "/contact", labelKey: "contact" },
-];
+import type { LegalLink, SocialLinkConfig } from "@/app/types/footer";
 
 export const socialLinks: SocialLinkConfig[] = [
   { href: "https://instagram.com", platform: "instagram", labelKey: "instagram" },

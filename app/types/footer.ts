@@ -1,8 +1,3 @@
-export type FooterNavLink = {
-  href: string;
-  labelKey: string;
-};
-
 export type LegalLink = {
   href: string;
   labelKey: string;
