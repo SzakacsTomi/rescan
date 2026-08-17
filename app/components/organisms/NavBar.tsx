@@ -19,6 +19,7 @@ export const NavBar = async ({ variant = 'light' }: NavBarProps) => {
     href: link.href,
     label: t(link.labelKey),
   }));
+  const desktopNavLinks = resolvedLinks.filter((link) => link.href !== '/contact');
 
   return (
     <nav
@@ -42,12 +43,12 @@ export const NavBar = async ({ variant = 'light' }: NavBarProps) => {
         </Link>
 
         <div className="hidden md:flex flex-1">
-          <NavLinks links={resolvedLinks} variant={variant} />
+          <NavLinks links={desktopNavLinks} variant={variant} />
         </div>
 
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden md:block">
-            <LanguageSwitcher />
+            <LanguageSwitcher variant={variant} />
           </div>
           <Link
             href="/contact"

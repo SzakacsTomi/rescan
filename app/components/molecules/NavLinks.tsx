@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import { PILL_SPRING_TRANSITION } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 import { Link, usePathname } from '@/i18n/navigation';
 
@@ -21,17 +23,22 @@ export const NavLinks = ({ links, variant = 'light' }: NavLinksProps) => {
             key={link.href}
             href={link.href}
             className={cn(
-              'text-sm font-medium whitespace-nowrap transition-colors px-3 py-1.5 rounded-lg',
-              isDark
-                ? isActive
-                  ? 'text-white'
-                  : 'text-white/60 hover:text-white'
-                : isActive
-                  ? 'bg-secondary text-foreground'
+              'relative text-sm font-medium whitespace-nowrap transition-colors px-3 py-1.5 rounded-lg',
+              isActive
+                ? 'text-primary-foreground'
+                : isDark
+                  ? 'text-white/60 hover:text-white'
                   : 'text-foreground/55 hover:text-foreground hover:bg-secondary/60',
             )}
           >
-            {link.label}
+            {isActive && (
+              <motion.span
+                layoutId="nav-pill"
+                className="absolute inset-0 rounded-lg bg-primary"
+                transition={PILL_SPRING_TRANSITION}
+              />
+            )}
+            <span className="relative">{link.label}</span>
           </Link>
         );
       })}
