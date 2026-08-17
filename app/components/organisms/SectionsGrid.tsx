@@ -10,19 +10,13 @@ import { sectionsConfig } from "@/config/sections";
 export const SECTIONS_ID = "sections";
 
 const CHAIN_STEP_COUNT = 4;
-const SECTION_BG = "#020409";
 
 export const SectionsGrid = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const t = useTranslations("homePage");
 
   return (
-    <section
-      id={SECTIONS_ID}
-      className="w-full pb-24 lg:pb-28"
-      aria-label="Sectors"
-      style={{ background: SECTION_BG }}
-    >
+    <section id={SECTIONS_ID} className="w-full" aria-label="Sectors">
       <Reveal className="flex flex-wrap items-end justify-between gap-6 px-6 pt-16 pb-8 sm:px-8 lg:px-10 lg:pt-24 lg:pb-10">
         <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[44px]">
           {t("sectorSplit.headline")}
