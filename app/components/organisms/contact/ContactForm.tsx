@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
 
 import { submitContact, type ContactFormState } from "@/app/actions/contact";
+import { Reveal } from "@/app/components/atoms/Reveal";
 import { cn } from "@/lib/utils";
 
 import type { ContactGroup } from "./contactGroups";
@@ -287,7 +288,7 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
         </FieldGroup>
 
         {/* Unnumbered: sending is not one of the brief's five questions. */}
-        <div className="flex flex-col gap-5 border-t border-border pt-8">
+        <Reveal className="flex flex-col gap-5 border-t border-border pt-8">
           <div className="flex items-start gap-3">
             <input
               id={ids.consent}
@@ -330,7 +331,7 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
           )}
 
           <SubmitButton label={t.submit} submittingLabel={t.submitting} />
-        </div>
+        </Reveal>
       </form>
     </div>
   );

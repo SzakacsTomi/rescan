@@ -1,4 +1,5 @@
 import { MonoLabel } from '@/app/components/atoms/MonoLabel';
+import { Reveal } from '@/app/components/atoms/Reveal';
 import { MapPlate } from '@/app/components/molecules/MapPlate';
 import { SplitMediaHero } from '@/app/components/organisms/SplitMediaHero';
 import { ContactFitCard } from '@/app/components/organisms/contact/ContactFitCard';
@@ -75,15 +76,19 @@ export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
               // is kept short enough to sit inside a laptop viewport instead, and `top-20`
               // clears the 4rem navbar with air to spare.
               <aside className="lg:sticky lg:top-20 lg:self-start">
-                <MonoLabel as="h2" className="mb-6 tracking-[0.2em]">
-                  {tr.form.headline}
-                </MonoLabel>
-                <ContactRail items={tr.groups} ariaLabel={tr.rail.label} />
-                <ContactFitCard
-                  headline={tr.bestFit.headline}
-                  items={tr.bestFit.items}
-                  disqualifiers={tr.bestFit.disqualifiers}
-                />
+                {/* The reveal sits inside the `aside`, not around it: animating the sticky
+                    element itself would make it the transform's own containing block. */}
+                <Reveal>
+                  <MonoLabel as="h2" className="mb-6 tracking-[0.2em]">
+                    {tr.form.headline}
+                  </MonoLabel>
+                  <ContactRail items={tr.groups} ariaLabel={tr.rail.label} />
+                  <ContactFitCard
+                    headline={tr.bestFit.headline}
+                    items={tr.bestFit.items}
+                    disqualifiers={tr.bestFit.disqualifiers}
+                  />
+                </Reveal>
               </aside>
             }
           />

@@ -3,10 +3,16 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+const MOTION_TAG = {
+  div: motion.div,
+  li: motion.li,
+  dl: motion.dl,
+} as const;
+
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  as?: "div" | "li";
+  as?: keyof typeof MOTION_TAG;
 };
 
 const REVEAL_ANIMATION = {
@@ -20,17 +26,11 @@ const REVEAL_ANIMATION = {
  *  the design (its `data-reveal="1"` markers) — matches the treatment `ProjectCard`
  *  already established for cards entering the viewport. */
 export const Reveal = ({ children, className, as = "div" }: RevealProps) => {
-  if (as === "li") {
-    return (
-      <motion.li className={className} {...REVEAL_ANIMATION}>
-        {children}
-      </motion.li>
-    );
-  }
+  const Tag = MOTION_TAG[as];
 
   return (
-    <motion.div className={className} {...REVEAL_ANIMATION}>
+    <Tag className={className} {...REVEAL_ANIMATION}>
       {children}
-    </motion.div>
+    </Tag>
   );
 };

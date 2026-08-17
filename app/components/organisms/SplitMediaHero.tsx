@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { MonoLabel } from '@/app/components/atoms/MonoLabel';
+import { Reveal } from '@/app/components/atoms/Reveal';
 import { cn } from '@/lib/utils';
 
 type MetaItem = {
@@ -42,7 +43,7 @@ export const SplitMediaHero = ({
           half up to it rather than a fixed narrow measure. `pl` keeps the site's 126px spine. */}
       <div className="px-6 lg:h-full lg:w-[53%] lg:pr-6 lg:pl-[126px]">
         <div className="flex flex-col justify-center gap-8 pt-12 pb-10 sm:pt-16 sm:pb-12 lg:h-full lg:max-w-[40rem] lg:gap-10 lg:py-0">
-          <div>
+          <Reveal>
             {eyebrow && <MonoLabel className="text-primary">{eyebrow}</MonoLabel>}
             {/* No `text-balance`: the headline's three lines come from the default greedy wrap,
                 which is what puts the break after "to" and after "the". Balancing evens the
@@ -62,10 +63,13 @@ export const SplitMediaHero = ({
                 {subheadline}
               </p>
             )}
-          </div>
+          </Reveal>
 
           {meta && meta.length > 0 && (
-            <dl className="grid grid-cols-1 divide-y divide-border border-t border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            <Reveal
+              as="dl"
+              className="grid grid-cols-1 divide-y divide-border border-t border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+            >
               {meta.map((item) => (
                 <div key={item.label} className="py-4 sm:px-5 sm:py-5 sm:first:pl-0 sm:last:pr-0">
                   <MonoLabel as="dt">{item.label}</MonoLabel>
@@ -87,7 +91,7 @@ export const SplitMediaHero = ({
                   </dd>
                 </div>
               ))}
-            </dl>
+            </Reveal>
           )}
         </div>
       </div>
