@@ -8,10 +8,35 @@
   },
   "homePage": {
     "hero": {
-      "headline": "Vet vad som finns där innan\nbristande information kostar\ntid och pengar.",
+      "eyebrow": "01 — Befintliga förhållanden",
+      "headline": "Vet vad som finns\ndär innan bristande\ninformation kostar\ntid och pengar.",
       "subheadline": "RESCAN skapar pålitlig byggnadsinformation för butikskedjor och logistiklager – och ger projektteam det underlag de behöver innan obesvarade frågor om platsen blir till återbesök, omprojektering eller förseningar.",
       "primaryCta": "Diskutera ett projekt",
-      "scrollHint": "Skrolla för att utforska"
+      "responseNote": "Svar inom en arbetsdag",
+      "scrollHint": "Skrolla för att utforska",
+      "scrollCue": "Skrolla",
+      "location": {
+        "city": "Växjö, Sverige",
+        "coordinates": "56.8777° N · 14.7894° E"
+      },
+      "readout": {
+        "item0": {
+          "label": "Sektorer",
+          "value": "Butikskedjor · Logistiklager"
+        },
+        "item1": {
+          "label": "Leveranser",
+          "value": "Punktmoln · 2D DWG · BIM"
+        },
+        "item2": {
+          "label": "Portföljomfattning",
+          "value": "Från en fastighet till 56"
+        },
+        "item3": {
+          "label": "Baserade i",
+          "value": "Växjö, Sverige"
+        }
+      }
     },
     "sectorSplit": {
       "headline": "Två sektorer. Två kostsamma problem."

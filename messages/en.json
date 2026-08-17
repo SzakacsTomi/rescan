@@ -8,10 +8,35 @@
   },
   "homePage": {
     "hero": {
-      "headline": "Know what's there before\nmissing information costs\ntime and money.",
+      "eyebrow": "01 — Existing conditions",
+      "headline": "Know what's there\nbefore missing\ninformation costs\ntime and money.",
       "subheadline": "RESCAN creates reliable building data for retail chains and logistics warehouses—giving project teams the information they need before unanswered site questions become repeat visits, redesign or delay.",
       "primaryCta": "Discuss a project",
-      "scrollHint": "Scroll to explore"
+      "responseNote": "Response within one business day",
+      "scrollHint": "Scroll to explore",
+      "scrollCue": "Scroll",
+      "location": {
+        "city": "Växjö, Sweden",
+        "coordinates": "56.8777° N · 14.7894° E"
+      },
+      "readout": {
+        "item0": {
+          "label": "Sectors",
+          "value": "Retail chains · Logistics warehouses"
+        },
+        "item1": {
+          "label": "Deliverables",
+          "value": "Point cloud · 2D DWG · BIM"
+        },
+        "item2": {
+          "label": "Portfolio scale",
+          "value": "Single site to 56 properties"
+        },
+        "item3": {
+          "label": "Based in",
+          "value": "Växjö, Sweden"
+        }
+      }
     },
     "sectorSplit": {
       "headline": "Two sectors. Two expensive problems."

@@ -129,6 +129,48 @@
   to { transform: translateX(-50%) }
 }
 
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(120%) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes hero-sweep {
+  0% { transform: translateY(-10%); opacity: 0 }
+  12% { opacity: 0.55 }
+  88% { opacity: 0.55 }
+  100% { transform: translateY(110%); opacity: 0 }
+}
+
+@keyframes hero-tick {
+  0%, 100% { opacity: 0.25 }
+  50% { opacity: 0.9 }
+}
+
+@keyframes hero-cue {
+  0% { transform: scaleY(0); transform-origin: top }
+  45% { transform: scaleY(1); transform-origin: top }
+  55% { transform: scaleY(1); transform-origin: bottom }
+  100% { transform: scaleY(0); transform-origin: bottom }
+}
+
+/* Headline lines default to visible so a reduced-motion user sees finished copy
+   immediately — the reveal animation is an additive enhancement, never the only
+   thing making the text appear. */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-hero-rise {
+    animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-hero-sweep {
+    animation: hero-sweep 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-hero-tick {
+    animation: hero-tick 3.2s ease-in-out infinite;
+  }
+  .animate-hero-cue {
+    animation: hero-cue 2.4s ease-in-out infinite;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

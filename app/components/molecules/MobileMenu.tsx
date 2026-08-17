@@ -10,11 +10,12 @@ import { Link, usePathname } from "@/i18n/navigation";
 
 type MobileMenuProps = {
   links: { href: string; label: string }[];
+  variant?: "light" | "dark";
 };
 
 const subscribe = () => () => {};
 
-export const MobileMenu = ({ links }: MobileMenuProps) => {
+export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -36,7 +37,12 @@ export const MobileMenu = ({ links }: MobileMenuProps) => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="md:hidden p-2 -mr-1 text-foreground/60 hover:text-foreground transition-colors"
+        className={cn(
+          "md:hidden p-2 -mr-1 transition-colors",
+          variant === "dark"
+            ? "text-white/70 hover:text-white"
+            : "text-foreground/60 hover:text-foreground",
+        )}
         aria-label="Open menu"
       >
         <Menu size={24} />

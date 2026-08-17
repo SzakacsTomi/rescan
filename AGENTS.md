@@ -12,6 +12,18 @@ touching a page.
 
 Current state of the work: `PROGRESS.md`. Open questions for the client: `OPEN-ITEMS.md`.
 
+A visual redesign is being imported from a claude.ai Design project ("Hero section
+redesign feedback"), synced via the `DesignSync` MCP tool / `/design-sync` skill.
+`Rescan Redesign.dc.html` is the target state; `Rescan Current.dc.html` mirrors what's
+live, for diffing. The `sc-if` / `sc-for` / `{{ }}` markup inside a `.dc.html` file is
+the design tool's own preview templating, not literal markup to port — only the inline
+styles, structure, and hardcoded copy carry real content. An `sc-for` loop backed only
+by a `hint-placeholder-count` (no bound data) is generic scaffolding, not authored
+copy — treat it as a layout hint, never a copy source. The design's dashed-amber "Todo"
+badge is exactly what `atoms/Pending.tsx` already renders for `[[TODO: …]]` markers —
+content pulled from the design with no real figure yet gets marked pending the same
+way the proof metrics already are, not given a new placeholder style.
+
 ## Stack
 
 | Concern      | Choice                                                        |
@@ -90,7 +102,7 @@ Dependencies point one way: `app/[locale]` → `templates` → `organisms` → `
 
 | Route | Brief | Notes |
 |---|---|---|
-| `/` | `home.md` | Outside `(pages)`, so no `NavBar` — the sector cards are the navigation |
+| `/` | `home.md` | Outside `(pages)`; renders `NavBar` directly in its `dark` variant (transparent, overlaid on the hero) — the sector cards further down are still the primary routing, the nav is wayfinding |
 | `/retail-chains` | `retail-chains.md` | `SectorTemplate` + Cloudinary carousel hero |
 | `/logistics-warehouses` | `logistics-warehouses.md` | `SectorTemplate` + `ConsequenceChain` |
 | `/why-rescan` | `why-rescan.md` | `WhyRescanTemplate` |
@@ -171,18 +183,16 @@ we and the client can see exactly what is missing and where.
 <Pending>{t('metrics.item0.value')}</Pending>
 ```
 
-- With `NEXT_PUBLIC_SHOW_PLACEHOLDERS=true` (preview deploys) it renders the hint in a
-  dashed amber box, so the client sees what to supply.
-- Without it (production) two things happen. `i18n/request.ts` blanks every marker out
-  of the catalogue via `stripPendingMessages`, so the hints never reach the browser —
-  not even inside the serialised next-intl payload. And `Pending` renders nothing for
-  the blank that remains.
+- `Pending` renders the dashed amber "Todo" box **unconditionally, everywhere** —
+  matching the imported design, which always shows its placeholder badges rather than
+  hiding them. There is no production/preview distinction: `NEXT_PUBLIC_SHOW_PLACEHOLDERS`
+  no longer gates the badge itself.
 - Real content passes through untouched, so `Pending` is safe to leave in place once
   the value arrives.
-- A whole section that has no content yet should disappear rather than render as a
-  heading over emptiness. `organisms/ProofBar` is the reference: it returns `null` when
-  every slot `isPending`. Note `isPending` is true for a blank string as well as for a
-  marker, which is what makes this work after scrubbing.
+- `placeholdersVisible` still exists as an export and is used in a few places
+  (`ProjectsGrid`, `CaseStudyBody`) to decide whether to hide an *entire* card or
+  section when its content is still pending, rather than show it half-empty — that's a
+  separate decision from the badge's own visibility and is unaffected by the above.
 
 **A marker must be the entire value.** `"We delivered [[TODO: n]] stores"` is not
 detected and would leak the brackets to production — split it into a sentence that is

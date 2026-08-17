@@ -3,16 +3,13 @@ import { cn } from "@/lib/utils";
 /**
  * Content the client still owes us is written into messages/*.json as
  * `[[TODO: what we need]]` rather than invented. This renders those markers as a
- * visible hint on preview deploys and as nothing at all in production, so a
- * placeholder can never reach a live page.
+ * visible dashed-amber "Todo" hint unconditionally — matching the imported design,
+ * which always shows its placeholder badges rather than hiding them.
  */
 
 const TODO_PATTERN = /^\s*\[\[TODO:\s*([\s\S]*?)\]\]\s*$/;
 
-/**
- * True when a value carries no content yet — either an unfilled marker, or the empty
- * string a marker becomes once `stripPendingMessages` has scrubbed it outside preview.
- */
+/** True when a value carries no content yet — either an unfilled marker, or blank. */
 export const isPending = (value: string) => value.trim() === "" || TODO_PATTERN.test(value);
 
 export const pendingHint = (value: string) => value.match(TODO_PATTERN)?.[1]?.trim() ?? "";
@@ -30,7 +27,7 @@ export const Pending = ({ children, className }: PendingProps) => {
   }
 
   const hint = pendingHint(children);
-  if (!placeholdersVisible || hint === "") {
+  if (hint === "") {
     return null;
   }
 

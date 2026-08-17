@@ -1,40 +1,120 @@
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { ScrollArrow } from "@/app/components/atoms/ScrollArrow";
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { HeroText } from "@/app/components/molecules/HeroText";
+import { ScrollCue } from "@/app/components/molecules/ScrollCue";
 import { SECTIONS_ID } from "@/app/components/organisms/SectionsGrid";
-import { sectionsConfig } from "@/config/sections";
 import { Link } from "@/i18n/navigation";
+
+const READOUT_ITEM_COUNT = 4;
+const TICK_COUNT = 14;
+const HEADLINE_ACCENT_LINE_COUNT = 2;
+const HERO_GRADIENT = "linear-gradient(135deg, #1a1a2e 0%, #16213e 52%, #0f3460 100%)";
 
 export const HeroSection = async () => {
   const t = await getTranslations("homePage");
 
-  return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center">
-      <HeroText headline={t("hero.headline")} subheadline={t("hero.subheadline")} />
+  const readoutItems = Array.from({ length: READOUT_ITEM_COUNT }, (_, i) => ({
+    label: t(`hero.readout.item${i}.label`),
+    value: t(`hero.readout.item${i}.value`),
+  }));
 
-      <div className="mt-10 flex flex-col sm:flex-row items-center gap-3 px-6">
-        {sectionsConfig.map((section) => (
-          <Link
-            key={section.id}
-            href={section.href}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium hover:bg-muted transition-colors"
-          >
-            {t(`sectors.${section.id}.title`)}
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        ))}
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors"
-        >
-          {t("hero.primaryCta")}
-        </Link>
+  return (
+    <section
+      className="relative min-h-screen w-full flex flex-col justify-end overflow-hidden"
+      style={{ background: HERO_GRADIENT }}
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
+          backgroundSize: "88px 88px",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 18% 78%, rgba(43,99,187,0.35) 0%, rgba(43,99,187,0) 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="animate-hero-sweep absolute left-0 right-0 top-0 h-44"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(43,99,187,0) 0%, rgba(120,170,255,0.14) 60%, rgba(190,220,255,0.5) 100%)",
+        }}
+      />
+
+      <div className="relative w-full max-w-480 mx-auto px-6 lg:px-10 pt-32 sm:pt-36 lg:pt-[180px]">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_220px] gap-10 lg:gap-12 items-end">
+          <div>
+            <div className="flex items-center gap-3.5 mb-9">
+              <span aria-hidden className="w-11 h-px bg-white/40" />
+              <MonoLabel className="text-white/55">{t("hero.eyebrow")}</MonoLabel>
+            </div>
+
+            <HeroText
+              headline={t("hero.headline")}
+              subheadline={t("hero.subheadline")}
+              accentLineCount={HEADLINE_ACCENT_LINE_COUNT}
+            />
+
+            <div className="mt-11 flex flex-wrap items-center gap-7">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2.5 rounded-md bg-primary text-white font-semibold text-[15px] px-7 py-4 transition-colors hover:bg-[#3f77cf]"
+              >
+                {t("hero.primaryCta")}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
+              </Link>
+              <MonoLabel className="text-white/35">{t("hero.responseNote")}</MonoLabel>
+            </div>
+          </div>
+
+          <div className="hidden lg:flex flex-col items-end gap-2.5 pb-2">
+            <MonoLabel as="p" className="text-white/40 text-right">
+              {t("hero.location.city")}
+              <br />
+              {t("hero.location.coordinates")}
+            </MonoLabel>
+            <div className="mt-3 flex w-full flex-col items-end gap-1.5">
+              {Array.from({ length: TICK_COUNT }, (_, i) => (
+                <span
+                  key={i}
+                  aria-hidden
+                  className="animate-hero-tick h-px bg-white/45"
+                  style={{
+                    width: `${30 + ((i * 53) % 70)}%`,
+                    animationDelay: `${(i * 0.16).toFixed(2)}s`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
-        <ScrollArrow targetId={SECTIONS_ID} />
+      <div className="relative w-full max-w-480 mx-auto px-6 lg:px-10">
+        <div className="mt-16 flex flex-wrap items-stretch border-t border-white/10 lg:mt-20">
+          {readoutItems.map((item, i) => (
+            <div
+              key={i}
+              className="flex min-w-[45%] flex-1 flex-col gap-1.5 py-5 sm:min-w-0 lg:py-6"
+            >
+              <MonoLabel className="text-white/35">{item.label}</MonoLabel>
+              <span className="text-[15px] font-medium text-white/85">{item.value}</span>
+            </div>
+          ))}
+          <div className="flex w-full items-center justify-end py-5 sm:w-auto sm:ml-auto lg:py-6">
+            <ScrollCue targetId={SECTIONS_ID} label={t("hero.scrollCue")} />
+          </div>
+        </div>
       </div>
     </section>
   );
