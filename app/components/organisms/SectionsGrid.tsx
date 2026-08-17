@@ -16,7 +16,7 @@ export const SectionsGrid = () => {
   const t = useTranslations("homePage");
 
   return (
-    <section id={SECTIONS_ID} className="w-full" aria-label="Sectors">
+    <section id={SECTIONS_ID} className="w-full" aria-label={t("sectorSplit.regionLabel")}>
       <Reveal className="flex flex-wrap items-end justify-between gap-6 px-6 pt-16 pb-8 sm:px-8 lg:px-10 lg:pt-24 lg:pb-10">
         <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px]">
           {t("sectorSplit.headline")}

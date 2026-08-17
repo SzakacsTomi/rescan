@@ -23,10 +23,6 @@ export const CONTACT_GROUPS = [
   fields: readonly GroupedField[];
 }[];
 
-export const CONTACT_GROUP_IDS = CONTACT_GROUPS.map((group) => group.id);
-
-export type ContactGroupStep = (typeof CONTACT_GROUPS)[number]['step'];
-
 /** A group with its label resolved on the server. */
 export type ContactGroup = {
   id: string;

@@ -76,16 +76,14 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
 
   const inputFor = (field: string) => (fieldErrors[field] ? errorInputClass : inputClass);
 
+  const serverErrorMessages: Partial<Record<NonNullable<ContactFormState["errorKey"]>, string>> = {
+    required: t.required,
+    invalidEmail: t.invalidEmail,
+    consent: t.consentRequired,
+    captcha: t.captchaError,
+  };
   const serverErrorMessage =
-    state.errorKey === "required"
-      ? t.required
-      : state.errorKey === "invalidEmail"
-        ? t.invalidEmail
-        : state.errorKey === "consent"
-          ? t.consentRequired
-          : state.errorKey === "captcha"
-            ? t.captchaError
-            : t.errorMessage;
+    (state.errorKey && serverErrorMessages[state.errorKey]) ?? t.errorMessage;
 
   if (state.status === "success") {
     return (

@@ -3,9 +3,6 @@
     "title": "Rescan — Byggnadsinformation för butikskedjor och logistiklager",
     "description": "Pålitlig information om befintliga förhållanden för butikskedjor och logistiklager, så att projektteam kan besluta tidigare och behöva återvända till platsen mer sällan."
   },
-  "site": {
-    "name": "Rescan"
-  },
   "homePage": {
     "hero": {
       "eyebrow": "01 — Befintliga förhållanden",
@@ -40,7 +37,8 @@
     },
     "sectorSplit": {
       "headline": "Två sektorer. Två kostsamma problem.",
-      "routeLabel": "Välj din väg"
+      "routeLabel": "Välj din väg",
+      "regionLabel": "Sektorer"
     },
     "sectors": {
       "retailChains": {
@@ -165,7 +163,10 @@
     "projects": "Projekt",
     "whyRescan": "Varför RESCAN",
     "about": "Om oss",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "menu": "Meny",
+    "openMenu": "Öppna menyn",
+    "closeMenu": "Stäng menyn"
   },
   "common": {
     "switchLanguage": "English",
@@ -398,7 +399,6 @@
     "caseRetail0": {
       "title": "[[TODO: retail chain client or programme name]]",
       "scale": "[[TODO: number of locations, e.g. 42 locations]]",
-      "region": "[[TODO: region or location]]",
       "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
       "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
       "caseStudy": {
@@ -416,7 +416,6 @@
     "caseLogistics0": {
       "title": "[[TODO: logistics client or programme name]]",
       "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-      "region": "[[TODO: region or location]]",
       "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
       "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
       "caseStudy": {
@@ -595,6 +594,12 @@
         "scope": "Samordnad 3D BIM-modell som återspeglar befintliga förhållanden, digital modell förberedd för moderniseringsplanering och bygglovsansökan",
         "body": "Inför modernisering av den 14 000+ m² stora industrianläggningen krävdes tillförlitlig dokumentation för att stödja projekteringsbeslut och bygglovsgodkännande. Felaktiga eller fragmenterade underlag ökade risken för förseningar och samordningsfel. RESCAN producerade en fullskalig 3D BIM-modell som ger ett kontrollerat underlag för ombyggnad och myndighetsinlämning."
       }
+    },
+    "detailLabels": {
+      "client": "Kund",
+      "location": "Plats",
+      "sector": "Sektor",
+      "scope": "Omfattning"
     }
   },
   "sectorPage": {
@@ -651,7 +656,8 @@
         "quote": "Konsekvent dokumentation för alla fastigheter sparar oss både tid och pengar. Det ger oss en tydlig överblick över portföljen och tar bort mycket osäkerhet när vi planerar förändringar.",
         "quoteAuthor": "Eddie Carlqvist, VD, Carlqvist Fastigheter",
         "metric": "56",
-        "metricLabel": "kommersiella fastigheter dokumenterade"
+        "metricLabel": "kommersiella fastigheter dokumenterade",
+        "image": "[[TODO: site photograph for the named retail case]]"
       },
       "logoWall": {
         "headline": "Anlitade av fastighetsteam som hanterar flera platser"

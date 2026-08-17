@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 /**
- * Fields come from the Contact brief. Two deviations, both recorded in OPEN-ITEMS.md:
+ * Fields come from the Contact brief, with two deliberate deviations:
  * the brief's list has no Name and no Email (an enquiry with no reply address cannot be
  * answered, so both are kept), and the old Phone field is gone because the brief asks to
  * avoid anything not needed for the first conversation.
@@ -54,14 +54,13 @@ export type FormTranslations = {
   captchaError: string;
 };
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 const requiredText = z.string().min(1, 'required');
 
 export const contactSchema = z.object({
   sector: requiredText,
   name: requiredText,
-  email: requiredText.refine((v) => emailRegex.test(v), 'invalidEmail'),
+  // `min(1)` first, so a blank field reports `required` rather than `invalidEmail`.
+  email: requiredText.pipe(z.email('invalidEmail')),
   company: requiredText,
   role: requiredText,
   scale: requiredText,

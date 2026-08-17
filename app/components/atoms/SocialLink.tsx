@@ -10,11 +10,10 @@ const iconMap = {
 type SocialLinkProps = {
   config: SocialLinkConfig;
   label: string;
-  size?: "md" | "lg";
-  showLabel?: boolean;
+  size?: 'md' | 'lg';
 };
 
-export const SocialLink = ({ config, label, size = "md", showLabel = false }: SocialLinkProps) => {
+export const SocialLink = ({ config, label, size = 'md' }: SocialLinkProps) => {
   const Icon = iconMap[config.platform];
 
   return (
@@ -23,10 +22,9 @@ export const SocialLink = ({ config, label, size = "md", showLabel = false }: So
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`text-foreground/50 hover:text-foreground transition-colors${showLabel ? " flex flex-col items-center gap-2" : ""}`}
+      className="text-foreground/50 hover:text-foreground transition-colors"
     >
-      <Icon className={size === "lg" ? "w-6 h-6" : "w-5 h-5"} />
-      {showLabel && <span className="text-xs tracking-wide">{label}</span>}
+      <Icon className={size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'} />
     </a>
   );
 };

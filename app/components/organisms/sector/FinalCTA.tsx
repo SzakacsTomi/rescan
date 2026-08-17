@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from '@/app/components/atoms/Reveal';
+import { DEEP_BLUE_GRADIENT } from '@/config/gradients';
 import { Link } from '@/i18n/navigation';
 
 type FinalCTAProps = {
@@ -9,11 +10,10 @@ type FinalCTAProps = {
   ctaHref: string;
 };
 
-const SECTION_GRADIENT = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 52%, #0f3460 100%)';
 
 export const FinalCTA = ({ headline, subheadline, cta, ctaHref }: FinalCTAProps) => {
   return (
-    <section className="relative overflow-hidden px-6 py-24 sm:px-8 lg:px-10 lg:py-36" style={{ background: SECTION_GRADIENT }}>
+    <section className="relative overflow-hidden px-6 py-24 sm:px-8 lg:px-10 lg:py-36" style={{ background: DEEP_BLUE_GRADIENT }}>
       <div
         aria-hidden
         className="absolute inset-0"

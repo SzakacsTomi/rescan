@@ -1,140 +1,98 @@
 # Rescan — Corporate Website
 
-Official website for **Rescan**, a 3D scanning company offering commercial portfolios, industrial manufacturing, and 2D/3D model production services.
+Bilingual (EN/SV) marketing site for **Rescan**, a Swedish B2B company selling
+existing-condition building information to **retail chains** and **logistics
+warehouses**.
 
-Built with Next.js App Router, Tailwind CSS v4, and full English/Swedish localisation.
+Built with Next.js 16 (App Router), Tailwind CSS v4 and next-intl.
+
+> Working on this repo? Read [AGENTS.md](AGENTS.md) first — it holds the copy rules, the
+> placeholder workflow and the repo-specific gotchas. This README is the short version.
 
 ---
 
-## Tech Stack
+## Getting started
 
-| | |
+Requires **Node 20+** and **Yarn 4** (the repo pins it via `.yarnrc.yml`).
+
+```bash
+yarn install
+yarn dev          # http://localhost:3000 → redirects to /en
+```
+
+### Scripts
+
+| Command       | What it does                                            |
+|---------------|---------------------------------------------------------|
+| `yarn dev`    | Development server                                      |
+| `yarn build`  | Production build (also typechecks)                       |
+| `yarn start`  | Serve the production build                              |
+| `yarn lint`   | ESLint                                                  |
+| `yarn test`   | Vitest + Testing Library (jsdom)                        |
+| `yarn todos`  | List every open `[[TODO: …]]` copy slot (`--md` for markdown) |
+
+### Environment
+
+The site builds and runs with no environment variables. These enable optional features:
+
+| Variable | Needed for |
 |---|---|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS v4 + shadcn/ui |
-| Animations | Framer Motion |
-| i18n | next-intl (EN, SV) |
-| Icons | Lucide React |
-| Testing | Vitest + Testing Library |
+| `RESEND_API_KEY` | Sending the contact form by email. Unset → the form succeeds and logs a warning. |
+| `TURNSTILE_SECRET_KEY` / `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile on the contact form. Unset → the check is skipped. |
+| `CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | The `/retail-chains` hero carousel, which lists a Cloudinary folder. |
+| `NEXT_PUBLIC_SHOW_PLACEHOLDERS` | `true` keeps case-study cards and sections whose copy is still pending visible, for client review. |
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- npm, yarn, pnpm, or bun
-
-### Install & run
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Available scripts
-
-```bash
-npm run dev      # Development server
-npm run build    # Production build
-npm run start    # Start production server
-npm run lint     # Run ESLint
-```
-
----
-
-## Project Structure
+## Layout
 
 ```
-/app
-├── [locale]/
-│   ├── (pages)/
-│   │   ├── about/
-│   │   ├── contact/
-│   │   ├── commercial-portfolios/
-│   │   ├── industrial-manufacturing/
-│   │   ├── model-production/
-│   │   └── projects/
-│   ├── layout.tsx          # Locale layout (html, body, fonts, i18n provider)
-│   └── page.tsx            # Home page
-├── components/
-│   ├── atoms/              # Basic UI building blocks
-│   ├── molecules/          # Composite components
-│   ├── organisms/          # Complex sections (NavBar, Footer, HeroSection)
-│   └── templates/          # Page-level layouts
-├── types/
-└── globals.css
-
-/config
-├── nav.ts                  # Navigation links
-├── footer.ts               # Footer links & legal
-├── sections.ts             # Section cards config
-└── site.ts                 # Site metadata
-
-/i18n
-├── routing.ts              # Locale routing
-├── navigation.ts           # i18n navigation helpers
-└── request.ts              # Message loading
-
-/messages
-├── en.json                 # English translations
-└── sv.json                 # Swedish translations
-
-/public
-├── assets/                 # Logo and brand assets
-└── pdfs/                   # Privacy Policy, Cookie Policy
+app/[locale]/(pages)/   routes — thin; resolve translations, compose a template
+app/[locale]/page.tsx   home (outside (pages): renders its own NavBar + Footer)
+app/components/         atoms → molecules → organisms → templates
+app/actions/            Server Actions
+app/emails/             transactional email HTML
+app/hooks/              client hooks
+app/types/              shared types
+config/                 static, non-translated config (nav, footer, sectors, gradients)
+lib/                    framework-agnostic helpers (cn, cloudinary)
+i18n/                   routing + request config
+messages/               en.json + sv.json — every user-visible string
+scripts/                repo tooling
+proxy.ts                next-intl locale routing (Next 16's middleware file convention)
 ```
 
----
+Components follow atomic design; dependencies point one way only
+(`templates → organisms → molecules → atoms → lib`).
+
+## Routes
+
+| Route | Notes |
+|---|---|
+| `/` | Hero, sector split, cost ladder, proof, qualification |
+| `/retail-chains` | Sector page with a Cloudinary carousel hero |
+| `/logistics-warehouses` | Sector page with the consequence chain |
+| `/why-rescan` | Four proof-backed pillars |
+| `/projects` | Two case studies plus fifteen older references |
+| `/about` | Company page |
+| `/contact` | Zod + Server Action + Resend + Turnstile |
+
+Retired routes 308-redirect (see `RETIRED_ROUTES` in `next.config.ts`):
+`/commercial-portfolios` → `/retail-chains`, `/industrial-manufacturing` →
+`/logistics-warehouses`, `/model-production` → `/`.
+
+All pages are served under both locale prefixes: `/en/...` and `/sv/...`.
 
 ## Internationalisation
 
-The site supports **English (en)** and **Swedish (sv)**. English is the default locale.
+Every user-visible string goes through a message key in **both**
+[messages/en.json](messages/en.json) and [messages/sv.json](messages/sv.json) — a key
+present in one and missing from the other fails the build on purpose.
 
-- Routes: `/en/about`, `/sv/about`, etc.
-- Translations live in [messages/en.json](messages/en.json) and [messages/sv.json](messages/sv.json)
-- Locale routing is handled by `next-intl` middleware in [proxy.ts](proxy.ts)
-
-To add a new translation key, update both JSON files and reference it with `useTranslations()` in client components or `getTranslations()` in server components.
-
----
-
-## Component Architecture
-
-Components follow **Atomic Design**:
-
-- **Atoms** — smallest units: `Logo`, `ScrollArrow`, `SocialLink`, `LanguageSwitcher`
-- **Molecules** — combinations: `NavLinks`, `SectionCard`, `HeroText`, `MobileMenu`, `FooterNav`
-- **Organisms** — full sections: `NavBar`, `Footer`, `HeroSection`, `SectionsGrid`
-- **Templates** — page wrappers: `HomeTemplate`
-
----
-
-## Pages & Routes
-
-| Route | Description |
-|---|---|
-| `/` | Home — hero + section cards |
-| `/commercial-portfolios` | Commercial portfolio services |
-| `/industrial-manufacturing` | Industrial manufacturing services |
-| `/model-production` | 2D/3D model production services |
-| `/projects` | Project showcase |
-| `/about` | About the company |
-| `/contact` | Contact page |
-
-All routes are available under both locale prefixes (`/en/...`, `/sv/...`).
-
----
+Copy the client still owes us is written as `[[TODO: what we need]]` rather than invented,
+and rendered through `atoms/Pending.tsx` as a visible amber badge. `yarn todos` lists
+every open slot and flags locale drift.
 
 ## Deployment
 
-Deployed on [Vercel](https://vercel.com). Push to `main` triggers an automatic production deployment.
-
-No environment variables are required for the base setup.
+Vercel. Pushing to `main` triggers a production deploy.

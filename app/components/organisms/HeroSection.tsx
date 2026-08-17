@@ -5,12 +5,12 @@ import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { HeroText } from "@/app/components/molecules/HeroText";
 import { ScrollCue } from "@/app/components/molecules/ScrollCue";
 import { SECTIONS_ID } from "@/app/components/organisms/SectionsGrid";
+import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 import { Link } from "@/i18n/navigation";
 
 const READOUT_ITEM_COUNT = 4;
 const TICK_COUNT = 14;
 const HEADLINE_ACCENT_LINE_COUNT = 2;
-const HERO_GRADIENT = "linear-gradient(135deg, #1a1a2e 0%, #16213e 52%, #0f3460 100%)";
 
 export const HeroSection = async () => {
   const t = await getTranslations("homePage");
@@ -23,7 +23,7 @@ export const HeroSection = async () => {
   return (
     <section
       className="relative min-h-screen w-full flex flex-col justify-end overflow-hidden"
-      style={{ background: HERO_GRADIENT }}
+      style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div
         aria-hidden

@@ -4,11 +4,12 @@ import { routing } from "./i18n/routing";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
-/** Routes renamed when the site narrowed onto retail and logistics. Kept so existing
- *  links and anything already indexed keep resolving. */
-const RENAMED_ROUTES = [
+/** Routes dropped when the site narrowed onto retail and logistics. Redirected rather than
+ *  deleted so existing links and anything already indexed keep resolving. */
+const RETIRED_ROUTES = [
   { from: "/commercial-portfolios", to: "/retail-chains" },
   { from: "/industrial-manufacturing", to: "/logistics-warehouses" },
+  { from: "/model-production", to: "/" },
 ];
 
 const nextConfig: NextConfig = {
@@ -22,7 +23,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return RENAMED_ROUTES.flatMap(({ from, to }) => [
+    return RETIRED_ROUTES.flatMap(({ from, to }) => [
       { source: from, destination: to, permanent: true },
       ...routing.locales.map((locale) => ({
         source: `/${locale}${from}`,

@@ -1,4 +1,5 @@
 import { Reveal } from "@/app/components/atoms/Reveal";
+import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 
 type DifferentiatorProps = {
   headline: string;
@@ -9,7 +10,7 @@ export const Differentiator = ({ headline, subheadline }: DifferentiatorProps) =
   return (
     <section
       className="py-[132px] px-10"
-      style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 52%, #0f3460 100%)' }}
+      style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div className="max-w-[1000px] mx-auto text-center">
         <Reveal>

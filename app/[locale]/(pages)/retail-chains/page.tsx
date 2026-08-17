@@ -53,6 +53,7 @@ export default async function RetailChainsPage() {
       ],
       metric: t("namedCase.metric"),
       metricLabel: t("namedCase.metricLabel"),
+      image: t("namedCase.image"),
       quote: t("namedCase.quote"),
       quoteAuthor: t("namedCase.quoteAuthor"),
     },

@@ -10,6 +10,13 @@ const KEY_PROOF_COUNT = 4;
 export default async function ProjectsPage() {
   const t = await getTranslations('projectsPage');
 
+  const detailLabels = {
+    client: t('detailLabels.client'),
+    location: t('detailLabels.location'),
+    sector: t('detailLabels.sector'),
+    scope: t('detailLabels.scope'),
+  };
+
   const caseStudyLabels = {
     situation: t('caseStudy.situation'),
     informationGap: t('caseStudy.informationGap'),
@@ -66,6 +73,7 @@ export default async function ProjectsPage() {
         sector: t(`${id}.detail.sector`),
         scope: t(`${id}.detail.scope`),
         body: t(`${id}.detail.body`),
+        labels: detailLabels,
       },
     };
   }

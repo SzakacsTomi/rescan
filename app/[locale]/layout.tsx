@@ -11,7 +11,6 @@ const montserrat = Montserrat({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
-/** Structural labels only — indices, coordinates, fixed field names. Never a sentence. */
 const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
   subsets: ['latin', 'latin-ext'],

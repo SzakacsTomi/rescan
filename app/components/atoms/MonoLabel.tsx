@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 type MonoLabelProps = {
   children: ReactNode;
   className?: string;
-  as?: 'span' | 'p' | 'dt' | 'h2';
+  as?: 'span' | 'p' | 'dt' | 'dd' | 'h2';
   /** For a purely positional index, which duplicates the row it sits beside. */
   'aria-hidden'?: boolean;
 };

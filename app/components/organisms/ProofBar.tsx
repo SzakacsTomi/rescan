@@ -3,6 +3,7 @@ import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Reveal } from "@/app/components/atoms/Reveal";
 import { isPending } from "@/app/components/atoms/Pending";
 import { CountUp } from "@/app/components/molecules/CountUp";
+import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -31,11 +32,10 @@ type ProofBarProps = {
   };
 };
 
-const SECTION_GRADIENT = "linear-gradient(135deg, #1a1a2e 0%, #16213e 52%, #0f3460 100%)";
 
 export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
   return (
-    <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-28" style={{ background: SECTION_GRADIENT }}>
+    <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-28" style={{ background: DEEP_BLUE_GRADIENT }}>
       <div className="mx-auto max-w-5xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{headline}</h2>

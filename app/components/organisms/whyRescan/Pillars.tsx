@@ -1,4 +1,4 @@
-import { Pending, isPending } from "@/app/components/atoms/Pending";
+import { Pending } from "@/app/components/atoms/Pending";
 
 /**
  * The four reasons-to-trust from the Why RESCAN brief. Each pillar carries a proof slot,
@@ -40,15 +40,12 @@ export const Pillars = ({ headline, proofLabel, pillars }: PillarsProps) => {
                 <p className="text-foreground/70 leading-relaxed whitespace-pre-line">
                   {pillar.body}
                 </p>
-                {!isPending(pillar.proof) && (
-                  <p className="text-sm">
-                    <span className="font-semibold text-foreground/50 uppercase tracking-wider text-xs mr-2">
-                      {proofLabel}
-                    </span>
-                    {pillar.proof}
-                  </p>
-                )}
-                <Pending>{pillar.proof}</Pending>
+                <p className="text-sm">
+                  <span className="font-semibold text-foreground/50 uppercase tracking-wider text-xs mr-2">
+                    {proofLabel}
+                  </span>
+                  <Pending>{pillar.proof}</Pending>
+                </p>
               </div>
             </article>
           ))}

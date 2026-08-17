@@ -2,6 +2,7 @@
 
 import type { MouseEvent } from 'react';
 
+import { MonoLabel } from '@/app/components/atoms/MonoLabel';
 import { useActiveSection } from '@/app/hooks/useActiveSection';
 import { cn } from '@/lib/utils';
 
@@ -50,17 +51,17 @@ export const ContactRail = ({ items, ariaLabel }: ContactRailProps) => {
                     isActive ? 'w-4 opacity-100' : 'w-0 opacity-0',
                   )}
                 />
-                <span
-                  aria-hidden="true"
+                <MonoLabel
+                  aria-hidden
                   className={cn(
-                    'font-mono text-[11px] leading-5 tracking-[0.12em] tabular-nums transition-colors duration-200',
+                    'text-[11px] leading-5 tracking-[0.12em] tabular-nums transition-colors duration-200',
                     isActive
                       ? 'text-primary'
                       : 'text-muted-foreground/70 group-hover:text-foreground/70',
                   )}
                 >
                   {item.index}
-                </span>
+                </MonoLabel>
                 <span
                   className={cn(
                     'text-sm leading-5 transition-colors duration-200',

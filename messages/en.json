@@ -3,9 +3,6 @@
     "title": "Rescan — Building information for retail chains and logistics warehouses",
     "description": "Reliable existing-condition information for retail chains and logistics warehouses, so project teams decide earlier and return to site less often."
   },
-  "site": {
-    "name": "Rescan"
-  },
   "homePage": {
     "hero": {
       "eyebrow": "01 — Existing conditions",
@@ -40,7 +37,8 @@
     },
     "sectorSplit": {
       "headline": "Two sectors. Two expensive problems.",
-      "routeLabel": "Choose your route"
+      "routeLabel": "Choose your route",
+      "regionLabel": "Sectors"
     },
     "sectors": {
       "retailChains": {
@@ -165,7 +163,10 @@
     "projects": "Projects",
     "whyRescan": "Why RESCAN",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "common": {
     "switchLanguage": "Svenska",
@@ -398,7 +399,6 @@
     "caseRetail0": {
       "title": "[[TODO: retail chain client or programme name]]",
       "scale": "[[TODO: number of locations, e.g. 42 locations]]",
-      "region": "[[TODO: region or location]]",
       "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
       "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
       "caseStudy": {
@@ -416,7 +416,6 @@
     "caseLogistics0": {
       "title": "[[TODO: logistics client or programme name]]",
       "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-      "region": "[[TODO: region or location]]",
       "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
       "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
       "caseStudy": {
@@ -595,6 +594,12 @@
         "scope": "Coordinated 3D BIM model reflecting existing conditions, digital model prepared for modernization planning and building permit application",
         "body": "Prior to modernization of the 14,000+ m² industrial facility, dependable documentation was required to support engineering decisions and building permit approval. Inaccurate or fragmented records increased the risk of delays and coordination errors. RESCAN produced a full-scale 3D BIM model to provide a controlled foundation for redevelopment and regulatory submission."
       }
+    },
+    "detailLabels": {
+      "client": "Client",
+      "location": "Location",
+      "sector": "Sector",
+      "scope": "Scope"
     }
   },
   "sectorPage": {
@@ -651,7 +656,8 @@
         "quote": "Consistent documentation across all properties saves us both time and money. It gives us a clear overview of the portfolio and removes a lot of uncertainty when planning changes.",
         "quoteAuthor": "Eddie Carlqvist, CEO, Carlqvist Property",
         "metric": "56",
-        "metricLabel": "commercial properties documented"
+        "metricLabel": "commercial properties documented",
+        "image": "[[TODO: site photograph for the named retail case]]"
       },
       "logoWall": {
         "headline": "Trusted by property teams managing multiple locations"

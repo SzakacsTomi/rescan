@@ -45,9 +45,9 @@ export const MapPlate = ({
       <MonoLabel as="dt" className="text-white/60">
         {coordinatesLabel}
       </MonoLabel>
-      <dd className="mt-2 font-mono text-[12px] leading-none tracking-[0.04em] tabular-nums text-white/85">
+      <MonoLabel as="dd" className="mt-2 text-[12px] tracking-[0.04em] tabular-nums text-white/85">
         {coordinates}
-      </dd>
+      </MonoLabel>
     </div>
   </dl>
 );

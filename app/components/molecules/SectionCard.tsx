@@ -44,15 +44,13 @@ export const SectionCard = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.6 });
 
-  // Lazy initializer - runs once on the client, avoids extra render.
-  // Defaults to true on SSR (hover device assumed).
+  // SSR has no matchMedia, and assuming a hover device there keeps the collapsed detail
+  // hidden until either signal arrives rather than flashing it open.
   const [isHoverDevice] = useState<boolean>(() => {
     if (typeof window === "undefined") return true;
     return window.matchMedia("(hover: hover)").matches;
   });
 
-  // On touch devices: activate when scrolled into view
-  // On hover devices: activate on mouse hover
   const isActive = isHoverDevice ? isHovered : isInView;
   const flexValue = isHoverDevice ? (isHovered ? 1.55 : anyHovered ? 0.85 : 1) : 1;
 

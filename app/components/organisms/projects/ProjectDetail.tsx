@@ -10,6 +10,15 @@ import {
 } from "@/app/components/organisms/projects/CaseStudyBody";
 import type { ProjectConfig } from "@/config/projects";
 
+const META_ITEMS = [
+  { key: "client", icon: Users },
+  { key: "location", icon: MapPin },
+  { key: "sector", icon: Building2 },
+  { key: "scope", icon: Maximize2 },
+] as const;
+
+export type DetailMetaKey = (typeof META_ITEMS)[number]["key"];
+
 export type ProjectDetailCopy = {
   title: string;
   /** The fifteen references that predate the case-study format. */
@@ -19,6 +28,7 @@ export type ProjectDetailCopy = {
     sector: string;
     scope: string;
     body: string;
+    labels: Record<DetailMetaKey, string>;
   };
   /** Projects written to the format the Projects brief defines. */
   caseStudy?: {
@@ -33,13 +43,6 @@ type ProjectDetailProps = {
   backLabel: string;
   onClose: () => void;
 };
-
-const META_ITEMS = [
-  { key: "client" as const, icon: Users },
-  { key: "location" as const, icon: MapPin },
-  { key: "sector" as const, icon: Building2 },
-  { key: "scope" as const, icon: Maximize2 },
-];
 
 export const ProjectDetail = ({
   project,
@@ -56,7 +59,7 @@ export const ProjectDetail = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-50 overflow-y-auto overscroll-contain -webkit-overflow-scrolling-touch"
+          className="fixed inset-0 z-50 overflow-y-auto overscroll-contain"
           style={{ WebkitOverflowScrolling: "touch" }}
         >
           <div className="min-h-screen flex flex-col">
@@ -117,7 +120,7 @@ export const ProjectDetail = ({
                       <div key={key}>
                         <div className="flex items-center gap-2 text-white/40 text-xs uppercase tracking-wider mb-1.5">
                           <Icon className="w-3.5 h-3.5" />
-                          {key}
+                          {translations.detail?.labels[key]}
                         </div>
                         <p className="text-white text-sm font-medium">
                           {translations.detail?.[key]}

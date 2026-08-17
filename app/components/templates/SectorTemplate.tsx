@@ -8,7 +8,6 @@ import { LogoWall } from '@/app/components/organisms/sector/LogoWall';
 import { Metrics } from '@/app/components/organisms/sector/Metrics';
 import { ProofBar } from '@/app/components/organisms/ProofBar';
 import { NamedCase } from '@/app/components/organisms/sector/NamedCase';
-import { OperationalFriction } from '@/app/components/organisms/sector/OperationalFriction';
 import { SectorHero } from '@/app/components/organisms/sector/SectorHero';
 import { StrategicValue } from '@/app/components/organisms/sector/StrategicValue';
 import type { SectorPageConfig, SectorPageTranslations } from '@/app/types/sectorPage';
@@ -30,16 +29,6 @@ export const SectorTemplate = ({
   afterHero,
   coreRiskAside,
 }: SectorTemplateProps) => {
-  const painPoints = config.friction?.painPoints;
-  const frictionPoints =
-    tr.friction && painPoints
-      ? tr.friction.points.flatMap((point, i) => {
-          const painPoint = painPoints[i];
-          if (!painPoint) return [];
-          return [{ icon: painPoint.icon, title: point.title, description: point.description }];
-        })
-      : undefined;
-
   return (
     <>
       {heroOverride ?? (
@@ -72,14 +61,6 @@ export const SectorTemplate = ({
         </ConsequenceSection>
       )}
 
-      {tr.friction && frictionPoints && (
-        <OperationalFriction
-          headline={tr.friction.headline}
-          body={tr.friction.body}
-          points={frictionPoints}
-        />
-      )}
-
       {tr.strategicValue && (
         <StrategicValue
           headline={tr.strategicValue.headline}
@@ -105,6 +86,7 @@ export const SectorTemplate = ({
           bulletPoints={tr.namedCase.bulletPoints}
           metric={tr.namedCase.metric}
           metricLabel={tr.namedCase.metricLabel}
+          image={tr.namedCase.image}
           quote={tr.namedCase.quote}
           quoteAuthor={tr.namedCase.quoteAuthor}
         />

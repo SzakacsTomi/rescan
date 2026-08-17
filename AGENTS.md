@@ -6,12 +6,14 @@ That bias explains most rules here.
 
 **The site is mid-repositioning.** Rescan is narrowing from a general 3D-scanning
 supplier to a specialist for exactly two segments: **Retail Chains** and **Logistics
-Warehouses**. Six client copy-briefs drive this — they live in `docs/briefs/` and are
-the source of truth for page structure and wording. Read the relevant one before
-touching a page.
+Warehouses**. Six client copy-briefs drive this and are the source of truth for page
+structure and wording. **The briefs are no longer checked in** (they were removed in
+30e9342) — ask the user for the relevant one before rewriting a page's copy rather than
+inventing it, and recover them from git history if needed.
 
 A visual redesign is being imported from a claude.ai Design project ("Hero section
-redesign feedback"), synced via the `DesignSync` MCP tool / `/design-sync` skill.
+redesign feedback"), synced via the `DesignSync` MCP tool / `/design-sync` skill. The
+`.dc.html` files it produces are not checked in either; they arrive through the tool.
 `Rescan Redesign.dc.html` is the target state; `Rescan Current.dc.html` mirrors what's
 live, for diffing. The `sc-if` / `sc-for` / `{{ }}` markup inside a `.dc.html` file is
 the design tool's own preview templating, not literal markup to port — only the inline
@@ -30,7 +32,7 @@ way the proof metrics already are, not given a new placeholder style.
 | React        | 19.2.3 — Server Components by default                          |
 | Language     | TypeScript 5 (`strict`)                                        |
 | Styling      | Tailwind CSS 4 — CSS-first, `@theme` in `app/globals.css`, **no `tailwind.config.ts`** |
-| Components   | shadcn/ui (style `new-york`, base colour slate) + Radix        |
+| Components   | Bespoke, atomic-design (see below) — **no shadcn/ui, no Radix**  |
 | Animation    | Framer Motion 12                                               |
 | Icons        | lucide-react                                                   |
 | i18n         | next-intl 4, locales `en` (default) and `sv`                   |
@@ -38,12 +40,17 @@ way the proof metrics already are, not given a new placeholder style.
 | Email        | Resend                                                         |
 | Anti-spam    | Cloudflare Turnstile                                           |
 | Lint         | ESLint 9 flat config + `eslint-config-next`                    |
-| Test         | Vitest + Testing Library (installed, no tests written yet)     |
+| Test         | Vitest + Testing Library + jsdom — `yarn test`, config in `vitest.config.ts` |
 | Package mgr  | Yarn 4 (`nodeLinker: node-modules`)                            |
 
 There is **no backend, no CMS, and no data-fetching library**. Server Components plus
 Server Actions cover current needs. Do not add React Query, Zustand, or an ORM
 without being asked.
+
+The project was scaffolded with shadcn but never used a single shadcn component. The
+`components.json`, the `shadcn`/`radix-ui`/`class-variance-authority` packages and the
+`shadcn/tailwind.css` import have been removed. Every component here is hand-written —
+if you need a shadcn primitive, run `npx shadcn@latest init` first and say so.
 
 ## Commands
 
@@ -53,6 +60,7 @@ without being asked.
 | Production build       | `yarn build`                             |
 | Serve build            | `yarn start`                             |
 | Lint                   | `yarn lint`                              |
+| Test                   | `yarn test`                              |
 | List open placeholders | `yarn todos` (`--md` for markdown)       |
 
 Verify UI work against a running server. Do not report a change as working on the
@@ -87,11 +95,11 @@ app/actions/            Server Actions
 app/emails/             transactional email HTML
 app/hooks/              client hooks (not components, so outside the atomic tiers)
 app/types/              shared types
-config/                 static, non-translated config (nav, footer, sectors, projects)
+config/                 static, non-translated config (nav, footer, sectors, projects, gradients)
 lib/                    framework-agnostic helpers (cn, cloudinary)
 i18n/                   routing + request config
 messages/               one JSON catalogue per locale
-docs/briefs/            the client copy-briefs — source of truth for page content
+scripts/                repo tooling (`list-placeholders.mjs` backs `yarn todos`)
 ```
 
 Dependencies point one way: `app/[locale]` → `templates` → `organisms` → `molecules`
@@ -108,9 +116,11 @@ Dependencies point one way: `app/[locale]` → `templates` → `organisms` → `
 | `/projects` | `projects.md` | Case-study format plus fifteen older references |
 | `/contact` | `contact.md` | Zod + Server Action + Resend + Turnstile |
 | `/about` | — | No brief; unchanged by the repositioning |
-| `/model-production` | — | No brief; removed from navigation, route kept so links resolve |
 
-`/commercial-portfolios` and `/industrial-manufacturing` 308-redirect to the first two.
+Retired routes 308-redirect rather than 404, so indexed links keep resolving. They are
+listed in `RETIRED_ROUTES` in `next.config.ts`: `/commercial-portfolios` →
+`/retail-chains`, `/industrial-manufacturing` → `/logistics-warehouses`,
+`/model-production` → `/`.
 
 ### Atomic design
 
@@ -212,9 +222,31 @@ key filled in one catalogue but still pending in the other.
   `messages/sv.json`.
 - **No trivial comments.** Do not restate what the code says. Comment only what the code
   cannot express: a constraint from a brief, a non-obvious choice, a workaround.
+
+  A comment earns its place by answering **why**, never **what**. Concretely:
+
+  - Delete it if removing it loses nothing — `// On touch devices: activate when scrolled
+    into view` above `isHoverDevice ? isHovered : isInView` is the code read aloud.
+  - No section banners, no `// --- helpers ---`, no `// imports`, no comment restating a
+    component, prop or constant name. A well-named `DETAIL_MAX_HEIGHT_PX` needs no
+    `// max height`; it needs the reason that number and not another.
+  - No commented-out code, no `// TODO` in source. Missing *content* is a `[[TODO: …]]`
+    marker in `messages/*.json` (see Placeholders); missing *work* belongs in the issue
+    tracker, not a comment that nothing lists.
+  - Prefer the JSDoc form (`/** … */`) on a type, prop or exported symbol, and a line
+    comment inside a function body.
+  - **A comment must not point at something that does not exist.** If you delete or move
+    a file, grep for it and fix every comment naming it — stale pointers cost more time
+    than no comment at all.
+  - When you touch code that carries a comment, re-read the comment. Leaving it describing
+    the previous behaviour is worse than having written nothing.
 - **No magic numbers.** A literal with non-obvious meaning becomes a named constant.
 - **Static config is not translated.** `config/` holds hrefs, gradients, image URLs,
   icons — never user-visible text. Text lives in `messages/`.
+- **One definition per design value.** The dark navy behind the hero, the proof band and
+  every full-width CTA is `DEEP_BLUE_GRADIENT` in `config/gradients.ts`. Do not paste a
+  `linear-gradient(...)` string into a component; eight hand-copied copies had already
+  drifted apart at the midpoint stop before they were consolidated.
 - **Mono is for structural labels only.** `atoms/MonoLabel` is the single definition —
   indices, coordinates, fixed field names. Never a sentence, and never copy the client
   wrote. Do not write `font-mono` by hand.

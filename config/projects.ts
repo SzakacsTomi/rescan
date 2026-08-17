@@ -13,8 +13,7 @@ export type ProjectConfig = {
 /**
  * The two `case*` entries demonstrate the case-study format the client asked for; their
  * copy is still `[[TODO]]`, so they appear on preview and are skipped in production.
- * The fifteen entries below them predate the repositioning and are unchanged — see
- * OPEN-ITEMS.md for the decision still owed on them.
+ * The fifteen entries below them predate the repositioning and are unchanged.
  */
 export const projects: ProjectConfig[] = [
   {

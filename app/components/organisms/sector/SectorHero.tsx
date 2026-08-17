@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import { ScrollArrow } from "@/app/components/atoms/ScrollArrow";
+import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 
 type SectorHeroProps = {
   headline: string;
@@ -19,7 +20,7 @@ export const SectorHero = ({
   return (
     <section
       className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 py-24"
-      style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)" }}
+      style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6 whitespace-pre-line">

@@ -27,14 +27,22 @@ export const CountUp = ({ value, className }: CountUpProps) => {
   useEffect(() => {
     if (!isInView || !match) return;
 
-    const target = Number(match[0].replace(/,/g, ""));
-    const hasThousandsSeparator = match[0].includes(",");
+    const source = match[0];
+    const target = Number(source.replace(/,/g, ""));
+    const hasThousandsSeparator = source.includes(",");
+    // The figure's own precision, so "1.8M+" lands on 1.8 rather than being rounded to 2.
+    const decimals = source.split(".")[1]?.length ?? 0;
     const controls = animate(0, target, {
       duration: COUNT_DURATION_S,
       ease: "easeOut",
       onUpdate: (latest) => {
-        const rounded = Math.round(latest);
-        setDisplay(hasThousandsSeparator ? rounded.toLocaleString("en-US") : String(rounded));
+        setDisplay(
+          latest.toLocaleString("en-US", {
+            useGrouping: hasThousandsSeparator,
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+          }),
+        );
       },
     });
 

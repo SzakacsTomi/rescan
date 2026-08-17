@@ -1,4 +1,5 @@
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { Pending } from "@/app/components/atoms/Pending";
 import { Reveal } from "@/app/components/atoms/Reveal";
 
 type NamedCaseProps = {
@@ -9,11 +10,13 @@ type NamedCaseProps = {
   bulletPoints?: string[];
   metric: string;
   metricLabel: string;
+  /** The site photograph the brief asks for, still owed by the client. */
+  image: string;
   quote?: string;
   quoteAuthor?: string;
 };
 
-export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, metric, metricLabel, quote, quoteAuthor }: NamedCaseProps) => {
+export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, metric, metricLabel, image, quote, quoteAuthor }: NamedCaseProps) => {
   return (
     <section className="py-[120px] px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
@@ -57,9 +60,7 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
           </div>
           <Reveal className="flex flex-col gap-6">
             <div className="rounded-[10px] bg-muted border border-border min-h-[300px] flex items-center justify-center">
-              <p className="text-xs text-foreground/30 font-semibold tracking-widest uppercase">
-                Client image
-              </p>
+              <Pending>{image}</Pending>
             </div>
             {quote && (
               <blockquote className="border-l-2 border-primary pl-6">

@@ -6,5 +6,3 @@ export const navLinks = [
   { href: '/about', labelKey: 'about' },
   { href: '/contact', labelKey: 'contact' },
 ] as const;
-
-export type NavLinkConfig = (typeof navLinks)[number];

@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -11,36 +11,11 @@ import { cn } from "@/lib/utils";
 
 type ConsequenceChainProps = {
   steps: string[];
-  /** `compact` is the inline one-liner used on the Home sector blocks. */
-  variant?: "steps" | "compact";
-  className?: string;
 };
 
-export const ConsequenceChain = ({
-  steps,
-  variant = "steps",
-  className,
-}: ConsequenceChainProps) => {
-  if (variant === "compact") {
-    return (
-      <p
-        className={cn(
-          "flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-foreground/55",
-          className,
-        )}
-      >
-        {steps.map((step, i) => (
-          <span key={step} className="inline-flex items-center gap-2">
-            {i > 0 && <ArrowRight aria-hidden className="h-3.5 w-3.5 shrink-0 opacity-50" />}
-            {step}
-          </span>
-        ))}
-      </p>
-    );
-  }
-
+export const ConsequenceChain = ({ steps }: ConsequenceChainProps) => {
   return (
-    <ol className={cn("flex flex-col items-stretch gap-0", className)}>
+    <ol className="flex flex-col items-stretch gap-0">
       {steps.map((step, i) => (
         <li key={step} className="flex flex-col items-center">
           {i > 0 && (

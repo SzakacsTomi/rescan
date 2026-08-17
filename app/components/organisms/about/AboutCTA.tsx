@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { DEEP_BLUE_GRADIENT } from '@/config/gradients';
 import { Link } from '@/i18n/navigation';
 
 type AboutCTAProps = {
@@ -11,7 +12,7 @@ export const AboutCTA = ({ headline, primaryCta, secondaryCta }: AboutCTAProps) 
   return (
     <section
       className="py-32 px-6"
-      style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)' }}
+      style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight mb-10">

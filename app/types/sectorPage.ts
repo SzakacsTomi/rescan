@@ -1,5 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
-
 export type SectorHeroConfig = {
   primaryCtaHref: string;
   secondaryCtaHref: string;
@@ -9,16 +7,9 @@ export type SectorHeroConfig = {
   imagesFolder?: string;
 };
 
-export type PainPointConfig = {
-  icon: LucideIcon;
-};
-
 export type SectorPageConfig = {
   id: string;
   hero: SectorHeroConfig;
-  friction?: {
-    painPoints: readonly PainPointConfig[];
-  };
   /** Presentational only — which arrangement `StrategicValue` renders in.
    *  `'grid'` is the numbered-card treatment the redesign introduced for Retail;
    *  omitting it keeps a page's current stacked-list rendering. */
@@ -62,11 +53,6 @@ export type SectorPageTranslations = {
     steps: string[];
     footnote?: string;
   };
-  friction?: {
-    headline: string;
-    body?: string;
-    points: Array<{ title: string; description: string }>;
-  };
   strategicValue?: {
     headline: string;
     body?: string;
@@ -84,6 +70,7 @@ export type SectorPageTranslations = {
     bulletPoints?: string[];
     metric: string;
     metricLabel: string;
+    image: string;
     quote?: string;
     quoteAuthor?: string;
   };

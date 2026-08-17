@@ -4,6 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/app/components/atoms/LanguageSwitcher";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -18,6 +19,7 @@ const subscribe = () => () => {};
 export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("nav");
 
   const isClient = useSyncExternalStore(
     subscribe,
@@ -43,7 +45,7 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
             ? "text-white/70 hover:text-white"
             : "text-foreground/60 hover:text-foreground",
         )}
-        aria-label="Open menu"
+        aria-label={t("openMenu")}
       >
         <Menu size={24} />
       </button>
@@ -71,13 +73,13 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
                 >
                   <div className="flex items-center justify-between px-5 h-16 border-b border-border/60 shrink-0">
                     <span className="text-xs font-semibold tracking-widest uppercase text-foreground/40">
-                      Menu
+                      {t("menu")}
                     </span>
                     <button
                       type="button"
                       onClick={() => setIsOpen(false)}
                       className="p-2 -mr-2 text-foreground/50 hover:text-foreground transition-colors"
-                      aria-label="Close menu"
+                      aria-label={t("closeMenu")}
                     >
                       <X size={18} />
                     </button>
