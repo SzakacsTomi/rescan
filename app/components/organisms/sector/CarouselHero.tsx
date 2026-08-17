@@ -18,7 +18,7 @@ type CarouselHeroProps = {
 
 const MIN_W = 240;
 const MAX_W = 360;
-const GAP = 8;
+const GAP = 4;
 const MAX_IMAGES = 24;
 
 const ROW_CONFIGS = [{ duration: "200s" }, { duration: "140s" }, { duration: "201s" }];
@@ -81,41 +81,43 @@ export const CarouselHero = ({
   }));
 
   return (
-    <section className="grid grid-cols-1 border-b border-border lg:min-h-[86vh] lg:grid-cols-[minmax(0,1fr)_44%]">
-      <div className="flex flex-col justify-center gap-10 px-6 py-16 lg:ml-auto lg:max-w-205 lg:pt-28 lg:pb-24">
-        <div>
-          {eyebrow && <MonoLabel className="text-primary">{eyebrow}</MonoLabel>}
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-[-0.03em] text-balance whitespace-pre-line"
-          >
-            {headline}
-          </motion.h1>
-          <p className="mt-7 max-w-155 text-[19px] leading-[1.65] text-foreground/60">
-            {subheadline}
-          </p>
-        </div>
-        <div className="flex items-center gap-6">
-          <Link
-            href={primaryCta.href}
-            className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
-          >
-            {primaryCta.label}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            href={secondaryCta.href}
-            className="border-b border-foreground/25 pb-0.5 text-sm font-semibold text-foreground hover:border-foreground/50"
-          >
-            {secondaryCta.label}
-          </Link>
+    <section className="relative isolate border-b border-border">
+      <div className="max-w-480 mx-auto px-6 lg:flex lg:min-h-[86vh] lg:items-center lg:pl-31.5">
+        <div className="flex flex-col gap-10 py-16 lg:max-w-205 lg:pt-28 lg:pb-24">
+          <div>
+            {eyebrow && <MonoLabel className="text-primary">{eyebrow}</MonoLabel>}
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-7 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-[-0.03em] text-balance whitespace-pre-line"
+            >
+              {headline}
+            </motion.h1>
+            <p className="mt-7 max-w-155 text-[19px] leading-[1.65] text-foreground/60">
+              {subheadline}
+            </p>
+          </div>
+          <div className="flex items-center gap-6">
+            <Link
+              href={primaryCta.href}
+              className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
+            >
+              {primaryCta.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href={secondaryCta.href}
+              className="border-b border-foreground/25 pb-0.5 text-sm font-semibold text-foreground hover:border-foreground/50"
+            >
+              {secondaryCta.label}
+            </Link>
+          </div>
         </div>
       </div>
 
-      <div className="relative h-72 overflow-hidden bg-[#020409] sm:h-96 lg:h-auto">
-        <div className="absolute inset-0 flex flex-col gap-2 py-2">
+      <div className="relative h-72 overflow-hidden bg-[#020409] sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:left-[56%] lg:h-auto">
+        <div className="absolute inset-0 flex flex-col gap-1 py-1">
           {rows.map((row) => (
             <div key={row.duration} className="relative flex-1 overflow-hidden">
               <div

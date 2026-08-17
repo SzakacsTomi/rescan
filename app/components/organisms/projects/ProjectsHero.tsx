@@ -9,8 +9,8 @@ type ProjectsHeroProps = {
 
 export const ProjectsHero = ({ headline, subheadline, cta }: ProjectsHeroProps) => {
   return (
-    <section className="px-6 sm:px-8 lg:px-12 pt-16 sm:pt-24 pb-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-6 lg:pl-[126px] pt-16 sm:pt-24 pb-4">
+      <div className="max-w-7xl">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">
           {headline}
         </h1>
