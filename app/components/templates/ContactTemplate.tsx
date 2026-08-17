@@ -10,7 +10,7 @@ import type { FormTranslations } from '@/app/components/organisms/contact/contac
 
 type ContactTemplateProps = {
   translations: {
-    hero: { headline: string; subheadline: string };
+    hero: { eyebrow: string; headline: string; subheadline: string };
     details: {
       emailLabel: string;
       email: string;
@@ -38,6 +38,7 @@ export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
   return (
     <>
       <SplitMediaHero
+        eyebrow={tr.hero.eyebrow}
         headline={tr.hero.headline}
         subheadline={tr.hero.subheadline}
         meta={[

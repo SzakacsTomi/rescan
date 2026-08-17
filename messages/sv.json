@@ -282,6 +282,7 @@
   },
   "contactPage": {
     "hero": {
+      "eyebrow": "Kontakt",
       "headline": "Berätta vad du behöver förstå inför nästa beslut.",
       "subheadline": "Den användbara utgångspunkten är inte specifikationen för inmätningen.\nDet är fastigheten, projektet och vad ofullständig information kan kosta dig."
     },

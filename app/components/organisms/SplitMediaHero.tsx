@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { MonoLabel } from '@/app/components/atoms/MonoLabel';
+import { cn } from '@/lib/utils';
 
 type MetaItem = {
   label: string;
@@ -9,6 +10,7 @@ type MetaItem = {
 };
 
 type SplitMediaHeroProps = {
+  eyebrow?: string;
   headline: string;
   subheadline?: string;
   /** Up to three hairline-divided facts under the subline. */
@@ -27,48 +29,67 @@ type SplitMediaHeroProps = {
  * vertically centred text reads as composition against the media's mass rather than as a
  * headline floating in an empty field.
  */
-export const SplitMediaHero = ({ headline, subheadline, meta, media }: SplitMediaHeroProps) => (
+export const SplitMediaHero = ({
+  eyebrow,
+  headline,
+  subheadline,
+  meta,
+  media,
+}: SplitMediaHeroProps) => (
   <section className="relative isolate bg-background lg:h-[clamp(34rem,calc(100svh-4rem),46rem)]">
-    <div className="mx-auto max-w-5xl px-6 lg:h-full">
-      <div className="flex flex-col justify-center gap-8 pt-12 pb-10 sm:pt-16 sm:pb-12 lg:h-full lg:max-w-[28rem] lg:gap-10 lg:py-0 xl:max-w-[30rem]">
-        <div>
-          <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-balance text-foreground sm:text-5xl xl:text-[3.375rem]">
-            {headline}
-          </h1>
-          {/* `pre-line` keeps the copy's own sentence break; `pretty` stops the sentence
-              either side of it from ending on a stranded word. */}
-          {subheadline && (
-            <p className="mt-6 max-w-[38ch] text-base leading-relaxed whitespace-pre-line text-pretty text-foreground/70 sm:text-lg">
-              {subheadline}
-            </p>
+    <div className="max-w-480 mx-auto lg:h-full">
+      {/* The text column tracks the same 53% seam as the media, so the copy gets the whole left
+          half up to it rather than a fixed narrow measure. `pl` keeps the site's 126px spine. */}
+      <div className="px-6 lg:h-full lg:w-[53%] lg:pr-6 lg:pl-[126px]">
+        <div className="flex flex-col justify-center gap-8 pt-12 pb-10 sm:pt-16 sm:pb-12 lg:h-full lg:max-w-[40rem] lg:gap-10 lg:py-0">
+          <div>
+            {eyebrow && <MonoLabel className="text-primary">{eyebrow}</MonoLabel>}
+            {/* No `text-balance`: the headline's three lines come from the default greedy wrap,
+                which is what puts the break after "to" and after "the". Balancing evens the
+                line lengths instead and loses that break. */}
+            <h1
+              className={cn(
+                'text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-5xl xl:text-[3.375rem]',
+                eyebrow && 'mt-6',
+              )}
+            >
+              {headline}
+            </h1>
+            {/* `pre-line` keeps the copy's own sentence break; the measure is wide enough to
+                hold the first sentence on one line, so the break lands where the copy puts it. */}
+            {subheadline && (
+              <p className="mt-6 max-w-[49ch] text-base leading-relaxed whitespace-pre-line text-pretty text-foreground/70 sm:text-lg">
+                {subheadline}
+              </p>
+            )}
+          </div>
+
+          {meta && meta.length > 0 && (
+            <dl className="grid grid-cols-1 divide-y divide-border border-t border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+              {meta.map((item) => (
+                <div key={item.label} className="py-4 sm:px-5 sm:py-5 sm:first:pl-0 sm:last:pr-0">
+                  <MonoLabel as="dt">{item.label}</MonoLabel>
+                  {/* No `text-balance`: at this column width each value fits on one line, and
+                      balancing would split the longest one back into two. */}
+                  <dd>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="mt-2 inline-block rounded-sm text-sm font-medium text-foreground underline-offset-4 transition-colors hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="mt-2 block text-sm font-medium text-foreground">
+                        {item.value}
+                      </span>
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           )}
         </div>
-
-        {meta && meta.length > 0 && (
-          <dl className="grid grid-cols-1 divide-y divide-border border-t border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {meta.map((item) => (
-              <div key={item.label} className="py-4 sm:px-5 sm:py-5 sm:first:pl-0 sm:last:pr-0">
-                <MonoLabel as="dt">{item.label}</MonoLabel>
-                {/* Balanced, not ragged: these cells are narrow enough that the default wrap
-                    leaves the last word alone on its own line. */}
-                <dd>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="mt-2 inline-block rounded-sm text-sm font-medium text-balance text-foreground underline-offset-4 transition-colors hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span className="mt-2 block text-sm font-medium text-balance text-foreground">
-                      {item.value}
-                    </span>
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
       </div>
     </div>
 

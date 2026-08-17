@@ -282,6 +282,7 @@
   },
   "contactPage": {
     "hero": {
+      "eyebrow": "Contact",
       "headline": "Tell us what you need to understand before the next decision.",
       "subheadline": "The useful starting point is not the scanning specification.\nIt is the property, the project and what incomplete information could cost you."
     },

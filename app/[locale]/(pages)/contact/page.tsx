@@ -70,7 +70,11 @@ export default async function ContactPage() {
   return (
     <ContactTemplate
       translations={{
-        hero: { headline: t('hero.headline'), subheadline: t('hero.subheadline') },
+        hero: {
+          eyebrow: t('hero.eyebrow'),
+          headline: t('hero.headline'),
+          subheadline: t('hero.subheadline'),
+        },
         details: {
           emailLabel: t('details.emailLabel'),
           email: t('details.email'),
