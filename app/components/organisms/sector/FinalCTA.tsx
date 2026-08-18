@@ -13,7 +13,7 @@ type FinalCTAProps = {
 
 export const FinalCTA = ({ headline, subheadline, cta, ctaHref }: FinalCTAProps) => {
   return (
-    <section className="relative overflow-hidden px-6 py-24 sm:px-8 lg:px-10 lg:py-36" style={{ background: DEEP_BLUE_GRADIENT }}>
+    <section className="relative overflow-hidden px-6 py-24 sm:px-8 lg:px-10 lg:py-35" style={{ background: DEEP_BLUE_GRADIENT }}>
       <div
         aria-hidden
         className="absolute inset-0"
@@ -22,8 +22,8 @@ export const FinalCTA = ({ headline, subheadline, cta, ctaHref }: FinalCTAProps)
           backgroundSize: '88px 88px',
         }}
       />
-      <Reveal className="relative mx-auto max-w-[900px]">
-        <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[52px]">
+      <Reveal className="relative mx-auto max-w-250">
+        <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[56px]">
           {headline}
         </h2>
         {subheadline && (

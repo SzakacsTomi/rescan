@@ -21,7 +21,7 @@ const FIT_ACCENT_CLASS = "text-[#7ee2b8]";
 export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
   return (
     <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-28" style={{ background: SECTION_BG }}>
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-310">
         <Reveal>
           <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {headline}

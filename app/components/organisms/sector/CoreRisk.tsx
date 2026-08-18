@@ -18,8 +18,8 @@ type CoreRiskProps = {
 
 export const CoreRisk = ({ eyebrow, headline, body, aside }: CoreRiskProps) => {
   return (
-    <section id={CORE_RISK_ID} className="py-[120px] px-6">
-      <div className={cn("mx-auto max-w-3xl", aside && "max-w-5xl")}>
+    <section id={CORE_RISK_ID} className="px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
+      <div className={cn("mx-auto max-w-225", aside && "max-w-310")}>
         <div className={cn("grid grid-cols-1 gap-16", aside && "lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-20 lg:items-start")}>
           <div>
             {eyebrow && <MonoLabel>{eyebrow}</MonoLabel>}
@@ -29,7 +29,12 @@ export const CoreRisk = ({ eyebrow, headline, body, aside }: CoreRiskProps) => {
               </h2>
             </Reveal>
             <Reveal>
-              <p className="mt-8 max-w-[660px] text-[19px] leading-[1.75] text-foreground/65 whitespace-pre-line">
+              <p
+                className={cn(
+                  "mt-8 text-[19px] leading-[1.75] text-foreground/65 whitespace-pre-line",
+                  aside && "max-w-165",
+                )}
+              >
                 {body}
               </p>
             </Reveal>

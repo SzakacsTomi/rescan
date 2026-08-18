@@ -1,16 +1,14 @@
 import type { SectorPageConfig } from '@/app/types/sectorPage';
-import { CORE_RISK_ID } from '@/app/components/organisms/sector/CoreRisk';
 
 export const retailSectorConfig: SectorPageConfig = {
   id: 'retail',
   hero: {
     primaryCtaHref: '/contact',
     secondaryCtaHref: '/projects',
-    scrollTargetId: CORE_RISK_ID,
     imagesFolder: 'commercial-page',
   },
   strategicValue: {
-    layout: 'grid',
+    tone: 'tinted',
   },
   logoWall: {
     logos: [

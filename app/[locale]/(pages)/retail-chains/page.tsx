@@ -95,7 +95,7 @@ export default async function RetailChainsPage() {
     <SectorTemplate
       config={retailSectorConfig}
       translations={translations}
-      heroOverride={
+      hero={
         <CarouselHero
           eyebrow={translations.hero.eyebrow}
           headline={translations.hero.headline}

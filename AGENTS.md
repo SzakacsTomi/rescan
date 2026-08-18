@@ -247,12 +247,70 @@ key filled in one catalogue but still pending in the other.
   every full-width CTA is `DEEP_BLUE_GRADIENT` in `config/gradients.ts`. Do not paste a
   `linear-gradient(...)` string into a component; eight hand-copied copies had already
   drifted apart at the midpoint stop before they were consolidated.
+- **No invented spacing.** Section padding, container width and the gaps between a
+  headline, its body and the block beneath it come from the scale in **Spacing and
+  rhythm** below. Pick the nearest row; do not reach for a fresh number.
 - **Mono is for structural labels only.** `atoms/MonoLabel` is the single definition —
   indices, coordinates, fixed field names. Never a sentence, and never copy the client
   wrote. Do not write `font-mono` by hand.
 - **No CSS `filter` over a live map iframe.** It forces the compositor to re-rasterise the
   whole frame continuously and jams the page. Darken with a scrim instead — see
   `organisms/contact/OfficeMap.tsx`.
+
+### Spacing and rhythm
+
+Every value here is measured from the redesign `.dc.html`, so a section built to this
+scale lands on the design without a second pass. Written as Tailwind v4 scale utilities
+(`py-30` is 7.5rem is 120px) rather than arbitrary `[...]` values.
+
+**The section frame**
+
+| Slot | Class | Design |
+|------|-------|--------|
+| Horizontal inset | `px-6 sm:px-8 lg:px-10` | 40px |
+| Standard section | `py-24 lg:py-30` | 120px |
+| Inverted / dark band | `py-24 lg:py-28` | 112px |
+| Closing CTA | `py-24 lg:py-35` | 140px |
+| Default container | `mx-auto max-w-310` | 1240px |
+| Wide diagram container | `mx-auto max-w-350` | 1400px |
+| CTA container | `mx-auto max-w-250` | 1000px |
+| Single prose column | `mx-auto max-w-225` | 900px |
+
+**Inside a section**
+
+| Step | Class | Design |
+|------|-------|--------|
+| eyebrow → headline | `mt-6` | 24px |
+| headline → supporting body | `mt-5` | 20px |
+| headline → main prose | `mt-8` | 32px |
+| header block → grid or rows | `mt-14` | 56px |
+| header block → full-width diagram | `mt-18` | 72px |
+| diagram or rows → footnote | `mt-11` | 44px |
+| headline → CTA button | `mt-11` | 44px |
+| card grid | `gap-px` over a `bg-border` parent | 1px hairline |
+| two-column split | `gap-10 lg:gap-16` | 64px |
+
+The design draws card grids as a hairline lattice, not as detached cards: the grid gets
+`gap-px` on a `bg-border` background and each cell paints its own opaque background. Do
+not substitute `gap-4` and a `border` per card — the result reads as a different design.
+
+**The hero**
+
+| Step | Class | Design |
+|------|-------|--------|
+| Section height | `lg:min-h-[86vh]`, content bottom-aligned | 86vh |
+| Hero padding | `pt-28 pb-16` at `lg` | 112 / 64px |
+| eyebrow → h1 | `mt-7` | 28px |
+| h1 → subheadline | `mt-7` | 28px |
+| subheadline → CTA row | `mt-10` | 40px |
+| CTA row internal | `gap-6` | 24px |
+| main column → side rail | `gap-10 lg:gap-16`, rail `w-85` | 340px / 64px |
+
+A hero side rail is a desktop split: it stacks under the copy at narrower widths and
+swaps its `border-l` for a `border-t`, so the hero never forces a horizontal scroll. Split
+it only at the width where the headline still holds its authored line breaks — the rail
+costs the headline 340px plus the gap, and a hero headline that wraps mid-line has lost
+the shape the design drew.
 
 ## Server vs Client Components
 

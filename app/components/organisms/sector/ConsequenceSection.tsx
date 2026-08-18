@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { Reveal } from "@/app/components/atoms/Reveal";
+
 /**
  * Section wrapper for the Logistics brief's "Assumptions get more expensive as the
  * project moves forward." step sequence. Deliberately thin — the brief says the whole
@@ -21,21 +23,23 @@ export const ConsequenceSection = ({
   children,
 }: ConsequenceSectionProps) => {
   return (
-    <section className="py-24 px-6 bg-muted/30">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-6">
-          {headline}
-        </h2>
-        {body && (
-          <p className="text-muted-foreground text-base leading-relaxed text-center mb-12">
-            {body}
-          </p>
-        )}
-        {children}
+    <section className="bg-muted px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
+      <div className="mx-auto max-w-350">
+        <Reveal>
+          <h2 className="max-w-190 text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-[38px]">
+            {headline}
+          </h2>
+          {body && (
+            <p className="mt-5 max-w-170 text-[17px] leading-[1.7] text-foreground/60">{body}</p>
+          )}
+        </Reveal>
+        <div className="mt-14 lg:mt-18">{children}</div>
         {footnote && (
-          <p className="text-muted-foreground text-base leading-relaxed text-center mt-12">
-            {footnote}
-          </p>
+          <Reveal>
+            <p className="mt-11 max-w-160 text-[17px] leading-[1.7] text-foreground/60">
+              {footnote}
+            </p>
+          </Reveal>
         )}
       </div>
     </section>

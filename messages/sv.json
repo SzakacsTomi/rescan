@@ -699,10 +699,23 @@
     },
     "logistics": {
       "hero": {
+        "eyebrow": "Sektor 02 — Logistiklager",
         "headline": "Förstå hela lagret\ninnan du bygger om en del av det.",
         "subheadline": "RESCAN ger projektteam en pålitlig bild av stora och komplexa logistikanläggningar innan ofullständig information blir till antaganden, omprojektering och förseningar.",
         "primaryCta": "Diskutera ditt lagerprojekt",
-        "secondaryCta": "Se projekt"
+        "secondaryCta": "Se projekt",
+        "fact0": {
+          "label": "[[TODO: facility fact label — e.g. Largest facility]]",
+          "value": "[[TODO: the figure, e.g. 38,000 m²]]"
+        },
+        "fact1": {
+          "label": "[[TODO: second facility fact label — e.g. Typical capture time]]",
+          "value": "[[TODO: the figure, e.g. 3 days on site]]"
+        },
+        "fact2": {
+          "label": "[[TODO: third facility fact label — e.g. Warehouses documented]]",
+          "value": "[[TODO: the figure, e.g. 12]]"
+        }
       },
       "coreRisk": {
         "eyebrow": "Den dyra risken",
@@ -734,30 +747,6 @@
           "title": "Mindre upprepad utredning",
           "description": "Besvara fler frågor utifrån den byggnadsinformation som redan finns."
         }
-      },
-      "proof": {
-        "headline": "Bevisat i stora och komplexa anläggningar.",
-        "item0": {
-          "slot": "Anläggningens storlek",
-          "figure": "[[TODO: floor area of the largest logistics facility delivered, e.g. 38,000 m²]]",
-          "statement": "[[TODO: what was being planned, and what made the facility complex]]"
-        },
-        "item1": {
-          "slot": "Komplex anläggning",
-          "figure": "[[TODO: a second complex facility — the headline figure that makes it recognisable]]",
-          "statement": "[[TODO: what decision depended on understanding those conditions]]"
-        },
-        "item2": {
-          "slot": "Leverans & samordning",
-          "figure": "[[TODO: a delivery or coordination metric for logistics work]]",
-          "statement": "[[TODO: verified downstream outcome — investigation avoided, constraint found early]]"
-        },
-        "item3": {
-          "slot": "Ombyggnadskontext",
-          "figure": "[[TODO: retrofit or redevelopment context metric]]",
-          "statement": "[[TODO: one short supporting fact]]"
-        },
-        "cta": "Se projekt"
       },
       "fitNotFit": {
         "headline": "Passar bäst för",

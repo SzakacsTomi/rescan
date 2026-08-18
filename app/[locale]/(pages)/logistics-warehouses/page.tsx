@@ -1,21 +1,27 @@
 import { getTranslations } from "next-intl/server";
 
+import { LogisticsHero } from "@/app/components/organisms/sector/LogisticsHero";
 import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
 import type { SectorPageTranslations } from "@/app/types/sectorPage";
 import { logisticsSectorConfig } from "@/config/sectors/logistics";
 
 const CONSEQUENCE_STEP_COUNT = 6;
-const PROOF_ITEM_COUNT = 4;
+const HERO_FACT_COUNT = 3;
 
 export default async function LogisticsWarehousesPage() {
   const t = await getTranslations("sectorPage.logistics");
 
   const translations: SectorPageTranslations = {
     hero: {
+      eyebrow: t("hero.eyebrow"),
       headline: t("hero.headline"),
       subheadline: t("hero.subheadline"),
       primaryCta: t("hero.primaryCta"),
       secondaryCta: t("hero.secondaryCta"),
+      facts: Array.from({ length: HERO_FACT_COUNT }, (_, i) => ({
+        label: t(`hero.fact${i}.label`),
+        value: t(`hero.fact${i}.value`),
+      })),
     },
     coreRisk: {
       eyebrow: t("coreRisk.eyebrow"),
@@ -37,15 +43,6 @@ export default async function LogisticsWarehousesPage() {
         title: t(`strategicValue.${key}.title`),
         description: t(`strategicValue.${key}.description`),
       })),
-    },
-    proof: {
-      headline: t("proof.headline"),
-      items: Array.from({ length: PROOF_ITEM_COUNT }, (_, i) => ({
-        slot: t(`proof.item${i}.slot`),
-        figure: t(`proof.item${i}.figure`),
-        statement: t(`proof.item${i}.statement`),
-      })),
-      cta: { label: t("proof.cta"), href: "/projects" },
     },
     fitNotFit: {
       headline: t("fitNotFit.headline"),
@@ -73,5 +70,26 @@ export default async function LogisticsWarehousesPage() {
     },
   };
 
-  return <SectorTemplate config={logisticsSectorConfig} translations={translations} />;
+  return (
+    <SectorTemplate
+      config={logisticsSectorConfig}
+      translations={translations}
+      hero={
+        <LogisticsHero
+          eyebrow={translations.hero.eyebrow ?? ""}
+          headline={translations.hero.headline}
+          subheadline={translations.hero.subheadline}
+          primaryCta={{
+            label: translations.hero.primaryCta,
+            href: logisticsSectorConfig.hero.primaryCtaHref,
+          }}
+          secondaryCta={{
+            label: translations.hero.secondaryCta,
+            href: logisticsSectorConfig.hero.secondaryCtaHref,
+          }}
+          facts={translations.hero.facts ?? []}
+        />
+      }
+    />
+  );
 }

@@ -1,14 +1,16 @@
 import type { SectorPageConfig } from '@/app/types/sectorPage';
-import { CORE_RISK_ID } from '@/app/components/organisms/sector/CoreRisk';
 
-/** No logo wall and no metrics yet: nothing in the published reference set is a
- *  logistics facility. */
+/** No logo wall, no metrics and no proof band: nothing in the published reference set is
+ *  a logistics facility, and the redesign drops the evidence band from this page rather
+ *  than showing an empty one. */
 export const logisticsSectorConfig: SectorPageConfig = {
   id: 'logistics',
   hero: {
     primaryCtaHref: '/contact',
     secondaryCtaHref: '/projects',
-    scrollTargetId: CORE_RISK_ID,
+  },
+  strategicValue: {
+    tone: 'plain',
   },
   finalCta: {
     ctaHref: '/contact',

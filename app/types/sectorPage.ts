@@ -1,7 +1,6 @@
 export type SectorHeroConfig = {
   primaryCtaHref: string;
   secondaryCtaHref: string;
-  scrollTargetId: string;
   /** Cloudinary folder backing the hero carousel. Named remotely — renaming the
    *  route does not rename the folder. */
   imagesFolder?: string;
@@ -10,11 +9,10 @@ export type SectorHeroConfig = {
 export type SectorPageConfig = {
   id: string;
   hero: SectorHeroConfig;
-  /** Presentational only — which arrangement `StrategicValue` renders in.
-   *  `'grid'` is the numbered-card treatment the redesign introduced for Retail;
-   *  omitting it keeps a page's current stacked-list rendering. */
+  /** Presentational only. `'tinted'` sits the value grid on the light blue-grey band
+   *  (Retail); `'plain'` sits it on white and inverts the card hover (Logistics). */
   strategicValue?: {
-    layout?: 'grid';
+    tone?: 'tinted' | 'plain';
   };
   logoWall?: {
     logos: readonly { name: string; src: string }[];
@@ -40,6 +38,8 @@ export type SectorPageTranslations = {
     secondaryCta: string;
     /** Mono sector label above the headline — e.g. "Sector 01 — Retail Chains". */
     eyebrow?: string;
+    /** Side rail of facility facts beside the headline. */
+    facts?: Array<{ label: string; value: string }>;
   };
   coreRisk?: {
     eyebrow: string;

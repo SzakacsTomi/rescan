@@ -699,10 +699,23 @@
     },
     "logistics": {
       "hero": {
+        "eyebrow": "Sector 02 — Logistics Warehouses",
         "headline": "Understand the whole warehouse\nbefore you redesign part of it.",
         "subheadline": "RESCAN gives project teams a dependable view of large and complex logistics facilities before incomplete information turns into assumptions, redesign and delay.",
         "primaryCta": "Discuss your warehouse project",
-        "secondaryCta": "View Projects"
+        "secondaryCta": "View Projects",
+        "fact0": {
+          "label": "[[TODO: facility fact label — e.g. Largest facility]]",
+          "value": "[[TODO: the figure, e.g. 38,000 m²]]"
+        },
+        "fact1": {
+          "label": "[[TODO: second facility fact label — e.g. Typical capture time]]",
+          "value": "[[TODO: the figure, e.g. 3 days on site]]"
+        },
+        "fact2": {
+          "label": "[[TODO: third facility fact label — e.g. Warehouses documented]]",
+          "value": "[[TODO: the figure, e.g. 12]]"
+        }
       },
       "coreRisk": {
         "eyebrow": "The core risk",
@@ -734,30 +747,6 @@
           "title": "Less repeat investigation",
           "description": "Answer more questions from the building information already available."
         }
-      },
-      "proof": {
-        "headline": "Proven across large and complex facilities.",
-        "item0": {
-          "slot": "Facility scale",
-          "figure": "[[TODO: floor area of the largest logistics facility delivered, e.g. 38,000 m²]]",
-          "statement": "[[TODO: what was being planned, and what made the facility complex]]"
-        },
-        "item1": {
-          "slot": "Complex facility",
-          "figure": "[[TODO: a second complex facility — the headline figure that makes it recognisable]]",
-          "statement": "[[TODO: what decision depended on understanding those conditions]]"
-        },
-        "item2": {
-          "slot": "Delivery & coordination",
-          "figure": "[[TODO: a delivery or coordination metric for logistics work]]",
-          "statement": "[[TODO: verified downstream outcome — investigation avoided, constraint found early]]"
-        },
-        "item3": {
-          "slot": "Retrofit context",
-          "figure": "[[TODO: retrofit or redevelopment context metric]]",
-          "statement": "[[TODO: one short supporting fact]]"
-        },
-        "cta": "View Projects"
       },
       "fitNotFit": {
         "headline": "Best fit",

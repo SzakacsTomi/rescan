@@ -8,14 +8,15 @@ import { LogoWall } from '@/app/components/organisms/sector/LogoWall';
 import { Metrics } from '@/app/components/organisms/sector/Metrics';
 import { ProofBar } from '@/app/components/organisms/ProofBar';
 import { NamedCase } from '@/app/components/organisms/sector/NamedCase';
-import { SectorHero } from '@/app/components/organisms/sector/SectorHero';
 import { StrategicValue } from '@/app/components/organisms/sector/StrategicValue';
 import type { SectorPageConfig, SectorPageTranslations } from '@/app/types/sectorPage';
 
 type SectorTemplateProps = {
   config: SectorPageConfig;
   translations: SectorPageTranslations;
-  heroOverride?: React.ReactNode;
+  /** Each sector's hero is its own organism in the redesign — a carousel for Retail, a
+   *  dark facts split for Logistics — so the page composes it and hands it in. */
+  hero: React.ReactNode;
   afterHero?: React.ReactNode;
   /** Supporting visual for `CoreRisk`, e.g. a `ProofGrid` — page-specific, so it is
    *  passed in rather than added to `SectorPageTranslations`. */
@@ -25,21 +26,13 @@ type SectorTemplateProps = {
 export const SectorTemplate = ({
   config,
   translations: tr,
-  heroOverride,
+  hero,
   afterHero,
   coreRiskAside,
 }: SectorTemplateProps) => {
   return (
     <>
-      {heroOverride ?? (
-        <SectorHero
-          headline={tr.hero.headline}
-          subheadline={tr.hero.subheadline}
-          primaryCta={{ label: tr.hero.primaryCta, href: config.hero.primaryCtaHref }}
-          secondaryCta={{ label: tr.hero.secondaryCta, href: config.hero.secondaryCtaHref }}
-          scrollTargetId={config.hero.scrollTargetId}
-        />
-      )}
+      {hero}
       {afterHero}
 
       {tr.coreRisk && (
@@ -66,7 +59,7 @@ export const SectorTemplate = ({
           headline={tr.strategicValue.headline}
           body={tr.strategicValue.body}
           values={tr.strategicValue.values}
-          layout={config.strategicValue?.layout}
+          tone={config.strategicValue?.tone}
         />
       )}
 
