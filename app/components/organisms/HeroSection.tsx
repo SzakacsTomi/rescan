@@ -51,7 +51,7 @@ export const HeroSection = async () => {
         }}
       />
 
-      <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-[126px] pt-32 sm:pt-36 lg:pt-[180px]">
+      <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-31.5 pt-32 sm:pt-36 lg:pt-45">
         <div className="grid lg:grid-cols-[minmax(0,1fr)_220px] gap-10 lg:gap-12 items-end">
           <div>
             <div className="flex items-center gap-3.5 mb-9">
@@ -100,7 +100,7 @@ export const HeroSection = async () => {
         </div>
       </div>
 
-      <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-[126px]">
+      <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-31.5">
         <div className="mt-16 flex flex-wrap items-stretch border-t border-white/10 lg:mt-20">
           {readoutItems.map((item, i) => (
             <div

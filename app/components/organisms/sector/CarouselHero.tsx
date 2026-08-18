@@ -82,10 +82,10 @@ export const CarouselHero = ({
 
   return (
     <section className="relative isolate border-b border-border">
-      <div className="max-w-480 mx-auto px-6 lg:flex lg:min-h-[86vh] lg:items-center lg:pl-31.5">
-        <div className="flex flex-col gap-10 py-16 lg:max-w-205 lg:pt-28 lg:pb-24">
+      <div className="max-w-480 mx-auto px-6 lg:flex lg:min-h-[86vh] lg:items-start lg:pl-31.5">
+        <div className="flex flex-col gap-10 py-16 sm:pt-20 lg:max-w-205 lg:pt-29 lg:pb-24">
           <div>
-            {eyebrow && <MonoLabel className="text-primary">{eyebrow}</MonoLabel>}
+            {eyebrow && <MonoLabel className="block text-primary">{eyebrow}</MonoLabel>}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}

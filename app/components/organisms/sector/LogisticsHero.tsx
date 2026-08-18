@@ -1,9 +1,9 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 
-import { MonoLabel } from '@/app/components/atoms/MonoLabel';
-import { Pending } from '@/app/components/atoms/Pending';
-import { HeroText } from '@/app/components/molecules/HeroText';
-import { Link } from '@/i18n/navigation';
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { Pending } from "@/app/components/atoms/Pending";
+import { HeroText } from "@/app/components/molecules/HeroText";
+import { Link } from "@/i18n/navigation";
 
 type Fact = {
   label: string;
@@ -30,14 +30,14 @@ export const LogisticsHero = ({
   secondaryCta,
   facts,
 }: LogisticsHeroProps) => (
-  <section className="relative isolate overflow-hidden bg-[#020409] lg:flex lg:min-h-[86vh] lg:items-end">
+  <section className="relative isolate overflow-hidden bg-[#020409] lg:flex lg:min-h-[94vh] lg:items-start">
     <div
       aria-hidden
       className="absolute inset-0"
       style={{
         backgroundImage:
-          'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-        backgroundSize: '120px 120px',
+          "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+        backgroundSize: "120px 120px",
       }}
     />
     <div
@@ -45,22 +45,22 @@ export const LogisticsHero = ({
       className="absolute inset-0"
       style={{
         background:
-          'radial-gradient(ellipse 60% 70% at 82% 30%, rgba(43,99,187,0.3) 0%, rgba(43,99,187,0) 100%)',
+          "radial-gradient(ellipse 60% 70% at 82% 30%, rgba(43,99,187,0.3) 0%, rgba(43,99,187,0) 100%)",
       }}
     />
 
-    <div className="relative mx-auto grid w-full max-w-480 grid-cols-1 gap-10 px-6 pt-28 pb-16 sm:px-8 lg:px-10 xl:grid-cols-[minmax(0,1fr)_21.25rem] xl:items-start xl:gap-16">
+    <div className="relative mx-auto grid w-full max-w-480 grid-cols-1 gap-10 px-6 pt-16 pb-16 sm:pt-20 lg:pl-31.5 lg:pt-29 xl:grid-cols-[minmax(0,1fr)_21.25rem] xl:items-start xl:gap-16">
       <div>
-        <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
+        <MonoLabel className="block tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
         <HeroText
           headline={headline}
           subheadline={subheadline}
           accentLineCount={HEADLINE_ACCENT_LINE_COUNT}
           className="mt-7 max-w-none"
-          headlineClassName="lg:text-[3.25rem] 2xl:text-[4rem] min-[1600px]:text-[4.5rem]"
+          headlineClassName="lg:text-[4.25rem] 2xl:text-[4rem] min-[1600px]:text-[4.5rem]"
           subheadlineClassName="mt-7 max-w-170 text-[19px] leading-[1.65] text-white/62 lg:text-[19px]"
         />
-        <div className="mt-10 flex flex-wrap items-center gap-6">
+        <div className="mt-20 flex flex-wrap items-center gap-6">
           <Link
             href={primaryCta.href}
             className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
