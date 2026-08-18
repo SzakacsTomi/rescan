@@ -1,29 +1,45 @@
-import { CORE_RISK_ID, CoreRisk } from '@/app/components/organisms/sector/CoreRisk';
-import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
-import { FitNotFit } from '@/app/components/organisms/sector/FitNotFit';
-import { ProofBar } from '@/app/components/organisms/ProofBar';
-import { SectorHero } from '@/app/components/organisms/sector/SectorHero';
+import { CorePrinciple } from '@/app/components/organisms/whyRescan/CorePrinciple';
+import { FocusedByDesign } from '@/app/components/organisms/whyRescan/FocusedByDesign';
 import { Pillars } from '@/app/components/organisms/whyRescan/Pillars';
+import { ProofLedger } from '@/app/components/organisms/whyRescan/ProofLedger';
+import { WhyRescanHero } from '@/app/components/organisms/whyRescan/WhyRescanHero';
+import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
 
 type WhyRescanTemplateProps = {
-  hero: { headline: string; subheadline: string; cta: string; secondaryCta: string };
-  corePrinciple: { headline: string; body: string };
+  hero: {
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    anchors: string[];
+    questionLabel: string;
+    question: string;
+    cta: string;
+  };
+  corePrinciple: {
+    headline: string;
+    body: string;
+    rolesLabel: string;
+    roles: string[];
+  };
   pillars: {
     headline: string;
+    monoLabel: string;
     proofLabel: string;
     items: Array<{ title: string; lead: string; body: string; proof: string }>;
   };
   proof: {
     headline: string;
-    items: Array<{ slot: string; figure: string }>;
+    rows: Array<{ slot: string; figure: string; statement: string }>;
     cta: { label: string; href: string };
   };
   focused: {
     headline: string;
-    bestFit: { title: string; items: string[] };
-    notFit: { title: string; items: string[] };
+    note: string;
+    items: string[];
+    notFitLabel: string;
+    notFitText: string;
   };
-  finalCta: { headline: string; cta: string };
+  finalCta: { eyebrow: string; headline: string; cta: string };
 };
 
 export const WhyRescanTemplate = ({
@@ -36,26 +52,42 @@ export const WhyRescanTemplate = ({
 }: WhyRescanTemplateProps) => {
   return (
     <>
-      <SectorHero
+      <WhyRescanHero
+        eyebrow={hero.eyebrow}
         headline={hero.headline}
         subheadline={hero.subheadline}
-        primaryCta={{ label: hero.cta, href: '/contact' }}
-        secondaryCta={{ label: hero.secondaryCta, href: '/projects' }}
-        scrollTargetId={CORE_RISK_ID}
+        anchors={hero.anchors}
+        questionLabel={hero.questionLabel}
+        question={hero.question}
+        cta={{ label: hero.cta, href: '/contact' }}
       />
-      <CoreRisk headline={corePrinciple.headline} body={corePrinciple.body} />
+      <CorePrinciple
+        headline={corePrinciple.headline}
+        body={corePrinciple.body}
+        rolesLabel={corePrinciple.rolesLabel}
+        roles={corePrinciple.roles}
+      />
       <Pillars
         headline={pillars.headline}
+        monoLabel={pillars.monoLabel}
         proofLabel={pillars.proofLabel}
         pillars={pillars.items}
       />
-      <ProofBar headline={proof.headline} items={proof.items} cta={proof.cta} />
-      <FitNotFit
+      <ProofLedger headline={proof.headline} cta={proof.cta} rows={proof.rows} />
+      <FocusedByDesign
         headline={focused.headline}
-        bestFit={focused.bestFit}
-        notFit={focused.notFit}
+        note={focused.note}
+        items={focused.items}
+        notFitLabel={focused.notFitLabel}
+        notFitText={focused.notFitText}
       />
-      <FinalCTA headline={finalCta.headline} cta={finalCta.cta} ctaHref="/contact" />
+      <FinalCTA
+        eyebrow={finalCta.eyebrow}
+        headline={finalCta.headline}
+        cta={finalCta.cta}
+        ctaHref="/contact"
+        headlineClassName="leading-[1.12] tracking-[-0.03em] lg:text-[52px]"
+      />
     </>
   );
 };

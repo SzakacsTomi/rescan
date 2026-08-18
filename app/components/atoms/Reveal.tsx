@@ -23,8 +23,8 @@ const REVEAL_ANIMATION = {
 } as const;
 
 /** The scroll-triggered fade-and-rise every section headline and repeating row uses in
- *  the design (its `data-reveal="1"` markers) — matches the treatment `ProjectCard`
- *  already established for cards entering the viewport. */
+ *  the design (its `data-reveal="1"` markers). `Stagger` is the sibling for lists whose
+ *  rows should arrive one after another rather than together. */
 export const Reveal = ({ children, className, as = "div" }: RevealProps) => {
   const Tag = MOTION_TAG[as];
 

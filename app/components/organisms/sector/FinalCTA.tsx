@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { MonoLabel } from '@/app/components/atoms/MonoLabel';
 import { Reveal } from '@/app/components/atoms/Reveal';
 import { DEEP_BLUE_GRADIENT } from '@/config/gradients';
 import { cn } from '@/lib/utils';
@@ -12,10 +13,21 @@ type FinalCTAProps = {
   /** Overrides the shared headline treatment when a page's design specifies different
    *  metrics — the About Us design sets 52px/1.15/−0.03em against the shared 56px. */
   headlineClassName?: string;
+  /** Same escape hatch for the body — the Projects design measures its column at 640px. */
+  subheadlineClassName?: string;
+  /** The Why RESCAN design opens with a mono question label above the headline. */
+  eyebrow?: string;
 };
 
-
-export const FinalCTA = ({ headline, subheadline, cta, ctaHref, headlineClassName }: FinalCTAProps) => {
+export const FinalCTA = ({
+  headline,
+  subheadline,
+  cta,
+  ctaHref,
+  headlineClassName,
+  subheadlineClassName,
+  eyebrow,
+}: FinalCTAProps) => {
   return (
     <section className="relative overflow-hidden px-6 py-24 sm:px-8 lg:px-10 lg:py-35" style={{ background: DEEP_BLUE_GRADIENT }}>
       <div
@@ -27,16 +39,27 @@ export const FinalCTA = ({ headline, subheadline, cta, ctaHref, headlineClassNam
         }}
       />
       <Reveal className="relative mx-auto max-w-250">
+        {eyebrow && (
+          <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
+        )}
         <h2
           className={cn(
             'text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[56px]',
+            eyebrow && 'mt-7',
             headlineClassName,
           )}
         >
           {headline}
         </h2>
         {subheadline && (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">{subheadline}</p>
+          <p
+            className={cn(
+              'mt-6 max-w-2xl text-lg leading-relaxed text-white/65',
+              subheadlineClassName,
+            )}
+          >
+            {subheadline}
+          </p>
         )}
         <Link
           href={ctaHref}

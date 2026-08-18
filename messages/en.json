@@ -6,7 +6,7 @@
   "homePage": {
     "hero": {
       "eyebrow": "01 — Existing conditions",
-      "headline": "Know what's there\nbefore missing\ninformation costs\ntime and money.",
+      "headline": "Know what's there\nbefore missing information\ncosts time and money.",
       "subheadline": "RESCAN creates reliable building data for retail chains and logistics warehouses—giving project teams the information they need before unanswered site questions become repeat visits, redesign or delay.",
       "primaryCta": "Discuss a project",
       "responseNote": "Response within one business day",
@@ -232,32 +232,46 @@
   },
   "whyRescanPage": {
     "hero": {
-      "headline": "Building information\nyour project team can rely on.",
+      "eyebrow": "Why RESCAN",
+      "headline": "Building information your project team can rely on.",
       "subheadline": "RESCAN supports retail chains and logistics warehouse teams where existing-condition information needs to remain useful long after the site visit is complete.",
+      "anchors": ["Repeatability", "Coverage", "Downstream use", "Quality control"],
+      "questionLabel": "The question this page answers",
+      "question": "Can RESCAN produce building information that remains dependable and useful after the site visit?",
       "cta": "Discuss a project"
     },
     "corePrinciple": {
       "headline": "The capture is only the starting point.",
-      "body": "The information may later be used by architects, engineers, contractors, project managers, property teams and facility teams.\nIf those teams still have to question basic existing conditions, important uncertainty remains.\nThe goal is not simply to document the building.\nIt is to create information people can continue using when decisions have to be made."
+      "body": "If the teams that open the file still have to question basic existing conditions, important uncertainty remains.\nThe goal is not simply to document the building.\nIt is to create information people can continue using when decisions have to be made.",
+      "rolesLabel": "Who opens the file next",
+      "roles": [
+        "Architects",
+        "Engineers",
+        "Contractors",
+        "Project managers",
+        "Property teams",
+        "Facility teams"
+      ]
     },
     "pillars": {
-      "headline": "Why RESCAN",
+      "headline": "Four reasons, each carrying its own evidence.",
+      "monoLabel": "No proof, no claim",
       "pillar0": {
         "title": "Repeatability",
         "lead": "Consistency matters when the work repeats.",
-        "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys.\nA repeatable approach helps different project teams start from a more consistent information base across multiple locations.",
+        "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys.\nA repeatable approach gives different project teams a consistent information base across locations.",
         "proof": "[[TODO: verified multi-site or repeat-programme evidence — locations under one programme, repeat clients, standardised outputs]]"
       },
       "pillar1": {
         "title": "Coverage",
         "lead": "Reduce the gaps that send teams back.",
-        "body": "The more relevant existing conditions that are captured properly, the fewer basic questions require another physical investigation.\nFor retail chains, that can mean fewer unnecessary return visits. For logistics facilities, it can mean fewer gaps entering design and coordination.",
+        "body": "The more relevant existing conditions are captured properly, the fewer basic questions require another site visit.\nFor retail chains, that can mean fewer return visits. For logistics facilities, it can mean fewer gaps entering design and coordination.",
         "proof": "[[TODO: verified capture methodology, coverage example or project evidence — avoid absolutes like \"complete capture\"]]"
       },
       "pillar2": {
         "title": "Downstream Usefulness",
         "lead": "Information should work for the people making the next decision.",
-        "body": "Building information needs to support the architects, engineers, contractors and property teams who use it later.\nThe stronger the information is at the start, the less time those teams need to spend rebuilding their understanding of the building.",
+        "body": "The stronger the information is at the start, the less time the teams that use it later need to spend rebuilding their understanding of the building.",
         "proof": "[[TODO: factual explanation of deliverables and how downstream teams actually use them]]"
       },
       "pillar3": {
@@ -270,38 +284,45 @@
     "proof": {
       "headline": "Proof over claims.",
       "item0": {
-        "slot": "Retail delivered",
-        "figure": "[[TODO: retail locations delivered, e.g. 120+]]"
+        "slot": "Retail locations",
+        "figure": "[[TODO: 120+ retail locations delivered]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "item1": {
-        "slot": "Logistics scale",
-        "figure": "[[TODO: logistics facility floor area in m²]]"
+        "slot": "Logistics area",
+        "figure": "[[TODO: 38,000 m² logistics facilities]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "item2": {
-        "slot": "Repeat business",
-        "figure": "[[TODO: repeat programme or repeat business evidence]]"
+        "slot": "Repeat programmes",
+        "figure": "[[TODO: repeat programme or repeat business evidence]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "item3": {
         "slot": "QA & delivery",
-        "figure": "[[TODO: verified QA or delivery metric]]"
+        "figure": "[[TODO: verified QA or delivery metric]]",
+        "statement": "[[TODO: one short supporting fact]]"
+      },
+      "item4": {
+        "slot": "Named client",
+        "figure": "[[TODO: recognisable client, programme or testimonial]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "cta": "View Projects"
     },
     "focused": {
       "headline": "Focused by design.",
-      "bestFit": {
-        "title": "RESCAN is built for",
-        "item0": "Multi-site retail programmes",
-        "item1": "Large or complex logistics facilities",
-        "item2": "Projects where poor existing-condition information creates meaningful downstream cost"
-      },
-      "notFit": {
-        "title": "Not built for",
-        "item0": "Private residential work",
-        "item1": "Low-budget one-off surveys"
-      }
+      "note": "RESCAN is built for higher-stakes commercial decisions.",
+      "items": [
+        "Multi-site retail programmes",
+        "Large or complex logistics facilities",
+        "Projects where poor existing-condition information creates meaningful downstream cost"
+      ],
+      "notFitLabel": "Not built for",
+      "notFitText": "Not private residential work. Not low-budget one-off surveys."
     },
     "finalCta": {
+      "eyebrow": "One question before the work starts",
       "headline": "Tell us what decision the building information needs to support.",
       "cta": "Discuss your project"
     }
@@ -398,9 +419,51 @@
   },
   "projectsPage": {
     "hero": {
-      "headline": "Proof is what happens after the building is captured.",
-      "subheadline": "A large scan or detailed model proves technical capability. The stronger question is what the information helped the client avoid, do faster or decide earlier.",
-      "cta": "Discuss your project"
+      "eyebrow": "Projects",
+      "headline": "Buildings, one way of documenting them.",
+      "subheadline": "Retail chains, warehouses, offices, heritage buildings and industrial sites — every project below follows the same capture and delivery standard, regardless of sector or size.",
+      "ctaPrimary": "Browse all projects",
+      "ctaSecondary": "How these are documented",
+      "stat0": {
+        "label": "Projects delivered"
+      },
+      "stat1": {
+        "value": "3",
+        "label": "Countries · SE, AT, US"
+      },
+      "stat2": {
+        "value": "[[TODO: sectors covered — e.g. 6]]",
+        "label": "Sectors covered"
+      },
+      "stat3": {
+        "value": "[[TODO: site revisits caused by bad data — e.g. 0]]",
+        "label": "Site revisits caused by bad data"
+      }
+    },
+    "sequence": {
+      "eyebrow": "01 — Reading the case studies below",
+      "headline": "Different sector, same five questions.",
+      "body": "A retail chain and a warehouse have little in common. The two case studies below are still written to the same structure, so they can be compared directly.",
+      "step0": {
+        "title": "Decision",
+        "question": "What was the client trying to do?"
+      },
+      "step1": {
+        "title": "Information Problem",
+        "question": "What was missing, inconsistent or difficult to trust?"
+      },
+      "step2": {
+        "title": "Commercial Risk",
+        "question": "What would happen if it remained unresolved?"
+      },
+      "step3": {
+        "title": "RESCAN",
+        "question": "What information did RESCAN establish?"
+      },
+      "step4": {
+        "title": "Outcome",
+        "question": "What could the client now avoid, do faster or decide earlier?"
+      }
     },
     "finalCta": {
       "headline": "Have a similar portfolio or facility?",
@@ -415,17 +478,40 @@
     "caseStudy": {
       "situation": "The Situation",
       "informationGap": "The Information Gap",
+      "complexity": "The Complexity",
       "cost": "The Cost of Leaving It Unresolved",
       "established": "What RESCAN Established",
       "changed": "What Changed",
+      "changedSlot": "05 — What Changed",
       "keyProof": "Key Proof",
       "viewProject": "View Project"
+    },
+    "cases": {
+      "retail": {
+        "eyebrow": "02 — Retail Chains · Case study",
+        "image": "[[TODO: photograph of the actual retail portfolio]]"
+      },
+      "logistics": {
+        "eyebrow": "03 — Logistics Warehouses · Case study",
+        "image": "[[TODO: photograph of the logistics facility, or a specific complex condition captured]]"
+      }
+    },
+    "index": {
+      "eyebrow": "04 — Project index",
+      "headline": "{count} projects, one index.",
+      "body": "The two case studies above are written out in full. Every project here is clickable.",
+      "caseCardLabel": "Full case study",
+      "caseRetail0": {
+        "description": "Portfolio-wide documentation across store locations."
+      },
+      "caseLogistics0": {
+        "description": "Facility-wide capture for a planned retrofit."
+      }
     },
     "caseRetail0": {
       "title": "[[TODO: retail chain client or programme name]]",
       "scale": "[[TODO: number of locations, e.g. 42 locations]]",
-      "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
-      "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
+      "region": "[[TODO: region or countries the programme covered]]",
       "caseStudy": {
         "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
         "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
@@ -441,8 +527,7 @@
     "caseLogistics0": {
       "title": "[[TODO: logistics client or programme name]]",
       "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-      "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
-      "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
+      "region": "[[TODO: location of the facility]]",
       "caseStudy": {
         "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
         "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",

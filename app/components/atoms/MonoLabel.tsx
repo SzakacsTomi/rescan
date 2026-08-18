@@ -1,13 +1,13 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 type MonoLabelProps = {
   children: ReactNode;
   className?: string;
-  as?: 'span' | 'p' | 'dt' | 'dd' | 'h2';
+  as?: "span" | "p" | "dt" | "dd" | "h2";
   /** For a purely positional index, which duplicates the row it sits beside. */
-  'aria-hidden'?: boolean;
+  "aria-hidden"?: boolean;
 };
 
 /**
@@ -18,13 +18,13 @@ type MonoLabelProps = {
 export const MonoLabel = ({
   children,
   className,
-  as: Tag = 'span',
-  'aria-hidden': ariaHidden,
+  as: Tag = "span",
+  "aria-hidden": ariaHidden,
 }: MonoLabelProps) => (
   <Tag
     aria-hidden={ariaHidden}
     className={cn(
-      'font-mono text-[10px] leading-none tracking-[0.18em] uppercase text-muted-foreground',
+      "font-mono text-[10px] leading-none tracking-[0.18em] uppercase text-muted-foreground",
       className,
     )}
   >

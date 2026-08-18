@@ -3,11 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowLeft, MapPin, Building2, Maximize2, Users } from "lucide-react";
-import {
-  CaseStudyBody,
-  type CaseStudyCopy,
-  type CaseStudyLabels,
-} from "@/app/components/organisms/projects/CaseStudyBody";
 import type { ProjectConfig } from "@/config/projects";
 
 const META_ITEMS = [
@@ -19,21 +14,19 @@ const META_ITEMS = [
 
 export type DetailMetaKey = (typeof META_ITEMS)[number]["key"];
 
+/**
+ * The fifteen references that predate the case-study format. The two written-up case studies
+ * are laid out on the page itself by `CaseStudyFeature` and never open this overlay.
+ */
 export type ProjectDetailCopy = {
   title: string;
-  /** The fifteen references that predate the case-study format. */
-  detail?: {
+  detail: {
     client: string;
     location: string;
     sector: string;
     scope: string;
     body: string;
     labels: Record<DetailMetaKey, string>;
-  };
-  /** Projects written to the format the Projects brief defines. */
-  caseStudy?: {
-    copy: CaseStudyCopy;
-    labels: CaseStudyLabels;
   };
 };
 
@@ -107,52 +100,33 @@ export const ProjectDetail = ({
               </div>
             </div>
 
-            <div className="bg-slate-950 px-8 sm:px-12 lg:px-16 py-12 flex-1">
-              {translations.detail && (
-                <>
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.25, duration: 0.4 }}
-                    className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12"
-                  >
-                    {META_ITEMS.map(({ key, icon: Icon }) => (
-                      <div key={key}>
-                        <div className="flex items-center gap-2 text-white/40 text-xs uppercase tracking-wider mb-1.5">
-                          <Icon className="w-3.5 h-3.5" />
-                          {translations.detail?.labels[key]}
-                        </div>
-                        <p className="text-white text-sm font-medium">
-                          {translations.detail?.[key]}
-                        </p>
-                      </div>
-                    ))}
-                  </motion.div>
+            <div className="bg-[#020409] px-8 sm:px-12 lg:px-16 py-12 flex-1">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.4 }}
+                className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12"
+              >
+                {META_ITEMS.map(({ key, icon: Icon }) => (
+                  <div key={key}>
+                    <div className="flex items-center gap-2 text-white/40 text-xs uppercase tracking-wider mb-1.5">
+                      <Icon className="w-3.5 h-3.5" />
+                      {translations.detail.labels[key]}
+                    </div>
+                    <p className="text-white text-sm font-medium">{translations.detail[key]}</p>
+                  </div>
+                ))}
+              </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.35, duration: 0.4 }}
-                  >
-                    <p className="text-white/70 text-base sm:text-lg leading-relaxed w-full lg:max-w-[50%]">
-                      {translations.detail.body}
-                    </p>
-                  </motion.div>
-                </>
-              )}
-
-              {translations.caseStudy && (
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25, duration: 0.4 }}
-                >
-                  <CaseStudyBody
-                    copy={translations.caseStudy.copy}
-                    labels={translations.caseStudy.labels}
-                  />
-                </motion.div>
-              )}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.4 }}
+              >
+                <p className="text-white/70 text-base sm:text-lg leading-relaxed w-full lg:max-w-[50%]">
+                  {translations.detail.body}
+                </p>
+              </motion.div>
             </div>
           </div>
         </motion.div>

@@ -6,7 +6,7 @@
   "homePage": {
     "hero": {
       "eyebrow": "01 — Befintliga förhållanden",
-      "headline": "Vet vad som finns\ndär innan bristande\ninformation kostar\ntid och pengar.",
+      "headline": "Vet vad som finns\ninnan information brister\nkostar tid och pengar.",
       "subheadline": "RESCAN skapar pålitlig byggnadsinformation för butikskedjor och logistiklager – och ger projektteam det underlag de behöver innan obesvarade frågor om platsen blir till återbesök, omprojektering eller förseningar.",
       "primaryCta": "Diskutera ett projekt",
       "responseNote": "Svar inom en arbetsdag",
@@ -232,32 +232,51 @@
   },
   "whyRescanPage": {
     "hero": {
-      "headline": "Byggnadsinformation\nditt projektteam kan lita på.",
+      "eyebrow": "Varför RESCAN",
+      "headline": "Byggnadsinformation ditt projektteam kan lita på.",
       "subheadline": "RESCAN stödjer butikskedjor och logistiklagerteam där information om befintliga förhållanden behöver vara användbar långt efter att platsbesöket är avslutat.",
+      "anchors": [
+        "Upprepbarhet",
+        "Täckning",
+        "Användbarhet i nästa led",
+        "Kvalitetskontroll"
+      ],
+      "questionLabel": "Frågan som denna sida besvarar",
+      "question": "Kan RESCAN producera byggnadsinformation som förblir pålitlig och användbar efter platsbesöket?",
       "cta": "Diskutera ett projekt"
     },
     "corePrinciple": {
       "headline": "Inmätningen är bara utgångspunkten.",
-      "body": "Informationen kan senare användas av arkitekter, ingenjörer, entreprenörer, projektledare, fastighetsteam och driftteam.\nOm de teamen fortfarande måste ifrågasätta grundläggande befintliga förhållanden kvarstår en betydande osäkerhet.\nMålet är inte enbart att dokumentera byggnaden.\nDet är att skapa information som människor kan fortsätta använda när beslut ska fattas."
+      "body": "Om teamen som öppnar filen fortfarande måste ifrågasätta grundläggande befintliga förhållanden kvarstår en betydande osäkerhet.\nMålet är inte enbart att dokumentera byggnaden.\nDet är att skapa information som människor kan fortsätta använda när beslut ska fattas.",
+      "rolesLabel": "Vem öppnar filen härnäst",
+      "roles": [
+        "Arkitekter",
+        "Ingenjörer",
+        "Entreprenörer",
+        "Projektledare",
+        "Fastighetsteam",
+        "Driftteam"
+      ]
     },
     "pillars": {
-      "headline": "Varför RESCAN",
+      "headline": "Fyra skäl, var och en med egna bevis.",
+      "monoLabel": "Inga bevis, inga påståenden",
       "pillar0": {
         "title": "Upprepbarhet",
         "lead": "Enhetlighet spelar roll när arbetet upprepas.",
-        "body": "Butiksbestånd och återkommande program behöver mer än en samling osammanhängande inmätningar.\nEtt upprepbart arbetssätt hjälper olika projektteam att utgå från en mer enhetlig informationsbas över flera platser.",
+        "body": "Butiksbestånd och återkommande program behöver mer än en samling osammanhängande inmätningar.\nEtt upprepbart arbetssätt ger olika projektteam en enhetlig informationsbas över flera platser.",
         "proof": "[[TODO: verified multi-site or repeat-programme evidence — locations under one programme, repeat clients, standardised outputs]]"
       },
       "pillar1": {
         "title": "Täckning",
         "lead": "Minska luckorna som skickar tillbaka teamen.",
-        "body": "Ju fler relevanta befintliga förhållanden som fångas ordentligt, desto färre grundläggande frågor kräver en ny fysisk utredning.\nFör butikskedjor kan det betyda färre onödiga återbesök. För logistikanläggningar kan det betyda färre luckor in i projektering och samordning.",
+        "body": "Ju fler relevanta befintliga förhållanden som fångas ordentligt, desto färre grundläggande frågor kräver ett nytt platsbesök.\nFör butikskedjor kan det betyda färre återbesök. För logistikanläggningar kan det betyda färre luckor in i projektering och samordning.",
         "proof": "[[TODO: verified capture methodology, coverage example or project evidence — avoid absolutes like \"complete capture\"]]"
       },
       "pillar2": {
         "title": "Användbarhet i nästa led",
         "lead": "Informationen ska fungera för dem som fattar nästa beslut.",
-        "body": "Byggnadsinformation behöver stödja de arkitekter, ingenjörer, entreprenörer och fastighetsteam som använder den senare.\nJu starkare informationen är från början, desto mindre tid behöver de teamen lägga på att bygga upp sin förståelse av byggnaden på nytt.",
+        "body": "Ju starkare informationen är från början, desto mindre tid behöver de team som använder den senare lägga på att bygga upp sin förståelse av byggnaden på nytt.",
         "proof": "[[TODO: factual explanation of deliverables and how downstream teams actually use them]]"
       },
       "pillar3": {
@@ -270,38 +289,45 @@
     "proof": {
       "headline": "Bevis framför påståenden.",
       "item0": {
-        "slot": "Butiksleveranser",
-        "figure": "[[TODO: retail locations delivered, e.g. 120+]]"
+        "slot": "Butiksplatser",
+        "figure": "[[TODO: 120+ retail locations delivered]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "item1": {
-        "slot": "Logistikskala",
-        "figure": "[[TODO: logistics facility floor area in m²]]"
+        "slot": "Logistikyta",
+        "figure": "[[TODO: 38,000 m² logistics facilities]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "item2": {
-        "slot": "Återkommande affärer",
-        "figure": "[[TODO: repeat programme or repeat business evidence]]"
+        "slot": "Återkommande program",
+        "figure": "[[TODO: repeat programme or repeat business evidence]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "item3": {
         "slot": "Kvalitet & leverans",
-        "figure": "[[TODO: verified QA or delivery metric]]"
+        "figure": "[[TODO: verified QA or delivery metric]]",
+        "statement": "[[TODO: one short supporting fact]]"
+      },
+      "item4": {
+        "slot": "Namngiven kund",
+        "figure": "[[TODO: recognisable client, programme or testimonial]]",
+        "statement": "[[TODO: one short supporting fact]]"
       },
       "cta": "Se projekt"
     },
     "focused": {
       "headline": "Fokuserat med avsikt.",
-      "bestFit": {
-        "title": "RESCAN är byggt för",
-        "item0": "Butiksprogram över flera platser",
-        "item1": "Stora eller komplexa logistikanläggningar",
-        "item2": "Projekt där bristfällig information om befintliga förhållanden skapar verklig kostnad längre fram"
-      },
-      "notFit": {
-        "title": "Inte byggt för",
-        "item0": "Privata bostäder",
-        "item1": "Enstaka uppdrag med låg budget"
-      }
+      "note": "RESCAN är byggt för kommersiella beslut med högre insatser.",
+      "items": [
+        "Butiksprogram över flera platser",
+        "Stora eller komplexa logistikanläggningar",
+        "Projekt där bristfällig information om befintliga förhållanden skapar verklig kostnad längre fram"
+      ],
+      "notFitLabel": "Inte byggt för",
+      "notFitText": "Inte privata bostäder. Inte enstaka uppdrag med låg budget."
     },
     "finalCta": {
+      "eyebrow": "En fråga innan arbetet börjar",
       "headline": "Berätta vilket beslut byggnadsinformationen behöver stödja.",
       "cta": "Diskutera ditt projekt"
     }
@@ -398,9 +424,51 @@
   },
   "projectsPage": {
     "hero": {
-      "headline": "Beviset är det som händer efter att byggnaden är dokumenterad.",
-      "subheadline": "En stor inmätning eller detaljerad modell visar teknisk förmåga. Den viktigare frågan är vad informationen hjälpte kunden att undvika, göra snabbare eller besluta tidigare.",
-      "cta": "Diskutera ditt projekt"
+      "eyebrow": "Projekt",
+      "headline": "{count} byggnader, ett sätt att dokumentera dem.",
+      "subheadline": "Butikskedjor, lager, kontor, kulturhistoriska byggnader och industrianläggningar — varje projekt nedan följer samma standard för inmätning och leverans, oavsett sektor eller storlek.",
+      "ctaPrimary": "Se alla projekt",
+      "ctaSecondary": "Så dokumenteras de",
+      "stat0": {
+        "label": "Levererade projekt"
+      },
+      "stat1": {
+        "value": "3",
+        "label": "Länder · SE, AT, US"
+      },
+      "stat2": {
+        "value": "[[TODO: sectors covered — e.g. 6]]",
+        "label": "Sektorer"
+      },
+      "stat3": {
+        "value": "[[TODO: site revisits caused by bad data — e.g. 0]]",
+        "label": "Återbesök orsakade av bristfälliga underlag"
+      }
+    },
+    "sequence": {
+      "eyebrow": "01 — Så läser du fallstudierna nedan",
+      "headline": "Olika sektor, samma fem frågor.",
+      "body": "En butikskedja och ett lager har lite gemensamt. De två fallstudierna nedan är ändå skrivna efter samma struktur, så att de kan jämföras direkt.",
+      "step0": {
+        "title": "Beslut",
+        "question": "Vad försökte kunden göra?"
+      },
+      "step1": {
+        "title": "Informationsproblem",
+        "question": "Vad saknades, var inkonsekvent eller svårt att lita på?"
+      },
+      "step2": {
+        "title": "Kommersiell risk",
+        "question": "Vad skulle hända om det förblev olöst?"
+      },
+      "step3": {
+        "title": "RESCAN",
+        "question": "Vilken information fastställde RESCAN?"
+      },
+      "step4": {
+        "title": "Utfall",
+        "question": "Vad kunde kunden nu undvika, göra snabbare eller besluta tidigare?"
+      }
     },
     "finalCta": {
       "headline": "Har du ett liknande bestånd eller en liknande anläggning?",
@@ -415,17 +483,40 @@
     "caseStudy": {
       "situation": "Situationen",
       "informationGap": "Informationsluckan",
+      "complexity": "Komplexiteten",
       "cost": "Kostnaden för att låta det vara",
       "established": "Vad RESCAN fastställde",
       "changed": "Vad som förändrades",
+      "changedSlot": "05 — Vad som förändrades",
       "keyProof": "Nyckelbevis",
       "viewProject": "Se projekt"
+    },
+    "cases": {
+      "retail": {
+        "eyebrow": "02 — Butikskedjor · Fallstudie",
+        "image": "[[TODO: photograph of the actual retail portfolio]]"
+      },
+      "logistics": {
+        "eyebrow": "03 — Logistiklager · Fallstudie",
+        "image": "[[TODO: photograph of the logistics facility, or a specific complex condition captured]]"
+      }
+    },
+    "index": {
+      "eyebrow": "04 — Projektregister",
+      "headline": "{count} projekt, ett register.",
+      "body": "De två fallstudierna ovan är utskrivna i sin helhet. Varje projekt här är klickbart.",
+      "caseCardLabel": "Fullständig fallstudie",
+      "caseRetail0": {
+        "description": "Beståndsövergripande dokumentation över butikslägen."
+      },
+      "caseLogistics0": {
+        "description": "Anläggningsövergripande inmätning inför en planerad ombyggnad."
+      }
     },
     "caseRetail0": {
       "title": "[[TODO: retail chain client or programme name]]",
       "scale": "[[TODO: number of locations, e.g. 42 locations]]",
-      "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
-      "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
+      "region": "[[TODO: region or countries the programme covered]]",
       "caseStudy": {
         "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
         "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
@@ -441,8 +532,7 @@
     "caseLogistics0": {
       "title": "[[TODO: logistics client or programme name]]",
       "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-      "problem": "[[TODO: one line — what was at risk if the information gap remained?]]",
-      "outcome": "[[TODO: one line — what changed for the client afterwards?]]",
+      "region": "[[TODO: location of the facility]]",
       "caseStudy": {
         "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
         "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",

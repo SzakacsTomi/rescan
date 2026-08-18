@@ -86,6 +86,15 @@
   to { transform: translateX(-50%) }
 }
 
+/* Pixel distance rather than -50% keeps this on the compositor thread in every browser —
+   percentage transforms force a layout read on each frame in some engines, which is what
+   made the old logo marquee stutter. The distance comes from a measured DOM width via a
+   CSS custom property, set in LogoWall.tsx. */
+@keyframes logo-marquee {
+  from { transform: translate3d(0, 0, 0) }
+  to { transform: translate3d(calc(-1 * var(--logo-marquee-distance, 0px)), 0, 0) }
+}
+
 @keyframes hero-rise {
   from { opacity: 0; transform: translateY(120%) }
   to { opacity: 1; transform: translateY(0) }
@@ -125,6 +134,9 @@
   }
   .animate-hero-cue {
     animation: hero-cue 2.4s ease-in-out infinite;
+  }
+  .animate-logo-marquee {
+    animation: logo-marquee var(--logo-marquee-duration, 40s) linear infinite;
   }
 }
 

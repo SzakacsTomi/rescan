@@ -133,7 +133,7 @@ listed in `RETIRED_ROUTES` in `next.config.ts`: `/commercial-portfolios` →
 | Tier         | Contains                                              | May import        |
 |--------------|-------------------------------------------------------|-------------------|
 | `atoms/`     | One element, no composition: `Logo`, `ScrollArrow`, `Pending`, `MonoLabel` | nothing local |
-| `molecules/` | A few atoms doing one job: `NavLinks`, `ProjectCard`, `ConsequenceChain`, `MapPlate` | atoms |
+| `molecules/` | A few atoms doing one job: `NavLinks`, `ProjectIndexCard`, `ConsequenceChain`, `MapPlate` | atoms |
 | `organisms/` | A self-contained page region: `NavBar`, `CoreRisk`, `ProofBar`, `SplitMediaHero` | atoms, molecules |
 | `templates/` | Page-level composition: `SectorTemplate`, `HomeTemplate` | all of the above |
 
@@ -204,10 +204,12 @@ we and the client can see exactly what is missing and where.
   no longer gates the badge itself.
 - Real content passes through untouched, so `Pending` is safe to leave in place once
   the value arrives.
-- `placeholdersVisible` still exists as an export and is used in a few places
-  (`ProjectsGrid`, `CaseStudyBody`) to decide whether to hide an *entire* card or
-  section when its content is still pending, rather than show it half-empty — that's a
+- `placeholdersVisible` still exists as an export and is used to decide whether to hide an
+  *entire* section when its content is still pending, rather than show it half-empty — that's a
   separate decision from the badge's own visibility and is unaffected by the above.
+  `ProjectsTemplate` is the reference: it gates both `CaseStudyFeature` blocks, whose copy is
+  entirely unfilled, and swaps the index cards that point at them from an in-page anchor to the
+  matching sector page so no cell is left linking to a section that did not render.
 
 **A marker must be the entire value.** `"We delivered [[TODO: n]] stores"` is not
 detected and would leak the brackets to production — split it into a sentence that is

@@ -1,27 +1,111 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 
-type ProjectsHeroProps = {
-  headline: string;
-  subheadline: string;
-  cta: string;
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { Reveal } from "@/app/components/atoms/Reveal";
+import { CountUp } from "@/app/components/molecules/CountUp";
+import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
+import { cn } from "@/lib/utils";
+
+type HeroStat = {
+  value: string;
+  label: string;
 };
 
-export const ProjectsHero = ({ headline, subheadline, cta }: ProjectsHeroProps) => {
+type ProjectsHeroProps = {
+  eyebrow: string;
+  headline: string;
+  subheadline: string;
+  stats: HeroStat[];
+  /** Both CTAs scroll down this page rather than routing, so they carry raw fragments. */
+  primaryCta: { label: string; href: string };
+  secondaryCta: { label: string; href: string };
+};
+
+const HERO_GRID =
+  "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)";
+const HERO_GRID_SIZE = "88px 88px";
+const HERO_GLOW =
+  "radial-gradient(ellipse 65% 60% at 22% 80%, rgba(43,99,187,0.34) 0%, rgba(43,99,187,0) 100%)";
+
+const STAT_PENDING_CLASS =
+  "px-2.5 py-1.5 text-sm border-amber-500/80 bg-amber-500/12 text-amber-300";
+
+export const ProjectsHero = ({
+  eyebrow,
+  headline,
+  subheadline,
+  stats,
+  primaryCta,
+  secondaryCta,
+}: ProjectsHeroProps) => {
   return (
-    <section className="px-6 lg:pl-[126px] pt-16 sm:pt-24 pb-4">
-      <div className="max-w-7xl">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">
-          {headline}
-        </h1>
-        <p className="text-lg text-white/50 max-w-2xl leading-relaxed">{subheadline}</p>
-        <Link
-          href="/contact"
-          className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-slate-950 hover:bg-white/90 transition-colors"
-        >
-          {cta}
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+    <section
+      className="relative isolate flex flex-col justify-end overflow-hidden pt-16 sm:pt-20 lg:min-h-[calc(78svh-4rem)] lg:pt-28"
+      style={{ background: DEEP_BLUE_GRADIENT }}
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{ backgroundImage: HERO_GRID, backgroundSize: HERO_GRID_SIZE }}
+      />
+      <div aria-hidden className="absolute inset-0" style={{ background: HERO_GLOW }} />
+
+      <div className="relative mx-auto w-full max-w-310 px-6 sm:px-8 lg:px-10">
+        <Reveal>
+          <div className="flex items-center gap-3.5">
+            <span aria-hidden className="h-px w-11 bg-white/40" />
+            <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
+          </div>
+          <h1 className="mt-7 max-w-205 text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[60px]">
+            {headline}
+          </h1>
+          <p className="mt-7 max-w-165 text-[17px] leading-[1.65] text-white/62 lg:text-[19px]">
+            {subheadline}
+          </p>
+        </Reveal>
+
+        <Reveal className="mt-12 grid grid-cols-2 border-t border-white/16 lg:grid-cols-4">
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={cn(
+                "border-white/16 px-6 py-6",
+                // The design bleeds the outermost cells to the container edge. At two columns
+                // that edge falls on every other cell, so the rule is rewritten at `lg`.
+                i % 2 === 0 ? "border-r pl-0" : "pr-0",
+                i >= 2 && "border-t",
+                "lg:border-t-0 lg:border-r lg:last:border-r-0",
+                i === 0 ? "lg:pl-0" : "lg:pl-6",
+                i === stats.length - 1 ? "lg:pr-0" : "lg:pr-6",
+              )}
+            >
+              <CountUp
+                value={stat.value}
+                className="block text-[28px] font-bold tracking-[-0.02em] text-white lg:text-[36px]"
+                pendingClassName={STAT_PENDING_CLASS}
+              />
+              <span className="mt-1.5 block text-[13px] leading-[1.4] text-white/50">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </Reveal>
+
+        <Reveal className="mt-10 flex flex-wrap items-center gap-6 pb-14">
+          <a
+            href={primaryCta.href}
+            className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
+          >
+            {primaryCta.label}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
+          </a>
+          <a
+            href={secondaryCta.href}
+            className="border-b border-white/30 pb-0.5 text-sm font-semibold text-white transition-colors hover:border-white/60"
+          >
+            {secondaryCta.label}
+          </a>
+        </Reveal>
       </div>
     </section>
   );

@@ -52,7 +52,7 @@ export const HeroSection = async () => {
       />
 
       <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-31.5 pt-32 sm:pt-36 lg:pt-45">
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_220px] gap-10 lg:gap-12 items-end">
+        <div className="grid items-end gap-10 lg:gap-12 2xl:grid-cols-[minmax(0,1fr)_320px]">
           <div>
             <div className="flex items-center gap-3.5 mb-9">
               <span aria-hidden className="w-11 h-px bg-white/40" />
@@ -63,6 +63,7 @@ export const HeroSection = async () => {
               headline={t("hero.headline")}
               subheadline={t("hero.subheadline")}
               accentLineCount={HEADLINE_ACCENT_LINE_COUNT}
+              className="max-w-6xl"
             />
 
             <div className="mt-11 flex flex-wrap items-center gap-7">
@@ -77,7 +78,7 @@ export const HeroSection = async () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex flex-col items-end gap-2.5 pb-2">
+          <div className="hidden lg:flex flex-col items-end gap-2.5 border-t border-white/10 pt-6 2xl:mt-0 2xl:border-t-0 2xl:pt-0 2xl:pb-2">
             <MonoLabel as="p" className="text-white/40 text-right">
               {t("hero.location.city")}
               <br />

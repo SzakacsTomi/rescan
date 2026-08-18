@@ -1,12 +1,14 @@
 "use client";
 
 import { animate, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Pending, isPending } from "@/app/components/atoms/Pending";
 
 type CountUpProps = {
   value: string;
   className?: string;
+  /** Passed through to the `Pending` badge when the value is still a `[[TODO: …]]` marker. */
+  pendingClassName?: string;
 };
 
 const NUMBER_PATTERN = /[\d,]+(?:\.\d+)?/;
@@ -18,10 +20,13 @@ const COUNT_DURATION_S = 1.4;
  * sits still around it. A figure still marked `[[TODO: …]]` has nothing real to count
  * up to, so it renders through `Pending` unchanged.
  */
-export const CountUp = ({ value, className }: CountUpProps) => {
+export const CountUp = ({ value, className, pendingClassName }: CountUpProps) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.4 });
-  const match = value.match(NUMBER_PATTERN);
+  // A regex match produces a new array on every call; without memoizing, the
+  // animation's own setDisplay re-renders would re-trigger this effect each frame
+  // and restart the count from zero forever.
+  const match = useMemo(() => value.match(NUMBER_PATTERN), [value]);
   const [display, setDisplay] = useState(match ? "0" : value);
 
   useEffect(() => {
@@ -50,7 +55,7 @@ export const CountUp = ({ value, className }: CountUpProps) => {
   }, [isInView, match]);
 
   if (isPending(value)) {
-    return <Pending>{value}</Pending>;
+    return <Pending className={pendingClassName}>{value}</Pending>;
   }
 
   if (!match) {
