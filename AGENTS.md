@@ -67,6 +67,12 @@ Verify UI work against a running server. Do not report a change as working on th
 strength of a passing build alone. Once `yarn dev` is running, leave it running —
 do not stop it after finishing a task; the user keeps it up across tasks.
 
+**Playwright MCP is the browser for that verification.** For anything about hero
+sections, nav, spacing or layout, measure with `page.evaluate` (`getBoundingClientRect`)
+rather than eyeballing screenshots — this model cannot read image files. Cross-page
+consistency checks (e.g. the hero spine) are done by comparing the same metric on each
+route at the same viewport.
+
 ## Gotchas specific to this repo
 
 Each of these has already cost time.
