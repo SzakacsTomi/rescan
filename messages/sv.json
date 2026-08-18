@@ -175,34 +175,59 @@
   },
   "aboutPage": {
     "hero": {
-      "headline": "Vi levererar precision\ntill den byggda miljön.",
-      "subheadline": "3D-skanning för kapitalförvaltare, ingenjörer och arkitekter som behöver data de kan lita på.",
-      "primaryCta": "Se vårt arbete",
-      "secondaryCta": "Kontakta oss"
-    },
-    "mission": {
-      "headline": "Varför Rescan finns",
-      "body": "Byggnader är sällan som de ser ut på papper. Ritningar bli inaktuella. Renoveringar genomförs utan dokumentation. När projekt börjar från föråldrad information förstärks kostnaderna — i förseningar, återbesök och omarbetning.\n\nRescan grundades för att lösa det. Vi dokumenterar byggnader som de faktiskt är och levererar strukturerade digitala modeller som team kan förlita sig på — inte bara för det aktuella projektet, utan för varje projekt som följer."
-    },
-    "capabilities": {
-      "headline": "Vad vi gör",
-      "cap0": {
-        "title": "Exakt som-byggt-dokumentation",
-        "description": "Vi mäter och dokumenterar byggnader som de existerar idag — med millimeterprecision med professionell 3D-skanningsutrustning."
+      "eyebrow": "Om RESCAN",
+      "headline": "Företaget som åker till byggnaden.",
+      "subheadline": "RESCAN är ett fristående svenskt företag med bas i Växjö. Vi arbetar i fastigheter som redan står och redan används, och vi lämnar över det vi hittar till dem som planerar vad som händer härnäst.",
+      "facts": {
+        "registeredOffice": {
+          "label": "Registrerat säte",
+          "value": "Växjö, Sverige"
+        },
+        "languages": {
+          "label": "Arbetsspråk",
+          "value": "Svenska · Engelska"
+        },
+        "founded": {
+          "label": "Grundades",
+          "value": "2017"
+        }
       },
-      "cap1": {
-        "title": "Strukturerade digitala modeller",
-        "description": "Punktmoln, 2D-ritningar eller fullständiga BIM-modeller i Revit eller Archicad — strukturerade per disciplin och redo för omedelbar användning."
+      "image": "[[TODO: bild i full bredd — RESCAN-teamet på plats, eller kontoret i Växjö]]"
+    },
+    "company": {
+      "headline": "En typ av arbete, i två sektorer.",
+      "lead": "RESCAN kartlägger byggnaders befintliga skick. Det är hela företagets arbete.",
+      "steps": {
+        "step0": "Åka till en fastighet",
+        "step1": "Dokumentera vad som faktiskt finns där",
+        "step2": "Förbereda dokumentationen så att ett annat team kan använda den utan att åka tillbaka"
       },
-      "cap2": {
-        "title": "Leverans i portföljskala",
-        "description": "Konsekvent metodik och dokumentation över flera objekt. En tillförlitlig digital grund för varje fastighet i din portfölj."
+      "positioning": "Företaget är medvetet smalt. Två sektorer, en typ av arbete, och samma arbetssätt oavsett om uppdraget gäller en enskild anläggning eller ett program av lokaler. Vi föredrar att vara specialisten ett fastighetsteam ringer två gånger framför en leverantör av allt vid ett tillfälle."
+    },
+    "focus": {
+      "item0": {
+        "label": "Vilka vi arbetar med",
+        "value": "Detaljhandelskedjor och lagerlogistikteam"
+      },
+      "item1": {
+        "label": "Var vi arbetar",
+        "value": "Sverige, med levererade projekt i Österrike och USA"
+      },
+      "item2": {
+        "label": "Bas",
+        "value": "Växjö",
+        "coordinates": "56.8777° N · 14.7894° E"
       }
     },
+    "people": {
+      "headline": "Personerna du faktiskt skulle träffa.",
+      "organization": "[[TODO: en faktabaserad mening om hur RESCAN-teamet är organiserat]]",
+      "member": "[[TODO: namn och roll]]"
+    },
     "cta": {
-      "headline": "Redo att arbeta med data du kan lita på?",
-      "primaryCta": "Boka ett samtal",
-      "secondaryCta": "Se våra projekt"
+      "headline": "Prata med dem som utförde arbetet.",
+      "subheadline": "Kontakta RESCAN direkt för att diskutera en portfölj, en anläggning eller ett projekt som fortfarande tar form.",
+      "cta": "Kontakta RESCAN"
     }
   },
   "whyRescanPage": {

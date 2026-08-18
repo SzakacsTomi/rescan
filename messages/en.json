@@ -175,34 +175,59 @@
   },
   "aboutPage": {
     "hero": {
-      "headline": "We bring precision\nto the built environment.",
-      "subheadline": "3D scanning for asset managers, engineers, and architects who need data they can rely on.",
-      "primaryCta": "See Our Work",
-      "secondaryCta": "Get in Touch"
-    },
-    "mission": {
-      "headline": "Why Rescan exists",
-      "body": "Buildings are rarely as they appear on paper. Drawings go out of date. Renovations happen without documentation. When projects begin from outdated information, the cost compounds — in delays, revisits, and rework.\n\nRescan was founded to solve that. We capture buildings as they actually are, and deliver structured digital models that teams can rely on — not just for the current project, but for every one that follows."
-    },
-    "capabilities": {
-      "headline": "What we do",
-      "cap0": {
-        "title": "Accurate As-Built Capture",
-        "description": "We measure and document buildings as they exist today — with millimetre-level accuracy using professional 3D scanning equipment."
+      "eyebrow": "About RESCAN",
+      "headline": "The company that goes to the building.",
+      "subheadline": "RESCAN is an independent Swedish company based in Växjö. We work in properties that are already standing and already in use, and we hand what we find to the people who plan what happens there next.",
+      "facts": {
+        "registeredOffice": {
+          "label": "Registered office",
+          "value": "Växjö, Sweden"
+        },
+        "languages": {
+          "label": "Working languages",
+          "value": "Swedish · English"
+        },
+        "founded": {
+          "label": "Founded",
+          "value": "2017"
+        }
       },
-      "cap1": {
-        "title": "Structured Digital Models",
-        "description": "Point clouds, 2D drawings, or full BIM models in Revit or Archicad — structured by discipline and ready for immediate use."
+      "image": "[[TODO: full-width image — the RESCAN team on site, or the Växjö office]]"
+    },
+    "company": {
+      "headline": "One kind of work, done in two sectors.",
+      "lead": "RESCAN establishes the existing condition of buildings. That is the whole of the company's work.",
+      "steps": {
+        "step0": "Going to a property",
+        "step1": "Recording what is actually there",
+        "step2": "Preparing the record so another team can use it without going back"
       },
-      "cap2": {
-        "title": "Portfolio-Scale Delivery",
-        "description": "Consistent methodology and documentation across multiple sites. One reliable digital foundation for every property in your portfolio."
+      "positioning": "The company is deliberately narrow. Two sectors, one type of work, and the same way of working whether the job is a single facility or a programme of locations. We would rather be the specialist a property team calls twice than a supplier of everything once."
+    },
+    "focus": {
+      "item0": {
+        "label": "Who we work with",
+        "value": "Retail chains and logistics warehouse teams"
+      },
+      "item1": {
+        "label": "Where we work",
+        "value": "Sweden, with delivered projects in Austria and the USA"
+      },
+      "item2": {
+        "label": "Base",
+        "value": "Växjö",
+        "coordinates": "56.8777° N · 14.7894° E"
       }
     },
+    "people": {
+      "headline": "The people you would actually meet.",
+      "organization": "[[TODO: one factual sentence on how the RESCAN team is organised]]",
+      "member": "[[TODO: name and role]]"
+    },
     "cta": {
-      "headline": "Ready to work from data you can trust?",
-      "primaryCta": "Book a Consultation",
-      "secondaryCta": "See Our Projects"
+      "headline": "Talk to the people who did the work.",
+      "subheadline": "Reach RESCAN directly to discuss a portfolio, a facility, or a project still taking shape.",
+      "cta": "Contact RESCAN"
     }
   },
   "whyRescanPage": {
