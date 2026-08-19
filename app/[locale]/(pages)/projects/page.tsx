@@ -119,6 +119,12 @@ export default async function ProjectsPage() {
         eyebrow: t('index.eyebrow'),
         headline: t('index.headline', { count: projectCount }),
         body: t('index.body'),
+        columns: {
+          ordinal: t('index.columns.ordinal'),
+          project: t('index.columns.project'),
+          sector: t('index.columns.sector'),
+          location: t('index.columns.location'),
+        },
         cards,
         details,
         backLabel: t('backToProjects'),

@@ -523,6 +523,12 @@
       "eyebrow": "04 — Projektregister",
       "headline": "{count} projekt, ett register.",
       "body": "De två fallstudierna ovan är utskrivna i sin helhet. Varje projekt här är klickbart.",
+      "columns": {
+        "ordinal": "Nr",
+        "project": "Projekt",
+        "sector": "Sektor",
+        "location": "Ort"
+      },
       "caseCardLabel": "Fullständig fallstudie",
       "caseRetail0": {
         "description": "Beståndsövergripande dokumentation över butikslägen."

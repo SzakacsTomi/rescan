@@ -518,6 +518,12 @@
       "eyebrow": "04 — Project index",
       "headline": "{count} projects, one index.",
       "body": "The two case studies above are written out in full. Every project here is clickable.",
+      "columns": {
+        "ordinal": "Nº",
+        "project": "Project",
+        "sector": "Sector",
+        "location": "Location"
+      },
       "caseCardLabel": "Full case study",
       "caseRetail0": {
         "description": "Portfolio-wide documentation across store locations."

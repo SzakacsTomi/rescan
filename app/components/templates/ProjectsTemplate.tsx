@@ -60,6 +60,7 @@ type ProjectsTemplateProps = {
     eyebrow: string;
     headline: string;
     body: string;
+    columns: { ordinal: string; project: string; sector: string; location: string };
     cards: Record<string, IndexCardCopy>;
     details: Record<string, ProjectDetailCopy>;
     backLabel: string;
@@ -89,6 +90,8 @@ export const ProjectsTemplate = ({
   const items = projects.map((project) => ({
     project,
     ...index.cards[project.id],
+    sectorLabel: index.details[project.id]?.detail.sector,
+    location: index.details[project.id]?.detail.location,
     href: project.sector
       ? placeholdersVisible
         ? `#${CASE_ANCHOR_ID[project.sector]}`
@@ -138,6 +141,7 @@ export const ProjectsTemplate = ({
         eyebrow={index.eyebrow}
         headline={index.headline}
         body={index.body}
+        columns={index.columns}
         items={items}
         details={index.details}
         backLabel={index.backLabel}
