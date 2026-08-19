@@ -32,7 +32,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
             <MonoLabel className={cn("border-b border-white/20 pb-5", FIT_ACCENT_CLASS)}>
               {bestFit.title}
             </MonoLabel>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col pt-4">
               {bestFit.items.map((item) => (
                 <Reveal
                   as="li"
@@ -52,7 +52,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
             <MonoLabel className="border-b border-white/20 pb-5 text-white/45">
               {notFit.title}
             </MonoLabel>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col pt-4">
               {notFit.items.map((item) => (
                 <Reveal
                   as="li"

@@ -40,7 +40,7 @@ export const ProjectsHero = ({
 }: ProjectsHeroProps) => {
   return (
     <section
-      className="relative isolate flex flex-col justify-end overflow-hidden pt-16 sm:pt-20 lg:min-h-[calc(78svh-4rem)] lg:pt-28"
+      className="relative isolate flex flex-col overflow-hidden pt-16 sm:pt-20 lg:min-h-[calc(100svh-4rem)] lg:pt-29"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div
@@ -50,62 +50,66 @@ export const ProjectsHero = ({
       />
       <div aria-hidden className="absolute inset-0" style={{ background: HERO_GLOW }} />
 
-      <div className="relative mx-auto w-full max-w-310 px-6 sm:px-8 lg:px-10">
-        <Reveal>
+      <div className="relative mx-auto flex w-full max-w-480 flex-1 flex-col justify-between gap-12 px-6 pb-14 sm:px-8 lg:pb-16 lg:pl-31.5">
+        <div>
           <div className="flex items-center gap-3.5">
             <span aria-hidden className="h-px w-11 bg-white/40" />
             <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
           </div>
-          <h1 className="mt-7 max-w-205 text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[60px]">
-            {headline}
-          </h1>
-          <p className="mt-7 max-w-165 text-[17px] leading-[1.65] text-white/62 lg:text-[19px]">
-            {subheadline}
-          </p>
-        </Reveal>
+          <Reveal>
+            <h1 className="mt-7 max-w-205 text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[60px]">
+              {headline}
+            </h1>
+            <p className="mt-7 max-w-165 text-[17px] leading-[1.65] text-white/62 lg:text-[19px]">
+              {subheadline}
+            </p>
+          </Reveal>
+        </div>
 
-        <Reveal className="mt-12 grid grid-cols-2 border-t border-white/16 lg:grid-cols-4">
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={cn(
-                "border-white/16 px-6 py-6",
-                // The design bleeds the outermost cells to the container edge. At two columns
-                // that edge falls on every other cell, so the rule is rewritten at `lg`.
-                i % 2 === 0 ? "border-r pl-0" : "pr-0",
-                i >= 2 && "border-t",
-                "lg:border-t-0 lg:border-r lg:last:border-r-0",
-                i === 0 ? "lg:pl-0" : "lg:pl-6",
-                i === stats.length - 1 ? "lg:pr-0" : "lg:pr-6",
-              )}
+        <div>
+          <Reveal className="grid grid-cols-2 border-t border-white/16 lg:grid-cols-4">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className={cn(
+                  "border-white/16 px-6 py-6",
+                  // The design bleeds the outermost cells to the container edge. At two columns
+                  // that edge falls on every other cell, so the rule is rewritten at `lg`.
+                  i % 2 === 0 ? "border-r pl-0" : "pr-0",
+                  i >= 2 && "border-t",
+                  "lg:border-t-0 lg:border-r lg:last:border-r-0",
+                  i === 0 ? "lg:pl-0" : "lg:pl-6",
+                  i === stats.length - 1 ? "lg:pr-0" : "lg:pr-6",
+                )}
+              >
+                <CountUp
+                  value={stat.value}
+                  className="block text-[28px] font-bold tracking-[-0.02em] text-white lg:text-[36px]"
+                  pendingClassName={STAT_PENDING_CLASS}
+                />
+                <span className="mt-1.5 block text-[13px] leading-[1.4] text-white/50">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </Reveal>
+
+          <Reveal className="mt-10 flex flex-wrap items-center gap-6">
+            <a
+              href={primaryCta.href}
+              className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
             >
-              <CountUp
-                value={stat.value}
-                className="block text-[28px] font-bold tracking-[-0.02em] text-white lg:text-[36px]"
-                pendingClassName={STAT_PENDING_CLASS}
-              />
-              <span className="mt-1.5 block text-[13px] leading-[1.4] text-white/50">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </Reveal>
-
-        <Reveal className="mt-10 flex flex-wrap items-center gap-6 pb-14">
-          <a
-            href={primaryCta.href}
-            className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
-          >
-            {primaryCta.label}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
-          </a>
-          <a
-            href={secondaryCta.href}
-            className="border-b border-white/30 pb-0.5 text-sm font-semibold text-white transition-colors hover:border-white/60"
-          >
-            {secondaryCta.label}
-          </a>
-        </Reveal>
+              {primaryCta.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
+            </a>
+            <a
+              href={secondaryCta.href}
+              className="border-b border-white/30 pb-0.5 text-sm font-semibold text-white transition-colors hover:border-white/60"
+            >
+              {secondaryCta.label}
+            </a>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ export const HeroSection = async () => {
 
   return (
     <section
-      className="relative min-h-screen w-full flex flex-col justify-end overflow-hidden"
+      className="relative w-full flex flex-col justify-end overflow-hidden lg:min-h-[calc(100svh-4rem)]"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div
@@ -54,7 +54,7 @@ export const HeroSection = async () => {
       <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-31.5 pt-32 sm:pt-36 lg:pt-45">
         <div className="grid items-end gap-10 lg:gap-12 2xl:grid-cols-[minmax(0,1fr)_320px]">
           <div>
-            <div className="flex items-center gap-3.5 mb-9">
+            <div className="flex items-center gap-3.5 mb-7">
               <span aria-hidden className="w-11 h-px bg-white/40" />
               <MonoLabel className="text-white/55">{t("hero.eyebrow")}</MonoLabel>
             </div>

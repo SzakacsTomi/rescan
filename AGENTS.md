@@ -306,7 +306,7 @@ not substitute `gap-4` and a `border` per card — the result reads as a differe
 
 | Step | Class | Design |
 |------|-------|--------|
-| Section height | `lg:min-h-[86vh]`, content bottom-aligned | 86vh |
+| Section height | `lg:min-h-[calc(100svh-4rem)]`, content bottom-aligned | full viewport minus the 64px navbar |
 | Hero padding | `pt-28 pb-16` at `lg` | 112 / 64px |
 | eyebrow → h1 | `mt-7` | 28px |
 | h1 → subheadline | `mt-7` | 28px |

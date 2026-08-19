@@ -34,7 +34,7 @@ export const LogisticsHero = ({
   secondaryCta,
   facts,
 }: LogisticsHeroProps) => (
-  <section className="relative isolate overflow-hidden bg-[#020409] lg:flex lg:min-h-[94vh]">
+  <section className="relative isolate overflow-hidden bg-[#020409] lg:flex lg:min-h-[calc(100svh-4rem)]">
     <div
       aria-hidden
       className="absolute inset-0"

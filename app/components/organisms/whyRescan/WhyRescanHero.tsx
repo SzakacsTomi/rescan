@@ -34,22 +34,24 @@ export const WhyRescanHero = ({
   cta,
 }: WhyRescanHeroProps) => {
   return (
-    <section className="relative isolate flex flex-col bg-background lg:min-h-[clamp(42rem,calc(100svh-4rem),48rem)]">
+    <section className="relative isolate flex flex-col bg-background lg:min-h-[calc(100svh-4rem)]">
       <div className="relative mx-auto w-full max-w-480 lg:flex lg:flex-1">
         <div className="px-6 sm:px-8 lg:flex lg:w-[53%] lg:flex-col lg:pr-8 lg:pl-31.5">
           <div className="flex flex-col justify-between gap-10 pt-16 pb-16 sm:pt-20 lg:flex-1 lg:pt-29 lg:pb-16">
-            <Reveal>
+            <div>
               <div className="flex items-center gap-3.5">
                 <span aria-hidden className="h-px w-11 bg-primary/50" />
                 <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
               </div>
-              <h1 className="mt-6 max-w-160 text-[32px] font-bold leading-[1.08] tracking-[-0.035em] sm:text-[44px] lg:text-[54px]">
-                {headline}
-              </h1>
-              <p className="mt-6 max-w-[49ch] text-base leading-[1.7] text-foreground/70 sm:text-lg">
-                {subheadline}
-              </p>
-            </Reveal>
+              <Reveal>
+                <h1 className="mt-7 max-w-160 text-[32px] font-bold leading-[1.08] tracking-[-0.035em] sm:text-[44px] lg:text-[54px]">
+                  {headline}
+                </h1>
+                <p className="mt-6 max-w-[49ch] text-base leading-[1.7] text-foreground/70 sm:text-lg">
+                  {subheadline}
+                </p>
+              </Reveal>
+            </div>
 
             <Reveal>
               <ol className="grid grid-cols-2 border-t border-border lg:grid-cols-4">
@@ -57,7 +59,7 @@ export const WhyRescanHero = ({
                   <li
                     key={anchor}
                     className={cn(
-                      "group relative flex flex-col justify-between gap-3 py-6 pr-4 lg:py-7 lg:pr-6",
+                      "group relative flex flex-col justify-between gap-3 py-6 pl-4 pr-4 lg:py-7 lg:pr-6",
                       i % 2 === 0 && "border-r border-border",
                       i >= 2 && "border-t border-border lg:border-t-0",
                       "lg:border-r lg:border-border",

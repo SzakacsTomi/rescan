@@ -43,32 +43,34 @@ export const SplitMediaHero = ({
           half up to it rather than a fixed narrow measure. `pl` keeps the site's 126px spine. */}
       <div className="px-6 lg:h-full lg:w-[53%] lg:pr-6 lg:pl-[126px]">
         <div className="flex flex-col justify-center gap-8 pt-16 pb-10 sm:pt-20 sm:pb-12 lg:h-full lg:max-w-[40rem] lg:justify-start lg:gap-10 lg:pt-29 lg:pb-0">
-          <Reveal>
+          <div>
             {eyebrow && (
               <div className="flex items-center gap-3.5">
                 <span aria-hidden className="h-px w-11 bg-primary/50" />
                 <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
               </div>
             )}
-            {/* No `text-balance`: the headline's three lines come from the default greedy wrap,
-                which is what puts the break after "to" and after "the". Balancing evens the
-                line lengths instead and loses that break. */}
-            <h1
-              className={cn(
-                'text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-5xl xl:text-[3.375rem]',
-                eyebrow && 'mt-6',
+            <Reveal>
+              {/* No `text-balance`: the headline's three lines come from the default greedy wrap,
+                  which is what puts the break after "to" and after "the". Balancing evens the
+                  line lengths instead and loses that break. */}
+              <h1
+                className={cn(
+                  'text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-5xl xl:text-[3.375rem]',
+                  eyebrow && 'mt-7',
+                )}
+              >
+                {headline}
+              </h1>
+              {/* `pre-line` keeps the copy's own sentence break; the measure is wide enough to
+                  hold the first sentence on one line, so the break lands where the copy puts it. */}
+              {subheadline && (
+                <p className="mt-6 max-w-[49ch] text-base leading-relaxed whitespace-pre-line text-pretty text-foreground/70 sm:text-lg">
+                  {subheadline}
+                </p>
               )}
-            >
-              {headline}
-            </h1>
-            {/* `pre-line` keeps the copy's own sentence break; the measure is wide enough to
-                hold the first sentence on one line, so the break lands where the copy puts it. */}
-            {subheadline && (
-              <p className="mt-6 max-w-[49ch] text-base leading-relaxed whitespace-pre-line text-pretty text-foreground/70 sm:text-lg">
-                {subheadline}
-              </p>
-            )}
-          </Reveal>
+            </Reveal>
+          </div>
 
           {meta && meta.length > 0 && (
             <Reveal
