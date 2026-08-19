@@ -7,6 +7,7 @@ import { projects, type ProjectSector } from '@/config/projects';
 const HERO_STAT_COUNT = 4;
 const SEQUENCE_STEP_COUNT = 5;
 const KEY_PROOF_COUNT = 4;
+const METRICS_ITEM_COUNT = 4;
 
 /** The one hero figure the repo can prove for itself; the rest are client-supplied. */
 const PROJECT_COUNT_STAT_INDEX = 0;
@@ -104,6 +105,13 @@ export default async function ProjectsPage() {
         steps: Array.from({ length: SEQUENCE_STEP_COUNT }, (_, i) => ({
           title: t(`sequence.step${i}.title`),
           question: t(`sequence.step${i}.question`),
+        })),
+      }}
+      logoWall={{ headline: t('logoWall.headline') }}
+      metrics={{
+        headline: t('metrics.headline'),
+        items: Array.from({ length: METRICS_ITEM_COUNT }, (_, i) => ({
+          label: t(`metrics.item${i}.label`),
         })),
       }}
       cases={{ retail: buildCase('retail'), logistics: buildCase('logistics') }}

@@ -445,6 +445,24 @@
         "label": "Återbesök orsakade av bristfälliga underlag"
       }
     },
+    "logoWall": {
+      "headline": "Anlitade av fastighetsteam som hanterar flera platser"
+    },
+    "metrics": {
+      "headline": "Levererat i stor skala.",
+      "item0": {
+        "label": "levererade projekt"
+      },
+      "item1": {
+        "label": "m² digitalt dokumenterade"
+      },
+      "item2": {
+        "label": "bestånd med 40+ fastigheter vardera"
+      },
+      "item3": {
+        "label": "fastighetssektorer"
+      }
+    },
     "sequence": {
       "eyebrow": "01 — Så läser du fallstudierna nedan",
       "headline": "Olika sektor, samma fem frågor.",
@@ -773,23 +791,6 @@
         "metric": "56",
         "metricLabel": "kommersiella fastigheter dokumenterade",
         "image": "[[TODO: site photograph for the named retail case]]"
-      },
-      "logoWall": {
-        "headline": "Anlitade av fastighetsteam som hanterar flera platser"
-      },
-      "metrics": {
-        "item0": {
-          "label": "levererade projekt"
-        },
-        "item1": {
-          "label": "m² digitalt dokumenterade"
-        },
-        "item2": {
-          "label": "bestånd med 40+ fastigheter vardera"
-        },
-        "item3": {
-          "label": "fastighetssektorer"
-        }
       },
       "fitNotFit": {
         "headline": "Passar bäst för",

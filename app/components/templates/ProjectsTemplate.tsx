@@ -12,10 +12,12 @@ import {
   PROJECT_INDEX_ID,
   ProjectIndex,
 } from "@/app/components/organisms/projects/ProjectIndex";
+import { LogoWall } from "@/app/components/organisms/projects/LogoWall";
+import { Metrics } from "@/app/components/organisms/projects/Metrics";
 import type { ProjectDetailCopy } from "@/app/components/organisms/projects/ProjectDetail";
 import { ProjectsHero } from "@/app/components/organisms/projects/ProjectsHero";
 import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
-import { projects, type ProjectSector } from "@/config/projects";
+import { projects, projectsLogoWall, projectsMetrics, type ProjectSector } from "@/config/projects";
 
 type CaseCopy = {
   eyebrow: string;
@@ -51,6 +53,8 @@ type ProjectsTemplateProps = {
     body: string;
     steps: { title: string; question: string }[];
   };
+  logoWall: { headline: string };
+  metrics: { headline: string; items: { label: string }[] };
   cases: Record<ProjectSector, CaseCopy>;
   index: {
     eyebrow: string;
@@ -73,6 +77,8 @@ const CASE_SECTORS: ProjectSector[] = ["retail", "logistics"];
 export const ProjectsTemplate = ({
   hero,
   sequence,
+  logoWall,
+  metrics,
   cases,
   index,
   finalCta,
@@ -101,6 +107,8 @@ export const ProjectsTemplate = ({
         secondaryCta={{ label: hero.ctaSecondary, href: `#${SEQUENCE_ID}` }}
       />
 
+      <LogoWall headline={logoWall.headline} logos={projectsLogoWall.logos} />
+
       <CaseStudySequence
         eyebrow={sequence.eyebrow}
         headline={sequence.headline}
@@ -117,6 +125,14 @@ export const ProjectsTemplate = ({
             viewProject={{ label: cases[sector].viewProject, href: SECTOR_HREF[sector] }}
           />
         ))}
+
+      <Metrics
+        headline={metrics.headline}
+        items={metrics.items.map((item, i) => ({
+          ...item,
+          value: projectsMetrics.items[i].value,
+        }))}
+      />
 
       <ProjectIndex
         eyebrow={index.eyebrow}

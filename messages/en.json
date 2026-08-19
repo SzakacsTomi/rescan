@@ -440,6 +440,24 @@
         "label": "Site revisits caused by bad data"
       }
     },
+    "logoWall": {
+      "headline": "Trusted by property teams managing multiple locations"
+    },
+    "metrics": {
+      "headline": "Delivered at scale.",
+      "item0": {
+        "label": "projects delivered"
+      },
+      "item1": {
+        "label": "m² digitally captured"
+      },
+      "item2": {
+        "label": "portfolios, 40+ properties each"
+      },
+      "item3": {
+        "label": "property sectors served"
+      }
+    },
     "sequence": {
       "eyebrow": "01 — Reading the case studies below",
       "headline": "Different sector, same five questions.",
@@ -768,23 +786,6 @@
         "metric": "56",
         "metricLabel": "commercial properties documented",
         "image": "[[TODO: site photograph for the named retail case]]"
-      },
-      "logoWall": {
-        "headline": "Trusted by property teams managing multiple locations"
-      },
-      "metrics": {
-        "item0": {
-          "label": "projects delivered"
-        },
-        "item1": {
-          "label": "m² digitally captured"
-        },
-        "item2": {
-          "label": "portfolios, 40+ properties each"
-        },
-        "item3": {
-          "label": "property sectors served"
-        }
       },
       "fitNotFit": {
         "headline": "Best fit",

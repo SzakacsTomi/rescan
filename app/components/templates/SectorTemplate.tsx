@@ -4,8 +4,6 @@ import { CoreRisk } from '@/app/components/organisms/sector/CoreRisk';
 import { Differentiator } from '@/app/components/organisms/sector/Differentiator';
 import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
 import { FitNotFit } from '@/app/components/organisms/sector/FitNotFit';
-import { LogoWall } from '@/app/components/organisms/sector/LogoWall';
-import { Metrics } from '@/app/components/organisms/sector/Metrics';
 import { ProofBar } from '@/app/components/organisms/ProofBar';
 import { NamedCase } from '@/app/components/organisms/sector/NamedCase';
 import { StrategicValue } from '@/app/components/organisms/sector/StrategicValue';
@@ -87,19 +85,6 @@ export const SectorTemplate = ({
 
       {tr.proof && (
         <ProofBar headline={tr.proof.headline} items={tr.proof.items} cta={tr.proof.cta} />
-      )}
-
-      {tr.logoWall && config.logoWall && (
-        <LogoWall headline={tr.logoWall.headline} logos={config.logoWall.logos} />
-      )}
-
-      {tr.metrics && config.metrics && (
-        <Metrics
-          items={tr.metrics.items.map((item, i) => ({
-            ...item,
-            value: config.metrics!.items[i].value,
-          }))}
-        />
       )}
 
       {tr.fitNotFit && (

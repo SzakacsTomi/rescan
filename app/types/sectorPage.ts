@@ -14,12 +14,6 @@ export type SectorPageConfig = {
   strategicValue?: {
     tone?: 'tinted' | 'plain';
   };
-  logoWall?: {
-    logos: readonly { name: string; src: string }[];
-  };
-  metrics?: {
-    items: readonly { value: string }[];
-  };
   finalCta: {
     ctaHref: string;
   };
@@ -79,12 +73,6 @@ export type SectorPageTranslations = {
     headline: string;
     items: Array<{ slot: string; figure: string; statement?: string }>;
     cta?: { label: string; href: string };
-  };
-  logoWall?: {
-    headline: string;
-  };
-  metrics?: {
-    items: Array<{ label: string }>;
   };
   fitNotFit?: {
     headline: string;

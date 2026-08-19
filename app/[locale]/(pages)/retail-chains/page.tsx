@@ -57,14 +57,6 @@ export default async function RetailChainsPage() {
       quote: t("namedCase.quote"),
       quoteAuthor: t("namedCase.quoteAuthor"),
     },
-    logoWall: {
-      headline: t("logoWall.headline"),
-    },
-    metrics: {
-      items: (retailSectorConfig.metrics?.items ?? []).map((_, i) => ({
-        label: t(`metrics.item${i}.label`),
-      })),
-    },
     fitNotFit: {
       headline: t("fitNotFit.headline"),
       bestFit: {
