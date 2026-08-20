@@ -68,13 +68,13 @@
       "headline": "Bevisat i verkliga fastigheter.",
       "item0": {
         "slot": "01 / Portföljomfattning",
-        "figure": "56 kommersiella fastigheter",
-        "statement": "Dokumenterade som ett portföljprogram över hela Sverige."
+        "figure": "56",
+        "statement": "kommersiella fastigheter dokumenterade som ett portföljprogram över hela Sverige."
       },
       "item1": {
         "slot": "02 / Portföljomfattning",
-        "figure": "40+ kommersiella fastigheter",
-        "statement": "Dokumenterade som ett andra program över flera fastigheter."
+        "figure": "40+",
+        "statement": "kommersiella fastigheter dokumenterade som ett andra portföljprogram."
       },
       "item2": {
         "slot": "03 / Anläggningens omfattning",
@@ -395,7 +395,7 @@
         "label": "m² digitalt dokumenterade"
       },
       "item2": {
-        "label": "bestånd med 40+ fastigheter vardera"
+        "label": "bestånd med 40+ fastigheter"
       },
       "item3": {
         "label": "fastighetssektorer"
@@ -705,7 +705,7 @@
           "description": "Minska onödiga resor som bara görs för att verifiera befintliga förhållanden."
         },
         "valueB": {
-          "title": "Snabbare svar under projekteringen",
+          "title": "Snabbare svar",
           "description": "Ge teamen byggnadsinformation de kan gå tillbaka till när frågor dyker upp."
         },
         "valueC": {
@@ -713,7 +713,7 @@
           "description": "Minska upprepade resor, planering och inmätning i flera projekt."
         },
         "valueD": {
-          "title": "Mer enhetlig information",
+          "title": "Enhetlig information",
           "description": "Ge olika projektteam en pålitlig utgångspunkt i hela beståndet."
         }
       },
@@ -797,7 +797,7 @@
         "step2": "Samordningsproblem",
         "step3": "Kollisioner eller omprojektering",
         "step4": "Ytterligare utredning",
-        "step5": "Förlorad tid och högre projektkostnad",
+        "step5": "Förlorad tid och högre kostnad",
         "footnote": "Ju tidigare de befintliga förhållandena är kända, desto enklare är de att projektera kring."
       },
       "strategicValue": {
@@ -805,7 +805,7 @@
         "body": "RESCAN skapar en användbar dokumentation av det befintliga lagret så att projektteam förstår vad som finns där innan de beslutar om förändringar.",
         "valueA": {
           "title": "Färre antaganden",
-          "description": "Ge projektörerna ett starkare underlag för sina beslut."
+          "description": "Ge projektörerna ett starkare underlag för de beslut som följer."
         },
         "valueB": {
           "title": "Tidigare kännedom om begränsningar",

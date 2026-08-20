@@ -68,13 +68,13 @@
       "headline": "Proven on real properties.",
       "item0": {
         "slot": "01 / Portfolio scale",
-        "figure": "56 commercial properties",
-        "statement": "Documented as one portfolio programme across Sweden."
+        "figure": "56",
+        "statement": "commercial properties documented as one portfolio programme across Sweden."
       },
       "item1": {
         "slot": "02 / Portfolio scale",
-        "figure": "40+ commercial properties",
-        "statement": "Documented as a second multi-property programme."
+        "figure": "40+",
+        "statement": "commercial properties documented as a second portfolio programme."
       },
       "item2": {
         "slot": "03 / Facility scale",
@@ -390,7 +390,7 @@
         "label": "m² digitally captured"
       },
       "item2": {
-        "label": "portfolios, 40+ properties each"
+        "label": "40+ property portfolios"
       },
       "item3": {
         "label": "property sectors served"
@@ -700,7 +700,7 @@
           "description": "Reduce unnecessary trips made simply to verify existing conditions."
         },
         "valueB": {
-          "title": "Faster answers during design",
+          "title": "Faster design answers",
           "description": "Give teams building information they can refer back to when questions appear."
         },
         "valueC": {
@@ -708,8 +708,8 @@
           "description": "Reduce repeated travel, scheduling and measurement across multiple projects."
         },
         "valueD": {
-          "title": "More consistent information",
-          "description": "Give different project teams a dependable starting point across the portfolio."
+          "title": "Consistent information",
+          "description": "Give project teams a dependable starting point across the portfolio."
         }
       },
       "differentiator": {
@@ -792,7 +792,7 @@
         "step2": "Coordination problems",
         "step3": "Clashes or redesign",
         "step4": "Additional investigation",
-        "step5": "Lost time and higher project cost",
+        "step5": "Lost time and higher cost",
         "footnote": "The earlier the existing conditions are understood, the easier they are to design around."
       },
       "strategicValue": {
@@ -800,7 +800,7 @@
         "body": "RESCAN creates a usable record of the existing warehouse so project teams can understand what is there before committing to change.",
         "valueA": {
           "title": "Fewer assumptions",
-          "description": "Give designers a stronger basis for decisions."
+          "description": "Give designers a stronger basis for the decisions that follow."
         },
         "valueB": {
           "title": "Earlier identification of constraints",
