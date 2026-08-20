@@ -22,7 +22,7 @@ export const HeroSection = async () => {
 
   return (
     <section
-      className="relative w-full flex flex-col justify-end overflow-hidden lg:min-h-[calc(100svh-4rem)]"
+      className="relative w-full flex flex-col justify-end overflow-hidden lg:min-h-[calc(100svh)]"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div

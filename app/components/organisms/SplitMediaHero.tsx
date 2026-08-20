@@ -27,8 +27,9 @@ type SplitMediaHeroProps = {
  * The copy is top-anchored to the same start as the other heroes: the 126px left spine
  * (the logo's right edge) and, on desktop, the 180px top line — the `(pages)` layout
  * wrapper clears the fixed navbar's 64px, so the extra padding here reaches that line.
- * The section caps its own height so the text reads as composition against the media's
- * mass rather than a headline floating in an empty field.
+ * The section runs to the fold like every other hero, and the absolute media fills it,
+ * so the text reads as composition against the media's mass rather than floating in an
+ * empty field.
  */
 export const SplitMediaHero = ({
   eyebrow,
@@ -37,8 +38,8 @@ export const SplitMediaHero = ({
   meta,
   media,
 }: SplitMediaHeroProps) => (
-  <section className="relative isolate bg-background lg:h-[clamp(34rem,calc(100svh-4rem),46rem)]">
-    <div className="max-w-480 mx-auto lg:h-full">
+  <section className="relative isolate bg-background lg:min-h-[calc(100svh-4rem)]">
+    <div className="max-w-shell mx-auto lg:h-full">
       {/* The text column tracks the same 53% seam as the media, so the copy gets the whole left
           half up to it rather than a fixed narrow measure. `pl` keeps the site's 126px spine. */}
       <div className="px-6 lg:h-full lg:w-[53%] lg:pr-6 lg:pl-[126px]">
