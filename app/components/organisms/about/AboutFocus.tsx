@@ -1,36 +1,32 @@
-import { MonoLabel } from "@/app/components/atoms/MonoLabel";
-import { Reveal } from "@/app/components/atoms/Reveal";
-
-export type AboutFocusItem = {
-  label: string;
-  value: string;
-  coordinates?: string;
-};
+import { Reveal } from '@/app/components/atoms/Reveal';
 
 type AboutFocusProps = {
-  items: AboutFocusItem[];
+  headline: string;
+  /** The thesis: documenting existing conditions before the next decision. */
+  body: string;
+  /** The deliberately narrow focus — the two sectors. */
+  narrow: string;
 };
 
-export const AboutFocus = ({ items }: AboutFocusProps) => {
+export const AboutFocus = ({ headline, body, narrow }: AboutFocusProps) => {
   return (
-    <section className="bg-ink px-6 py-24 sm:px-8 lg:px-10 lg:py-28">
-      <div className="mx-auto grid max-w-page grid-cols-1 gap-px bg-white/12 md:grid-cols-3">
-        {items.map((item) => (
-          <Reveal
-            key={item.label}
-            className="flex flex-col justify-between gap-6 bg-ink px-6 py-5 lg:px-10 lg:py-2 lg:first:pl-0 lg:last:pr-0"
-          >
-            <MonoLabel className="text-white/40">{item.label}</MonoLabel>
-            <p className="text-subhead font-semibold leading-snug tracking-snug text-white">
-              {item.value}
-            </p>
-            {item.coordinates && (
-              <MonoLabel className="text-micro tracking-widest text-white/45 normal-case">
-                {item.coordinates}
-              </MonoLabel>
-            )}
-          </Reveal>
-        ))}
+    <section className="bg-background px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
+      <div className="mx-auto max-w-page">
+        <Reveal>
+          <h2 className="max-w-24ch text-h2 font-bold leading-heading tracking-tight sm:text-h1">
+            {headline}
+          </h2>
+        </Reveal>
+        <Reveal>
+          <p className="mt-8 max-w-[62ch] text-lead font-medium leading-prose text-foreground/85">
+            {body}
+          </p>
+        </Reveal>
+        <Reveal>
+          <p className="mt-5 max-w-[62ch] text-lead leading-prose text-foreground/68">
+            {narrow}
+          </p>
+        </Reveal>
       </div>
     </section>
   );

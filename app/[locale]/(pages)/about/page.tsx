@@ -4,7 +4,6 @@ import { AboutTemplate } from '@/app/components/templates/AboutTemplate';
 
 const FACT_COUNT = 3;
 const MEMBER_COUNT = 3;
-const STEP_COUNT = 3;
 
 export default async function AboutPage() {
   const t = await getTranslations('aboutPage');
@@ -24,20 +23,18 @@ export default async function AboutPage() {
         }),
         image: t('hero.image'),
       }}
-      company={{
-        headline: t('company.headline'),
-        lead: t('company.lead'),
-        steps: Array.from({ length: STEP_COUNT }, (_, i) => t(`company.steps.step${i}`)),
-        positioning: t('company.positioning'),
-      }}
       focus={{
+        headline: t('focus.headline'),
+        body: t('focus.body'),
+        narrow: t('focus.narrow'),
+      }}
+      presence={{
         items: [
-          { label: t('focus.item0.label'), value: t('focus.item0.value') },
-          { label: t('focus.item1.label'), value: t('focus.item1.value') },
+          { label: t('presence.item0.label'), value: t('presence.item0.value') },
           {
-            label: t('focus.item2.label'),
-            value: t('focus.item2.value'),
-            coordinates: t('focus.item2.coordinates'),
+            label: t('presence.item1.label'),
+            value: t('presence.item1.value'),
+            coordinates: t('presence.item1.coordinates'),
           },
         ],
       }}

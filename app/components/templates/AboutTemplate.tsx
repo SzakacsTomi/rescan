@@ -1,7 +1,7 @@
-import { AboutCompany } from '@/app/components/organisms/about/AboutCompany';
-import { AboutFocus, type AboutFocusItem } from '@/app/components/organisms/about/AboutFocus';
+import { AboutFocus } from '@/app/components/organisms/about/AboutFocus';
 import { AboutHero, type AboutHeroFact } from '@/app/components/organisms/about/AboutHero';
 import { AboutPeople } from '@/app/components/organisms/about/AboutPeople';
+import { AboutPresence, type AboutPresenceItem } from '@/app/components/organisms/about/AboutPresence';
 import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
 
 type AboutTemplateProps = {
@@ -12,14 +12,13 @@ type AboutTemplateProps = {
     facts: AboutHeroFact[];
     image: string;
   };
-  company: {
-    headline: string;
-    lead: string;
-    steps: string[];
-    positioning: string;
-  };
   focus: {
-    items: AboutFocusItem[];
+    headline: string;
+    body: string;
+    narrow: string;
+  };
+  presence: {
+    items: AboutPresenceItem[];
   };
   people: {
     headline: string;
@@ -33,7 +32,7 @@ type AboutTemplateProps = {
   };
 };
 
-export const AboutTemplate = ({ hero, company, focus, people, cta }: AboutTemplateProps) => {
+export const AboutTemplate = ({ hero, focus, presence, people, cta }: AboutTemplateProps) => {
   return (
     <>
       <AboutHero
@@ -43,13 +42,8 @@ export const AboutTemplate = ({ hero, company, focus, people, cta }: AboutTempla
         facts={hero.facts}
         image={hero.image}
       />
-      <AboutCompany
-        headline={company.headline}
-        lead={company.lead}
-        steps={company.steps}
-        positioning={company.positioning}
-      />
-      <AboutFocus items={focus.items} />
+      <AboutFocus headline={focus.headline} body={focus.body} narrow={focus.narrow} />
+      <AboutPresence items={presence.items} />
       <AboutPeople
         headline={people.headline}
         organization={people.organization}

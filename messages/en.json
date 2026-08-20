@@ -140,7 +140,7 @@
     "hero": {
       "eyebrow": "About RESCAN",
       "headline": "The company that goes to the building.",
-      "subheadline": "RESCAN is an independent Swedish company based in Växjö. We work in properties that are already standing and already in use, and we hand what we find to the people who plan what happens there next.",
+      "subheadline": "RESCAN is an independent Swedish company based in Växjö. We work with teams managing retail property portfolios and logistics warehouses, creating reliable records of buildings that are already standing and already in use.",
       "facts": {
         "registeredOffice": {
           "label": "Registered office",
@@ -157,26 +157,17 @@
       },
       "image": "[[TODO: full-width image — the RESCAN team on site, or the Växjö office]]"
     },
-    "company": {
-      "headline": "One kind of work, done in two sectors.",
-      "lead": "RESCAN establishes the existing condition of buildings. That is the whole of the company's work.",
-      "steps": {
-        "step0": "Going to a property",
-        "step1": "Recording what is actually there",
-        "step2": "Preparing the record so another team can use it without going back"
-      },
-      "positioning": "The company is deliberately narrow. Two sectors, one type of work, and the same way of working whether the job is a single facility or a programme of locations. We would rather be the specialist a property team calls twice than a supplier of everything once."
-    },
     "focus": {
+      "headline": "Focused on existing buildings.",
+      "body": "RESCAN documents existing conditions so property and project teams can understand what is actually there before making the next decision.",
+      "narrow": "Our focus is deliberately narrow: retail property portfolios and large or complex logistics facilities."
+    },
+    "presence": {
       "item0": {
-        "label": "Who we work with",
-        "value": "Retail chains and logistics warehouse teams"
-      },
-      "item1": {
         "label": "Where we work",
         "value": "Sweden, with delivered projects in Austria and the USA"
       },
-      "item2": {
+      "item1": {
         "label": "Base",
         "value": "Växjö",
         "coordinates": "56.8777° N · 14.7894° E"
@@ -190,7 +181,7 @@
     "cta": {
       "headline": "Talk to the people who did the work.",
       "subheadline": "Reach RESCAN directly to discuss a portfolio, a facility, or a project still taking shape.",
-      "cta": "Contact RESCAN"
+      "cta": "Discuss your project"
     }
   },
   "whyRescanPage": {
