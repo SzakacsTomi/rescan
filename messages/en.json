@@ -7,7 +7,7 @@
     "hero": {
       "eyebrow": "01 — Existing conditions",
       "headline": "Know what's there\nbefore missing information\ncosts time and money.",
-      "subheadline": "RESCAN creates reliable building data for retail chains and logistics warehouses—giving project teams the information they need before unanswered site questions become repeat visits, redesign or delay.",
+      "subheadline": "RESCAN creates reliable building data for retail property portfolios\nand logistics warehouses—giving project teams the information they need\nbefore unanswered site questions become repeat visits, redesign or delay.",
       "primaryCta": "Discuss a project",
       "responseNote": "Response within one business day",
       "scrollHint": "Scroll to explore",
@@ -19,7 +19,7 @@
       "readout": {
         "item0": {
           "label": "Sectors",
-          "value": "Retail chains · Logistics warehouses"
+          "value": "Retail property portfolios · Logistics warehouses"
         },
         "item1": {
           "label": "Deliverables",
@@ -43,14 +43,14 @@
     "sectors": {
       "retailChains": {
         "index": "01 / Retail",
-        "title": "Retail Chains",
+        "title": "Retail Property Portfolios",
         "lead": "Fewer site visits. Less wasted time across the portfolio.",
-        "description": "When a designer, contractor or property team has to return to a store just to confirm existing conditions, the cost is bigger than the visit.\nTravel, scheduling and lost design time multiply across dozens or hundreds of locations.\nRESCAN helps capture more of what teams will need from the start.",
+        "description": "When property, design or contractor teams have to return to a location just to confirm existing conditions, the cost is bigger than the visit.\nTravel, scheduling and lost design time multiply across dozens or hundreds of properties.\nRESCAN helps capture more of what teams will need from the start.",
         "step0": "Missing information",
         "step1": "another visit",
-        "step2": "lost time",
+        "step2": "duplicated effort",
         "step3": "added portfolio cost",
-        "cta": "Explore Retail Chains"
+        "cta": "Explore Retail Portfolios"
       },
       "logisticsWarehouses": {
         "index": "02 / Logistics",
@@ -64,72 +64,35 @@
         "cta": "Explore Logistics Warehouses"
       }
     },
-    "costLadder": {
-      "eyebrow": "02 — What it costs",
-      "headline": "One missing answer rarely stays one missing answer.",
-      "item0": {
-        "label": "A question nobody can answer from the drawings",
-        "tag": "day one"
-      },
-      "item1": {
-        "label": "An assumption enters the design",
-        "tag": "week two"
-      },
-      "item2": {
-        "label": "Another visit, or a redesign",
-        "tag": "month two"
-      },
-      "item3": {
-        "label": "Lost time, across every location",
-        "tag": "the invoice"
-      }
-    },
     "proof": {
       "headline": "Proven on real properties.",
       "item0": {
-        "slot": "Retail programme",
-        "figure": "[[TODO: retail locations captured, e.g. 120+]]",
-        "statement": "[[TODO: one short proof statement about the retail programme]]"
+        "slot": "01 / Portfolio scale",
+        "figure": "56 commercial properties",
+        "statement": "Documented as one portfolio programme across Sweden."
       },
       "item1": {
-        "slot": "Largest facility",
-        "figure": "[[TODO: largest logistics facility in m²]]",
-        "statement": "[[TODO: one short statement showing scale or complexity]]"
+        "slot": "02 / Portfolio scale",
+        "figure": "40+ commercial properties",
+        "statement": "Documented as a second multi-property programme."
       },
       "item2": {
-        "slot": "Repeat work",
-        "figure": "[[TODO: repeat programme or repeat client metric]]",
-        "statement": "[[TODO: one short supporting statement]]"
+        "slot": "03 / Facility scale",
+        "figure": "[[TODO: XX,XXX m² logistics facility]]",
+        "statement": "[[TODO: strongest verified logistics scale or complexity proof]]"
       },
       "item3": {
-        "slot": "Delivery & QA",
-        "figure": "[[TODO: delivery, QA or geographic proof]]",
-        "statement": "[[TODO: one short supporting statement]]"
+        "slot": "04 / Delivery proof",
+        "figure": "[[TODO: verified QA / repeat client / delivery proof]]",
+        "statement": "[[TODO: one strong factual statement]]"
       },
       "cta": "View Projects"
-    },
-    "informationValue": {
-      "eyebrow": "03 — After the visit",
-      "headline": "Building information should keep answering questions after the site visit.",
-      "point0": {
-        "title": "Capture for repeated use",
-        "description": "Give project teams information they can return to when new questions appear."
-      },
-      "point1": {
-        "title": "Stay consistent across multiple sites",
-        "description": "A repeatable approach matters when one location becomes ten, fifty or one hundred."
-      },
-      "point2": {
-        "title": "Support the work that follows",
-        "description": "Create building information that architects, engineers, contractors and property teams can actually use when making decisions."
-      },
-      "cta": "Why RESCAN"
     },
     "qualification": {
       "headline": "Built for projects where getting the existing conditions wrong has consequences.",
       "bestFit": {
         "title": "Focused on",
-        "item0": "Retail chains managing multiple locations",
+        "item0": "Retail property teams managing multiple locations",
         "item1": "Large or complex logistics warehouse projects",
         "item2": "Projects where incomplete information can create additional visits, redesign or delay"
       },
@@ -146,7 +109,7 @@
   },
   "footer": {
     "copyright": "© 2026 Rescan. All rights reserved.",
-    "tagline": "Reliable building information for retail chains and logistics warehouses.",
+    "tagline": "Reliable building information for retail property portfolios and logistics warehouses.",
     "social": {
       "instagram": "Instagram",
       "linkedin": "LinkedIn",
@@ -158,7 +121,7 @@
     }
   },
   "nav": {
-    "retail": "Retail Chains",
+    "retail": "Retail Property Portfolios",
     "logistics": "Logistics Warehouses",
     "projects": "Projects",
     "whyRescan": "Why RESCAN",

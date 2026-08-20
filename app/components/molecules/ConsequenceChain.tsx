@@ -15,9 +15,9 @@ type ConsequenceChainProps = {
 };
 
 /** Escalation weight per step — the track reads left-to-right as the consequence gets
- *  more expensive, so each column is brighter, larger and heavier than the last. Same
- *  shape as `organisms/home/CostLadder`'s rung ramp. The columns share one height: the
- *  steps are bottom-aligned, so the growing type alone draws the staircase. */
+ *  more expensive, so each column is brighter, larger and heavier than the last. The
+ *  columns share one height: the steps are bottom-aligned, so the growing type alone
+ *  draws the staircase. */
 const STEP_STYLE = [
   { surface: "bg-background/45", index: "text-foreground/35", label: "text-note font-medium text-foreground/55", rule: "border-foreground/15" },
   { surface: "bg-background/55", index: "text-foreground/35", label: "text-base font-medium text-foreground/65", rule: "border-foreground/20" },
