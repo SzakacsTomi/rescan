@@ -60,7 +60,7 @@ export const ProofLedger = ({ headline, cta, rows }: ProofLedgerProps) => {
                   pendingClassName="px-2.5 py-2 text-base leading-caption border-amber-500/80 bg-amber-500/12 text-amber-300"
                 />
               </dd>
-              <dd className="m-0">
+              <dd className="m-0 text-note text-white/60">
                 <Pending className="px-2 py-1.5 text-caption border-amber-500/55 bg-amber-500/8 text-amber-300">
                   {row.statement}
                 </Pending>

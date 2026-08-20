@@ -188,7 +188,7 @@
     "hero": {
       "eyebrow": "Why RESCAN",
       "headline": "Building information your project team can rely on.",
-      "subheadline": "RESCAN supports retail chains and logistics warehouse teams where existing-condition information needs to remain useful long after the site visit is complete.",
+      "subheadline": "RESCAN supports teams managing retail property portfolios and logistics warehouses, where existing-condition information needs to remain useful long after the site visit is complete.",
       "anchors": ["Repeatability", "Coverage", "Downstream use", "Quality control"],
       "questionLabel": "The question this page answers",
       "question": "Can RESCAN produce building information that remains dependable and useful after the site visit?",
@@ -207,73 +207,58 @@
         "Facility teams"
       ]
     },
-    "pillars": {
-      "headline": "Four reasons, each carrying its own evidence.",
-      "monoLabel": "No proof, no claim",
-      "pillar0": {
-        "title": "Repeatability",
-        "lead": "Consistency matters when the work repeats.",
-        "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys.\nA repeatable approach gives different project teams a consistent information base across locations.",
-        "proof": "[[TODO: verified multi-site or repeat-programme evidence — locations under one programme, repeat clients, standardised outputs]]"
-      },
-      "pillar1": {
-        "title": "Coverage",
-        "lead": "Reduce the gaps that send teams back.",
-        "body": "The more relevant existing conditions are captured properly, the fewer basic questions require another site visit.\nFor retail chains, that can mean fewer return visits. For logistics facilities, it can mean fewer gaps entering design and coordination.",
-        "proof": "[[TODO: verified capture methodology, coverage example or project evidence — avoid absolutes like \"complete capture\"]]"
-      },
-      "pillar2": {
-        "title": "Downstream Usefulness",
-        "lead": "Information should work for the people making the next decision.",
-        "body": "The stronger the information is at the start, the less time the teams that use it later need to spend rebuilding their understanding of the building.",
-        "proof": "[[TODO: factual explanation of deliverables and how downstream teams actually use them]]"
-      },
-      "pillar3": {
-        "title": "Quality Control",
-        "lead": "Project decisions depend on dependable information.",
-        "body": "When building data becomes the basis for design, coordination or refurbishment decisions, quality control matters.",
-        "proof": "[[TODO: how RESCAN checks its work — review steps, tolerances, delivery standard. This replaces \"high quality\"]]"
-      }
+    "repeatability": {
+      "headline": "Consistency matters when the work repeats.",
+      "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys.\nA repeatable approach gives different project teams a more consistent information base across multiple properties.",
+      "proof0": "56-property portfolio",
+      "proof1": "40+ property portfolio"
+    },
+    "coverage": {
+      "headline": "Reduce the gaps that send teams back.",
+      "body": "The more relevant existing conditions that are captured properly, the fewer basic questions require another physical investigation.",
+      "proof0": "[[TODO: Insert one factual coverage / capture-method / project example.]]"
+    },
+    "downstreamUsefulness": {
+      "headline": "Information should work for the people making the next decision.",
+      "body": "Building information needs to support the architects, engineers, contractors and property teams who use it later.\nThe stronger the information is at the start, the less time those teams need to spend rebuilding their understanding of the building.",
+      "proof0": "[[TODO: Insert factual example of how RESCAN outputs are used downstream.]]"
+    },
+    "qualityControl": {
+      "headline": "Project decisions depend on dependable information.",
+      "body": "When building data becomes the basis for design, coordination or refurbishment decisions, quality control matters.",
+      "proof0": "[[TODO: QA checking process]]",
+      "proof1": "[[TODO: accuracy / tolerance standard]]",
+      "proof2": "[[TODO: internal review process]]",
+      "proof3": "[[TODO: delivery verification method]]"
     },
     "proof": {
       "headline": "Proof over claims.",
       "item0": {
-        "slot": "Retail locations",
-        "figure": "[[TODO: 120+ retail locations delivered]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Retail portfolio programme",
+        "figure": "56",
+        "statement": "properties — one portfolio programme"
       },
       "item1": {
-        "slot": "Logistics area",
-        "figure": "[[TODO: 38,000 m² logistics facilities]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Commercial portfolio programme",
+        "figure": "40+",
+        "statement": "properties — second portfolio programme"
       },
       "item2": {
-        "slot": "Repeat programmes",
-        "figure": "[[TODO: repeat programme or repeat business evidence]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Logistics facility",
+        "figure": "[[TODO: XX,XXX]]",
+        "statement": "m² — logistics facility"
       },
       "item3": {
-        "slot": "QA & delivery",
-        "figure": "[[TODO: verified QA or delivery metric]]",
+        "slot": "Repeat business & QA",
+        "figure": "[[TODO: Verified repeat-business / QA metric]]",
         "statement": "[[TODO: one short supporting fact]]"
       },
       "item4": {
-        "slot": "Named client",
-        "figure": "[[TODO: recognisable client, programme or testimonial]]",
+        "slot": "Client / programme",
+        "figure": "[[TODO: Relevant client / programme / testimonial]]",
         "statement": "[[TODO: one short supporting fact]]"
       },
       "cta": "View Projects"
-    },
-    "focused": {
-      "headline": "Focused by design.",
-      "note": "RESCAN is built for higher-stakes commercial decisions.",
-      "items": [
-        "Multi-site retail programmes",
-        "Large or complex logistics facilities",
-        "Projects where poor existing-condition information creates meaningful downstream cost"
-      ],
-      "notFitLabel": "Not built for",
-      "notFitText": "Not private residential work. Not low-budget one-off surveys."
     },
     "finalCta": {
       "eyebrow": "One question before the work starts",

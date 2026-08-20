@@ -9,14 +9,12 @@ type WhyRescanHeroProps = {
   eyebrow: string;
   headline: string;
   subheadline: string;
-  /** The four pillar names the index strip links down to. */
-  anchors: string[];
+  /** The pillar names the index strip links down to, each carrying its TrustSection's `#id`. */
+  anchors: Array<{ label: string; href: string }>;
   questionLabel: string;
   question: string;
   cta: { label: string; href: string };
 };
-
-const PILLARS_ID = "#pillars";
 
 const QUESTION_PANEL_GRID =
   "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)";
@@ -55,9 +53,9 @@ export const WhyRescanHero = ({
 
             <Reveal>
               <ol className="grid grid-cols-2 border-t border-border lg:grid-cols-4">
-                {anchors.map((anchor, i) => (
+                {anchors.map(({ label, href }, i) => (
                   <li
-                    key={anchor}
+                    key={href}
                     className={cn(
                       "group relative flex flex-col justify-between gap-3 py-6 pl-4 pr-4 lg:py-7 lg:pr-6",
                       i % 2 === 0 && "border-r border-border",
@@ -72,10 +70,10 @@ export const WhyRescanHero = ({
                       {String(i + 1).padStart(2, "0")}
                     </MonoLabel>
                     <a
-                      href={PILLARS_ID}
+                      href={href}
                       className="relative z-10 text-sm font-semibold text-foreground transition-colors group-hover:text-primary"
                     >
-                      {anchor}
+                      {label}
                     </a>
                     <span
                       aria-hidden

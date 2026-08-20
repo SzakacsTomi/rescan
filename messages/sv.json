@@ -188,7 +188,7 @@
     "hero": {
       "eyebrow": "Varför RESCAN",
       "headline": "Byggnadsinformation ditt projektteam kan lita på.",
-      "subheadline": "RESCAN stödjer butikskedjor och logistiklagerteam där information om befintliga förhållanden behöver vara användbar långt efter att platsbesöket är avslutat.",
+      "subheadline": "RESCAN stödjer team som förvaltar butiksfastighetsportföljer och logistiklager, där information om befintliga förhållanden behöver förbli användbar långt efter att platsbesöket är avslutat.",
       "anchors": [
         "Upprepbarhet",
         "Täckning",
@@ -212,73 +212,58 @@
         "Driftteam"
       ]
     },
-    "pillars": {
-      "headline": "Fyra skäl, var och en med egna bevis.",
-      "monoLabel": "Inga bevis, inga påståenden",
-      "pillar0": {
-        "title": "Upprepbarhet",
-        "lead": "Enhetlighet spelar roll när arbetet upprepas.",
-        "body": "Butiksbestånd och återkommande program behöver mer än en samling osammanhängande inmätningar.\nEtt upprepbart arbetssätt ger olika projektteam en enhetlig informationsbas över flera platser.",
-        "proof": "[[TODO: verified multi-site or repeat-programme evidence — locations under one programme, repeat clients, standardised outputs]]"
-      },
-      "pillar1": {
-        "title": "Täckning",
-        "lead": "Minska luckorna som skickar tillbaka teamen.",
-        "body": "Ju fler relevanta befintliga förhållanden som fångas ordentligt, desto färre grundläggande frågor kräver ett nytt platsbesök.\nFör butikskedjor kan det betyda färre återbesök. För logistikanläggningar kan det betyda färre luckor in i projektering och samordning.",
-        "proof": "[[TODO: verified capture methodology, coverage example or project evidence — avoid absolutes like \"complete capture\"]]"
-      },
-      "pillar2": {
-        "title": "Användbarhet i nästa led",
-        "lead": "Informationen ska fungera för dem som fattar nästa beslut.",
-        "body": "Ju starkare informationen är från början, desto mindre tid behöver de team som använder den senare lägga på att bygga upp sin förståelse av byggnaden på nytt.",
-        "proof": "[[TODO: factual explanation of deliverables and how downstream teams actually use them]]"
-      },
-      "pillar3": {
-        "title": "Kvalitetskontroll",
-        "lead": "Projektbeslut bygger på pålitlig information.",
-        "body": "När byggnadsdata blir underlag för projektering, samordning eller ombyggnadsbeslut spelar kvalitetskontroll roll.",
-        "proof": "[[TODO: how RESCAN checks its work — review steps, tolerances, delivery standard. This replaces \"high quality\"]]"
-      }
+    "repeatability": {
+      "headline": "Enhetlighet spelar roll när arbetet upprepas.",
+      "body": "Butiksportföljer och återkommande program behöver mer än en samling osammanhängande inmätningar.\nEtt upprepbart arbetssätt ger olika projektteam en mer enhetlig informationsbas över flera fastigheter.",
+      "proof0": "56-fastigheters portfölj",
+      "proof1": "40+ fastigheters portfölj"
+    },
+    "coverage": {
+      "headline": "Minska luckorna som skickar tillbaka teamen.",
+      "body": "Ju fler relevanta befintliga förhållanden som fångas ordentligt, desto färre grundläggande frågor kräver ytterligare ett fysiskt platsbesök.",
+      "proof0": "[[TODO: Insert one factual coverage / capture-method / project example.]]"
+    },
+    "downstreamUsefulness": {
+      "headline": "Informationen ska fungera för dem som fattar nästa beslut.",
+      "body": "Byggnadsinformationen behöver stödja arkitekter, ingenjörer, entreprenörer och fastighetsteam som använder den senare.\nJu starkare informationen är från början, desto mindre tid behöver de teamen lägga på att bygga upp sin förståelse av byggnaden på nytt.",
+      "proof0": "[[TODO: Insert factual example of how RESCAN outputs are used downstream.]]"
+    },
+    "qualityControl": {
+      "headline": "Projektbeslut bygger på pålitlig information.",
+      "body": "När byggnadsdata blir underlag för projektering, samordning eller ombyggnadsbeslut spelar kvalitetskontroll roll.",
+      "proof0": "[[TODO: QA checking process]]",
+      "proof1": "[[TODO: accuracy / tolerance standard]]",
+      "proof2": "[[TODO: internal review process]]",
+      "proof3": "[[TODO: delivery verification method]]"
     },
     "proof": {
       "headline": "Bevis framför påståenden.",
       "item0": {
-        "slot": "Butiksplatser",
-        "figure": "[[TODO: 120+ retail locations delivered]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Butiksportfölj-program",
+        "figure": "56",
+        "statement": "fastigheter — ett portföljprogram"
       },
       "item1": {
-        "slot": "Logistikyta",
-        "figure": "[[TODO: 38,000 m² logistics facilities]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Kommersiellt portföljprogram",
+        "figure": "40+",
+        "statement": "fastigheter — ett andra portföljprogram"
       },
       "item2": {
-        "slot": "Återkommande program",
-        "figure": "[[TODO: repeat programme or repeat business evidence]]",
-        "statement": "[[TODO: one short supporting fact]]"
+        "slot": "Logistikanläggning",
+        "figure": "[[TODO: XX,XXX]]",
+        "statement": "m² — logistikanläggning"
       },
       "item3": {
-        "slot": "Kvalitet & leverans",
-        "figure": "[[TODO: verified QA or delivery metric]]",
+        "slot": "Återkommande affärer & kvalitet",
+        "figure": "[[TODO: Verified repeat-business / QA metric]]",
         "statement": "[[TODO: one short supporting fact]]"
       },
       "item4": {
-        "slot": "Namngiven kund",
-        "figure": "[[TODO: recognisable client, programme or testimonial]]",
+        "slot": "Kund / program",
+        "figure": "[[TODO: Relevant client / programme / testimonial]]",
         "statement": "[[TODO: one short supporting fact]]"
       },
       "cta": "Se projekt"
-    },
-    "focused": {
-      "headline": "Fokuserat med avsikt.",
-      "note": "RESCAN är byggt för kommersiella beslut med högre insatser.",
-      "items": [
-        "Butiksprogram över flera platser",
-        "Stora eller komplexa logistikanläggningar",
-        "Projekt där bristfällig information om befintliga förhållanden skapar verklig kostnad längre fram"
-      ],
-      "notFitLabel": "Inte byggt för",
-      "notFitText": "Inte privata bostäder. Inte enstaka uppdrag med låg budget."
     },
     "finalCta": {
       "eyebrow": "En fråga innan arbetet börjar",
