@@ -45,7 +45,7 @@
         "index": "01 / Butik",
         "title": "Butiksfastighetsportföljer",
         "lead": "Färre platsbesök. Mindre spilld tid över hela beståndet.",
-        "description": "När fastighets-, projektörs- eller entreprenörsteam måste återvända till en plats bara för att bekräfta befintliga förhållanden är kostnaden större än själva besöket.\nResor, planering och förlorad projekteringstid mångdubblas över dussintals eller hundratals fastigheter.\nRESCAN hjälper till att fånga mer av det teamen kommer att behöva redan från början.",
+        "description": "När fastighets-, projektörs- eller entreprenörsteam måste återvända till en plats bara för att bekräfta befintliga förhållanden är kostnaden större än själva besöket. Resor, planering och förlorad projekteringstid mångdubblas över dussintals eller hundratals fastigheter. RESCAN hjälper till att fånga mer av det teamen kommer att behöva redan från början.",
         "step0": "Bristande information",
         "step1": "ännu ett besök",
         "step2": "dubbelarbete",
@@ -56,7 +56,7 @@
         "index": "02 / Logistik",
         "title": "Logistiklager",
         "lead": "Förstå hela lagret innan du bygger om en del av det.",
-        "description": "Stora logistikanläggningar är svåra att förstå utifrån fragmenterade ritningar och enstaka inmätningar.\nNär befintliga förhållanden missas smyger sig antaganden in i projekteringen – och kan senare bli kollisioner, omprojektering, ytterligare utredning och förseningar.\nRESCAN ger projektteam en pålitlig bild av anläggningen innan de problemen förs vidare.",
+        "description": "Stora logistikanläggningar är svåra att förstå utifrån fragmenterade ritningar och enstaka inmätningar. När befintliga förhållanden missas smyger sig antaganden in i projekteringen – och kan senare bli kollisioner, omprojektering, ytterligare utredning och förseningar. RESCAN ger projektteam en pålitlig bild av anläggningen innan de problemen förs vidare.",
         "step0": "Bristande information",
         "step1": "antaganden",
         "step2": "omprojektering eller utredning",
@@ -201,7 +201,7 @@
     },
     "corePrinciple": {
       "headline": "Inmätningen är bara utgångspunkten.",
-      "body": "Om teamen som öppnar filen fortfarande måste ifrågasätta grundläggande befintliga förhållanden kvarstår en betydande osäkerhet.\nMålet är inte enbart att dokumentera byggnaden.\nDet är att skapa information som människor kan fortsätta använda när beslut ska fattas.",
+      "body": "Om teamen som öppnar filen fortfarande måste ifrågasätta grundläggande befintliga förhållanden kvarstår en betydande osäkerhet. Målet är inte enbart att dokumentera byggnaden. Det är att skapa information som människor kan fortsätta använda när beslut ska fattas.",
       "rolesLabel": "Vem öppnar filen härnäst",
       "roles": [
         "Arkitekter",
@@ -214,7 +214,7 @@
     },
     "repeatability": {
       "headline": "Enhetlighet spelar roll när arbetet upprepas.",
-      "body": "Butiksportföljer och återkommande program behöver mer än en samling osammanhängande inmätningar.\nEtt upprepbart arbetssätt ger olika projektteam en mer enhetlig informationsbas över flera fastigheter.",
+      "body": "Butiksportföljer och återkommande program behöver mer än en samling osammanhängande inmätningar. Ett upprepbart arbetssätt ger olika projektteam en mer enhetlig informationsbas över flera fastigheter.",
       "proof0": "56-fastigheters portfölj",
       "proof1": "40+ fastigheters portfölj"
     },
@@ -225,7 +225,7 @@
     },
     "downstreamUsefulness": {
       "headline": "Informationen ska fungera för dem som fattar nästa beslut.",
-      "body": "Byggnadsinformationen behöver stödja arkitekter, ingenjörer, entreprenörer och fastighetsteam som använder den senare.\nJu starkare informationen är från början, desto mindre tid behöver de teamen lägga på att bygga upp sin förståelse av byggnaden på nytt.",
+      "body": "Byggnadsinformationen behöver stödja arkitekter, ingenjörer, entreprenörer och fastighetsteam som använder den senare. Ju starkare informationen är från början, desto mindre tid behöver de teamen lägga på att bygga upp sin förståelse av byggnaden på nytt.",
       "proof0": "[[TODO: Insert factual example of how RESCAN outputs are used downstream.]]"
     },
     "qualityControl": {
@@ -275,7 +275,7 @@
     "hero": {
       "eyebrow": "Kontakt",
       "headline": "Berätta vad du behöver förstå inför nästa beslut.",
-      "subheadline": "Den användbara utgångspunkten är inte specifikationen för inmätningen.\nDet är fastigheten, projektet och vad ofullständig information kan kosta dig."
+      "subheadline": "Den användbara utgångspunkten är inte specifikationen för inmätningen. Det är fastigheten, projektet och vad ofullständig information kan kosta dig."
     },
     "details": {
       "emailLabel": "E-post",
@@ -691,7 +691,7 @@
       "coreRisk": {
         "eyebrow": "Den dyra risken",
         "headline": "Det dyra är att behöva åka tillbaka.",
-        "body": "Ett saknat mått eller en obesvarad fråga om platsen kan verka som en småsak.\nÖver dussintals eller hundratals fastigheter innebär det mer:\nresor\nplanering\nsamordning\nprojekteringstid\nEtt onödigt återbesök är en irritation.\nUpprepat över en portfölj blir det en kostnad.",
+        "body": "Ett saknat mått eller en obesvarad fråga om platsen ser ut som en småsak på en enskild fastighet. Över dussintals eller hundratals fastigheter innebär det mer resor, mer planering, mer samordning och mer projekteringstid. Ett onödigt återbesök är en irritation. Upprepat över en portfölj blir det en kostnad.",
         "proof": {
           "label": "Ett bestånd, ett besök vardera",
           "caption": "56 kommersiella fastigheter dokumenterade för Carlqvist Fastigheter i hela Sverige."
@@ -724,7 +724,7 @@
       "namedCase": {
         "label": "Portföljfall",
         "headline": "Carlqvist Fastigheter — 56 kommersiella fastigheter dokumenterade i Sverige",
-        "body": "RESCAN dokumenterade en portfölj med 56 kommersiella fastigheter för att skapa en konsekvent byggnadsinformationsbas över beståndet.\nFastighetsteamet kunde återvända till den informationen när nya renoverings-, planerings- och uppgraderingsbeslut dök upp.",
+        "body": "RESCAN dokumenterade en portfölj med 56 kommersiella fastigheter för att skapa en konsekvent byggnadsinformationsbas över beståndet. Fastighetsteamet kunde återvända till den informationen när nya renoverings-, planerings- och uppgraderingsbeslut dök upp.",
         "bulletIntro": "Idag kan deras team:",
         "bullet0": "komma åt byggnadsdokumentation över hela portföljen",
         "bullet1": "granska planer och mått på distans",
@@ -788,7 +788,7 @@
       "coreRisk": {
         "eyebrow": "Den dyra risken",
         "headline": "Ju större och mer komplex anläggningen är, desto dyrare blir ofullständig information.",
-        "body": "Utmaningen är inte bara att mäta en stor byggnad. Det handlar om att förstå hur befintlig stomme, installationer, utrustning och tidigare ombyggnader hänger samman i hela anläggningen.\nHistoriska ritningar och enstaka inmätningar visar ofta bara en del av bilden.\nNär viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
+        "body": "Utmaningen är inte bara att mäta en stor byggnad. Det handlar om att förstå hur befintlig stomme, installationer, utrustning och tidigare ombyggnader hänger samman i hela anläggningen. Historiska ritningar och enstaka inmätningar visar ofta bara en del av bilden, och när viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
       },
       "consequenceChain": {
         "headline": "Antaganden blir dyrare ju längre projektet går.",

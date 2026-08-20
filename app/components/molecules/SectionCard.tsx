@@ -103,7 +103,7 @@ export const SectionCard = ({
               opacity: isActive ? 1 : 0,
             }}
           >
-            <p className="mt-5 max-w-130 whitespace-pre-line text-sm leading-relaxed text-pretty text-white/60">
+            <p className="mt-5 max-w-130 text-sm leading-relaxed text-pretty text-white/60">
               {description}
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2.5">

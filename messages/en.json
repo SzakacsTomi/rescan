@@ -45,7 +45,7 @@
         "index": "01 / Retail",
         "title": "Retail Property Portfolios",
         "lead": "Fewer site visits. Less wasted time across the portfolio.",
-        "description": "When property, design or contractor teams have to return to a location just to confirm existing conditions, the cost is bigger than the visit.\nTravel, scheduling and lost design time multiply across dozens or hundreds of properties.\nRESCAN helps capture more of what teams will need from the start.",
+        "description": "When property, design or contractor teams have to return to a location just to confirm existing conditions, the cost is bigger than the visit. Travel, scheduling and lost design time multiply across dozens or hundreds of properties. RESCAN helps capture more of what teams will need from the start.",
         "step0": "Missing information",
         "step1": "another visit",
         "step2": "duplicated effort",
@@ -56,7 +56,7 @@
         "index": "02 / Logistics",
         "title": "Logistics Warehouses",
         "lead": "Understand the whole warehouse before you redesign part of it.",
-        "description": "Large logistics facilities are difficult to understand from fragmented drawings and isolated measurements.\nWhen existing conditions are missed, assumptions enter the design—and can later become clashes, redesign, additional investigation and delay.\nRESCAN gives project teams a dependable view of the facility before those problems move downstream.",
+        "description": "Large logistics facilities are difficult to understand from fragmented drawings and isolated measurements. When existing conditions are missed, assumptions enter the design—and can later become clashes, redesign, additional investigation and delay. RESCAN gives project teams a dependable view of the facility before those problems move downstream.",
         "step0": "Missing information",
         "step1": "assumptions",
         "step2": "redesign or investigation",
@@ -196,7 +196,7 @@
     },
     "corePrinciple": {
       "headline": "The capture is only the starting point.",
-      "body": "If the teams that open the file still have to question basic existing conditions, important uncertainty remains.\nThe goal is not simply to document the building.\nIt is to create information people can continue using when decisions have to be made.",
+      "body": "If the teams that open the file still have to question basic existing conditions, important uncertainty remains. The goal is not simply to document the building. It is to create information people can continue using when decisions have to be made.",
       "rolesLabel": "Who opens the file next",
       "roles": [
         "Architects",
@@ -209,7 +209,7 @@
     },
     "repeatability": {
       "headline": "Consistency matters when the work repeats.",
-      "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys.\nA repeatable approach gives different project teams a more consistent information base across multiple properties.",
+      "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys. A repeatable approach gives different project teams a more consistent information base across multiple properties.",
       "proof0": "56-property portfolio",
       "proof1": "40+ property portfolio"
     },
@@ -220,7 +220,7 @@
     },
     "downstreamUsefulness": {
       "headline": "Information should work for the people making the next decision.",
-      "body": "Building information needs to support the architects, engineers, contractors and property teams who use it later.\nThe stronger the information is at the start, the less time those teams need to spend rebuilding their understanding of the building.",
+      "body": "Building information needs to support the architects, engineers, contractors and property teams who use it later. The stronger the information is at the start, the less time those teams need to spend rebuilding their understanding of the building.",
       "proof0": "[[TODO: Insert factual example of how RESCAN outputs are used downstream.]]"
     },
     "qualityControl": {
@@ -270,7 +270,7 @@
     "hero": {
       "eyebrow": "Contact",
       "headline": "Tell us what you need to understand before the next decision.",
-      "subheadline": "The useful starting point is not the scanning specification.\nIt is the property, the project and what incomplete information could cost you."
+      "subheadline": "The useful starting point is not the scanning specification. It is the property, the project and what incomplete information could cost you."
     },
     "details": {
       "emailLabel": "Email",
@@ -686,7 +686,7 @@
       "coreRisk": {
         "eyebrow": "The core risk",
         "headline": "The expensive part is having to go back.",
-        "body": "A missing dimension or unanswered site question may seem minor.\nAcross dozens or hundreds of locations, it means more:\ntravel\nscheduling\ncoordination\ndesign time\nOne unnecessary return visit is a nuisance.\nRepeated across a portfolio, it becomes a cost.",
+        "body": "A missing dimension or an unanswered site question looks minor at a single location. Across dozens or hundreds of them it means more travel, more scheduling, more coordination and more design time. One unnecessary return visit is a nuisance. Repeated across a portfolio, it becomes a cost.",
         "proof": {
           "label": "One portfolio, one visit each",
           "caption": "56 commercial properties documented for Carlqvist Property across Sweden."
@@ -719,7 +719,7 @@
       "namedCase": {
         "label": "Portfolio case",
         "headline": "Carlqvist Property — 56 commercial properties documented across Sweden",
-        "body": "RESCAN documented a portfolio of 56 commercial properties to create a consistent building-information base across the estate.\nThe property team could return to that information as new renovation, planning and upgrade decisions appeared.",
+        "body": "RESCAN documented a portfolio of 56 commercial properties to create a consistent building-information base across the estate. The property team could return to that information as new renovation, planning and upgrade decisions appeared.",
         "bulletIntro": "Today their team can:",
         "bullet0": "Access building documentation across the portfolio",
         "bullet1": "Review layouts and dimensions remotely",
@@ -783,7 +783,7 @@
       "coreRisk": {
         "eyebrow": "The core risk",
         "headline": "The larger and more complex the facility, the more expensive incomplete information becomes.",
-        "body": "The challenge is not simply measuring a large building. It is understanding how existing structure, services, equipment and previous alterations fit together across the facility.\nHistoric drawings and isolated measurements may only show part of the picture.\nWhen important conditions are missing, design teams have to make assumptions."
+        "body": "The challenge is not simply measuring a large building. It is understanding how existing structure, services, equipment and previous alterations fit together across the facility. Historic drawings and isolated measurements may only show part of the picture, and when important conditions are missing, design teams have to make assumptions."
       },
       "consequenceChain": {
         "headline": "Assumptions get more expensive as the project moves forward.",

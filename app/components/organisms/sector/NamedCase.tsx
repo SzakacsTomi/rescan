@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Pending } from "@/app/components/atoms/Pending";
 import { Reveal } from "@/app/components/atoms/Reveal";
@@ -19,8 +17,6 @@ type NamedCaseProps = {
 };
 
 export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, metric, metricLabel, image, quote, quoteAuthor }: NamedCaseProps) => {
-  const bodyLines = body.split("\n");
-
   return (
     <section className="py-[120px] px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
@@ -31,27 +27,22 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
               <span className="text-display-lg sm:text-hero lg:text-hero-lg font-bold tracking-display leading-numeral">
                 {metric}
               </span>
-              <p className="max-w-40 text-sm leading-note text-foreground/50">{metricLabel}</p>
+              <p className="max-w-40 text-sm leading-note text-pretty text-foreground/50">{metricLabel}</p>
             </Reveal>
             <Reveal>
-              <h2 className="mt-10 text-title-sm sm:text-title-lg lg:text-h2 font-bold tracking-tight leading-title">
+              <h2 className="mt-10 text-title-sm sm:text-title-lg lg:text-h2 font-bold tracking-tight text-balance leading-title">
                 {headline}
               </h2>
             </Reveal>
             <Reveal>
-              <p className="mt-6 text-body leading-loose text-foreground/65 whitespace-pre-line">
-                {bodyLines.map((line, i) => (
-                  <Fragment key={i}>
-                    <Pending>{line}</Pending>
-                    {i < bodyLines.length - 1 && "\n"}
-                  </Fragment>
-                ))}
+              <p className="mt-6 text-body leading-loose text-pretty text-foreground/65">
+                <Pending>{body}</Pending>
               </p>
             </Reveal>
             {bulletIntro && bulletPoints && bulletPoints.length > 0 && (
               <div className="mt-7">
                 <Reveal>
-                  <p className="mb-3 text-body text-foreground/65 leading-relaxed">{bulletIntro}</p>
+                  <p className="mb-3 text-body text-pretty text-foreground/65 leading-relaxed">{bulletIntro}</p>
                 </Reveal>
                 <div className="flex flex-col">
                   {bulletPoints.map((point, i) => (
@@ -75,7 +66,9 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
             </div>
             {quote && (
               <blockquote className="border-l-2 border-primary pl-6">
-                <p className="text-body-lg leading-prose text-foreground/80">&ldquo;{quote}&rdquo;</p>
+                <p className="text-body-lg leading-prose text-pretty text-foreground/80">
+                  &ldquo;{quote}&rdquo;
+                </p>
                 {quoteAuthor && (
                   <footer className="mt-3.5">
                     <MonoLabel>{quoteAuthor}</MonoLabel>

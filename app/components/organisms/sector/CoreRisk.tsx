@@ -31,7 +31,7 @@ export const CoreRisk = ({ eyebrow, headline, body, aside }: CoreRiskProps) => {
             <Reveal>
               <p
                 className={cn(
-                  "mt-8 text-lead leading-loose text-pretty text-foreground/65 whitespace-pre-line",
+                  "mt-8 text-lead leading-loose text-pretty text-foreground/65",
                   aside && "max-w-165",
                 )}
               >

@@ -22,7 +22,7 @@ export const CorePrinciple = ({ headline, body, rolesLabel, roles }: CorePrincip
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mt-8 max-w-[60ch] text-lead leading-loose whitespace-pre-line text-pretty text-foreground/68">
+            <p className="mt-8 max-w-[60ch] text-lead leading-loose text-pretty text-foreground/68">
               {body}
             </p>
           </Reveal>

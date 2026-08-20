@@ -61,10 +61,8 @@ export const SplitMediaHero = ({
               >
                 {headline}
               </h1>
-              {/* `pre-line` keeps the copy's own sentence break; the measure is wide enough to
-                  hold the first sentence on one line, so the break lands where the copy puts it. */}
               {subheadline && (
-                <p className="mt-6 max-w-[49ch] text-base leading-relaxed whitespace-pre-line text-pretty text-foreground/70 sm:text-lg">
+                <p className="mt-6 max-w-[49ch] text-base leading-relaxed text-pretty text-foreground/70 sm:text-lg">
                   {subheadline}
                 </p>
               )}
