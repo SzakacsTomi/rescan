@@ -16,7 +16,7 @@ export const AboutPeople = ({ headline, organization, members }: AboutPeopleProp
       <div className="mx-auto max-w-page">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <Reveal>
-            <h2 className="max-w-18ch text-h2 font-bold leading-heading tracking-tight sm:text-h1">
+            <h2 className="max-w-[18ch] text-h2 font-bold leading-heading tracking-tight text-balance sm:text-h1">
               {headline}
             </h2>
           </Reveal>

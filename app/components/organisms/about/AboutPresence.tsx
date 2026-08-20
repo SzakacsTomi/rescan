@@ -21,7 +21,7 @@ export const AboutPresence = ({ items }: AboutPresenceProps) => {
             className="flex flex-col justify-between gap-6 bg-ink px-6 py-5 lg:px-10 lg:py-2 lg:first:pl-0 lg:last:pr-0"
           >
             <MonoLabel className="text-white/40">{item.label}</MonoLabel>
-            <p className="text-subhead font-semibold leading-snug tracking-snug text-white">
+            <p className="text-subhead font-semibold leading-snug tracking-snug text-balance text-white">
               {item.value}
             </p>
             {item.coordinates && (

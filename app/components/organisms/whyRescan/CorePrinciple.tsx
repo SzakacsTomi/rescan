@@ -17,12 +17,12 @@ export const CorePrinciple = ({ headline, body, rolesLabel, roles }: CorePrincip
       <div className="mx-auto grid max-w-page grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20">
         <div>
           <Reveal>
-            <h2 className="max-w-[16ch] text-h2 font-bold leading-tight tracking-tight sm:text-h1 lg:text-h1-lg">
+            <h2 className="max-w-[16ch] text-h2 font-bold leading-tight tracking-tight text-balance sm:text-h1 lg:text-h1-lg">
               {headline}
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mt-8 max-w-[60ch] text-lead leading-loose whitespace-pre-line text-foreground/68">
+            <p className="mt-8 max-w-[60ch] text-lead leading-loose whitespace-pre-line text-pretty text-foreground/68">
               {body}
             </p>
           </Reveal>

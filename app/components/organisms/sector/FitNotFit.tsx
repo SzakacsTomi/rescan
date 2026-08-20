@@ -22,7 +22,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
     <section className="bg-ink px-6 py-24 sm:px-8 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-page">
         <Reveal>
-          <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl">
             {headline}
           </h2>
         </Reveal>
@@ -36,7 +36,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
                 <Reveal
                   as="li"
                   key={item}
-                  className="flex gap-4 border-b border-white/8 py-5 text-body leading-snug text-white/82"
+                  className="flex gap-4 border-b border-white/8 py-5 text-body leading-snug text-pretty text-white/82"
                 >
                   <Check
                     className={cn("mt-0.5 h-4.5 w-4.5 shrink-0", FIT_ACCENT_CLASS)}
@@ -56,7 +56,7 @@ export const FitNotFit = ({ headline, bestFit, notFit }: FitNotFitProps) => {
                 <Reveal
                   as="li"
                   key={item}
-                  className="flex gap-4 border-b border-white/8 py-5 text-body leading-snug text-white/40"
+                  className="flex gap-4 border-b border-white/8 py-5 text-body leading-snug text-pretty text-white/40"
                 >
                   <X className="mt-0.5 h-4.5 w-4.5 shrink-0 text-white/35" strokeWidth={2.5} />
                   {item}

@@ -44,7 +44,7 @@ export const FinalCTA = ({
         )}
         <h2
           className={cn(
-            'text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-display-sm',
+            'text-3xl font-bold leading-tight tracking-tight text-balance text-white sm:text-4xl lg:text-display-sm',
             eyebrow && 'mt-7',
             headlineClassName,
           )}
@@ -54,7 +54,7 @@ export const FinalCTA = ({
         {subheadline && (
           <p
             className={cn(
-              'mt-6 max-w-2xl text-lg leading-relaxed text-white/65',
+              'mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-white/65',
               subheadlineClassName,
             )}
           >

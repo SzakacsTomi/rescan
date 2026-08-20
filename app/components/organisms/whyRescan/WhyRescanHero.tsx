@@ -42,10 +42,10 @@ export const WhyRescanHero = ({
                 <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
               </div>
               <Reveal>
-                <h1 className="mt-7 max-w-160 text-h2 font-bold leading-display tracking-headline sm:text-h1-lg lg:text-display-xs">
+                <h1 className="mt-7 max-w-160 text-h2 font-bold leading-display tracking-headline text-balance sm:text-h1-lg lg:text-display-xs">
                   {headline}
                 </h1>
-                <p className="mt-6 max-w-[49ch] text-base leading-prose text-foreground/70 sm:text-lg">
+                <p className="mt-6 max-w-[49ch] text-base leading-prose text-pretty text-foreground/70 sm:text-lg">
                   {subheadline}
                 </p>
               </Reveal>
@@ -99,7 +99,7 @@ export const WhyRescanHero = ({
             <MonoLabel className="tracking-eyebrow text-accent-sky">{questionLabel}</MonoLabel>
           </Reveal>
           <Reveal>
-            <p className="m-0 max-w-[26ch] text-2xl font-semibold leading-quote tracking-title text-white sm:text-h2">
+            <p className="m-0 max-w-[26ch] text-2xl font-semibold leading-quote tracking-title text-balance text-white sm:text-h2">
               {question}
             </p>
           </Reveal>

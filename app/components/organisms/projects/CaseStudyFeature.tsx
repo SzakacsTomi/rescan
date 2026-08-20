@@ -134,8 +134,8 @@ export const CaseStudyFeature = ({
                     {String(i + 1).padStart(2, "0")}
                   </MonoLabel>
                   <div>
-                    <h3 className="text-lead-lg font-semibold tracking-snug">{row.label}</h3>
-                    <p className="mt-3 text-body leading-prose text-foreground/65">
+                    <h3 className="text-lead-lg font-semibold tracking-snug text-balance">{row.label}</h3>
+                    <p className="mt-3 text-body leading-prose text-pretty text-foreground/65">
                       <Pending>{row.copy}</Pending>
                     </p>
                   </div>
@@ -161,7 +161,7 @@ export const CaseStudyFeature = ({
                 />
                 <div className="relative">
                   <MonoLabel className="text-accent-sky">{changedSlot}</MonoLabel>
-                  <p className="mt-5 text-2xl font-semibold leading-snug tracking-snug text-white">
+                  <p className="mt-5 text-2xl font-semibold leading-snug tracking-snug text-balance text-white">
                     <Pending className={BADGE_ON_DARK}>{changed}</Pending>
                   </p>
                 </div>

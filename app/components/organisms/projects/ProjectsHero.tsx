@@ -57,10 +57,10 @@ export const ProjectsHero = ({
             <MonoLabel className="tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>
           </div>
           <Reveal>
-            <h1 className="mt-7 max-w-205 text-h2 font-bold leading-display tracking-tight text-white sm:text-h1-lg lg:text-display">
+            <h1 className="mt-7 max-w-205 text-h2 font-bold leading-display tracking-tight text-balance text-white sm:text-h1-lg lg:text-display">
               {headline}
             </h1>
-            <p className="mt-7 max-w-165 text-body leading-copy text-white/62 lg:text-lead">
+            <p className="mt-7 max-w-165 text-body leading-copy text-pretty text-white/62 lg:text-lead">
               {subheadline}
             </p>
           </Reveal>

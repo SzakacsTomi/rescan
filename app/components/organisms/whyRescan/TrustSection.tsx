@@ -43,12 +43,12 @@ export const TrustSection = ({
             <MonoLabel className="text-primary" aria-hidden>
               {String(index).padStart(2, "0")}
             </MonoLabel>
-            <h2 className="max-w-[20ch] text-h2 font-bold leading-heading tracking-tight sm:text-h1">
+            <h2 className="max-w-[20ch] text-h2 font-bold leading-heading tracking-tight text-balance sm:text-h1">
               {headline}
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mt-8 max-w-[60ch] text-lead leading-loose whitespace-pre-line text-foreground/68">
+            <p className="mt-8 max-w-[60ch] text-lead leading-loose whitespace-pre-line text-pretty text-foreground/68">
               {body}
             </p>
           </Reveal>

@@ -94,7 +94,7 @@ export const CarouselHero = ({
             >
               {headline}
             </motion.h1>
-            <p className="mt-7 max-w-155 text-lead leading-copy text-foreground/60">
+            <p className="mt-7 max-w-155 text-lead leading-copy text-pretty text-foreground/60">
               {subheadline}
             </p>
           </div>

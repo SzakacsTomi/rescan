@@ -43,7 +43,7 @@ export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
     <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-28" style={{ background: DEEP_BLUE_GRADIENT }}>
       <div className="mx-auto max-w-5xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{headline}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl">{headline}</h2>
           {cta && !isPending(cta.label) && (
             <Link
               href={cta.href}

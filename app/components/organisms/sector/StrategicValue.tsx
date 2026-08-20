@@ -39,13 +39,13 @@ export const StrategicValue = ({
     >
       <div className="mx-auto max-w-page">
         <Reveal>
-          <h2 className="max-w-180 text-title-lg leading-tight font-bold tracking-tight sm:text-h2 lg:text-h1">
+          <h2 className="max-w-180 text-title-lg leading-tight font-bold tracking-tight text-balance sm:text-h2 lg:text-h1">
             {headline}
           </h2>
         </Reveal>
         {body && (
           <Reveal>
-            <p className="mt-5 max-w-170 text-body leading-prose text-foreground/60">{body}</p>
+            <p className="mt-5 max-w-170 text-body leading-prose text-pretty text-foreground/60">{body}</p>
           </Reveal>
         )}
         <div className={cn("mt-14 grid grid-cols-1 gap-px bg-border", GRID_COLUMNS[values.length])}>

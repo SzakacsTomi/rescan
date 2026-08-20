@@ -42,10 +42,10 @@ export const NumberedValueCard = ({
       <MonoLabel aria-hidden className="text-primary">
         {String(index + 1).padStart(2, '0')}
       </MonoLabel>
-      <h3 className={cn('leading-card font-semibold tracking-snug', style.title)}>
+      <h3 className={cn('leading-card font-semibold tracking-snug text-balance', style.title)}>
         {title}
       </h3>
-      <p className={cn('mt-auto leading-copy text-foreground/60', style.description)}>
+      <p className={cn('mt-auto leading-copy text-pretty text-foreground/60', style.description)}>
         {description}
       </p>
     </Reveal>

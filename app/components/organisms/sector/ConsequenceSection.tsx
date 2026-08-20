@@ -26,17 +26,17 @@ export const ConsequenceSection = ({
     <section className="bg-muted px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
       <div className="mx-auto max-w-wide">
         <Reveal>
-          <h2 className="max-w-190 text-3xl font-bold tracking-tight sm:text-4xl lg:text-h1">
+          <h2 className="max-w-190 text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-h1">
             {headline}
           </h2>
           {body && (
-            <p className="mt-5 max-w-170 text-body leading-prose text-foreground/60">{body}</p>
+            <p className="mt-5 max-w-170 text-body leading-prose text-pretty text-foreground/60">{body}</p>
           )}
         </Reveal>
         <div className="mt-14 lg:mt-18">{children}</div>
         {footnote && (
           <Reveal>
-            <p className="mt-11 max-w-180 text-body leading-prose text-foreground/60">{footnote}</p>
+            <p className="mt-11 max-w-180 text-body leading-prose text-pretty text-foreground/60">{footnote}</p>
           </Reveal>
         )}
       </div>

@@ -24,14 +24,14 @@ export const CoreRisk = ({ eyebrow, headline, body, aside }: CoreRiskProps) => {
           <div>
             {eyebrow && <MonoLabel>{eyebrow}</MonoLabel>}
             <Reveal>
-              <h2 className={cn("text-h2 leading-tight font-bold tracking-tight sm:text-h1 lg:text-h1-lg", eyebrow && "mt-6")}>
+              <h2 className={cn("text-h2 leading-tight font-bold tracking-tight text-balance sm:text-h1 lg:text-h1-lg", eyebrow && "mt-6")}>
                 {headline}
               </h2>
             </Reveal>
             <Reveal>
               <p
                 className={cn(
-                  "mt-8 text-lead leading-loose text-foreground/65 whitespace-pre-line",
+                  "mt-8 text-lead leading-loose text-pretty text-foreground/65 whitespace-pre-line",
                   aside && "max-w-165",
                 )}
               >

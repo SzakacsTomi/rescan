@@ -14,12 +14,12 @@ export const Differentiator = ({ headline, subheadline }: DifferentiatorProps) =
     >
       <div className="max-w-cta mx-auto text-center">
         <Reveal>
-          <h2 className="text-3xl sm:text-4xl lg:text-display-2xs font-bold text-white tracking-headline leading-headline">
+          <h2 className="text-3xl sm:text-4xl lg:text-display-2xs font-bold text-white tracking-headline leading-headline text-balance">
             {headline}
           </h2>
         </Reveal>
         <Reveal>
-          <p className="mt-7 max-w-[760px] mx-auto text-body-lg leading-loose text-white/62">
+          <p className="mt-7 max-w-[760px] mx-auto text-body-lg leading-loose text-pretty text-white/62">
             {subheadline}
           </p>
         </Reveal>

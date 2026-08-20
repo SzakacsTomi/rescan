@@ -49,7 +49,7 @@ export const HeroText = ({
       </h1>
       <p
         className={cn(
-          "mt-8 text-lg lg:text-xl text-white/60 leading-relaxed max-w-2xl whitespace-pre-line",
+          "mt-8 text-lg lg:text-xl text-white/60 leading-relaxed text-pretty max-w-2xl whitespace-pre-line",
           subheadlineClassName,
         )}
       >

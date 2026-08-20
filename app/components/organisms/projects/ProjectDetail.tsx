@@ -123,7 +123,7 @@ export const ProjectDetail = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.4 }}
               >
-                <p className="text-white/70 text-base sm:text-lg leading-relaxed w-full lg:max-w-[50%]">
+                <p className="text-white/70 text-base sm:text-lg leading-relaxed text-pretty w-full lg:max-w-[50%]">
                   {translations.detail.body}
                 </p>
               </motion.div>

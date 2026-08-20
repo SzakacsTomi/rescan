@@ -32,7 +32,7 @@ export const ProofLedger = ({ headline, cta, rows }: ProofLedgerProps) => {
       <div aria-hidden className="absolute inset-0" style={{ background: LEDGER_GLOW }} />
       <div className="relative mx-auto max-w-page">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-h1-lg">
+          <h2 className="text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl lg:text-h1-lg">
             {headline}
           </h2>
           <Link

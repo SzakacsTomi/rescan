@@ -11,7 +11,7 @@ export const Footer = async () => {
       <div className="px-6 py-12 grid grid-cols-1 sm:grid-cols-3 items-center gap-8">
         <div className="flex flex-col gap-2">
           <Logo />
-          <p className="text-foreground/45 text-sm leading-relaxed">{t("tagline")}</p>
+          <p className="text-foreground/45 text-sm leading-relaxed text-pretty">{t("tagline")}</p>
         </div>
 
         <div className="flex flex-col items-start sm:items-center gap-1.5">

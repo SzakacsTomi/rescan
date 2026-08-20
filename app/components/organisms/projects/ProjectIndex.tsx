@@ -126,10 +126,10 @@ export const ProjectIndex = ({
       <div className="mx-auto max-w-page">
         <Reveal>
           <MonoLabel className="text-foreground/40">{eyebrow}</MonoLabel>
-          <h2 className="mt-6 max-w-measure text-h3 font-bold leading-heading tracking-tight lg:text-h1">
+          <h2 className="mt-6 max-w-measure text-h3 font-bold leading-heading tracking-tight text-balance lg:text-h1">
             {headline}
           </h2>
-          <p className="mt-4 max-w-160 text-base leading-copy text-foreground/55">{body}</p>
+          <p className="mt-4 max-w-160 text-base leading-copy text-pretty text-foreground/55">{body}</p>
         </Reveal>
 
         <Reveal className="mt-14">

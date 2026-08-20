@@ -45,7 +45,7 @@ export const ConsequenceChain = ({ steps }: ConsequenceChainProps) => {
             <MonoLabel aria-hidden className={style.index}>
               {String(i + 1).padStart(2, "0")}
             </MonoLabel>
-            <span className={cn("leading-card tracking-snug", style.label)}>{step}</span>
+            <span className={cn("leading-card tracking-snug text-balance", style.label)}>{step}</span>
           </Reveal>
         );
       })}

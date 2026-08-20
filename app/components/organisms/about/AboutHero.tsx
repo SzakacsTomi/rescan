@@ -44,12 +44,12 @@ export const AboutHero = ({ eyebrow, headline, subheadline, facts, image }: Abou
               <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
             </div>
             <Reveal>
-              <h1 className="mt-7 max-w-[22ch] text-4xl font-bold leading-tight tracking-headline sm:text-5xl lg:leading-hero-tight lg:text-display">
+              <h1 className="mt-7 max-w-[22ch] text-4xl font-bold leading-tight tracking-headline text-balance sm:text-5xl lg:leading-hero-tight lg:text-display">
                 {headline}
               </h1>
             </Reveal>
             <Reveal>
-              <p className="mt-7 max-w-[56ch] text-lead leading-prose text-foreground/68">
+              <p className="mt-7 max-w-[56ch] text-lead leading-prose text-pretty text-foreground/68">
                 {subheadline}
               </p>
             </Reveal>

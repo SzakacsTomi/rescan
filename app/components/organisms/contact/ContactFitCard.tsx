@@ -29,7 +29,7 @@ const FIRST_FIT_INDEX = 'A'.charCodeAt(0);
 export const ContactFitCard = ({ headline, items, disqualifiers }: ContactFitCardProps) => (
   <div className="mt-6 overflow-hidden rounded-lg border border-border bg-secondary">
     <div className="px-6 pt-4 pb-3">
-      <h2 className="border-b border-foreground/10 pb-3.5 text-base font-semibold tracking-tight text-foreground">
+      <h2 className="border-b border-foreground/10 pb-3.5 text-base font-semibold tracking-tight text-balance text-foreground">
         {headline}
       </h2>
 
