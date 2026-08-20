@@ -98,7 +98,7 @@ export const CaseStudyFeature = ({
       id={CASE_ANCHOR_ID[sector]}
       className={cn("scroll-mt-16 px-6 py-24 sm:px-8 lg:px-10 lg:py-30", tone.section)}
     >
-      <div className="mx-auto max-w-310">
+      <div className="mx-auto max-w-page">
         <Reveal>
           <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
           <h2 className="mt-6 flex flex-wrap items-baseline gap-4 text-title font-bold leading-title tracking-tight sm:text-h2">

@@ -123,10 +123,10 @@ export const ProjectIndex = ({
       id={PROJECT_INDEX_ID}
       className="scroll-mt-16 bg-secondary px-6 py-24 sm:px-8 lg:px-10 lg:py-30"
     >
-      <div className="mx-auto max-w-310">
+      <div className="mx-auto max-w-page">
         <Reveal>
           <MonoLabel className="text-foreground/40">{eyebrow}</MonoLabel>
-          <h2 className="mt-6 max-w-225 text-h3 font-bold leading-heading tracking-tight lg:text-h1">
+          <h2 className="mt-6 max-w-measure text-h3 font-bold leading-heading tracking-tight lg:text-h1">
             {headline}
           </h2>
           <p className="mt-4 max-w-160 text-base leading-copy text-foreground/55">{body}</p>

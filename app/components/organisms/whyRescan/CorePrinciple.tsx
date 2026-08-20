@@ -14,7 +14,7 @@ type CorePrincipleProps = {
 export const CorePrinciple = ({ headline, body, rolesLabel, roles }: CorePrincipleProps) => {
   return (
     <section className="bg-secondary px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
-      <div className="mx-auto grid max-w-310 grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20">
+      <div className="mx-auto grid max-w-page grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20">
         <div>
           <Reveal>
             <h2 className="max-w-[16ch] text-h2 font-bold leading-tight tracking-tight sm:text-h1 lg:text-h1-lg">

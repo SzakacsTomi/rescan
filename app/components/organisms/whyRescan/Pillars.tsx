@@ -29,7 +29,7 @@ type PillarsProps = {
 export const Pillars = ({ headline, monoLabel, proofLabel, pillars }: PillarsProps) => {
   return (
     <section id={PILLARS_ID} className="scroll-mt-16 px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
-      <div className="mx-auto max-w-310">
+      <div className="mx-auto max-w-page">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <h2 className="max-w-[23ch] text-h2 font-bold leading-heading tracking-tight sm:text-h1">
             {headline}

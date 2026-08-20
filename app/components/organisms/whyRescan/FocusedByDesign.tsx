@@ -20,7 +20,7 @@ export const FocusedByDesign = ({
 }: FocusedByDesignProps) => {
   return (
     <section className="bg-background px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
-      <div className="mx-auto grid max-w-310 grid-cols-1 items-start gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-20">
+      <div className="mx-auto grid max-w-page grid-cols-1 items-start gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-20">
         <div>
           <Reveal>
             <h2 className="text-h2 font-bold leading-tight tracking-tight sm:text-h1">

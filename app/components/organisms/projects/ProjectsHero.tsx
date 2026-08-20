@@ -50,7 +50,7 @@ export const ProjectsHero = ({
       />
       <div aria-hidden className="absolute inset-0" style={{ background: HERO_GLOW }} />
 
-      <div className="relative mx-auto flex w-full max-w-480 flex-1 flex-col justify-between gap-12 px-6 pb-14 sm:px-8 lg:pb-16 lg:pl-31.5">
+      <div className="relative mx-auto flex w-full max-w-shell flex-1 flex-col justify-between gap-12 px-6 pb-14 sm:px-8 lg:pb-16 lg:pl-31.5">
         <div>
           <div className="flex items-center gap-3.5">
             <span aria-hidden className="h-px w-11 bg-white/40" />

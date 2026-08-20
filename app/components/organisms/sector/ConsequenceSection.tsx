@@ -24,7 +24,7 @@ export const ConsequenceSection = ({
 }: ConsequenceSectionProps) => {
   return (
     <section className="bg-muted px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
-      <div className="mx-auto max-w-350">
+      <div className="mx-auto max-w-wide">
         <Reveal>
           <h2 className="max-w-190 text-3xl font-bold tracking-tight sm:text-4xl lg:text-h1">
             {headline}

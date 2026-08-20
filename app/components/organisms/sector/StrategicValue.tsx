@@ -37,7 +37,7 @@ export const StrategicValue = ({
     <section
       className={cn("px-6 py-24 sm:px-8 lg:px-10 lg:py-30", tone === "tinted" && "bg-muted")}
     >
-      <div className="mx-auto max-w-310">
+      <div className="mx-auto max-w-page">
         <Reveal>
           <h2 className="max-w-180 text-title-lg leading-tight font-bold tracking-tight sm:text-h2 lg:text-h1">
             {headline}

@@ -82,7 +82,7 @@ export const CarouselHero = ({
 
   return (
     <section className="relative isolate border-b border-border">
-      <div className="max-w-480 mx-auto px-6 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-start lg:pl-31.5">
+      <div className="max-w-shell mx-auto px-6 lg:flex lg:min-h-[calc(100svh-4rem)] lg:items-start lg:pl-31.5">
         <div className="flex flex-col gap-10 py-16 sm:pt-20 lg:max-w-205 lg:pt-29 lg:pb-24">
           <div>
             {eyebrow && <MonoLabel className="block text-primary">{eyebrow}</MonoLabel>}

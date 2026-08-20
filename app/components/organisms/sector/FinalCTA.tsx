@@ -38,7 +38,7 @@ export const FinalCTA = ({
           backgroundSize: '88px 88px',
         }}
       />
-      <Reveal className="relative mx-auto max-w-250">
+      <Reveal className="relative mx-auto max-w-cta">
         {eyebrow && (
           <MonoLabel className="tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>
         )}

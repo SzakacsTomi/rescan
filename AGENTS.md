@@ -279,10 +279,11 @@ scale lands on the design without a second pass. Written as Tailwind v4 scale ut
 | Standard section | `py-24 lg:py-30` | 120px |
 | Inverted / dark band | `py-24 lg:py-28` | 112px |
 | Closing CTA | `py-24 lg:py-35` | 140px |
-| Default container | `mx-auto max-w-310` | 1240px |
-| Wide diagram container | `mx-auto max-w-350` | 1400px |
-| CTA container | `mx-auto max-w-250` | 1000px |
-| Single prose column | `mx-auto max-w-225` | 900px |
+| Page frame | `mx-auto max-w-shell` | 1920px |
+| Default container | `mx-auto max-w-page` | 1240px |
+| Wide diagram container | `mx-auto max-w-wide` | 1400px |
+| CTA container | `mx-auto max-w-cta` | 1000px |
+| Single prose column | `mx-auto max-w-measure` | 900px |
 
 **Inside a section**
 

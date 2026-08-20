@@ -112,9 +112,11 @@
   --tracking-eyebrow: 0.22em;
 
   /* ── Layout ──────────────────────────────────────────────────────────────
-     --spacing-spine is the 126px left spine every hero aligns its copy to. */
+     --spacing-spine is the 126px left spine every hero aligns its copy to.
+     The 900px single column is `measure`, not `prose`: Tailwind hardcodes
+     `max-w-prose` to 65ch and ignores any --container-prose override. */
   --spacing-spine: 7.875rem;
-  --container-prose: 56.25rem;
+  --container-measure: 56.25rem;
   --container-cta: 62.5rem;
   --container-page: 77.5rem;
   --container-wide: 87.5rem;

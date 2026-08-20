@@ -35,7 +35,7 @@ export const WhyRescanHero = ({
 }: WhyRescanHeroProps) => {
   return (
     <section className="relative isolate flex flex-col bg-background lg:min-h-[calc(100svh-4rem)]">
-      <div className="relative mx-auto w-full max-w-480 lg:flex lg:flex-1">
+      <div className="relative mx-auto w-full max-w-shell lg:flex lg:flex-1">
         <div className="px-6 sm:px-8 lg:flex lg:w-[53%] lg:flex-col lg:pr-8 lg:pl-31.5">
           <div className="flex flex-col justify-between gap-10 pt-16 pb-16 sm:pt-20 lg:flex-1 lg:pt-29 lg:pb-16">
             <div>

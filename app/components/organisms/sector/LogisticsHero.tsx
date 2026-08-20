@@ -53,7 +53,7 @@ export const LogisticsHero = ({
       }}
     />
 
-    <div className="relative mx-auto grid w-full max-w-480 content-start grid-cols-1 gap-10 px-6 pt-16 pb-16 sm:pt-20 lg:pl-31.5 lg:pt-29 xl:grid-cols-[minmax(0,1fr)_21.25rem] xl:grid-rows-[1fr] xl:gap-16">
+    <div className="relative mx-auto grid w-full max-w-shell content-start grid-cols-1 gap-10 px-6 pt-16 pb-16 sm:pt-20 lg:pl-31.5 lg:pt-29 xl:grid-cols-[minmax(0,1fr)_21.25rem] xl:grid-rows-[1fr] xl:gap-16">
       <div>
         <MonoLabel className="block tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>
         <HeroText

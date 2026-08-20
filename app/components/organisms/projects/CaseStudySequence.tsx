@@ -37,10 +37,10 @@ export const CaseStudySequence = ({
       id={SEQUENCE_ID}
       className="scroll-mt-16 px-6 py-24 sm:px-8 lg:px-10 lg:py-30"
     >
-      <div className="mx-auto max-w-350">
+      <div className="mx-auto max-w-wide">
         <Reveal>
           <MonoLabel className="text-foreground/40">{eyebrow}</MonoLabel>
-          <h2 className="mt-6 max-w-225 text-h2 font-bold leading-tight tracking-tight sm:text-h1 lg:text-h1-lg">
+          <h2 className="mt-6 max-w-measure text-h2 font-bold leading-tight tracking-tight sm:text-h1 lg:text-h1-lg">
             {headline}
           </h2>
           <p className="mt-5 max-w-190 text-body leading-prose text-foreground/60 lg:text-lead">

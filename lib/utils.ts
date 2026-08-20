@@ -19,14 +19,17 @@ const TRACKING_TOKENS = [
   "mono-tight", "mono", "mono-lg", "mono-wide", "eyebrow-tight", "eyebrow",
 ]
 
-// tailwind-merge has no knowledge of the bespoke text/leading/tracking scale,
-// so it misclasses text-note & co. as colors and drops them next to text-*.
+const CONTAINER_TOKENS = ["shell", "wide", "page", "cta", "measure"]
+
+// tailwind-merge has no knowledge of the bespoke type and layout scales, so it
+// misclasses text-note & co. as colors and drops them next to text-*.
 const twMerge = extendTailwindMerge({
   extend: {
     theme: {
       text: TEXT_TOKENS,
       leading: LEADING_TOKENS,
       tracking: TRACKING_TOKENS,
+      container: CONTAINER_TOKENS,
     },
   },
 })

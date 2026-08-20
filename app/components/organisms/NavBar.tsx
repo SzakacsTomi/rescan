@@ -33,7 +33,7 @@ export const NavBar = async ({ variant = 'light' }: NavBarProps) => {
       )}
     >
       <LayoutGroup id={isDark ? 'navbar-home' : 'navbar-pages'}>
-        <div className="max-w-480 mx-auto px-6 h-16 flex items-center gap-6">
+        <div className="max-w-shell mx-auto px-6 h-16 flex items-center gap-6">
           <Link href="/" className="shrink-0">
             <Image
               src="/assets/logo.png"

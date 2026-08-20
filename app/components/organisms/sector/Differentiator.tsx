@@ -12,7 +12,7 @@ export const Differentiator = ({ headline, subheadline }: DifferentiatorProps) =
       className="py-[132px] px-10"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
-      <div className="max-w-[1000px] mx-auto text-center">
+      <div className="max-w-cta mx-auto text-center">
         <Reveal>
           <h2 className="text-3xl sm:text-4xl lg:text-display-2xs font-bold text-white tracking-headline leading-headline">
             {headline}
