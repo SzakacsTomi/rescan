@@ -39,7 +39,7 @@ The site builds and runs with no environment variables. These enable optional fe
 |---|---|
 | `RESEND_API_KEY` | Sending the contact form by email. Unset → the form succeeds and logs a warning. |
 | `TURNSTILE_SECRET_KEY` / `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile on the contact form. Unset → the check is skipped. |
-| `CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | The `/retail-chains` hero carousel, which lists a Cloudinary folder. |
+| `CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | The `/retail-property-portfolios` hero carousel, which lists a Cloudinary folder. |
 | `NEXT_PUBLIC_SHOW_PLACEHOLDERS` | `true` keeps case-study cards and sections whose copy is still pending visible, for client review. |
 
 ---
@@ -70,7 +70,7 @@ Components follow atomic design; dependencies point one way only
 | Route | Notes |
 |---|---|
 | `/` | Hero, sector split, cost ladder, proof, qualification |
-| `/retail-chains` | Sector page with a Cloudinary carousel hero |
+| `/retail-property-portfolios` | Sector page with a Cloudinary carousel hero |
 | `/logistics-warehouses` | Sector page with the consequence chain |
 | `/why-rescan` | Four proof-backed pillars |
 | `/projects` | Two case studies plus fifteen older references |
@@ -78,8 +78,9 @@ Components follow atomic design; dependencies point one way only
 | `/contact` | Zod + Server Action + Resend + Turnstile |
 
 Retired routes 308-redirect (see `RETIRED_ROUTES` in `next.config.ts`):
-`/commercial-portfolios` → `/retail-chains`, `/industrial-manufacturing` →
-`/logistics-warehouses`, `/model-production` → `/`.
+`/commercial-portfolios` → `/retail-property-portfolios`, `/retail-chains` →
+`/retail-property-portfolios`, `/industrial-manufacturing` → `/logistics-warehouses`,
+`/model-production` → `/`.
 
 All pages are served under both locale prefixes: `/en/...` and `/sv/...`.
 

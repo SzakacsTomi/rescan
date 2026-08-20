@@ -116,7 +116,7 @@ Dependencies point one way: `app/[locale]` → `templates` → `organisms` → `
 | Route | Brief | Notes |
 |---|---|---|
 | `/` | `home.md` | Outside `(pages)`; renders `NavBar` directly in its `dark` variant (transparent, overlaid on the hero) — the sector cards further down are still the primary routing, the nav is wayfinding |
-| `/retail-chains` | `retail-chains.md` | `SectorTemplate` + Cloudinary carousel hero |
+| `/retail-property-portfolios` | `retail-chains.md` | `SectorTemplate` + Cloudinary carousel hero |
 | `/logistics-warehouses` | `logistics-warehouses.md` | `SectorTemplate` + `ConsequenceChain` |
 | `/why-rescan` | `why-rescan.md` | `WhyRescanTemplate` |
 | `/projects` | `projects.md` | Case-study format plus fifteen older references |
@@ -125,8 +125,8 @@ Dependencies point one way: `app/[locale]` → `templates` → `organisms` → `
 
 Retired routes 308-redirect rather than 404, so indexed links keep resolving. They are
 listed in `RETIRED_ROUTES` in `next.config.ts`: `/commercial-portfolios` →
-`/retail-chains`, `/industrial-manufacturing` → `/logistics-warehouses`,
-`/model-production` → `/`.
+`/retail-property-portfolios`, `/retail-chains` → `/retail-property-portfolios`,
+`/industrial-manufacturing` → `/logistics-warehouses`, `/model-production` → `/`.
 
 ### Atomic design
 

@@ -69,7 +69,7 @@ type ProjectsTemplateProps = {
 };
 
 const SECTOR_HREF: Record<ProjectSector, string> = {
-  retail: "/retail-chains",
+  retail: "/retail-property-portfolios",
   logistics: "/logistics-warehouses",
 };
 

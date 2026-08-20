@@ -1,13 +1,13 @@
-import { ConsequenceChain } from '@/app/components/molecules/ConsequenceChain';
-import { ConsequenceSection } from '@/app/components/organisms/sector/ConsequenceSection';
-import { CoreRisk } from '@/app/components/organisms/sector/CoreRisk';
-import { Differentiator } from '@/app/components/organisms/sector/Differentiator';
-import { FinalCTA } from '@/app/components/organisms/sector/FinalCTA';
-import { FitNotFit } from '@/app/components/organisms/sector/FitNotFit';
-import { ProofBar } from '@/app/components/organisms/ProofBar';
-import { NamedCase } from '@/app/components/organisms/sector/NamedCase';
-import { StrategicValue } from '@/app/components/organisms/sector/StrategicValue';
-import type { SectorPageConfig, SectorPageTranslations } from '@/app/types/sectorPage';
+import { ConsequenceChain } from "@/app/components/molecules/ConsequenceChain";
+import { ConsequenceSection } from "@/app/components/organisms/sector/ConsequenceSection";
+import { CoreRisk } from "@/app/components/organisms/sector/CoreRisk";
+import { Differentiator } from "@/app/components/organisms/sector/Differentiator";
+import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
+import { FitNotFit } from "@/app/components/organisms/sector/FitNotFit";
+import { ProofBar } from "@/app/components/organisms/ProofBar";
+import { NamedCase } from "@/app/components/organisms/sector/NamedCase";
+import { StrategicValue } from "@/app/components/organisms/sector/StrategicValue";
+import type { SectorPageConfig, SectorPageTranslations } from "@/app/types/sectorPage";
 
 type SectorTemplateProps = {
   config: SectorPageConfig;
@@ -80,6 +80,17 @@ export const SectorTemplate = ({
           image={tr.namedCase.image}
           quote={tr.namedCase.quote}
           quoteAuthor={tr.namedCase.quoteAuthor}
+        />
+      )}
+
+      {tr.proofCase && (
+        <NamedCase
+          label={tr.proofCase.label}
+          headline={tr.proofCase.headline}
+          body={tr.proofCase.body}
+          metric={tr.proofCase.metric}
+          metricLabel={tr.proofCase.metricLabel}
+          image={tr.proofCase.image}
         />
       )}
 

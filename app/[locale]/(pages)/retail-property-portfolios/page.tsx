@@ -9,7 +9,7 @@ import { getCloudinaryFolderImages } from "@/lib/cloudinary";
 
 const PROOF_GRID_CELL_COUNT = 56;
 
-export default async function RetailChainsPage() {
+export default async function RetailPropertyPortfoliosPage() {
   const [t, carouselImages] = await Promise.all([
     getTranslations("sectorPage.retail"),
     getCloudinaryFolderImages(retailSectorConfig.hero.imagesFolder ?? ""),
@@ -56,6 +56,14 @@ export default async function RetailChainsPage() {
       image: t("namedCase.image"),
       quote: t("namedCase.quote"),
       quoteAuthor: t("namedCase.quoteAuthor"),
+    },
+    proofCase: {
+      label: t("proofCase.label"),
+      headline: t("proofCase.headline"),
+      body: t("proofCase.body"),
+      metric: t("proofCase.metric"),
+      metricLabel: t("proofCase.metricLabel"),
+      image: t("proofCase.image"),
     },
     fitNotFit: {
       headline: t("fitNotFit.headline"),

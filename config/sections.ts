@@ -6,7 +6,7 @@ import { CHARCOAL_GRADIENT, DEEP_BLUE_GRADIENT } from "@/config/gradients";
 export const sectionsConfig: SectionConfig[] = [
   {
     id: "retailChains",
-    href: "/retail-chains",
+    href: "/retail-property-portfolios",
     gradient: DEEP_BLUE_GRADIENT,
   },
   {

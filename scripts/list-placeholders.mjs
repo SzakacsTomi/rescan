@@ -14,7 +14,7 @@ const LOCALES = ['en', 'sv'];
 const PAGE_OF_NAMESPACE = {
   metadata: 'Site metadata',
   homePage: '/',
-  'sectorPage.retail': '/retail-chains',
+  'sectorPage.retail': '/retail-property-portfolios',
   'sectorPage.logistics': '/logistics-warehouses',
   whyRescanPage: '/why-rescan',
   projectsPage: '/projects',

@@ -1,5 +1,5 @@
 export const navLinks = [
-  { href: '/retail-chains', labelKey: 'retail' },
+  { href: '/retail-property-portfolios', labelKey: 'retail' },
   { href: '/logistics-warehouses', labelKey: 'logistics' },
   { href: '/projects', labelKey: 'projects' },
   { href: '/why-rescan', labelKey: 'whyRescan' },

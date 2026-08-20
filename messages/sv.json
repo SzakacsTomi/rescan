@@ -433,7 +433,7 @@
     },
     "backToProjects": "Tillbaka till projekt",
     "sectorLabels": {
-      "retail": "Butikskedjor",
+      "retail": "Butiksfastighetsportföljer",
       "logistics": "Logistiklager"
     },
     "caseStudy": {
@@ -449,7 +449,7 @@
     },
     "cases": {
       "retail": {
-        "eyebrow": "02 — Butikskedjor · Fallstudie",
+        "eyebrow": "02 — Butiksfastighetsportföljer · Fallstudie",
         "image": "[[TODO: photograph of the actual retail portfolio]]"
       },
       "logistics": {
@@ -682,16 +682,16 @@
   "sectorPage": {
     "retail": {
       "hero": {
-        "eyebrow": "Sektor 01 — Butikskedjor",
+        "eyebrow": "Sektor 01 — Butiksfastighetsportföljer",
         "headline": "Minska antalet återbesök\ni ditt butiksbestånd.",
-        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam mer av den information de behöver utan att gång på gång skicka någon tillbaka till butiken.",
-        "primaryCta": "Diskutera ditt butiksbestånd",
+        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam mer av den information de behöver utan att gång på gång skicka någon tillbaka till varje plats.",
+        "primaryCta": "Diskutera din fastighetsportfölj",
         "secondaryCta": "Se projekt"
       },
       "coreRisk": {
         "eyebrow": "Den dyra risken",
         "headline": "Det dyra är att behöva åka tillbaka.",
-        "body": "Ett saknat mått eller en obesvarad fråga om platsen kan verka som en småsak.\nÖver dussintals eller hundratals butiker innebär det mer resor, mer planering, mer samordning och mer projekteringstid.\nEtt onödigt återbesök är en irritation.\nUpprepat över ett helt bestånd blir det en kostnad.",
+        "body": "Ett saknat mått eller en obesvarad fråga om platsen kan verka som en småsak.\nÖver dussintals eller hundratals fastigheter innebär det mer:\nresor\nplanering\nsamordning\nprojekteringstid\nEtt onödigt återbesök är en irritation.\nUpprepat över en portfölj blir det en kostnad.",
         "proof": {
           "label": "Ett bestånd, ett besök vardera",
           "caption": "56 kommersiella fastigheter dokumenterade för Carlqvist Fastigheter i hela Sverige."
@@ -699,14 +699,14 @@
       },
       "strategicValue": {
         "headline": "Dokumentera en gång. Gå tillbaka när frågorna dyker upp.",
-        "body": "RESCAN skapar en pålitlig dokumentation av varje plats så att projektteam kan besvara fler frågor utifrån den information som redan finns.",
+        "body": "RESCAN skapar en pålitlig dokumentation av varje fastighet så att projektteam kan besvara fler frågor utifrån den information som redan finns.",
         "valueA": {
           "title": "Färre återbesök",
           "description": "Minska onödiga resor som bara görs för att verifiera befintliga förhållanden."
         },
         "valueB": {
           "title": "Snabbare svar under projekteringen",
-          "description": "Ge teamen en dokumentation de kan gå tillbaka till när frågor dyker upp."
+          "description": "Ge teamen byggnadsinformation de kan gå tillbaka till när frågor dyker upp."
         },
         "valueC": {
           "title": "Mindre dubbelarbete",
@@ -714,47 +714,55 @@
         },
         "valueD": {
           "title": "Mer enhetlig information",
-          "description": "Ge olika team en pålitlig utgångspunkt i hela beståndet."
+          "description": "Ge olika projektteam en pålitlig utgångspunkt i hela beståndet."
         }
       },
       "differentiator": {
-        "headline": "Värdet mångdubblas över hela kedjan.",
-        "subheadline": "Ett onödigt besök är en irritation. Upprepat över dussintals eller hundratals platser blir det en kostnad för hela beståndet. Enhetlig byggnadsinformation ger teamen en starkare utgångspunkt i stället för att de gång på gång måste bygga upp sin förståelse av samma platser."
+        "headline": "Värdet mångdubblas över hela portföljen.",
+        "subheadline": "Ett onödigt besök är en irritation. Upprepat över dussintals eller hundratals fastigheter blir det en kostnad för portföljen. Enhetlig byggnadsinformation ger teamen en starkare utgångspunkt i stället för att de gång på gång måste bygga upp sin förståelse av samma platser."
       },
       "namedCase": {
         "label": "Portföljfall",
         "headline": "Carlqvist Fastigheter — 56 kommersiella fastigheter dokumenterade i Sverige",
-        "body": "Carlqvist Fastigheter kontaktade RESCAN för att dokumentera sin portfölj med 56 kommersiella fastigheter i Sverige.\nMålet var inte ett enskilt renoveringsprojekt, utan att skapa tillförlitlig dokumentation för hela portföljen.\nVarje fastighet dokumenterades i korrekt digital byggnadsdokumentation och skapade en konsekvent referenspunkt för portföljen.",
+        "body": "RESCAN dokumenterade en portfölj med 56 kommersiella fastigheter för att skapa en konsekvent byggnadsinformationsbas över beståndet.\nFastighetsteamet kunde återvända till den informationen när nya renoverings-, planerings- och uppgraderingsbeslut dök upp.",
         "bulletIntro": "Idag kan deras team:",
-        "bullet0": "komma åt dokumentation för varje fastighet",
-        "bullet1": "granska byggnadsplaner och mått på distans",
-        "bullet2": "minska upprepade platsbesök vid renoverings- och uppgraderingsprojekt",
-        "bullet3": "starta projekt från verifierad byggnadsdokumentation",
+        "bullet0": "komma åt byggnadsdokumentation över hela portföljen",
+        "bullet1": "granska planer och mått på distans",
+        "bullet2": "starta nytt arbete utifrån information som redan finns",
+        "bullet3": "minska behovet av att på nytt fastställa grundläggande platsförhållanden",
         "quote": "Konsekvent dokumentation för alla fastigheter sparar oss både tid och pengar. Det ger oss en tydlig överblick över portföljen och tar bort mycket osäkerhet när vi planerar förändringar.",
         "quoteAuthor": "Eddie Carlqvist, VD, Carlqvist Fastigheter",
         "metric": "56",
         "metricLabel": "kommersiella fastigheter dokumenterade",
         "image": "[[TODO: site photograph for the named retail case]]"
       },
+      "proofCase": {
+        "label": "Portföljprogram",
+        "headline": "40+ kommersiella fastigheter dokumenterade som ett program",
+        "body": "[[TODO: why the portfolio was documented, how the consistent information across the properties was used, and the verified downstream result]]",
+        "metric": "40+",
+        "metricLabel": "kommersiella fastigheter dokumenterade",
+        "image": "[[TODO: site photograph for the second portfolio programme]]"
+      },
       "fitNotFit": {
         "headline": "Passar bäst för",
         "bestFit": {
           "title": "RESCAN är byggt för",
-          "item0": "Butikskedjor som hanterar flera platser",
+          "item0": "Fastighetsteam inom detaljhandeln som hanterar flera platser",
           "item1": "Program för ombyggnad, etablering och omdesign",
-          "item2": "Team där återbesök innebär en verklig kostnad",
+          "item2": "Team där upprepad platsverifiering innebär verklig tid och kostnad",
           "item3": "Byggnadsinformation som stödjer återkommande fastighetsbeslut"
         },
         "notFit": {
           "title": "Inte byggt för",
           "item0": "Privata bostäder",
           "item1": "Enstaka uppdrag med låg budget",
-          "item2": "Enskilda fristående byggnader"
+          "item2": "Små fristående projekt utan koppling till en portfölj eller vidare användning"
         }
       },
       "finalCta": {
         "headline": "Hur ofta åker ditt team tillbaka till platsen för information som redan kunde ha funnits?",
-        "cta": "Diskutera ditt butiksbestånd"
+        "cta": "Diskutera din fastighetsportfölj"
       }
     },
     "logistics": {

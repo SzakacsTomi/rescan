@@ -7,7 +7,8 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 /** Routes dropped when the site narrowed onto retail and logistics. Redirected rather than
  *  deleted so existing links and anything already indexed keep resolving. */
 const RETIRED_ROUTES = [
-  { from: "/commercial-portfolios", to: "/retail-chains" },
+  { from: "/commercial-portfolios", to: "/retail-property-portfolios" },
+  { from: "/retail-chains", to: "/retail-property-portfolios" },
   { from: "/industrial-manufacturing", to: "/logistics-warehouses" },
   { from: "/model-production", to: "/" },
 ];

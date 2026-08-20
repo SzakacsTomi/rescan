@@ -428,7 +428,7 @@
     },
     "backToProjects": "Back to projects",
     "sectorLabels": {
-      "retail": "Retail Chains",
+      "retail": "Retail Property Portfolios",
       "logistics": "Logistics Warehouses"
     },
     "caseStudy": {
@@ -444,7 +444,7 @@
     },
     "cases": {
       "retail": {
-        "eyebrow": "02 — Retail Chains · Case study",
+        "eyebrow": "02 — Retail Property Portfolios · Case study",
         "image": "[[TODO: photograph of the actual retail portfolio]]"
       },
       "logistics": {
@@ -677,16 +677,16 @@
   "sectorPage": {
     "retail": {
       "hero": {
-        "eyebrow": "Sector 01 — Retail Chains",
+        "eyebrow": "Sector 01 — Retail Property Portfolios",
         "headline": "Reduce repeat site visits\nacross your retail portfolio.",
-        "subheadline": "Give designers, contractors and property teams more of the information they need without repeatedly sending someone back to the store.",
-        "primaryCta": "Discuss your retail portfolio",
+        "subheadline": "Give designers, contractors and property teams more of the information they need without repeatedly sending someone back to each location.",
+        "primaryCta": "Discuss your property portfolio",
         "secondaryCta": "View Projects"
       },
       "coreRisk": {
         "eyebrow": "The core risk",
         "headline": "The expensive part is having to go back.",
-        "body": "A missing dimension or unanswered site question may seem minor.\nAcross dozens or hundreds of stores, it means more travel, more scheduling, more coordination and more design time.\nOne unnecessary return visit is a nuisance.\nRepeated across a portfolio, it becomes a cost.",
+        "body": "A missing dimension or unanswered site question may seem minor.\nAcross dozens or hundreds of locations, it means more:\ntravel\nscheduling\ncoordination\ndesign time\nOne unnecessary return visit is a nuisance.\nRepeated across a portfolio, it becomes a cost.",
         "proof": {
           "label": "One portfolio, one visit each",
           "caption": "56 commercial properties documented for Carlqvist Property across Sweden."
@@ -694,14 +694,14 @@
       },
       "strategicValue": {
         "headline": "Capture once. Refer back when questions appear.",
-        "body": "RESCAN creates a dependable record of each location so project teams can answer more questions from the information already available.",
+        "body": "RESCAN creates a dependable record of each property so project teams can answer more questions from the information already available.",
         "valueA": {
           "title": "Fewer site revisits",
           "description": "Reduce unnecessary trips made simply to verify existing conditions."
         },
         "valueB": {
           "title": "Faster answers during design",
-          "description": "Give teams a site record they can refer back to when questions appear."
+          "description": "Give teams building information they can refer back to when questions appear."
         },
         "valueC": {
           "title": "Less duplicated effort",
@@ -709,47 +709,55 @@
         },
         "valueD": {
           "title": "More consistent information",
-          "description": "Give different teams a dependable starting point across the portfolio."
+          "description": "Give different project teams a dependable starting point across the portfolio."
         }
       },
       "differentiator": {
-        "headline": "The value multiplies across the chain.",
-        "subheadline": "One unnecessary visit is a nuisance. Repeated across dozens or hundreds of locations, it becomes a portfolio cost. Consistent building information gives teams a stronger starting point instead of repeatedly rebuilding their understanding of the same sites."
+        "headline": "The value multiplies across the portfolio.",
+        "subheadline": "One unnecessary visit is a nuisance. Repeated across dozens or hundreds of properties, it becomes a portfolio cost. Consistent building information gives teams a stronger starting point instead of repeatedly rebuilding their understanding of the same locations."
       },
       "namedCase": {
         "label": "Portfolio case",
         "headline": "Carlqvist Property — 56 commercial properties documented across Sweden",
-        "body": "Carlqvist Property contacted RESCAN to document its portfolio of 56 commercial properties across Sweden.\nThe objective was not a single renovation project, but to create reliable documentation across the entire portfolio.\nEach property was captured and structured into accurate digital building documentation, creating a consistent reference point for the portfolio.",
+        "body": "RESCAN documented a portfolio of 56 commercial properties to create a consistent building-information base across the estate.\nThe property team could return to that information as new renovation, planning and upgrade decisions appeared.",
         "bulletIntro": "Today their team can:",
-        "bullet0": "access documentation for every property",
-        "bullet1": "review building layouts and dimensions remotely",
-        "bullet2": "reduce repeated site visits during renovation and upgrade projects",
-        "bullet3": "start projects from verified building documentation",
+        "bullet0": "Access building documentation across the portfolio",
+        "bullet1": "Review layouts and dimensions remotely",
+        "bullet2": "Start new work from information already available",
+        "bullet3": "Reduce the need to re-establish basic site conditions",
         "quote": "Consistent documentation across all properties saves us both time and money. It gives us a clear overview of the portfolio and removes a lot of uncertainty when planning changes.",
         "quoteAuthor": "Eddie Carlqvist, CEO, Carlqvist Property",
         "metric": "56",
         "metricLabel": "commercial properties documented",
         "image": "[[TODO: site photograph for the named retail case]]"
       },
+      "proofCase": {
+        "label": "Portfolio programme",
+        "headline": "40+ commercial properties documented as one programme",
+        "body": "[[TODO: why the portfolio was documented, how the consistent information across the properties was used, and the verified downstream result]]",
+        "metric": "40+",
+        "metricLabel": "commercial properties documented",
+        "image": "[[TODO: site photograph for the second portfolio programme]]"
+      },
       "fitNotFit": {
         "headline": "Best fit",
         "bestFit": {
           "title": "RESCAN is built for",
-          "item0": "Retail chains managing multiple locations",
+          "item0": "Retail property teams managing multiple locations",
           "item1": "Refurbishment, rollout and redesign programmes",
-          "item2": "Teams where repeat site visits carry real cost",
+          "item2": "Teams where repeated site verification carries real time and cost",
           "item3": "Building information that supports repeated property decisions"
         },
         "notFit": {
           "title": "Not built for",
           "item0": "Private residential work",
           "item1": "Low-budget one-off surveys",
-          "item2": "Single isolated buildings"
+          "item2": "Small isolated projects with no wider portfolio or downstream use"
         }
       },
       "finalCta": {
         "headline": "How often is your team going back to site for information that could already be available?",
-        "cta": "Discuss your retail portfolio"
+        "cta": "Discuss your property portfolio"
       }
     },
     "logistics": {

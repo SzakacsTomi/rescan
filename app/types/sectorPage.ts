@@ -19,6 +19,19 @@ export type SectorPageConfig = {
   };
 };
 
+export type NamedCaseTranslations = {
+  label: string;
+  headline: string;
+  body: string;
+  bulletIntro?: string;
+  bulletPoints?: string[];
+  metric: string;
+  metricLabel: string;
+  image: string;
+  quote?: string;
+  quoteAuthor?: string;
+};
+
 /**
  * Every block except `hero` and `finalCta` is optional: the two sector briefs ask for
  * different sections in the same order, so the template renders what it is given rather
@@ -30,7 +43,7 @@ export type SectorPageTranslations = {
     subheadline: string;
     primaryCta: string;
     secondaryCta: string;
-    /** Mono sector label above the headline — e.g. "Sector 01 — Retail Chains". */
+    /** Mono sector label above the headline — e.g. "Sector 01 — Retail Property Portfolios". */
     eyebrow?: string;
     /** Side rail of facility facts beside the headline. */
     facts?: Array<{ label: string; value: string }>;
@@ -56,18 +69,11 @@ export type SectorPageTranslations = {
     headline: string;
     subheadline: string;
   };
-  namedCase?: {
-    label: string;
-    headline: string;
-    body: string;
-    bulletIntro?: string;
-    bulletPoints?: string[];
-    metric: string;
-    metricLabel: string;
-    image: string;
-    quote?: string;
-    quoteAuthor?: string;
-  };
+  /** A named portfolio or programme case rendered by `organisms/sector/NamedCase`. */
+  namedCase?: NamedCaseTranslations;
+  /** A second, lighter proof block rendered directly after `namedCase` — the retail
+   *  page's 40+ property programme. Not every sector has two. */
+  proofCase?: NamedCaseTranslations;
   /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`. */
   proof?: {
     headline: string;

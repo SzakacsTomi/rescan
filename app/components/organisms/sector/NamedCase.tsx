@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Pending } from "@/app/components/atoms/Pending";
 import { Reveal } from "@/app/components/atoms/Reveal";
@@ -17,6 +19,8 @@ type NamedCaseProps = {
 };
 
 export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, metric, metricLabel, image, quote, quoteAuthor }: NamedCaseProps) => {
+  const bodyLines = body.split("\n");
+
   return (
     <section className="py-[120px] px-6 bg-muted/30">
       <div className="max-w-5xl mx-auto">
@@ -35,7 +39,14 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
               </h2>
             </Reveal>
             <Reveal>
-              <p className="mt-6 text-body leading-loose text-foreground/65 whitespace-pre-line">{body}</p>
+              <p className="mt-6 text-body leading-loose text-foreground/65 whitespace-pre-line">
+                {bodyLines.map((line, i) => (
+                  <Fragment key={i}>
+                    <Pending>{line}</Pending>
+                    {i < bodyLines.length - 1 && "\n"}
+                  </Fragment>
+                ))}
+              </p>
             </Reveal>
             {bulletIntro && bulletPoints && bulletPoints.length > 0 && (
               <div className="mt-7">
