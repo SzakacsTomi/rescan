@@ -49,7 +49,12 @@ export async function submitContact(
     }
   }
 
-  const enquiry = { ...parsed.data, additionalContext: read("additionalContext") || undefined };
+  // `role` is optional per the brief and thus outside the schema; read it with the context.
+  const enquiry = {
+    ...parsed.data,
+    role: read("role") || undefined,
+    additionalContext: read("additionalContext") || undefined,
+  };
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {

@@ -314,7 +314,7 @@
     },
     "bestFit": {
       "headline": "Best fit",
-      "item0": "Multi-site retail programmes",
+      "item0": "Multi-location retail property portfolios",
       "item1": "Large or complex logistics warehouse projects",
       "item2": "Projects where additional visits, redesign or delay carry meaningful cost",
       "disqualifier0": "Not private residential work.",
@@ -335,9 +335,8 @@
       "sector": "Sector",
       "sectorPlaceholder": "Select a sector",
       "sectorOptions": {
-        "retail": "Retail Chains",
-        "logistics": "Logistics Warehouses",
-        "other": "Other"
+        "retail": "Retail Property Portfolios",
+        "logistics": "Logistics Warehouses"
       },
       "name": "Name",
       "namePlaceholder": "Your name",
@@ -347,8 +346,8 @@
       "companyPlaceholder": "Your company",
       "role": "Your role",
       "rolePlaceholder": "e.g. Property Director",
-      "scale": "Number of retail locations or approximate warehouse size",
-      "scalePlaceholder": "e.g. 42 stores, or 38,000 m²",
+      "scale": "Number of properties or approximate warehouse size",
+      "scalePlaceholder": "e.g. 42 properties or 38,000 m²",
       "scaleHelp": "A rough figure is enough at this stage.",
       "decision": "What project or decision will the information support?",
       "decisionPlaceholder": "Describe the project or decision this needs to support.",

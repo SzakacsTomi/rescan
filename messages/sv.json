@@ -319,7 +319,7 @@
     },
     "bestFit": {
       "headline": "Passar bäst för",
-      "item0": "Butiksprogram över flera platser",
+      "item0": "Fastighetsportföljer för detaljhandeln på flera platser",
       "item1": "Stora eller komplexa logistiklagerprojekt",
       "item2": "Projekt där extra besök, omprojektering eller förseningar innebär verklig kostnad",
       "disqualifier0": "Inte privata bostäder.",
@@ -340,9 +340,8 @@
       "sector": "Sektor",
       "sectorPlaceholder": "Välj sektor",
       "sectorOptions": {
-        "retail": "Butikskedjor",
-        "logistics": "Logistiklager",
-        "other": "Annat"
+        "retail": "Fastighetsportföljer för detaljhandel",
+        "logistics": "Logistiklager"
       },
       "name": "Namn",
       "namePlaceholder": "Ditt namn",
@@ -352,8 +351,8 @@
       "companyPlaceholder": "Ditt företag",
       "role": "Din roll",
       "rolePlaceholder": "t.ex. fastighetschef",
-      "scale": "Antal butiker eller ungefärlig lagerstorlek",
-      "scalePlaceholder": "t.ex. 42 butiker, eller 38 000 m²",
+      "scale": "Antal fastigheter eller ungefärlig lagerstorlek",
+      "scalePlaceholder": "t.ex. 42 fastigheter eller 38 000 m²",
       "scaleHelp": "En ungefärlig siffra räcker i det här skedet.",
       "decision": "Vilket projekt eller beslut ska informationen stödja?",
       "decisionPlaceholder": "Beskriv projektet eller beslutet som detta ska stödja.",

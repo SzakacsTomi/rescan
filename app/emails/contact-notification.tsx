@@ -3,7 +3,7 @@ interface ContactEmailProps {
   name: string;
   email: string;
   company: string;
-  role: string;
+  role?: string;
   scale: string;
   decision: string;
   incomplete: string;
@@ -31,7 +31,7 @@ export function contactNotificationHtml({
     { label: "Name", value: name },
     { label: "Email", value: email },
     { label: "Company", value: company },
-    { label: "Role", value: role },
+    ...(role ? [{ label: "Role", value: role }] : []),
     { label: "Scale", value: scale },
     { label: "Timing", value: timing },
   ];

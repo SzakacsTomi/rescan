@@ -196,7 +196,7 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
                 onChange={() => clearError("company")}
               />
             </FormField>
-            <FormField id={ids.role} label={t.role} required error={errorFor("role")}>
+            <FormField id={ids.role} label={t.role} error={errorFor("role")}>
               <input
                 id={ids.role}
                 name="role"
