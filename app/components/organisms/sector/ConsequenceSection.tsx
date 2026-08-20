@@ -36,9 +36,7 @@ export const ConsequenceSection = ({
         <div className="mt-14 lg:mt-18">{children}</div>
         {footnote && (
           <Reveal>
-            <p className="mt-11 max-w-160 text-body leading-prose text-foreground/60">
-              {footnote}
-            </p>
+            <p className="mt-11 max-w-180 text-body leading-prose text-foreground/60">{footnote}</p>
           </Reveal>
         )}
       </div>

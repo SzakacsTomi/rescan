@@ -782,8 +782,8 @@
       },
       "coreRisk": {
         "eyebrow": "The core risk",
-        "headline": "The bigger the facility, the more expensive incomplete information becomes.",
-        "body": "Large logistics warehouses can combine structure, services, equipment, mezzanines and years of alterations across enormous areas.\nHistoric drawings and isolated measurements may only show part of that picture.\nWhen important conditions are missing, design teams have to make assumptions."
+        "headline": "The larger and more complex the facility, the more expensive incomplete information becomes.",
+        "body": "The challenge is not simply measuring a large building. It is understanding how existing structure, services, equipment and previous alterations fit together across the facility.\nHistoric drawings and isolated measurements may only show part of the picture.\nWhen important conditions are missing, design teams have to make assumptions."
       },
       "consequenceChain": {
         "headline": "Assumptions get more expensive as the project moves forward.",
@@ -811,20 +811,33 @@
           "description": "Answer more questions from the building information already available."
         }
       },
+      "proof": {
+        "headline": "Proven across large and complex facilities.",
+        "item0": {
+          "slot": "01 / Facility scale",
+          "figure": "[[TODO: XX,XXX m² logistics facility]]",
+          "statement": "[[TODO: short verified statement on scale or project context]]"
+        },
+        "item1": {
+          "slot": "02 / Retrofit complexity",
+          "figure": "[[TODO: relevant complexity or retrofit example]]",
+          "statement": "[[TODO: short verified statement on why the facility was difficult to understand]]"
+        }
+      },
       "fitNotFit": {
         "headline": "Best fit",
         "bestFit": {
           "title": "RESCAN is suited to",
           "item0": "Large or complex logistics warehouse projects",
-          "item1": "Retrofit, redevelopment and equipment integration",
-          "item2": "Facilities where downstream design consequences carry real cost",
-          "item3": "Projects where existing conditions are hard to establish from drawings"
+          "item1": "Retrofit, refurbishment or redesign programmes",
+          "item2": "Projects where incomplete building information can create assumptions, redesign or delay",
+          "item3": "Facilities where reliable existing-condition information is commercially important"
         },
         "notFit": {
           "title": "Not suited to",
           "item0": "Private residential work",
           "item1": "Low-budget one-off surveys",
-          "item2": "Low-value surveying with no downstream design"
+          "item2": "Small isolated projects where existing-condition risk is minimal"
         }
       },
       "finalCta": {

@@ -787,8 +787,8 @@
       },
       "coreRisk": {
         "eyebrow": "Den dyra risken",
-        "headline": "Ju större anläggning, desto dyrare blir ofullständig information.",
-        "body": "Stora logistiklager kan kombinera stomme, installationer, utrustning, entresolplan och år av ombyggnader över enorma ytor.\nHistoriska ritningar och enstaka inmätningar visar ofta bara en del av den bilden.\nNär viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
+        "headline": "Ju större och mer komplex anläggningen är, desto dyrare blir ofullständig information.",
+        "body": "Utmaningen är inte bara att mäta en stor byggnad. Det handlar om att förstå hur befintlig stomme, installationer, utrustning och tidigare ombyggnader hänger samman i hela anläggningen.\nHistoriska ritningar och enstaka inmätningar visar ofta bara en del av bilden.\nNär viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
       },
       "consequenceChain": {
         "headline": "Antaganden blir dyrare ju längre projektet går.",
@@ -816,20 +816,33 @@
           "description": "Besvara fler frågor utifrån den byggnadsinformation som redan finns."
         }
       },
+      "proof": {
+        "headline": "Bevisat för stora och komplexa anläggningar.",
+        "item0": {
+          "slot": "01 / Anläggningsskala",
+          "figure": "[[TODO: XX,XXX m² logistics facility]]",
+          "statement": "[[TODO: short verified statement on scale or project context]]"
+        },
+        "item1": {
+          "slot": "02 / Ombyggnadskomplexitet",
+          "figure": "[[TODO: relevant complexity or retrofit example]]",
+          "statement": "[[TODO: short verified statement on why the facility was difficult to understand]]"
+        }
+      },
       "fitNotFit": {
         "headline": "Passar bäst för",
         "bestFit": {
           "title": "RESCAN passar för",
           "item0": "Stora eller komplexa logistiklagerprojekt",
-          "item1": "Ombyggnad, omutveckling och integration av utrustning",
-          "item2": "Anläggningar där konsekvenser i projekteringen innebär verklig kostnad",
-          "item3": "Projekt där befintliga förhållanden är svåra att fastställa utifrån ritningar"
+          "item1": "Ombyggnads-, renoverings- eller omprojekteringsprogram",
+          "item2": "Projekt där ofullständig byggnadsinformation kan leda till antaganden, omprojektering eller förseningar",
+          "item3": "Anläggningar där pålitlig information om befintliga förhållanden är kommersiellt viktig"
         },
         "notFit": {
           "title": "Passar inte för",
           "item0": "Privata bostäder",
           "item1": "Enstaka uppdrag med låg budget",
-          "item2": "Inmätning utan efterföljande projektering"
+          "item2": "Små avgränsade projekt där risken med befintliga förhållanden är minimal"
         }
       },
       "finalCta": {

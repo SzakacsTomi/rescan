@@ -44,6 +44,14 @@ export default async function LogisticsWarehousesPage() {
         description: t(`strategicValue.${key}.description`),
       })),
     },
+    proof: {
+      headline: t("proof.headline"),
+      items: (["item0", "item1"] as const).map((key) => ({
+        slot: t(`proof.${key}.slot`),
+        figure: t(`proof.${key}.figure`),
+        statement: t(`proof.${key}.statement`),
+      })),
+    },
     fitNotFit: {
       headline: t("fitNotFit.headline"),
       bestFit: {

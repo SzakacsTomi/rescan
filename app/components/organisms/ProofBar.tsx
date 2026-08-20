@@ -32,6 +32,11 @@ type ProofBarProps = {
   };
 };
 
+// The grid is four slots wide on the Home band, but a sector page may ship fewer
+// proofs (Logistics has two). Collapse the lg columns to the item count so a short
+// band fills edge to edge instead of leaving the right half of the dark strip empty.
+const columnClass = (count: number) =>
+  count <= 2 ? "lg:grid-cols-2" : count === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4";
 
 export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
   return (
@@ -50,7 +55,7 @@ export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
           )}
         </Reveal>
 
-        <dl className="mt-14 grid grid-cols-1 gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
+        <dl className={`mt-14 grid grid-cols-1 gap-y-12 gap-x-10 sm:grid-cols-2 lg:divide-x lg:divide-white/10 ${columnClass(items.length)}`}>
           {items.map((item, i) => (
             <Reveal key={i} className="flex flex-col gap-3.5 lg:pl-8 lg:first:pl-0">
               <MonoLabel as="dt" className="text-white/40">{item.slot}</MonoLabel>
