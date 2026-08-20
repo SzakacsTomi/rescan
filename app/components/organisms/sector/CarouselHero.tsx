@@ -90,18 +90,18 @@ export const CarouselHero = ({
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-7 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-[-0.03em] text-balance whitespace-pre-line"
+              className="mt-7 text-4xl sm:text-5xl lg:text-display-2xs font-bold leading-headline tracking-tight text-balance whitespace-pre-line"
             >
               {headline}
             </motion.h1>
-            <p className="mt-7 max-w-155 text-[19px] leading-[1.65] text-foreground/60">
+            <p className="mt-7 max-w-155 text-lead leading-copy text-foreground/60">
               {subheadline}
             </p>
           </div>
           <div className="flex items-center gap-6">
             <Link
               href={primaryCta.href}
-              className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
+              className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-mid"
             >
               {primaryCta.label}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -116,7 +116,7 @@ export const CarouselHero = ({
         </div>
       </div>
 
-      <div className="relative h-72 overflow-hidden bg-[#020409] sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:left-[56%] lg:h-auto">
+      <div className="relative h-72 overflow-hidden bg-ink sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:left-[56%] lg:h-auto">
         <div className="absolute inset-0 flex flex-col gap-1 py-1">
           {rows.map((row) => (
             <div key={row.duration} className="relative flex-1 overflow-hidden">

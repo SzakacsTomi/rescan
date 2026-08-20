@@ -28,7 +28,7 @@ export const CostLadder = ({ eyebrow, headline, items }: CostLadderProps) => {
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <MonoLabel className="text-foreground/40">{eyebrow}</MonoLabel>
-          <h2 className="mt-6 max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[44px]">
+          <h2 className="mt-6 max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-h1-lg">
             {headline}
           </h2>
         </Reveal>

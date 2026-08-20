@@ -18,6 +18,6 @@ export const ProofGrid = ({ label, caption, cellCount }: ProofGridProps) => (
         <span key={i} className="aspect-square rounded-sm bg-primary" />
       ))}
     </div>
-    <p className="mt-5.5 text-sm leading-[1.6] text-foreground/60">{caption}</p>
+    <p className="mt-5.5 text-sm leading-body-lg text-foreground/60">{caption}</p>
   </div>
 );

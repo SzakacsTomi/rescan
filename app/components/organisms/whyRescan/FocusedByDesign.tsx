@@ -23,12 +23,12 @@ export const FocusedByDesign = ({
       <div className="mx-auto grid max-w-310 grid-cols-1 items-start gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-20">
         <div>
           <Reveal>
-            <h2 className="text-[32px] font-bold leading-[1.12] tracking-[-0.03em] sm:text-[38px]">
+            <h2 className="text-h2 font-bold leading-tight tracking-tight sm:text-h1">
               {headline}
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mt-5 text-base leading-[1.7] text-foreground/60">{note}</p>
+            <p className="mt-5 text-base leading-prose text-foreground/60">{note}</p>
           </Reveal>
         </div>
 
@@ -39,7 +39,7 @@ export const FocusedByDesign = ({
                 as="li"
                 key={item}
                 className={cn(
-                  "flex items-baseline gap-5 border-t border-border py-6.5 text-xl font-semibold leading-[1.35] tracking-[-0.02em] lg:text-[22px]",
+                  "flex items-baseline gap-5 border-t border-border py-6.5 text-xl font-semibold leading-snug tracking-snug lg:text-subhead",
                   i === items.length - 1 && "border-b",
                 )}
               >
@@ -52,7 +52,7 @@ export const FocusedByDesign = ({
           </ul>
           <Reveal className="mt-11 flex flex-wrap items-center gap-8 bg-secondary px-7 py-6">
             <MonoLabel className="text-foreground/45">{notFitLabel}</MonoLabel>
-            <p className="m-0 text-[17px] leading-[1.5] text-foreground/55">{notFitText}</p>
+            <p className="m-0 text-body leading-note text-foreground/55">{notFitText}</p>
           </Reveal>
         </div>
       </div>

@@ -17,12 +17,12 @@ export const CorePrinciple = ({ headline, body, rolesLabel, roles }: CorePrincip
       <div className="mx-auto grid max-w-310 grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20">
         <div>
           <Reveal>
-            <h2 className="max-w-[16ch] text-[32px] font-bold leading-[1.12] tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">
+            <h2 className="max-w-[16ch] text-h2 font-bold leading-tight tracking-tight sm:text-h1 lg:text-h1-lg">
               {headline}
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.75] whitespace-pre-line text-foreground/68">
+            <p className="mt-8 max-w-[60ch] text-lead leading-loose whitespace-pre-line text-foreground/68">
               {body}
             </p>
           </Reveal>
@@ -36,7 +36,7 @@ export const CorePrinciple = ({ headline, body, rolesLabel, roles }: CorePrincip
                 <li
                   key={role}
                   className={cn(
-                    "flex items-baseline gap-3.5 border-t border-foreground/10 py-3 text-[15px] text-foreground/75",
+                    "flex items-baseline gap-3.5 border-t border-foreground/10 py-3 text-note text-foreground/75",
                     i === roles.length - 1 && "pb-5",
                   )}
                 >

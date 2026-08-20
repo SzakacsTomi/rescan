@@ -19,11 +19,11 @@ type ConsequenceChainProps = {
  *  shape as `organisms/home/CostLadder`'s rung ramp. The columns share one height: the
  *  steps are bottom-aligned, so the growing type alone draws the staircase. */
 const STEP_STYLE = [
-  { surface: "bg-background/45", index: "text-foreground/35", label: "text-[15px] font-medium text-foreground/55", rule: "border-foreground/15" },
+  { surface: "bg-background/45", index: "text-foreground/35", label: "text-note font-medium text-foreground/55", rule: "border-foreground/15" },
   { surface: "bg-background/55", index: "text-foreground/35", label: "text-base font-medium text-foreground/65", rule: "border-foreground/20" },
-  { surface: "bg-background/65", index: "text-foreground/40", label: "text-[17px] font-semibold text-foreground/75", rule: "border-foreground/30" },
-  { surface: "bg-background/75", index: "text-foreground/45", label: "text-[19px] font-semibold text-foreground/85", rule: "border-foreground/45" },
-  { surface: "bg-background/85", index: "text-primary/70", label: "text-[21px] font-bold text-foreground", rule: "border-primary/60" },
+  { surface: "bg-background/65", index: "text-foreground/40", label: "text-body font-semibold text-foreground/75", rule: "border-foreground/30" },
+  { surface: "bg-background/75", index: "text-foreground/45", label: "text-lead font-semibold text-foreground/85", rule: "border-foreground/45" },
+  { surface: "bg-background/85", index: "text-primary/70", label: "text-lead-lg font-bold text-foreground", rule: "border-primary/60" },
   { surface: "bg-background", index: "text-primary", label: "text-2xl font-bold text-foreground", rule: "border-primary" },
 ] as const;
 
@@ -45,7 +45,7 @@ export const ConsequenceChain = ({ steps }: ConsequenceChainProps) => {
             <MonoLabel aria-hidden className={style.index}>
               {String(i + 1).padStart(2, "0")}
             </MonoLabel>
-            <span className={cn("leading-[1.25] tracking-[-0.02em]", style.label)}>{step}</span>
+            <span className={cn("leading-card tracking-snug", style.label)}>{step}</span>
           </Reveal>
         );
       })}

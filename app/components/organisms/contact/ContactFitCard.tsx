@@ -39,7 +39,7 @@ export const ContactFitCard = ({ headline, items, disqualifiers }: ContactFitCar
             <MonoLabel aria-hidden className="mt-1 text-primary">
               {String.fromCharCode(FIRST_FIT_INDEX + index)}
             </MonoLabel>
-            <span className="text-sm leading-[1.5] text-pretty text-foreground">{item}</span>
+            <span className="text-sm leading-note text-pretty text-foreground">{item}</span>
           </li>
         ))}
       </ul>
@@ -47,7 +47,7 @@ export const ContactFitCard = ({ headline, items, disqualifiers }: ContactFitCar
 
     <div className="border-t border-border bg-background px-6 py-4">
       {disqualifiers.map((line) => (
-        <p key={line} className="text-xs leading-[1.55] text-pretty text-muted-foreground">
+        <p key={line} className="text-xs leading-body text-pretty text-muted-foreground">
           {line}
         </p>
       ))}

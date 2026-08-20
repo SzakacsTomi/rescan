@@ -44,10 +44,10 @@ export const WhyRescanHero = ({
                 <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
               </div>
               <Reveal>
-                <h1 className="mt-7 max-w-160 text-[32px] font-bold leading-[1.08] tracking-[-0.035em] sm:text-[44px] lg:text-[54px]">
+                <h1 className="mt-7 max-w-160 text-h2 font-bold leading-display tracking-headline sm:text-h1-lg lg:text-display-xs">
                   {headline}
                 </h1>
-                <p className="mt-6 max-w-[49ch] text-base leading-[1.7] text-foreground/70 sm:text-lg">
+                <p className="mt-6 max-w-[49ch] text-base leading-prose text-foreground/70 sm:text-lg">
                   {subheadline}
                 </p>
               </Reveal>
@@ -67,7 +67,7 @@ export const WhyRescanHero = ({
                   >
                     <MonoLabel
                       aria-hidden
-                      className="pointer-events-none text-[44px] leading-none font-medium tracking-[-0.02em] text-primary/12 transition-colors duration-300 group-hover:text-primary/30"
+                      className="pointer-events-none text-h1-lg leading-none font-medium tracking-snug text-primary/12 transition-colors duration-300 group-hover:text-primary/30"
                     >
                       {String(i + 1).padStart(2, "0")}
                     </MonoLabel>
@@ -89,7 +89,7 @@ export const WhyRescanHero = ({
         </div>
       </div>
 
-      <div className="relative mt-12 overflow-hidden bg-[#020409] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[53%] lg:mt-0">
+      <div className="relative mt-12 overflow-hidden bg-ink lg:absolute lg:inset-y-0 lg:right-0 lg:left-[53%] lg:mt-0">
         <div
           aria-hidden
           className="absolute inset-0"
@@ -98,17 +98,17 @@ export const WhyRescanHero = ({
         <div aria-hidden className="absolute inset-0" style={{ background: QUESTION_PANEL_GLOW }} />
         <div className="relative flex min-h-96 flex-col justify-between gap-10 px-6 py-12 sm:px-8 lg:h-full lg:min-h-0 lg:gap-0 lg:pt-29 lg:pr-16 lg:pb-16 lg:pl-14">
           <Reveal>
-            <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{questionLabel}</MonoLabel>
+            <MonoLabel className="tracking-eyebrow text-accent-sky">{questionLabel}</MonoLabel>
           </Reveal>
           <Reveal>
-            <p className="m-0 max-w-[26ch] text-2xl font-semibold leading-[1.28] tracking-[-0.025em] text-white sm:text-[32px]">
+            <p className="m-0 max-w-[26ch] text-2xl font-semibold leading-quote tracking-title text-white sm:text-h2">
               {question}
             </p>
           </Reveal>
           <Reveal>
             <Link
               href={cta.href}
-              className="group inline-flex w-fit items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
+              className="group inline-flex w-fit items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-note font-semibold text-primary-foreground transition-colors hover:bg-accent-mid"
             >
               {cta.label}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />

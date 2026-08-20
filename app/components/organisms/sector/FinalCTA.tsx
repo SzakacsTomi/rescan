@@ -40,11 +40,11 @@ export const FinalCTA = ({
       />
       <Reveal className="relative mx-auto max-w-250">
         {eyebrow && (
-          <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
+          <MonoLabel className="tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>
         )}
         <h2
           className={cn(
-            'text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[56px]',
+            'text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-display-sm',
             eyebrow && 'mt-7',
             headlineClassName,
           )}
@@ -63,7 +63,7 @@ export const FinalCTA = ({
         )}
         <Link
           href={ctaHref}
-          className="group mt-11 inline-flex items-center gap-3 rounded-md bg-primary px-8 py-4.5 font-semibold text-primary-foreground tracking-wide transition-colors hover:bg-[#3f77cf]"
+          className="group mt-11 inline-flex items-center gap-3 rounded-md bg-primary px-8 py-4.5 font-semibold text-primary-foreground tracking-wide transition-colors hover:bg-accent-mid"
         >
           {cta}
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -40,10 +40,10 @@ export const CaseStudySequence = ({
       <div className="mx-auto max-w-350">
         <Reveal>
           <MonoLabel className="text-foreground/40">{eyebrow}</MonoLabel>
-          <h2 className="mt-6 max-w-225 text-[32px] font-bold leading-[1.12] tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">
+          <h2 className="mt-6 max-w-225 text-h2 font-bold leading-tight tracking-tight sm:text-h1 lg:text-h1-lg">
             {headline}
           </h2>
-          <p className="mt-5 max-w-190 text-[17px] leading-[1.7] text-foreground/60 lg:text-[19px]">
+          <p className="mt-5 max-w-190 text-body leading-prose text-foreground/60 lg:text-lead">
             {body}
           </p>
         </Reveal>
@@ -67,7 +67,7 @@ export const CaseStudySequence = ({
               >
                 <MonoLabel
                   className={cn(
-                    "flex size-7.75 items-center justify-center rounded-full border text-[11px] tracking-normal",
+                    "flex size-7.75 items-center justify-center rounded-full border text-mono-xs tracking-normal",
                     i === lastIndex
                       ? "border-primary bg-primary text-white"
                       : i >= ACCENTED_FROM
@@ -80,7 +80,7 @@ export const CaseStudySequence = ({
                 <div>
                   <h3
                     className={cn(
-                      "text-[17px] font-semibold tracking-[-0.02em]",
+                      "text-body font-semibold tracking-snug",
                       i >= ACCENTED_FROM ? "text-foreground" : "text-foreground/80",
                     )}
                   >
@@ -88,7 +88,7 @@ export const CaseStudySequence = ({
                   </h3>
                   <p
                     className={cn(
-                      "mt-2 text-sm leading-[1.6]",
+                      "mt-2 text-sm leading-body-lg",
                       i >= ACCENTED_FROM ? "text-foreground/62" : "text-foreground/55",
                     )}
                   >

@@ -56,7 +56,7 @@ export const SplitMediaHero = ({
                   line lengths instead and loses that break. */}
               <h1
                 className={cn(
-                  'text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-5xl xl:text-[3.375rem]',
+                  'text-4xl font-bold leading-display tracking-headline text-foreground sm:text-5xl xl:text-display-xs',
                   eyebrow && 'mt-7',
                 )}
               >

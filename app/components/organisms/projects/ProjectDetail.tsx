@@ -100,7 +100,7 @@ export const ProjectDetail = ({
               </div>
             </div>
 
-            <div className="bg-[#020409] px-8 sm:px-12 lg:px-16 py-12 flex-1">
+            <div className="bg-ink px-8 sm:px-12 lg:px-16 py-12 flex-1">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}

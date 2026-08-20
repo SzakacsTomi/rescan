@@ -16,12 +16,12 @@ export const AboutCompany = ({ headline, lead, steps, positioning }: AboutCompan
     <section className="px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
       <div className="mx-auto max-w-[1100px]">
         <Reveal>
-          <h2 className="max-w-24ch text-[32px] font-bold leading-[1.15] tracking-[-0.03em] sm:text-[38px]">
+          <h2 className="max-w-24ch text-h2 font-bold leading-heading tracking-tight sm:text-h1">
             {headline}
           </h2>
         </Reveal>
         <Reveal>
-          <p className="mt-8 max-w-[62ch] text-[19px] font-medium leading-[1.7] text-foreground/85">
+          <p className="mt-8 max-w-[62ch] text-lead font-medium leading-prose text-foreground/85">
             {lead}
           </p>
         </Reveal>
@@ -33,7 +33,7 @@ export const AboutCompany = ({ headline, lead, steps, positioning }: AboutCompan
                 <MonoLabel aria-hidden className="text-primary">
                   {String(i + 1).padStart(2, '0')}
                 </MonoLabel>
-                <span className="text-[17px] font-medium leading-[1.6] text-foreground/80">
+                <span className="text-body font-medium leading-body-lg text-foreground/80">
                   {step}
                 </span>
               </div>
@@ -42,7 +42,7 @@ export const AboutCompany = ({ headline, lead, steps, positioning }: AboutCompan
         </ol>
 
         <Reveal>
-          <p className="mt-11 max-w-[62ch] text-[17px] leading-[1.8] text-foreground/68">
+          <p className="mt-11 max-w-[62ch] text-body leading-read text-foreground/68">
             {positioning}
           </p>
         </Reveal>

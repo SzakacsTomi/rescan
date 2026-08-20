@@ -31,7 +31,7 @@ export const Pillars = ({ headline, monoLabel, proofLabel, pillars }: PillarsPro
     <section id={PILLARS_ID} className="scroll-mt-16 px-6 py-24 sm:px-8 lg:px-10 lg:py-30">
       <div className="mx-auto max-w-310">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
-          <h2 className="max-w-[23ch] text-[32px] font-bold leading-[1.15] tracking-[-0.03em] sm:text-[38px]">
+          <h2 className="max-w-[23ch] text-h2 font-bold leading-heading tracking-tight sm:text-h1">
             {headline}
           </h2>
           <MonoLabel className="text-foreground/40">{monoLabel}</MonoLabel>
@@ -47,14 +47,14 @@ export const Pillars = ({ headline, monoLabel, proofLabel, pillars }: PillarsPro
                 <MonoLabel className="text-primary" aria-hidden>
                   {String(i + 1).padStart(2, "0")}
                 </MonoLabel>
-                <h3 className="text-2xl font-bold leading-[1.1] tracking-[-0.03em] lg:text-[28px]">
+                <h3 className="text-2xl font-bold leading-headline tracking-tight lg:text-title-lg">
                   {pillar.title}
                 </h3>
               </div>
-              <p className="text-[19px] font-semibold leading-[1.4] tracking-[-0.02em]">
+              <p className="text-lead font-semibold leading-caption tracking-snug">
                 {pillar.lead}
               </p>
-              <p className="text-base leading-[1.7] whitespace-pre-line text-foreground/65">
+              <p className="text-base leading-prose whitespace-pre-line text-foreground/65">
                 {pillar.body}
               </p>
               <div className="mt-auto flex flex-col gap-3 bg-secondary p-5">

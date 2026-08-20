@@ -25,7 +25,7 @@ export const MapPlate = ({
   openInMaps,
   href,
 }: MapPlateProps) => (
-  <dl className="absolute bottom-0 left-0 z-10 max-w-[calc(100%-1rem)] border-t border-r border-white/15 bg-[#020409]/88 px-5 py-4 sm:max-w-[24rem] sm:px-6 sm:py-5">
+  <dl className="absolute bottom-0 left-0 z-10 max-w-[calc(100%-1rem)] border-t border-r border-white/15 bg-ink/88 px-5 py-4 sm:max-w-[24rem] sm:px-6 sm:py-5">
     <MonoLabel as="dt" className="text-white/60">
       {locationLabel}
     </MonoLabel>
@@ -35,7 +35,7 @@ export const MapPlate = ({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={openInMaps}
-        className="-my-1 mt-2 block py-1 text-[13px] font-medium leading-snug text-white underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 sm:text-sm"
+        className="-my-1 mt-2 block py-1 text-caption font-medium leading-snug text-white underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 sm:text-sm"
       >
         {address}
       </a>
@@ -45,7 +45,7 @@ export const MapPlate = ({
       <MonoLabel as="dt" className="text-white/60">
         {coordinatesLabel}
       </MonoLabel>
-      <MonoLabel as="dd" className="mt-2 text-[12px] tracking-[0.04em] tabular-nums text-white/85">
+      <MonoLabel as="dd" className="mt-2 text-micro tracking-mono-tight tabular-nums text-white/85">
         {coordinates}
       </MonoLabel>
     </div>

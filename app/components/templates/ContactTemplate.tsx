@@ -79,7 +79,7 @@ export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
                 {/* The reveal sits inside the `aside`, not around it: animating the sticky
                     element itself would make it the transform's own containing block. */}
                 <Reveal>
-                  <MonoLabel as="h2" className="mb-6 tracking-[0.2em]">
+                  <MonoLabel as="h2" className="mb-6 tracking-eyebrow-tight">
                     {tr.form.headline}
                   </MonoLabel>
                   <ContactRail items={tr.groups} ariaLabel={tr.rail.label} />

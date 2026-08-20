@@ -28,16 +28,16 @@ const LEDGER_GLOW =
  */
 export const ProofLedger = ({ headline, cta, rows }: ProofLedgerProps) => {
   return (
-    <section className="relative overflow-hidden bg-[#020409] px-6 py-24 sm:px-8 lg:px-10 lg:py-28">
+    <section className="relative overflow-hidden bg-ink px-6 py-24 sm:px-8 lg:px-10 lg:py-28">
       <div aria-hidden className="absolute inset-0" style={{ background: LEDGER_GLOW }} />
       <div className="relative mx-auto max-w-310">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
-          <h2 className="text-3xl font-bold tracking-[-0.03em] text-white sm:text-4xl lg:text-[44px]">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-h1-lg">
             {headline}
           </h2>
           <Link
             href={cta.href}
-            className="group inline-flex items-center gap-2 text-[15px] font-semibold text-[#89b4f5] transition-all hover:gap-3"
+            className="group inline-flex items-center gap-2 text-note font-semibold text-accent-sky transition-all hover:gap-3"
           >
             {cta.label}
             <ArrowRight className="h-4 w-4" />
@@ -57,11 +57,11 @@ export const ProofLedger = ({ headline, cta, rows }: ProofLedgerProps) => {
                 <CountUp
                   value={row.figure}
                   className="text-base font-semibold text-white"
-                  pendingClassName="px-2.5 py-2 text-base leading-[1.4] border-amber-500/80 bg-amber-500/12 text-amber-300"
+                  pendingClassName="px-2.5 py-2 text-base leading-caption border-amber-500/80 bg-amber-500/12 text-amber-300"
                 />
               </dd>
               <dd className="m-0">
-                <Pending className="px-2 py-1.5 text-[13px] border-amber-500/55 bg-amber-500/8 text-amber-300">
+                <Pending className="px-2 py-1.5 text-caption border-amber-500/55 bg-amber-500/8 text-amber-300">
                   {row.statement}
                 </Pending>
               </dd>

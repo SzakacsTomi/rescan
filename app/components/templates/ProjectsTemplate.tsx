@@ -152,7 +152,7 @@ export const ProjectsTemplate = ({
         subheadline={finalCta.subheadline}
         cta={finalCta.cta}
         ctaHref="/contact"
-        headlineClassName="leading-[1.1] tracking-[-0.03em]"
+        headlineClassName="leading-headline tracking-tight"
         subheadlineClassName="max-w-160"
       />
     </>

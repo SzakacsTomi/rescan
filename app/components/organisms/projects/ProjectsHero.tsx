@@ -54,13 +54,13 @@ export const ProjectsHero = ({
         <div>
           <div className="flex items-center gap-3.5">
             <span aria-hidden className="h-px w-11 bg-white/40" />
-            <MonoLabel className="tracking-[0.22em] text-[#89b4f5]">{eyebrow}</MonoLabel>
+            <MonoLabel className="tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>
           </div>
           <Reveal>
-            <h1 className="mt-7 max-w-205 text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[60px]">
+            <h1 className="mt-7 max-w-205 text-h2 font-bold leading-display tracking-tight text-white sm:text-h1-lg lg:text-display">
               {headline}
             </h1>
-            <p className="mt-7 max-w-165 text-[17px] leading-[1.65] text-white/62 lg:text-[19px]">
+            <p className="mt-7 max-w-165 text-body leading-copy text-white/62 lg:text-lead">
               {subheadline}
             </p>
           </Reveal>
@@ -84,10 +84,10 @@ export const ProjectsHero = ({
               >
                 <CountUp
                   value={stat.value}
-                  className="block text-[28px] font-bold tracking-[-0.02em] text-white lg:text-[36px]"
+                  className="block text-title-lg font-bold tracking-snug text-white lg:text-h2-lg"
                   pendingClassName={STAT_PENDING_CLASS}
                 />
-                <span className="mt-1.5 block text-[13px] leading-[1.4] text-white/50">
+                <span className="mt-1.5 block text-caption leading-caption text-white/50">
                   {stat.label}
                 </span>
               </div>
@@ -97,7 +97,7 @@ export const ProjectsHero = ({
           <Reveal className="mt-10 flex flex-wrap items-center gap-6">
             <a
               href={primaryCta.href}
-              className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-[15px] font-semibold text-primary-foreground transition-colors hover:bg-[#3f77cf]"
+              className="group inline-flex items-center gap-2.5 rounded-md bg-primary px-7.5 py-4.25 text-note font-semibold text-primary-foreground transition-colors hover:bg-accent-mid"
             >
               {primaryCta.label}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />

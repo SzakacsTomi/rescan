@@ -29,7 +29,7 @@ export const HeroText = ({
     <div className={cn("max-w-2xl", className)}>
       <h1
         className={cn(
-          "text-4xl sm:text-5xl lg:text-[4.5rem] font-bold tracking-tight leading-[1.05]",
+          "text-4xl sm:text-5xl lg:text-display-xl font-bold tracking-tight leading-hero",
           headlineClassName,
         )}
       >
@@ -38,7 +38,7 @@ export const HeroText = ({
             <span
               className={cn(
                 "animate-hero-rise block opacity-100",
-                i >= accentFromIndex ? "text-[#89b4f5]" : "text-white",
+                i >= accentFromIndex ? "text-accent-sky" : "text-white",
               )}
               style={{ animationDelay: `${i * LINE_REVEAL_STAGGER_SECONDS}s` }}
             >

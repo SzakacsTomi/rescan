@@ -64,7 +64,7 @@ const CASE_TONE = {
     rail: "lg:col-start-1 lg:row-start-1",
     proofCard: "bg-secondary",
     proofBadge: "bg-amber-500/14",
-    changedSurface: "bg-[#020409]",
+    changedSurface: "bg-ink",
     changedGrid: CHANGED_GRID_BOTH,
     changedGridSize: "120px 120px",
   },
@@ -101,7 +101,7 @@ export const CaseStudyFeature = ({
       <div className="mx-auto max-w-310">
         <Reveal>
           <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
-          <h2 className="mt-6 flex flex-wrap items-baseline gap-4 text-[26px] font-bold leading-[1.2] tracking-[-0.03em] sm:text-[32px]">
+          <h2 className="mt-6 flex flex-wrap items-baseline gap-4 text-title font-bold leading-title tracking-tight sm:text-h2">
             <Pending className={BADGE_TITLE}>{title}</Pending>
           </h2>
           <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -134,8 +134,8 @@ export const CaseStudyFeature = ({
                     {String(i + 1).padStart(2, "0")}
                   </MonoLabel>
                   <div>
-                    <h3 className="text-[21px] font-semibold tracking-[-0.02em]">{row.label}</h3>
-                    <p className="mt-3 text-[17px] leading-[1.7] text-foreground/65">
+                    <h3 className="text-lead-lg font-semibold tracking-snug">{row.label}</h3>
+                    <p className="mt-3 text-body leading-prose text-foreground/65">
                       <Pending>{row.copy}</Pending>
                     </p>
                   </div>
@@ -160,8 +160,8 @@ export const CaseStudyFeature = ({
                   }}
                 />
                 <div className="relative">
-                  <MonoLabel className="text-[#89b4f5]">{changedSlot}</MonoLabel>
-                  <p className="mt-5 text-2xl font-semibold leading-[1.35] tracking-[-0.02em] text-white">
+                  <MonoLabel className="text-accent-sky">{changedSlot}</MonoLabel>
+                  <p className="mt-5 text-2xl font-semibold leading-snug tracking-snug text-white">
                     <Pending className={BADGE_ON_DARK}>{changed}</Pending>
                   </p>
                 </div>
@@ -189,7 +189,7 @@ export const CaseStudyFeature = ({
               </Stagger>
               <Link
                 href={viewProject.href}
-                className="group mt-7 inline-flex items-center gap-2 text-[15px] font-semibold text-primary"
+                className="group mt-7 inline-flex items-center gap-2 text-note font-semibold text-primary"
               >
                 {viewProject.label}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

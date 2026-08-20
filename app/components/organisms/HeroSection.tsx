@@ -51,7 +51,7 @@ export const HeroSection = async () => {
         }}
       />
 
-      <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-31.5 pt-32 sm:pt-36 lg:pt-45">
+      <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine pt-32 sm:pt-36 lg:pt-45">
         <div className="grid items-end gap-10 lg:gap-12 2xl:grid-cols-[minmax(0,1fr)_320px]">
           <div>
             <div className="flex items-center gap-3.5 mb-7">
@@ -69,7 +69,7 @@ export const HeroSection = async () => {
             <div className="mt-11 flex flex-wrap items-center gap-7">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2.5 rounded-md bg-primary text-white font-semibold text-[15px] px-7 py-4 transition-colors hover:bg-[#3f77cf]"
+                className="group inline-flex items-center gap-2.5 rounded-md bg-primary text-white font-semibold text-note px-7 py-4 transition-colors hover:bg-accent-mid"
               >
                 {t("hero.primaryCta")}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
@@ -101,7 +101,7 @@ export const HeroSection = async () => {
         </div>
       </div>
 
-      <div className="relative w-full max-w-480 mx-auto px-6 lg:pl-31.5">
+      <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine">
         <div className="mt-16 flex flex-wrap items-stretch border-t border-white/10 lg:mt-20">
           {readoutItems.map((item, i) => (
             <div
@@ -109,7 +109,7 @@ export const HeroSection = async () => {
               className="flex min-w-[45%] flex-1 flex-col gap-1.5 py-5 sm:min-w-0 lg:py-6"
             >
               <MonoLabel className="text-white/35">{item.label}</MonoLabel>
-              <span className="text-[15px] font-medium text-white/85">{item.value}</span>
+              <span className="text-note font-medium text-white/85">{item.value}</span>
             </div>
           ))}
           <div className="flex w-full items-center justify-end py-5 sm:w-auto sm:ml-auto lg:py-6">

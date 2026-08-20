@@ -60,7 +60,7 @@ export const AboutTemplate = ({ hero, company, focus, people, cta }: AboutTempla
         subheadline={cta.subheadline}
         cta={cta.cta}
         ctaHref="/contact"
-        headlineClassName="leading-[1.15] tracking-[-0.03em] lg:text-[52px]"
+        headlineClassName="leading-heading tracking-tight lg:text-display-2xs"
       />
     </>
   );

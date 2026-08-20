@@ -54,7 +54,7 @@ export const ContactRail = ({ items, ariaLabel }: ContactRailProps) => {
                 <MonoLabel
                   aria-hidden
                   className={cn(
-                    'text-[11px] leading-5 tracking-[0.12em] tabular-nums transition-colors duration-200',
+                    'text-mono-xs leading-5 tracking-mono tabular-nums transition-colors duration-200',
                     isActive
                       ? 'text-primary'
                       : 'text-muted-foreground/70 group-hover:text-foreground/70',

@@ -42,7 +42,7 @@ export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
           {cta && !isPending(cta.label) && (
             <Link
               href={cta.href}
-              className="inline-flex items-center gap-2 font-semibold text-[#89b4f5] transition-all hover:gap-3.5"
+              className="inline-flex items-center gap-2 font-semibold text-accent-sky transition-all hover:gap-3.5"
             >
               {cta.label}
               <ArrowRight className="w-4 h-4" />
@@ -57,7 +57,7 @@ export const ProofBar = ({ headline, items, cta }: ProofBarProps) => {
               <dd className="flex flex-col gap-2.5">
                 <CountUp value={item.figure} className="text-3xl font-bold tracking-tight text-white sm:text-4xl" />
                 {item.statement && (
-                  <span className="text-[13px] leading-relaxed text-white/55">
+                  <span className="text-caption leading-relaxed text-white/55">
                     <CountUp value={item.statement} />
                   </span>
                 )}

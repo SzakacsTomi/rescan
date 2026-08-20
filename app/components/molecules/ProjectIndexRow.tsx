@@ -81,27 +81,27 @@ export const ProjectIndexRow = ({
           {meta}
         </MonoLabel>
         {eyebrow && (
-          <MonoLabel className="mt-1.5 block tracking-[0.14em] text-primary lg:mt-0">
+          <MonoLabel className="mt-1.5 block tracking-mono-lg text-primary lg:mt-0">
             {eyebrow}
           </MonoLabel>
         )}
         <span
           className={cn(
-            "mt-1.5 block text-[15px] font-semibold tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary lg:mt-0 lg:text-base",
+            "mt-1.5 block text-note font-semibold tracking-note transition-colors duration-300 group-hover:text-primary lg:mt-0 lg:text-base",
             eyebrow && "lg:mt-1.5",
           )}
         >
           {title}
         </span>
-        <span className="mt-1 block text-[13px] leading-[1.55] text-foreground/50">
+        <span className="mt-1 block text-caption leading-body text-foreground/50">
           {description}
         </span>
       </span>
 
-      <span className="hidden text-[13px] leading-[1.55] text-foreground/55 lg:block">
+      <span className="hidden text-caption leading-body text-foreground/55 lg:block">
         {sectorLabel}
       </span>
-      <span className="hidden text-[13px] leading-[1.55] text-foreground/55 lg:block">
+      <span className="hidden text-caption leading-body text-foreground/55 lg:block">
         {location}
       </span>
 

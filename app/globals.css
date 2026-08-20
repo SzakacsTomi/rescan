@@ -28,14 +28,116 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+
+  /* ── Brand surfaces ──────────────────────────────────────────────────────
+     True oklch conversions of the brand hexes. They deliberately do NOT reuse
+     --foreground/--secondary/--primary: those three were authored as
+     approximations and land on visibly different colours than the hexes the
+     palette comment below names, so folding these into them would change the
+     design. */
+  --color-ink: oklch(0.1063 0.0172 259.54);
+  --color-ink-soft: oklch(0.1773 0.0341 269.56);
+  --color-accent-sky: oklch(0.7641 0.1049 258.45);
+  --color-accent-mid: oklch(0.5756 0.1481 259.14);
+  --color-fit: oklch(0.8401 0.1126 164.78);
+  --color-paper: oklch(0.9365 0.0158 266.28);
+  --color-hairline: oklch(0.8996 0.0176 264.48);
+
+  /* ── Type scale ──────────────────────────────────────────────────────────
+     Every step the redesign draws. Headings move across three of these at
+     sm/lg, which is why the ramp is finer than a stock t-shirt scale. */
+  --text-mono-2xs: 0.625rem;
+  --text-mono-xs: 0.6875rem;
+  --text-micro: 0.75rem;
+  --text-caption: 0.8125rem;
+  --text-note: 0.9375rem;
+  --text-body: 1.0625rem;
+  --text-body-lg: 1.125rem;
+  --text-lead: 1.1875rem;
+  --text-lead-lg: 1.3125rem;
+  --text-subhead: 1.375rem;
+  --text-title-sm: 1.5rem;
+  --text-title: 1.625rem;
+  --text-title-lg: 1.75rem;
+  --text-h3: 1.875rem;
+  --text-h2: 2rem;
+  --text-h2-lg: 2.25rem;
+  --text-h1: 2.375rem;
+  --text-h1-lg: 2.75rem;
+  --text-display-2xs: 3.25rem;
+  --text-display-xs: 3.375rem;
+  --text-display-sm: 3.5rem;
+  --text-display: 3.75rem;
+  --text-display-lg: 4rem;
+  --text-display-xl: 4.5rem;
+  --text-hero: 5rem;
+  --text-hero-lg: 6.5rem;
+
+  /* ── Leading and tracking ──────────────────────────────────────────────
+     Every value the redesign draws, not just the handful headings reuse —
+     the body ramp below is near-continuous because each section pairs its
+     own size with its own leading. */
+  --leading-numeral: 0.9;
+  --leading-hero-tight: 1.04;
+  --leading-hero: 1.05;
+  --leading-display: 1.08;
+  --leading-headline: 1.1;
+  --leading-tight: 1.12;
+  --leading-heading: 1.15;
+  --leading-title: 1.2;
+  --leading-card: 1.25;
+  --leading-quote: 1.28;
+  --leading-snug: 1.35;
+  --leading-caption: 1.4;
+  --leading-note: 1.5;
+  --leading-body: 1.55;
+  --leading-body-lg: 1.6;
+  --leading-copy: 1.65;
+  --leading-prose: 1.7;
+  --leading-loose: 1.75;
+  --leading-read: 1.8;
+
+  --tracking-note: -0.01em;
+  --tracking-snug: -0.02em;
+  --tracking-title: -0.025em;
+  --tracking-tight: -0.03em;
+  --tracking-headline: -0.035em;
+  --tracking-numeral: -0.04em;
+  --tracking-display: -0.05em;
+  --tracking-mono-tight: 0.04em;
+  --tracking-mono: 0.12em;
+  --tracking-mono-lg: 0.14em;
+  --tracking-mono-wide: 0.18em;
+  --tracking-eyebrow-tight: 0.2em;
+  --tracking-eyebrow: 0.22em;
+
+  /* ── Layout ──────────────────────────────────────────────────────────────
+     --spacing-spine is the 126px left spine every hero aligns its copy to. */
+  --spacing-spine: 7.875rem;
+  --container-prose: 56.25rem;
+  --container-cta: 62.5rem;
+  --container-page: 77.5rem;
+  --container-wide: 87.5rem;
+  --container-shell: 120rem;
+
+  /* ── Motion ──────────────────────────────────────────────────────────────
+     --ease-brand is the curve SectionCard and ContactRail had each written
+     out separately, one as a Framer array and one as a CSS class. */
+  --ease-brand: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─── Brand palette ────────────────────────────────────────────────────────
-   Background  #FFFFFF  →  oklch(1 0 0)
-   Foreground  #141E3D  →  oklch(0.21 0.075 264)   dark navy
-   Accent 1    #E5EAF5  →  oklch(0.928 0.022 254)  light blue-grey
-   Accent 2    #020409  →  oklch(0.05 0.010 264)   near-black
-   Accent 3    #2B63BB  →  oklch(0.476 0.150 258)  brand blue
+   Background  #FFFFFF
+   Foreground  #141E3D  dark navy
+   Accent 1    #E5EAF5  light blue-grey
+   Accent 2    #020409  near-black
+   Accent 3    #2B63BB  brand blue
+
+   The oklch values below are the authored approximations, not exact
+   conversions of these hexes — they are what the site has always rendered, so
+   they stay as they are. Where a component needs the literal hex it uses the
+   --color-ink / --color-paper family in @theme above instead.
    ─────────────────────────────────────────────────────────────────────── */
 
 :root {
@@ -79,11 +181,6 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.476 0.150 258);
-}
-
-@keyframes marquee {
-  from { transform: translateX(0) }
-  to { transform: translateX(-50%) }
 }
 
 /* Pixel distance rather than -50% keeps this on the compositor thread in every browser —

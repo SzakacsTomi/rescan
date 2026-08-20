@@ -28,7 +28,7 @@ const TITLE_BLOCK_GLOW =
 
 export const AboutHero = ({ eyebrow, headline, subheadline, facts, image }: AboutHeroProps) => {
   return (
-    <section className="relative overflow-hidden bg-[#E5EAF5]">
+    <section className="relative overflow-hidden bg-paper">
       <div
         aria-hidden
         className="absolute inset-0"
@@ -44,12 +44,12 @@ export const AboutHero = ({ eyebrow, headline, subheadline, facts, image }: Abou
               <MonoLabel className="text-primary">{eyebrow}</MonoLabel>
             </div>
             <Reveal>
-              <h1 className="mt-7 max-w-[22ch] text-4xl font-bold leading-tight tracking-[-0.035em] sm:text-5xl lg:leading-[1.04] lg:text-[60px]">
+              <h1 className="mt-7 max-w-[22ch] text-4xl font-bold leading-tight tracking-headline sm:text-5xl lg:leading-hero-tight lg:text-display">
                 {headline}
               </h1>
             </Reveal>
             <Reveal>
-              <p className="mt-7 max-w-[56ch] text-[19px] leading-[1.7] text-foreground/68">
+              <p className="mt-7 max-w-[56ch] text-lead leading-prose text-foreground/68">
                 {subheadline}
               </p>
             </Reveal>
@@ -64,7 +64,7 @@ export const AboutHero = ({ eyebrow, headline, subheadline, facts, image }: Abou
                 <dt>
                   <MonoLabel className="text-foreground/45">{fact.label}</MonoLabel>
                 </dt>
-                <dd className="text-right text-[15px] font-medium">
+                <dd className="text-right text-note font-medium">
                   <Pending>{fact.value}</Pending>
                 </dd>
               </div>

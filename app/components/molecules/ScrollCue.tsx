@@ -31,7 +31,7 @@ export const ScrollCue = ({ targetId, label, className }: ScrollCueProps) => {
       )}
     >
       <MonoLabel className="text-white/40">{label}</MonoLabel>
-      <span aria-hidden className="animate-hero-cue h-9 w-px bg-[#89b4f5]" />
+      <span aria-hidden className="animate-hero-cue h-9 w-px bg-accent-sky" />
     </button>
   );
 };

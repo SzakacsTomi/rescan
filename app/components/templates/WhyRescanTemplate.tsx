@@ -86,7 +86,7 @@ export const WhyRescanTemplate = ({
         headline={finalCta.headline}
         cta={finalCta.cta}
         ctaHref="/contact"
-        headlineClassName="leading-[1.12] tracking-[-0.03em] lg:text-[52px]"
+        headlineClassName="leading-tight tracking-tight lg:text-display-2xs"
       />
     </>
   );

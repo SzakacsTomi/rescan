@@ -24,10 +24,10 @@ export const FieldGroup = ({ id, index, label, children }: FieldGroupProps) => (
     <fieldset id={id} className="m-0 min-w-0 scroll-mt-28 border-0 p-0">
       <legend className="block w-full p-0">
         <span className="flex items-center gap-4">
-          <MonoLabel aria-hidden className="text-[11px] tabular-nums text-primary">
+          <MonoLabel aria-hidden className="text-mono-xs tabular-nums text-primary">
             {index}
           </MonoLabel>
-          <span className="text-[15px] font-semibold tracking-tight text-foreground">{label}</span>
+          <span className="text-note font-semibold tracking-tight text-foreground">{label}</span>
           {/* Runs to the end of the row, the way a drawing schedule announces a line. */}
           <span aria-hidden="true" className="h-px flex-1 bg-border" />
         </span>

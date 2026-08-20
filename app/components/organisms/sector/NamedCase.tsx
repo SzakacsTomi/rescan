@@ -24,23 +24,23 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
         <div className="mt-9 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] gap-16 lg:gap-[72px] items-start">
           <div>
             <Reveal className="flex items-baseline gap-[18px]">
-              <span className="text-[64px] sm:text-[80px] lg:text-[104px] font-bold tracking-[-0.05em] leading-[0.9]">
+              <span className="text-display-lg sm:text-hero lg:text-hero-lg font-bold tracking-display leading-numeral">
                 {metric}
               </span>
-              <p className="max-w-40 text-sm leading-[1.5] text-foreground/50">{metricLabel}</p>
+              <p className="max-w-40 text-sm leading-note text-foreground/50">{metricLabel}</p>
             </Reveal>
             <Reveal>
-              <h2 className="mt-10 text-[24px] sm:text-[28px] lg:text-[32px] font-bold tracking-[-0.03em] leading-[1.2]">
+              <h2 className="mt-10 text-title-sm sm:text-title-lg lg:text-h2 font-bold tracking-tight leading-title">
                 {headline}
               </h2>
             </Reveal>
             <Reveal>
-              <p className="mt-6 text-[17px] leading-[1.75] text-foreground/65 whitespace-pre-line">{body}</p>
+              <p className="mt-6 text-body leading-loose text-foreground/65 whitespace-pre-line">{body}</p>
             </Reveal>
             {bulletIntro && bulletPoints && bulletPoints.length > 0 && (
               <div className="mt-7">
                 <Reveal>
-                  <p className="mb-3 text-[17px] text-foreground/65 leading-relaxed">{bulletIntro}</p>
+                  <p className="mb-3 text-body text-foreground/65 leading-relaxed">{bulletIntro}</p>
                 </Reveal>
                 <div className="flex flex-col">
                   {bulletPoints.map((point, i) => (
@@ -64,7 +64,7 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
             </div>
             {quote && (
               <blockquote className="border-l-2 border-primary pl-6">
-                <p className="text-[18px] leading-[1.7] text-foreground/80">&ldquo;{quote}&rdquo;</p>
+                <p className="text-body-lg leading-prose text-foreground/80">&ldquo;{quote}&rdquo;</p>
                 {quoteAuthor && (
                   <footer className="mt-3.5">
                     <MonoLabel>{quoteAuthor}</MonoLabel>

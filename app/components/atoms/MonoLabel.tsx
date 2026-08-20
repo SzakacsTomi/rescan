@@ -24,7 +24,7 @@ export const MonoLabel = ({
   <Tag
     aria-hidden={ariaHidden}
     className={cn(
-      "font-mono text-[10px] leading-none tracking-[0.18em] uppercase text-muted-foreground",
+      "font-mono text-mono-2xs leading-none tracking-mono-wide uppercase text-muted-foreground",
       className,
     )}
   >

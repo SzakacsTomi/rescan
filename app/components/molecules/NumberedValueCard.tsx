@@ -17,13 +17,13 @@ type NumberedValueCardProps = {
 const TONE_STYLE: Record<ValueCardTone, { card: string; title: string; description: string }> = {
   tinted: {
     card: 'bg-muted px-6.5 pt-8 pb-10 hover:bg-background',
-    title: 'text-[21px]',
+    title: 'text-lead-lg',
     description: 'text-sm',
   },
   plain: {
     card: 'bg-background px-7 pt-8.5 pb-11 hover:bg-muted/50',
-    title: 'text-[22px]',
-    description: 'text-[15px]',
+    title: 'text-subhead',
+    description: 'text-note',
   },
 };
 
@@ -42,10 +42,10 @@ export const NumberedValueCard = ({
       <MonoLabel aria-hidden className="text-primary">
         {String(index + 1).padStart(2, '0')}
       </MonoLabel>
-      <h3 className={cn('leading-[1.25] font-semibold tracking-[-0.02em]', style.title)}>
+      <h3 className={cn('leading-card font-semibold tracking-snug', style.title)}>
         {title}
       </h3>
-      <p className={cn('mt-auto leading-[1.65] text-foreground/60', style.description)}>
+      <p className={cn('mt-auto leading-copy text-foreground/60', style.description)}>
         {description}
       </p>
     </Reveal>

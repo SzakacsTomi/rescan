@@ -25,7 +25,7 @@ type OfficeMapProps = {
 export const OfficeMap = ({ title, className, children }: OfficeMapProps) => (
   // The dark ground lives on the container, so the region is never white before the iframe
   // paints — which is also why no loading skeleton and no client state are needed here.
-  <div className={cn('relative overflow-hidden bg-[#0b1020]', className)}>
+  <div className={cn('relative overflow-hidden bg-ink-soft', className)}>
     <iframe
       src={MAPS_EMBED_URL}
       title={title}
@@ -40,7 +40,7 @@ export const OfficeMap = ({ title, className, children }: OfficeMapProps) => (
         the aerial itself down to near-black, which defeats the point of showing the site.
 
         A tint, not a mask: enough to tie the aerial to the site's navy, no more. */}
-    <div className="pointer-events-none absolute inset-0 bg-[#0b1020]/28" />
+    <div className="pointer-events-none absolute inset-0 bg-ink-soft/28" />
     {/* Google's own place card and pin sit in the top-left; this is what knocks them back. */}
     <div className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-[linear-gradient(to_bottom,rgba(11,16,32,0.55)_0%,rgba(11,16,32,0)_100%)]" />
     {/* Ground for the title block. It only has to seat the plate, which carries its own fill. */}

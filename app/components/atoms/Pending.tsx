@@ -39,7 +39,7 @@ export const Pending = ({ children, className }: PendingProps) => {
         className,
       )}
     >
-      <span className="text-[0.625rem] font-semibold uppercase tracking-wider opacity-70">
+      <span className="text-mono-2xs font-semibold uppercase tracking-wider opacity-70">
         Todo
       </span>
       {hint}

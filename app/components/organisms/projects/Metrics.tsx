@@ -22,7 +22,7 @@ export const Metrics = ({ headline, items }: MetricsProps) => {
     >
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <h2 className="max-w-140 text-[28px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-4xl">
+          <h2 className="max-w-140 text-title-lg font-bold leading-heading tracking-tight text-white sm:text-4xl">
             {headline}
           </h2>
         </Reveal>
@@ -32,9 +32,9 @@ export const Metrics = ({ headline, items }: MetricsProps) => {
             <Reveal key={item.label} className="flex flex-col gap-3 lg:pl-10 lg:first:pl-0">
               <CountUp
                 value={item.value}
-                className="text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl lg:text-[52px]"
+                className="text-4xl font-bold tracking-numeral text-white sm:text-5xl lg:text-display-2xs"
               />
-              <span className="text-sm leading-[1.4] text-white/55">{item.label}</span>
+              <span className="text-sm leading-caption text-white/55">{item.label}</span>
             </Reveal>
           ))}
         </div>
