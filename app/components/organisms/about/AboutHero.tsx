@@ -36,8 +36,8 @@ export const AboutHero = ({ eyebrow, headline, subheadline, facts, image }: Abou
       />
       <div aria-hidden className="absolute inset-0" style={{ background: TITLE_BLOCK_GLOW }} />
 
-      <div className="relative w-full max-w-shell mx-auto px-6 pt-16 sm:pt-20 lg:flex-1 lg:flex lg:flex-col lg:pl-31.5 lg:pt-29">
-        <div className="grid max-w-page grid-cols-1 items-end gap-12 pb-16 lg:grid-cols-[minmax(0,1fr)340px] lg:gap-20">
+      <div className="relative w-full max-w-shell mx-auto px-6 pt-16 sm:pt-20 lg:flex-1 lg:flex lg:flex-col lg:pl-31.5">
+        <div className="grid max-w-page grid-cols-1 items-end gap-12 pb-16 lg:flex-1 lg:items-center lg:grid-cols-[minmax(0,1fr)340px] lg:gap-20">
           <div>
             <div className="flex items-center gap-3.5">
               <span aria-hidden className="h-px w-11 bg-primary/50" />
@@ -72,7 +72,7 @@ export const AboutHero = ({ eyebrow, headline, subheadline, facts, image }: Abou
           </dl>
         </div>
 
-        <MediaPlaceholder stripe={HERO_IMAGE_STRIPE} className="h-85 border-t border-foreground/12 lg:grow">
+        <MediaPlaceholder stripe={HERO_IMAGE_STRIPE} className="h-85 border-t border-foreground/12">
           <Pending>{image}</Pending>
         </MediaPlaceholder>
       </div>

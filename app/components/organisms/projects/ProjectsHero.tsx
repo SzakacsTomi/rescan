@@ -40,7 +40,7 @@ export const ProjectsHero = ({
 }: ProjectsHeroProps) => {
   return (
     <section
-      className="relative isolate flex flex-col overflow-hidden pt-16 sm:pt-20 lg:min-h-[calc(100svh-4rem)] lg:pt-29"
+      className="relative isolate flex flex-col overflow-hidden pt-16 sm:pt-20 lg:min-h-[calc(100svh-4rem)]"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div
@@ -50,8 +50,8 @@ export const ProjectsHero = ({
       />
       <div aria-hidden className="absolute inset-0" style={{ background: HERO_GLOW }} />
 
-      <div className="relative mx-auto flex w-full max-w-shell flex-1 flex-col justify-between gap-12 px-6 pb-14 sm:px-8 lg:pb-16 lg:pl-31.5">
-        <div>
+      <div className="relative mx-auto flex w-full max-w-shell flex-1 flex-col px-6 pb-14 sm:px-8 lg:pb-16 lg:pl-31.5">
+        <div className="flex flex-1 flex-col justify-center">
           <div className="flex items-center gap-3.5">
             <span aria-hidden className="h-px w-11 bg-white/40" />
             <MonoLabel className="tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>

@@ -22,7 +22,7 @@ export const HeroSection = async () => {
 
   return (
     <section
-      className="relative w-full flex flex-col justify-end overflow-hidden lg:min-h-[calc(100svh)]"
+      className="relative w-full flex flex-col overflow-hidden lg:min-h-[calc(100svh)]"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div
@@ -51,8 +51,8 @@ export const HeroSection = async () => {
         }}
       />
 
-      <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine pt-32 sm:pt-36 lg:pt-45">
-        <div className="grid items-end gap-10 lg:gap-12 2xl:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine pt-32 sm:pt-36 lg:pt-16 lg:flex-1 lg:flex lg:items-center">
+        <div className="grid w-full items-end gap-10 lg:gap-12 2xl:grid-cols-[minmax(0,1fr)_320px]">
           <div>
             <div className="flex items-center gap-3.5 mb-7">
               <span aria-hidden className="w-11 h-px bg-white/40" />

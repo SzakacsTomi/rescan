@@ -53,8 +53,8 @@ export const LogisticsHero = ({
       }}
     />
 
-    <div className="relative mx-auto grid w-full max-w-shell content-start grid-cols-1 gap-10 px-6 pt-16 pb-16 sm:pt-20 lg:pl-31.5 lg:pt-29 xl:grid-cols-[minmax(0,1fr)_21.25rem] xl:grid-rows-[1fr] xl:gap-16">
-      <div>
+    <div className="relative mx-auto grid w-full max-w-shell content-start grid-cols-1 gap-10 px-6 py-16 sm:py-20 lg:content-center lg:py-0 lg:pl-spine xl:grid-cols-[minmax(0,1fr)_21.25rem] xl:grid-rows-[1fr] xl:gap-16">
+      <div className="xl:flex xl:flex-col xl:justify-center">
         <MonoLabel className="block tracking-eyebrow text-accent-sky">{eyebrow}</MonoLabel>
         <HeroText
           headline={headline}
@@ -84,7 +84,7 @@ export const LogisticsHero = ({
       <div className="relative xl:h-full">
         <span
           aria-hidden
-          className="absolute inset-y-0 left-0 hidden w-px bg-gradient-to-b from-transparent via-white/25 to-transparent xl:block"
+          className="absolute inset-y-0 left-0 hidden w-px bg-linear-to-b from-transparent via-white/25 to-transparent xl:block"
         />
         <Stagger
           as="dl"
@@ -93,7 +93,7 @@ export const LogisticsHero = ({
           {facts.map((fact, i) => (
             <div
               key={i}
-              className="relative flex flex-col justify-center gap-2.5 border-t border-white/10 py-5 first:border-t-0 xl:flex-1 xl:bg-gradient-to-r xl:from-white/4 xl:to-transparent xl:pl-8"
+              className="relative flex flex-col justify-center gap-2.5 border-t border-white/10 py-5 first:border-t-0 xl:flex-1 xl:bg-linear-to-r xl:from-white/4 xl:to-transparent xl:pl-8"
             >
               <span
                 aria-hidden
