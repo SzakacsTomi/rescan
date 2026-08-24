@@ -1,33 +1,14 @@
-import { placeholdersVisible } from "@/app/components/atoms/Pending";
 import {
   CaseGrid,
   type CaseGridCaseCopy,
 } from "@/app/components/organisms/projects/CaseGrid";
-import {
-  CASE_ANCHOR_ID,
-  CaseStudyFeature,
-  type CaseStudyRow,
-} from "@/app/components/organisms/projects/CaseStudyFeature";
-import { CaseStudySequence } from "@/app/components/organisms/projects/CaseStudySequence";
 import { ProjectIndex } from "@/app/components/organisms/projects/ProjectIndex";
 import { LogoWall } from "@/app/components/organisms/projects/LogoWall";
 import { Metrics } from "@/app/components/organisms/projects/Metrics";
 import type { ProjectDetailCopy } from "@/app/components/organisms/projects/ProjectDetail";
+import { WhyItMatters } from "@/app/components/organisms/projects/WhyItMatters";
 import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
 import { projects, projectsLogoWall, projectsMetrics, type ProjectSector } from "@/config/projects";
-
-type CaseCopy = {
-  eyebrow: string;
-  title: string;
-  meta: [string, string];
-  rows: CaseStudyRow[];
-  changedSlot: string;
-  changed: string;
-  imageHint: string;
-  keyProofLabel: string;
-  keyProof: string[];
-  viewProject: string;
-};
 
 type IndexCardCopy = {
   title: string;
@@ -42,15 +23,9 @@ type ProjectsTemplateProps = {
     cases: Record<string, CaseGridCaseCopy>;
     ctaLabel: string;
   };
-  sequence: {
-    eyebrow: string;
-    headline: string;
-    body: string;
-    steps: { title: string; question: string }[];
-  };
+  whyItMatters: { eyebrow: string; headline: string; body: string };
   logoWall: { headline: string };
   metrics: { headline: string; items: { label: string }[] };
-  cases: Record<ProjectSector, CaseCopy>;
   index: {
     eyebrow: string;
     headline: string;
@@ -68,31 +43,20 @@ const SECTOR_HREF: Record<ProjectSector, string> = {
   logistics: "/logistics-warehouses",
 };
 
-const CASE_SECTORS: ProjectSector[] = ["retail", "logistics"];
-
 export const ProjectsTemplate = ({
   pageTitle,
   caseGrid,
-  sequence,
+  whyItMatters,
   logoWall,
   metrics,
-  cases,
   index,
   finalCta,
 }: ProjectsTemplateProps) => {
-  // Both case studies are still entirely `[[TODO]]`, so they follow the same rule as every
-  // other unfilled section: shown on preview, absent in production. Their index cards carry
-  // real copy either way, and fall back to the sector page when there is nothing to scroll to.
   const items = projects.map((project) => ({
     project,
     ...index.cards[project.id],
     sectorLabel: index.details[project.id]?.detail.sector,
     location: index.details[project.id]?.detail.location,
-    href: project.sector
-      ? placeholdersVisible
-        ? `#${CASE_ANCHOR_ID[project.sector]}`
-        : SECTOR_HREF[project.sector]
-      : undefined,
   }));
 
   return (
@@ -110,22 +74,11 @@ export const ProjectsTemplate = ({
 
       <LogoWall headline={logoWall.headline} logos={projectsLogoWall.logos} />
 
-      <CaseStudySequence
-        eyebrow={sequence.eyebrow}
-        headline={sequence.headline}
-        body={sequence.body}
-        steps={sequence.steps}
+      <WhyItMatters
+        eyebrow={whyItMatters.eyebrow}
+        headline={whyItMatters.headline}
+        body={whyItMatters.body}
       />
-
-      {placeholdersVisible &&
-        CASE_SECTORS.map((sector) => (
-          <CaseStudyFeature
-            key={sector}
-            sector={sector}
-            {...cases[sector]}
-            viewProject={{ label: cases[sector].viewProject, href: SECTOR_HREF[sector] }}
-          />
-        ))}
 
       <Metrics
         headline={metrics.headline}

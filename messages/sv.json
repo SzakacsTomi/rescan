@@ -433,30 +433,10 @@
         }
       }
     },
-    "sequence": {
-      "eyebrow": "01 — Så läser du fallstudierna nedan",
-      "headline": "Olika sektor, samma fem frågor.",
-      "body": "En butikskedja och ett lager har lite gemensamt. De två fallstudierna nedan är ändå skrivna efter samma struktur, så att de kan jämföras direkt.",
-      "step0": {
-        "title": "Beslut",
-        "question": "Vad försökte kunden göra?"
-      },
-      "step1": {
-        "title": "Informationsproblem",
-        "question": "Vad saknades, var inkonsekvent eller svårt att lita på?"
-      },
-      "step2": {
-        "title": "Kommersiell risk",
-        "question": "Vad skulle hända om det förblev olöst?"
-      },
-      "step3": {
-        "title": "RESCAN",
-        "question": "Vilken information fastställde RESCAN?"
-      },
-      "step4": {
-        "title": "Utfall",
-        "question": "Vad kunde kunden nu undvika, göra snabbare eller besluta tidigare?"
-      }
+    "whyItMatters": {
+      "eyebrow": "Varför Det Är Viktigt",
+      "headline": "Värdet ligger inte i skanningen. Det ligger i att omvandla verifierade platsförhållanden till information som projektteam kan utgå från i sin design.",
+      "body": "Team kan inspektera, mäta och verifiera förhållanden på distans, vilket minskar beroendet av befintliga ritningar och upprepade platsbesök. Färre antaganden. Bättre samordning. Bättre information innan beslut blir dyra att ändra."
     },
     "logoWall": {
       "headline": "Anlitade av fastighetsteam som hanterar flera platser"
@@ -476,27 +456,6 @@
         "label": "fastighetssektorer"
       }
     },
-    "caseStudy": {
-      "situation": "Situationen",
-      "informationGap": "Informationsluckan",
-      "complexity": "Komplexiteten",
-      "cost": "Kostnaden för att låta det vara",
-      "established": "Vad RESCAN fastställde",
-      "changed": "Vad som förändrades",
-      "changedSlot": "05 — Vad som förändrades",
-      "keyProof": "Nyckelbevis",
-      "viewProject": "Se projekt"
-    },
-    "cases": {
-      "retail": {
-        "eyebrow": "02 — Butiksfastighetsportföljer · Fallstudie",
-        "image": "[[TODO: photograph of the actual retail portfolio]]"
-      },
-      "logistics": {
-        "eyebrow": "03 — Logistiklager · Fallstudie",
-        "image": "[[TODO: photograph of the logistics facility, or a specific complex condition captured]]"
-      }
-    },
     "finalCta": {
       "headline": "Har du ett liknande bestånd eller en liknande anläggning?",
       "subheadline": "Berätta vilket beslut som hänger på att de befintliga förhållandena stämmer.",
@@ -507,40 +466,8 @@
       "retail": "Butiksfastighetsportföljer",
       "logistics": "Logistiklager"
     },
-    "caseRetail0": {
-      "title": "[[TODO: retail chain client or programme name]]",
-      "scale": "[[TODO: number of locations, e.g. 42 locations]]",
-      "region": "[[TODO: region or countries the programme covered]]",
-      "caseStudy": {
-        "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
-        "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
-        "cost": "[[TODO: the specific commercial consequence of leaving it unresolved — not \"accurate data was important\"]]",
-        "established": "[[TODO: what existing-condition information was captured and delivered]]",
-        "changed": "[[TODO: the verified downstream outcome — what the client could now do faster, remotely or with fewer visits]]",
-        "proof0": "[[TODO: number of locations, e.g. 42 locations]]",
-        "proof1": "[[TODO: region or countries covered]]",
-        "proof2": "[[TODO: relevant programme or delivery metric]]",
-        "proof3": "[[TODO: verified outcome metric, if available]]"
-      }
-    },
-    "caseLogistics0": {
-      "title": "[[TODO: logistics client or programme name]]",
-      "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-      "region": "[[TODO: location of the facility]]",
-      "caseStudy": {
-        "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
-        "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
-        "cost": "[[TODO: the specific commercial consequence of leaving it unresolved — not \"accurate data was important\"]]",
-        "established": "[[TODO: what existing-condition information was captured and delivered]]",
-        "changed": "[[TODO: the verified downstream outcome — what the client could now do faster, remotely or with fewer visits]]",
-        "proof0": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-        "proof1": "[[TODO: region or countries covered]]",
-        "proof2": "[[TODO: relevant programme or delivery metric]]",
-        "proof3": "[[TODO: verified outcome metric, if available]]"
-      }
-    },
     "index": {
-      "eyebrow": "04 — Projektregister",
+      "eyebrow": "Projektregister",
       "headline": "{count} projekt, ett register.",
       "body": "De två fallstudierna ovan är utskrivna i sin helhet. Varje projekt här är klickbart.",
       "columns": {
@@ -548,13 +475,6 @@
         "project": "Projekt",
         "sector": "Sektor",
         "location": "Ort"
-      },
-      "caseCardLabel": "Fullständig fallstudie",
-      "caseRetail0": {
-        "description": "Beståndsövergripande dokumentation över butikslägen."
-      },
-      "caseLogistics0": {
-        "description": "Anläggningsövergripande inmätning inför en planerad ombyggnad."
       }
     },
     "project0": {

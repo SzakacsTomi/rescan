@@ -12,9 +12,6 @@ export type ProjectConfig = {
   gradient: string;
   image?: string;
   video?: string;
-  /** Set only on entries written to the case-study format the Projects brief defines.
-   *  Its presence is what switches the card and the detail view to that format. */
-  sector?: ProjectSector;
 };
 
 export type CaseStudyConfig = {

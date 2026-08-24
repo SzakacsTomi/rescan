@@ -189,12 +189,7 @@
       "eyebrow": "Why RESCAN",
       "headline": "Building information your project team can rely on.",
       "subheadline": "RESCAN supports teams managing retail property portfolios and logistics warehouses, where existing-condition information needs to remain useful long after the site visit is complete.",
-      "anchors": [
-        "Repeatability",
-        "Coverage",
-        "Downstream use",
-        "Quality control"
-      ],
+      "anchors": ["Repeatability", "Coverage", "Downstream use", "Quality control"],
       "questionLabel": "The question this page answers",
       "question": "Can RESCAN produce building information that remains dependable and useful after the site visit?",
       "cta": "Discuss a project"
@@ -433,30 +428,10 @@
         }
       }
     },
-    "sequence": {
-      "eyebrow": "01 — Reading the case studies below",
-      "headline": "Different sector, same five questions.",
-      "body": "A retail chain and a warehouse have little in common. The two case studies below are still written to the same structure, so they can be compared directly.",
-      "step0": {
-        "title": "Decision",
-        "question": "What was the client trying to do?"
-      },
-      "step1": {
-        "title": "Information Problem",
-        "question": "What was missing, inconsistent or difficult to trust?"
-      },
-      "step2": {
-        "title": "Commercial Risk",
-        "question": "What would happen if it remained unresolved?"
-      },
-      "step3": {
-        "title": "RESCAN",
-        "question": "What information did RESCAN establish?"
-      },
-      "step4": {
-        "title": "Outcome",
-        "question": "What could the client now avoid, do faster or decide earlier?"
-      }
+    "whyItMatters": {
+      "eyebrow": "Why It Matters",
+      "headline": "The value is not the scan. It is turning verified site conditions into information project teams can design from.",
+      "body": "Teams can inspect, measure and verify conditions remotely, reducing reliance on existing drawings and repeated site checks. Fewer assumptions. Better coordination. Better information before decisions become expensive to change."
     },
     "logoWall": {
       "headline": "Trusted by property teams managing multiple locations"
@@ -476,27 +451,6 @@
         "label": "property sectors served"
       }
     },
-    "caseStudy": {
-      "situation": "The Situation",
-      "informationGap": "The Information Gap",
-      "complexity": "The Complexity",
-      "cost": "The Cost of Leaving It Unresolved",
-      "established": "What RESCAN Established",
-      "changed": "What Changed",
-      "changedSlot": "05 — What Changed",
-      "keyProof": "Key Proof",
-      "viewProject": "View Project"
-    },
-    "cases": {
-      "retail": {
-        "eyebrow": "02 — Retail Property Portfolios · Case study",
-        "image": "[[TODO: photograph of the actual retail portfolio]]"
-      },
-      "logistics": {
-        "eyebrow": "03 — Logistics Warehouses · Case study",
-        "image": "[[TODO: photograph of the logistics facility, or a specific complex condition captured]]"
-      }
-    },
     "finalCta": {
       "headline": "Have a similar portfolio or facility?",
       "subheadline": "Tell us what decision depends on getting the existing conditions right.",
@@ -507,40 +461,8 @@
       "retail": "Retail Property Portfolios",
       "logistics": "Logistics Warehouses"
     },
-    "caseRetail0": {
-      "title": "[[TODO: retail chain client or programme name]]",
-      "scale": "[[TODO: number of locations, e.g. 42 locations]]",
-      "region": "[[TODO: region or countries the programme covered]]",
-      "caseStudy": {
-        "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
-        "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
-        "cost": "[[TODO: the specific commercial consequence of leaving it unresolved — not \"accurate data was important\"]]",
-        "established": "[[TODO: what existing-condition information was captured and delivered]]",
-        "changed": "[[TODO: the verified downstream outcome — what the client could now do faster, remotely or with fewer visits]]",
-        "proof0": "[[TODO: number of locations, e.g. 42 locations]]",
-        "proof1": "[[TODO: region or countries covered]]",
-        "proof2": "[[TODO: relevant programme or delivery metric]]",
-        "proof3": "[[TODO: verified outcome metric, if available]]"
-      }
-    },
-    "caseLogistics0": {
-      "title": "[[TODO: logistics client or programme name]]",
-      "scale": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-      "region": "[[TODO: location of the facility]]",
-      "caseStudy": {
-        "situation": "[[TODO: what was the client planning? Keep it concise and factual]]",
-        "informationGap": "[[TODO: what could the team not reliably establish from the information already available?]]",
-        "cost": "[[TODO: the specific commercial consequence of leaving it unresolved — not \"accurate data was important\"]]",
-        "established": "[[TODO: what existing-condition information was captured and delivered]]",
-        "changed": "[[TODO: the verified downstream outcome — what the client could now do faster, remotely or with fewer visits]]",
-        "proof0": "[[TODO: facility floor area, e.g. 38,000 m²]]",
-        "proof1": "[[TODO: region or countries covered]]",
-        "proof2": "[[TODO: relevant programme or delivery metric]]",
-        "proof3": "[[TODO: verified outcome metric, if available]]"
-      }
-    },
     "index": {
-      "eyebrow": "04 — Project index",
+      "eyebrow": "Project Index",
       "headline": "{count} projects, one index.",
       "body": "The two case studies above are written out in full. Every project here is clickable.",
       "columns": {
@@ -548,13 +470,6 @@
         "project": "Project",
         "sector": "Sector",
         "location": "Location"
-      },
-      "caseCardLabel": "Full case study",
-      "caseRetail0": {
-        "description": "Portfolio-wide documentation across store locations."
-      },
-      "caseLogistics0": {
-        "description": "Facility-wide capture for a planned retrofit."
       }
     },
     "project0": {
