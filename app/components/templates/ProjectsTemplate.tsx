@@ -1,21 +1,18 @@
 import { placeholdersVisible } from "@/app/components/atoms/Pending";
 import {
+  CaseGrid,
+  type CaseGridCaseCopy,
+} from "@/app/components/organisms/projects/CaseGrid";
+import {
   CASE_ANCHOR_ID,
   CaseStudyFeature,
   type CaseStudyRow,
 } from "@/app/components/organisms/projects/CaseStudyFeature";
-import {
-  CaseStudySequence,
-  SEQUENCE_ID,
-} from "@/app/components/organisms/projects/CaseStudySequence";
-import {
-  PROJECT_INDEX_ID,
-  ProjectIndex,
-} from "@/app/components/organisms/projects/ProjectIndex";
+import { CaseStudySequence } from "@/app/components/organisms/projects/CaseStudySequence";
+import { ProjectIndex } from "@/app/components/organisms/projects/ProjectIndex";
 import { LogoWall } from "@/app/components/organisms/projects/LogoWall";
 import { Metrics } from "@/app/components/organisms/projects/Metrics";
 import type { ProjectDetailCopy } from "@/app/components/organisms/projects/ProjectDetail";
-import { ProjectsHero } from "@/app/components/organisms/projects/ProjectsHero";
 import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
 import { projects, projectsLogoWall, projectsMetrics, type ProjectSector } from "@/config/projects";
 
@@ -39,13 +36,11 @@ type IndexCardCopy = {
 };
 
 type ProjectsTemplateProps = {
-  hero: {
-    eyebrow: string;
-    headline: string;
-    subheadline: string;
-    stats: { value: string; label: string }[];
-    ctaPrimary: string;
-    ctaSecondary: string;
+  pageTitle: string;
+  caseGrid: {
+    sectorLabels: Record<ProjectSector, string>;
+    cases: Record<string, CaseGridCaseCopy>;
+    ctaLabel: string;
   };
   sequence: {
     eyebrow: string;
@@ -76,7 +71,8 @@ const SECTOR_HREF: Record<ProjectSector, string> = {
 const CASE_SECTORS: ProjectSector[] = ["retail", "logistics"];
 
 export const ProjectsTemplate = ({
-  hero,
+  pageTitle,
+  caseGrid,
   sequence,
   logoWall,
   metrics,
@@ -101,13 +97,15 @@ export const ProjectsTemplate = ({
 
   return (
     <>
-      <ProjectsHero
-        eyebrow={hero.eyebrow}
-        headline={hero.headline}
-        subheadline={hero.subheadline}
-        stats={hero.stats}
-        primaryCta={{ label: hero.ctaPrimary, href: `#${PROJECT_INDEX_ID}` }}
-        secondaryCta={{ label: hero.ctaSecondary, href: `#${SEQUENCE_ID}` }}
+      {/* The design opens straight on the case grid with no visual hero — this keeps a
+       *  real page heading for assistive tech and search without reintroducing one. */}
+      <h1 className="sr-only">{pageTitle}</h1>
+
+      <CaseGrid
+        sectorLabels={caseGrid.sectorLabels}
+        cases={caseGrid.cases}
+        ctaLabel={caseGrid.ctaLabel}
+        sectorHref={SECTOR_HREF}
       />
 
       <LogoWall headline={logoWall.headline} logos={projectsLogoWall.logos} />

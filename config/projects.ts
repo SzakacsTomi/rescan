@@ -1,3 +1,10 @@
+import {
+  CHARCOAL_GRADIENT,
+  DEEP_BLUE_GRADIENT,
+  EVERGREEN_GRADIENT,
+  VIOLET_GRADIENT,
+} from "@/config/gradients";
+
 export type ProjectSector = "retail" | "logistics";
 
 export type ProjectConfig = {
@@ -10,10 +17,29 @@ export type ProjectConfig = {
   sector?: ProjectSector;
 };
 
+export type CaseStudyConfig = {
+  id: string;
+  sector: ProjectSector;
+  /** Surface and link accent always move together — the design gives each square its own
+   *  pair, and the two stand-in accents have no equivalent among the theme tokens. */
+  gradient: string;
+  accent: string;
+};
+
+/** The 2×2 the Projects design opens with, in the order it draws them — always four
+ *  tiles, one per project. Two carry the design's own stand-in copy rather than
+ *  delivered work; their title, body, stats and photo hint stay `[[TODO: …]]` until
+ *  the client supplies them, but the tile itself is never hidden. */
+export const caseStudies: CaseStudyConfig[] = [
+  { id: "case0", sector: "retail", gradient: DEEP_BLUE_GRADIENT, accent: "#89b4f5" },
+  { id: "case1", sector: "logistics", gradient: CHARCOAL_GRADIENT, accent: "#89b4f5" },
+  { id: "case2", sector: "retail", gradient: VIOLET_GRADIENT, accent: "#c9a8f5" },
+  { id: "case3", sector: "logistics", gradient: EVERGREEN_GRADIENT, accent: "#7fd6b5" },
+];
+
 /**
- * The two `case*` entries demonstrate the case-study format the client asked for; their
- * copy is still `[[TODO]]`, so they appear on preview and are skipped in production.
- * The fifteen entries below them predate the repositioning and are unchanged.
+ * The index of older references. They predate the repositioning and are unchanged; the
+ * two written-up case studies live in `caseStudies` above, not here.
  */
 export const projects: ProjectConfig[] = [
   {

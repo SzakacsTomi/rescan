@@ -361,44 +361,76 @@
     }
   },
   "projectsPage": {
-    "hero": {
-      "eyebrow": "Projekt",
-      "headline": "{count} byggnader, ett sätt att dokumentera dem.",
-      "subheadline": "Butikskedjor, lager, kontor, kulturhistoriska byggnader och industrianläggningar — varje projekt nedan följer samma standard för inmätning och leverans, oavsett sektor eller storlek.",
-      "ctaPrimary": "Se alla projekt",
-      "ctaSecondary": "Så dokumenteras de",
-      "stat0": {
-        "label": "Levererade projekt"
+    "pageTitle": "{count} byggnader, ett sätt att dokumentera dem.",
+    "caseGrid": {
+      "cta": "Läs fallstudien",
+      "case0": {
+        "title": "Stor svensk livsmedelskedja",
+        "body": "Pålitliga underlag om befintliga förhållanden inför en stor logistikmodernisering — sju disciplinmodeller från en och samma inmätning.",
+        "photoHint": "[[TODO: photograph — facility exterior]]",
+        "stat0": {
+          "value": "96 000 m²",
+          "label": "Inmätt"
+        },
+        "stat1": {
+          "value": "8 dagar",
+          "label": "På plats"
+        },
+        "stat2": {
+          "value": "7 discipliner",
+          "label": "Modellerat"
+        }
       },
-      "stat1": {
-        "value": "3",
-        "label": "Länder · SE, AT, US"
+      "case1": {
+        "title": "Stor internationell livsmedelskedja",
+        "body": "Ett pålitligt informationsunderlag för att planera laddinfrastruktur för eldrivna lastbilar över ett rikstäckande nätverk.",
+        "photoHint": "[[TODO: photograph — charging yard]]",
+        "stat0": {
+          "value": "~300 000 m²",
+          "label": "Skannat"
+        },
+        "stat1": {
+          "value": "3 anläggningar",
+          "label": "Sverige"
+        },
+        "stat2": {
+          "value": "45 dagar",
+          "label": "Levererat"
+        }
       },
-      "stat2": {
-        "value": "[[TODO: sectors covered — e.g. 6]]",
-        "label": "Sektorer"
+      "case2": {
+        "title": "[[TODO: retail chain client or programme name]]",
+        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
+        "photoHint": "[[TODO: photograph — store interior]]",
+        "stat0": {
+          "value": "[[TODO: locations captured, e.g. 42 stores]]",
+          "label": "Inmätt"
+        },
+        "stat1": {
+          "value": "[[TODO: retail floor area, e.g. 68,000 m²]]",
+          "label": "Butiksyta"
+        },
+        "stat2": {
+          "value": "[[TODO: programme duration, e.g. 11 weeks]]",
+          "label": "Program"
+        }
       },
-      "stat3": {
-        "value": "[[TODO: site revisits caused by bad data — e.g. 0]]",
-        "label": "Återbesök orsakade av bristfälliga underlag"
-      }
-    },
-    "logoWall": {
-      "headline": "Anlitade av fastighetsteam som hanterar flera platser"
-    },
-    "metrics": {
-      "headline": "Levererat i stor skala.",
-      "item0": {
-        "label": "levererade projekt"
-      },
-      "item1": {
-        "label": "m² digitalt dokumenterade"
-      },
-      "item2": {
-        "label": "bestånd med 40+ fastigheter"
-      },
-      "item3": {
-        "label": "fastighetssektorer"
+      "case3": {
+        "title": "[[TODO: logistics client or programme name]]",
+        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
+        "photoHint": "[[TODO: photograph — sorting hall]]",
+        "stat0": {
+          "value": "[[TODO: terminals or facilities captured, e.g. 6 terminals]]",
+          "label": "Inmätt"
+        },
+        "stat1": {
+          "value": "[[TODO: floor area, e.g. 184,000 m²]]",
+          "label": "Golvyta"
+        },
+        "stat2": {
+          "value": "[[TODO: operational-continuity metric, e.g. 0 shutdowns]]",
+          "label": "Löpande drift"
+        }
       }
     },
     "sequence": {
@@ -426,15 +458,23 @@
         "question": "Vad kunde kunden nu undvika, göra snabbare eller besluta tidigare?"
       }
     },
-    "finalCta": {
-      "headline": "Har du ett liknande bestånd eller en liknande anläggning?",
-      "subheadline": "Berätta vilket beslut som hänger på att de befintliga förhållandena stämmer.",
-      "cta": "Diskutera ditt projekt"
+    "logoWall": {
+      "headline": "Anlitade av fastighetsteam som hanterar flera platser"
     },
-    "backToProjects": "Tillbaka till projekt",
-    "sectorLabels": {
-      "retail": "Butiksfastighetsportföljer",
-      "logistics": "Logistiklager"
+    "metrics": {
+      "headline": "Levererat i stor skala.",
+      "item0": {
+        "label": "levererade projekt"
+      },
+      "item1": {
+        "label": "m² digitalt dokumenterade"
+      },
+      "item2": {
+        "label": "bestånd med 40+ fastigheter"
+      },
+      "item3": {
+        "label": "fastighetssektorer"
+      }
     },
     "caseStudy": {
       "situation": "Situationen",
@@ -457,23 +497,15 @@
         "image": "[[TODO: photograph of the logistics facility, or a specific complex condition captured]]"
       }
     },
-    "index": {
-      "eyebrow": "04 — Projektregister",
-      "headline": "{count} projekt, ett register.",
-      "body": "De två fallstudierna ovan är utskrivna i sin helhet. Varje projekt här är klickbart.",
-      "columns": {
-        "ordinal": "Nr",
-        "project": "Projekt",
-        "sector": "Sektor",
-        "location": "Ort"
-      },
-      "caseCardLabel": "Fullständig fallstudie",
-      "caseRetail0": {
-        "description": "Beståndsövergripande dokumentation över butikslägen."
-      },
-      "caseLogistics0": {
-        "description": "Anläggningsövergripande inmätning inför en planerad ombyggnad."
-      }
+    "finalCta": {
+      "headline": "Har du ett liknande bestånd eller en liknande anläggning?",
+      "subheadline": "Berätta vilket beslut som hänger på att de befintliga förhållandena stämmer.",
+      "cta": "Diskutera ditt projekt"
+    },
+    "backToProjects": "Tillbaka till projekt",
+    "sectorLabels": {
+      "retail": "Butiksfastighetsportföljer",
+      "logistics": "Logistiklager"
     },
     "caseRetail0": {
       "title": "[[TODO: retail chain client or programme name]]",
@@ -505,6 +537,24 @@
         "proof1": "[[TODO: region or countries covered]]",
         "proof2": "[[TODO: relevant programme or delivery metric]]",
         "proof3": "[[TODO: verified outcome metric, if available]]"
+      }
+    },
+    "index": {
+      "eyebrow": "04 — Projektregister",
+      "headline": "{count} projekt, ett register.",
+      "body": "De två fallstudierna ovan är utskrivna i sin helhet. Varje projekt här är klickbart.",
+      "columns": {
+        "ordinal": "Nr",
+        "project": "Projekt",
+        "sector": "Sektor",
+        "location": "Ort"
+      },
+      "caseCardLabel": "Fullständig fallstudie",
+      "caseRetail0": {
+        "description": "Beståndsövergripande dokumentation över butikslägen."
+      },
+      "caseLogistics0": {
+        "description": "Anläggningsövergripande inmätning inför en planerad ombyggnad."
       }
     },
     "project0": {

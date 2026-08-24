@@ -189,7 +189,12 @@
       "eyebrow": "Why RESCAN",
       "headline": "Building information your project team can rely on.",
       "subheadline": "RESCAN supports teams managing retail property portfolios and logistics warehouses, where existing-condition information needs to remain useful long after the site visit is complete.",
-      "anchors": ["Repeatability", "Coverage", "Downstream use", "Quality control"],
+      "anchors": [
+        "Repeatability",
+        "Coverage",
+        "Downstream use",
+        "Quality control"
+      ],
       "questionLabel": "The question this page answers",
       "question": "Can RESCAN produce building information that remains dependable and useful after the site visit?",
       "cta": "Discuss a project"
@@ -356,44 +361,76 @@
     }
   },
   "projectsPage": {
-    "hero": {
-      "eyebrow": "Projects",
-      "headline": "Buildings, one way of documenting them.",
-      "subheadline": "Retail chains, warehouses, offices, heritage buildings and industrial sites — every project below follows the same capture and delivery standard, regardless of sector or size.",
-      "ctaPrimary": "Browse all projects",
-      "ctaSecondary": "How these are documented",
-      "stat0": {
-        "label": "Projects delivered"
+    "pageTitle": "Buildings, one way of documenting them.",
+    "caseGrid": {
+      "cta": "Read the case study",
+      "case0": {
+        "title": "Major Swedish Grocery Retailer",
+        "body": "Reliable existing conditions for a major logistics modernisation — seven discipline models from one capture.",
+        "photoHint": "[[TODO: photograph — facility exterior]]",
+        "stat0": {
+          "value": "96,000 m²",
+          "label": "Captured"
+        },
+        "stat1": {
+          "value": "8 days",
+          "label": "On site"
+        },
+        "stat2": {
+          "value": "7 disciplines",
+          "label": "Modelled"
+        }
       },
-      "stat1": {
-        "value": "3",
-        "label": "Countries · SE, AT, US"
+      "case1": {
+        "title": "Major International Grocery Retailer",
+        "body": "One reliable information base for planning electric-truck charging infrastructure across a nationwide network.",
+        "photoHint": "[[TODO: photograph — charging yard]]",
+        "stat0": {
+          "value": "~300,000 m²",
+          "label": "Scanned"
+        },
+        "stat1": {
+          "value": "3 centres",
+          "label": "Sweden"
+        },
+        "stat2": {
+          "value": "45 days",
+          "label": "Delivered"
+        }
       },
-      "stat2": {
-        "value": "[[TODO: sectors covered — e.g. 6]]",
-        "label": "Sectors covered"
+      "case2": {
+        "title": "[[TODO: retail chain client or programme name]]",
+        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
+        "photoHint": "[[TODO: photograph — store interior]]",
+        "stat0": {
+          "value": "[[TODO: locations captured, e.g. 42 stores]]",
+          "label": "Captured"
+        },
+        "stat1": {
+          "value": "[[TODO: retail floor area, e.g. 68,000 m²]]",
+          "label": "Retail floor"
+        },
+        "stat2": {
+          "value": "[[TODO: programme duration, e.g. 11 weeks]]",
+          "label": "Programme"
+        }
       },
-      "stat3": {
-        "value": "[[TODO: site revisits caused by bad data — e.g. 0]]",
-        "label": "Site revisits caused by bad data"
-      }
-    },
-    "logoWall": {
-      "headline": "Trusted by property teams managing multiple locations"
-    },
-    "metrics": {
-      "headline": "Delivered at scale.",
-      "item0": {
-        "label": "projects delivered"
-      },
-      "item1": {
-        "label": "m² digitally captured"
-      },
-      "item2": {
-        "label": "40+ property portfolios"
-      },
-      "item3": {
-        "label": "property sectors served"
+      "case3": {
+        "title": "[[TODO: logistics client or programme name]]",
+        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
+        "photoHint": "[[TODO: photograph — sorting hall]]",
+        "stat0": {
+          "value": "[[TODO: terminals or facilities captured, e.g. 6 terminals]]",
+          "label": "Captured"
+        },
+        "stat1": {
+          "value": "[[TODO: floor area, e.g. 184,000 m²]]",
+          "label": "Floor area"
+        },
+        "stat2": {
+          "value": "[[TODO: operational-continuity metric, e.g. 0 shutdowns]]",
+          "label": "Live operations"
+        }
       }
     },
     "sequence": {
@@ -421,15 +458,23 @@
         "question": "What could the client now avoid, do faster or decide earlier?"
       }
     },
-    "finalCta": {
-      "headline": "Have a similar portfolio or facility?",
-      "subheadline": "Tell us what decision depends on getting the existing conditions right.",
-      "cta": "Discuss your project"
+    "logoWall": {
+      "headline": "Trusted by property teams managing multiple locations"
     },
-    "backToProjects": "Back to projects",
-    "sectorLabels": {
-      "retail": "Retail Property Portfolios",
-      "logistics": "Logistics Warehouses"
+    "metrics": {
+      "headline": "Delivered at scale.",
+      "item0": {
+        "label": "projects delivered"
+      },
+      "item1": {
+        "label": "m² digitally captured"
+      },
+      "item2": {
+        "label": "40+ property portfolios"
+      },
+      "item3": {
+        "label": "property sectors served"
+      }
     },
     "caseStudy": {
       "situation": "The Situation",
@@ -452,23 +497,15 @@
         "image": "[[TODO: photograph of the logistics facility, or a specific complex condition captured]]"
       }
     },
-    "index": {
-      "eyebrow": "04 — Project index",
-      "headline": "{count} projects, one index.",
-      "body": "The two case studies above are written out in full. Every project here is clickable.",
-      "columns": {
-        "ordinal": "Nº",
-        "project": "Project",
-        "sector": "Sector",
-        "location": "Location"
-      },
-      "caseCardLabel": "Full case study",
-      "caseRetail0": {
-        "description": "Portfolio-wide documentation across store locations."
-      },
-      "caseLogistics0": {
-        "description": "Facility-wide capture for a planned retrofit."
-      }
+    "finalCta": {
+      "headline": "Have a similar portfolio or facility?",
+      "subheadline": "Tell us what decision depends on getting the existing conditions right.",
+      "cta": "Discuss your project"
+    },
+    "backToProjects": "Back to projects",
+    "sectorLabels": {
+      "retail": "Retail Property Portfolios",
+      "logistics": "Logistics Warehouses"
     },
     "caseRetail0": {
       "title": "[[TODO: retail chain client or programme name]]",
@@ -500,6 +537,24 @@
         "proof1": "[[TODO: region or countries covered]]",
         "proof2": "[[TODO: relevant programme or delivery metric]]",
         "proof3": "[[TODO: verified outcome metric, if available]]"
+      }
+    },
+    "index": {
+      "eyebrow": "04 — Project index",
+      "headline": "{count} projects, one index.",
+      "body": "The two case studies above are written out in full. Every project here is clickable.",
+      "columns": {
+        "ordinal": "Nº",
+        "project": "Project",
+        "sector": "Sector",
+        "location": "Location"
+      },
+      "caseCardLabel": "Full case study",
+      "caseRetail0": {
+        "description": "Portfolio-wide documentation across store locations."
+      },
+      "caseLogistics0": {
+        "description": "Facility-wide capture for a planned retrofit."
       }
     },
     "project0": {

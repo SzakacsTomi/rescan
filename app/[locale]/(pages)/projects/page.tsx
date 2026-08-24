@@ -1,16 +1,14 @@
 import { getTranslations } from 'next-intl/server';
 
+import type { CaseGridCaseCopy } from '@/app/components/organisms/projects/CaseGrid';
 import type { ProjectDetailCopy } from '@/app/components/organisms/projects/ProjectDetail';
 import { ProjectsTemplate } from '@/app/components/templates/ProjectsTemplate';
-import { projects, type ProjectSector } from '@/config/projects';
+import { caseStudies, projects, type ProjectSector } from '@/config/projects';
 
-const HERO_STAT_COUNT = 4;
 const SEQUENCE_STEP_COUNT = 5;
 const KEY_PROOF_COUNT = 4;
 const METRICS_ITEM_COUNT = 4;
-
-/** The one hero figure the repo can prove for itself; the rest are client-supplied. */
-const PROJECT_COUNT_STAT_INDEX = 0;
+const CASE_STAT_COUNT = 3;
 
 /** The brief's first four questions. The fifth, "What Changed", is the promoted panel. */
 const CASE_BODY_KEYS = ['situation', 'informationGap', 'cost', 'established'] as const;
@@ -29,6 +27,21 @@ const CASE_IDS: Record<ProjectSector, string> = {
 export default async function ProjectsPage() {
   const t = await getTranslations('projectsPage');
   const projectCount = projects.length;
+
+  const cases: Record<string, CaseGridCaseCopy> = {};
+  for (const { id } of caseStudies) {
+    cases[id] = {
+      title: t(`caseGrid.${id}.title`),
+      body: t(`caseGrid.${id}.body`),
+      stats: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
+        t(`caseGrid.${id}.stat${i}.value`),
+      ) as [string, string, string],
+      statLabels: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
+        t(`caseGrid.${id}.stat${i}.label`),
+      ) as [string, string, string],
+      photoHint: t(`caseGrid.${id}.photoHint`),
+    };
+  }
 
   const buildCase = (sector: ProjectSector) => {
     const id = CASE_IDS[sector];
@@ -84,19 +97,18 @@ export default async function ProjectsPage() {
     };
   }
 
+  const sectorLabels: Record<ProjectSector, string> = {
+    retail: t('sectorLabels.retail'),
+    logistics: t('sectorLabels.logistics'),
+  };
+
   return (
     <ProjectsTemplate
-      hero={{
-        eyebrow: t('hero.eyebrow'),
-        headline: t('hero.headline', { count: projectCount }),
-        subheadline: t('hero.subheadline'),
-        ctaPrimary: t('hero.ctaPrimary'),
-        ctaSecondary: t('hero.ctaSecondary'),
-        stats: Array.from({ length: HERO_STAT_COUNT }, (_, i) => ({
-          value:
-            i === PROJECT_COUNT_STAT_INDEX ? String(projectCount) : t(`hero.stat${i}.value`),
-          label: t(`hero.stat${i}.label`),
-        })),
+      pageTitle={t('pageTitle', { count: projectCount })}
+      caseGrid={{
+        sectorLabels,
+        cases,
+        ctaLabel: t('caseGrid.cta'),
       }}
       sequence={{
         eyebrow: t('sequence.eyebrow'),
