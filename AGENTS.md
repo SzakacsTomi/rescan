@@ -101,9 +101,9 @@ app/actions/            Server Actions
 app/emails/             transactional email HTML
 app/hooks/              client hooks (not components, so outside the atomic tiers)
 app/types/              shared types
-config/                 static, non-translated config (nav, footer, sectors, projects, gradients)
-lib/                    framework-agnostic helpers (cn, cloudinary)
-i18n/                   routing + request config
+config/                 static, non-translated config (nav, footer, sectors, projects, gradients, site, routes)
+lib/                    framework-agnostic helpers (cn, cloudinary, seo, schema)
+i18n/                   routing + request config + per-route metadata resolution
 messages/               one JSON catalogue per locale
 scripts/                repo tooling (`list-placeholders.mjs` backs `yarn todos`)
 ```
@@ -179,6 +179,60 @@ missing or untrustworthy building information
 - Locale routing is next-intl middleware in `proxy.ts`.
 - Copy-briefs arrive in English only. Swedish is our translation and is pending client
   review.
+
+## SEO
+
+**The domain is not final.** Nothing in the source names a host. The origin comes from
+`NEXT_PUBLIC_SITE_URL` and flows into `config/site.ts`, which every canonical, hreflang
+annotation, sitemap entry, Open Graph URL, `robots.txt` and JSON-LD `@id` derives from.
+Moving to the real domain is that one env var plus a redeploy — if you find yourself
+typing a hostname anywhere else, that is the bug.
+
+**A deployment with no `NEXT_PUBLIC_SITE_URL` is `noindex`, and `robots.txt` disallows
+everything.** This is the fail-safe that keeps a preview build off Google while the domain
+is still moving — and it means a production deploy that forgets the variable is invisible
+to search. Set it first.
+
+| Concern | Where |
+|---|---|
+| Origin, org facts, indexability | `config/site.ts` |
+| Route registry — path, priority, page type | `config/routes.ts` |
+| Canonicals, hreflang, Metadata assembly | `lib/seo.ts` (pure, no next-intl) |
+| schema.org node builders | `lib/schema.ts` (pure) |
+| Locale-resolving wrapper both pages call | `i18n/metadata.ts` |
+| Titles, descriptions, keywords, breadcrumbs | `metadata.pages.<key>` in both catalogues |
+| Sitemap / robots / manifest | `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` |
+| Social card image | `app/api/og/route.tsx` |
+
+**Adding a page** means: a row in `config/routes.ts`, a `metadata.pages.<key>` block in
+**both** catalogues, and the two calls every route file already makes —
+
+```tsx
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  return resolvePageMetadata((await params).locale, 'yourKey');
+}
+```
+
+plus `<JsonLd data={await resolvePageJsonLd(locale, 'yourKey')} />` at the top of the
+returned tree. The sitemap, the hreflang set and the social card follow from the registry
+row; there is no fourth place to remember.
+
+Details that are deliberate, not accidental:
+
+- **Page titles are authored brand-free.** The locale layout appends `— RESCAN` through a
+  title template. Home is the exception and sets an absolute title, because its own title
+  already names the company (`absoluteTitle` on its registry row).
+- **`x-default` points at the English URL**, not at `/`, which only ever answers with a
+  redirect.
+- **The sitemap carries no `lastModified`.** A timestamp that moves on every deploy without
+  the copy moving teaches crawlers to ignore the field.
+- **The OG endpoint takes a route key, never free text.** `/api/og?page=retail&locale=sv`
+  reads the same catalogue the `<title>` comes from. An endpoint that renders any string a
+  caller passes onto a RESCAN-branded card is a defacement vector.
+- **`siteConfig.socialProfiles` is empty on purpose.** The hrefs in `config/footer.ts` point
+  at the networks' front pages, not at RESCAN accounts, and publishing them as schema.org
+  `sameAs` would assert something untrue. Fill it in when the real profiles exist.
+- Retired routes 308-redirect from `next.config.ts` rather than 404 — see **Routes** above.
 
 ## Placeholders
 
@@ -363,3 +417,4 @@ bundled together.
 - [ ] Missing client data marked `[[TODO: …]]` and rendered through `Pending`
 - [ ] New components sit in the right atomic tier and import only upward
 - [ ] Interactive changes exercised in a browser, not just compiled
+- [ ] A new route has a `config/routes.ts` row and a `metadata.pages.<key>` block in both catalogues

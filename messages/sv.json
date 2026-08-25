@@ -1,7 +1,64 @@
 {
   "metadata": {
     "title": "Rescan — Byggnadsinformation för butikskedjor och logistiklager",
-    "description": "Pålitlig information om befintliga förhållanden för butikskedjor och logistiklager, så att projektteam kan besluta tidigare och behöva återvända till platsen mer sällan."
+    "description": "Pålitlig information om befintliga förhållanden för butikskedjor och logistiklager, så att projektteam kan besluta tidigare och behöva återvända till platsen mer sällan.",
+    "pages": {
+      "home": {
+        "title": "RESCAN — Byggnadsinformation för butik och logistik",
+        "description": "RESCAN dokumenterar butiksfastighetsportföljer och logistiklager i Sverige, så att projektteam slipper åka tillbaka för att bekräfta vad som redan finns.",
+        "keywords": "befintliga förhållanden, byggnadsdokumentation, relationshandlingar, butiksfastighetsportfölj, logistiklager, inmätning byggnad, Växjö",
+        "breadcrumb": "Hem",
+        "ogAlt": "RESCAN — byggnadsinformation för butiksfastighetsportföljer och logistiklager"
+      },
+      "retail": {
+        "title": "Färre återbesök i ditt butiksbestånd",
+        "description": "Ge projektörer, entreprenörer och fastighetsteam den information om befintliga förhållanden de behöver för varje butik – utan att skicka någon tillbaka.",
+        "keywords": "butiksfastighetsportfölj, butiksdokumentation, flera anläggningar, befintliga förhållanden, ombyggnad butikskedja, Sverige",
+        "breadcrumb": "Butiksfastighetsportföljer",
+        "ogAlt": "RESCAN — information om befintliga förhållanden för butiksfastighetsportföljer",
+        "serviceName": "Dokumentation av befintliga förhållanden för butiksfastighetsportföljer",
+        "serviceType": "Byggnadsdokumentation",
+        "serviceAudience": "Butikskedjor och fastighetsägare med bestånd på flera orter"
+      },
+      "logistics": {
+        "title": "Förstå hela lagret innan du bygger om det",
+        "description": "Splittrade ritningar gör en stor anläggning svår att läsa. RESCAN ger projektteam en pålitlig bild av lagret innan antaganden blir till omprojektering.",
+        "keywords": "logistiklager, distributionscentral, lagerinmätning, befintliga förhållanden, ombyggnad anläggning, Sverige",
+        "breadcrumb": "Logistiklager",
+        "ogAlt": "RESCAN — information om befintliga förhållanden för logistiklager",
+        "serviceName": "Dokumentation av befintliga förhållanden för logistiklager",
+        "serviceType": "Byggnadsdokumentation",
+        "serviceAudience": "Logistikaktörer och projektteam som arbetar med stora lageranläggningar"
+      },
+      "projects": {
+        "title": "Dokumenterade byggnader och portföljuppdrag",
+        "description": "Fallstudier och hela registret över fastigheter som RESCAN har dokumenterat i Sverige, från enskilda platser till portföljuppdrag med dussintals objekt.",
+        "keywords": "byggnadsdokumentation projekt, portföljuppdrag, referenser butiksfastigheter, fallstudier, Sverige",
+        "breadcrumb": "Projekt",
+        "ogAlt": "RESCAN — dokumenterade byggnader och portföljuppdrag"
+      },
+      "whyRescan": {
+        "title": "Byggnadsinformation ditt projektteam kan lita på",
+        "description": "Så håller RESCAN information om befintliga förhållanden upprepbar, heltäckande och användbar i nästa led – långt efter att platsbesöket är avslutat.",
+        "keywords": "upprepbar byggnadsdokumentation, täckning, kvalitetskontroll, användbarhet i nästa led, befintliga förhållanden",
+        "breadcrumb": "Varför RESCAN",
+        "ogAlt": "RESCAN — så förblir byggnadsinformationen pålitlig efter platsbesöket"
+      },
+      "about": {
+        "title": "Företaget som åker till byggnaden",
+        "description": "RESCAN är ett fristående svenskt företag med bas i Växjö som sedan 2017 arbetar med team som förvaltar butiksfastighetsportföljer och logistiklager.",
+        "keywords": "RESCAN, Växjö, svenskt företag byggnadsdokumentation, om oss, fristående",
+        "breadcrumb": "Om oss",
+        "ogAlt": "RESCAN — ett fristående svenskt företag med bas i Växjö"
+      },
+      "contact": {
+        "title": "Kontakt och projektförfrågningar",
+        "description": "Berätta om fastigheten, projektet och vad ofullständig information kan kosta. RESCAN finns i Växjö och svarar inom en arbetsdag.",
+        "keywords": "kontakta RESCAN, projektförfrågan, butiksfastighetsportfölj, logistiklager, Växjö, Sverige",
+        "breadcrumb": "Kontakt",
+        "ogAlt": "RESCAN — kontakt och projektförfrågningar"
+      }
+    }
   },
   "homePage": {
     "hero": {

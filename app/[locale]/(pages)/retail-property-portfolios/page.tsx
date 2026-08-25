@@ -1,15 +1,25 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { JsonLd } from "@/app/components/atoms/JsonLd";
 import { CarouselHero } from "@/app/components/organisms/sector/CarouselHero";
 import { ProofGrid } from "@/app/components/molecules/ProofGrid";
 import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
 import type { SectorPageTranslations } from "@/app/types/sectorPage";
 import { retailSectorConfig } from "@/config/sectors/retail";
 import { getCloudinaryFolderImages } from "@/lib/cloudinary";
+import { resolvePageJsonLd, resolvePageMetadata } from "@/i18n/metadata";
 
 const PROOF_GRID_CELL_COUNT = 56;
 
-export default async function RetailPropertyPortfoliosPage() {
+type PageProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  return resolvePageMetadata((await params).locale, "retail");
+}
+
+export default async function RetailPropertyPortfoliosPage({ params }: PageProps) {
+  const { locale } = await params;
   const [t, carouselImages] = await Promise.all([
     getTranslations("sectorPage.retail"),
     getCloudinaryFolderImages(retailSectorConfig.hero.imagesFolder ?? ""),
@@ -91,33 +101,38 @@ export default async function RetailPropertyPortfoliosPage() {
     },
   };
 
+  const jsonLd = await resolvePageJsonLd(locale, "retail");
+
   return (
-    <SectorTemplate
-      config={retailSectorConfig}
-      translations={translations}
-      hero={
-        <CarouselHero
-          eyebrow={translations.hero.eyebrow}
-          headline={translations.hero.headline}
-          subheadline={translations.hero.subheadline}
-          primaryCta={{
-            label: translations.hero.primaryCta,
-            href: retailSectorConfig.hero.primaryCtaHref,
-          }}
-          secondaryCta={{
-            label: translations.hero.secondaryCta,
-            href: retailSectorConfig.hero.secondaryCtaHref,
-          }}
-          images={carouselImages}
-        />
-      }
-      coreRiskAside={
-        <ProofGrid
-          label={t("coreRisk.proof.label")}
-          caption={t("coreRisk.proof.caption")}
-          cellCount={PROOF_GRID_CELL_COUNT}
-        />
-      }
-    />
+    <>
+      <JsonLd data={jsonLd} />
+      <SectorTemplate
+        config={retailSectorConfig}
+        translations={translations}
+        hero={
+          <CarouselHero
+            eyebrow={translations.hero.eyebrow}
+            headline={translations.hero.headline}
+            subheadline={translations.hero.subheadline}
+            primaryCta={{
+              label: translations.hero.primaryCta,
+              href: retailSectorConfig.hero.primaryCtaHref,
+            }}
+            secondaryCta={{
+              label: translations.hero.secondaryCta,
+              href: retailSectorConfig.hero.secondaryCtaHref,
+            }}
+            images={carouselImages}
+          />
+        }
+        coreRiskAside={
+          <ProofGrid
+            label={t("coreRisk.proof.label")}
+            caption={t("coreRisk.proof.caption")}
+            cellCount={PROOF_GRID_CELL_COUNT}
+          />
+        }
+      />
+    </>
   );
 }

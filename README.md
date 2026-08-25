@@ -33,10 +33,15 @@ yarn dev          # http://localhost:3000 → redirects to /en
 
 ### Environment
 
-The site builds and runs with no environment variables. These enable optional features:
+The site builds and runs with no environment variables, but one is not optional in
+production: without `NEXT_PUBLIC_SITE_URL` the whole site is served `noindex` and
+`robots.txt` disallows everything, which is the fail-safe that keeps preview builds
+out of Google while the domain is still being decided.
 
 | Variable | Needed for |
 |---|---|
+| `NEXT_PUBLIC_SITE_URL` | **The public origin, no trailing slash.** Every canonical, hreflang tag, sitemap entry, Open Graph URL and JSON-LD `@id` derives from it, so changing domain is this one variable. Unset → the deployment is `noindex`. |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` / `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Search Console / Bing Webmaster ownership meta tags. Unset → the tags are omitted. |
 | `RESEND_API_KEY` | Sending the contact form by email. Unset → the form succeeds and logs a warning. |
 | `TURNSTILE_SECRET_KEY` / `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile on the contact form. Unset → the check is skipped. |
 | `CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | The `/retail-property-portfolios` hero carousel, which lists a Cloudinary folder. |

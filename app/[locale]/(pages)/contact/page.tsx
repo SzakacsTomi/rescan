@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { JsonLd } from '@/app/components/atoms/JsonLd';
 import {
   CONTACT_GROUPS,
   type ContactGroup,
@@ -12,8 +14,16 @@ import {
   type TimingOption,
 } from '@/app/components/organisms/contact/contactSchema';
 import { ContactTemplate } from '@/app/components/templates/ContactTemplate';
+import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
-export default async function ContactPage() {
+type PageProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  return resolvePageMetadata((await params).locale, 'contact');
+}
+
+export default async function ContactPage({ params }: PageProps) {
+  const { locale } = await params;
   const t = await getTranslations('contactPage');
 
   const form: FormTranslations = {
@@ -67,39 +77,44 @@ export default async function ContactPage() {
     label: t(`steps.${group.step}`),
   }));
 
+  const jsonLd = await resolvePageJsonLd(locale, 'contact');
+
   return (
-    <ContactTemplate
-      translations={{
-        hero: {
-          eyebrow: t('hero.eyebrow'),
-          headline: t('hero.headline'),
-          subheadline: t('hero.subheadline'),
-        },
-        details: {
-          emailLabel: t('details.emailLabel'),
-          email: t('details.email'),
-          locationLabel: t('details.locationLabel'),
-          location: t('details.location'),
-          responseLabel: t('details.responseLabel'),
-          response: t('details.response'),
-        },
-        map: {
-          title: t('map.title'),
-          locationLabel: t('map.locationLabel'),
-          address: t('map.address'),
-          coordinatesLabel: t('map.coordinatesLabel'),
-          coordinates: t('map.coordinates'),
-          openInMaps: t('map.openInMaps'),
-        },
-        bestFit: {
-          headline: t('bestFit.headline'),
-          items: [t('bestFit.item0'), t('bestFit.item1'), t('bestFit.item2')],
-          disqualifiers: [t('bestFit.disqualifier0'), t('bestFit.disqualifier1')],
-        },
-        rail: { label: t('rail.label') },
-        form,
-        groups,
-      }}
-    />
+    <>
+      <JsonLd data={jsonLd} />
+      <ContactTemplate
+        translations={{
+          hero: {
+            eyebrow: t('hero.eyebrow'),
+            headline: t('hero.headline'),
+            subheadline: t('hero.subheadline'),
+          },
+          details: {
+            emailLabel: t('details.emailLabel'),
+            email: t('details.email'),
+            locationLabel: t('details.locationLabel'),
+            location: t('details.location'),
+            responseLabel: t('details.responseLabel'),
+            response: t('details.response'),
+          },
+          map: {
+            title: t('map.title'),
+            locationLabel: t('map.locationLabel'),
+            address: t('map.address'),
+            coordinatesLabel: t('map.coordinatesLabel'),
+            coordinates: t('map.coordinates'),
+            openInMaps: t('map.openInMaps'),
+          },
+          bestFit: {
+            headline: t('bestFit.headline'),
+            items: [t('bestFit.item0'), t('bestFit.item1'), t('bestFit.item2')],
+            disqualifiers: [t('bestFit.disqualifier0'), t('bestFit.disqualifier1')],
+          },
+          rail: { label: t('rail.label') },
+          form,
+          groups,
+        }}
+      />
+    </>
   );
 }

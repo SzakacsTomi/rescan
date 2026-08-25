@@ -1,7 +1,64 @@
 {
   "metadata": {
     "title": "Rescan — Building information for retail chains and logistics warehouses",
-    "description": "Reliable existing-condition information for retail chains and logistics warehouses, so project teams decide earlier and return to site less often."
+    "description": "Reliable existing-condition information for retail chains and logistics warehouses, so project teams decide earlier and return to site less often.",
+    "pages": {
+      "home": {
+        "title": "RESCAN — Building information for retail and logistics sites",
+        "description": "RESCAN documents retail property portfolios and logistics warehouses in Sweden, so project teams stop returning to site to confirm what is already there.",
+        "keywords": "existing conditions, building documentation, as-built documentation, retail property portfolio, logistics warehouse, building survey Sweden, Växjö",
+        "breadcrumb": "Home",
+        "ogAlt": "RESCAN — building information for retail property portfolios and logistics warehouses"
+      },
+      "retail": {
+        "title": "Fewer repeat site visits across your retail portfolio",
+        "description": "Give designers, contractors and property teams the existing-condition information they need for every store, without sending someone back to each location.",
+        "keywords": "retail property portfolio, store documentation, multi-site building survey, existing conditions, retail chain refurbishment, Sweden",
+        "breadcrumb": "Retail Property Portfolios",
+        "ogAlt": "RESCAN — existing-condition information for retail property portfolios",
+        "serviceName": "Existing-condition documentation for retail property portfolios",
+        "serviceType": "Building documentation",
+        "serviceAudience": "Retail chains and property owners managing multi-location portfolios"
+      },
+      "logistics": {
+        "title": "Understand the whole warehouse before you redesign it",
+        "description": "Fragmented drawings make a large facility hard to read. RESCAN gives project teams a dependable view of the warehouse before assumptions become redesign.",
+        "keywords": "logistics warehouse, distribution centre documentation, warehouse survey, existing conditions, facility redesign, Sweden",
+        "breadcrumb": "Logistics Warehouses",
+        "ogAlt": "RESCAN — existing-condition information for logistics warehouses",
+        "serviceName": "Existing-condition documentation for logistics warehouses",
+        "serviceType": "Building documentation",
+        "serviceAudience": "Logistics operators and project teams working on large warehouse facilities"
+      },
+      "projects": {
+        "title": "Documented buildings and portfolio programmes",
+        "description": "Case studies and the full index of properties RESCAN has documented across Sweden, from single sites to portfolio programmes covering dozens of locations.",
+        "keywords": "building documentation projects, portfolio programme, retail property references, case studies, Sweden",
+        "breadcrumb": "Projects",
+        "ogAlt": "RESCAN — documented buildings and portfolio programmes"
+      },
+      "whyRescan": {
+        "title": "Building information your project team can rely on",
+        "description": "How RESCAN keeps existing-condition information repeatable, complete and usable downstream, long after the site visit is finished.",
+        "keywords": "repeatable building documentation, coverage, quality control, downstream use, existing conditions, project information",
+        "breadcrumb": "Why RESCAN",
+        "ogAlt": "RESCAN — how building information stays dependable after the site visit"
+      },
+      "about": {
+        "title": "The company that goes to the building",
+        "description": "RESCAN is an independent Swedish company based in Växjö, working since 2017 with teams that manage retail property portfolios and logistics warehouses.",
+        "keywords": "RESCAN, Växjö, Swedish building documentation company, about, independent",
+        "breadcrumb": "About Us",
+        "ogAlt": "RESCAN — an independent Swedish company based in Växjö"
+      },
+      "contact": {
+        "title": "Contact and project enquiries",
+        "description": "Tell us the property, the project and what incomplete information could cost. RESCAN is based in Växjö, Sweden and replies within one business day.",
+        "keywords": "contact RESCAN, project enquiry, retail property portfolio, logistics warehouse, Växjö, Sweden",
+        "breadcrumb": "Contact",
+        "ogAlt": "RESCAN — contact and project enquiries"
+      }
+    }
   },
   "homePage": {
     "hero": {

@@ -1,14 +1,24 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+import { JsonLd } from "@/app/components/atoms/JsonLd";
 import { LogisticsHero } from "@/app/components/organisms/sector/LogisticsHero";
 import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
 import type { SectorPageTranslations } from "@/app/types/sectorPage";
 import { logisticsSectorConfig } from "@/config/sectors/logistics";
+import { resolvePageJsonLd, resolvePageMetadata } from "@/i18n/metadata";
 
 const CONSEQUENCE_STEP_COUNT = 6;
 const HERO_FACT_COUNT = 3;
 
-export default async function LogisticsWarehousesPage() {
+type PageProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  return resolvePageMetadata((await params).locale, "logistics");
+}
+
+export default async function LogisticsWarehousesPage({ params }: PageProps) {
+  const { locale } = await params;
   const t = await getTranslations("sectorPage.logistics");
 
   const translations: SectorPageTranslations = {
@@ -78,26 +88,31 @@ export default async function LogisticsWarehousesPage() {
     },
   };
 
+  const jsonLd = await resolvePageJsonLd(locale, "logistics");
+
   return (
-    <SectorTemplate
-      config={logisticsSectorConfig}
-      translations={translations}
-      hero={
-        <LogisticsHero
-          eyebrow={translations.hero.eyebrow ?? ""}
-          headline={translations.hero.headline}
-          subheadline={translations.hero.subheadline}
-          primaryCta={{
-            label: translations.hero.primaryCta,
-            href: logisticsSectorConfig.hero.primaryCtaHref,
-          }}
-          secondaryCta={{
-            label: translations.hero.secondaryCta,
-            href: logisticsSectorConfig.hero.secondaryCtaHref,
-          }}
-          facts={translations.hero.facts ?? []}
-        />
-      }
-    />
+    <>
+      <JsonLd data={jsonLd} />
+      <SectorTemplate
+        config={logisticsSectorConfig}
+        translations={translations}
+        hero={
+          <LogisticsHero
+            eyebrow={translations.hero.eyebrow ?? ""}
+            headline={translations.hero.headline}
+            subheadline={translations.hero.subheadline}
+            primaryCta={{
+              label: translations.hero.primaryCta,
+              href: logisticsSectorConfig.hero.primaryCtaHref,
+            }}
+            secondaryCta={{
+              label: translations.hero.secondaryCta,
+              href: logisticsSectorConfig.hero.secondaryCtaHref,
+            }}
+            facts={translations.hero.facts ?? []}
+          />
+        }
+      />
+    </>
   );
 }
