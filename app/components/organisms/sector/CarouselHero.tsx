@@ -19,7 +19,7 @@ type CarouselHeroProps = {
 const MIN_W = 240;
 const MAX_W = 360;
 const GAP = 4;
-const MAX_IMAGES = 24;
+const MAX_IMAGES = 48;
 
 const ROW_CONFIGS = [{ duration: "200s" }, { duration: "140s" }, { duration: "201s" }];
 
@@ -28,19 +28,24 @@ function seededWidth(index: number): number {
   return MIN_W + Math.round((hash / 999) * (MAX_W - MIN_W));
 }
 
-/** Every row gets the full image list, just rotated to a different start, so a small
- *  Cloudinary folder still reads as a dense, continuous strip in each row rather than
- *  thinning out three ways. */
+/** Splits the image list into one disjoint group per row (round-robin by index) so the
+ *  same photo never scrolls past twice at once — each row reads as its own strip. */
+function partitionByRow(images: string[], rowCount: number): string[][] {
+  const groups: string[][] = Array.from({ length: rowCount }, () => []);
+  images.forEach((src, i) => groups[i % rowCount].push(src));
+  return groups;
+}
+
+/** A row's own group is doubled back to back so translating by exactly -50% (the
+ *  `marquee` keyframe) loops it seamlessly. */
 function buildRow(images: string[], rowIdx: number) {
-  const rotated = [...images.slice(rowIdx), ...images.slice(0, rowIdx)];
-  const safe = rotated.length > 0 ? rotated : images;
   return [
-    ...safe.map((src, i) => ({
+    ...images.map((src, i) => ({
       src,
       id: `r${rowIdx}-a-${i}`,
       width: seededWidth(rowIdx * 100 + i),
     })),
-    ...safe.map((src, i) => ({
+    ...images.map((src, i) => ({
       src,
       id: `r${rowIdx}-b-${i}`,
       width: seededWidth(rowIdx * 100 + i),
@@ -74,10 +79,11 @@ export const CarouselHero = ({
   images,
 }: CarouselHeroProps) => {
   const limitedImages = images.slice(0, MAX_IMAGES);
+  const imageGroups = partitionByRow(limitedImages, ROW_CONFIGS.length);
 
   const rows = ROW_CONFIGS.map((cfg, rowIdx) => ({
     ...cfg,
-    track: buildRow(limitedImages, rowIdx),
+    track: buildRow(imageGroups[rowIdx], rowIdx),
   }));
 
   return (
@@ -117,7 +123,7 @@ export const CarouselHero = ({
       </div>
 
       <div className="relative h-72 overflow-hidden bg-ink sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:left-[56%] lg:h-auto">
-        <div className="absolute inset-0 flex flex-col gap-1 py-1">
+        <div className="absolute inset-0 flex flex-col gap-1">
           {rows.map((row) => (
             <div key={row.duration} className="relative flex-1 overflow-hidden">
               <div

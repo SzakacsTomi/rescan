@@ -24,14 +24,15 @@ export type CaseStudyConfig = {
 };
 
 /** The 2×2 the Projects design opens with, in the order it draws them — always four
- *  tiles, one per project. Two carry the design's own stand-in copy rather than
- *  delivered work; their title, body, stats and photo hint stay `[[TODO: …]]` until
- *  the client supplies them, but the tile itself is never hidden. */
+ *  tiles, one per project. Three retail-property portfolios and one logistics
+ *  placeholder: case2 and case3 are both real Retail Property Portfolios case studies
+ *  (Carlqvist, Alhansa) rather than one of each sector, because no logistics-warehouse
+ *  case study exists yet — inventing one to keep a 2/2 split would misrepresent the work. */
 export const caseStudies: CaseStudyConfig[] = [
   { id: "case0", sector: "retail", gradient: DEEP_BLUE_GRADIENT, accent: "#89b4f5" },
   { id: "case1", sector: "logistics", gradient: CHARCOAL_GRADIENT, accent: "#89b4f5" },
   { id: "case2", sector: "retail", gradient: VIOLET_GRADIENT, accent: "#c9a8f5" },
-  { id: "case3", sector: "logistics", gradient: EVERGREEN_GRADIENT, accent: "#7fd6b5" },
+  { id: "case3", sector: "retail", gradient: EVERGREEN_GRADIENT, accent: "#7fd6b5" },
 ];
 
 /**

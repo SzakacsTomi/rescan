@@ -399,37 +399,37 @@
         }
       },
       "case2": {
-        "title": "[[TODO: retail chain client or programme name]]",
-        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
-        "photoHint": "[[TODO: photograph — store interior]]",
+        "title": "Carlqvist Fastigheter",
+        "body": "Tillförlitlig byggnadsinformation för en fastighetsportfölj spridd över södra Sverige — många frågor löses nu utan att resa till platsen.",
+        "photoHint": "[[TODO: photograph — Carlqvist property exterior]]",
         "stat0": {
-          "value": "[[TODO: locations captured, e.g. 42 stores]]",
-          "label": "Inmätt"
+          "value": "56",
+          "label": "Dokumenterat"
         },
         "stat1": {
-          "value": "[[TODO: retail floor area, e.g. 68,000 m²]]",
-          "label": "Butiksyta"
+          "value": "[[TODO: total floor area across the portfolio]]",
+          "label": "Golvyta"
         },
         "stat2": {
-          "value": "[[TODO: programme duration, e.g. 11 weeks]]",
+          "value": "[[TODO: programme duration]]",
           "label": "Program"
         }
       },
       "case3": {
-        "title": "[[TODO: logistics client or programme name]]",
-        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
-        "photoHint": "[[TODO: photograph — sorting hall]]",
+        "title": "Alhansa Fastigheter",
+        "body": "En gemensam standard för hela portföljen — uthyrning och renoveringsprojekt som utgår från verifierade förutsättningar, inte gamla ritningar.",
+        "photoHint": "[[TODO: photograph — Alhansa property exterior]]",
         "stat0": {
-          "value": "[[TODO: terminals or facilities captured, e.g. 6 terminals]]",
-          "label": "Inmätt"
+          "value": "112 000 m²",
+          "label": "Digitaliserat"
         },
         "stat1": {
-          "value": "[[TODO: floor area, e.g. 184,000 m²]]",
-          "label": "Golvyta"
+          "value": "72 000 m²",
+          "label": "Ursprunglig portfölj"
         },
         "stat2": {
-          "value": "[[TODO: operational-continuity metric, e.g. 0 shutdowns]]",
-          "label": "Löpande drift"
+          "value": "Sedan 2018",
+          "label": "Pågående samarbete"
         }
       }
     },

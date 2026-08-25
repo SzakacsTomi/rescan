@@ -394,37 +394,37 @@
         }
       },
       "case2": {
-        "title": "[[TODO: retail chain client or programme name]]",
-        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
-        "photoHint": "[[TODO: photograph — store interior]]",
+        "title": "Carlqvist Property",
+        "body": "Accurate building information for a portfolio spread across southern Sweden — many questions now resolved without travelling to site.",
+        "photoHint": "[[TODO: photograph — Carlqvist property exterior]]",
         "stat0": {
-          "value": "[[TODO: locations captured, e.g. 42 stores]]",
-          "label": "Captured"
+          "value": "56",
+          "label": "Documented"
         },
         "stat1": {
-          "value": "[[TODO: retail floor area, e.g. 68,000 m²]]",
-          "label": "Retail floor"
+          "value": "[[TODO: total floor area across the portfolio]]",
+          "label": "Floor area"
         },
         "stat2": {
-          "value": "[[TODO: programme duration, e.g. 11 weeks]]",
+          "value": "[[TODO: programme duration]]",
           "label": "Programme"
         }
       },
       "case3": {
-        "title": "[[TODO: logistics client or programme name]]",
-        "body": "[[TODO: one-sentence verified outcome — what the client could now avoid, do faster or decide earlier]]",
-        "photoHint": "[[TODO: photograph — sorting hall]]",
+        "title": "Alhansa Property",
+        "body": "One consistent standard across the portfolio — leasing and renovation projects starting from verified conditions, not legacy drawings.",
+        "photoHint": "[[TODO: photograph — Alhansa property exterior]]",
         "stat0": {
-          "value": "[[TODO: terminals or facilities captured, e.g. 6 terminals]]",
-          "label": "Captured"
+          "value": "112,000 m²",
+          "label": "Digitised"
         },
         "stat1": {
-          "value": "[[TODO: floor area, e.g. 184,000 m²]]",
-          "label": "Floor area"
+          "value": "72,000 m²",
+          "label": "Initial portfolio"
         },
         "stat2": {
-          "value": "[[TODO: operational-continuity metric, e.g. 0 shutdowns]]",
-          "label": "Live operations"
+          "value": "Since 2018",
+          "label": "Ongoing collaboration"
         }
       }
     },

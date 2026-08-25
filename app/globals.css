@@ -185,6 +185,13 @@
   --ring: oklch(0.476 0.150 258);
 }
 
+/* CarouselHero's track is the image list rendered twice back to back (see
+   CarouselHero.tsx's buildRow), so translating exactly half its width loops seamlessly. */
+@keyframes marquee {
+  from { transform: translateX(0) }
+  to { transform: translateX(-50%) }
+}
+
 /* Pixel distance rather than -50% keeps this on the compositor thread in every browser —
    percentage transforms force a layout read on each frame in some engines, which is what
    made the old logo marquee stutter. The distance comes from a measured DOM width via a
