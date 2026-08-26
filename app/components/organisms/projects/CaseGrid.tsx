@@ -20,11 +20,10 @@ type CaseGridProps = {
  * The page's hero: four equal tiles, always four — one per project, edge to edge under
  * the nav, full width and (from `lg`) full viewport height. The gap matches the home
  * page's sector split (`SectionsGrid`'s `lg:gap-0.5`) rather than the design's own wider
- * 8px, so two full-bleed hero-scale grids on the site read as the same family. Two of the
- * four tiles carry the design's own stand-in copy rather than delivered work, so their
- * title, body, stats and photo hint render through `Pending`'s unconditional amber "Todo"
- * treatment — same as every other unfilled value on the site — but the tile itself
- * always shows, unlike the CaseStudyFeature sections this replaced.
+ * 8px, so two full-bleed hero-scale grids on the site read as the same family. Values the
+ * client has not supplied yet — every photograph, two of Carlqvist's stats — render
+ * through `Pending`'s unconditional amber "Todo" treatment, but the tile itself always
+ * shows, unlike the CaseStudyFeature sections this replaced.
  */
 export const CaseGrid = ({ sectorLabels, cases, ctaLabel, sectorHref }: CaseGridProps) => {
   return (
