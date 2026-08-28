@@ -8,17 +8,11 @@ import { SECTIONS_ID } from "@/app/components/organisms/SectionsGrid";
 import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 import { Link } from "@/i18n/navigation";
 
-const READOUT_ITEM_COUNT = 4;
 const TICK_COUNT = 14;
 const HEADLINE_ACCENT_LINE_COUNT = 2;
 
 export const HeroSection = async () => {
   const t = await getTranslations("homePage");
-
-  const readoutItems = Array.from({ length: READOUT_ITEM_COUNT }, (_, i) => ({
-    label: t(`hero.readout.item${i}.label`),
-    value: t(`hero.readout.item${i}.value`),
-  }));
 
   return (
     <section
@@ -102,19 +96,8 @@ export const HeroSection = async () => {
       </div>
 
       <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine">
-        <div className="mt-16 flex flex-wrap items-stretch border-t border-white/10 lg:mt-20">
-          {readoutItems.map((item, i) => (
-            <div
-              key={i}
-              className="flex min-w-[45%] flex-1 flex-col gap-1.5 py-5 sm:min-w-0 lg:py-6"
-            >
-              <MonoLabel className="text-white/35">{item.label}</MonoLabel>
-              <span className="text-note font-medium text-white/85">{item.value}</span>
-            </div>
-          ))}
-          <div className="flex w-full items-center justify-end py-5 sm:w-auto sm:ml-auto lg:py-6">
-            <ScrollCue targetId={SECTIONS_ID} label={t("hero.scrollCue")} />
-          </div>
+        <div className="mt-16 flex items-center justify-end border-t border-white/10 py-5 lg:mt-20 lg:py-6">
+          <ScrollCue targetId={SECTIONS_ID} label={t("hero.scrollCue")} />
         </div>
       </div>
     </section>

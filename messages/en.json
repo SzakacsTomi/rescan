@@ -64,7 +64,7 @@
     "hero": {
       "eyebrow": "01 — Existing conditions",
       "headline": "Know what's there\nbefore missing information\ncosts time and money.",
-      "subheadline": "RESCAN creates reliable building data for retail property portfolios\nand logistics warehouses—giving project teams the information they need\nbefore unanswered site questions become repeat visits, redesign or delay.",
+      "subheadline": "RESCAN creates reliable building data for retail property portfolios\nand logistics warehouses—before unanswered site questions\nbecome repeat visits, redesign or delay.",
       "primaryCta": "Discuss a project",
       "responseNote": "Response within one business day",
       "scrollHint": "Scroll to explore",
@@ -72,24 +72,6 @@
       "location": {
         "city": "Växjö, Sweden",
         "coordinates": "56.8777° N · 14.7894° E"
-      },
-      "readout": {
-        "item0": {
-          "label": "Sectors",
-          "value": "Retail property portfolios · Logistics warehouses"
-        },
-        "item1": {
-          "label": "Deliverables",
-          "value": "Point cloud · 2D DWG · BIM"
-        },
-        "item2": {
-          "label": "Portfolio scale",
-          "value": "Single site to 56 properties"
-        },
-        "item3": {
-          "label": "Based in",
-          "value": "Växjö, Sweden"
-        }
       }
     },
     "sectorSplit": {
