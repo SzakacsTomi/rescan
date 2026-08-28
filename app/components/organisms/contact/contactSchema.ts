@@ -6,11 +6,13 @@ import { z } from 'zod';
  * answered, so both are kept), and the old Phone field is gone because the brief asks to
  * avoid anything not needed for the first conversation.
  *
- * `role` is deliberately not in the schema: the current brief recommends it optional, so it
- * is collected separately in the action instead of being validated here.
+ * `role`, `scale` and `incomplete` are deliberately not in the schema: they are optional, so
+ * they are collected separately in the action instead of being validated here.
  */
 
-export const SECTOR_OPTIONS = ['retail', 'logistics'] as const;
+// A third option despite the repositioning naming exactly two segments: an enquiry that does
+// not self-classify is still worth reading, and a select with no way out gets a wrong answer.
+export const SECTOR_OPTIONS = ['retail', 'logistics', 'other'] as const;
 export const TIMING_OPTIONS = ['within1Month', 'oneToThree', 'threeToSix', 'later'] as const;
 
 export type SectorOption = (typeof SECTOR_OPTIONS)[number];
@@ -65,9 +67,7 @@ export const contactSchema = z.object({
   // `min(1)` first, so a blank field reports `required` rather than `invalidEmail`.
   email: requiredText.pipe(z.email('invalidEmail')),
   company: requiredText,
-  scale: requiredText,
   decision: requiredText,
-  incomplete: requiredText,
   timing: requiredText,
 });
 

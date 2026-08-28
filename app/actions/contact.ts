@@ -32,9 +32,20 @@ export async function submitContact(
     return { status: "error", errorKey: hasEmailIssue ? "invalidEmail" : "required" };
   }
 
-  const turnstileToken = formData.get("cf-turnstile-response") as string | null;
+  const apiKey = process.env.RESEND_API_KEY;
   const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+
+  // A server action is a public POST endpoint that no session sits in front of, so
+  // Turnstile is the only thing between a bot and the mail relay. Treating a missing
+  // secret as "skip the challenge" would turn a half-configured deploy into an open
+  // relay, so once sending is live the challenge is mandatory.
+  if (apiKey && !turnstileSecret) {
+    console.error("TURNSTILE_SECRET_KEY is not set — refusing to send unverified mail.");
+    return { status: "error", errorKey: "generic" };
+  }
+
   if (turnstileSecret) {
+    const turnstileToken = formData.get("cf-turnstile-response") as string | null;
     if (!turnstileToken) {
       return { status: "error", errorKey: "captcha" };
     }
@@ -43,20 +54,27 @@ export async function submitContact(
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
     });
-    const verifyData = await verifyRes.json();
+    // fetch resolves on 4xx/5xx, so reading the body straight through would read
+    // Cloudflare being down as a visitor failing the challenge and blame the visitor.
+    if (!verifyRes.ok) {
+      console.error(`Turnstile verification unavailable: ${verifyRes.status}`);
+      return { status: "error", errorKey: "generic" };
+    }
+    const verifyData = (await verifyRes.json()) as { success?: boolean };
     if (!verifyData.success) {
       return { status: "error", errorKey: "captcha" };
     }
   }
 
-  // `role` is optional per the brief and thus outside the schema; read it with the context.
+  // The optional fields sit outside the schema, so they are read straight from the form.
   const enquiry = {
     ...parsed.data,
     role: read("role") || undefined,
+    scale: read("scale") || undefined,
+    incomplete: read("incomplete") || undefined,
     additionalContext: read("additionalContext") || undefined,
   };
 
-  const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.warn("RESEND_API_KEY is not set — skipping email send.");
     return { status: "success" };

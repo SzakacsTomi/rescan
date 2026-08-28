@@ -374,7 +374,8 @@
       "sectorPlaceholder": "Välj sektor",
       "sectorOptions": {
         "retail": "Fastighetsportföljer för detaljhandel",
-        "logistics": "Logistiklager"
+        "logistics": "Logistiklager",
+        "other": "Något annat"
       },
       "name": "Namn",
       "namePlaceholder": "Ditt namn",
@@ -386,13 +387,13 @@
       "rolePlaceholder": "t.ex. fastighetschef",
       "scale": "Antal fastigheter eller ungefärlig lagerstorlek",
       "scalePlaceholder": "t.ex. 42 fastigheter eller 38 000 m²",
-      "scaleHelp": "En ungefärlig siffra räcker i det här skedet.",
+      "scaleHelp": "Frivilligt — en ungefärlig siffra räcker i det här skedet.",
       "decision": "Vilket projekt eller beslut ska informationen stödja?",
       "decisionPlaceholder": "Beskriv projektet eller beslutet som detta ska stödja.",
       "decisionHelp": "Till exempel: ombyggnad, etablering, omdesign, retrofit, integration av utrustning, förändringar i anläggningen eller planering av beståndet.",
       "incomplete": "Vad händer om informationen är ofullständig?",
       "incompletePlaceholder": "Beskriv vad ofullständig information skulle kosta er.",
-      "incompleteHelp": "Till exempel: extra platsbesök, antaganden i projekteringen, omprojektering, samordningsproblem, förseningar eller ytterligare utredning.",
+      "incompleteHelp": "Frivilligt. Till exempel: extra platsbesök, antaganden i projekteringen, omprojektering, samordningsproblem, förseningar eller ytterligare utredning.",
       "timing": "Önskad tidplan",
       "timingPlaceholder": "Välj tidsram",
       "timingOptions": {

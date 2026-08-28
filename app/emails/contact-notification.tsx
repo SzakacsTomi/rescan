@@ -4,9 +4,9 @@ interface ContactEmailProps {
   email: string;
   company: string;
   role?: string;
-  scale: string;
+  scale?: string;
   decision: string;
-  incomplete: string;
+  incomplete?: string;
   timing: string;
   additionalContext?: string;
 }
@@ -32,15 +32,17 @@ export function contactNotificationHtml({
     { label: "Email", value: email },
     { label: "Company", value: company },
     ...(role ? [{ label: "Role", value: role }] : []),
-    { label: "Scale", value: scale },
+    ...(scale ? [{ label: "Scale", value: scale }] : []),
     { label: "Timing", value: timing },
   ];
 
-  // The two qualification questions are the point of the form — they get their own
+  // The qualification questions are the point of the form — they get their own
   // blocks rather than being squeezed into the details table.
   const answers = [
     { label: "What project or decision will the information support?", value: decision },
-    { label: "What happens if the information is incomplete?", value: incomplete },
+    ...(incomplete
+      ? [{ label: "What happens if the information is incomplete?", value: incomplete }]
+      : []),
     ...(additionalContext ? [{ label: "Additional context", value: additionalContext }] : []),
   ];
 

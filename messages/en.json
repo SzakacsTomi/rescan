@@ -369,7 +369,8 @@
       "sectorPlaceholder": "Select a sector",
       "sectorOptions": {
         "retail": "Retail Property Portfolios",
-        "logistics": "Logistics Warehouses"
+        "logistics": "Logistics Warehouses",
+        "other": "Something else"
       },
       "name": "Name",
       "namePlaceholder": "Your name",
@@ -381,13 +382,13 @@
       "rolePlaceholder": "e.g. Property Director",
       "scale": "Number of properties or approximate warehouse size",
       "scalePlaceholder": "e.g. 42 properties or 38,000 m²",
-      "scaleHelp": "A rough figure is enough at this stage.",
+      "scaleHelp": "Optional — a rough figure is enough at this stage.",
       "decision": "What project or decision will the information support?",
       "decisionPlaceholder": "Describe the project or decision this needs to support.",
       "decisionHelp": "For example: refurbishment, rollout, redesign, retrofit, equipment integration, facility changes or portfolio planning.",
       "incomplete": "What happens if the information is incomplete?",
       "incompletePlaceholder": "Describe what incomplete information would cost you.",
-      "incompleteHelp": "For example: additional site visits, design assumptions, redesign, coordination problems, delay or additional investigation.",
+      "incompleteHelp": "Optional. For example: additional site visits, design assumptions, redesign, coordination problems, delay or additional investigation.",
       "timing": "Required timing",
       "timingPlaceholder": "Select a timeframe",
       "timingOptions": {

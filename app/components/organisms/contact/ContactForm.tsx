@@ -218,7 +218,6 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
           <FormField
             id={ids.scale}
             label={t.scale}
-            required
             help={t.scaleHelp}
             error={errorFor("scale")}
           >
@@ -256,7 +255,6 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
           <FormField
             id={ids.incomplete}
             label={t.incomplete}
-            required
             help={t.incompleteHelp}
             error={errorFor("incomplete")}
           >
