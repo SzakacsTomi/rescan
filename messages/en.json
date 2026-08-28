@@ -71,7 +71,7 @@
       "scrollCue": "Scroll",
       "location": {
         "city": "Växjö, Sweden",
-        "coordinates": "56.8777° N · 14.7894° E"
+        "coordinates": "56.8787° N · 14.8104° E"
       }
     },
     "sectorSplit": {
@@ -209,7 +209,7 @@
       "item1": {
         "label": "Base",
         "value": "Växjö",
-        "coordinates": "56.8777° N · 14.7894° E"
+        "coordinates": "56.8787° N · 14.8104° E"
       }
     },
     "people": {
@@ -322,10 +322,10 @@
     "map": {
       "title": "Map showing RESCAN's office in Växjö, Sweden",
       "locationLabel": "Location",
-      "address": "Rådjursvägen 1, 352 45 Växjö",
+      "address": "Kronobergsgatan 12, 352 33 Växjö",
       "coordinatesLabel": "Coordinates",
-      "coordinates": "56.8777° N · 14.7894° E",
-      "openInMaps": "Open Rådjursvägen 1 in Google Maps"
+      "coordinates": "56.8787° N · 14.8104° E",
+      "openInMaps": "Open Kronobergsgatan 12 in Google Maps"
     },
     "bestFit": {
       "headline": "Best fit",

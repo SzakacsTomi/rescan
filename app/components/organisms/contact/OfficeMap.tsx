@@ -11,9 +11,9 @@ import { cn } from '@/lib/utils';
  * the page.
  */
 const MAPS_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2148.5!2d14.7894!3d56.8777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4657477b0e2b9e5d%3A0x0!2sR%C3%A5djursv%C3%A4gen%201%2C%20352%2045%20V%C3%A4xj%C3%B6%2C%20Sweden!5e1!3m2!1sen!2sse!4v1';
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2148.5!2d14.8104!3d56.8787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKronobergsgatan%2012%2C%20352%2033%20V%C3%A4xj%C3%B6%2C%20Sweden!5e1!3m2!1sen!2sse!4v1';
 
-export const MAPS_LINK_URL = 'https://www.google.com/maps/search/?api=1&query=56.8777,14.7894';
+export const MAPS_LINK_URL = 'https://www.google.com/maps/search/?api=1&query=56.8787,14.8104';
 
 type OfficeMapProps = {
   title: string;

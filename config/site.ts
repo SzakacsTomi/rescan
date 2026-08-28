@@ -54,13 +54,13 @@ export const siteConfig = {
    *  in `contactPage.map.address` is the same office written for a reader; this is the
    *  machine-readable one, which the catalogues have no place to hold. */
   address: {
-    streetAddress: 'Rådjursvägen 1',
-    postalCode: '352 45',
+    streetAddress: 'Kronobergsgatan 12',
+    postalCode: '352 33',
     addressLocality: 'Växjö',
     addressRegion: 'Kronoberg',
     addressCountry: 'SE',
   },
-  geo: { latitude: 56.8777, longitude: 14.7894 },
+  geo: { latitude: 56.8787, longitude: 14.8104 },
   /** ISO 639-1, in the order the company works in them. */
   languages: ['sv', 'en'],
   logoPath: '/assets/logo.png',
