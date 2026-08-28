@@ -153,5 +153,5 @@ export const projectsLogoWall = {
 };
 
 export const projectsMetrics = {
-  items: [{ value: "250+" }, { value: "1.8M+" }, { value: "3" }, { value: "2" }],
+  items: [{ value: "250+" }, { value: "1.8M+" }, { value: "3" }, { value: "96,000" }],
 };

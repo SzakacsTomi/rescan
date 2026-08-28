@@ -84,7 +84,7 @@
         "index": "01 / Butik",
         "title": "Butiksfastighetsportföljer",
         "lead": "Färre platsbesök. Mindre spilld tid över hela beståndet.",
-        "description": "När fastighets-, projektörs- eller entreprenörsteam måste återvända till en plats bara för att bekräfta befintliga förhållanden är kostnaden större än själva besöket. Resor, planering och förlorad projekteringstid mångdubblas över dussintals eller hundratals fastigheter. RESCAN hjälper till att fånga mer av det teamen kommer att behöva redan från början.",
+        "description": "När fastighets-, projektörs- eller entreprenörsteam måste återvända till en plats bara för att bekräfta befintliga förhållanden är kostnaden större än själva besöket. Resor, planering och förlorad projekteringstid mångdubblas över dussintals eller hundratals fastigheter. RESCAN skapar ett tillförlitligt underlag som teamen kan gå tillbaka till när nya frågor om platsen dyker upp.",
         "step0": "Bristande information",
         "step1": "ännu ett besök",
         "step2": "dubbelarbete",
@@ -95,7 +95,7 @@
         "index": "02 / Logistik",
         "title": "Logistiklager",
         "lead": "Förstå hela lagret innan du bygger om en del av det.",
-        "description": "Stora logistikanläggningar är svåra att förstå utifrån fragmenterade ritningar och enstaka inmätningar. När befintliga förhållanden missas smyger sig antaganden in i projekteringen – och kan senare bli kollisioner, omprojektering, ytterligare utredning och förseningar. RESCAN ger projektteam en pålitlig bild av anläggningen innan de problemen förs vidare.",
+        "description": "Stora logistikanläggningar är svåra att förstå utifrån fragmenterade ritningar och enstaka inmätningar. När befintliga förhållanden missas smyger sig antaganden in i projekteringen – och kan senare bli kollisioner, omprojektering eller ytterligare utredning. RESCAN ger projektteam en pålitlig bild av anläggningen innan de problemen förs vidare.",
         "step0": "Bristande information",
         "step1": "antaganden",
         "step2": "omprojektering eller utredning",
@@ -117,13 +117,13 @@
       },
       "item2": {
         "slot": "03 / Anläggningens omfattning",
-        "figure": "[[TODO: XX,XXX m² logistics facility]]",
-        "statement": "[[TODO: strongest verified logistics scale or complexity proof]]"
+        "figure": "96 000 m²",
+        "statement": "logistikanläggning i drift, dokumenterad inför planerad modernisering."
       },
       "item3": {
         "slot": "04 / Leveransbevis",
-        "figure": "[[TODO: verified QA / repeat client / delivery proof]]",
-        "statement": "[[TODO: one strong factual statement]]"
+        "figure": "250+",
+        "statement": "projekt levererade i Sverige och på andra EU-marknader."
       },
       "cta": "Se projekt"
     },
@@ -131,9 +131,9 @@
       "headline": "Byggt för projekt där felaktiga antaganden om befintliga förhållanden får konsekvenser.",
       "bestFit": {
         "title": "Fokuserar på",
-        "item0": "Fastighetsteam inom detaljhandeln som hanterar flera platser",
+        "item0": "Fastighetsteam inom detaljhandeln som hanterar återkommande beslut på flera platser",
         "item1": "Stora eller komplexa logistiklagerprojekt",
-        "item2": "Projekt där ofullständig information kan skapa extra besök, omprojektering eller förseningar"
+        "item2": "Projekt där ofullständig information skapar påtaglig risk för tid, kostnad eller tidplan"
       },
       "notFit": {
         "title": "Fokuserar inte på",
@@ -142,7 +142,7 @@
       }
     },
     "finalCta": {
-      "headline": "Vad behöver du förstå inför nästa beslut?",
+      "headline": "Vad behöver ert team veta innan projektet går vidare?",
       "cta": "Diskutera ditt projekt"
     }
   },
@@ -179,7 +179,7 @@
     "hero": {
       "eyebrow": "Om RESCAN",
       "headline": "Företaget som åker till byggnaden.",
-      "subheadline": "RESCAN är ett fristående svenskt företag med bas i Växjö. Vi arbetar med team som förvaltar butiksfastighetsportföljer och logistiklager och skapar pålitlig dokumentation av byggnader som redan står och redan används.",
+      "subheadline": "Vi arbetar med team som förvaltar butiksfastighetsportföljer och logistiklager och skapar pålitlig dokumentation av byggnader som redan står och redan används.",
       "facts": {
         "registeredOffice": {
           "label": "Registrerat säte",
@@ -198,8 +198,11 @@
     },
     "focus": {
       "headline": "Fokus på befintliga byggnader.",
-      "body": "RESCAN dokumenterar befintliga förhållanden så att fastighets- och projektteam kan förstå vad som faktiskt finns där innan nästa beslut fattas.",
-      "narrow": "Vårt fokus är medvetet smalt: butiksfastighetsportföljer och stora eller komplexa logistikanläggningar."
+      "headlineAccent": "Byggt utifrån verkliga projektbehov.",
+      "body": "RESCAN är ett svenskt företag med bas i Växjö, inriktat på att dokumentera befintliga byggnader. Tillsammans med betrodda specialistpartner levererar vi relationsritningar och BIM-modeller som används inom projektering, ombyggnation, fastighetsförvaltning och fastighetsbeslut.",
+      "recordLabel": "Meriter",
+      "record": "Sedan 2017 har RESCAN levererat mer än 250 projekt, inklusive flerfastighetsprogram och logistikanläggningar på upp till 96 000 m².",
+      "aim": "Vårt mål är enkelt: att ge fastighets- och projektteam korrekt byggnadsinformation som de kan fortsätta använda efter att arbetet på plats är klart—vilket minskar onödig kontroll, underlättar projektarbetet och hjälper team att fatta bättre underbyggda beslut."
     },
     "presence": {
       "item0": {
@@ -313,8 +316,8 @@
   "contactPage": {
     "hero": {
       "eyebrow": "Kontakt",
-      "headline": "Berätta vad du behöver förstå inför nästa beslut.",
-      "subheadline": "Den användbara utgångspunkten är inte specifikationen för inmätningen. Det är fastigheten, projektet och vad ofullständig information kan kosta dig."
+      "headline": "Berätta vad du behöver veta innan projektet går vidare.",
+      "subheadline": "Börja med fastigheten, projektet och beslutet som informationen ska stödja. De tekniska kraven kan vi reda ut därifrån."
     },
     "details": {
       "emailLabel": "E-post",
@@ -479,7 +482,7 @@
       "body": "Team kan inspektera, mäta och verifiera förhållanden på distans, vilket minskar beroendet av befintliga ritningar och upprepade platsbesök. Färre antaganden. Bättre samordning. Bättre information innan beslut blir dyra att ändra."
     },
     "logoWall": {
-      "headline": "Anlitade av fastighetsteam som hanterar flera platser"
+      "headline": "Utvalda organisationer som RESCAN har arbetat med."
     },
     "metrics": {
       "headline": "Levererat i stor skala.",
@@ -487,18 +490,17 @@
         "label": "levererade projekt"
       },
       "item1": {
-        "label": "m² digitalt dokumenterade"
+        "label": "m² byggnader dokumenterade"
       },
       "item2": {
-        "label": "bestånd med 40+ fastigheter"
+        "label": "beståndsprogram som omfattar 40+ fastigheter"
       },
       "item3": {
-        "label": "fastighetssektorer"
+        "label": "m² största logistikanläggning dokumenterad"
       }
     },
     "finalCta": {
-      "headline": "Har du ett liknande bestånd eller en liknande anläggning?",
-      "subheadline": "Berätta vilket beslut som hänger på att de befintliga förhållandena stämmer.",
+      "headline": "Planerar du arbete i ett befintligt bestånd eller en logistikanläggning?",
       "cta": "Diskutera ditt projekt"
     },
     "backToProjects": "Tillbaka till projekt",
@@ -508,8 +510,8 @@
     },
     "index": {
       "eyebrow": "Projektregister",
-      "headline": "{count} projekt, ett register.",
-      "body": "De två fallstudierna ovan är utskrivna i sin helhet. Varje projekt här är klickbart.",
+      "headline": "Ytterligare projekterfarenhet.",
+      "body": "Arbeten utöver fallstudierna ovan. Varje projekt här är klickbart.",
       "columns": {
         "ordinal": "Nr",
         "project": "Projekt",
@@ -694,7 +696,7 @@
       "hero": {
         "eyebrow": "Sektor 01 — Butiksfastighetsportföljer",
         "headline": "Minska antalet återbesök\ni ditt butiksbestånd.",
-        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam mer av den information de behöver utan att gång på gång skicka någon tillbaka till varje plats.",
+        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam en pålitlig dokumentation av varje plats att gå tillbaka till, utan att gång på gång skicka någon dit igen.",
         "primaryCta": "Diskutera din fastighetsportfölj",
         "secondaryCta": "Se projekt"
       },
@@ -728,8 +730,9 @@
         }
       },
       "differentiator": {
-        "headline": "Värdet mångdubblas över hela portföljen.",
-        "subheadline": "Ett onödigt besök är en irritation. Upprepat över dussintals eller hundratals fastigheter blir det en kostnad för portföljen. Enhetlig byggnadsinformation ger teamen en starkare utgångspunkt i stället för att de gång på gång måste bygga upp sin förståelse av samma platser."
+        "headline": "Byggt för teamen som använder informationen härnäst.",
+        "subheadline": "Varje disciplin kan få sin egen redigerbara fil, så att arkitekter, ingenjörer och andra projektteam kan arbeta vidare direkt med den byggnadsinformation RESCAN levererar.",
+        "note": "Det betyder att informationen inte bara är något att titta på.\nDen blir en del av arbetet som följer."
       },
       "namedCase": {
         "label": "Portföljfall",
@@ -746,22 +749,13 @@
         "metricLabel": "kommersiella fastigheter dokumenterade",
         "image": "[[TODO: site photograph for the named retail case]]"
       },
-      "proofCase": {
-        "label": "Portföljprogram",
-        "headline": "40+ kommersiella fastigheter dokumenterade som ett program",
-        "body": "[[TODO: why the portfolio was documented, how the consistent information across the properties was used, and the verified downstream result]]",
-        "metric": "40+",
-        "metricLabel": "kommersiella fastigheter dokumenterade",
-        "image": "[[TODO: site photograph for the second portfolio programme]]"
-      },
       "fitNotFit": {
         "headline": "Passar bäst för",
         "bestFit": {
           "title": "RESCAN är byggt för",
           "item0": "Fastighetsteam inom detaljhandeln som hanterar flera platser",
           "item1": "Program för ombyggnad, etablering och omdesign",
-          "item2": "Team där upprepad platsverifiering innebär verklig tid och kostnad",
-          "item3": "Byggnadsinformation som stödjer återkommande fastighetsbeslut"
+          "item2": "Projekt där upprepad platsverifiering skapar betydande tid och kostnad"
         },
         "notFit": {
           "title": "Inte byggt för",
@@ -771,7 +765,7 @@
         }
       },
       "finalCta": {
-        "headline": "Hur ofta åker ditt team tillbaka till platsen för information som redan kunde ha funnits?",
+        "headline": "Hur mycket tid förlorar ditt team på återbesök på plats?",
         "cta": "Diskutera din fastighetsportfölj"
       }
     },
@@ -779,7 +773,7 @@
       "hero": {
         "eyebrow": "Sektor 02 — Logistiklager",
         "headline": "Förstå hela lagret\ninnan du bygger om en del av det.",
-        "subheadline": "RESCAN ger projektteam en pålitlig bild av stora och komplexa logistikanläggningar innan ofullständig information blir till antaganden, omprojektering och förseningar.",
+        "subheadline": "RESCAN ger projektteam en pålitlig bild av stora och komplexa logistikanläggningar innan ofullständig information blir till antaganden, omprojektering eller förseningar.",
         "primaryCta": "Diskutera ditt lagerprojekt",
         "secondaryCta": "Se projekt",
         "fact0": {
@@ -798,7 +792,7 @@
       "coreRisk": {
         "eyebrow": "Den dyra risken",
         "headline": "Ju större och mer komplex anläggningen är, desto dyrare blir ofullständig information.",
-        "body": "Utmaningen är inte bara att mäta en stor byggnad. Det handlar om att förstå hur befintlig stomme, installationer, utrustning och tidigare ombyggnader hänger samman i hela anläggningen. Historiska ritningar och enstaka inmätningar visar ofta bara en del av bilden, och när viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
+        "body": "Stora logistiklager kan rymma stomme, installationer, utrustning, entresolplan och år av ombyggnader över stora ytor. Historiska ritningar och enstaka inmätningar visar ofta bara en del av bilden, och när viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
       },
       "consequenceChain": {
         "headline": "Antaganden blir dyrare ju längre projektet går.",
@@ -835,7 +829,7 @@
         },
         "item1": {
           "slot": "02 / Ombyggnadskomplexitet",
-          "figure": "[[TODO: relevant complexity or retrofit example]]",
+          "figure": "[[TODO: a complexity example, not a size metric — e.g. 4 mezzanine levels]]",
           "statement": "[[TODO: short verified statement on why the facility was difficult to understand]]"
         }
       },
@@ -844,9 +838,8 @@
         "bestFit": {
           "title": "RESCAN passar för",
           "item0": "Stora eller komplexa logistiklagerprojekt",
-          "item1": "Ombyggnads-, renoverings- eller omprojekteringsprogram",
-          "item2": "Projekt där ofullständig byggnadsinformation kan leda till antaganden, omprojektering eller förseningar",
-          "item3": "Anläggningar där pålitlig information om befintliga förhållanden är kommersiellt viktig"
+          "item1": "Ombyggnads-, renoverings- och omprojekteringsprogram",
+          "item2": "Projekt där ofullständig information skapar betydande risk för tid, kostnad eller tidplan"
         },
         "notFit": {
           "title": "Passar inte för",

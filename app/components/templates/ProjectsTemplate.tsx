@@ -35,7 +35,7 @@ type ProjectsTemplateProps = {
     details: Record<string, ProjectDetailCopy>;
     backLabel: string;
   };
-  finalCta: { headline: string; subheadline: string; cta: string };
+  finalCta: { headline: string; cta: string };
 };
 
 const SECTOR_HREF: Record<ProjectSector, string> = {
@@ -100,11 +100,9 @@ export const ProjectsTemplate = ({
 
       <FinalCTA
         headline={finalCta.headline}
-        subheadline={finalCta.subheadline}
         cta={finalCta.cta}
         ctaHref="/contact"
         headlineClassName="leading-headline tracking-tight"
-        subheadlineClassName="max-w-160"
       />
     </>
   );

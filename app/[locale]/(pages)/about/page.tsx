@@ -39,8 +39,11 @@ export default async function AboutPage({ params }: PageProps) {
         }}
         focus={{
           headline: t('focus.headline'),
+          headlineAccent: t('focus.headlineAccent'),
           body: t('focus.body'),
-          narrow: t('focus.narrow'),
+          recordLabel: t('focus.recordLabel'),
+          record: t('focus.record'),
+          aim: t('focus.aim'),
         }}
         presence={{
           items: [

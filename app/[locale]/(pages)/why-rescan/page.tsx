@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function WhyRescanPage({ params }: PageProps) {
-  const { locale } = await params;
-  const [t, tc] = await Promise.all([
+  const [{ locale }, t, tc] = await Promise.all([
+    params,
     getTranslations("whyRescanPage"),
     getTranslations("common"),
   ]);

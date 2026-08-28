@@ -11,7 +11,10 @@ type CountUpProps = {
   pendingClassName?: string;
 };
 
-const NUMBER_PATTERN = /[\d,]+(?:\.\d+)?/;
+// English figures group with a comma ("38,000 m²"), Swedish ones with a space
+// ("96 000 m²"), so both have to survive the round trip through Number().
+const GROUP_SEPARATOR = /[,\u00a0\u202f ]/;
+const NUMBER_PATTERN = /\d{1,3}(?:[,\u00a0\u202f ]\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?/;
 const COUNT_DURATION_S = 1.4;
 
 /**
@@ -33,21 +36,21 @@ export const CountUp = ({ value, className, pendingClassName }: CountUpProps) =>
     if (!isInView || !match) return;
 
     const source = match[0];
-    const target = Number(source.replace(/,/g, ""));
-    const hasThousandsSeparator = source.includes(",");
+    const separator = source.match(GROUP_SEPARATOR)?.[0];
+    const target = Number(source.split(GROUP_SEPARATOR).join(""));
     // The figure's own precision, so "1.8M+" lands on 1.8 rather than being rounded to 2.
     const decimals = source.split(".")[1]?.length ?? 0;
     const controls = animate(0, target, {
       duration: COUNT_DURATION_S,
       ease: "easeOut",
       onUpdate: (latest) => {
-        setDisplay(
-          latest.toLocaleString("en-US", {
-            useGrouping: hasThousandsSeparator,
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals,
-          }),
-        );
+        const grouped = latest.toLocaleString("en-US", {
+          useGrouping: separator !== undefined,
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals,
+        });
+        // Group with whichever separator the catalogue authored, not en-US's comma.
+        setDisplay(separator ? grouped.replaceAll(",", separator) : grouped);
       },
     });
 

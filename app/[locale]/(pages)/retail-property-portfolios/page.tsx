@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function RetailPropertyPortfoliosPage({ params }: PageProps) {
-  const { locale } = await params;
-  const [t, carouselImages] = await Promise.all([
+  const [{ locale }, t, carouselImages] = await Promise.all([
+    params,
     getTranslations("sectorPage.retail"),
     getCloudinaryFolderImages(retailSectorConfig.hero.imagesFolder ?? ""),
   ]);
@@ -49,6 +49,7 @@ export default async function RetailPropertyPortfoliosPage({ params }: PageProps
     differentiator: {
       headline: t("differentiator.headline"),
       subheadline: t("differentiator.subheadline"),
+      note: t("differentiator.note"),
     },
     namedCase: {
       label: t("namedCase.label"),
@@ -67,14 +68,6 @@ export default async function RetailPropertyPortfoliosPage({ params }: PageProps
       quote: t("namedCase.quote"),
       quoteAuthor: t("namedCase.quoteAuthor"),
     },
-    proofCase: {
-      label: t("proofCase.label"),
-      headline: t("proofCase.headline"),
-      body: t("proofCase.body"),
-      metric: t("proofCase.metric"),
-      metricLabel: t("proofCase.metricLabel"),
-      image: t("proofCase.image"),
-    },
     fitNotFit: {
       headline: t("fitNotFit.headline"),
       bestFit: {
@@ -83,7 +76,6 @@ export default async function RetailPropertyPortfoliosPage({ params }: PageProps
           t("fitNotFit.bestFit.item0"),
           t("fitNotFit.bestFit.item1"),
           t("fitNotFit.bestFit.item2"),
-          t("fitNotFit.bestFit.item3"),
         ],
       },
       notFit: {

@@ -70,7 +70,6 @@ export default async function LogisticsWarehousesPage({ params }: PageProps) {
           t("fitNotFit.bestFit.item0"),
           t("fitNotFit.bestFit.item1"),
           t("fitNotFit.bestFit.item2"),
-          t("fitNotFit.bestFit.item3"),
         ],
       },
       notFit: {

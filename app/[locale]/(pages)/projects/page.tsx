@@ -95,7 +95,7 @@ export default async function ProjectsPage({ params }: PageProps) {
         }}
         index={{
           eyebrow: t('index.eyebrow'),
-          headline: t('index.headline', { count: projectCount }),
+          headline: t('index.headline'),
           body: t('index.body'),
           columns: {
             ordinal: t('index.columns.ordinal'),
@@ -109,7 +109,6 @@ export default async function ProjectsPage({ params }: PageProps) {
         }}
         finalCta={{
           headline: t('finalCta.headline'),
-          subheadline: t('finalCta.subheadline'),
           cta: t('finalCta.cta'),
         }}
       />

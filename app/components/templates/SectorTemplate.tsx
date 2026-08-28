@@ -65,6 +65,7 @@ export const SectorTemplate = ({
         <Differentiator
           headline={tr.differentiator.headline}
           subheadline={tr.differentiator.subheadline}
+          note={tr.differentiator.note}
         />
       )}
 
@@ -80,17 +81,6 @@ export const SectorTemplate = ({
           image={tr.namedCase.image}
           quote={tr.namedCase.quote}
           quoteAuthor={tr.namedCase.quoteAuthor}
-        />
-      )}
-
-      {tr.proofCase && (
-        <NamedCase
-          label={tr.proofCase.label}
-          headline={tr.proofCase.headline}
-          body={tr.proofCase.body}
-          metric={tr.proofCase.metric}
-          metricLabel={tr.proofCase.metricLabel}
-          image={tr.proofCase.image}
         />
       )}
 

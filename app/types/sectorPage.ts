@@ -68,12 +68,10 @@ export type SectorPageTranslations = {
   differentiator?: {
     headline: string;
     subheadline: string;
+    note?: string;
   };
   /** A named portfolio or programme case rendered by `organisms/sector/NamedCase`. */
   namedCase?: NamedCaseTranslations;
-  /** A second, lighter proof block rendered directly after `namedCase` — the retail
-   *  page's 40+ property programme. Not every sector has two. */
-  proofCase?: NamedCaseTranslations;
   /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`. */
   proof?: {
     headline: string;

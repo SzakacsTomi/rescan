@@ -14,8 +14,11 @@ type AboutTemplateProps = {
   };
   focus: {
     headline: string;
+    headlineAccent: string;
     body: string;
-    narrow: string;
+    recordLabel: string;
+    record: string;
+    aim: string;
   };
   presence: {
     items: AboutPresenceItem[];
@@ -42,7 +45,14 @@ export const AboutTemplate = ({ hero, focus, presence, people, cta }: AboutTempl
         facts={hero.facts}
         image={hero.image}
       />
-      <AboutFocus headline={focus.headline} body={focus.body} narrow={focus.narrow} />
+      <AboutFocus
+        headline={focus.headline}
+        headlineAccent={focus.headlineAccent}
+        body={focus.body}
+        recordLabel={focus.recordLabel}
+        record={focus.record}
+        aim={focus.aim}
+      />
       <AboutPresence items={presence.items} />
       <AboutPeople
         headline={people.headline}

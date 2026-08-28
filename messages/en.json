@@ -84,7 +84,7 @@
         "index": "01 / Retail",
         "title": "Retail Property Portfolios",
         "lead": "Fewer site visits. Less wasted time across the portfolio.",
-        "description": "When property, design or contractor teams have to return to a location just to confirm existing conditions, the cost is bigger than the visit. Travel, scheduling and lost design time multiply across dozens or hundreds of properties. RESCAN helps capture more of what teams will need from the start.",
+        "description": "When property, design or contractor teams have to return to a location just to confirm existing conditions, the cost is bigger than the visit. Travel, scheduling and lost design time multiply across dozens or hundreds of properties. RESCAN creates a dependable record teams can refer back to when new site questions appear.",
         "step0": "Missing information",
         "step1": "another visit",
         "step2": "duplicated effort",
@@ -95,7 +95,7 @@
         "index": "02 / Logistics",
         "title": "Logistics Warehouses",
         "lead": "Understand the whole warehouse before you redesign part of it.",
-        "description": "Large logistics facilities are difficult to understand from fragmented drawings and isolated measurements. When existing conditions are missed, assumptions enter the design—and can later become clashes, redesign, additional investigation and delay. RESCAN gives project teams a dependable view of the facility before those problems move downstream.",
+        "description": "Large logistics facilities are difficult to understand from fragmented drawings and isolated measurements. When existing conditions are missed, assumptions enter the design—and can later become clashes, redesign or additional investigation. RESCAN gives project teams a dependable view of the facility before those problems move downstream.",
         "step0": "Missing information",
         "step1": "assumptions",
         "step2": "redesign or investigation",
@@ -117,13 +117,13 @@
       },
       "item2": {
         "slot": "03 / Facility scale",
-        "figure": "[[TODO: XX,XXX m² logistics facility]]",
-        "statement": "[[TODO: strongest verified logistics scale or complexity proof]]"
+        "figure": "96,000 m²",
+        "statement": "operational logistics facility documented ahead of planned modernisation."
       },
       "item3": {
         "slot": "04 / Delivery proof",
-        "figure": "[[TODO: verified QA / repeat client / delivery proof]]",
-        "statement": "[[TODO: one strong factual statement]]"
+        "figure": "250+",
+        "statement": "projects delivered across Sweden and other EU markets."
       },
       "cta": "View Projects"
     },
@@ -131,9 +131,9 @@
       "headline": "Built for projects where getting the existing conditions wrong has consequences.",
       "bestFit": {
         "title": "Focused on",
-        "item0": "Retail property teams managing multiple locations",
+        "item0": "Retail property teams managing repeated decisions across multiple locations",
         "item1": "Large or complex logistics warehouse projects",
-        "item2": "Projects where incomplete information can create additional visits, redesign or delay"
+        "item2": "Projects where incomplete information creates meaningful time, cost or programme risk"
       },
       "notFit": {
         "title": "Not focused on",
@@ -142,7 +142,7 @@
       }
     },
     "finalCta": {
-      "headline": "What do you need to understand before the next decision?",
+      "headline": "What does your team need to know before the project moves forward?",
       "cta": "Discuss your project"
     }
   },
@@ -179,7 +179,7 @@
     "hero": {
       "eyebrow": "About RESCAN",
       "headline": "The company that goes to the building.",
-      "subheadline": "RESCAN is an independent Swedish company based in Växjö. We work with teams managing retail property portfolios and logistics warehouses, creating reliable records of buildings that are already standing and already in use.",
+      "subheadline": "We work with teams managing retail property portfolios and logistics warehouses, creating reliable records of buildings that are already standing and already in use.",
       "facts": {
         "registeredOffice": {
           "label": "Registered office",
@@ -198,8 +198,11 @@
     },
     "focus": {
       "headline": "Focused on existing buildings.",
-      "body": "RESCAN documents existing conditions so property and project teams can understand what is actually there before making the next decision.",
-      "narrow": "Our focus is deliberately narrow: retail property portfolios and large or complex logistics facilities."
+      "headlineAccent": "Built around real project needs.",
+      "body": "RESCAN is a Swedish company based in Växjö, focused on documenting existing buildings. Together with trusted specialist partners, we deliver as-built drawings and BIM models used in design, refurbishment, property management and property decisions.",
+      "recordLabel": "Track record",
+      "record": "Since 2017, RESCAN has successfully delivered more than 250 projects, including multi-property programmes and logistics facilities of up to 96,000 m².",
+      "aim": "Our aim is straightforward: to give property and project teams accurate building information they can continue using after the site work is complete—reducing unnecessary verification, supporting smoother project work and helping teams make better-informed decisions."
     },
     "presence": {
       "item0": {
@@ -228,7 +231,12 @@
       "eyebrow": "Why RESCAN",
       "headline": "Building information your project team can rely on.",
       "subheadline": "RESCAN supports teams managing retail property portfolios and logistics warehouses, where existing-condition information needs to remain useful long after the site visit is complete.",
-      "anchors": ["Repeatability", "Coverage", "Downstream use", "Quality control"],
+      "anchors": [
+        "Repeatability",
+        "Coverage",
+        "Downstream use",
+        "Quality control"
+      ],
       "questionLabel": "The question this page answers",
       "question": "Can RESCAN produce building information that remains dependable and useful after the site visit?",
       "cta": "Discuss a project"
@@ -308,8 +316,8 @@
   "contactPage": {
     "hero": {
       "eyebrow": "Contact",
-      "headline": "Tell us what you need to understand before the next decision.",
-      "subheadline": "The useful starting point is not the scanning specification. It is the property, the project and what incomplete information could cost you."
+      "headline": "Tell us what you need to know before the project moves forward.",
+      "subheadline": "Start with the property, the project and the decision the information needs to support. We can work out the technical requirements from there."
     },
     "details": {
       "emailLabel": "Email",
@@ -474,7 +482,7 @@
       "body": "Teams can inspect, measure and verify conditions remotely, reducing reliance on existing drawings and repeated site checks. Fewer assumptions. Better coordination. Better information before decisions become expensive to change."
     },
     "logoWall": {
-      "headline": "Trusted by property teams managing multiple locations"
+      "headline": "Selected organisations RESCAN has worked with."
     },
     "metrics": {
       "headline": "Delivered at scale.",
@@ -482,18 +490,17 @@
         "label": "projects delivered"
       },
       "item1": {
-        "label": "m² digitally captured"
+        "label": "m² buildings documented"
       },
       "item2": {
-        "label": "40+ property portfolios"
+        "label": "portfolio programmes covering 40+ properties"
       },
       "item3": {
-        "label": "property sectors served"
+        "label": "m² largest logistics facility documented"
       }
     },
     "finalCta": {
-      "headline": "Have a similar portfolio or facility?",
-      "subheadline": "Tell us what decision depends on getting the existing conditions right.",
+      "headline": "Planning work on an existing portfolio or logistics facility?",
       "cta": "Discuss your project"
     },
     "backToProjects": "Back to projects",
@@ -503,8 +510,8 @@
     },
     "index": {
       "eyebrow": "Project Index",
-      "headline": "{count} projects, one index.",
-      "body": "The two case studies above are written out in full. Every project here is clickable.",
+      "headline": "Additional project experience.",
+      "body": "Work delivered beyond the case studies above. Every project here is clickable.",
       "columns": {
         "ordinal": "Nº",
         "project": "Project",
@@ -689,7 +696,7 @@
       "hero": {
         "eyebrow": "Sector 01 — Retail Property Portfolios",
         "headline": "Reduce repeat site visits\nacross your retail portfolio.",
-        "subheadline": "Give designers, contractors and property teams more of the information they need without repeatedly sending someone back to each location.",
+        "subheadline": "Give designers, contractors and property teams a dependable site record they can refer back to without repeatedly sending someone back to each location.",
         "primaryCta": "Discuss your property portfolio",
         "secondaryCta": "View Projects"
       },
@@ -723,8 +730,9 @@
         }
       },
       "differentiator": {
-        "headline": "The value multiplies across the portfolio.",
-        "subheadline": "One unnecessary visit is a nuisance. Repeated across dozens or hundreds of properties, it becomes a portfolio cost. Consistent building information gives teams a stronger starting point instead of repeatedly rebuilding their understanding of the same locations."
+        "headline": "Built for the teams using the information next.",
+        "subheadline": "Each discipline can receive its own editable file, so architects, engineers and other project teams can continue working directly with the building information delivered by RESCAN.",
+        "note": "That means the information is not only something to look at.\nIt becomes part of the work that follows."
       },
       "namedCase": {
         "label": "Portfolio case",
@@ -741,22 +749,13 @@
         "metricLabel": "commercial properties documented",
         "image": "[[TODO: site photograph for the named retail case]]"
       },
-      "proofCase": {
-        "label": "Portfolio programme",
-        "headline": "40+ commercial properties documented as one programme",
-        "body": "[[TODO: why the portfolio was documented, how the consistent information across the properties was used, and the verified downstream result]]",
-        "metric": "40+",
-        "metricLabel": "commercial properties documented",
-        "image": "[[TODO: site photograph for the second portfolio programme]]"
-      },
       "fitNotFit": {
         "headline": "Best fit",
         "bestFit": {
           "title": "RESCAN is built for",
           "item0": "Retail property teams managing multiple locations",
           "item1": "Refurbishment, rollout and redesign programmes",
-          "item2": "Teams where repeated site verification carries real time and cost",
-          "item3": "Building information that supports repeated property decisions"
+          "item2": "Projects where repeated site verification creates meaningful time and cost"
         },
         "notFit": {
           "title": "Not built for",
@@ -766,7 +765,7 @@
         }
       },
       "finalCta": {
-        "headline": "How often is your team going back to site for information that could already be available?",
+        "headline": "How much time is your team losing to repeat site visits?",
         "cta": "Discuss your property portfolio"
       }
     },
@@ -774,7 +773,7 @@
       "hero": {
         "eyebrow": "Sector 02 — Logistics Warehouses",
         "headline": "Understand the whole warehouse\nbefore you redesign part of it.",
-        "subheadline": "RESCAN gives project teams a dependable view of large and complex logistics facilities before incomplete information turns into assumptions, redesign and delay.",
+        "subheadline": "RESCAN gives project teams a dependable view of large and complex logistics facilities before incomplete information becomes assumptions, redesign or delay.",
         "primaryCta": "Discuss your warehouse project",
         "secondaryCta": "View Projects",
         "fact0": {
@@ -793,7 +792,7 @@
       "coreRisk": {
         "eyebrow": "The core risk",
         "headline": "The larger and more complex the facility, the more expensive incomplete information becomes.",
-        "body": "The challenge is not simply measuring a large building. It is understanding how existing structure, services, equipment and previous alterations fit together across the facility. Historic drawings and isolated measurements may only show part of the picture, and when important conditions are missing, design teams have to make assumptions."
+        "body": "Large logistics warehouses can combine structure, services, equipment, mezzanines and years of alterations across large areas. Historic drawings and isolated measurements may only show part of the picture, and when important conditions are missing, design teams have to make assumptions."
       },
       "consequenceChain": {
         "headline": "Assumptions get more expensive as the project moves forward.",
@@ -830,7 +829,7 @@
         },
         "item1": {
           "slot": "02 / Retrofit complexity",
-          "figure": "[[TODO: relevant complexity or retrofit example]]",
+          "figure": "[[TODO: a complexity example, not a size metric — e.g. 4 mezzanine levels]]",
           "statement": "[[TODO: short verified statement on why the facility was difficult to understand]]"
         }
       },
@@ -839,9 +838,8 @@
         "bestFit": {
           "title": "RESCAN is suited to",
           "item0": "Large or complex logistics warehouse projects",
-          "item1": "Retrofit, refurbishment or redesign programmes",
-          "item2": "Projects where incomplete building information can create assumptions, redesign or delay",
-          "item3": "Facilities where reliable existing-condition information is commercially important"
+          "item1": "Retrofit, refurbishment and redesign programmes",
+          "item2": "Projects where incomplete information creates meaningful time, cost or programme risk"
         },
         "notFit": {
           "title": "Not suited to",
