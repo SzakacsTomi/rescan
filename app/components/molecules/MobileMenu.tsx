@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/app/components/atoms/LanguageSwitcher";
+import { useLenis } from "lenis/react";
 import { Link, usePathname } from "@/i18n/navigation";
 
 type MobileMenuProps = {
@@ -27,12 +28,19 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
     () => false,
   );
 
+  const lenis = useLenis();
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
+    // Locking the body alone is not enough: Lenis keeps its own scroll target and would drive
+    // the page behind the panel the moment the wheel moves.
+    if (isOpen) lenis?.stop();
+    else lenis?.start();
     return () => {
       document.body.style.overflow = "";
+      lenis?.start();
     };
-  }, [isOpen]);
+  }, [isOpen, lenis]);
 
   return (
     <>

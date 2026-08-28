@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+/* Lenis blanks pointer events on every iframe while it is smoothing, so a wheel over an
+   embed scrolls the page instead of the embed. The office map is the one iframe here that
+   is meant to be driven directly — panning it is the point — so it keeps its input, and a
+   wheel over it goes to Google Maps exactly as it did before Lenis. */
+.lenis.lenis-smooth iframe[data-native-input] {
+  pointer-events: auto;
+}
 
 @custom-variant dark (&:is(.dark *));
 

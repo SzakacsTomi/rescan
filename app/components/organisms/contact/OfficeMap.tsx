@@ -33,6 +33,9 @@ export const OfficeMap = ({ title, className, children }: OfficeMapProps) => (
       // Chrome's deferred load, so the embed sits on its spinner forever. It is above the fold
       // here anyway, where lazy loading buys nothing.
       referrerPolicy="no-referrer-when-downgrade"
+      // Opts this one embed out of the pointer-events blanking Lenis applies to every iframe
+      // while it smooths — see the rule in globals.css. Panning the aerial is the point of it.
+      data-native-input
       className="absolute inset-0 h-full w-full border-0"
     />
     {/* Three layers rather than one flat scrim, so the darkness is spent where it is needed

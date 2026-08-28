@@ -1,5 +1,6 @@
 "use client";
 
+import { useScrollToId } from "@/app/hooks/useScrollToId";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -12,15 +13,11 @@ type ScrollArrowProps = {
 
 export const ScrollArrow = ({ targetId, className }: ScrollArrowProps) => {
   const t = useTranslations("homePage");
-
-  const handleClick = () => {
-    const target = document.getElementById(targetId);
-    target?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToId = useScrollToId();
 
   return (
     <motion.button
-      onClick={handleClick}
+      onClick={() => scrollToId(targetId)}
       aria-label={t("hero.scrollHint")}
       animate={{ y: [0, 8, 0] }}
       transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

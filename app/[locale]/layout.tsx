@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { IBM_Plex_Mono, Montserrat } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
+import { SmoothScroll } from '@/app/components/atoms/SmoothScroll';
 import { siteConfig } from '@/config/site';
 import { ogLocale } from '@/lib/seo';
 import '../globals.css';
@@ -96,7 +97,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale}>
       <body className={`${montserrat.variable} ${plexMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <SmoothScroll>{children}</SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>

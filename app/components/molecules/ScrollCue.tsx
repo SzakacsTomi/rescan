@@ -1,6 +1,7 @@
 "use client";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { useScrollToId } from "@/app/hooks/useScrollToId";
 import { cn } from "@/lib/utils";
 
 type ScrollCueProps = {
@@ -16,14 +17,12 @@ type ScrollCueProps = {
  * language rather than repeating one template.
  */
 export const ScrollCue = ({ targetId, label, className }: ScrollCueProps) => {
-  const handleClick = () => {
-    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToId = useScrollToId();
 
   return (
     <button
       type="button"
-      onClick={handleClick}
+      onClick={() => scrollToId(targetId)}
       aria-label={label}
       className={cn(
         "inline-flex items-center gap-3 border-0 bg-transparent cursor-pointer",

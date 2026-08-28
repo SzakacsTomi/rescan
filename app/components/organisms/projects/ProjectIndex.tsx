@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useMotionValue, useSpring } from "framer-motion";
+import { useLenis } from "lenis/react";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Reveal } from "@/app/components/atoms/Reveal";
@@ -87,14 +88,22 @@ export const ProjectIndex = ({
     [pointerX, pointerY, previewX, previewY],
   );
 
-  const handleSelect = useCallback((id: string) => {
-    setHoveredId(null);
-    // Read before the overlay takes the page to its own top, so closing it returns the
-    // reader to the row they opened rather than to the top of the page.
-    indexScrollRef.current = window.scrollY;
-    setSelectedId(id);
-    window.scrollTo({ top: 0 });
-  }, []);
+  const lenis = useLenis();
+
+  const handleSelect = useCallback(
+    (id: string) => {
+      setHoveredId(null);
+      // Read before the overlay takes the page to its own top, so closing it returns the
+      // reader to the row they opened rather than to the top of the page.
+      indexScrollRef.current = window.scrollY;
+      setSelectedId(id);
+      // Instant on both legs, and Lenis is re-seated rather than animated: gliding the whole
+      // ledger open and shut would read as the page falling over, not as an overlay.
+      lenis?.stop();
+      window.scrollTo({ top: 0, behavior: "instant" });
+    },
+    [lenis],
+  );
 
   const handleClose = useCallback(() => {
     setSelectedId(null);
@@ -111,9 +120,11 @@ export const ProjectIndex = ({
       document.body.style.top = "";
       document.body.style.left = "";
       document.body.style.right = "";
-      window.scrollTo(0, indexScrollRef.current);
+      lenis?.start();
+      if (lenis) lenis.scrollTo(indexScrollRef.current, { immediate: true });
+      else window.scrollTo({ top: indexScrollRef.current, behavior: "instant" });
     };
-  }, [selectedId]);
+  }, [selectedId, lenis]);
 
   const selected = selectedId ? items.find((item) => item.project.id === selectedId) : undefined;
   const hovered = hoveredId ? items.find((item) => item.project.id === hoveredId) : undefined;

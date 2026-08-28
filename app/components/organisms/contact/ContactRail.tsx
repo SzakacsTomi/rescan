@@ -1,7 +1,5 @@
 'use client';
 
-import type { MouseEvent } from 'react';
-
 import { MonoLabel } from '@/app/components/atoms/MonoLabel';
 import { useActiveSection } from '@/app/hooks/useActiveSection';
 import { cn } from '@/lib/utils';
@@ -15,19 +13,10 @@ type ContactRailProps = {
 
 /**
  * An index of the form's five groups. Real anchors, so it works before hydration; the active
- * state is progressive enhancement on top.
+ * state and the glide to the section (`SmoothScroll`) are progressive enhancement on top.
  */
 export const ContactRail = ({ items, ariaLabel }: ContactRailProps) => {
   const activeId = useActiveSection(items.map((item) => item.id));
-
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
-    const target = document.getElementById(id);
-    if (!target) return;
-    event.preventDefault();
-    // CSS cannot override the JS scroll option, so the preference is read here.
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-  };
 
   return (
     <nav aria-label={ariaLabel} className="hidden lg:block">
@@ -39,7 +28,6 @@ export const ContactRail = ({ items, ariaLabel }: ContactRailProps) => {
               <a
                 href={`#${item.id}`}
                 aria-current={isActive ? 'true' : undefined}
-                onClick={(event) => handleClick(event, item.id)}
                 className="group relative flex min-h-11 items-start gap-3 rounded-sm py-2.5 pl-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               >
                 {/* A leader line pulled off the rule, the way a drafter points from a note to
