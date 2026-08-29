@@ -1,7 +1,7 @@
-import { CaseSquare } from "@/app/components/molecules/CaseSquare";
+import { CaseBand } from "@/app/components/molecules/CaseBand";
 import { caseStudies, type ProjectSector } from "@/config/projects";
 
-export type CaseGridCaseCopy = {
+export type CaseShowcaseCaseCopy = {
   title: string;
   body: string;
   stats: [string, string, string];
@@ -9,41 +9,48 @@ export type CaseGridCaseCopy = {
   photoHint: string;
 };
 
-type CaseGridProps = {
+type CaseShowcaseProps = {
   sectorLabels: Record<ProjectSector, string>;
-  cases: Record<string, CaseGridCaseCopy>;
+  cases: Record<string, CaseShowcaseCaseCopy>;
   ctaLabel: string;
   sectorHref: Record<ProjectSector, string>;
 };
 
 /**
- * The page's hero: four equal tiles, always four — one per project, edge to edge under
- * the nav, full width and (from `lg`) full viewport height. The gap matches the home
- * page's sector split (`SectionsGrid`'s `lg:gap-0.5`) rather than the design's own wider
- * 8px, so two full-bleed hero-scale grids on the site read as the same family. Values the
- * client has not supplied yet — every photograph, two of Carlqvist's stats — render
- * through `Pending`'s unconditional amber "Todo" treatment, but the tile itself always
- * shows, unlike the CaseStudyFeature sections this replaced.
+ * The page's hero: the four case studies stacked as full-bleed bands, flush against the
+ * nav with nothing above them. The lead band fills the viewport and the remaining
+ * three sit at the design's 600px, so the page opens on one facility rather than on four
+ * competing tiles. The gap matches the home page's sector split (`SectionsGrid`'s
+ * `lg:gap-0.5`), keeping the two full-bleed hero-scale stacks on the site in one family.
  */
-export const CaseGrid = ({ sectorLabels, cases, ctaLabel, sectorHref }: CaseGridProps) => {
+export const CaseShowcase = ({
+  sectorLabels,
+  cases,
+  ctaLabel,
+  sectorHref,
+}: CaseShowcaseProps) => {
+  const total = String(caseStudies.length).padStart(2, "0");
+
   return (
     <section className="relative w-full">
-      <div className="grid grid-cols-1 gap-0.5 sm:grid-cols-2 lg:min-h-[calc(100svh-4rem)] lg:grid-rows-2">
+      <div className="grid gap-0.5">
         {caseStudies.map((caseStudy, i) => {
           const copy = cases[caseStudy.id];
 
           return (
-            <CaseSquare
+            <CaseBand
               key={caseStudy.id}
               gradient={caseStudy.gradient}
               accent={caseStudy.accent}
               sectorLabel={sectorLabels[caseStudy.sector]}
               ordinal={String(i + 1).padStart(2, "0")}
+              total={total}
               photoHint={copy.photoHint}
               title={copy.title}
               body={copy.body}
               stats={copy.stats.map((value, j) => ({ value, label: copy.statLabels[j] }))}
               cta={{ label: ctaLabel, href: sectorHref[caseStudy.sector] }}
+              isLead={i === 0}
             />
           );
         })}

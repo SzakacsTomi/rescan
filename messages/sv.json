@@ -405,7 +405,7 @@
   },
   "projectsPage": {
     "pageTitle": "{count} byggnader, ett sätt att dokumentera dem.",
-    "caseGrid": {
+    "caseShowcase": {
       "cta": "Läs fallstudien",
       "case0": {
         "title": "Stor svensk livsmedelskedja",

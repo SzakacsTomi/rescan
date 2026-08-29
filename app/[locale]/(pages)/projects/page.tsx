@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import { JsonLd } from '@/app/components/atoms/JsonLd';
-import type { CaseGridCaseCopy } from '@/app/components/organisms/projects/CaseGrid';
+import type { CaseShowcaseCaseCopy } from '@/app/components/organisms/projects/CaseShowcase';
 import type { ProjectDetailCopy } from '@/app/components/organisms/projects/ProjectDetail';
 import { ProjectsTemplate } from '@/app/components/templates/ProjectsTemplate';
 import { caseStudies, projects, type ProjectSector } from '@/config/projects';
@@ -22,18 +22,18 @@ export default async function ProjectsPage({ params }: PageProps) {
   const t = await getTranslations('projectsPage');
   const projectCount = projects.length;
 
-  const cases: Record<string, CaseGridCaseCopy> = {};
+  const cases: Record<string, CaseShowcaseCaseCopy> = {};
   for (const { id } of caseStudies) {
     cases[id] = {
-      title: t(`caseGrid.${id}.title`),
-      body: t(`caseGrid.${id}.body`),
+      title: t(`caseShowcase.${id}.title`),
+      body: t(`caseShowcase.${id}.body`),
       stats: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
-        t(`caseGrid.${id}.stat${i}.value`),
+        t(`caseShowcase.${id}.stat${i}.value`),
       ) as [string, string, string],
       statLabels: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
-        t(`caseGrid.${id}.stat${i}.label`),
+        t(`caseShowcase.${id}.stat${i}.label`),
       ) as [string, string, string],
-      photoHint: t(`caseGrid.${id}.photoHint`),
+      photoHint: t(`caseShowcase.${id}.photoHint`),
     };
   }
 
@@ -76,10 +76,10 @@ export default async function ProjectsPage({ params }: PageProps) {
       <JsonLd data={jsonLd} />
       <ProjectsTemplate
         pageTitle={t('pageTitle', { count: projectCount })}
-        caseGrid={{
+        caseShowcase={{
           sectorLabels,
           cases,
-          ctaLabel: t('caseGrid.cta'),
+          ctaLabel: t('caseShowcase.cta'),
         }}
         whyItMatters={{
           eyebrow: t('whyItMatters.eyebrow'),
