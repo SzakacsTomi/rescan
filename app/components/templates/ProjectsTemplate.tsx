@@ -19,7 +19,6 @@ type IndexCardCopy = {
 type ProjectsTemplateProps = {
   pageTitle: string;
   caseShowcase: {
-    eyebrow: string;
     sectorLabels: Record<ProjectSector, string>;
     cases: Record<string, CaseShowcaseCaseCopy>;
     ctaLabel: string;
@@ -67,7 +66,6 @@ export const ProjectsTemplate = ({
       <h1 className="sr-only">{pageTitle}</h1>
 
       <CaseShowcase
-        eyebrow={caseShowcase.eyebrow}
         sectorLabels={caseShowcase.sectorLabels}
         cases={caseShowcase.cases}
         ctaLabel={caseShowcase.ctaLabel}

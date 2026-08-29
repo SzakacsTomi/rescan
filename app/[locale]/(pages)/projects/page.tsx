@@ -77,7 +77,6 @@ export default async function ProjectsPage({ params }: PageProps) {
       <ProjectsTemplate
         pageTitle={t('pageTitle', { count: projectCount })}
         caseShowcase={{
-          eyebrow: t('caseShowcase.eyebrow'),
           sectorLabels,
           cases,
           ctaLabel: t('caseShowcase.cta'),

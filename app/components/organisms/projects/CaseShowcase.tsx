@@ -1,4 +1,3 @@
-import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { CaseBand } from "@/app/components/molecules/CaseBand";
 import { caseStudies, type ProjectSector } from "@/config/projects";
 
@@ -11,7 +10,6 @@ export type CaseShowcaseCaseCopy = {
 };
 
 type CaseShowcaseProps = {
-  eyebrow: string;
   sectorLabels: Record<ProjectSector, string>;
   cases: Record<string, CaseShowcaseCaseCopy>;
   ctaLabel: string;
@@ -19,14 +17,13 @@ type CaseShowcaseProps = {
 };
 
 /**
- * The page's hero: a mono eyebrow strip, then the four case studies stacked as full-bleed
- * bands, edge to edge under the nav. The lead band fills the viewport and the remaining
+ * The page's hero: the four case studies stacked as full-bleed bands, flush against the
+ * nav with nothing above them. The lead band fills the viewport and the remaining
  * three sit at the design's 600px, so the page opens on one facility rather than on four
  * competing tiles. The gap matches the home page's sector split (`SectionsGrid`'s
  * `lg:gap-0.5`), keeping the two full-bleed hero-scale stacks on the site in one family.
  */
 export const CaseShowcase = ({
-  eyebrow,
   sectorLabels,
   cases,
   ctaLabel,
@@ -36,10 +33,6 @@ export const CaseShowcase = ({
 
   return (
     <section className="relative w-full">
-      <div className="mx-auto w-full max-w-shell px-6 pt-10 pb-2 lg:pl-spine">
-        <MonoLabel className="tracking-eyebrow">{eyebrow}</MonoLabel>
-      </div>
-
       <div className="grid gap-0.5">
         {caseStudies.map((caseStudy, i) => {
           const copy = cases[caseStudy.id];
