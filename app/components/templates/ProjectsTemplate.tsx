@@ -1,7 +1,7 @@
 import {
-  CaseGrid,
-  type CaseGridCaseCopy,
-} from "@/app/components/organisms/projects/CaseGrid";
+  CaseShowcase,
+  type CaseShowcaseCaseCopy,
+} from "@/app/components/organisms/projects/CaseShowcase";
 import { ProjectIndex } from "@/app/components/organisms/projects/ProjectIndex";
 import { LogoWall } from "@/app/components/organisms/projects/LogoWall";
 import { Metrics } from "@/app/components/organisms/projects/Metrics";
@@ -18,9 +18,10 @@ type IndexCardCopy = {
 
 type ProjectsTemplateProps = {
   pageTitle: string;
-  caseGrid: {
+  caseShowcase: {
+    eyebrow: string;
     sectorLabels: Record<ProjectSector, string>;
-    cases: Record<string, CaseGridCaseCopy>;
+    cases: Record<string, CaseShowcaseCaseCopy>;
     ctaLabel: string;
   };
   whyItMatters: { eyebrow: string; headline: string; body: string };
@@ -45,7 +46,7 @@ const SECTOR_HREF: Record<ProjectSector, string> = {
 
 export const ProjectsTemplate = ({
   pageTitle,
-  caseGrid,
+  caseShowcase,
   whyItMatters,
   logoWall,
   metrics,
@@ -61,14 +62,15 @@ export const ProjectsTemplate = ({
 
   return (
     <>
-      {/* The design opens straight on the case grid with no visual hero — this keeps a
-       *  real page heading for assistive tech and search without reintroducing one. */}
+      {/* The design opens straight on the case bands with no headline of its own — this
+       *  keeps a real page heading for assistive tech and search without reintroducing one. */}
       <h1 className="sr-only">{pageTitle}</h1>
 
-      <CaseGrid
-        sectorLabels={caseGrid.sectorLabels}
-        cases={caseGrid.cases}
-        ctaLabel={caseGrid.ctaLabel}
+      <CaseShowcase
+        eyebrow={caseShowcase.eyebrow}
+        sectorLabels={caseShowcase.sectorLabels}
+        cases={caseShowcase.cases}
+        ctaLabel={caseShowcase.ctaLabel}
         sectorHref={SECTOR_HREF}
       />
 

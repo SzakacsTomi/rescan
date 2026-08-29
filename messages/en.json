@@ -405,7 +405,8 @@
   },
   "projectsPage": {
     "pageTitle": "Buildings, one way of documenting them.",
-    "caseGrid": {
+    "caseShowcase": {
+      "eyebrow": "Featured Projects",
       "cta": "Read the case study",
       "case0": {
         "title": "Major Swedish Grocery Retailer",

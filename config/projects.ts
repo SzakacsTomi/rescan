@@ -17,18 +17,19 @@ export type ProjectConfig = {
 export type CaseStudyConfig = {
   id: string;
   sector: ProjectSector;
-  /** Surface and link accent always move together — the design gives each square its own
+  /** Surface and link accent always move together — the design gives each band its own
    *  pair, and the two stand-in accents have no equivalent among the theme tokens. */
   gradient: string;
   accent: string;
 };
 
-/** The 2×2 the Projects design opens with, in the order it draws them — always four
- *  tiles, one per project. The sectors alternate down the grid (retail, logistics,
- *  retail, logistics) so neither segment reads as the sideline: the two grocery-retailer
- *  programmes are distribution-centre work and belong to Logistics Warehouses, the two
- *  property portfolios to Retail Chains. Gradient and accent stay with the *position*,
- *  not the project, so the grid keeps the colour sequence the design drew. */
+/** The stacked showcase the Projects design opens with, in the order it draws them —
+ *  always four bands, one per project. The sectors alternate down the stack (retail,
+ *  logistics, retail, logistics) so neither segment reads as the sideline: the two
+ *  grocery-retailer programmes are distribution-centre work and belong to Logistics
+ *  Warehouses, the two property portfolios to Retail Chains. Gradient and accent stay
+ *  with the *position*, not the project, so the stack keeps the colour sequence the
+ *  design drew. */
 export const caseStudies: CaseStudyConfig[] = [
   { id: "case2", sector: "retail", gradient: DEEP_BLUE_GRADIENT, accent: "#89b4f5" },
   { id: "case0", sector: "logistics", gradient: CHARCOAL_GRADIENT, accent: "#89b4f5" },

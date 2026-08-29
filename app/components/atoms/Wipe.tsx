@@ -33,7 +33,7 @@ const HIDDEN = { clipPath: `inset(-${BLEED_PX}px 100% -${BLEED_PX}px -${BLEED_PX
 const VISIBLE = { clipPath: `inset(-${BLEED_PX}px -${BLEED_PX}px -${BLEED_PX}px -${BLEED_PX}px)`, opacity: 1 };
 
 /**
- * The Projects page reveals everything with the same left-to-right pass: a case square
+ * The Projects page reveals everything with the same left-to-right pass: a case band
  * gets the visible scan beam, a headline gets this silent version of the same travel.
  * Unlike `Reveal` it does not move the element, so a balanced headline keeps the line
  * breaks it was authored with.
