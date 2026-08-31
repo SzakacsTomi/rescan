@@ -37,13 +37,6 @@
         "breadcrumb": "Projects",
         "ogAlt": "RESCAN — documented buildings and portfolio programmes"
       },
-      "whyRescan": {
-        "title": "Building information your project team can rely on",
-        "description": "How RESCAN keeps existing-condition information repeatable, complete and usable downstream, long after the site visit is finished.",
-        "keywords": "repeatable building documentation, coverage, quality control, downstream use, existing conditions, project information",
-        "breadcrumb": "Why RESCAN",
-        "ogAlt": "RESCAN — how building information stays dependable after the site visit"
-      },
       "about": {
         "title": "The company that goes to the building",
         "description": "RESCAN is an independent Swedish company based in Växjö, working since 2017 with teams that manage retail property portfolios and logistics warehouses.",
@@ -163,7 +156,6 @@
     "retail": "Retail Property Portfolios",
     "logistics": "Logistics Warehouses",
     "projects": "Projects",
-    "whyRescan": "Why RESCAN",
     "about": "About Us",
     "contact": "Contact",
     "menu": "Menu",
@@ -223,93 +215,6 @@
     "cta": {
       "headline": "Talk to the people who did the work.",
       "subheadline": "Reach RESCAN directly to discuss a portfolio, a facility, or a project still taking shape.",
-      "cta": "Discuss your project"
-    }
-  },
-  "whyRescanPage": {
-    "hero": {
-      "eyebrow": "Why RESCAN",
-      "headline": "Building information your project team can rely on.",
-      "subheadline": "RESCAN supports teams managing retail property portfolios and logistics warehouses, where existing-condition information needs to remain useful long after the site visit is complete.",
-      "anchors": [
-        "Repeatability",
-        "Coverage",
-        "Downstream use",
-        "Quality control"
-      ],
-      "questionLabel": "The question this page answers",
-      "question": "Can RESCAN produce building information that remains dependable and useful after the site visit?",
-      "cta": "Discuss a project"
-    },
-    "corePrinciple": {
-      "headline": "The capture is only the starting point.",
-      "body": "If the teams that open the file still have to question basic existing conditions, important uncertainty remains. The goal is not simply to document the building. It is to create information people can continue using when decisions have to be made.",
-      "rolesLabel": "Who opens the file next",
-      "roles": [
-        "Architects",
-        "Engineers",
-        "Contractors",
-        "Project managers",
-        "Property teams",
-        "Facility teams"
-      ]
-    },
-    "repeatability": {
-      "headline": "Consistency matters when the work repeats.",
-      "body": "Retail portfolios and repeat programmes need more than a collection of unrelated surveys. A repeatable approach gives different project teams a more consistent information base across multiple properties.",
-      "proof0": "56-property portfolio",
-      "proof1": "40+ property portfolio"
-    },
-    "coverage": {
-      "headline": "Reduce the gaps that send teams back.",
-      "body": "The more relevant existing conditions that are captured properly, the fewer basic questions require another physical investigation.",
-      "proof0": "[[TODO: Insert one factual coverage / capture-method / project example.]]"
-    },
-    "downstreamUsefulness": {
-      "headline": "Information should work for the people making the next decision.",
-      "body": "Building information needs to support the architects, engineers, contractors and property teams who use it later. The stronger the information is at the start, the less time those teams need to spend rebuilding their understanding of the building.",
-      "proof0": "[[TODO: Insert factual example of how RESCAN outputs are used downstream.]]"
-    },
-    "qualityControl": {
-      "headline": "Project decisions depend on dependable information.",
-      "body": "When building data becomes the basis for design, coordination or refurbishment decisions, quality control matters.",
-      "proof0": "[[TODO: QA checking process]]",
-      "proof1": "[[TODO: accuracy / tolerance standard]]",
-      "proof2": "[[TODO: internal review process]]",
-      "proof3": "[[TODO: delivery verification method]]"
-    },
-    "proof": {
-      "headline": "Proof over claims.",
-      "item0": {
-        "slot": "Retail portfolio programme",
-        "figure": "56",
-        "statement": "properties — one portfolio programme"
-      },
-      "item1": {
-        "slot": "Commercial portfolio programme",
-        "figure": "40+",
-        "statement": "properties — second portfolio programme"
-      },
-      "item2": {
-        "slot": "Logistics facility",
-        "figure": "[[TODO: XX,XXX]]",
-        "statement": "m² — logistics facility"
-      },
-      "item3": {
-        "slot": "Repeat business & QA",
-        "figure": "[[TODO: Verified repeat-business / QA metric]]",
-        "statement": "[[TODO: one short supporting fact]]"
-      },
-      "item4": {
-        "slot": "Client / programme",
-        "figure": "[[TODO: Relevant client / programme / testimonial]]",
-        "statement": "[[TODO: one short supporting fact]]"
-      },
-      "cta": "View Projects"
-    },
-    "finalCta": {
-      "eyebrow": "One question before the work starts",
-      "headline": "Tell us what decision the building information needs to support.",
       "cta": "Discuss your project"
     }
   },

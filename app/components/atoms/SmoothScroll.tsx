@@ -24,9 +24,8 @@ const LENIS_OPTIONS = {
 } satisfies LenisOptions;
 
 /**
- * In-page anchors, glided rather than jumped: the why-rescan hero index, the project ledger
- * rows and the contact rail are all plain `<a href="#id">`, which keeps them working before
- * hydration.
+ * In-page anchors, glided rather than jumped: the project ledger rows and the contact rail
+ * are all plain `<a href="#id">`, which keeps them working before hydration.
  *
  * Lenis has an `anchors` option for this, but it starts its animation without cancelling the
  * browser's own fragment navigation — the page lands on the target for a frame, then gets

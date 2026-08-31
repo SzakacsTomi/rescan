@@ -12,7 +12,6 @@ export type SeoRouteKey =
   | 'retail'
   | 'logistics'
   | 'projects'
-  | 'whyRescan'
   | 'about'
   | 'contact';
 
@@ -66,13 +65,6 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'monthly',
     priority: 0.8,
     pageType: 'CollectionPage',
-  },
-  {
-    key: 'whyRescan',
-    path: '/why-rescan',
-    changeFrequency: 'yearly',
-    priority: 0.7,
-    pageType: 'WebPage',
   },
   {
     key: 'about',

@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 export const CORE_RISK_ID = "core-risk";
 
 type CoreRiskProps = {
-  /** Not every page that reuses this organism has one — `/why-rescan` doesn't. */
   eyebrow?: string;
   headline: string;
   body: string;

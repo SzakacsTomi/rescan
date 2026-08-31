@@ -11,6 +11,7 @@ const RETIRED_ROUTES = [
   { from: "/retail-chains", to: "/retail-property-portfolios" },
   { from: "/industrial-manufacturing", to: "/logistics-warehouses" },
   { from: "/model-production", to: "/" },
+  { from: "/why-rescan", to: "/" },
 ];
 
 const nextConfig: NextConfig = {

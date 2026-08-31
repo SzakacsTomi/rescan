@@ -37,13 +37,6 @@
         "breadcrumb": "Projekt",
         "ogAlt": "RESCAN — dokumenterade byggnader och portföljuppdrag"
       },
-      "whyRescan": {
-        "title": "Byggnadsinformation ditt projektteam kan lita på",
-        "description": "Så håller RESCAN information om befintliga förhållanden upprepbar, heltäckande och användbar i nästa led – långt efter att platsbesöket är avslutat.",
-        "keywords": "upprepbar byggnadsdokumentation, täckning, kvalitetskontroll, användbarhet i nästa led, befintliga förhållanden",
-        "breadcrumb": "Varför RESCAN",
-        "ogAlt": "RESCAN — så förblir byggnadsinformationen pålitlig efter platsbesöket"
-      },
       "about": {
         "title": "Företaget som åker till byggnaden",
         "description": "RESCAN är ett fristående svenskt företag med bas i Växjö som sedan 2017 arbetar med team som förvaltar butiksfastighetsportföljer och logistiklager.",
@@ -163,7 +156,6 @@
     "retail": "Butiksfastighetsportföljer",
     "logistics": "Logistiklager",
     "projects": "Projekt",
-    "whyRescan": "Varför RESCAN",
     "about": "Om oss",
     "contact": "Kontakt",
     "menu": "Meny",
@@ -223,93 +215,6 @@
     "cta": {
       "headline": "Prata med dem som utförde arbetet.",
       "subheadline": "Kontakta RESCAN direkt för att diskutera en portfölj, en anläggning eller ett projekt som fortfarande tar form.",
-      "cta": "Diskutera ditt projekt"
-    }
-  },
-  "whyRescanPage": {
-    "hero": {
-      "eyebrow": "Varför RESCAN",
-      "headline": "Byggnadsinformation ditt projektteam kan lita på.",
-      "subheadline": "RESCAN stödjer team som förvaltar butiksfastighetsportföljer och logistiklager, där information om befintliga förhållanden behöver förbli användbar långt efter att platsbesöket är avslutat.",
-      "anchors": [
-        "Upprepbarhet",
-        "Täckning",
-        "Användbarhet i nästa led",
-        "Kvalitetskontroll"
-      ],
-      "questionLabel": "Frågan som denna sida besvarar",
-      "question": "Kan RESCAN producera byggnadsinformation som förblir pålitlig och användbar efter platsbesöket?",
-      "cta": "Diskutera ett projekt"
-    },
-    "corePrinciple": {
-      "headline": "Inmätningen är bara utgångspunkten.",
-      "body": "Om teamen som öppnar filen fortfarande måste ifrågasätta grundläggande befintliga förhållanden kvarstår en betydande osäkerhet. Målet är inte enbart att dokumentera byggnaden. Det är att skapa information som människor kan fortsätta använda när beslut ska fattas.",
-      "rolesLabel": "Vem öppnar filen härnäst",
-      "roles": [
-        "Arkitekter",
-        "Ingenjörer",
-        "Entreprenörer",
-        "Projektledare",
-        "Fastighetsteam",
-        "Driftteam"
-      ]
-    },
-    "repeatability": {
-      "headline": "Enhetlighet spelar roll när arbetet upprepas.",
-      "body": "Butiksportföljer och återkommande program behöver mer än en samling osammanhängande inmätningar. Ett upprepbart arbetssätt ger olika projektteam en mer enhetlig informationsbas över flera fastigheter.",
-      "proof0": "56-fastigheters portfölj",
-      "proof1": "40+ fastigheters portfölj"
-    },
-    "coverage": {
-      "headline": "Minska luckorna som skickar tillbaka teamen.",
-      "body": "Ju fler relevanta befintliga förhållanden som fångas ordentligt, desto färre grundläggande frågor kräver ytterligare ett fysiskt platsbesök.",
-      "proof0": "[[TODO: Insert one factual coverage / capture-method / project example.]]"
-    },
-    "downstreamUsefulness": {
-      "headline": "Informationen ska fungera för dem som fattar nästa beslut.",
-      "body": "Byggnadsinformationen behöver stödja arkitekter, ingenjörer, entreprenörer och fastighetsteam som använder den senare. Ju starkare informationen är från början, desto mindre tid behöver de teamen lägga på att bygga upp sin förståelse av byggnaden på nytt.",
-      "proof0": "[[TODO: Insert factual example of how RESCAN outputs are used downstream.]]"
-    },
-    "qualityControl": {
-      "headline": "Projektbeslut bygger på pålitlig information.",
-      "body": "När byggnadsdata blir underlag för projektering, samordning eller ombyggnadsbeslut spelar kvalitetskontroll roll.",
-      "proof0": "[[TODO: QA checking process]]",
-      "proof1": "[[TODO: accuracy / tolerance standard]]",
-      "proof2": "[[TODO: internal review process]]",
-      "proof3": "[[TODO: delivery verification method]]"
-    },
-    "proof": {
-      "headline": "Bevis framför påståenden.",
-      "item0": {
-        "slot": "Butiksportfölj-program",
-        "figure": "56",
-        "statement": "fastigheter — ett portföljprogram"
-      },
-      "item1": {
-        "slot": "Kommersiellt portföljprogram",
-        "figure": "40+",
-        "statement": "fastigheter — ett andra portföljprogram"
-      },
-      "item2": {
-        "slot": "Logistikanläggning",
-        "figure": "[[TODO: XX,XXX]]",
-        "statement": "m² — logistikanläggning"
-      },
-      "item3": {
-        "slot": "Återkommande affärer & kvalitet",
-        "figure": "[[TODO: Verified repeat-business / QA metric]]",
-        "statement": "[[TODO: one short supporting fact]]"
-      },
-      "item4": {
-        "slot": "Kund / program",
-        "figure": "[[TODO: Relevant client / programme / testimonial]]",
-        "statement": "[[TODO: one short supporting fact]]"
-      },
-      "cta": "Se projekt"
-    },
-    "finalCta": {
-      "eyebrow": "En fråga innan arbetet börjar",
-      "headline": "Berätta vilket beslut byggnadsinformationen behöver stödja.",
       "cta": "Diskutera ditt projekt"
     }
   },

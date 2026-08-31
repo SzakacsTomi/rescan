@@ -77,7 +77,6 @@ Components follow atomic design; dependencies point one way only
 | `/` | Hero, sector split, cost ladder, proof, qualification |
 | `/retail-property-portfolios` | Sector page with a Cloudinary carousel hero |
 | `/logistics-warehouses` | Sector page with the consequence chain |
-| `/why-rescan` | Four proof-backed pillars |
 | `/projects` | Two case studies plus fifteen older references |
 | `/about` | Company page |
 | `/contact` | Zod + Server Action + Resend + Turnstile |
@@ -85,7 +84,7 @@ Components follow atomic design; dependencies point one way only
 Retired routes 308-redirect (see `RETIRED_ROUTES` in `next.config.ts`):
 `/commercial-portfolios` → `/retail-property-portfolios`, `/retail-chains` →
 `/retail-property-portfolios`, `/industrial-manufacturing` → `/logistics-warehouses`,
-`/model-production` → `/`.
+`/model-production` → `/`, `/why-rescan` → `/`.
 
 All pages are served under both locale prefixes: `/en/...` and `/sv/...`.
 
