@@ -91,6 +91,15 @@ Each of these has already cost time.
    locale and will not translate.
 6. **`messages/en.json` is the reference catalogue.** A key missing from `sv.json`
    fails the build, which is the intended safety net — do not silence it.
+7. **`not-found.tsx` belongs at the true root (`app/not-found.tsx`), not under
+   `[locale]`.** Next.js 16 builds its one `/_not-found` route by resolving `not-found`
+   only at the root of `app/`; a nested `app/[locale]/not-found.tsx` is never reached,
+   for a genuinely unmatched URL *and* for an in-tree `notFound()` call. Because that
+   route sits outside `app/[locale]/layout.tsx`, it can't inherit the locale, the
+   `<html>`/`<body>` shell, or `NextIntlClientProvider` from it — it resolves its own
+   locale via `getLocale()` (reads the `X-NEXT-INTL-LOCALE` header the proxy sets on
+   every request, so this works even though no `[locale]` param was ever matched) and
+   renders through the shared `AppShell` component instead.
 
 ## Architecture
 

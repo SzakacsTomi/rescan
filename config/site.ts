@@ -1,3 +1,5 @@
+import type { Viewport } from 'next';
+
 /**
  * The origin the site is served from. Deliberately read from the environment and never
  * hardcoded: the production domain is not final, and canonicals, hreflang, the sitemap,
@@ -80,3 +82,13 @@ export const siteConfig = {
     bing: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
   },
 } as const;
+
+/** Shared between `[locale]/layout.tsx` and the root `not-found.tsx` — the latter sits
+ *  outside the locale tree (see AGENTS.md's not-found gotcha) and so cannot inherit the
+ *  locale layout's `viewport` export. */
+export const siteViewport: Viewport = {
+  themeColor: siteConfig.themeColor,
+  colorScheme: 'light',
+  width: 'device-width',
+  initialScale: 1,
+};

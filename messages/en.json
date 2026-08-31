@@ -758,5 +758,13 @@
         "cta": "Discuss your warehouse project"
       }
     }
+  },
+  "notFoundPage": {
+    "metaTitle": "Page not found",
+    "code": "404",
+    "headline": "This page doesn't exist.",
+    "subheadline": "The link may be outdated, or the page has moved. Here's where to go instead.",
+    "cta": "Back to home",
+    "linksLabel": "Explore"
   }
 }

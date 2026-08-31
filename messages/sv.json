@@ -758,5 +758,13 @@
         "cta": "Diskutera ditt lagerprojekt"
       }
     }
+  },
+  "notFoundPage": {
+    "metaTitle": "Sidan hittades inte",
+    "code": "404",
+    "headline": "Den här sidan finns inte.",
+    "subheadline": "Länken kan vara inaktuell, eller så har sidan flyttats. Här är några andra sidor att utforska.",
+    "cta": "Till startsidan",
+    "linksLabel": "Utforska"
   }
 }

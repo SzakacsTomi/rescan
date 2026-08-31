@@ -1,36 +1,16 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { IBM_Plex_Mono, Montserrat } from 'next/font/google';
-import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
-import { SmoothScroll } from '@/app/components/atoms/SmoothScroll';
-import { siteConfig } from '@/config/site';
+import { AppShell } from '@/app/components/AppShell';
+import { siteConfig, siteViewport } from '@/config/site';
 import { ogLocale } from '@/lib/seo';
-import '../globals.css';
-
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: '--font-plex-mono',
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500'],
-});
 
 type LocaleLayoutProps = {
   children: ReactNode;
   params: Promise<{ locale: string }>;
 };
 
-export const viewport: Viewport = {
-  themeColor: siteConfig.themeColor,
-  colorScheme: 'light',
-  width: 'device-width',
-  initialScale: 1,
-};
+export const viewport: Viewport = siteViewport;
 
 export async function generateMetadata({
   params,
@@ -94,12 +74,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={`${montserrat.variable} ${plexMono.variable} antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <SmoothScroll>{children}</SmoothScroll>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <AppShell locale={locale} messages={messages}>
+      {children}
+    </AppShell>
   );
 }
