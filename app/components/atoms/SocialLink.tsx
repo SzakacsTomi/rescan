@@ -1,10 +1,10 @@
-import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import { InstagramIcon, LinkedinIcon, TwitterIcon } from '@/app/components/atoms/BrandIcons';
 import type { SocialLinkConfig } from '@/app/types/footer';
 
 const iconMap = {
-  instagram: Instagram,
-  linkedin: Linkedin,
-  twitter: Twitter,
+  instagram: InstagramIcon,
+  linkedin: LinkedinIcon,
+  twitter: TwitterIcon,
 };
 
 type SocialLinkProps = {
