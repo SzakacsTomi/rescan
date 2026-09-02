@@ -766,5 +766,11 @@
     "subheadline": "Länken kan vara inaktuell, eller så har sidan flyttats. Här är några andra sidor att utforska.",
     "cta": "Till startsidan",
     "linksLabel": "Utforska"
+  },
+  "comingSoonPage": {
+    "metaTitle": "Kommer snart",
+    "eyebrow": "Ombyggnad",
+    "headline": "Bra saker tar tid att skanna ordentligt.",
+    "body": "Vi bygger om rescan.se kring det vi gör bäst — pålitlig byggnadsinformation för butiksfastighetsportföljer och logistiklager. Häng kvar, vi är snart tillbaka."
   }
 }

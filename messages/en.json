@@ -766,5 +766,11 @@
     "subheadline": "The link may be outdated, or the page has moved. Here's where to go instead.",
     "cta": "Back to home",
     "linksLabel": "Explore"
+  },
+  "comingSoonPage": {
+    "metaTitle": "Coming soon",
+    "eyebrow": "Rebuilding",
+    "headline": "Good things take time to scan properly.",
+    "body": "We're rebuilding rescan.se around what we do best — reliable building information for retail chains and logistics warehouses. Stay tuned."
   }
 }
