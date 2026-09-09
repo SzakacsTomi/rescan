@@ -6,7 +6,6 @@ import { AboutTemplate } from '@/app/components/templates/AboutTemplate';
 import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
 const FACT_COUNT = 3;
-const MEMBER_COUNT = 3;
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -54,11 +53,6 @@ export default async function AboutPage({ params }: PageProps) {
               coordinates: t('presence.item1.coordinates'),
             },
           ],
-        }}
-        people={{
-          headline: t('people.headline'),
-          organization: t('people.organization'),
-          members: Array.from({ length: MEMBER_COUNT }, () => t('people.member')),
         }}
         cta={{
           headline: t('cta.headline'),
