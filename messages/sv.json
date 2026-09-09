@@ -55,9 +55,9 @@
   },
   "homePage": {
     "hero": {
-      "eyebrow": "01 — Befintliga förhållanden",
-      "headline": "Vet vad som finns\ninnan information brister\nkostar tid och pengar.",
-      "subheadline": "RESCAN skapar pålitlig byggnadsinformation för butiksfastighetsportföljer\noch logistiklager – innan obesvarade frågor om platsen\nblir till återbesök, omprojektering eller förseningar.",
+      "eyebrow": "01 — Befintligt skick",
+      "headline": "Få en tillförlitlig bild av byggnaden\n– innan bristande underlag\nkostar tid och pengar.",
+      "subheadline": "RESCAN tar fram tillförlitligt byggnadsunderlag för handelsfastigheter\noch logistiklager – innan obesvarade frågor på plats leder till\nåterbesök, omprojektering eller förseningar.",
       "primaryCta": "Diskutera ett projekt",
       "responseNote": "Svar inom en arbetsdag",
       "scrollHint": "Skrolla för att utforska",
@@ -74,49 +74,49 @@
     },
     "sectors": {
       "retailChains": {
-        "index": "01 / Butik",
-        "title": "Butiksfastighetsportföljer",
-        "lead": "Färre platsbesök. Mindre spilld tid över hela beståndet.",
-        "description": "När fastighets-, projektörs- eller entreprenörsteam måste återvända till en plats bara för att bekräfta befintliga förhållanden är kostnaden större än själva besöket. Resor, planering och förlorad projekteringstid mångdubblas över dussintals eller hundratals fastigheter. RESCAN skapar ett tillförlitligt underlag som teamen kan gå tillbaka till när nya frågor om platsen dyker upp.",
-        "step0": "Bristande information",
-        "step1": "ännu ett besök",
+        "index": "01 / Handel",
+        "title": "Portföljer av handelsfastigheter",
+        "lead": "Färre platsbesök. Mindre bortkastad tid i hela portföljen.",
+        "description": "När fastighets-, projekterings- eller entreprenadteam behöver återvända till en fastighet enbart för att verifiera befintliga förhållanden blir kostnaden större än själva besöket. Resor, planering och förlorad projekteringstid växer snabbt när det gäller tiotals eller hundratals fastigheter. RESCAN skapar tillförlitliga 2D-ritningar och BIM-modeller som teamen kan använda för att besvara nya frågor utan ytterligare platsbesök.",
+        "step0": "Bristande underlag",
+        "step1": "ytterligare platsbesök",
         "step2": "dubbelarbete",
-        "step3": "ökad kostnad för portföljen",
-        "cta": "Utforska butiksportföljer"
+        "step3": "ökade kostnader i portföljen",
+        "cta": "Läs mer om handelsfastigheter"
       },
       "logisticsWarehouses": {
         "index": "02 / Logistik",
         "title": "Logistiklager",
-        "lead": "Förstå hela lagret innan du bygger om en del av det.",
-        "description": "Stora logistikanläggningar är svåra att förstå utifrån fragmenterade ritningar och enstaka inmätningar. När befintliga förhållanden missas smyger sig antaganden in i projekteringen – och kan senare bli kollisioner, omprojektering eller ytterligare utredning. RESCAN ger projektteam en pålitlig bild av anläggningen innan de problemen förs vidare.",
-        "step0": "Bristande information",
+        "lead": "Förstå hela anläggningen innan du projekterar om en del av den.",
+        "description": "Stora logistikanläggningar är svåra att överblicka utifrån fragmenterade ritningar och enstaka mätningar. När befintliga förhållanden missas bygger projekteringen på antaganden – som senare kan leda till kollisioner, omprojektering eller kompletterande undersökningar. RESCAN ger projektteamet ett tillförlitligt underlag över hela anläggningen innan problemen förs vidare i projektet.",
+        "step0": "Bristande underlag",
         "step1": "antaganden",
-        "step2": "omprojektering eller utredning",
+        "step2": "omprojektering eller kompletterande undersökning",
         "step3": "förlorad projekttid",
-        "cta": "Utforska logistiklager"
+        "cta": "Läs mer om logistiklager"
       }
     },
     "proof": {
-      "headline": "Bevisat i verkliga fastigheter.",
+      "headline": "Bevisat i verkliga projekt.",
       "item0": {
         "slot": "01 / Portföljomfattning",
         "figure": "56",
-        "statement": "kommersiella fastigheter dokumenterade som ett portföljprogram över hela Sverige."
+        "statement": "kommersiella fastigheter dokumenterade inom ett rikstäckande portföljprogram."
       },
       "item1": {
         "slot": "02 / Portföljomfattning",
         "figure": "40+",
-        "statement": "kommersiella fastigheter dokumenterade som ett andra portföljprogram."
+        "statement": "kommersiella fastigheter dokumenterade inom ett separat portföljprogram."
       },
       "item2": {
-        "slot": "03 / Anläggningens omfattning",
+        "slot": "03 / Största dokumenterade anläggning",
         "figure": "96 000 m²",
         "statement": "logistikanläggning i drift, dokumenterad inför planerad modernisering."
       },
       "item3": {
-        "slot": "04 / Leveransbevis",
+        "slot": "04 / Leveranserfarenhet",
         "figure": "250+",
-        "statement": "projekt levererade i Sverige och på andra EU-marknader."
+        "statement": "projekt levererade i Sverige och på andra europeiska marknader."
       },
       "cta": "Se projekt"
     },
@@ -153,7 +153,7 @@
     }
   },
   "nav": {
-    "retail": "Butiksfastighetsportföljer",
+    "retail": "Handelsfastigheter",
     "logistics": "Logistiklager",
     "projects": "Projekt",
     "about": "Om oss",
@@ -190,8 +190,8 @@
     },
     "focus": {
       "headline": "Fokus på befintliga byggnader.",
-      "headlineAccent": "Byggt utifrån verkliga projektbehov.",
-      "body": "RESCAN är ett svenskt företag med bas i Växjö, inriktat på att dokumentera befintliga byggnader. Tillsammans med betrodda specialistpartner levererar vi relationsritningar och BIM-modeller som används inom projektering, ombyggnation, fastighetsförvaltning och fastighetsbeslut.",
+      "headlineAccent": "Utformat för verkliga projektbehov.",
+      "body": "RESCAN är ett svenskt företag med bas i Växjö, med fokus på att dokumentera befintliga byggnader. Tillsammans med betrodda specialistpartners levererar vi relationsritningar och BIM-modeller som används vid projektering, ombyggnad, fastighetsförvaltning och andra beslut som rör fastigheten.",
       "recordLabel": "Meriter",
       "record": "Sedan 2017 har RESCAN levererat mer än 250 projekt, inklusive flerfastighetsprogram och logistikanläggningar på upp till 96 000 m².",
       "aim": "Vårt mål är enkelt: att ge fastighets- och projektteam korrekt byggnadsinformation som de kan fortsätta använda efter att arbetet på plats är klart—vilket minskar onödig kontroll, underlättar projektarbetet och hjälper team att fatta bättre underbyggda beslut."
@@ -199,7 +199,7 @@
     "presence": {
       "item0": {
         "label": "Var vi arbetar",
-        "value": "Sverige, med levererade projekt i Österrike och USA"
+        "value": "Primär marknad: Sverige. Genomförda projekt även utanför Sverige."
       },
       "item1": {
         "label": "Bas",
@@ -208,8 +208,8 @@
       }
     },
     "cta": {
-      "headline": "Prata med dem som utförde arbetet.",
-      "subheadline": "Kontakta RESCAN direkt för att diskutera en portfölj, en anläggning eller ett projekt som fortfarande tar form.",
+      "headline": "Prata med teamet som utför arbetet.",
+      "subheadline": "Kontakta RESCAN direkt för att diskutera en fastighetsportfölj, en anläggning eller ett projekt som fortfarande tar form.",
       "cta": "Diskutera ditt projekt"
     }
   },
