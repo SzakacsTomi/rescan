@@ -9,6 +9,12 @@ export type SectorHeroConfig = {
 export type SectorPageConfig = {
   id: string;
   hero: SectorHeroConfig;
+  /** Presentational only. `'inverted'` sits the section on the deep-blue band, which is
+   *  what the plan-drift drawing is coloured for (Retail); `'plain'` keeps it on white
+   *  (Logistics, whose Core Risk is prose). */
+  coreRisk?: {
+    tone?: 'plain' | 'inverted';
+  };
   /** Presentational only. `'tinted'` sits the value grid on the light blue-grey band
    *  (Retail); `'plain'` sits it on white and inverts the card hover (Logistics). */
   strategicValue?: {
@@ -51,7 +57,13 @@ export type SectorPageTranslations = {
   coreRisk?: {
     eyebrow: string;
     headline: string;
-    body: string;
+    body?: string;
+    /** Retail only — the legend of the drawing that carries the section, naming the two
+     *  outlines it sets against each other. */
+    planDrift?: {
+      archiveLabel: string;
+      actualLabel: string;
+    };
   };
   /** Logistics section 3 — the information-gap-to-cost sequence. */
   consequenceChain?: {

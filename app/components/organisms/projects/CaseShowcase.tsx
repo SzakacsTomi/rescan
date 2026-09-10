@@ -3,6 +3,7 @@ import { caseStudies, type ProjectSector } from "@/config/projects";
 
 export type CaseShowcaseCaseCopy = {
   title: string;
+  summary: string;
   body: string;
   stats: [string, string, string];
   statLabels: [string, string, string];
@@ -12,21 +13,26 @@ export type CaseShowcaseCaseCopy = {
 type CaseShowcaseProps = {
   sectorLabels: Record<ProjectSector, string>;
   cases: Record<string, CaseShowcaseCaseCopy>;
-  ctaLabel: string;
+  revealLabel: string;
+  hideLabel: string;
+  sectorLinkLabel: string;
   sectorHref: Record<ProjectSector, string>;
 };
 
 /**
  * The page's hero: the four case studies stacked as full-bleed bands, flush against the
- * nav with nothing above them. The lead band fills the viewport and the remaining
- * three sit at the design's 600px, so the page opens on one facility rather than on four
- * competing tiles. The gap matches the home page's sector split (`SectionsGrid`'s
- * `lg:gap-0.5`), keeping the two full-bleed hero-scale stacks on the site in one family.
+ * nav with nothing above them. Each band is half the viewport left under the navbar, so
+ * the page opens on two facilities rather than on one — every band carries only a name
+ * and a result line until the reader opens it. The gap matches the home page's sector
+ * split (`SectionsGrid`'s `lg:gap-0.5`), keeping the two full-bleed hero-scale stacks on
+ * the site in one family.
  */
 export const CaseShowcase = ({
   sectorLabels,
   cases,
-  ctaLabel,
+  revealLabel,
+  hideLabel,
+  sectorLinkLabel,
   sectorHref,
 }: CaseShowcaseProps) => {
   const total = String(caseStudies.length).padStart(2, "0");
@@ -47,10 +53,12 @@ export const CaseShowcase = ({
               total={total}
               photoHint={copy.photoHint}
               title={copy.title}
+              summary={copy.summary}
               body={copy.body}
               stats={copy.stats.map((value, j) => ({ value, label: copy.statLabels[j] }))}
-              cta={{ label: ctaLabel, href: sectorHref[caseStudy.sector] }}
-              isLead={i === 0}
+              revealLabel={revealLabel}
+              hideLabel={hideLabel}
+              sectorLink={{ label: sectorLinkLabel, href: sectorHref[caseStudy.sector] }}
             />
           );
         })}

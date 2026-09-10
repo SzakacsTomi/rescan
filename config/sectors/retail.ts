@@ -7,6 +7,9 @@ export const retailSectorConfig: SectorPageConfig = {
     secondaryCtaHref: '/projects',
     imagesFolder: 'commercial-page',
   },
+  coreRisk: {
+    tone: 'inverted',
+  },
   strategicValue: {
     tone: 'tinted',
   },

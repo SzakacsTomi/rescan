@@ -170,28 +170,11 @@
   "aboutPage": {
     "hero": {
       "eyebrow": "About RESCAN",
-      "headline": "The company that goes to the building.",
-      "subheadline": "We work with teams managing retail property portfolios and logistics warehouses, creating reliable records of buildings that are already standing and already in use.",
-      "facts": {
-        "registeredOffice": {
-          "label": "Registered office",
-          "value": "Växjö, Sweden"
-        },
-        "languages": {
-          "label": "Working languages",
-          "value": "Swedish · English"
-        },
-        "founded": {
-          "label": "Founded",
-          "value": "2017"
-        }
-      },
-      "image": "[[TODO: full-width image — the RESCAN team on site, or the Växjö office]]"
-    },
-    "focus": {
       "headline": "Focused on existing buildings.",
       "headlineAccent": "Built around real project needs.",
-      "body": "RESCAN is a Swedish company based in Växjö, focused on documenting existing buildings. Together with trusted specialist partners, we deliver as-built drawings and BIM models used in design, refurbishment, property management and property decisions.",
+      "subheadline": "RESCAN is a Swedish company based in Växjö, focused on documenting existing buildings. Together with trusted specialist partners, we deliver as-built drawings and BIM models used in design, refurbishment, property management and property decisions."
+    },
+    "focus": {
       "recordLabel": "Track record",
       "record": "Since 2017, RESCAN has successfully delivered more than 250 projects, including multi-property programmes and logistics facilities of up to 96,000 m².",
       "aim": "Our aim is straightforward: to give property and project teams accurate building information they can continue using after the site work is complete—reducing unnecessary verification, supporting smoother project work and helping teams make better-informed decisions."
@@ -199,7 +182,7 @@
     "presence": {
       "item0": {
         "label": "Where we work",
-        "value": "Sweden, with delivered projects in Austria and the USA"
+        "value": "Primary market: Sweden. Projects delivered across Europe and beyond."
       },
       "item1": {
         "label": "Base",
@@ -306,9 +289,12 @@
   "projectsPage": {
     "pageTitle": "Buildings, one way of documenting them.",
     "caseShowcase": {
-      "cta": "Read the case study",
+      "reveal": "Reveal details",
+      "hide": "Hide details",
+      "sectorLink": "More on this sector",
       "case0": {
         "title": "Major Swedish Grocery Retailer",
+        "summary": "96,000 m² captured in 8 days",
         "body": "Reliable existing conditions for a major logistics modernisation — seven discipline models from one capture.",
         "photoHint": "[[TODO: photograph — facility exterior]]",
         "stat0": {
@@ -326,6 +312,7 @@
       },
       "case1": {
         "title": "Major International Grocery Retailer",
+        "summary": "~300,000 m² across three logistics centres",
         "body": "One reliable information base for planning electric-truck charging infrastructure across a nationwide network.",
         "photoHint": "[[TODO: photograph — charging yard]]",
         "stat0": {
@@ -343,6 +330,7 @@
       },
       "case2": {
         "title": "Carlqvist Property",
+        "summary": "56 properties documented across southern Sweden",
         "body": "Accurate building information for a portfolio spread across southern Sweden — many questions now resolved without travelling to site.",
         "photoHint": "[[TODO: photograph — Carlqvist property exterior]]",
         "stat0": {
@@ -360,6 +348,7 @@
       },
       "case3": {
         "title": "Alhansa Property",
+        "summary": "112,000 m² digitised, in partnership since 2018",
         "body": "One consistent standard across the portfolio — leasing and renovation projects starting from verified conditions, not legacy drawings.",
         "photoHint": "[[TODO: photograph — Alhansa property exterior]]",
         "stat0": {
@@ -602,11 +591,11 @@
       },
       "coreRisk": {
         "eyebrow": "The core risk",
-        "headline": "The expensive part is having to go back.",
-        "body": "A missing dimension or an unanswered site question looks minor at a single location. Across dozens or hundreds of them it means more travel, more scheduling, more coordination and more design time. One unnecessary return visit is a nuisance. Repeated across a portfolio, it becomes a cost.",
-        "proof": {
-          "label": "One portfolio, one visit each",
-          "caption": "56 commercial properties documented for Carlqvist Property across Sweden."
+        "headline": "The store changes. The drawing does not.",
+        "body": "Every refit, tenant change and rollout leaves the record further behind the building.",
+        "planDrift": {
+          "archiveLabel": "On file",
+          "actualLabel": "On site"
         }
       },
       "strategicValue": {
@@ -677,16 +666,16 @@
         "primaryCta": "Discuss your warehouse project",
         "secondaryCta": "View Projects",
         "fact0": {
-          "label": "[[TODO: facility fact label — e.g. Largest facility]]",
-          "value": "[[TODO: the figure, e.g. 38,000 m²]]"
+          "label": "Largest facility documented",
+          "value": "96,000 m²"
         },
         "fact1": {
-          "label": "[[TODO: second facility fact label — e.g. Typical capture time]]",
-          "value": "[[TODO: the figure, e.g. 3 days on site]]"
+          "label": "Large retail & logistics clients",
+          "value": "6"
         },
         "fact2": {
-          "label": "[[TODO: third facility fact label — e.g. Warehouses documented]]",
-          "value": "[[TODO: the figure, e.g. 12]]"
+          "label": "Built for the work that follows",
+          "value": "Editable project files"
         }
       },
       "coreRisk": {
@@ -724,13 +713,13 @@
         "headline": "Proven across large and complex facilities.",
         "item0": {
           "slot": "01 / Facility scale",
-          "figure": "[[TODO: XX,XXX m² logistics facility]]",
-          "statement": "[[TODO: short verified statement on scale or project context]]"
+          "figure": "96,000 m² operational logistics facility",
+          "statement": "Existing conditions documented ahead of a major modernisation, with seven discipline models delivered for continued design."
         },
         "item1": {
-          "slot": "02 / Retrofit complexity",
-          "figure": "[[TODO: a complexity example, not a size metric — e.g. 4 mezzanine levels]]",
-          "statement": "[[TODO: short verified statement on why the facility was difficult to understand]]"
+          "slot": "02 / Multi-site infrastructure",
+          "figure": "~300,000 m² across 3 logistics centres",
+          "statement": "Existing conditions captured and modelled to support planning for future electric-truck charging infrastructure across a nationwide logistics network."
         }
       },
       "fitNotFit": {

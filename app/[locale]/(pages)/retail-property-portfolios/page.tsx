@@ -3,14 +3,11 @@ import { getTranslations } from "next-intl/server";
 
 import { JsonLd } from "@/app/components/atoms/JsonLd";
 import { CarouselHero } from "@/app/components/organisms/sector/CarouselHero";
-import { ProofGrid } from "@/app/components/molecules/ProofGrid";
 import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
 import type { SectorPageTranslations } from "@/app/types/sectorPage";
 import { retailSectorConfig } from "@/config/sectors/retail";
 import { getCloudinaryFolderImages } from "@/lib/cloudinary";
 import { resolvePageJsonLd, resolvePageMetadata } from "@/i18n/metadata";
-
-const PROOF_GRID_CELL_COUNT = 56;
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -37,6 +34,10 @@ export default async function RetailPropertyPortfoliosPage({ params }: PageProps
       eyebrow: t("coreRisk.eyebrow"),
       headline: t("coreRisk.headline"),
       body: t("coreRisk.body"),
+      planDrift: {
+        archiveLabel: t("coreRisk.planDrift.archiveLabel"),
+        actualLabel: t("coreRisk.planDrift.actualLabel"),
+      },
     },
     strategicValue: {
       headline: t("strategicValue.headline"),
@@ -115,13 +116,6 @@ export default async function RetailPropertyPortfoliosPage({ params }: PageProps
               href: retailSectorConfig.hero.secondaryCtaHref,
             }}
             images={carouselImages}
-          />
-        }
-        coreRiskAside={
-          <ProofGrid
-            label={t("coreRisk.proof.label")}
-            caption={t("coreRisk.proof.caption")}
-            cellCount={PROOF_GRID_CELL_COUNT}
           />
         }
       />

@@ -170,28 +170,11 @@
   "aboutPage": {
     "hero": {
       "eyebrow": "Om RESCAN",
-      "headline": "Företaget som åker till byggnaden.",
-      "subheadline": "Vi arbetar med team som förvaltar butiksfastighetsportföljer och logistiklager och skapar pålitlig dokumentation av byggnader som redan står och redan används.",
-      "facts": {
-        "registeredOffice": {
-          "label": "Registrerat säte",
-          "value": "Växjö, Sverige"
-        },
-        "languages": {
-          "label": "Arbetsspråk",
-          "value": "Svenska · Engelska"
-        },
-        "founded": {
-          "label": "Grundades",
-          "value": "2017"
-        }
-      },
-      "image": "[[TODO: bild i full bredd — RESCAN-teamet på plats, eller kontoret i Växjö]]"
-    },
-    "focus": {
       "headline": "Fokus på befintliga byggnader.",
       "headlineAccent": "Utformat för verkliga projektbehov.",
-      "body": "RESCAN är ett svenskt företag med bas i Växjö, med fokus på att dokumentera befintliga byggnader. Tillsammans med betrodda specialistpartners levererar vi relationsritningar och BIM-modeller som används vid projektering, ombyggnad, fastighetsförvaltning och andra beslut som rör fastigheten.",
+      "subheadline": "RESCAN är ett svenskt företag med bas i Växjö, med fokus på att dokumentera befintliga byggnader. Tillsammans med betrodda specialistpartners levererar vi relationsritningar och BIM-modeller som används vid projektering, ombyggnad, fastighetsförvaltning och andra beslut som rör fastigheten."
+    },
+    "focus": {
       "recordLabel": "Meriter",
       "record": "Sedan 2017 har RESCAN levererat mer än 250 projekt, inklusive flerfastighetsprogram och logistikanläggningar på upp till 96 000 m².",
       "aim": "Vårt mål är enkelt: att ge fastighets- och projektteam korrekt byggnadsinformation som de kan fortsätta använda efter att arbetet på plats är klart—vilket minskar onödig kontroll, underlättar projektarbetet och hjälper team att fatta bättre underbyggda beslut."
@@ -199,7 +182,7 @@
     "presence": {
       "item0": {
         "label": "Var vi arbetar",
-        "value": "Primär marknad: Sverige. Genomförda projekt även utanför Sverige."
+        "value": "Primär marknad: Sverige. Projekt levererade i hela Europa och bortom."
       },
       "item1": {
         "label": "Bas",
@@ -306,9 +289,12 @@
   "projectsPage": {
     "pageTitle": "{count} byggnader, ett sätt att dokumentera dem.",
     "caseShowcase": {
-      "cta": "Läs fallstudien",
+      "reveal": "Visa detaljer",
+      "hide": "Dölj detaljer",
+      "sectorLink": "Mer om segmentet",
       "case0": {
         "title": "Stor svensk livsmedelskedja",
+        "summary": "96 000 m² inmätt på 8 dagar",
         "body": "Pålitliga underlag om befintliga förhållanden inför en stor logistikmodernisering — sju disciplinmodeller från en och samma inmätning.",
         "photoHint": "[[TODO: photograph — facility exterior]]",
         "stat0": {
@@ -326,6 +312,7 @@
       },
       "case1": {
         "title": "Stor internationell livsmedelskedja",
+        "summary": "~300 000 m² över tre logistikcentraler",
         "body": "Ett pålitligt informationsunderlag för att planera laddinfrastruktur för eldrivna lastbilar över ett rikstäckande nätverk.",
         "photoHint": "[[TODO: photograph — charging yard]]",
         "stat0": {
@@ -343,6 +330,7 @@
       },
       "case2": {
         "title": "Carlqvist Fastigheter",
+        "summary": "56 fastigheter dokumenterade i södra Sverige",
         "body": "Tillförlitlig byggnadsinformation för en fastighetsportfölj spridd över södra Sverige — många frågor löses nu utan att resa till platsen.",
         "photoHint": "[[TODO: photograph — Carlqvist property exterior]]",
         "stat0": {
@@ -360,6 +348,7 @@
       },
       "case3": {
         "title": "Alhansa Fastigheter",
+        "summary": "112 000 m² digitaliserat, i samarbete sedan 2018",
         "body": "En gemensam standard för hela portföljen — uthyrning och renoveringsprojekt som utgår från verifierade förutsättningar, inte gamla ritningar.",
         "photoHint": "[[TODO: photograph — Alhansa property exterior]]",
         "stat0": {
@@ -601,12 +590,12 @@
         "secondaryCta": "Se projekt"
       },
       "coreRisk": {
-        "eyebrow": "Den dyra risken",
-        "headline": "Det dyra är att behöva åka tillbaka.",
-        "body": "Ett saknat mått eller en obesvarad fråga om platsen ser ut som en småsak på en enskild fastighet. Över dussintals eller hundratals fastigheter innebär det mer resor, mer planering, mer samordning och mer projekteringstid. Ett onödigt återbesök är en irritation. Upprepat över en portfölj blir det en kostnad.",
-        "proof": {
-          "label": "Ett bestånd, ett besök vardera",
-          "caption": "56 kommersiella fastigheter dokumenterade för Carlqvist Fastigheter i hela Sverige."
+        "eyebrow": "Den centrala risken",
+        "headline": "Butiken förändras. Ritningen gör det inte.",
+        "body": "Varje ombyggnad, hyresgästbyte och utrullning gör att underlaget hamnar längre efter byggnaden.",
+        "planDrift": {
+          "archiveLabel": "I arkivet",
+          "actualLabel": "På plats"
         }
       },
       "strategicValue": {
@@ -677,16 +666,16 @@
         "primaryCta": "Diskutera ditt lagerprojekt",
         "secondaryCta": "Se projekt",
         "fact0": {
-          "label": "[[TODO: facility fact label — e.g. Largest facility]]",
-          "value": "[[TODO: the figure, e.g. 38,000 m²]]"
+          "label": "Största dokumenterade anläggningen",
+          "value": "96 000 m²"
         },
         "fact1": {
-          "label": "[[TODO: second facility fact label — e.g. Typical capture time]]",
-          "value": "[[TODO: the figure, e.g. 3 days on site]]"
+          "label": "Stora kunder inom detaljhandel och logistik",
+          "value": "6"
         },
         "fact2": {
-          "label": "[[TODO: third facility fact label — e.g. Warehouses documented]]",
-          "value": "[[TODO: the figure, e.g. 12]]"
+          "label": "Byggt för det arbete som följer",
+          "value": "Redigerbara projektfiler"
         }
       },
       "coreRisk": {
@@ -724,13 +713,13 @@
         "headline": "Bevisat för stora och komplexa anläggningar.",
         "item0": {
           "slot": "01 / Anläggningsskala",
-          "figure": "[[TODO: XX,XXX m² logistics facility]]",
-          "statement": "[[TODO: short verified statement on scale or project context]]"
+          "figure": "96 000 m² logistikanläggning i drift",
+          "statement": "Befintliga förhållanden dokumenterade inför en större modernisering, med sju disciplinmodeller levererade för fortsatt projektering."
         },
         "item1": {
-          "slot": "02 / Ombyggnadskomplexitet",
-          "figure": "[[TODO: a complexity example, not a size metric — e.g. 4 mezzanine levels]]",
-          "statement": "[[TODO: short verified statement on why the facility was difficult to understand]]"
+          "slot": "02 / Flerplatsinfrastruktur",
+          "figure": "~300 000 m² fördelat på 3 logistikanläggningar",
+          "statement": "Befintliga förhållanden inmätta och modellerade för att stödja planeringen av framtida laddinfrastruktur för eldrivna lastbilar i ett rikstäckande logistiknät."
         }
       },
       "fitNotFit": {

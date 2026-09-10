@@ -5,8 +5,6 @@ import { JsonLd } from '@/app/components/atoms/JsonLd';
 import { AboutTemplate } from '@/app/components/templates/AboutTemplate';
 import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
-const FACT_COUNT = 3;
-
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -26,20 +24,10 @@ export default async function AboutPage({ params }: PageProps) {
         hero={{
           eyebrow: t('hero.eyebrow'),
           headline: t('hero.headline'),
+          headlineAccent: t('hero.headlineAccent'),
           subheadline: t('hero.subheadline'),
-          facts: Array.from({ length: FACT_COUNT }, (_, i) => {
-            const key = ['registeredOffice', 'languages', 'founded'][i];
-            return {
-              label: t(`hero.facts.${key}.label`),
-              value: t(`hero.facts.${key}.value`),
-            };
-          }),
-          image: t('hero.image'),
         }}
         focus={{
-          headline: t('focus.headline'),
-          headlineAccent: t('focus.headlineAccent'),
-          body: t('focus.body'),
           recordLabel: t('focus.recordLabel'),
           record: t('focus.record'),
           aim: t('focus.aim'),

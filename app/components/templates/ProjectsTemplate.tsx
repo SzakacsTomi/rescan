@@ -21,7 +21,9 @@ type ProjectsTemplateProps = {
   caseShowcase: {
     sectorLabels: Record<ProjectSector, string>;
     cases: Record<string, CaseShowcaseCaseCopy>;
-    ctaLabel: string;
+    revealLabel: string;
+    hideLabel: string;
+    sectorLinkLabel: string;
   };
   whyItMatters: { eyebrow: string; headline: string; body: string };
   logoWall: { headline: string };
@@ -68,7 +70,9 @@ export const ProjectsTemplate = ({
       <CaseShowcase
         sectorLabels={caseShowcase.sectorLabels}
         cases={caseShowcase.cases}
-        ctaLabel={caseShowcase.ctaLabel}
+        revealLabel={caseShowcase.revealLabel}
+        hideLabel={caseShowcase.hideLabel}
+        sectorLinkLabel={caseShowcase.sectorLinkLabel}
         sectorHref={SECTOR_HREF}
       />
 

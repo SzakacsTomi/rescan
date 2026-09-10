@@ -16,9 +16,6 @@ type SectorTemplateProps = {
    *  dark facts split for Logistics — so the page composes it and hands it in. */
   hero: React.ReactNode;
   afterHero?: React.ReactNode;
-  /** Supporting visual for `CoreRisk`, e.g. a `ProofGrid` — page-specific, so it is
-   *  passed in rather than added to `SectorPageTranslations`. */
-  coreRiskAside?: React.ReactNode;
 };
 
 export const SectorTemplate = ({
@@ -26,7 +23,6 @@ export const SectorTemplate = ({
   translations: tr,
   hero,
   afterHero,
-  coreRiskAside,
 }: SectorTemplateProps) => {
   return (
     <>
@@ -38,7 +34,8 @@ export const SectorTemplate = ({
           eyebrow={tr.coreRisk.eyebrow}
           headline={tr.coreRisk.headline}
           body={tr.coreRisk.body}
-          aside={coreRiskAside}
+          planDrift={tr.coreRisk.planDrift}
+          tone={config.coreRisk?.tone}
         />
       )}
 

@@ -26,6 +26,7 @@ export default async function ProjectsPage({ params }: PageProps) {
   for (const { id } of caseStudies) {
     cases[id] = {
       title: t(`caseShowcase.${id}.title`),
+      summary: t(`caseShowcase.${id}.summary`),
       body: t(`caseShowcase.${id}.body`),
       stats: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
         t(`caseShowcase.${id}.stat${i}.value`),
@@ -79,7 +80,9 @@ export default async function ProjectsPage({ params }: PageProps) {
         caseShowcase={{
           sectorLabels,
           cases,
-          ctaLabel: t('caseShowcase.cta'),
+          revealLabel: t('caseShowcase.reveal'),
+          hideLabel: t('caseShowcase.hide'),
+          sectorLinkLabel: t('caseShowcase.sectorLink'),
         }}
         whyItMatters={{
           eyebrow: t('whyItMatters.eyebrow'),
