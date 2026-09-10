@@ -59,6 +59,7 @@ export default async function LogisticsWarehousesPage({ params }: PageProps) {
       items: (["item0", "item1"] as const).map((key) => ({
         slot: t(`proof.${key}.slot`),
         figure: t(`proof.${key}.figure`),
+        context: t(`proof.${key}.context`),
         statement: t(`proof.${key}.statement`),
       })),
     },

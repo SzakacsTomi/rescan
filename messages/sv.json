@@ -713,12 +713,14 @@
         "headline": "Bevisat för stora och komplexa anläggningar.",
         "item0": {
           "slot": "01 / Anläggningsskala",
-          "figure": "96 000 m² logistikanläggning i drift",
+          "figure": "96 000 m²",
+          "context": "En logistikanläggning i drift",
           "statement": "Befintliga förhållanden dokumenterade inför en större modernisering, med sju disciplinmodeller levererade för fortsatt projektering."
         },
         "item1": {
           "slot": "02 / Flerplatsinfrastruktur",
-          "figure": "~300 000 m² fördelat på 3 logistikanläggningar",
+          "figure": "~300 000 m²",
+          "context": "Fördelat på tre logistikanläggningar",
           "statement": "Befintliga förhållanden inmätta och modellerade för att stödja planeringen av framtida laddinfrastruktur för eldrivna lastbilar i ett rikstäckande logistiknät."
         }
       },

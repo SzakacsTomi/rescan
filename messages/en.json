@@ -713,12 +713,14 @@
         "headline": "Proven across large and complex facilities.",
         "item0": {
           "slot": "01 / Facility scale",
-          "figure": "96,000 m² operational logistics facility",
+          "figure": "96,000 m²",
+          "context": "One operational logistics facility",
           "statement": "Existing conditions documented ahead of a major modernisation, with seven discipline models delivered for continued design."
         },
         "item1": {
           "slot": "02 / Multi-site infrastructure",
-          "figure": "~300,000 m² across 3 logistics centres",
+          "figure": "~300,000 m²",
+          "context": "Across three logistics centres",
           "statement": "Existing conditions captured and modelled to support planning for future electric-truck charging infrastructure across a nationwide logistics network."
         }
       },

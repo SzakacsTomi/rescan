@@ -20,6 +20,12 @@ export type SectorPageConfig = {
   strategicValue?: {
     tone?: 'tinted' | 'plain';
   };
+  /** Set only where the evidence band is drawn to scale (Logistics, whose two proofs are
+   *  both areas): how many separate buildings each figure covers, in item order. The areas
+   *  themselves are read from the figures, so the drawing cannot drift from the copy. */
+  proof?: {
+    sites: number[];
+  };
   finalCta: {
     ctaHref: string;
   };
@@ -84,10 +90,12 @@ export type SectorPageTranslations = {
   };
   /** A named portfolio or programme case rendered by `organisms/sector/NamedCase`. */
   namedCase?: NamedCaseTranslations;
-  /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`. */
+  /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`;
+   *  a sector whose config carries `proof.sites` draws it as `organisms/sector/ScaleProof`
+   *  instead, which needs `context` to hold the words that trail the number. */
   proof?: {
     headline: string;
-    items: Array<{ slot: string; figure: string; statement?: string }>;
+    items: Array<{ slot: string; figure: string; context?: string; statement?: string }>;
     cta?: { label: string; href: string };
   };
   fitNotFit?: {

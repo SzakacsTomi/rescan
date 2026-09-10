@@ -5,6 +5,7 @@ import { Differentiator } from "@/app/components/organisms/sector/Differentiator
 import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
 import { FitNotFit } from "@/app/components/organisms/sector/FitNotFit";
 import { ProofBar } from "@/app/components/organisms/ProofBar";
+import { ScaleProof } from "@/app/components/organisms/sector/ScaleProof";
 import { NamedCase } from "@/app/components/organisms/sector/NamedCase";
 import { StrategicValue } from "@/app/components/organisms/sector/StrategicValue";
 import type { SectorPageConfig, SectorPageTranslations } from "@/app/types/sectorPage";
@@ -81,9 +82,18 @@ export const SectorTemplate = ({
         />
       )}
 
-      {tr.proof && (
-        <ProofBar headline={tr.proof.headline} items={tr.proof.items} cta={tr.proof.cta} />
-      )}
+      {tr.proof &&
+        (config.proof ? (
+          <ScaleProof
+            headline={tr.proof.headline}
+            items={tr.proof.items.map((item, i) => ({
+              ...item,
+              sites: config.proof?.sites[i] ?? 1,
+            }))}
+          />
+        ) : (
+          <ProofBar headline={tr.proof.headline} items={tr.proof.items} cta={tr.proof.cta} />
+        ))}
 
       {tr.fitNotFit && (
         <FitNotFit
