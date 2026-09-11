@@ -584,8 +584,8 @@
     "retail": {
       "hero": {
         "eyebrow": "Sektor 01 — Butiksfastighetsportföljer",
-        "headline": "Minska antalet återbesök\ni ditt butiksbestånd.",
-        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam en pålitlig dokumentation av varje plats att gå tillbaka till, utan att gång på gång skicka någon dit igen.",
+        "headline": "Minska antalet återbesök\ni hela fastighetsportföljen.",
+        "subheadline": "Ge projektörer, entreprenörer och fastighetsteam en tillförlitlig digital kopia av varje fastighet som de kan använda när nya frågor uppstår – utan att behöva skicka någon tillbaka till platsen.",
         "primaryCta": "Diskutera din fastighetsportfölj",
         "secondaryCta": "Se projekt"
       },
@@ -599,39 +599,39 @@
         }
       },
       "strategicValue": {
-        "headline": "Dokumentera en gång. Gå tillbaka när frågorna dyker upp.",
-        "body": "RESCAN skapar en pålitlig dokumentation av varje fastighet så att projektteam kan besvara fler frågor utifrån den information som redan finns.",
+        "headline": "Dokumentera en gång. Använd den digitala kopian när nya frågor uppstår.",
+        "body": "RESCAN skapar en tillförlitlig digital kopia av varje fastighet så att projektteam kan besvara fler frågor utifrån information som redan finns tillgänglig.",
         "valueA": {
           "title": "Färre återbesök",
-          "description": "Minska onödiga resor som bara görs för att verifiera befintliga förhållanden."
+          "description": "Minska onödiga resor som enbart görs för att kontrollera eller komplettera information om befintliga förhållanden."
         },
         "valueB": {
-          "title": "Snabbare svar",
-          "description": "Ge teamen byggnadsinformation de kan gå tillbaka till när frågor dyker upp."
+          "title": "Snabbare svar i projekteringen",
+          "description": "Ge projektteam tillgång till byggnadsinformation som de kan använda direkt när nya frågor uppstår."
         },
         "valueC": {
           "title": "Mindre dubbelarbete",
-          "description": "Minska upprepade resor, planering och inmätning i flera projekt."
+          "description": "Minska upprepade resor, planering och inmätningar i flera projekt."
         },
         "valueD": {
-          "title": "Enhetlig information",
-          "description": "Ge olika projektteam en pålitlig utgångspunkt i hela beståndet."
+          "title": "Enhetligt underlag",
+          "description": "Ge projektteam en tillförlitlig och gemensam utgångspunkt för fastigheterna i hela portföljen."
         }
       },
       "differentiator": {
-        "headline": "Byggt för teamen som använder informationen härnäst.",
-        "subheadline": "Varje disciplin kan få sin egen redigerbara fil, så att arkitekter, ingenjörer och andra projektteam kan arbeta vidare direkt med den byggnadsinformation RESCAN levererar.",
-        "note": "Det betyder att informationen inte bara är något att titta på.\nDen blir en del av arbetet som följer."
+        "headline": "Anpassat för teamen som arbetar vidare med informationen.",
+        "subheadline": "Varje disciplin kan få sin egen redigerbara fil, så att arkitekter, ingenjörer och andra projektteam kan fortsätta arbeta direkt med den byggnadsinformation som RESCAN levererar.",
+        "note": "Det innebär att informationen inte bara blir något att titta på.\nDen blir en aktiv del av det fortsatta arbetet."
       },
       "namedCase": {
         "label": "Portföljfall",
         "headline": "Carlqvist Fastigheter — 56 kommersiella fastigheter dokumenterade i Sverige",
-        "body": "RESCAN dokumenterade en portfölj med 56 kommersiella fastigheter för att skapa en konsekvent byggnadsinformationsbas över beståndet. Fastighetsteamet kunde återvända till den informationen när nya renoverings-, planerings- och uppgraderingsbeslut dök upp.",
+        "body": "RESCAN dokumenterade en portfölj med 56 kommersiella fastigheter för att skapa ett enhetligt digitalt underlag för hela beståndet. När nya renoverings-, ombyggnads- eller planeringsbehov uppstår kan fastighetsteamet använda den information som redan finns tillgänglig.",
         "bulletIntro": "Idag kan deras team:",
-        "bullet0": "komma åt byggnadsdokumentation över hela portföljen",
-        "bullet1": "granska planer och mått på distans",
-        "bullet2": "starta nytt arbete utifrån information som redan finns",
-        "bullet3": "minska behovet av att på nytt fastställa grundläggande platsförhållanden",
+        "bullet0": "Ta del av byggnadsdokumentation för hela portföljen",
+        "bullet1": "Granska planlösningar och mått på distans",
+        "bullet2": "Starta nya projekt utifrån information som redan finns tillgänglig",
+        "bullet3": "Minska behovet av nya platsbesök för att verifiera befintliga förhållanden",
         "quote": "Konsekvent dokumentation för alla fastigheter sparar oss både tid och pengar. Det ger oss en tydlig överblick över portföljen och tar bort mycket osäkerhet när vi planerar förändringar.",
         "quoteAuthor": "Eddie Carlqvist, VD, Carlqvist Fastigheter",
         "metric": "56",
@@ -642,27 +642,27 @@
         "headline": "Passar bäst för",
         "bestFit": {
           "title": "RESCAN är byggt för",
-          "item0": "Fastighetsteam inom detaljhandeln som hanterar flera platser",
-          "item1": "Program för ombyggnad, etablering och omdesign",
-          "item2": "Projekt där upprepad platsverifiering skapar betydande tid och kostnad"
+          "item0": "Fastighetsteam med ansvar för flera handelsfastigheter",
+          "item1": "Program för ombyggnad, etablering och modernisering",
+          "item2": "Projekt där återkommande platsbesök för verifiering innebär betydande tids- och kostnadspåverkan"
         },
         "notFit": {
-          "title": "Inte byggt för",
-          "item0": "Privata bostäder",
-          "item1": "Enstaka uppdrag med låg budget",
-          "item2": "Små fristående projekt utan koppling till en portfölj eller vidare användning"
+          "title": "RESCAN är inte byggt för",
+          "item0": "Privata bostadsprojekt",
+          "item1": "Enstaka lågprisuppdrag",
+          "item2": "Små fristående projekt utan koppling till en större portfölj eller fortsatt användning av underlaget"
         }
       },
       "finalCta": {
-        "headline": "Hur mycket tid förlorar ditt team på återbesök på plats?",
+        "headline": "Hur mycket tid och pengar går förlorade på onödiga platsbesök?",
         "cta": "Diskutera din fastighetsportfölj"
       }
     },
     "logistics": {
       "hero": {
         "eyebrow": "Sektor 02 — Logistiklager",
-        "headline": "Förstå hela lagret\ninnan du bygger om en del av det.",
-        "subheadline": "RESCAN ger projektteam en pålitlig bild av stora och komplexa logistikanläggningar innan ofullständig information blir till antaganden, omprojektering eller förseningar.",
+        "headline": "Förstå hela anläggningen\ninnan du projekterar om en del av den.",
+        "subheadline": "RESCAN ger projektteam ett tillförlitligt digitalt underlag för stora och komplexa logistikanläggningar – innan bristande information leder till antaganden, omprojektering eller förseningar.",
         "primaryCta": "Diskutera ditt lagerprojekt",
         "secondaryCta": "Se projekt",
         "fact0": {
@@ -679,64 +679,64 @@
         }
       },
       "coreRisk": {
-        "eyebrow": "Den dyra risken",
-        "headline": "Ju större och mer komplex anläggningen är, desto dyrare blir ofullständig information.",
-        "body": "Stora logistiklager kan rymma stomme, installationer, utrustning, entresolplan och år av ombyggnader över stora ytor. Historiska ritningar och enstaka inmätningar visar ofta bara en del av bilden, och när viktiga förhållanden saknas tvingas projekteringsteamen göra antaganden."
+        "eyebrow": "Den centrala risken",
+        "headline": "Ju större och mer komplex anläggningen är, desto större blir kostnaden för bristande information.",
+        "body": "Stora logistikanläggningar kan omfatta stomme, installationer, utrustning och många års ombyggnationer över stora ytor. Äldre ritningar och enstaka inmätningar visar ofta bara delar av helheten. När viktig information saknas tvingas projekteringsteamen göra antaganden."
       },
       "consequenceChain": {
-        "headline": "Antaganden blir dyrare ju längre projektet går.",
-        "step0": "Ofullständig information",
+        "headline": "Antaganden blir dyrare längre in i projektet.",
+        "step0": "Bristande information",
         "step1": "Antaganden i projekteringen",
         "step2": "Samordningsproblem",
         "step3": "Kollisioner eller omprojektering",
-        "step4": "Ytterligare utredning",
-        "step5": "Förlorad tid och högre kostnad",
-        "footnote": "Ju tidigare de befintliga förhållandena är kända, desto enklare är de att projektera kring."
+        "step4": "Kompletterande undersökningar",
+        "step5": "Tidsförlust och ökade kostnader",
+        "footnote": "Befintliga förhållanden behöver vara kända tidigt för att projekteringen ska kunna utgå från rätt information."
       },
       "strategicValue": {
-        "headline": "Ge projekteringsteamet en pålitlig bild av anläggningen.",
-        "body": "RESCAN skapar en användbar dokumentation av det befintliga lagret så att projektteam förstår vad som finns där innan de beslutar om förändringar.",
+        "headline": "Ge projekteringsteamet en tillförlitlig bild av hela anläggningen.",
+        "body": "Med rätt byggnadsinformation kan projektteamet identifiera begränsningar, kontrollera förutsättningar och planera förändringar innan viktiga beslut fattas.",
         "valueA": {
           "title": "Färre antaganden",
-          "description": "Ge projektörerna ett starkare underlag för de beslut som följer."
+          "description": "Ge projektörerna ett bättre underlag för kommande beslut."
         },
         "valueB": {
-          "title": "Tidigare kännedom om begränsningar",
-          "description": "Förstå viktiga befintliga förhållanden innan mer arbete bygger på dem."
+          "title": "Identifiera begränsningar tidigare",
+          "description": "Upptäck viktiga befintliga förhållanden innan de påverkar senare delar av projekteringen."
         },
         "valueC": {
-          "title": "Mindre upprepad utredning",
-          "description": "Besvara fler frågor utifrån den byggnadsinformation som redan finns."
+          "title": "Färre kompletterande undersökningar",
+          "description": "Besvara fler frågor med den byggnadsinformation som redan finns tillgänglig."
         }
       },
       "proof": {
-        "headline": "Bevisat för stora och komplexa anläggningar.",
+        "headline": "Erfarenhet från stora och komplexa logistikanläggningar.",
         "item0": {
-          "slot": "01 / Anläggningsskala",
+          "slot": "01 / Anläggningsstorlek",
           "figure": "96 000 m²",
           "context": "En logistikanläggning i drift",
-          "statement": "Befintliga förhållanden dokumenterade inför en större modernisering, med sju disciplinmodeller levererade för fortsatt projektering."
+          "statement": "Befintliga förhållanden dokumenterades inför en omfattande modernisering. Sju disciplinmodeller levererades som underlag för fortsatt projektering."
         },
         "item1": {
-          "slot": "02 / Flerplatsinfrastruktur",
+          "slot": "02 / Flera anläggningar",
           "figure": "~300 000 m²",
-          "context": "Fördelat på tre logistikanläggningar",
-          "statement": "Befintliga förhållanden inmätta och modellerade för att stödja planeringen av framtida laddinfrastruktur för eldrivna lastbilar i ett rikstäckande logistiknät."
+          "context": "Tre logistikcenter",
+          "statement": "Befintliga förhållanden dokumenterades och modellerades för att stödja planeringen av framtida laddinfrastruktur för eldrivna lastbilar i ett rikstäckande logistiknätverk."
         }
       },
       "fitNotFit": {
         "headline": "Passar bäst för",
         "bestFit": {
           "title": "RESCAN passar för",
-          "item0": "Stora eller komplexa logistiklagerprojekt",
-          "item1": "Ombyggnads-, renoverings- och omprojekteringsprogram",
-          "item2": "Projekt där ofullständig information skapar betydande risk för tid, kostnad eller tidplan"
+          "item0": "Stora eller komplexa logistikanläggningar",
+          "item1": "Ombyggnads-, moderniserings- och anpassningsprojekt",
+          "item2": "Projekt där bristande underlag kan leda till tidsförluster, ökade kostnader eller förseningar"
         },
         "notFit": {
-          "title": "Passar inte för",
-          "item0": "Privata bostäder",
+          "title": "RESCAN passar inte för",
+          "item0": "Privata bostadsprojekt",
           "item1": "Enstaka uppdrag med låg budget",
-          "item2": "Små avgränsade projekt där risken med befintliga förhållanden är minimal"
+          "item2": "Små fristående projekt där osäkerheten kring befintliga förhållanden är liten"
         }
       },
       "finalCta": {
