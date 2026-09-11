@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Plus } from "lucide-react";
+import Image from "next/image";
 import { useId, useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
@@ -21,7 +22,11 @@ type CaseBandProps = {
   sectorLabel: string;
   ordinal: string;
   total: string;
-  photoHint: string;
+  image?: string;
+  /** Stand-in shown centred in the band while the client photograph is outstanding. */
+  photoHint?: string;
+  /** The stack opens the page, so its first band carries the LCP image. */
+  priority?: boolean;
   title: string;
   summary: string;
   body: string;
@@ -31,11 +36,16 @@ type CaseBandProps = {
   sectorLink: { label: string; href: string };
 };
 
-const SCAN_DURATION_S = 1.1;
-const SCAN_EASE = [0.16, 1, 0.3, 1] as const;
+const SCAN_DURATION_S = 1.5;
+/** Symmetric ease: the beam leaves and arrives softly but crosses the band at an even
+ *  speed, which is what makes the pass read as a sweep rather than a snap. An ease-out
+ *  curve spends most of the pass decelerating and the wipe looks like it stalls. */
+const SCAN_EASE = [0.4, 0, 0.2, 1] as const;
 /** Content starts trailing the scan line by this fraction of the pass, so the copy
- *  reads as revealed by the beam rather than appearing on its own timer. */
+ *  reads as revealed by the beam rather than appearing on its own timer, and finishes
+ *  exactly as the beam leaves the band. */
 const CONTENT_DELAY_S = 0.35;
+const CONTENT_DURATION_S = SCAN_DURATION_S - CONTENT_DELAY_S;
 const EXPAND_DURATION_S = 0.45;
 
 /** Two bands have to fit the first screen, so each claims half of the viewport left
@@ -45,6 +55,15 @@ const BAND_HEIGHT = "min-h-100 lg:min-h-[calc(50svh-2rem-1px)]";
 /** `Pending`'s default amber sits on white; against this band's dark gradient it needs
  *  the same brighter on-dark variant `ProjectsHero` and `CaseStudyFeature` already use. */
 const PENDING_ON_DARK = "border-amber-500/80 bg-amber-500/12 text-amber-300";
+
+/** The band's own gradient goes back over the photograph only as a tint: enough to carry
+ *  the colour sequence the design drew down the stack, light enough that the building is
+ *  still the thing you look at. Legibility is bought by the floor scrim below, not here. */
+const PHOTO_TINT_OPACITY = 0.38;
+
+/** The name and result line sit on the floor of the band, where a photograph is often at
+ *  its brightest, so only that strip is darkened — the top of the frame stays open. */
+const PHOTO_FLOOR_SCRIM = "linear-gradient(to top, rgba(9,12,20,0.88) 0%, rgba(9,12,20,0) 58%)";
 
 /**
  * One band of the stacked showcase: full-bleed, dark, with the client name and a
@@ -58,8 +77,9 @@ const PENDING_ON_DARK = "border-amber-500/80 bg-amber-500/12 text-amber-300";
  *
  * A left-to-right scan line sweeps the band once it enters view and the copy trails just
  * behind it — the same motif RESCAN performs on a building, run once per band so all four
- * read as one set. The photograph slot stays a centred `Pending` badge until the client
- * supplies the image.
+ * read as one set. Where the client photograph has arrived it fills the band under the
+ * band's own gradient and replaces the hatch, which is texture for an empty band; where it
+ * has not, the slot stays a centred `Pending` badge over that hatch.
  */
 export const CaseBand = ({
   gradient,
@@ -67,7 +87,9 @@ export const CaseBand = ({
   sectorLabel,
   ordinal,
   total,
+  image,
   photoHint,
+  priority,
   title,
   summary,
   body,
@@ -92,28 +114,44 @@ export const CaseBand = ({
       )}
       style={{ background: gradient }}
     >
-      <div aria-hidden className="absolute inset-0" style={{ backgroundImage: CASE_HATCH }} />
+      {image && (
+        <>
+          <Image src={image} alt="" fill priority={priority} sizes="100vw" className="object-cover" />
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ background: gradient, opacity: PHOTO_TINT_OPACITY }}
+          />
+          <div aria-hidden className="absolute inset-0" style={{ background: PHOTO_FLOOR_SCRIM }} />
+        </>
+      )}
+
+      {!image && (
+        <div aria-hidden className="absolute inset-0" style={{ backgroundImage: CASE_HATCH }} />
+      )}
 
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 w-24 mix-blend-screen"
+        className="pointer-events-none absolute inset-y-0 left-0 w-24 mix-blend-screen"
         style={{
           background: `linear-gradient(90deg, transparent 0%, ${accent}00 0%, ${accent}55 45%, ${accent}f5 50%, ${accent}55 55%, ${accent}00 100%)`,
         }}
-        initial={{ left: "-10%" }}
-        animate={isInView ? { left: "110%" } : undefined}
+        initial={{ x: "-10vw" }}
+        animate={isInView ? { x: "110vw" } : undefined}
         transition={{ duration: SCAN_DURATION_S, ease: SCAN_EASE }}
       />
 
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6">
-        <Pending className={PENDING_ON_DARK}>{photoHint}</Pending>
-      </div>
+      {photoHint && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6">
+          <Pending className={PENDING_ON_DARK}>{photoHint}</Pending>
+        </div>
+      )}
 
       <motion.div
         className="relative mx-auto flex w-full max-w-shell flex-1 flex-col px-6 pt-8 pb-10 lg:pr-10 lg:pl-spine"
         initial={{ clipPath: "inset(0 100% 0 0)" }}
         animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : undefined}
-        transition={{ duration: SCAN_DURATION_S, ease: SCAN_EASE, delay: CONTENT_DELAY_S }}
+        transition={{ duration: CONTENT_DURATION_S, ease: SCAN_EASE, delay: CONTENT_DELAY_S }}
       >
         <div className="flex items-baseline gap-2.5 text-mono-xs tracking-mono-lg">
           <MonoLabel className="text-mono-xs tracking-mono-lg text-white/65">

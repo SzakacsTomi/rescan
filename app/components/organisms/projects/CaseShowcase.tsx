@@ -7,7 +7,7 @@ export type CaseShowcaseCaseCopy = {
   body: string;
   stats: [string, string, string];
   statLabels: [string, string, string];
-  photoHint: string;
+  photoHint?: string;
 };
 
 type CaseShowcaseProps = {
@@ -51,7 +51,9 @@ export const CaseShowcase = ({
               sectorLabel={sectorLabels[caseStudy.sector]}
               ordinal={String(i + 1).padStart(2, "0")}
               total={total}
+              image={caseStudy.image}
               photoHint={copy.photoHint}
+              priority={i === 0}
               title={copy.title}
               summary={copy.summary}
               body={copy.body}

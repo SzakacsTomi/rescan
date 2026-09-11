@@ -296,7 +296,6 @@
         "title": "Stor svensk livsmedelskedja",
         "summary": "96 000 m² inmätt på 8 dagar",
         "body": "Pålitliga underlag om befintliga förhållanden inför en stor logistikmodernisering — sju disciplinmodeller från en och samma inmätning.",
-        "photoHint": "[[TODO: photograph — facility exterior]]",
         "stat0": {
           "value": "96 000 m²",
           "label": "Inmätt"
@@ -314,7 +313,6 @@
         "title": "Stor internationell livsmedelskedja",
         "summary": "~300 000 m² över tre logistikcentraler",
         "body": "Ett pålitligt informationsunderlag för att planera laddinfrastruktur för eldrivna lastbilar över ett rikstäckande nätverk.",
-        "photoHint": "[[TODO: photograph — charging yard]]",
         "stat0": {
           "value": "~300 000 m²",
           "label": "Skannat"
@@ -332,7 +330,6 @@
         "title": "Carlqvist Fastigheter",
         "summary": "56 fastigheter dokumenterade i södra Sverige",
         "body": "Tillförlitlig byggnadsinformation för en fastighetsportfölj spridd över södra Sverige — många frågor löses nu utan att resa till platsen.",
-        "photoHint": "[[TODO: photograph — Carlqvist property exterior]]",
         "stat0": {
           "value": "56",
           "label": "Dokumenterat"

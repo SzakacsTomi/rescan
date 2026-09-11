@@ -21,6 +21,9 @@ export type CaseStudyConfig = {
    *  pair, and the two stand-in accents have no equivalent among the theme tokens. */
   gradient: string;
   accent: string;
+  /** Client photograph behind the band. Absent until the client supplies one, which is
+   *  what makes the band fall back to its `photoHint` placeholder. */
+  image?: string;
 };
 
 /** The stacked showcase the Projects design opens with, in the order it draws them —
@@ -31,10 +34,31 @@ export type CaseStudyConfig = {
  *  with the *position*, not the project, so the stack keeps the colour sequence the
  *  design drew. */
 export const caseStudies: CaseStudyConfig[] = [
-  { id: "case2", sector: "retail", gradient: DEEP_BLUE_GRADIENT, accent: "#89b4f5" },
-  { id: "case0", sector: "logistics", gradient: CHARCOAL_GRADIENT, accent: "#89b4f5" },
+  {
+    id: "case2",
+    sector: "retail",
+    gradient: DEEP_BLUE_GRADIENT,
+    accent: "#89b4f5",
+    image:
+      "https://res.cloudinary.com/daecns4am/image/upload/v1789129536/Carlqvist_bild_ucnaxo.jpg",
+  },
+  {
+    id: "case0",
+    sector: "logistics",
+    gradient: CHARCOAL_GRADIENT,
+    accent: "#89b4f5",
+    image:
+      "https://res.cloudinary.com/daecns4am/image/upload/v1789129460/PHOTO-2026-08-20-22-09-03_fypevu.jpg",
+  },
   { id: "case3", sector: "retail", gradient: VIOLET_GRADIENT, accent: "#c9a8f5" },
-  { id: "case1", sector: "logistics", gradient: EVERGREEN_GRADIENT, accent: "#7fd6b5" },
+  {
+    id: "case1",
+    sector: "logistics",
+    gradient: EVERGREEN_GRADIENT,
+    accent: "#7fd6b5",
+    image:
+      "https://res.cloudinary.com/daecns4am/image/upload/v1789129460/PHOTO-2026-08-20-22-11-19_okriby.jpg",
+  },
 ];
 
 /**

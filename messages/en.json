@@ -296,7 +296,6 @@
         "title": "Major Swedish Grocery Retailer",
         "summary": "96,000 m² captured in 8 days",
         "body": "Reliable existing conditions for a major logistics modernisation — seven discipline models from one capture.",
-        "photoHint": "[[TODO: photograph — facility exterior]]",
         "stat0": {
           "value": "96,000 m²",
           "label": "Captured"
@@ -314,7 +313,6 @@
         "title": "Major International Grocery Retailer",
         "summary": "~300,000 m² across three logistics centres",
         "body": "One reliable information base for planning electric-truck charging infrastructure across a nationwide network.",
-        "photoHint": "[[TODO: photograph — charging yard]]",
         "stat0": {
           "value": "~300,000 m²",
           "label": "Scanned"
@@ -332,7 +330,6 @@
         "title": "Carlqvist Property",
         "summary": "56 properties documented across southern Sweden",
         "body": "Accurate building information for a portfolio spread across southern Sweden — many questions now resolved without travelling to site.",
-        "photoHint": "[[TODO: photograph — Carlqvist property exterior]]",
         "stat0": {
           "value": "56",
           "label": "Documented"

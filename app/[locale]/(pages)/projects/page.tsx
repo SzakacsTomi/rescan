@@ -23,7 +23,7 @@ export default async function ProjectsPage({ params }: PageProps) {
   const projectCount = projects.length;
 
   const cases: Record<string, CaseShowcaseCaseCopy> = {};
-  for (const { id } of caseStudies) {
+  for (const { id, image } of caseStudies) {
     cases[id] = {
       title: t(`caseShowcase.${id}.title`),
       summary: t(`caseShowcase.${id}.summary`),
@@ -34,7 +34,7 @@ export default async function ProjectsPage({ params }: PageProps) {
       statLabels: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
         t(`caseShowcase.${id}.stat${i}.label`),
       ) as [string, string, string],
-      photoHint: t(`caseShowcase.${id}.photoHint`),
+      photoHint: image ? undefined : t(`caseShowcase.${id}.photoHint`),
     };
   }
 
