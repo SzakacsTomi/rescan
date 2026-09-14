@@ -1,8 +1,22 @@
 "use server";
 
+import { getLocale, getTranslations } from "next-intl/server";
 import { Resend } from "resend";
-import { contactNotificationHtml } from "@/app/emails/contact-notification";
-import { CONTACT_FIELDS, contactSchema } from "@/app/components/organisms/contact/contactSchema";
+
+import {
+  CONTACT_FIELDS,
+  contactSchema,
+  type TimingOption,
+} from "@/app/components/organisms/contact/contactSchema";
+import {
+  contactNotificationHtml,
+  contactNotificationSubject,
+  contactNotificationText,
+  type ContactLabels,
+} from "@/app/emails/contact-notification";
+import { siteConfig } from "@/config/site";
+import { routing } from "@/i18n/routing";
+import type { SectorOption } from "@/lib/contact";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -10,6 +24,36 @@ export type ContactFormState = {
 };
 
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
+/** The notification is one English document whatever locale the enquiry arrived in — see
+ *  `app/emails/contact-notification.ts`. It reads the reference catalogue, so the questions
+ *  it prints are the questions the form asked. */
+const NOTIFICATION_LOCALE = routing.defaultLocale;
+
+const resolveLabels = async (
+  sector: SectorOption,
+  timing: TimingOption,
+): Promise<ContactLabels> => {
+  const t = await getTranslations({ locale: NOTIFICATION_LOCALE, namespace: "contactPage" });
+
+  return {
+    steps: {
+      identity: t("steps.identity"),
+      property: t("steps.property"),
+      decision: t("steps.decision"),
+      risk: t("steps.risk"),
+      timing: t("steps.timing"),
+    },
+    questions: {
+      scale: t("form.scale"),
+      decision: t("form.decision"),
+      incomplete: t("form.incomplete"),
+      additionalContext: t("form.additionalContext"),
+    },
+    sector: t(`form.sectorOptions.${sector}`),
+    timing: t(`form.timingOptions.${timing}`),
+  };
+};
 
 export async function submitContact(
   _prevState: ContactFormState,
@@ -81,13 +125,22 @@ export async function submitContact(
   }
 
   try {
+    const notification = {
+      enquiry,
+      labels: await resolveLabels(enquiry.sector, enquiry.timing),
+      // Which form the enquiry came through, so the reply is written in that language.
+      locale: await getLocale(),
+    };
+
     const resend = new Resend(apiKey);
     await resend.emails.send({
       from: "Rescan Contact Form <onboarding@resend.dev>",
-      to: ["info@rescan.se"],
+      to: [siteConfig.email],
       replyTo: enquiry.email,
-      subject: `New enquiry from ${enquiry.name} — ${enquiry.company}`,
-      html: contactNotificationHtml(enquiry),
+      subject: contactNotificationSubject(notification),
+      html: contactNotificationHtml(notification),
+      // A notification with no text part scores as spam with some filters.
+      text: contactNotificationText(notification),
     });
 
     return { status: "success" };

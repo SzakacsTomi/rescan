@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type { SectorOption } from '@/lib/contact';
+import { SECTOR_OPTIONS, type SectorOption } from '@/lib/contact';
 
 /**
  * Fields come from the Contact brief, with two deliberate deviations:
@@ -64,13 +64,16 @@ export type FormTranslations = {
 const requiredText = z.string().min(1, 'required');
 
 export const contactSchema = z.object({
-  sector: requiredText,
+  // The two selects are parsed as their option lists, not as free text: the notification
+  // resolves each choice to its label, and a value outside the list has no label. An empty
+  // select is not a member either, so an untouched field still reports `required`.
+  sector: z.enum(SECTOR_OPTIONS, { error: 'required' }),
   name: requiredText,
   // `min(1)` first, so a blank field reports `required` rather than `invalidEmail`.
   email: requiredText.pipe(z.email('invalidEmail')),
   company: requiredText,
   decision: requiredText,
-  timing: requiredText,
+  timing: z.enum(TIMING_OPTIONS, { error: 'required' }),
 });
 
 /** Field order matters: it decides which error the user is scrolled to first. */
