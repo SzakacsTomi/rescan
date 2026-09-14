@@ -1,20 +1,5 @@
+import { isPending, pendingHint } from "@/lib/pending";
 import { cn } from "@/lib/utils";
-
-/**
- * Content the client still owes us is written into messages/*.json as
- * `[[TODO: what we need]]` rather than invented. This renders those markers as a
- * visible dashed-amber "Todo" hint unconditionally — matching the imported design,
- * which always shows its placeholder badges rather than hiding them.
- */
-
-const TODO_PATTERN = /^\s*\[\[TODO:\s*([\s\S]*?)\]\]\s*$/;
-
-/** True when a value carries no content yet — either an unfilled marker, or blank. */
-export const isPending = (value: string) => value.trim() === "" || TODO_PATTERN.test(value);
-
-export const pendingHint = (value: string) => value.match(TODO_PATTERN)?.[1]?.trim() ?? "";
-
-export const placeholdersVisible = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDERS === "true";
 
 /** The badge's default amber is mixed for white paper. Pass this wherever a marker lands on
  *  one of the site's dark bands, so the same hint stays readable without a second palette. */
@@ -25,6 +10,12 @@ type PendingProps = {
   className?: string;
 };
 
+/**
+ * Renders a `[[TODO: …]]` marker as a visible dashed-amber "Todo" hint, unconditionally —
+ * matching the imported design, which always shows its placeholder badges rather than
+ * hiding them. Real content passes through untouched, so this is safe to leave in place
+ * once the value arrives.
+ */
 export const Pending = ({ children, className }: PendingProps) => {
   if (!isPending(children)) {
     return <>{children}</>;
