@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Reveal } from "@/app/components/atoms/Reveal";
-import { isPending } from "@/app/components/atoms/Pending";
+import { isPending } from "@/lib/pending";
 import { CountUp } from "@/app/components/molecules/CountUp";
 import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 import { Link } from "@/i18n/navigation";

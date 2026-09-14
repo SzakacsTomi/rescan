@@ -1,5 +1,6 @@
 "use server";
 
+import { after } from "next/server";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Resend } from "resend";
 
@@ -120,7 +121,9 @@ export async function submitContact(
   };
 
   if (!apiKey) {
-    console.warn("RESEND_API_KEY is not set — skipping email send.");
+    // The visitor's confirmation does not depend on this line reaching the log, and a log
+    // pipe that is slow to drain would otherwise hold the response open behind it.
+    after(() => console.warn("RESEND_API_KEY is not set — skipping email send."));
     return { status: "success" };
   }
 

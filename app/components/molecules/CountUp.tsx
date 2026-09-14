@@ -2,7 +2,8 @@
 
 import { animate, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Pending, isPending } from "@/app/components/atoms/Pending";
+import { Pending } from "@/app/components/atoms/Pending";
+import { isPending } from "@/lib/pending";
 import { FIGURE_NUMBER_PATTERN } from "@/lib/figures";
 
 type CountUpProps = {

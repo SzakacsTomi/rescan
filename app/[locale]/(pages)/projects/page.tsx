@@ -6,7 +6,7 @@ import type { CaseShowcaseCaseCopy } from '@/app/components/organisms/projects/C
 import type { ProjectDetailCopy } from '@/app/components/organisms/projects/ProjectDetail';
 import { ProjectsTemplate } from '@/app/components/templates/ProjectsTemplate';
 import { caseStudies, projects, type ProjectSector } from '@/config/projects';
-import { overflowCounts } from '@/app/components/atoms/ImageStrip';
+import { overflowCounts } from '@/lib/imageGrid';
 import { cloudinaryImageUrl, getCloudinaryFolderPublicIds } from '@/lib/cloudinary';
 import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
