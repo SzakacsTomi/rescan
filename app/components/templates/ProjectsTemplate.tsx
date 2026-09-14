@@ -22,8 +22,8 @@ type ProjectsTemplateProps = {
     sectorLabels: Record<ProjectSector, string>;
     cases: Record<string, CaseShowcaseCaseCopy>;
     caseImages: Record<string, string[]>;
-    moreImageLabels: Record<number, string>;
-    openGalleryLabel: string;
+    morePropertyLabels: Record<number, string>;
+    morePropertyLabel: string;
     caseStudyLabel: string;
     sectionLabels: { challenge: string; change: string; outcome: string };
     revealLabel: string;
@@ -78,8 +78,8 @@ export const ProjectsTemplate = ({
         sectorLabels={caseShowcase.sectorLabels}
         cases={caseShowcase.cases}
         caseImages={caseShowcase.caseImages}
-        moreImageLabels={caseShowcase.moreImageLabels}
-        openGalleryLabel={caseShowcase.openGalleryLabel}
+        morePropertyLabels={caseShowcase.morePropertyLabels}
+        morePropertyLabel={caseShowcase.morePropertyLabel}
         caseStudyLabel={caseShowcase.caseStudyLabel}
         sectionLabels={caseShowcase.sectionLabels}
         revealLabel={caseShowcase.revealLabel}

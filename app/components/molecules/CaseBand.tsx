@@ -19,14 +19,14 @@ type CaseBandProps = {
   index: number;
   total: number;
   /** Every photograph in the client's folder. The band composes a strip from the first
-   *  few of them and counts the rest onto the closing frame. */
+   *  few of them and closes it with a count of the buildings it has no room for. */
   images: string[];
-  /** Translated `+n more` labels keyed by how many photographs the grid leaves out. */
-  moreImageLabels: Record<number, string>;
-  /** What the tile standing for the rest of the folder does, for assistive tech. */
-  openGalleryLabel: string;
-  /** Opens the case study with its gallery already unrolled. */
-  onOpenGallery: () => void;
+  /** The client's portfolio size, which the closing tile counts up to. */
+  propertyCount: number;
+  /** Translated `+n` figures keyed by the number the closing tile stands for. */
+  morePropertyLabels: Record<number, string>;
+  /** The word under that figure. */
+  morePropertyLabel: string;
   /** The stack opens the page, so its first band carries the LCP image. */
   priority?: boolean;
   title: string;
@@ -71,11 +71,19 @@ const SWEEP_STAGGER_S = 4.5;
 /** The name and result line sit on the floor of the band and the ordinal on its ceiling,
  *  so those two strips are darkened and the middle of the frame stays open. The floor
  *  needs the weight: the grid puts several unrelated exposures behind one headline, and a
- *  ramp tuned to a single photograph left it legible over some frames and not others. */
+ *  ramp tuned to a single photograph left it legible over some frames and not others.
+ *
+ *  It is split in two because one ramp heavy enough for the headline also fell across the
+ *  right of the grid, where the closing tile's own figure had nothing to do with it and
+ *  simply went dark. The full-width ramp is the lighter of the pair — enough to seat the
+ *  grid under the copy — and the contrast the headline actually needs is bought by an
+ *  ellipse anchored to the bottom-left corner it occupies, which never reaches the tile. */
 const PHOTO_FLOOR_SCRIM =
-  "linear-gradient(to top, rgba(9,12,20,0.95) 0%, rgba(9,12,20,0.82) 26%, rgba(9,12,20,0.42) 55%, rgba(9,12,20,0) 88%)";
+  "linear-gradient(to top, rgba(9,12,20,0.86) 0%, rgba(9,12,20,0.68) 26%, rgba(9,12,20,0.3) 55%, rgba(9,12,20,0) 84%)";
+const PHOTO_COPY_SCRIM =
+  "radial-gradient(120% 88% at 18% 100%, rgba(9,12,20,0.68) 0%, rgba(9,12,20,0.42) 44%, rgba(9,12,20,0) 74%)";
 const PHOTO_CEILING_SCRIM =
-  "linear-gradient(to bottom, rgba(9,12,20,0.72) 0%, rgba(9,12,20,0.3) 22%, rgba(9,12,20,0) 40%)";
+  "linear-gradient(to bottom, rgba(9,12,20,0.68) 0%, rgba(9,12,20,0.28) 22%, rgba(9,12,20,0) 40%)";
 
 /**
  * One band of the stacked showcase: full-bleed, dark, with the client name and a
@@ -91,9 +99,9 @@ const PHOTO_CEILING_SCRIM =
  * behind it — the same motif RESCAN performs on a building, run once per band so all four
  * read as one set. The client's photographs are wiped in on that same beat: a single image
  * fills the band, a folder of them becomes a grid of the first few whose closing cell counts
- * the rest and opens them, and either way the band's own gradient goes back over the top as
- * the tint that keeps the stack's colour sequence. A band whose folder is empty falls back to
- * the hatch.
+ * the buildings that did not fit, and either way the band's own gradient goes back over the
+ * top as the tint that keeps the stack's colour sequence. A band whose folder is empty falls
+ * back to the hatch.
  */
 export const CaseBand = ({
   gradient,
@@ -102,9 +110,9 @@ export const CaseBand = ({
   index,
   total,
   images,
-  moreImageLabels,
-  openGalleryLabel,
-  onOpenGallery,
+  propertyCount,
+  morePropertyLabels,
+  morePropertyLabel,
   priority,
   title,
   summary,
@@ -163,9 +171,9 @@ export const CaseBand = ({
           >
             <ImageStrip
               images={images}
-              moreLabels={moreImageLabels}
-              overflowLabel={openGalleryLabel}
-              onOverflowClick={onOpenGallery}
+              overflowTotal={propertyCount}
+              moreLabels={morePropertyLabels}
+              overflowLabel={morePropertyLabel}
               accent={accent}
               isActive={isInView}
               priority={priority}
@@ -178,9 +186,15 @@ export const CaseBand = ({
               className="animate-case-sweep pointer-events-none absolute inset-y-0 left-0 w-2/5 mix-blend-soft-light"
               style={{ background: PHOTO_SWEEP, animationDelay: `-${index * SWEEP_STAGGER_S}s` }}
             />
+            {/* Inside the wipe, not over it: the clip-path is a stacking context, so scrims
+                left outside it paint above everything in the grid — including the closing
+                tile's own figure, which has no reason to be dimmed and simply went grey.
+                In here the tile can lift itself over them with a z-index, and the scrims
+                arrive on the same beat as the photographs they exist to seat. */}
+            <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_CEILING_SCRIM }} />
+            <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_FLOOR_SCRIM }} />
+            <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_COPY_SCRIM }} />
           </motion.div>
-          <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_CEILING_SCRIM }} />
-          <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_FLOOR_SCRIM }} />
         </div>
       ) : (
         <div aria-hidden className="absolute inset-0" style={{ backgroundImage: CASE_HATCH }} />

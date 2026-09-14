@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 
@@ -20,11 +20,11 @@ type CaseShowcaseProps = {
   /** Every photograph in each case's Cloudinary folder, keyed by case id. Resolved on
    *  the server because listing a folder needs the Cloudinary API credentials. */
   caseImages: Record<string, string[]>;
-  /** Translated `+n more` labels keyed by how many photographs a band's strip leaves out.
-   *  One set serves every band: the label depends on the number dropped, not on the case. */
-  moreImageLabels: Record<number, string>;
-  /** What a band's `+n more` tile does, for assistive tech. */
-  openGalleryLabel: string;
+  /** Translated `+n` figures keyed by the number a band's closing tile stands for. One set
+   *  serves every band: the label depends on the number, not on the case. */
+  morePropertyLabels: Record<number, string>;
+  /** The word under that figure. */
+  morePropertyLabel: string;
   caseStudyLabel: string;
   sectionLabels: { challenge: string; change: string; outcome: string };
   revealLabel: string;
@@ -35,13 +35,8 @@ type CaseShowcaseProps = {
 
 /** The navbar the opened band has to clear when the stack scrolls itself into place. */
 const NAVBAR_HEIGHT_PX = 64;
-/** Room above a gallery brought into view, so its label is not flush under the navbar. */
-const GALLERY_HEADROOM_PX = 24;
-
-const galleryDomId = (id: string) => `case-gallery-${id}`;
 
 const PANEL_EXPAND_S = 0.5;
-const PANEL_EXPAND_MS = PANEL_EXPAND_S * 1000;
 /** The same symmetric curve the bands sweep on, so the panel unrolling reads as part of
  *  the same motion language rather than a stock accordion. */
 const PANEL_EASE = [0.4, 0, 0.2, 1] as const;
@@ -65,8 +60,8 @@ export const CaseShowcase = ({
   sectorLabels,
   cases,
   caseImages,
-  moreImageLabels,
-  openGalleryLabel,
+  morePropertyLabels,
+  morePropertyLabel,
   caseStudyLabel,
   sectionLabels,
   revealLabel,
@@ -75,11 +70,6 @@ export const CaseShowcase = ({
   sectorHref,
 }: CaseShowcaseProps) => {
   const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set());
-  const [galleryIds, setGalleryIds] = useState<ReadonlySet<string>>(() => new Set());
-  /** A gallery asked for from a band, waiting on the panel that holds it to finish opening. */
-  const [pendingGallery, setPendingGallery] = useState<{ id: string; delayMs: number } | null>(
-    null,
-  );
   const bandRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const lenis = useLenis();
 
@@ -120,39 +110,6 @@ export const CaseShowcase = ({
     [openIds, scrollTo],
   );
 
-  const toggleGallery = useCallback((id: string) => {
-    setGalleryIds((current) => {
-      const next = new Set(current);
-      if (!next.delete(id)) next.add(id);
-      return next;
-    });
-  }, []);
-
-  /** The band's own `+n more`: open the study if it is closed, unroll the gallery, and take
-   *  the reader to it — they asked for the photographs, not for the top of the write-up. */
-  const openGallery = useCallback(
-    (id: string) => {
-      setOpenIds((current) => (current.has(id) ? current : new Set(current).add(id)));
-      setGalleryIds((current) => (current.has(id) ? current : new Set(current).add(id)));
-      setPendingGallery({ id, delayMs: openIds.has(id) ? 0 : PANEL_EXPAND_MS });
-    },
-    [openIds],
-  );
-
-  useEffect(() => {
-    if (!pendingGallery) return;
-
-    // The gallery sits inside a panel that may still be unrolling, so it has no position
-    // worth scrolling to until that has finished; its own height animation runs underneath.
-    const timer = setTimeout(() => {
-      const gallery = document.getElementById(galleryDomId(pendingGallery.id));
-      if (gallery) scrollTo(gallery, NAVBAR_HEIGHT_PX + GALLERY_HEADROOM_PX);
-      setPendingGallery(null);
-    }, pendingGallery.delayMs);
-
-    return () => clearTimeout(timer);
-  }, [pendingGallery, scrollTo]);
-
   return (
     <section className="relative w-full">
       <div className="grid gap-0.5">
@@ -175,9 +132,9 @@ export const CaseShowcase = ({
                   index={i}
                   total={caseStudies.length}
                   images={caseImages[caseStudy.id] ?? []}
-                  moreImageLabels={moreImageLabels}
-                  openGalleryLabel={openGalleryLabel}
-                  onOpenGallery={() => openGallery(caseStudy.id)}
+                  propertyCount={caseStudy.propertyCount ?? (caseImages[caseStudy.id] ?? []).length}
+                  morePropertyLabels={morePropertyLabels}
+                  morePropertyLabel={morePropertyLabel}
                   priority={i === 0}
                   title={copy.title}
                   summary={copy.summary}
@@ -210,10 +167,6 @@ export const CaseShowcase = ({
                         label: sectorLinkLabel,
                         href: sectorHref[caseStudy.sector],
                       }}
-                      images={caseImages[caseStudy.id] ?? []}
-                      isGalleryOpen={galleryIds.has(caseStudy.id)}
-                      onToggleGallery={() => toggleGallery(caseStudy.id)}
-                      galleryId={galleryDomId(caseStudy.id)}
                     />
                   </motion.div>
                 )}

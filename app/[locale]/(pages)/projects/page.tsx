@@ -6,6 +6,7 @@ import type { CaseShowcaseCaseCopy } from '@/app/components/organisms/projects/C
 import type { ProjectDetailCopy } from '@/app/components/organisms/projects/ProjectDetail';
 import { ProjectsTemplate } from '@/app/components/templates/ProjectsTemplate';
 import { caseStudies, projects, type ProjectSector } from '@/config/projects';
+import { overflowCounts } from '@/app/components/atoms/ImageStrip';
 import { cloudinaryImageUrl, getCloudinaryFolderPublicIds } from '@/lib/cloudinary';
 import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
@@ -46,18 +47,20 @@ export default async function ProjectsPage({ params }: PageProps) {
 
   const cases: Record<string, CaseShowcaseCaseCopy> = {};
   const caseImages: Record<string, string[]> = {};
-  // The band drops a different number of photographs at each breakpoint, so the label is
-  // resolved for every count a folder here could leave out rather than for one of them.
-  const moreImageLabels: Record<number, string> = {};
-  for (let dropped = 1; dropped < Math.max(...caseFolders.map(({ length }) => length)); dropped += 1) {
-    moreImageLabels[dropped] = t('caseShowcase.moreImages', { count: dropped });
-  }
+  // The band drops a different number of photographs at each breakpoint and the reader
+  // changes breakpoint without the server being asked again, so every figure the closing
+  // tile could print is resolved here rather than one of them.
+  const morePropertyLabels: Record<number, string> = {};
   for (const [i, { id }] of caseStudies.entries()) {
     const transformation =
       caseFolders[i].length > 1 ? STRIP_TRANSFORMATION : FULL_BAND_TRANSFORMATION;
     caseImages[id] = caseFolders[i].map((publicId) =>
       cloudinaryImageUrl(publicId, transformation),
     );
+    const portfolioSize = caseStudies[i].propertyCount ?? caseFolders[i].length;
+    for (const count of overflowCounts(caseFolders[i].length, portfolioSize)) {
+      morePropertyLabels[count] = t('caseShowcase.moreProperties', { count });
+    }
     cases[id] = {
       title: t(`caseShowcase.${id}.title`),
       summary: t(`caseShowcase.${id}.summary`),
@@ -75,11 +78,6 @@ export default async function ProjectsPage({ params }: PageProps) {
         body: t(`caseShowcase.${id}.study.change.body`),
       },
       outcome: { body: t(`caseShowcase.${id}.study.outcome.body`) },
-      gallery: {
-        label: t('caseShowcase.gallery.label'),
-        show: t('caseShowcase.gallery.show', { count: caseFolders[i].length }),
-        hide: t('caseShowcase.gallery.hide'),
-      },
       closing: {
         headline: t(`caseShowcase.${id}.study.closing.headline`),
         body: t(`caseShowcase.${id}.study.closing.body`),
@@ -131,8 +129,8 @@ export default async function ProjectsPage({ params }: PageProps) {
           sectorLabels,
           cases,
           caseImages,
-          moreImageLabels,
-          openGalleryLabel: t('caseShowcase.gallery.open'),
+          morePropertyLabels,
+          morePropertyLabel: t('caseShowcase.morePropertiesLabel'),
           caseStudyLabel: t('caseShowcase.caseStudyLabel'),
           sectionLabels: {
             challenge: t('caseShowcase.labels.challenge'),

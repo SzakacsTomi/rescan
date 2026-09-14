@@ -292,14 +292,9 @@
       "reveal": "View case study",
       "hide": "Close case study",
       "sectorLink": "More on this sector",
-      "moreImages": "+{count} more",
+      "moreProperties": "+{count}",
+      "morePropertiesLabel": "more properties",
       "caseStudyLabel": "Case study",
-      "gallery": {
-        "label": "Photographs",
-        "show": "{count, plural, one {View the photograph} other {View all # photographs}}",
-        "hide": "Hide photographs",
-        "open": "View the client's photographs"
-      },
       "labels": {
         "challenge": "The Challenge",
         "change": "What Changed",
@@ -391,7 +386,7 @@
           "label": "Portfolio location"
         },
         "stat2": {
-          "value": "[[TODO: total floor area across the portfolio — e.g. 180,000 m²]]",
+          "value": "82,000 m²",
           "label": "Total floor area"
         },
         "study": {

@@ -1,11 +1,10 @@
 "use client";
 
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { PENDING_ON_DARK, Pending } from "@/app/components/atoms/Pending";
-import { SkeletonImage } from "@/app/components/atoms/SkeletonImage";
 import { DEEP_BLUE_GRADIENT } from "@/config/gradients";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
@@ -25,8 +24,6 @@ export type CaseStudyCopy = {
   challenge: { headline: string; body: string };
   change: { headline: string; body: string };
   outcome: { body: string };
-  /** The client's photographs, which the band can only ever show a few of. */
-  gallery: { label: string; show: string; hide: string };
   closing: { headline: string; body: string; cta: string };
 };
 
@@ -39,13 +36,6 @@ type CaseStudyPanelProps = {
   labels: { challenge: string; change: string; outcome: string };
   contactHref: string;
   sectorLink: { label: string; href: string };
-  /** Every photograph in the client's folder, not the handful the band had room for. */
-  images: string[];
-  isGalleryOpen: boolean;
-  onToggleGallery: () => void;
-  /** Anchored so the band's own `+n more` can bring the gallery into view rather than
-   *  leaving the reader at the top of a study they opened for the photographs. */
-  galleryId: string;
 };
 
 /** Each block waits on the one above it, so the study assembles downwards as the panel
@@ -65,25 +55,10 @@ const GROUP: Variants = {
 
 const PROSE = "max-w-160 text-note leading-copy text-pretty text-foreground/70 lg:text-body";
 
-const GALLERY_EXPAND_S = 0.4;
-/** The curve the band and the panel already move on. */
-const GALLERY_EASE = [0.4, 0, 0.2, 1] as const;
-
-/** A folder of one or two is already whole on the band, so a gallery repeating it is a
- *  disclosure that discloses nothing. */
-const GALLERY_MIN_IMAGES = 3;
-
-/** Thumbnails land in sequence rather than together, the same beat the case bands assemble
- *  their own grids on — sixteen photographs arriving at once is a flash, not a reveal. */
-const GALLERY_SETTLE_STEP_MS = 40;
-
 /**
  * The client's written-up case study, laid out under the band it belongs to: the figures,
  * the problem, what RESCAN delivered on the dark band the site reserves for the turn in
  * the argument, and what the client got out of it.
- *
- * The client's photographs live here too rather than on the band: the band can show seven of
- * a folder of sixteen, and its closing tile opens this section with the rest.
  *
  * Copy comes from the client's own write-ups, so the section shape has to survive one that
  * quotes four figures and one that quotes three, and one that titles its challenge and one
@@ -98,10 +73,6 @@ export const CaseStudyPanel = ({
   labels,
   contactHref,
   sectorLink,
-  images,
-  isGalleryOpen,
-  onToggleGallery,
-  galleryId,
 }: CaseStudyPanelProps) => (
   <motion.div
     id={id}
@@ -184,58 +155,6 @@ export const CaseStudyPanel = ({
             <Pending>{copy.outcome.body}</Pending>
           </p>
         </motion.div>
-
-        {images.length >= GALLERY_MIN_IMAGES && (
-          <motion.div variants={BLOCK} id={galleryId} className="mt-12 scroll-mt-20">
-            <MonoLabel>{copy.gallery.label}</MonoLabel>
-            <button
-              type="button"
-              onClick={onToggleGallery}
-              aria-expanded={isGalleryOpen}
-              aria-controls={`${galleryId}-grid`}
-              className="mt-6 flex w-fit cursor-pointer items-center gap-2 rounded-full border border-border px-4 py-2.5 text-caption font-semibold transition-colors hover:border-foreground/40 hover:bg-foreground/5"
-            >
-              {isGalleryOpen ? copy.gallery.hide : copy.gallery.show}
-              <ChevronDown
-                aria-hidden
-                className={cn(
-                  "h-3.5 w-3.5 transition-transform duration-300",
-                  isGalleryOpen && "rotate-180",
-                )}
-              />
-            </button>
-
-            <AnimatePresence initial={false}>
-              {isGalleryOpen && (
-                <motion.div
-                  id={`${galleryId}-grid`}
-                  className="overflow-hidden"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: GALLERY_EXPAND_S, ease: GALLERY_EASE }}
-                >
-                  <div className="mt-6 grid grid-cols-2 gap-px bg-border sm:grid-cols-3">
-                    {images.map((src, index) => (
-                      <div
-                        key={src}
-                        className="group/photo animate-frame-settle relative aspect-[4/3] overflow-hidden bg-background"
-                        style={{ animationDelay: `${index * GALLERY_SETTLE_STEP_MS}ms` }}
-                      >
-                        <SkeletonImage
-                          src={src}
-                          alt=""
-                          sizes="(min-width: 640px) 300px, 50vw"
-                          className="object-cover transition-transform duration-700 ease-out group-hover/photo:scale-105"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        )}
 
         <motion.div variants={BLOCK} className="mt-14 border-t border-border pt-10">
           <h4 className="text-title-sm font-bold leading-title tracking-tight text-balance">

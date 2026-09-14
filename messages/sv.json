@@ -292,14 +292,9 @@
       "reveal": "Se fallstudien",
       "hide": "Stäng fallstudien",
       "sectorLink": "Mer om segmentet",
-      "moreImages": "+{count} till",
+      "moreProperties": "+{count}",
+      "morePropertiesLabel": "fastigheter till",
       "caseStudyLabel": "Fallstudie",
-      "gallery": {
-        "label": "Fotografier",
-        "show": "{count, plural, one {Visa fotografiet} other {Visa alla # fotografier}}",
-        "hide": "Dölj fotografierna",
-        "open": "Visa kundens fotografier"
-      },
       "labels": {
         "challenge": "Utmaningen",
         "change": "Det Som Förändrades",
@@ -391,7 +386,7 @@
           "label": "Portföljens läge"
         },
         "stat2": {
-          "value": "[[TODO: total floor area across the portfolio — e.g. 180,000 m²]]",
+          "value": "82 000 m²",
           "label": "Total golvyta"
         },
         "study": {

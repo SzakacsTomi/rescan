@@ -25,10 +25,16 @@ export type CaseStudyConfig = {
   gradient: string;
   accent: string;
   /** Cloudinary asset folder holding the client's photographs. The band composes a strip
-   *  from the first few and counts the rest onto its closing frame, so the client adds or
-   *  removes a building by moving a file — the ICA folder holds one image and fills the
-   *  band with it, Carlqvist's holds fifteen and shows five with a `+10 more`. */
+   *  from the first few and closes it with the count of what it has no room for, so the
+   *  client adds or removes a building by moving a file — the ICA folder holds one image
+   *  and fills the band with it, Carlqvist's holds fifteen and shows a grid of seven. */
   imagesFolder: string;
+  /** How many properties the client's portfolio actually holds. The folder is a sample of
+   *  it, not an inventory, so the band's closing tile counts up to this rather than to the
+   *  number of photographs — Carlqvist's fifteen images stand for fifty-six buildings, and
+   *  a tile reading `+8` would understate the programme by a factor of six. Left unset for
+   *  a case that is one facility rather than a portfolio, where the tile never appears. */
+  propertyCount?: number;
   /** How many `statN` pairs the case's copy defines. The client's write-ups do not all
    *  quote the same number of figures, and padding a shorter one out would mean inventing
    *  a measurement. */
@@ -65,6 +71,7 @@ export const caseStudies: CaseStudyConfig[] = [
     gradient: DEEP_BLUE_GRADIENT,
     accent: "#89b4f5",
     imagesFolder: `${CASE_IMAGE_ROOT}/carlqvist`,
+    propertyCount: 56,
     statCount: 3,
   },
   {
@@ -73,6 +80,7 @@ export const caseStudies: CaseStudyConfig[] = [
     gradient: VIOLET_GRADIENT,
     accent: "#c9a8f5",
     imagesFolder: `${CASE_IMAGE_ROOT}/alhansa`,
+    propertyCount: 48,
     statCount: 4,
   },
 ];

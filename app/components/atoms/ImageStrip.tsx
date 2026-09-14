@@ -1,3 +1,4 @@
+import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +39,22 @@ const gridShape = (count: number) => {
   return { cols: "grid-cols-2 md:grid-cols-3 xl:grid-cols-4", cells: [4, 6, 8] as const };
 };
 
+/**
+ * Every number the closing tile can stand for across the three widths, given a folder of
+ * `imageCount` photographs standing in for `total` buildings.
+ *
+ * The caller needs the whole set up front: the label is a translation resolved on the
+ * server, the grid drops a different number of photographs at each breakpoint, and the
+ * reader changes breakpoint without the server being asked again.
+ */
+export const overflowCounts = (imageCount: number, total: number): number[] => [
+  ...new Set(
+    gridShape(imageCount)
+      .cells.filter((visible) => imageCount > visible)
+      .map((visible) => total - (visible - 1)),
+  ),
+];
+
 /** Cell widths as the share of the viewport each one holds, the band being full-bleed. */
 const cellSizes = (count: number) => {
   if (count === 1) return "100vw";
@@ -58,6 +75,14 @@ const displayClasses = (on: readonly boolean[], shown: "block" | "flex") =>
     .filter(Boolean)
     .join(" ");
 
+/** The portfolio the closing tile counts, drawn as the thing RESCAN hands the client: a
+ *  plan grid. Masked to a soft oval so it reads as a field the number sits on rather than
+ *  as a texture tiled to the cell edges. */
+const PLAN_GRID =
+  "linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)";
+const PLAN_GRID_STEP = "38px 38px";
+const PLAN_GRID_MASK = "radial-gradient(75% 68% at 50% 50%, #000 0%, transparent 78%)";
+
 /** Above Next's default, because every frame is already being upscaled to cover its cell
  *  and the softening the two do together is visible. Allowlisted in `next.config.ts`. */
 const FRAME_QUALITY = 90;
@@ -70,15 +95,16 @@ type ImageStripProps = {
   /** Decorative throughout — the frames carry no alt text, so only the overflow tile is
    *  reachable and it names itself. */
   images: string[];
-  /** Translated `+n more` labels keyed by the number of photographs the tile stands for.
-   *  The grid drops a different number at each width, so it needs the set rather than one
-   *  string; the caller has the catalogue, the grid has the shapes. */
+  /** What the closing tile counts up to. The photographs are a sample of a portfolio, so
+   *  this is the client's building count and not `images.length` — see `propertyCount` in
+   *  `config/projects.ts`. Falls back to the folder, which is right for a folder that is
+   *  the whole set. */
+  overflowTotal?: number;
+  /** Translated `+n` figures keyed by the number the tile stands for. The grid drops a
+   *  different number at each width, so it needs the set rather than one string; the caller
+   *  has the catalogue, the grid has the shapes. */
   moreLabels?: Record<number, string>;
-  /** Opens the client's full set. Without it the tile is still drawn but inert — the count
-   *  is true either way. */
-  onOverflowClick?: () => void;
-  /** What that tile does, for assistive tech: `+12 more` alone says nothing about where it
-   *  leads. */
+  /** The fixed word under that figure — `+49` alone does not say what it counts. */
   overflowLabel?: string;
   /** The band's own accent, so the tile that stands for the rest of the folder glows in the
    *  colour its band already owns rather than in a grey shared by all four. */
@@ -98,13 +124,14 @@ type ImageStripProps = {
  *
  * That last cell is the point of the component. These folders run to sixteen photographs and
  * tiling all of them turned the band into a contact sheet: every building competed with every
- * other and with the headline over them. Seven and a count is a composition, and the count is
- * a way into the rest rather than a truncation — it opens the case study's own gallery.
+ * other and with the headline over them. Seven photographs and a figure is a composition —
+ * and the figure is the scale of the programme, counted against the client's portfolio
+ * rather than against the folder, so the band says fifty-six buildings and not fifteen files.
  */
 export const ImageStrip = ({
   images,
+  overflowTotal,
   moreLabels,
-  onOverflowClick,
   overflowLabel,
   accent,
   isActive = true,
@@ -112,6 +139,7 @@ export const ImageStrip = ({
   className,
 }: ImageStripProps) => {
   const { cols, cells } = gridShape(images.length);
+  const total = overflowTotal ?? images.length;
   /** Whichever cell closes the grid at a width it cannot fill, or none where the folder fits. */
   const tileAt = cells.map((visible) => (images.length > visible ? visible - 1 : -1));
 
@@ -122,72 +150,75 @@ export const ImageStrip = ({
         const isTile = tileAt.map((tile) => tile === index);
         const carriesPhoto = isShown.some((shown, step) => shown && !isTile[step]);
 
+        // `frame-settle` ends on a `transform`, which it holds: the cell would keep a
+        // stacking context for good and trap the tile's z-index inside it, under the band's
+        // scrims. The cell stays plain and its two contents settle in on their own.
+        const settle = isActive ? "animate-frame-settle" : "opacity-0";
+        const settleDelay = { animationDelay: `${index * FRAME_SETTLE_STEP_MS}ms` };
+
         return (
           <div
             key={images[index]}
-            className={cn(
-              "group/frame relative overflow-hidden",
-              displayClasses(isShown, "block"),
-              isActive ? "animate-frame-settle" : "opacity-0",
-            )}
-            style={{ animationDelay: `${index * FRAME_SETTLE_STEP_MS}ms` }}
+            className={cn("group/frame relative overflow-hidden", displayClasses(isShown, "block"))}
           >
             {carriesPhoto && (
-              <SkeletonImage
-                src={images[index]}
-                alt=""
-                priority={priority && index === 0}
-                quality={FRAME_QUALITY}
-                sizes={cellSizes(images.length)}
-                skeletonClassName={SKELETON_ON_DARK}
-                className="object-cover transition-transform duration-700 ease-out group-hover/frame:scale-105"
-              />
+              <div className={cn("absolute inset-0", settle)} style={settleDelay}>
+                <SkeletonImage
+                  src={images[index]}
+                  alt=""
+                  priority={priority && index === 0}
+                  quality={FRAME_QUALITY}
+                  sizes={cellSizes(images.length)}
+                  skeletonClassName={SKELETON_ON_DARK}
+                  className="object-cover transition-transform duration-700 ease-out group-hover/frame:scale-105"
+                />
+              </div>
             )}
 
             {isTile.some(Boolean) && (
-              <button
-                type="button"
-                onClick={(event) => {
-                  // The whole band is its own toggle; reaching the rest of the folder is not
-                  // a request to collapse the study on the way there.
-                  event.stopPropagation();
-                  onOverflowClick?.();
-                }}
-                aria-label={overflowLabel}
+              <div
                 className={cn(
-                  "group/more pointer-events-auto absolute inset-0 cursor-pointer items-center justify-center",
+                  // Above the band's scrims, which are ramped for the headline in the
+                  // opposite corner and have no business dimming this figure.
+                  "group/more absolute inset-0 z-10 flex-col items-center justify-center gap-3.5 px-4 text-center",
                   displayClasses(isTile, "flex"),
+                  settle,
                 )}
+                style={settleDelay}
               >
-                <span className="absolute inset-0 bg-[#090c14]/60 backdrop-blur-md transition-colors duration-500 group-hover/more:bg-[#090c14]/45" />
+                <span className="absolute inset-0 bg-[#090c14]/35 backdrop-blur-md transition-colors duration-500 group-hover/more:bg-[#090c14]/20" />
                 {accent !== undefined && (
                   <span
                     aria-hidden
-                    className="absolute inset-0 opacity-45 transition-opacity duration-500 group-hover/more:opacity-80"
+                    className="absolute inset-0 opacity-55 transition-opacity duration-500 group-hover/more:opacity-85"
                     style={{
-                      background: `radial-gradient(120% 90% at 50% 55%, ${accent}40 0%, transparent 70%)`,
+                      background: `radial-gradient(120% 90% at 50% 55%, ${accent}45 0%, transparent 70%)`,
                     }}
                   />
                 )}
+                <span
+                  aria-hidden
+                  className="absolute inset-0 opacity-15 transition-opacity duration-500 group-hover/more:opacity-30"
+                  style={{
+                    backgroundImage: PLAN_GRID,
+                    backgroundSize: PLAN_GRID_STEP,
+                    maskImage: PLAN_GRID_MASK,
+                    WebkitMaskImage: PLAN_GRID_MASK,
+                  }}
+                />
 
-                <span className="relative flex flex-col items-center gap-4">
-                  {/* The photographs the band has no room for, drawn as the stack they are:
-                      three plates in the band's own hairline, fanning apart under the
-                      pointer. It is the one place on the page where the count has somewhere
-                      to go, and it should look like it. */}
-                  <span aria-hidden className="relative block h-10 w-14">
-                    <span className="absolute inset-0 -translate-x-2 -rotate-6 rounded-sm border border-white/25 transition-transform duration-500 ease-out group-hover/more:-translate-x-3.5 group-hover/more:-rotate-12" />
-                    <span className="absolute inset-0 translate-x-2 rotate-6 rounded-sm border border-white/25 transition-transform duration-500 ease-out group-hover/more:translate-x-3.5 group-hover/more:rotate-12" />
-                    <span
-                      className="absolute inset-0 rounded-sm border bg-white/12 transition-colors duration-500"
-                      style={{ borderColor: accent ?? "rgba(255,255,255,0.5)" }}
-                    />
-                  </span>
-                  <span className="text-note font-bold whitespace-nowrap text-white lg:text-title-sm">
-                    {moreLabels?.[images.length - index]}
-                  </span>
+                <span className="relative text-h1 leading-numeral font-extrabold tracking-numeral tabular-nums text-white lg:text-display-2xs">
+                  {moreLabels?.[total - index]}
                 </span>
-              </button>
+                <span
+                  aria-hidden
+                  className="relative h-px w-8 transition-[width] duration-500 ease-out group-hover/more:w-16"
+                  style={{ background: accent ?? "rgba(255,255,255,0.6)" }}
+                />
+                <MonoLabel className="relative text-mono-xs tracking-mono-lg text-white/75">
+                  {overflowLabel}
+                </MonoLabel>
+              </div>
             )}
           </div>
         );
