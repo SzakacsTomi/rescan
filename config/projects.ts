@@ -7,6 +7,9 @@ import {
 
 export type ProjectSector = "retail" | "logistics";
 
+/** Cloudinary keeps one sub-folder per client under here, named for the client. */
+const CASE_IMAGE_ROOT = "projects-hero";
+
 export type ProjectConfig = {
   id: string;
   gradient: string;
@@ -21,6 +24,21 @@ export type CaseStudyConfig = {
    *  pair, and the two stand-in accents have no equivalent among the theme tokens. */
   gradient: string;
   accent: string;
+  /** Cloudinary asset folder holding the client's photographs. The band composes a strip
+   *  from the first few and closes it with the count of what it has no room for, so the
+   *  client adds or removes a building by moving a file — the ICA folder holds one image
+   *  and fills the band with it, Carlqvist's holds fifteen and shows a grid of seven. */
+  imagesFolder: string;
+  /** How many properties the client's portfolio actually holds. The folder is a sample of
+   *  it, not an inventory, so the band's closing tile counts up to this rather than to the
+   *  number of photographs — Carlqvist's fifteen images stand for fifty-six buildings, and
+   *  a tile reading `+8` would understate the programme by a factor of six. Left unset for
+   *  a case that is one facility rather than a portfolio, where the tile never appears. */
+  propertyCount?: number;
+  /** How many `statN` pairs the case's copy defines. The client's write-ups do not all
+   *  quote the same number of figures, and padding a shorter one out would mean inventing
+   *  a measurement. */
+  statCount: number;
 };
 
 /** The stacked showcase the Projects design opens with, in the order it draws them —
@@ -31,15 +49,45 @@ export type CaseStudyConfig = {
  *  with the *position*, not the project, so the stack keeps the colour sequence the
  *  design drew. */
 export const caseStudies: CaseStudyConfig[] = [
-  { id: "case2", sector: "retail", gradient: DEEP_BLUE_GRADIENT, accent: "#89b4f5" },
-  { id: "case0", sector: "logistics", gradient: CHARCOAL_GRADIENT, accent: "#89b4f5" },
-  { id: "case3", sector: "retail", gradient: VIOLET_GRADIENT, accent: "#c9a8f5" },
-  { id: "case1", sector: "logistics", gradient: EVERGREEN_GRADIENT, accent: "#7fd6b5" },
+  {
+    id: "case1",
+    sector: "logistics",
+    gradient: EVERGREEN_GRADIENT,
+    accent: "#7fd6b5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/lidl`,
+    statCount: 3,
+  },
+  {
+    id: "case0",
+    sector: "logistics",
+    gradient: CHARCOAL_GRADIENT,
+    accent: "#89b4f5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/ica`,
+    statCount: 4,
+  },
+  {
+    id: "case2",
+    sector: "retail",
+    gradient: DEEP_BLUE_GRADIENT,
+    accent: "#89b4f5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/carlqvist`,
+    propertyCount: 56,
+    statCount: 3,
+  },
+  {
+    id: "case3",
+    sector: "retail",
+    gradient: VIOLET_GRADIENT,
+    accent: "#c9a8f5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/alhansa`,
+    propertyCount: 48,
+    statCount: 4,
+  },
 ];
 
 /**
  * The index of older references. They predate the repositioning and are unchanged; the
- * two written-up case studies live in `caseStudies` above, not here.
+ * written-up case studies live in `caseStudies` above, not here.
  */
 export const projects: ProjectConfig[] = [
   {

@@ -21,7 +21,14 @@ type ProjectsTemplateProps = {
   caseShowcase: {
     sectorLabels: Record<ProjectSector, string>;
     cases: Record<string, CaseShowcaseCaseCopy>;
-    ctaLabel: string;
+    caseImages: Record<string, string[]>;
+    morePropertyLabels: Record<number, string>;
+    morePropertyLabel: string;
+    caseStudyLabel: string;
+    sectionLabels: { challenge: string; change: string; outcome: string };
+    revealLabel: string;
+    hideLabel: string;
+    sectorLinkLabel: string;
   };
   whyItMatters: { eyebrow: string; headline: string; body: string };
   logoWall: { headline: string };
@@ -42,6 +49,8 @@ const SECTOR_HREF: Record<ProjectSector, string> = {
   retail: "/retail-property-portfolios",
   logistics: "/logistics-warehouses",
 };
+
+const CONTACT_HREF = "/contact";
 
 export const ProjectsTemplate = ({
   pageTitle,
@@ -68,7 +77,14 @@ export const ProjectsTemplate = ({
       <CaseShowcase
         sectorLabels={caseShowcase.sectorLabels}
         cases={caseShowcase.cases}
-        ctaLabel={caseShowcase.ctaLabel}
+        caseImages={caseShowcase.caseImages}
+        morePropertyLabels={caseShowcase.morePropertyLabels}
+        morePropertyLabel={caseShowcase.morePropertyLabel}
+        caseStudyLabel={caseShowcase.caseStudyLabel}
+        sectionLabels={caseShowcase.sectionLabels}
+        revealLabel={caseShowcase.revealLabel}
+        hideLabel={caseShowcase.hideLabel}
+        sectorLinkLabel={caseShowcase.sectorLinkLabel}
         sectorHref={SECTOR_HREF}
       />
 
@@ -101,7 +117,7 @@ export const ProjectsTemplate = ({
       <FinalCTA
         headline={finalCta.headline}
         cta={finalCta.cta}
-        ctaHref="/contact"
+        ctaHref={CONTACT_HREF}
         headlineClassName="leading-headline tracking-tight"
       />
     </>

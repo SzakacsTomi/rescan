@@ -16,6 +16,10 @@ export const pendingHint = (value: string) => value.match(TODO_PATTERN)?.[1]?.tr
 
 export const placeholdersVisible = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDERS === "true";
 
+/** The badge's default amber is mixed for white paper. Pass this wherever a marker lands on
+ *  one of the site's dark bands, so the same hint stays readable without a second palette. */
+export const PENDING_ON_DARK = "border-amber-500/80 bg-amber-500/12 text-amber-300";
+
 type PendingProps = {
   children: string;
   className?: string;

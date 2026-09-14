@@ -267,12 +267,11 @@ we and the client can see exactly what is missing and where.
   no longer gates the badge itself.
 - Real content passes through untouched, so `Pending` is safe to leave in place once
   the value arrives.
-- `placeholdersVisible` still exists as an export and is used to decide whether to hide an
-  *entire* section when its content is still pending, rather than show it half-empty — that's a
-  separate decision from the badge's own visibility and is unaffected by the above.
-  `ProjectsTemplate` is the reference: it gates both `CaseStudyFeature` blocks, whose copy is
-  entirely unfilled, and swaps the index cards that point at them from an in-page anchor to the
-  matching sector page so no cell is left linking to a section that did not render.
+- `placeholdersVisible` still exists as an export for the separate decision of hiding an
+  *entire* section whose content is still pending, rather than showing it half-empty. Nothing
+  currently uses it: the four case studies on `/projects` open on demand under their own band
+  (`CaseStudyPanel`), so a study whose copy has not arrived costs nobody a scroll and shows the
+  client exactly which paragraphs are still owed.
 
 **A marker must be the entire value.** `"We delivered [[TODO: n]] stores"` is not
 detected and would leak the brackets to production — split it into a sentence that is

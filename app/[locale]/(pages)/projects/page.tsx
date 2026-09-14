@@ -6,10 +6,30 @@ import type { CaseShowcaseCaseCopy } from '@/app/components/organisms/projects/C
 import type { ProjectDetailCopy } from '@/app/components/organisms/projects/ProjectDetail';
 import { ProjectsTemplate } from '@/app/components/templates/ProjectsTemplate';
 import { caseStudies, projects, type ProjectSector } from '@/config/projects';
+import { overflowCounts } from '@/app/components/atoms/ImageStrip';
+import { cloudinaryImageUrl, getCloudinaryFolderPublicIds } from '@/lib/cloudinary';
 import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
 const METRICS_ITEM_COUNT = 4;
-const CASE_STAT_COUNT = 3;
+
+/**
+ * How a case band's photographs are delivered. Both keep the quality high and leave the
+ * format alone: Next re-encodes every frame anyway, and stacking Cloudinary's lossy pass
+ * under that one is what makes a frame look washed.
+ *
+ * A folder of several images becomes a strip of frames, so the source only needs capping —
+ * 2000px, rather than letting the optimiser pull the 5000px originals a couple of these
+ * folders hold — and a light sharpen to recover what the downscale costs.
+ *
+ * A folder of one fills the band edge to edge, so the frame is asked for at band scale
+ * rather than capped: `c_scale` resizes in both directions, which matters because a source
+ * shorter than the band still has to cover it and Cloudinary resamples that scale-up far
+ * better than the browser stretching the file across 1920px. It cannot invent detail that
+ * was never there, though — a band whose single photograph looks soft needs a bigger
+ * original, not a different transformation.
+ */
+const STRIP_TRANSFORMATION = 'c_limit,w_2000,e_sharpen:40,q_90';
+const FULL_BAND_TRANSFORMATION = 'c_scale,w_2560,e_sharpen:40,q_90';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -18,22 +38,51 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ProjectsPage({ params }: PageProps) {
-  const { locale } = await params;
-  const t = await getTranslations('projectsPage');
+  const [{ locale }, t, caseFolders] = await Promise.all([
+    params,
+    getTranslations('projectsPage'),
+    Promise.all(caseStudies.map(({ imagesFolder }) => getCloudinaryFolderPublicIds(imagesFolder))),
+  ]);
   const projectCount = projects.length;
 
   const cases: Record<string, CaseShowcaseCaseCopy> = {};
-  for (const { id } of caseStudies) {
+  const caseImages: Record<string, string[]> = {};
+  // The band drops a different number of photographs at each breakpoint and the reader
+  // changes breakpoint without the server being asked again, so every figure the closing
+  // tile could print is resolved here rather than one of them.
+  const morePropertyLabels: Record<number, string> = {};
+  for (const [i, { id }] of caseStudies.entries()) {
+    const transformation =
+      caseFolders[i].length > 1 ? STRIP_TRANSFORMATION : FULL_BAND_TRANSFORMATION;
+    caseImages[id] = caseFolders[i].map((publicId) =>
+      cloudinaryImageUrl(publicId, transformation),
+    );
+    const portfolioSize = caseStudies[i].propertyCount ?? caseFolders[i].length;
+    for (const count of overflowCounts(caseFolders[i].length, portfolioSize)) {
+      morePropertyLabels[count] = t('caseShowcase.moreProperties', { count });
+    }
     cases[id] = {
       title: t(`caseShowcase.${id}.title`),
-      body: t(`caseShowcase.${id}.body`),
-      stats: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
-        t(`caseShowcase.${id}.stat${i}.value`),
-      ) as [string, string, string],
-      statLabels: Array.from({ length: CASE_STAT_COUNT }, (_, i) =>
-        t(`caseShowcase.${id}.stat${i}.label`),
-      ) as [string, string, string],
-      photoHint: t(`caseShowcase.${id}.photoHint`),
+      summary: t(`caseShowcase.${id}.summary`),
+      lead: t(`caseShowcase.${id}.study.lead`),
+      stats: Array.from({ length: caseStudies[i].statCount }, (_, j) => ({
+        value: t(`caseShowcase.${id}.stat${j}.value`),
+        label: t(`caseShowcase.${id}.stat${j}.label`),
+      })),
+      challenge: {
+        headline: t(`caseShowcase.${id}.study.challenge.headline`),
+        body: t(`caseShowcase.${id}.study.challenge.body`),
+      },
+      change: {
+        headline: t(`caseShowcase.${id}.study.change.headline`),
+        body: t(`caseShowcase.${id}.study.change.body`),
+      },
+      outcome: { body: t(`caseShowcase.${id}.study.outcome.body`) },
+      closing: {
+        headline: t(`caseShowcase.${id}.study.closing.headline`),
+        body: t(`caseShowcase.${id}.study.closing.body`),
+        cta: t(`caseShowcase.${id}.study.closing.cta`),
+      },
     };
   }
 
@@ -65,8 +114,8 @@ export default async function ProjectsPage({ params }: PageProps) {
     logistics: t('sectorLabels.logistics'),
   };
 
-  // The index is the only part of this page that is always rendered — the two case-study
-  // blocks are gated on their copy arriving — so it is what the CollectionPage lists.
+  // The four case studies are the stack's own headings and open on demand; the index is the
+  // page's flat, always-visible list of work, so it is what the CollectionPage enumerates.
   const jsonLd = await resolvePageJsonLd(locale, 'projects', {
     listItems: projects.map(({ id }) => cards[id].title),
   });
@@ -79,7 +128,18 @@ export default async function ProjectsPage({ params }: PageProps) {
         caseShowcase={{
           sectorLabels,
           cases,
-          ctaLabel: t('caseShowcase.cta'),
+          caseImages,
+          morePropertyLabels,
+          morePropertyLabel: t('caseShowcase.morePropertiesLabel'),
+          caseStudyLabel: t('caseShowcase.caseStudyLabel'),
+          sectionLabels: {
+            challenge: t('caseShowcase.labels.challenge'),
+            change: t('caseShowcase.labels.change'),
+            outcome: t('caseShowcase.labels.outcome'),
+          },
+          revealLabel: t('caseShowcase.reveal'),
+          hideLabel: t('caseShowcase.hide'),
+          sectorLinkLabel: t('caseShowcase.sectorLink'),
         }}
         whyItMatters={{
           eyebrow: t('whyItMatters.eyebrow'),

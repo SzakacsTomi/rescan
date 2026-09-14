@@ -3,6 +3,7 @@
 import { animate, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Pending, isPending } from "@/app/components/atoms/Pending";
+import { FIGURE_NUMBER_PATTERN } from "@/lib/figures";
 
 type CountUpProps = {
   value: string;
@@ -11,10 +12,7 @@ type CountUpProps = {
   pendingClassName?: string;
 };
 
-// English figures group with a comma ("38,000 m²"), Swedish ones with a space
-// ("96 000 m²"), so both have to survive the round trip through Number().
 const GROUP_SEPARATOR = /[,\u00a0\u202f ]/;
-const NUMBER_PATTERN = /\d{1,3}(?:[,\u00a0\u202f ]\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?/;
 const COUNT_DURATION_S = 1.4;
 
 /**
@@ -29,7 +27,7 @@ export const CountUp = ({ value, className, pendingClassName }: CountUpProps) =>
   // A regex match produces a new array on every call; without memoizing, the
   // animation's own setDisplay re-renders would re-trigger this effect each frame
   // and restart the count from zero forever.
-  const match = useMemo(() => value.match(NUMBER_PATTERN), [value]);
+  const match = useMemo(() => value.match(FIGURE_NUMBER_PATTERN), [value]);
   const [display, setDisplay] = useState(match ? "0" : value);
 
   useEffect(() => {

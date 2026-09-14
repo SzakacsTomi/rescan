@@ -8,6 +8,7 @@ import { CheckCircle, ChevronDown } from "lucide-react";
 
 import { submitContact, type ContactFormState } from "@/app/actions/contact";
 import { Reveal } from "@/app/components/atoms/Reveal";
+import type { SectorOption } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 import type { ContactGroup } from "./contactGroups";
@@ -33,15 +34,17 @@ type ContactFormProps = {
   groups: ContactGroup[];
   /** The sticky index + best-fit column. Owned by the form so it disappears on success. */
   rail?: ReactNode;
+  /** Set when the reader arrived from a sector page or a case study, so the field opens on
+   *  that answer instead of on the placeholder. */
+  defaultSector?: SectorOption;
 };
 
-export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
+export const ContactForm = ({ t, groups, rail, defaultSector }: ContactFormProps) => {
   const [state, formAction] = useActionState(submitContact, INITIAL_STATE);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [focusedSelect, setFocusedSelect] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance>(null);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-
   const [identity, property, decision, risk, timing] = groups;
 
   const ids = {
@@ -105,12 +108,13 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
     placeholder: string,
     options: readonly string[],
     labels: Record<string, string>,
+    defaultValue = "",
   ) => (
     <div className="relative">
       <select
         id={ids[field]}
         name={field}
-        defaultValue=""
+        defaultValue={defaultValue}
         className={cn(selectClass, fieldErrors[field] && "border-destructive")}
         onFocus={() => setFocusedSelect(field)}
         onBlur={() => setFocusedSelect(null)}
@@ -212,7 +216,13 @@ export const ContactForm = ({ t, groups, rail }: ContactFormProps) => {
 
         <FieldGroup {...property}>
           <FormField id={ids.sector} label={t.sector} required error={errorFor("sector")}>
-            {renderSelect("sector", t.sectorPlaceholder, SECTOR_OPTIONS, t.sectorOptions)}
+            {renderSelect(
+              "sector",
+              t.sectorPlaceholder,
+              SECTOR_OPTIONS,
+              t.sectorOptions,
+              defaultSector ?? "",
+            )}
           </FormField>
 
           <FormField

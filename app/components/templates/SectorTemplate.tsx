@@ -5,6 +5,7 @@ import { Differentiator } from "@/app/components/organisms/sector/Differentiator
 import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
 import { FitNotFit } from "@/app/components/organisms/sector/FitNotFit";
 import { ProofBar } from "@/app/components/organisms/ProofBar";
+import { ScaleProof } from "@/app/components/organisms/sector/ScaleProof";
 import { NamedCase } from "@/app/components/organisms/sector/NamedCase";
 import { StrategicValue } from "@/app/components/organisms/sector/StrategicValue";
 import type { SectorPageConfig, SectorPageTranslations } from "@/app/types/sectorPage";
@@ -16,9 +17,6 @@ type SectorTemplateProps = {
    *  dark facts split for Logistics — so the page composes it and hands it in. */
   hero: React.ReactNode;
   afterHero?: React.ReactNode;
-  /** Supporting visual for `CoreRisk`, e.g. a `ProofGrid` — page-specific, so it is
-   *  passed in rather than added to `SectorPageTranslations`. */
-  coreRiskAside?: React.ReactNode;
 };
 
 export const SectorTemplate = ({
@@ -26,7 +24,6 @@ export const SectorTemplate = ({
   translations: tr,
   hero,
   afterHero,
-  coreRiskAside,
 }: SectorTemplateProps) => {
   return (
     <>
@@ -38,7 +35,8 @@ export const SectorTemplate = ({
           eyebrow={tr.coreRisk.eyebrow}
           headline={tr.coreRisk.headline}
           body={tr.coreRisk.body}
-          aside={coreRiskAside}
+          planDrift={tr.coreRisk.planDrift}
+          tone={config.coreRisk?.tone}
         />
       )}
 
@@ -84,9 +82,18 @@ export const SectorTemplate = ({
         />
       )}
 
-      {tr.proof && (
-        <ProofBar headline={tr.proof.headline} items={tr.proof.items} cta={tr.proof.cta} />
-      )}
+      {tr.proof &&
+        (config.proof ? (
+          <ScaleProof
+            headline={tr.proof.headline}
+            items={tr.proof.items.map((item, i) => ({
+              ...item,
+              sites: config.proof?.sites[i] ?? 1,
+            }))}
+          />
+        ) : (
+          <ProofBar headline={tr.proof.headline} items={tr.proof.items} cta={tr.proof.cta} />
+        ))}
 
       {tr.fitNotFit && (
         <FitNotFit

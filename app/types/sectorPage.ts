@@ -9,10 +9,29 @@ export type SectorHeroConfig = {
 export type SectorPageConfig = {
   id: string;
   hero: SectorHeroConfig;
+  /** Presentational only. `'inverted'` sits the section on the deep-blue band, which is
+   *  what the plan-drift drawing is coloured for (Retail); `'plain'` keeps it on white
+   *  (Logistics, whose Core Risk is prose). */
+  coreRisk?: {
+    tone?: 'plain' | 'inverted';
+  };
   /** Presentational only. `'tinted'` sits the value grid on the light blue-grey band
    *  (Retail); `'plain'` sits it on white and inverts the card hover (Logistics). */
   strategicValue?: {
     tone?: 'tinted' | 'plain';
+  };
+  /** Cloudinary public id of the client photograph beside the named case — the id
+   *  alone, with no folder segment; see `cloudinaryImageUrl`. Absent on a sector whose
+   *  photograph the client has not sent, in which case the frame renders the pending
+   *  marker instead. */
+  namedCase?: {
+    imageId: string;
+  };
+  /** Set only where the evidence band is drawn to scale (Logistics, whose two proofs are
+   *  both areas): how many separate buildings each figure covers, in item order. The areas
+   *  themselves are read from the figures, so the drawing cannot drift from the copy. */
+  proof?: {
+    sites: number[];
   };
   finalCta: {
     ctaHref: string;
@@ -27,7 +46,9 @@ export type NamedCaseTranslations = {
   bulletPoints?: string[];
   metric: string;
   metricLabel: string;
-  image: string;
+  /** `src` is absent until the client sends the photograph; `alt` then carries the
+   *  `[[TODO: …]]` marker the frame renders in its place. */
+  image: { src?: string; alt: string };
   quote?: string;
   quoteAuthor?: string;
 };
@@ -51,7 +72,13 @@ export type SectorPageTranslations = {
   coreRisk?: {
     eyebrow: string;
     headline: string;
-    body: string;
+    body?: string;
+    /** Retail only — the legend of the drawing that carries the section, naming the two
+     *  outlines it sets against each other. */
+    planDrift?: {
+      archiveLabel: string;
+      actualLabel: string;
+    };
   };
   /** Logistics section 3 — the information-gap-to-cost sequence. */
   consequenceChain?: {
@@ -72,10 +99,12 @@ export type SectorPageTranslations = {
   };
   /** A named portfolio or programme case rendered by `organisms/sector/NamedCase`. */
   namedCase?: NamedCaseTranslations;
-  /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`. */
+  /** Large-figure evidence. Shared with Home and Why RESCAN via `organisms/ProofBar`;
+   *  a sector whose config carries `proof.sites` draws it as `organisms/sector/ScaleProof`
+   *  instead, which needs `context` to hold the words that trail the number. */
   proof?: {
     headline: string;
-    items: Array<{ slot: string; figure: string; statement?: string }>;
+    items: Array<{ slot: string; figure: string; context?: string; statement?: string }>;
     cta?: { label: string; href: string };
   };
   fitNotFit?: {

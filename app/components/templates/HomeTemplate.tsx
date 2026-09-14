@@ -7,11 +7,19 @@ import { ProofBar } from "@/app/components/organisms/ProofBar";
 import { SectionsGrid } from "@/app/components/organisms/SectionsGrid";
 import { FinalCTA } from "@/app/components/organisms/sector/FinalCTA";
 import { FitNotFit } from "@/app/components/organisms/sector/FitNotFit";
+import { SECTION_IMAGE_TRANSFORMATION, sectionsConfig } from "@/config/sections";
+import { cloudinaryImageUrl } from "@/lib/cloudinary";
 
 const PROOF_ITEM_COUNT = 4;
 
 export const HomeTemplate = async () => {
   const t = await getTranslations("homePage");
+  const sectionImages = Object.fromEntries(
+    sectionsConfig.map((section) => [
+      section.id,
+      cloudinaryImageUrl(section.image.id, SECTION_IMAGE_TRANSFORMATION),
+    ]),
+  );
 
   return (
     <main className="flex flex-col min-h-screen w-full">
@@ -19,7 +27,7 @@ export const HomeTemplate = async () => {
       <HeroSection />
 
       <div className="max-w-shell mx-auto w-full flex flex-col flex-1">
-        <SectionsGrid />
+        <SectionsGrid imageSources={sectionImages} />
 
         <ProofBar
           headline={t("proof.headline")}

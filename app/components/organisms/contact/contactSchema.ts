@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { SECTOR_OPTIONS, type SectorOption } from '@/lib/contact';
+
 /**
  * Fields come from the Contact brief, with two deliberate deviations:
  * the brief's list has no Name and no Email (an enquiry with no reply address cannot be
@@ -10,12 +12,12 @@ import { z } from 'zod';
  * they are collected separately in the action instead of being validated here.
  */
 
-// A third option despite the repositioning naming exactly two segments: an enquiry that does
-// not self-classify is still worth reading, and a select with no way out gets a wrong answer.
-export const SECTOR_OPTIONS = ['retail', 'logistics', 'other'] as const;
+// Re-exported, not redefined: `config/` links into this form and cannot import from `app/`,
+// so the sector list is owned by `lib/contact.ts`.
+export { SECTOR_OPTIONS, type SectorOption } from '@/lib/contact';
+
 export const TIMING_OPTIONS = ['within1Month', 'oneToThree', 'threeToSix', 'later'] as const;
 
-export type SectorOption = (typeof SECTOR_OPTIONS)[number];
 export type TimingOption = (typeof TIMING_OPTIONS)[number];
 
 export type FormTranslations = {
@@ -62,13 +64,16 @@ export type FormTranslations = {
 const requiredText = z.string().min(1, 'required');
 
 export const contactSchema = z.object({
-  sector: requiredText,
+  // The two selects are parsed as their option lists, not as free text: the notification
+  // resolves each choice to its label, and a value outside the list has no label. An empty
+  // select is not a member either, so an untouched field still reports `required`.
+  sector: z.enum(SECTOR_OPTIONS, { error: 'required' }),
   name: requiredText,
   // `min(1)` first, so a blank field reports `required` rather than `invalidEmail`.
   email: requiredText.pipe(z.email('invalidEmail')),
   company: requiredText,
   decision: requiredText,
-  timing: requiredText,
+  timing: z.enum(TIMING_OPTIONS, { error: 'required' }),
 });
 
 /** Field order matters: it decides which error the user is scrolled to first. */
