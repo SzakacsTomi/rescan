@@ -16,8 +16,8 @@ const META_ITEMS = [
 export type DetailMetaKey = (typeof META_ITEMS)[number]["key"];
 
 /**
- * The fifteen references that predate the case-study format. The two written-up case studies
- * are laid out on the page itself by `CaseStudyFeature` and never open this overlay.
+ * The fifteen references that predate the case-study format. The written-up case studies open
+ * in place under their own band via `CaseStudyPanel` and never reach this overlay.
  */
 export type ProjectDetailCopy = {
   title: string;

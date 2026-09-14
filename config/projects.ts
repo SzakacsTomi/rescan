@@ -24,11 +24,15 @@ export type CaseStudyConfig = {
    *  pair, and the two stand-in accents have no equivalent among the theme tokens. */
   gradient: string;
   accent: string;
-  /** Cloudinary asset folder holding the client's photographs. The band tiles whatever
-   *  is in it, so the client adds or removes a building by moving a file — the ICA
-   *  folder holds one image and fills the band with it, Carlqvist's holds fifteen and
-   *  becomes a lattice of them. */
+  /** Cloudinary asset folder holding the client's photographs. The band composes a strip
+   *  from the first few and counts the rest onto its closing frame, so the client adds or
+   *  removes a building by moving a file — the ICA folder holds one image and fills the
+   *  band with it, Carlqvist's holds fifteen and shows five with a `+10 more`. */
   imagesFolder: string;
+  /** How many `statN` pairs the case's copy defines. The client's write-ups do not all
+   *  quote the same number of figures, and padding a shorter one out would mean inventing
+   *  a measurement. */
+  statCount: number;
 };
 
 /** The stacked showcase the Projects design opens with, in the order it draws them —
@@ -45,6 +49,7 @@ export const caseStudies: CaseStudyConfig[] = [
     gradient: DEEP_BLUE_GRADIENT,
     accent: "#89b4f5",
     imagesFolder: `${CASE_IMAGE_ROOT}/carlqvist`,
+    statCount: 3,
   },
   {
     id: "case0",
@@ -52,6 +57,7 @@ export const caseStudies: CaseStudyConfig[] = [
     gradient: CHARCOAL_GRADIENT,
     accent: "#89b4f5",
     imagesFolder: `${CASE_IMAGE_ROOT}/ica`,
+    statCount: 4,
   },
   {
     id: "case3",
@@ -59,6 +65,7 @@ export const caseStudies: CaseStudyConfig[] = [
     gradient: VIOLET_GRADIENT,
     accent: "#c9a8f5",
     imagesFolder: `${CASE_IMAGE_ROOT}/alhansa`,
+    statCount: 4,
   },
   {
     id: "case1",
@@ -66,12 +73,13 @@ export const caseStudies: CaseStudyConfig[] = [
     gradient: EVERGREEN_GRADIENT,
     accent: "#7fd6b5",
     imagesFolder: `${CASE_IMAGE_ROOT}/lidl`,
+    statCount: 3,
   },
 ];
 
 /**
  * The index of older references. They predate the repositioning and are unchanged; the
- * two written-up case studies live in `caseStudies` above, not here.
+ * written-up case studies live in `caseStudies` above, not here.
  */
 export const projects: ProjectConfig[] = [
   {

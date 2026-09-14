@@ -1,9 +1,10 @@
 import type { SectorPageConfig } from '@/app/types/sectorPage';
+import { contactHrefForSector } from '@/lib/contact';
 
 export const logisticsSectorConfig: SectorPageConfig = {
   id: 'logistics',
   hero: {
-    primaryCtaHref: '/contact',
+    primaryCtaHref: contactHrefForSector('logistics'),
     secondaryCtaHref: '/projects',
   },
   strategicValue: {
@@ -15,6 +16,6 @@ export const logisticsSectorConfig: SectorPageConfig = {
     sites: [1, 3],
   },
   finalCta: {
-    ctaHref: '/contact',
+    ctaHref: contactHrefForSector('logistics'),
   },
 };

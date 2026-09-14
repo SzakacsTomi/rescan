@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import type { SectorOption } from '@/lib/contact';
+
 /**
  * Fields come from the Contact brief, with two deliberate deviations:
  * the brief's list has no Name and no Email (an enquiry with no reply address cannot be
@@ -10,12 +12,12 @@ import { z } from 'zod';
  * they are collected separately in the action instead of being validated here.
  */
 
-// A third option despite the repositioning naming exactly two segments: an enquiry that does
-// not self-classify is still worth reading, and a select with no way out gets a wrong answer.
-export const SECTOR_OPTIONS = ['retail', 'logistics', 'other'] as const;
+// Re-exported, not redefined: `config/` links into this form and cannot import from `app/`,
+// so the sector list is owned by `lib/contact.ts`.
+export { SECTOR_OPTIONS, type SectorOption } from '@/lib/contact';
+
 export const TIMING_OPTIONS = ['within1Month', 'oneToThree', 'threeToSix', 'later'] as const;
 
-export type SectorOption = (typeof SECTOR_OPTIONS)[number];
 export type TimingOption = (typeof TIMING_OPTIONS)[number];
 
 export type FormTranslations = {

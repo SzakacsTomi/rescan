@@ -289,75 +289,168 @@
   "projectsPage": {
     "pageTitle": "Buildings, one way of documenting them.",
     "caseShowcase": {
-      "reveal": "Reveal details",
-      "hide": "Hide details",
+      "reveal": "View case study",
+      "hide": "Close case study",
       "sectorLink": "More on this sector",
+      "moreImages": "+{count} more",
+      "caseStudyLabel": "Case study",
+      "gallery": {
+        "label": "Photographs",
+        "show": "{count, plural, one {View the photograph} other {View all # photographs}}",
+        "hide": "Hide photographs",
+        "open": "View the client's photographs"
+      },
+      "labels": {
+        "challenge": "The Challenge",
+        "change": "What Changed",
+        "outcome": "Why It Mattered"
+      },
       "case0": {
         "title": "Major Swedish Grocery Retailer",
         "summary": "96,000 m² captured in 8 days",
-        "body": "Reliable existing conditions for a major logistics modernisation — seven discipline models from one capture.",
         "stat0": {
           "value": "96,000 m²",
-          "label": "Captured"
+          "label": "Facility captured"
         },
         "stat1": {
-          "value": "8 days",
-          "label": "On site"
+          "value": "8",
+          "label": "Days of on-site scanning"
         },
         "stat2": {
-          "value": "7 disciplines",
-          "label": "Modelled"
+          "value": "10",
+          "label": "Working days to point cloud"
+        },
+        "stat3": {
+          "value": "60",
+          "label": "Working days to discipline models"
+        },
+        "study": {
+          "lead": "Giving the project teams reliable existing conditions for a major logistics modernisation.",
+          "challenge": {
+            "headline": "",
+            "body": "A major modernisation was being planned for an existing, operational logistics facility. Existing drawings could not provide the level of certainty required for detailed design. The teams needed verified information about what was actually on site."
+          },
+          "change": {
+            "headline": "One capture. Seven discipline models.",
+            "body": "RESCAN captured the facility using high-density 3D laser scanning and delivered the registered point cloud within 10 working days. We then produced existing-condition models for Architecture, Structure, Ventilation, Electrical, Sprinkler, Plumbing and Refrigeration. Within 60 working days, the completed models were delivered to the respective project teams for continued design."
+          },
+          "outcome": {
+            "body": "The value was not the scan. It was turning verified site conditions into information the project teams could design from. Teams could inspect, measure and verify conditions remotely, reducing reliance on existing drawings and repeated site checks. Fewer assumptions. Better coordination. Better information before decisions become expensive to change."
+          },
+          "closing": {
+            "headline": "Planning a logistics modernisation?",
+            "body": "Start with verified existing conditions.",
+            "cta": "Talk to us about your facility"
+          }
         }
       },
       "case1": {
         "title": "Major International Grocery Retailer",
         "summary": "~300,000 m² across three logistics centres",
-        "body": "One reliable information base for planning electric-truck charging infrastructure across a nationwide network.",
         "stat0": {
           "value": "~300,000 m²",
-          "label": "Scanned"
+          "label": "Scanned and modelled"
         },
         "stat1": {
-          "value": "3 centres",
-          "label": "Sweden"
+          "value": "3",
+          "label": "Logistics centres across Sweden"
         },
         "stat2": {
-          "value": "45 days",
-          "label": "Delivered"
+          "value": "45",
+          "label": "Working days to delivery"
+        },
+        "study": {
+          "lead": "Supporting the planning of future electric-truck charging infrastructure across a nationwide logistics network.",
+          "challenge": {
+            "headline": "",
+            "body": "Future charging infrastructure had to be planned around three operational logistics facilities. The project teams needed accurate existing-condition information before engineering could move forward."
+          },
+          "change": {
+            "headline": "~300,000 m² delivered in 45 working days.",
+            "body": "RESCAN captured all three facilities using high-density 3D laser scanning and produced existing-condition models for continued planning and design. The completed models were delivered within 45 working days."
+          },
+          "outcome": {
+            "body": "One reliable information base across the logistics network. Project teams could inspect, measure and evaluate the existing facilities remotely — reducing the need to repeatedly establish site conditions as the infrastructure programme progressed. Less site verification. Faster access to existing conditions. A stronger basis for planning across multiple facilities."
+          },
+          "closing": {
+            "headline": "Planning infrastructure across multiple logistics sites?",
+            "body": "Start with accurate existing conditions.",
+            "cta": "Talk to us about your facilities"
+          }
         }
       },
       "case2": {
-        "title": "Carlqvist Property",
-        "summary": "56 properties documented across southern Sweden",
-        "body": "Accurate building information for a portfolio spread across southern Sweden — many questions now resolved without travelling to site.",
+        "title": "Carlqvist Fastigheter",
+        "summary": "56 commercial properties digitised across southern Sweden",
         "stat0": {
           "value": "56",
-          "label": "Documented"
+          "label": "Commercial properties digitised"
         },
         "stat1": {
-          "value": "[[TODO: total floor area across the portfolio]]",
-          "label": "Floor area"
+          "value": "Southern Sweden",
+          "label": "Portfolio location"
         },
         "stat2": {
-          "value": "[[TODO: programme duration]]",
-          "label": "Programme"
+          "value": "[[TODO: total floor area across the portfolio — e.g. 180,000 m²]]",
+          "label": "Total floor area"
+        },
+        "study": {
+          "lead": "Giving project teams access to accurate building information without unnecessary site visits.",
+          "challenge": {
+            "headline": "A portfolio spread across southern Sweden.",
+            "body": "With properties located across a wide geographical area, even simple verification work could require significant travel. Outdated or incomplete drawings also created uncertainty when planning maintenance and renovations."
+          },
+          "change": {
+            "headline": "Consistent digital documentation across the portfolio.",
+            "body": "RESCAN systematically captured the properties and created accurate, consistent digital building documentation. This gives Carlqvist Fastigheter, consultants and contractors access to verified building information for planning, measurements and project preparation."
+          },
+          "outcome": {
+            "body": "Less travel. Faster project preparation. With accurate building information available remotely, many questions can now be resolved without first travelling to site. For a geographically dispersed portfolio, this means less unnecessary travel, faster project preparation and better access to reliable property information."
+          },
+          "closing": {
+            "headline": "Managing a property portfolio across several locations?",
+            "body": "Start with verified building information.",
+            "cta": "Talk to us about your portfolio"
+          }
         }
       },
       "case3": {
-        "title": "Alhansa Property",
-        "summary": "112,000 m² digitised, in partnership since 2018",
-        "body": "One consistent standard across the portfolio — leasing and renovation projects starting from verified conditions, not legacy drawings.",
+        "title": "Alhansa Fastigheter",
+        "summary": "112,000 m² digitised across a property portfolio",
         "stat0": {
           "value": "112,000 m²",
-          "label": "Digitised"
+          "label": "Scanned and modelled"
         },
         "stat1": {
           "value": "72,000 m²",
-          "label": "Initial portfolio"
+          "label": "Initial commercial portfolio"
         },
         "stat2": {
+          "value": "40,000 m²",
+          "label": "Additional properties"
+        },
+        "stat3": {
           "value": "Since 2018",
           "label": "Ongoing collaboration"
+        },
+        "study": {
+          "lead": "Giving the property owner reliable building data for leasing, renovation and continued development.",
+          "challenge": {
+            "headline": "",
+            "body": "Across a large property portfolio, outdated or inconsistent drawings create the same problem repeatedly: every lease, renovation or redevelopment can begin with uncertainty about the existing building. Reliable existing-condition data was needed across properties with different ages, uses and conditions."
+          },
+          "change": {
+            "headline": "One standard across the portfolio.",
+            "body": "RESCAN initially captured and modelled approximately 72,000 m² of commercial properties across southern Sweden. The collaboration continued with a further 40,000 m² across the portfolio, including commercial properties, development projects, tenant-adapted premises and selected residential assets. RESCAN delivered verified point clouds, accurate as-built documentation and Revit models, giving project teams a consistent starting point across the portfolio."
+          },
+          "outcome": {
+            "body": "The value was not documenting individual buildings. It was creating reliable and consistent building information across the portfolio. Each new leasing, renovation or development project could start from verified existing conditions instead of uncertain legacy drawings. Consistent documentation. Fewer assumptions. Better decisions across the portfolio."
+          },
+          "closing": {
+            "headline": "Managing a property portfolio?",
+            "body": "Start with reliable information about what you own.",
+            "cta": "Talk to us about your portfolio"
+          }
         }
       }
     },

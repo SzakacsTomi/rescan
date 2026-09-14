@@ -22,6 +22,10 @@ type ProjectsTemplateProps = {
     sectorLabels: Record<ProjectSector, string>;
     cases: Record<string, CaseShowcaseCaseCopy>;
     caseImages: Record<string, string[]>;
+    moreImageLabels: Record<number, string>;
+    openGalleryLabel: string;
+    caseStudyLabel: string;
+    sectionLabels: { challenge: string; change: string; outcome: string };
     revealLabel: string;
     hideLabel: string;
     sectorLinkLabel: string;
@@ -45,6 +49,8 @@ const SECTOR_HREF: Record<ProjectSector, string> = {
   retail: "/retail-property-portfolios",
   logistics: "/logistics-warehouses",
 };
+
+const CONTACT_HREF = "/contact";
 
 export const ProjectsTemplate = ({
   pageTitle,
@@ -72,6 +78,10 @@ export const ProjectsTemplate = ({
         sectorLabels={caseShowcase.sectorLabels}
         cases={caseShowcase.cases}
         caseImages={caseShowcase.caseImages}
+        moreImageLabels={caseShowcase.moreImageLabels}
+        openGalleryLabel={caseShowcase.openGalleryLabel}
+        caseStudyLabel={caseShowcase.caseStudyLabel}
+        sectionLabels={caseShowcase.sectionLabels}
         revealLabel={caseShowcase.revealLabel}
         hideLabel={caseShowcase.hideLabel}
         sectorLinkLabel={caseShowcase.sectorLinkLabel}
@@ -107,7 +117,7 @@ export const ProjectsTemplate = ({
       <FinalCTA
         headline={finalCta.headline}
         cta={finalCta.cta}
-        ctaHref="/contact"
+        ctaHref={CONTACT_HREF}
         headlineClassName="leading-headline tracking-tight"
       />
     </>

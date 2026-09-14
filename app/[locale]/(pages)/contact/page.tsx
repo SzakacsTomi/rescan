@@ -14,17 +14,26 @@ import {
   type TimingOption,
 } from '@/app/components/organisms/contact/contactSchema';
 import { ContactTemplate } from '@/app/components/templates/ContactTemplate';
+import { CONTACT_SECTOR_PARAM, resolveSectorParam } from '@/lib/contact';
 import { resolvePageJsonLd, resolvePageMetadata } from '@/i18n/metadata';
 
-type PageProps = { params: Promise<{ locale: string }> };
+type PageProps = {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   return resolvePageMetadata((await params).locale, 'contact');
 }
 
-export default async function ContactPage({ params }: PageProps) {
-  const { locale } = await params;
+export default async function ContactPage({ params, searchParams }: PageProps) {
+  const [{ locale }, query] = await Promise.all([params, searchParams]);
   const t = await getTranslations('contactPage');
+  const defaultSector = resolveSectorParam(query[CONTACT_SECTOR_PARAM]);
 
   const form: FormTranslations = {
     headline: t('form.headline'),
@@ -114,6 +123,7 @@ export default async function ContactPage({ params }: PageProps) {
           form,
           groups,
         }}
+        defaultSector={defaultSector}
       />
     </>
   );

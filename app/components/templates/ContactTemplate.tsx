@@ -8,6 +8,7 @@ import { ContactRail } from '@/app/components/organisms/contact/ContactRail';
 import { MAPS_LINK_URL, OfficeMap } from '@/app/components/organisms/contact/OfficeMap';
 import type { ContactGroup } from '@/app/components/organisms/contact/contactGroups';
 import type { FormTranslations } from '@/app/components/organisms/contact/contactSchema';
+import { CONTACT_FORM_ANCHOR, type SectorOption } from '@/lib/contact';
 
 type ContactTemplateProps = {
   translations: {
@@ -33,9 +34,14 @@ type ContactTemplateProps = {
     form: FormTranslations;
     groups: ContactGroup[];
   };
+  /** Carried in from `?sector=` when the reader followed a sector page or a case study here. */
+  defaultSector?: SectorOption;
 };
 
-export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
+export const ContactTemplate = ({
+  translations: tr,
+  defaultSector,
+}: ContactTemplateProps) => {
   return (
     <>
       <SplitMediaHero
@@ -65,11 +71,15 @@ export const ContactTemplate = ({ translations: tr }: ContactTemplateProps) => {
         }
       />
 
-      <section className="bg-background px-6 py-20 sm:py-24">
+      <section
+        id={CONTACT_FORM_ANCHOR}
+        className="scroll-mt-16 bg-background px-6 py-20 sm:py-24"
+      >
         <div className="mx-auto max-w-5xl">
           <ContactForm
             t={tr.form}
             groups={tr.groups}
+            defaultSector={defaultSector}
             rail={
               // No `max-h` and no inner `overflow-y-auto`: capping the rail put a scrollbar
               // down the middle of the page whenever the viewport was a little short. The rail

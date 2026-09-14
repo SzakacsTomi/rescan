@@ -289,75 +289,168 @@
   "projectsPage": {
     "pageTitle": "{count} byggnader, ett sätt att dokumentera dem.",
     "caseShowcase": {
-      "reveal": "Visa detaljer",
-      "hide": "Dölj detaljer",
+      "reveal": "Se fallstudien",
+      "hide": "Stäng fallstudien",
       "sectorLink": "Mer om segmentet",
+      "moreImages": "+{count} till",
+      "caseStudyLabel": "Fallstudie",
+      "gallery": {
+        "label": "Fotografier",
+        "show": "{count, plural, one {Visa fotografiet} other {Visa alla # fotografier}}",
+        "hide": "Dölj fotografierna",
+        "open": "Visa kundens fotografier"
+      },
+      "labels": {
+        "challenge": "Utmaningen",
+        "change": "Det Som Förändrades",
+        "outcome": "Varför Det Spelade Roll"
+      },
       "case0": {
         "title": "Stor svensk livsmedelskedja",
         "summary": "96 000 m² inmätt på 8 dagar",
-        "body": "Pålitliga underlag om befintliga förhållanden inför en stor logistikmodernisering — sju disciplinmodeller från en och samma inmätning.",
         "stat0": {
           "value": "96 000 m²",
-          "label": "Inmätt"
+          "label": "Anläggning inmätt"
         },
         "stat1": {
-          "value": "8 dagar",
-          "label": "På plats"
+          "value": "8",
+          "label": "Dagar skanning på plats"
         },
         "stat2": {
-          "value": "7 discipliner",
-          "label": "Modellerat"
+          "value": "10",
+          "label": "Arbetsdagar till punktmoln"
+        },
+        "stat3": {
+          "value": "60",
+          "label": "Arbetsdagar till disciplinmodeller"
+        },
+        "study": {
+          "lead": "Pålitliga underlag om befintliga förhållanden till projektteamen inför en stor logistikmodernisering.",
+          "challenge": {
+            "headline": "",
+            "body": "En omfattande modernisering planerades i en befintlig logistikanläggning i drift. Befintliga ritningar kunde inte ge den säkerhet som detaljprojekteringen krävde. Teamen behövde verifierad information om vad som faktiskt fanns på plats."
+          },
+          "change": {
+            "headline": "En inmätning. Sju disciplinmodeller.",
+            "body": "RESCAN mätte in anläggningen med högupplöst 3D-laserskanning och levererade det registrerade punktmolnet inom 10 arbetsdagar. Därefter tog vi fram modeller över befintliga förhållanden för arkitektur, konstruktion, ventilation, el, sprinkler, VS och kyla. Inom 60 arbetsdagar levererades de färdiga modellerna till respektive projektteam för fortsatt projektering."
+          },
+          "outcome": {
+            "body": "Värdet låg inte i skanningen. Det låg i att omvandla verifierade platsförhållanden till information som projektteamen kunde projektera utifrån. Teamen kunde inspektera, mäta och verifiera förhållanden på distans, vilket minskade beroendet av befintliga ritningar och upprepade platsbesök. Färre antaganden. Bättre samordning. Bättre information innan beslut blir dyra att ändra."
+          },
+          "closing": {
+            "headline": "Planerar du en logistikmodernisering?",
+            "body": "Börja med verifierade befintliga förhållanden.",
+            "cta": "Berätta om din anläggning"
+          }
         }
       },
       "case1": {
         "title": "Stor internationell livsmedelskedja",
         "summary": "~300 000 m² över tre logistikcentraler",
-        "body": "Ett pålitligt informationsunderlag för att planera laddinfrastruktur för eldrivna lastbilar över ett rikstäckande nätverk.",
         "stat0": {
           "value": "~300 000 m²",
-          "label": "Skannat"
+          "label": "Skannat och modellerat"
         },
         "stat1": {
-          "value": "3 anläggningar",
-          "label": "Sverige"
+          "value": "3",
+          "label": "Logistikcentraler i Sverige"
         },
         "stat2": {
-          "value": "45 dagar",
-          "label": "Levererat"
+          "value": "45",
+          "label": "Arbetsdagar till leverans"
+        },
+        "study": {
+          "lead": "Stöd i planeringen av framtida laddinfrastruktur för eldrivna lastbilar i ett rikstäckande logistiknätverk.",
+          "challenge": {
+            "headline": "",
+            "body": "Framtida laddinfrastruktur skulle planeras kring tre logistikanläggningar i drift. Projektteamen behövde tillförlitlig information om befintliga förhållanden innan projekteringen kunde gå vidare."
+          },
+          "change": {
+            "headline": "~300 000 m² levererat på 45 arbetsdagar.",
+            "body": "RESCAN mätte in samtliga tre anläggningar med högupplöst 3D-laserskanning och tog fram modeller över befintliga förhållanden för fortsatt planering och projektering. De färdiga modellerna levererades inom 45 arbetsdagar."
+          },
+          "outcome": {
+            "body": "Ett tillförlitligt informationsunderlag för hela logistiknätverket. Projektteamen kunde inspektera, mäta och bedöma de befintliga anläggningarna på distans — vilket minskade behovet av att gång på gång fastställa platsförhållandena allteftersom infrastrukturprogrammet framskred. Mindre kontroll på plats. Snabbare tillgång till befintliga förhållanden. En stabilare grund för planering över flera anläggningar."
+          },
+          "closing": {
+            "headline": "Planerar du infrastruktur över flera logistikanläggningar?",
+            "body": "Börja med tillförlitliga befintliga förhållanden.",
+            "cta": "Berätta om dina anläggningar"
+          }
         }
       },
       "case2": {
         "title": "Carlqvist Fastigheter",
-        "summary": "56 fastigheter dokumenterade i södra Sverige",
-        "body": "Tillförlitlig byggnadsinformation för en fastighetsportfölj spridd över södra Sverige — många frågor löses nu utan att resa till platsen.",
+        "summary": "56 kommersiella fastigheter digitaliserade i södra Sverige",
         "stat0": {
           "value": "56",
-          "label": "Dokumenterat"
+          "label": "Kommersiella fastigheter"
         },
         "stat1": {
-          "value": "[[TODO: total floor area across the portfolio]]",
-          "label": "Golvyta"
+          "value": "Södra Sverige",
+          "label": "Portföljens läge"
         },
         "stat2": {
-          "value": "[[TODO: programme duration]]",
-          "label": "Program"
+          "value": "[[TODO: total floor area across the portfolio — e.g. 180,000 m²]]",
+          "label": "Total golvyta"
+        },
+        "study": {
+          "lead": "Tillgång till tillförlitlig byggnadsinformation för projektteamen utan onödiga platsbesök.",
+          "challenge": {
+            "headline": "En portfölj spridd över södra Sverige.",
+            "body": "Med fastigheter spridda över ett stort geografiskt område kunde även enkel kontroll kräva omfattande resor. Inaktuella eller ofullständiga ritningar skapade dessutom osäkerhet vid planering av underhåll och renoveringar."
+          },
+          "change": {
+            "headline": "Enhetlig digital dokumentation för hela portföljen.",
+            "body": "RESCAN mätte systematiskt in fastigheterna och tog fram tillförlitlig och enhetlig digital byggnadsdokumentation. Det ger Carlqvist Fastigheter, konsulter och entreprenörer tillgång till verifierad byggnadsinformation för planering, mätningar och projektförberedelser."
+          },
+          "outcome": {
+            "body": "Mindre resande. Snabbare projektförberedelser. När tillförlitlig byggnadsinformation finns tillgänglig på distans kan många frågor nu lösas utan att först resa till platsen. För en geografiskt spridd portfölj innebär det mindre onödigt resande, snabbare projektförberedelser och bättre tillgång till pålitlig fastighetsinformation."
+          },
+          "closing": {
+            "headline": "Förvaltar du en fastighetsportfölj på flera orter?",
+            "body": "Börja med verifierad byggnadsinformation.",
+            "cta": "Berätta om din portfölj"
+          }
         }
       },
       "case3": {
         "title": "Alhansa Fastigheter",
-        "summary": "112 000 m² digitaliserat, i samarbete sedan 2018",
-        "body": "En gemensam standard för hela portföljen — uthyrning och renoveringsprojekt som utgår från verifierade förutsättningar, inte gamla ritningar.",
+        "summary": "112 000 m² digitaliserat i en fastighetsportfölj",
         "stat0": {
           "value": "112 000 m²",
-          "label": "Digitaliserat"
+          "label": "Skannat och modellerat"
         },
         "stat1": {
           "value": "72 000 m²",
-          "label": "Ursprunglig portfölj"
+          "label": "Ursprunglig kommersiell portfölj"
         },
         "stat2": {
+          "value": "40 000 m²",
+          "label": "Tillkommande fastigheter"
+        },
+        "stat3": {
           "value": "Sedan 2018",
           "label": "Pågående samarbete"
+        },
+        "study": {
+          "lead": "Tillförlitliga byggnadsdata till fastighetsägaren för uthyrning, renovering och fortsatt utveckling.",
+          "challenge": {
+            "headline": "",
+            "body": "I en stor fastighetsportfölj skapar inaktuella eller inkonsekventa ritningar samma problem om och om igen: varje uthyrning, renovering eller ombyggnad kan börja med osäkerhet om den befintliga byggnaden. Det behövdes tillförlitliga uppgifter om befintliga förhållanden i fastigheter med olika ålder, användning och skick."
+          },
+          "change": {
+            "headline": "En gemensam standard för hela portföljen.",
+            "body": "RESCAN mätte inledningsvis in och modellerade omkring 72 000 m² kommersiella fastigheter i södra Sverige. Samarbetet fortsatte med ytterligare 40 000 m² i portföljen, däribland kommersiella fastigheter, utvecklingsprojekt, hyresgästanpassade lokaler och utvalda bostadsfastigheter. RESCAN levererade verifierade punktmoln, tillförlitlig relationshandlingsdokumentation och Revit-modeller, vilket gav projektteamen en enhetlig utgångspunkt i hela portföljen."
+          },
+          "outcome": {
+            "body": "Värdet låg inte i att dokumentera enskilda byggnader. Det låg i att skapa tillförlitlig och enhetlig byggnadsinformation för hela portföljen. Varje ny uthyrning, renovering eller utveckling kunde utgå från verifierade befintliga förhållanden i stället för osäkra gamla ritningar. Enhetlig dokumentation. Färre antaganden. Bättre beslut i hela portföljen."
+          },
+          "closing": {
+            "headline": "Förvaltar du en fastighetsportfölj?",
+            "body": "Börja med tillförlitlig information om det du äger.",
+            "cta": "Berätta om din portfölj"
+          }
         }
       }
     },
