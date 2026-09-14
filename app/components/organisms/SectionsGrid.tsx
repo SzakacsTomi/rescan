@@ -11,7 +11,13 @@ export const SECTIONS_ID = "sections";
 
 const CHAIN_STEP_COUNT = 4;
 
-export const SectionsGrid = () => {
+type SectionsGridProps = {
+  /** Delivery URL per section id, resolved on the server: the Cloudinary cloud name lives
+   *  in a server-only variable and a URL built in here would name `undefined`. */
+  imageSources: Record<string, string>;
+};
+
+export const SectionsGrid = ({ imageSources }: SectionsGridProps) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const t = useTranslations("homePage");
 
@@ -34,6 +40,8 @@ export const SectionsGrid = () => {
             onHoverStart={() => setHoveredId(section.id)}
             onHoverEnd={() => setHoveredId(null)}
             index={t(`sectors.${section.id}.index`)}
+            imageSrc={imageSources[section.id]}
+            imageAlt={t(`sectors.${section.id}.imageAlt`)}
             title={t(`sectors.${section.id}.title`)}
             lead={t(`sectors.${section.id}.lead`)}
             description={t(`sectors.${section.id}.description`)}

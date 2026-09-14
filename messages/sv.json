@@ -75,6 +75,7 @@
     "sectors": {
       "retailChains": {
         "index": "01 / Handel",
+        "imageAlt": "Flygbild över en envånings handelsfastighet med hyresgästskyltar och kundparkering.",
         "title": "Portföljer av handelsfastigheter",
         "lead": "Färre platsbesök. Mindre bortkastad tid i hela portföljen.",
         "description": "När fastighets-, projekterings- eller entreprenadteam behöver återvända till en fastighet enbart för att verifiera befintliga förhållanden blir kostnaden större än själva besöket. Resor, planering och förlorad projekteringstid växer snabbt när det gäller tiotals eller hundratals fastigheter. RESCAN skapar tillförlitliga 2D-ritningar och BIM-modeller som teamen kan använda för att besvara nya frågor utan ytterligare platsbesök.",
@@ -86,6 +87,7 @@
       },
       "logisticsWarehouses": {
         "index": "02 / Logistik",
+        "imageAlt": "Trailers vid lastkajerna på ett stort distributionslager.",
         "title": "Logistiklager",
         "lead": "Förstå hela anläggningen innan du projekterar om en del av den.",
         "description": "Stora logistikanläggningar är svåra att överblicka utifrån fragmenterade ritningar och enstaka mätningar. När befintliga förhållanden missas bygger projekteringen på antaganden – som senare kan leda till kollisioner, omprojektering eller kompletterande undersökningar. RESCAN ger projektteamet ett tillförlitligt underlag över hela anläggningen innan problemen förs vidare i projektet.",

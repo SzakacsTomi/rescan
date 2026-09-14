@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { ImageStrip } from "@/app/components/atoms/ImageStrip";
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { PENDING_ON_DARK, Pending } from "@/app/components/atoms/Pending";
-import { CASE_HATCH } from "@/config/gradients";
+import { CASE_HATCH, PHOTO_CEILING_SCRIM, PHOTO_FLOOR_SCRIM } from "@/config/gradients";
 import { cn } from "@/lib/utils";
 
 type CaseBandProps = {
@@ -68,22 +68,13 @@ const PHOTO_SWEEP =
   "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%)";
 const SWEEP_STAGGER_S = 4.5;
 
-/** The name and result line sit on the floor of the band and the ordinal on its ceiling,
- *  so those two strips are darkened and the middle of the frame stays open. The floor
- *  needs the weight: the grid puts several unrelated exposures behind one headline, and a
- *  ramp tuned to a single photograph left it legible over some frames and not others.
- *
- *  It is split in two because one ramp heavy enough for the headline also fell across the
- *  right of the grid, where the closing tile's own figure had nothing to do with it and
- *  simply went dark. The full-width ramp is the lighter of the pair — enough to seat the
- *  grid under the copy — and the contrast the headline actually needs is bought by an
- *  ellipse anchored to the bottom-left corner it occupies, which never reaches the tile. */
-const PHOTO_FLOOR_SCRIM =
-  "linear-gradient(to top, rgba(9,12,20,0.86) 0%, rgba(9,12,20,0.68) 26%, rgba(9,12,20,0.3) 55%, rgba(9,12,20,0) 84%)";
+/** The shared floor and ceiling ramps seat the name, the result line and the ordinal; this
+ *  band needs a third. One ramp heavy enough for the headline also fell across the right of
+ *  the grid, where the closing tile's own figure had nothing to do with it and simply went
+ *  dark — so the contrast the headline needs is bought by an ellipse anchored to the
+ *  bottom-left corner it occupies, which never reaches the tile. */
 const PHOTO_COPY_SCRIM =
   "radial-gradient(120% 88% at 18% 100%, rgba(9,12,20,0.68) 0%, rgba(9,12,20,0.42) 44%, rgba(9,12,20,0) 74%)";
-const PHOTO_CEILING_SCRIM =
-  "linear-gradient(to bottom, rgba(9,12,20,0.68) 0%, rgba(9,12,20,0.28) 22%, rgba(9,12,20,0) 40%)";
 
 /**
  * One band of the stacked showcase: full-bleed, dark, with the client name and a

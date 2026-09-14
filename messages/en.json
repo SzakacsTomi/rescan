@@ -75,6 +75,7 @@
     "sectors": {
       "retailChains": {
         "index": "01 / Retail",
+        "imageAlt": "Aerial view of a single-storey retail property with tenant signage and customer parking.",
         "title": "Retail Property Portfolios",
         "lead": "Fewer site visits. Less wasted time across the portfolio.",
         "description": "When property, design or contractor teams have to return to a location just to confirm existing conditions, the cost is bigger than the visit. Travel, scheduling and lost design time multiply across dozens or hundreds of properties. RESCAN creates a dependable record teams can refer back to when new site questions appear.",
@@ -86,6 +87,7 @@
       },
       "logisticsWarehouses": {
         "index": "02 / Logistics",
+        "imageAlt": "Trailers at the loading docks of a large distribution warehouse.",
         "title": "Logistics Warehouses",
         "lead": "Understand the whole warehouse before you redesign part of it.",
         "description": "Large logistics facilities are difficult to understand from fragmented drawings and isolated measurements. When existing conditions are missed, assumptions enter the design—and can later become clashes, redesign or additional investigation. RESCAN gives project teams a dependable view of the facility before those problems move downstream.",

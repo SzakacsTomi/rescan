@@ -25,3 +25,13 @@ export const EVERGREEN_GRADIENT = 'linear-gradient(135deg, #0a1f1c 0%, #12332c 5
  *  sits on a dark gradient rather than on paper. */
 export const CASE_HATCH =
   'repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 10px, rgba(255,255,255,0) 10px 22px)';
+
+/** Photograph scrims: the strips a full-bleed frame is darkened on so copy seated at the
+ *  floor and a label at the ceiling stay legible while the middle of the picture is left
+ *  open. Shared by the Projects case bands and the Home sector cards, which compose the
+ *  same way — a client photograph, the section's own gradient back over it as a tint, and
+ *  contrast bought only where the text actually sits. */
+export const PHOTO_FLOOR_SCRIM =
+  'linear-gradient(to top, rgba(9,12,20,0.86) 0%, rgba(9,12,20,0.68) 26%, rgba(9,12,20,0.3) 55%, rgba(9,12,20,0) 84%)';
+export const PHOTO_CEILING_SCRIM =
+  'linear-gradient(to bottom, rgba(9,12,20,0.68) 0%, rgba(9,12,20,0.28) 22%, rgba(9,12,20,0) 40%)';
