@@ -44,11 +44,11 @@ export type CaseStudyConfig = {
  *  design drew. */
 export const caseStudies: CaseStudyConfig[] = [
   {
-    id: "case2",
-    sector: "retail",
-    gradient: DEEP_BLUE_GRADIENT,
-    accent: "#89b4f5",
-    imagesFolder: `${CASE_IMAGE_ROOT}/carlqvist`,
+    id: "case1",
+    sector: "logistics",
+    gradient: EVERGREEN_GRADIENT,
+    accent: "#7fd6b5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/lidl`,
     statCount: 3,
   },
   {
@@ -60,20 +60,20 @@ export const caseStudies: CaseStudyConfig[] = [
     statCount: 4,
   },
   {
+    id: "case2",
+    sector: "retail",
+    gradient: DEEP_BLUE_GRADIENT,
+    accent: "#89b4f5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/carlqvist`,
+    statCount: 3,
+  },
+  {
     id: "case3",
     sector: "retail",
     gradient: VIOLET_GRADIENT,
     accent: "#c9a8f5",
     imagesFolder: `${CASE_IMAGE_ROOT}/alhansa`,
     statCount: 4,
-  },
-  {
-    id: "case1",
-    sector: "logistics",
-    gradient: EVERGREEN_GRADIENT,
-    accent: "#7fd6b5",
-    imagesFolder: `${CASE_IMAGE_ROOT}/lidl`,
-    statCount: 3,
   },
 ];
 
