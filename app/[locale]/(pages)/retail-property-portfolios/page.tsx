@@ -6,7 +6,7 @@ import { CarouselHero } from "@/app/components/organisms/sector/CarouselHero";
 import { SectorTemplate } from "@/app/components/templates/SectorTemplate";
 import type { SectorPageTranslations } from "@/app/types/sectorPage";
 import { retailSectorConfig } from "@/config/sectors/retail";
-import { getCloudinaryFolderImages } from "@/lib/cloudinary";
+import { cloudinaryImageUrl, getCloudinaryFolderImages } from "@/lib/cloudinary";
 import { resolvePageJsonLd, resolvePageMetadata } from "@/i18n/metadata";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -65,7 +65,10 @@ export default async function RetailPropertyPortfoliosPage({ params }: PageProps
       ],
       metric: t("namedCase.metric"),
       metricLabel: t("namedCase.metricLabel"),
-      image: t("namedCase.image"),
+      image: {
+        src: retailSectorConfig.namedCase && cloudinaryImageUrl(retailSectorConfig.namedCase.imageId),
+        alt: t("namedCase.imageAlt"),
+      },
       quote: t("namedCase.quote"),
       quoteAuthor: t("namedCase.quoteAuthor"),
     },

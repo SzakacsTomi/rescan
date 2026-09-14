@@ -1,6 +1,12 @@
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { Pending } from "@/app/components/atoms/Pending";
 import { Reveal } from "@/app/components/atoms/Reveal";
+import { SkeletonImage } from "@/app/components/atoms/SkeletonImage";
+
+/** The frame is the only piece of client evidence on the page, and at 420px it costs
+ *  almost nothing to encode losslessly — Cloudinary hands over the untouched original
+ *  so this is the single re-encode the photograph gets. Allowlisted in `next.config.ts`. */
+const PHOTO_QUALITY = 100;
 
 type NamedCaseProps = {
   label: string;
@@ -10,8 +16,9 @@ type NamedCaseProps = {
   bulletPoints?: string[];
   metric: string;
   metricLabel: string;
-  /** The site photograph the brief asks for, still owed by the client. */
-  image: string;
+  /** The site photograph the brief asks for. `src` is absent while the client still
+   *  owes one, and the frame carries `alt` as the pending marker instead. */
+  image: { src?: string; alt: string };
   quote?: string;
   quoteAuthor?: string;
 };
@@ -61,8 +68,18 @@ export const NamedCase = ({ label, headline, body, bulletIntro, bulletPoints, me
             )}
           </div>
           <Reveal className="flex flex-col gap-6">
-            <div className="rounded-[10px] bg-muted border border-border min-h-[300px] flex items-center justify-center">
-              <Pending>{image}</Pending>
+            <div className="relative overflow-hidden rounded-[10px] bg-muted border border-border min-h-[300px] flex items-center justify-center">
+              {image.src ? (
+                <SkeletonImage
+                  src={image.src}
+                  alt={image.alt}
+                  quality={PHOTO_QUALITY}
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="object-cover"
+                />
+              ) : (
+                <Pending>{image.alt}</Pending>
+              )}
             </div>
             {quote && (
               <blockquote className="border-l-2 border-primary pl-6">

@@ -2,9 +2,9 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
 import { Link } from "@/i18n/navigation";
 
 type CarouselHeroProps = {
@@ -56,15 +56,12 @@ function buildRow(images: string[], rowIdx: number) {
 function CarouselImage({ src, width }: { src: string; width: number }) {
   return (
     <div className="relative h-full shrink-0 overflow-hidden" style={{ width }}>
-      <Image
+      <SkeletonImage
         src={src}
         alt=""
-        fill
         sizes={`${width}px`}
-        className="object-cover opacity-0 transition-opacity duration-500"
-        onLoad={(e) => {
-          (e.target as HTMLImageElement).classList.replace("opacity-0", "opacity-100");
-        }}
+        skeletonClassName={SKELETON_ON_DARK}
+        className="object-cover"
       />
     </div>
   );

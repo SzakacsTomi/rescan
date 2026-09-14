@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { MediaPlaceholder } from "@/app/components/atoms/MediaPlaceholder";
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
+import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
 import { PORTRAIT_STRIPE } from "@/config/gradients";
 import type { ProjectConfig } from "@/config/projects";
 import { cn } from "@/lib/utils";
@@ -63,7 +63,13 @@ export const ProjectIndexRow = ({
         style={{ background: project.gradient }}
       >
         {project.image ? (
-          <Image src={project.image} alt="" fill className="object-cover" sizes={THUMBNAIL_SIZES} />
+          <SkeletonImage
+            src={project.image}
+            alt=""
+            className="object-cover"
+            sizes={THUMBNAIL_SIZES}
+            skeletonClassName={SKELETON_ON_DARK}
+          />
         ) : (
           <MediaPlaceholder stripe={PORTRAIT_STRIPE} className="absolute inset-0" />
         )}

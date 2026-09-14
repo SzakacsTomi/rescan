@@ -13,6 +13,9 @@ export const retailSectorConfig: SectorPageConfig = {
   strategicValue: {
     tone: 'tinted',
   },
+  namedCase: {
+    imageId: '142072_original_Fasad__nät_storlek_qgsd2c',
+  },
   finalCta: {
     ctaHref: '/contact',
   },

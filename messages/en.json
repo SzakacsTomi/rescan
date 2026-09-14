@@ -347,7 +347,6 @@
         "title": "Alhansa Property",
         "summary": "112,000 m² digitised, in partnership since 2018",
         "body": "One consistent standard across the portfolio — leasing and renovation projects starting from verified conditions, not legacy drawings.",
-        "photoHint": "[[TODO: photograph — Alhansa property exterior]]",
         "stat0": {
           "value": "112,000 m²",
           "label": "Digitised"
@@ -633,7 +632,7 @@
         "quoteAuthor": "Eddie Carlqvist, CEO, Carlqvist Property",
         "metric": "56",
         "metricLabel": "commercial properties documented",
-        "image": "[[TODO: site photograph for the named retail case]]"
+        "imageAlt": "Facade of a Carlqvist Fastigheter commercial property"
       },
       "fitNotFit": {
         "headline": "Best fit",

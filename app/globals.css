@@ -227,6 +227,30 @@
   50% { opacity: 0.9 }
 }
 
+/* The photographs behind a case band. Each frame settles into the lattice a beat after
+   the one before it, so the wall assembles under the scan line rather than appearing
+   whole; case-sweep is the long pass that keeps running afterwards, which is what stops
+   fifteen thumbnails reading as a static contact sheet. */
+@keyframes frame-settle {
+  from { opacity: 0; transform: scale(1.06) }
+  to { opacity: 1; transform: scale(1) }
+}
+
+@keyframes case-sweep {
+  from { transform: translate3d(-100%, 0, 0) }
+  to { transform: translate3d(350%, 0, 0) }
+}
+
+/* The wait for an image that is on its way — SkeletonImage, which applies this inline so
+   that the period and the per-frame offset it spreads over come from one constant. A sweep
+   and not a pulse for the same reason the bands sweep: it is the motif the site already
+   performs on a building, so a loading frame belongs to the page rather than interrupting
+   it. */
+@keyframes skeleton-sweep {
+  from { transform: translate3d(-100%, 0, 0) }
+  to { transform: translate3d(300%, 0, 0) }
+}
+
 @keyframes hero-cue {
   0% { transform: scaleY(0); transform-origin: top }
   45% { transform: scaleY(1); transform-origin: top }
@@ -249,6 +273,12 @@
   }
   .animate-hero-cue {
     animation: hero-cue 2.4s ease-in-out infinite;
+  }
+  .animate-frame-settle {
+    animation: frame-settle 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-case-sweep {
+    animation: case-sweep 17s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   .animate-logo-marquee {
     animation: logo-marquee var(--logo-marquee-duration, 40s) linear infinite;

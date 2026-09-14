@@ -1,9 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion, type MotionValue } from "framer-motion";
-import Image from "next/image";
 
 import { MediaPlaceholder } from "@/app/components/atoms/MediaPlaceholder";
+import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
 import { PORTRAIT_STRIPE } from "@/config/gradients";
 import type { ProjectConfig } from "@/config/projects";
 
@@ -44,12 +44,12 @@ export const ProjectIndexPreview = ({ project, x, y }: ProjectIndexPreviewProps)
           }}
         >
           {project.image ? (
-            <Image
+            <SkeletonImage
               src={project.image}
               alt=""
-              fill
               className="object-cover"
               sizes={`${PREVIEW_WIDTH_PX}px`}
+              skeletonClassName={SKELETON_ON_DARK}
             />
           ) : (
             <MediaPlaceholder stripe={PORTRAIT_STRIPE} className="absolute inset-0" />

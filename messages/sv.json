@@ -347,7 +347,6 @@
         "title": "Alhansa Fastigheter",
         "summary": "112 000 m² digitaliserat, i samarbete sedan 2018",
         "body": "En gemensam standard för hela portföljen — uthyrning och renoveringsprojekt som utgår från verifierade förutsättningar, inte gamla ritningar.",
-        "photoHint": "[[TODO: photograph — Alhansa property exterior]]",
         "stat0": {
           "value": "112 000 m²",
           "label": "Digitaliserat"
@@ -633,7 +632,7 @@
         "quoteAuthor": "Eddie Carlqvist, VD, Carlqvist Fastigheter",
         "metric": "56",
         "metricLabel": "kommersiella fastigheter dokumenterade",
-        "image": "[[TODO: site photograph for the named retail case]]"
+        "imageAlt": "Fasad på en av Carlqvist Fastigheters kommersiella fastigheter"
       },
       "fitNotFit": {
         "headline": "Passar bäst för",

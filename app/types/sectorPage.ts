@@ -20,6 +20,13 @@ export type SectorPageConfig = {
   strategicValue?: {
     tone?: 'tinted' | 'plain';
   };
+  /** Cloudinary public id of the client photograph beside the named case — the id
+   *  alone, with no folder segment; see `cloudinaryImageUrl`. Absent on a sector whose
+   *  photograph the client has not sent, in which case the frame renders the pending
+   *  marker instead. */
+  namedCase?: {
+    imageId: string;
+  };
   /** Set only where the evidence band is drawn to scale (Logistics, whose two proofs are
    *  both areas): how many separate buildings each figure covers, in item order. The areas
    *  themselves are read from the figures, so the drawing cannot drift from the copy. */
@@ -39,7 +46,9 @@ export type NamedCaseTranslations = {
   bulletPoints?: string[];
   metric: string;
   metricLabel: string;
-  image: string;
+  /** `src` is absent until the client sends the photograph; `alt` then carries the
+   *  `[[TODO: …]]` marker the frame renders in its place. */
+  image: { src?: string; alt: string };
   quote?: string;
   quoteAuthor?: string;
 };

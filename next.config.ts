@@ -16,6 +16,12 @@ const RETIRED_ROUTES = [
 
 const nextConfig: NextConfig = {
   images: {
+    /** 75 is Next's default and what every other image on the site uses. The case-band
+     *  lattice asks for 90: its frames crop a landscape photograph into a near-square
+     *  cell, so the optimiser is already upscaling, and 75 on top of that shows. The
+     *  named-case photograph asks for 100 — it is served untransformed from Cloudinary
+     *  so this is the only re-encode it gets, and the slot is small enough to afford it. */
+    qualities: [75, 90, 100],
     remotePatterns: [
       {
         protocol: "https",

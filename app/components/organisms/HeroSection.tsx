@@ -14,9 +14,12 @@ const HEADLINE_ACCENT_LINE_COUNT = 2;
 export const HeroSection = async () => {
   const t = await getTranslations("homePage");
 
+  // `lg:pt-16` on the section is the overlaid navbar's own height, and the scroll rail
+  // carries no top margin: together they leave the copy centered in the same band the
+  // other heroes get from `100svh-4rem`, instead of sitting low above a large gap.
   return (
     <section
-      className="relative w-full flex flex-col overflow-hidden lg:min-h-[calc(100svh)]"
+      className="relative w-full flex flex-col overflow-hidden lg:min-h-[calc(100svh)] lg:pt-16"
       style={{ background: DEEP_BLUE_GRADIENT }}
     >
       <div
@@ -45,7 +48,7 @@ export const HeroSection = async () => {
         }}
       />
 
-      <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine pt-32 sm:pt-36 lg:pt-16 lg:flex-1 lg:flex lg:items-center">
+      <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine pt-32 sm:pt-36 lg:pt-0 lg:flex-1 lg:flex lg:items-center">
         <div className="grid w-full items-end gap-10 lg:gap-12 2xl:grid-cols-[minmax(0,1fr)_320px]">
           <div>
             <div className="flex items-center gap-3.5 mb-7">
@@ -96,7 +99,7 @@ export const HeroSection = async () => {
       </div>
 
       <div className="relative w-full max-w-shell mx-auto px-6 lg:pl-spine">
-        <div className="mt-16 flex items-center justify-end border-t border-white/10 py-5 lg:mt-20 lg:py-6">
+        <div className="mt-16 flex items-center justify-end border-t border-white/10 py-5 lg:mt-0 lg:py-6">
           <ScrollCue targetId={SECTIONS_ID} label={t("hero.scrollCue")} />
         </div>
       </div>

@@ -7,12 +7,14 @@ export type CaseShowcaseCaseCopy = {
   body: string;
   stats: [string, string, string];
   statLabels: [string, string, string];
-  photoHint?: string;
 };
 
 type CaseShowcaseProps = {
   sectorLabels: Record<ProjectSector, string>;
   cases: Record<string, CaseShowcaseCaseCopy>;
+  /** Every photograph in each case's Cloudinary folder, keyed by case id. Resolved on
+   *  the server because listing a folder needs the Cloudinary API credentials. */
+  caseImages: Record<string, string[]>;
   revealLabel: string;
   hideLabel: string;
   sectorLinkLabel: string;
@@ -30,13 +32,12 @@ type CaseShowcaseProps = {
 export const CaseShowcase = ({
   sectorLabels,
   cases,
+  caseImages,
   revealLabel,
   hideLabel,
   sectorLinkLabel,
   sectorHref,
 }: CaseShowcaseProps) => {
-  const total = String(caseStudies.length).padStart(2, "0");
-
   return (
     <section className="relative w-full">
       <div className="grid gap-0.5">
@@ -49,10 +50,9 @@ export const CaseShowcase = ({
               gradient={caseStudy.gradient}
               accent={caseStudy.accent}
               sectorLabel={sectorLabels[caseStudy.sector]}
-              ordinal={String(i + 1).padStart(2, "0")}
-              total={total}
-              image={caseStudy.image}
-              photoHint={copy.photoHint}
+              index={i}
+              total={caseStudies.length}
+              images={caseImages[caseStudy.id] ?? []}
               priority={i === 0}
               title={copy.title}
               summary={copy.summary}

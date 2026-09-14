@@ -7,6 +7,9 @@ import {
 
 export type ProjectSector = "retail" | "logistics";
 
+/** Cloudinary keeps one sub-folder per client under here, named for the client. */
+const CASE_IMAGE_ROOT = "projects-hero";
+
 export type ProjectConfig = {
   id: string;
   gradient: string;
@@ -21,9 +24,11 @@ export type CaseStudyConfig = {
    *  pair, and the two stand-in accents have no equivalent among the theme tokens. */
   gradient: string;
   accent: string;
-  /** Client photograph behind the band. Absent until the client supplies one, which is
-   *  what makes the band fall back to its `photoHint` placeholder. */
-  image?: string;
+  /** Cloudinary asset folder holding the client's photographs. The band tiles whatever
+   *  is in it, so the client adds or removes a building by moving a file — the ICA
+   *  folder holds one image and fills the band with it, Carlqvist's holds fifteen and
+   *  becomes a lattice of them. */
+  imagesFolder: string;
 };
 
 /** The stacked showcase the Projects design opens with, in the order it draws them —
@@ -39,25 +44,28 @@ export const caseStudies: CaseStudyConfig[] = [
     sector: "retail",
     gradient: DEEP_BLUE_GRADIENT,
     accent: "#89b4f5",
-    image:
-      "https://res.cloudinary.com/daecns4am/image/upload/v1789129536/Carlqvist_bild_ucnaxo.jpg",
+    imagesFolder: `${CASE_IMAGE_ROOT}/carlqvist`,
   },
   {
     id: "case0",
     sector: "logistics",
     gradient: CHARCOAL_GRADIENT,
     accent: "#89b4f5",
-    image:
-      "https://res.cloudinary.com/daecns4am/image/upload/v1789129460/PHOTO-2026-08-20-22-09-03_fypevu.jpg",
+    imagesFolder: `${CASE_IMAGE_ROOT}/ica`,
   },
-  { id: "case3", sector: "retail", gradient: VIOLET_GRADIENT, accent: "#c9a8f5" },
+  {
+    id: "case3",
+    sector: "retail",
+    gradient: VIOLET_GRADIENT,
+    accent: "#c9a8f5",
+    imagesFolder: `${CASE_IMAGE_ROOT}/alhansa`,
+  },
   {
     id: "case1",
     sector: "logistics",
     gradient: EVERGREEN_GRADIENT,
     accent: "#7fd6b5",
-    image:
-      "https://res.cloudinary.com/daecns4am/image/upload/v1789129460/PHOTO-2026-08-20-22-11-19_okriby.jpg",
+    imagesFolder: `${CASE_IMAGE_ROOT}/lidl`,
   },
 ];
 

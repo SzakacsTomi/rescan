@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { ArrowLeft, MapPin, Building2, Maximize2, Users } from "lucide-react";
+
+import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
 import type { ProjectConfig } from "@/config/projects";
 
 const META_ITEMS = [
@@ -70,13 +71,13 @@ export const ProjectDetail = ({
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               ) : project.image ? (
-                <Image
+                <SkeletonImage
                   src={project.image}
                   alt=""
-                  fill
                   className="object-cover"
                   sizes="100vw"
                   priority
+                  skeletonClassName={SKELETON_ON_DARK}
                 />
               ) : null}
               <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/60" />
