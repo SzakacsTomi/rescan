@@ -14,6 +14,28 @@ const RETIRED_ROUTES = [
   { from: "/why-rescan", to: "/" },
 ];
 
+/** Paths that were never routes here but that people and old links reach for anyway. The
+ *  home page is the one worth catching: `/home` is what a hand-typed URL or a stale menu
+ *  entry guesses at, and landing it on the 404 costs a visitor who was asking for the
+ *  front page by name. */
+const ALIAS_ROUTES = [{ from: "/home", to: "/" }];
+
+/** The site root in a locale is `/en`, not `/en/`: Next redirects a trailing slash away
+ *  again under the default `trailingSlash: false`, so composing the path naively sent
+ *  every `to: "/"` redirect through two hops instead of one. */
+const localeDestination = (locale: string, path: string) =>
+  path === "/" ? `/${locale}` : `/${locale}${path}`;
+
+const withLocaleVariants = (routes: ReadonlyArray<{ from: string; to: string }>) =>
+  routes.flatMap(({ from, to }) => [
+    { source: from, destination: to, permanent: true },
+    ...routing.locales.map((locale) => ({
+      source: `/${locale}${from}`,
+      destination: localeDestination(locale, to),
+      permanent: true,
+    })),
+  ]);
+
 const nextConfig: NextConfig = {
   images: {
     /** 75 is Next's default and what every other image on the site uses. The case-band
@@ -31,14 +53,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return RETIRED_ROUTES.flatMap(({ from, to }) => [
-      { source: from, destination: to, permanent: true },
-      ...routing.locales.map((locale) => ({
-        source: `/${locale}${from}`,
-        destination: `/${locale}${to}`,
-        permanent: true,
-      })),
-    ]);
+    return withLocaleVariants([...RETIRED_ROUTES, ...ALIAS_ROUTES]);
   },
 };
 
