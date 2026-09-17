@@ -36,12 +36,7 @@ export const Footer = async () => {
             <SocialLink
               key={social.platform}
               config={social}
-              label={t(
-                `social.${social.labelKey}` as
-                  | "social.instagram"
-                  | "social.linkedin"
-                  | "social.twitter",
-              )}
+              label={t(`social.${social.labelKey}` as "social.linkedin")}
               size="lg"
             />
           ))}

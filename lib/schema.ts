@@ -1,5 +1,6 @@
 import { siteConfig } from '@/config/site';
 import type { SeoPageType } from '@/config/routes';
+import { isPending } from '@/lib/pending';
 import { absoluteUrl } from '@/lib/seo';
 
 /**
@@ -72,6 +73,8 @@ type WebPageInput = {
   description: string;
   locale: string;
   imageUrl: string;
+  /** Authored, not derived — see `contentReviewed` on the registry row. */
+  dateModified?: string;
 };
 
 export const webPageNode = ({
@@ -81,6 +84,7 @@ export const webPageNode = ({
   description,
   locale,
   imageUrl,
+  dateModified,
 }: WebPageInput): SchemaNode => ({
   '@type': pageType,
   '@id': `${url}#webpage`,
@@ -88,6 +92,7 @@ export const webPageNode = ({
   name,
   description,
   inLanguage: locale,
+  ...(dateModified ? { dateModified } : {}),
   isPartOf: { '@id': WEBSITE_ID },
   about: { '@id': ORGANIZATION_ID },
   primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
@@ -134,17 +139,66 @@ export const serviceNode = ({
   mainEntityOfPage: { '@id': `${url}#webpage` },
 });
 
-export const itemListNode = (url: string, names: string[]): SchemaNode => ({
+export type ListEntry = {
+  name: string;
+  /** `@id` of a node elsewhere in the same graph, where the entry has one of its own. An
+   *  entry without it is a bare name, which is all the project index can honestly claim. */
+  ref?: string;
+};
+
+export const itemListNode = (id: string, entries: ListEntry[]): SchemaNode => ({
   '@type': 'ItemList',
-  '@id': `${url}#projects`,
-  numberOfItems: names.length,
+  '@id': id,
+  numberOfItems: entries.length,
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
-  itemListElement: names.map((name, index) => ({
+  itemListElement: entries.map((entry, index) => ({
     '@type': 'ListItem',
     position: index + 1,
-    name,
+    name: entry.name,
+    ...(entry.ref ? { item: { '@id': entry.ref } } : {}),
   })),
 });
+
+export type CaseStudyFacts = {
+  id: string;
+  name: string;
+  /** The write-up's opening line. Skipped while it is still a `[[TODO]]` marker. */
+  description: string;
+  sector: string;
+  /** The figures the band prints, as the write-up quotes them: `96,000 m²` / `Facility
+   *  captured`. Anything still pending is dropped rather than published as a bracket. */
+  stats: Array<{ name: string; value: string }>;
+};
+
+/**
+ * A written-up case study as its own node, so the figures that carry the site's argument
+ * are readable without parsing prose. `additionalProperty` is where schema.org puts facts
+ * it has no dedicated term for, which is exactly what a measured area or a delivery time
+ * is here.
+ */
+export const caseStudyNode = (url: string, study: CaseStudyFacts): SchemaNode => {
+  const stats = study.stats.filter(({ name, value }) => !isPending(name) && !isPending(value));
+
+  return {
+    '@type': 'CreativeWork',
+    '@id': `${url}#case-${study.id}`,
+    name: study.name,
+    headline: study.name,
+    ...(isPending(study.description) ? {} : { description: study.description }),
+    about: { '@type': 'Thing', name: study.sector },
+    creator: { '@id': ORGANIZATION_ID },
+    isPartOf: { '@id': `${url}#webpage` },
+    ...(stats.length > 0
+      ? {
+          additionalProperty: stats.map(({ name, value }) => ({
+            '@type': 'PropertyValue',
+            name,
+            value,
+          })),
+        }
+      : {}),
+  };
+};
 
 export const graph = (nodes: SchemaNode[]) => ({
   '@context': 'https://schema.org',

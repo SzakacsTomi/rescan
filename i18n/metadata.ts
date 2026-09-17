@@ -4,12 +4,14 @@ import { getTranslations } from 'next-intl/server';
 import { getSeoRoute, type SeoRouteKey } from '@/config/routes';
 import {
   breadcrumbNode,
+  caseStudyNode,
   graph,
   itemListNode,
   organizationNode,
   serviceNode,
   webPageNode,
   websiteNode,
+  type CaseStudyFacts,
   type SchemaNode,
 } from '@/lib/schema';
 import { absoluteUrl, buildPageMetadata, canonicalUrl, ogImagePath } from '@/lib/seo';
@@ -44,12 +46,15 @@ export const resolvePageMetadata = async (
 type PageJsonLdOptions = {
   /** Names for the ItemList the Projects page adds under its page node. */
   listItems?: string[];
+  /** The written-up studies on the Projects page, each emitted as its own node so the
+   *  figures inside them survive without being read out of the prose. */
+  caseStudies?: CaseStudyFacts[];
 };
 
 export const resolvePageJsonLd = async (
   locale: string,
   key: SeoRouteKey,
-  { listItems }: PageJsonLdOptions = {},
+  { listItems, caseStudies }: PageJsonLdOptions = {},
 ) => {
   const route = getSeoRoute(key);
   const [t, tSite, tFooter] = await Promise.all([
@@ -80,6 +85,7 @@ export const resolvePageJsonLd = async (
       description: t('description'),
       locale,
       imageUrl: absoluteUrl(ogImagePath(key, locale)),
+      dateModified: route.contentReviewed,
     }),
     breadcrumbNode(url, crumbs),
   ];
@@ -97,7 +103,17 @@ export const resolvePageJsonLd = async (
   }
 
   if (listItems?.length) {
-    nodes.push(itemListNode(url, listItems));
+    nodes.push(itemListNode(`${url}#projects`, listItems.map((name) => ({ name }))));
+  }
+
+  if (caseStudies?.length) {
+    nodes.push(
+      itemListNode(
+        `${url}#case-studies`,
+        caseStudies.map((study) => ({ name: study.name, ref: `${url}#case-${study.id}` })),
+      ),
+      ...caseStudies.map((study) => caseStudyNode(url, study)),
+    );
   }
 
   return graph(nodes);

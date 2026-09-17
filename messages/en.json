@@ -38,7 +38,7 @@
         "ogAlt": "RESCAN — documented buildings and portfolio programmes"
       },
       "about": {
-        "title": "The company that goes to the building",
+        "title": "Focused on existing buildings",
         "description": "RESCAN is an independent Swedish company based in Växjö, working since 2017 with teams that manage retail property portfolios and logistics warehouses.",
         "keywords": "RESCAN, Växjö, Swedish building documentation company, about, independent",
         "breadcrumb": "About Us",
@@ -145,9 +145,7 @@
     "copyright": "© 2026 Rescan. All rights reserved.",
     "tagline": "Reliable building information for retail property portfolios and logistics warehouses.",
     "social": {
-      "instagram": "Instagram",
-      "linkedin": "LinkedIn",
-      "twitter": "Twitter"
+      "linkedin": "LinkedIn"
     },
     "legal": {
       "privacy": "Privacy Policy",

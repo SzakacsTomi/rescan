@@ -67,12 +67,12 @@ export const siteConfig = {
   languages: ['sv', 'en'],
   logoPath: '/assets/logo.png',
   /**
-   * Verified profiles, emitted as schema.org `sameAs`. Empty on purpose: the hrefs in
-   * `config/footer.ts` are placeholders pointing at the networks' front pages, not at
-   * RESCAN accounts, and asserting them as the company's profiles would be a false
-   * claim to Google. Fill this in once the real profile URLs exist.
+   * Verified profiles, emitted as schema.org `sameAs`. Only list a URL RESCAN actually
+   * owns — asserting a profile the company does not control is a false claim to Google.
    */
-  socialProfiles: [] as readonly string[],
+  socialProfiles: [
+    'https://www.linkedin.com/company/rescan-innovations-sweden-ab/',
+  ] as readonly string[],
   /** Matches the first stop of DEEP_BLUE_GRADIENT, which is what a phone's browser chrome
    *  sits against at the top of every page. */
   themeColor: '#1a1a2e',
