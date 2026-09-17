@@ -238,9 +238,10 @@ Details that are deliberate, not accidental:
 - **The OG endpoint takes a route key, never free text.** `/api/og?page=retail&locale=sv`
   reads the same catalogue the `<title>` comes from. An endpoint that renders any string a
   caller passes onto a RESCAN-branded card is a defacement vector.
-- **`siteConfig.socialProfiles` is empty on purpose.** The hrefs in `config/footer.ts` point
-  at the networks' front pages, not at RESCAN accounts, and publishing them as schema.org
-  `sameAs` would assert something untrue. Fill it in when the real profiles exist.
+- **`siteConfig.socialProfiles` carries only profiles RESCAN owns.** It holds the company
+  LinkedIn page, which is also the one social link in `config/footer.ts`. Publishing a
+  network's front page there as schema.org `sameAs` would assert something untrue, so a
+  new entry needs a real, verified account behind it.
 - Retired routes 308-redirect from `next.config.ts` rather than 404 — see **Routes** above.
 
 ## Placeholders

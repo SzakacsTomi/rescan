@@ -1,9 +1,11 @@
 import type { LegalLink, SocialLinkConfig } from "@/app/types/footer";
 
 export const socialLinks: SocialLinkConfig[] = [
-  { href: "https://instagram.com", platform: "instagram", labelKey: "instagram" },
-  { href: "https://linkedin.com", platform: "linkedin", labelKey: "linkedin" },
-  { href: "https://twitter.com", platform: "twitter", labelKey: "twitter" },
+  {
+    href: "https://www.linkedin.com/company/rescan-innovations-sweden-ab/",
+    platform: "linkedin",
+    labelKey: "linkedin",
+  },
 ];
 
 export const legalLinks: LegalLink[] = [

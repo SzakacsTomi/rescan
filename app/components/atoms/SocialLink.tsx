@@ -1,10 +1,8 @@
-import { InstagramIcon, LinkedinIcon, TwitterIcon } from '@/app/components/atoms/BrandIcons';
+import { LinkedinIcon } from '@/app/components/atoms/BrandIcons';
 import type { SocialLinkConfig } from '@/app/types/footer';
 
 const iconMap = {
-  instagram: InstagramIcon,
   linkedin: LinkedinIcon,
-  twitter: TwitterIcon,
 };
 
 type SocialLinkProps = {

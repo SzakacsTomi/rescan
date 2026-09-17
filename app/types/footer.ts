@@ -3,7 +3,7 @@ export type LegalLink = {
   labelKey: string;
 };
 
-export type SocialPlatform = 'instagram' | 'linkedin' | 'twitter';
+export type SocialPlatform = 'linkedin';
 
 export type SocialLinkConfig = {
   href: string;
