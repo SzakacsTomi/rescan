@@ -30,10 +30,17 @@ export const absoluteUrl = (path: string): string =>
 export const canonicalUrl = (locale: string, path: string): string =>
   absoluteUrl(localePath(locale, path));
 
+/**
+ * Bumped whenever the card's artwork changes. Facebook, LinkedIn and Slack key their
+ * scrape cache on the image URL and the endpoint answers `immutable` for a year, so a
+ * redesigned card only reaches already-shared links if the URL moves with it.
+ */
+const OG_CARD_VERSION = 2;
+
 /** The generated card for a page. Keyed by route rather than by free text so the endpoint
  *  cannot be used to render arbitrary words onto a RESCAN-branded image. */
 export const ogImagePath = (key: SeoRouteKey, locale: string): string =>
-  `/api/og?page=${key}&locale=${locale}`;
+  `/api/og?page=${key}&locale=${locale}&v=${OG_CARD_VERSION}`;
 
 type AlternatesInput = {
   locale: string;

@@ -62,6 +62,11 @@ describe('the route registry', () => {
   it('gives every route a distinct path and a card the OG endpoint accepts', () => {
     const paths = seoRoutes.map((route) => route.path);
     expect(new Set(paths).size).toBe(paths.length);
-    expect(ogImagePath('contact', 'sv')).toBe('/api/og?page=contact&locale=sv');
+    const card = new URLSearchParams(ogImagePath('contact', 'sv').split('?')[1]);
+    expect(card.get('page')).toBe('contact');
+    expect(card.get('locale')).toBe('sv');
+    // The version only has to be present: it is bumped whenever the artwork changes, so
+    // asserting a particular number would fail the next redesign rather than a real bug.
+    expect(card.get('v')).toBeTruthy();
   });
 });
