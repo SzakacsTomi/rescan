@@ -2,6 +2,7 @@ import type { AbstractIntlMessages } from "next-intl";
 import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { SmoothScroll } from "@/app/components/atoms/SmoothScroll";
+import { CookieBanner } from "@/app/components/organisms/CookieBanner";
 import { montserrat, plexMono } from "@/lib/fonts";
 import "@/app/globals.css";
 
@@ -21,6 +22,7 @@ export const AppShell = ({ locale, messages, children }: AppShellProps) => (
     <body className={`${montserrat.variable} ${plexMono.variable} antialiased`}>
       <NextIntlClientProvider messages={messages}>
         <SmoothScroll>{children}</SmoothScroll>
+        <CookieBanner />
       </NextIntlClientProvider>
     </body>
   </html>

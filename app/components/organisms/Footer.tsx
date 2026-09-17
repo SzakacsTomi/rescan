@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { CookiePreferencesButton } from "@/app/components/atoms/CookiePreferencesButton";
 import { SocialLink } from "@/app/components/atoms/SocialLink";
 import { legalLinks, socialLinks } from "@/config/footer";
 import { Logo } from "../atoms/Logo";
@@ -28,6 +29,10 @@ export const Footer = async () => {
                 {t(`legal.${link.labelKey}` as "legal.privacy" | "legal.cookies")}
               </a>
             ))}
+            <CookiePreferencesButton
+              label={t("cookieSettings")}
+              className="cursor-pointer text-foreground/40 hover:text-foreground/70 transition-colors text-sm"
+            />
           </div>
         </div>
 

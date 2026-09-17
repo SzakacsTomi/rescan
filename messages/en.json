@@ -150,7 +150,8 @@
     "legal": {
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy"
-    }
+    },
+    "cookieSettings": "Cookie settings"
   },
   "nav": {
     "retail": "Retail Property Portfolios",
@@ -161,6 +162,32 @@
     "menu": "Menu",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Cookies on this site",
+      "description": "We use Google Analytics to see which pages get read and where visitors arrive from. Nothing is measured until you accept, and declining changes nothing about how the site works.",
+      "acceptAll": "Accept all",
+      "reject": "Reject all",
+      "managePreferences": "Manage preferences"
+    },
+    "preferences": {
+      "title": "Cookie preferences",
+      "save": "Save my choices",
+      "close": "Close",
+      "necessary": {
+        "title": "Strictly necessary",
+        "description": "Your language choice and the spam protection on the contact form. The site cannot work without them, so they cannot be switched off."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Google Analytics, which counts page views and records which site or search sent you here. It is not loaded at all until you accept, and its cookies are deleted if you later decline."
+      },
+      "policies": {
+        "title": "More information",
+        "description": "The full detail is in our policies:"
+      }
+    }
   },
   "common": {
     "switchLanguage": "Svenska",
