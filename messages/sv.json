@@ -150,7 +150,8 @@
     "legal": {
       "privacy": "Integritetspolicy",
       "cookies": "Cookiepolicy"
-    }
+    },
+    "cookieSettings": "Kakinställningar"
   },
   "nav": {
     "retail": "Handelsfastigheter",
@@ -161,6 +162,32 @@
     "menu": "Meny",
     "openMenu": "Öppna menyn",
     "closeMenu": "Stäng menyn"
+  },
+  "cookieConsent": {
+    "banner": {
+      "title": "Kakor på den här webbplatsen",
+      "description": "Vi använder Google Analytics för att se vilka sidor som läses och varifrån besökarna kommer. Ingenting mäts förrän du accepterar, och om du avböjer fungerar webbplatsen precis som vanligt.",
+      "acceptAll": "Acceptera alla",
+      "reject": "Avvisa alla",
+      "managePreferences": "Hantera inställningar"
+    },
+    "preferences": {
+      "title": "Inställningar för kakor",
+      "save": "Spara mina val",
+      "close": "Stäng",
+      "necessary": {
+        "title": "Nödvändiga",
+        "description": "Ditt språkval och skräppostskyddet i kontaktformuläret. Webbplatsen fungerar inte utan dem, så de går inte att stänga av."
+      },
+      "analytics": {
+        "title": "Analys",
+        "description": "Google Analytics, som räknar sidvisningar och registrerar vilken webbplats eller sökning som ledde hit. Det laddas inte alls förrän du accepterar, och kakorna raderas om du senare avböjer."
+      },
+      "policies": {
+        "title": "Mer information",
+        "description": "Alla detaljer finns i våra policyer:"
+      }
+    }
   },
   "common": {
     "switchLanguage": "English",

@@ -194,6 +194,54 @@
   --ring: oklch(0.476 0.150 258);
 }
 
+/* ─── Cookie consent ───────────────────────────────────────────────────────
+   vanilla-cookieconsent ships its own hardcoded greys. Mapping its `--cc-*`
+   surface onto the tokens above is what stops the banner reading as a
+   third-party widget dropped on the page; the plugin scopes everything under
+   #cc-main, so these never leak into the site's own styles. Only the values
+   the plugin hardcodes are listed — the rest of its variables already derive
+   from the ones set here.
+   ─────────────────────────────────────────────────────────────────────── */
+#cc-main {
+  --cc-font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --cc-modal-border-radius: var(--radius);
+  --cc-btn-border-radius: calc(var(--radius) - 2px);
+  /* Above the mobile menu and the projects overlay (z-101), which are the highest
+     layers the site itself paints. */
+  --cc-z-index: 200;
+
+  --cc-bg: var(--background);
+  --cc-primary-color: var(--foreground);
+  --cc-secondary-color: color-mix(in oklab, var(--foreground) 62%, var(--background));
+  --cc-link-color: var(--primary);
+  --cc-overlay-bg: color-mix(in oklab, var(--color-ink) 62%, transparent);
+
+  /* The site's own primary button: brand blue, lightening rather than darkening on
+     hover — see HeroSection's CTA. */
+  --cc-btn-primary-bg: var(--primary);
+  --cc-btn-primary-color: var(--primary-foreground);
+  --cc-btn-primary-hover-bg: var(--color-accent-mid);
+  --cc-btn-primary-hover-color: var(--primary-foreground);
+  --cc-btn-secondary-bg: var(--secondary);
+  --cc-btn-secondary-color: var(--secondary-foreground);
+  --cc-btn-secondary-hover-bg: var(--color-hairline);
+  --cc-btn-secondary-hover-color: var(--foreground);
+  --cc-btn-secondary-hover-border-color: var(--color-hairline);
+
+  --cc-separator-border-color: var(--border);
+  --cc-footer-border-color: var(--border);
+  --cc-cookie-category-block-bg: var(--color-paper);
+  --cc-cookie-category-block-border: var(--border);
+  --cc-cookie-category-block-hover-bg: var(--color-hairline);
+  --cc-cookie-category-block-hover-border: var(--color-hairline);
+
+  --cc-toggle-on-bg: var(--primary);
+  --cc-toggle-off-bg: color-mix(in oklab, var(--foreground) 45%, var(--background));
+  --cc-toggle-readonly-bg: var(--color-hairline);
+  --cc-toggle-readonly-knob-bg: var(--background);
+  --cc-toggle-readonly-knob-icon-color: var(--color-hairline);
+}
+
 /* CarouselHero's track is the image list rendered twice back to back (see
    CarouselHero.tsx's buildRow), so translating exactly half its width loops seamlessly. */
 @keyframes marquee {

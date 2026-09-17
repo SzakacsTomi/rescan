@@ -39,6 +39,8 @@ way the proof metrics already are, not given a new placeholder style.
 | Forms        | Zod 4 + Server Actions (no react-hook-form)                    |
 | Email        | Resend                                                         |
 | Anti-spam    | Cloudflare Turnstile                                           |
+| Analytics    | Google Analytics 4 — consent-gated, hand-wired Consent Mode v2 |
+| Consent      | vanilla-cookieconsent 3 (self-hosted, MIT)                     |
 | Lint         | ESLint 9 flat config + `eslint-config-next`                    |
 | Test         | Vitest + Testing Library + jsdom — `yarn test`, config in `vitest.config.ts` |
 | Package mgr  | Yarn 4 (`nodeLinker: node-modules`)                            |
@@ -243,6 +245,30 @@ Details that are deliberate, not accidental:
   network's front page there as schema.org `sameAs` would assert something untrue, so a
   new entry needs a real, verified account behind it.
 - Retired routes 308-redirect from `next.config.ts` rather than 404 — see **Routes** above.
+
+## Analytics and consent
+
+GA4 ships gated by the banner that gates it — `lib/analytics.ts` holds the tag,
+`organisms/CookieBanner.tsx` the gate, `atoms/CookiePreferencesButton` the way back in.
+
+- **No measurement ID, no banner.** `NEXT_PUBLIC_GA_MEASUREMENT_ID` is the single switch:
+  unset, `gtag.js` never loads *and* `CookieBanner` renders nothing. That is the honest
+  state for a preview build — with GA absent the only cookies the site sets are
+  `NEXT_LOCALE` and Turnstile's, and neither needs consent.
+- **Basic Consent Mode v2, not advanced.** Every signal is declared denied before anything
+  loads and `gtag.js` is fetched only once analytics is granted, so Google sees no request
+  at all from a reader who declines. The three `ad_*` signals are never granted: the site
+  runs no advertising product.
+- **Do not track route changes by hand.** GA4's enhanced measurement already emits one
+  `page_view` per App Router navigation through its own History API listener. It arrives
+  several seconds after the navigation, which is long enough to look missing; adding a
+  `page_view` on `usePathname` change doubles every count. Measured, both ways.
+- **The plugin holds its copy as a plain object**, so a locale switch is a `reset(false)`
+  plus a fresh `run()`. Which locale is configured is tracked at module scope, not in a
+  ref — the switch is a client-side navigation that remounts the component, and a ref
+  would come back `null` and conclude nothing had been configured yet.
+- The `--cc-*` custom properties are mapped onto the theme tokens in `app/globals.css`;
+  the plugin scopes everything under `#cc-main`, so they never leak into the site.
 
 ## Placeholders
 
