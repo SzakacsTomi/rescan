@@ -71,9 +71,7 @@ export async function submitContact(
     Object.fromEntries(CONTACT_FIELDS.map((field) => [field, read(field)])),
   );
   if (!parsed.success) {
-    const hasEmailIssue = parsed.error.issues.some(
-      (issue) => issue.message === "invalidEmail",
-    );
+    const hasEmailIssue = parsed.error.issues.some((issue) => issue.message === "invalidEmail");
     return { status: "error", errorKey: hasEmailIssue ? "invalidEmail" : "required" };
   }
 
@@ -137,7 +135,7 @@ export async function submitContact(
 
     const resend = new Resend(apiKey);
     await resend.emails.send({
-      from: "Rescan Contact Form <onboarding@resend.dev>",
+      from: "Rescan Contact Form <noreply@mail.rescan.se>",
       to: [siteConfig.email],
       replyTo: enquiry.email,
       subject: contactNotificationSubject(notification),
