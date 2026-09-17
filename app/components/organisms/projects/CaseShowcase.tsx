@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 
 import { CaseBand } from "@/app/components/molecules/CaseBand";
 import { CaseStudyPanel, type CaseStudyCopy } from "@/app/components/molecules/CaseStudyPanel";
 import { caseStudies, type ProjectSector } from "@/config/projects";
 import { contactHrefForSector } from "@/lib/contact";
+import { cn } from "@/lib/utils";
 
 export type CaseShowcaseCaseCopy = CaseStudyCopy & {
   /** The single result line the collapsed band carries under the client's name. */
@@ -35,11 +35,6 @@ type CaseShowcaseProps = {
 
 /** The navbar the opened band has to clear when the stack scrolls itself into place. */
 const NAVBAR_HEIGHT_PX = 64;
-
-const PANEL_EXPAND_S = 0.5;
-/** The same symmetric curve the bands sweep on, so the panel unrolling reads as part of
- *  the same motion language rather than a stock accordion. */
-const PANEL_EASE = [0.4, 0, 0.2, 1] as const;
 
 /**
  * The page's hero: the four case studies stacked as full-bleed bands, flush against the
@@ -146,31 +141,35 @@ export const CaseShowcase = ({
                 />
               </div>
 
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    key={panelId}
-                    className="overflow-hidden"
-                    initial={{ height: 0 }}
-                    animate={{ height: "auto" }}
-                    exit={{ height: 0 }}
-                    transition={{ duration: PANEL_EXPAND_S, ease: PANEL_EASE }}
-                  >
-                    <CaseStudyPanel
-                      id={panelId}
-                      copy={copy}
-                      sectorLabel={sectorLabels[caseStudy.sector]}
-                      caseStudyLabel={caseStudyLabel}
-                      labels={sectionLabels}
-                      contactHref={contactHrefForSector(caseStudy.sector)}
-                      sectorLink={{
-                        label: sectorLinkLabel,
-                        href: sectorHref[caseStudy.sector],
-                      }}
-                    />
-                  </motion.div>
+              {/* Always mounted, collapsed to a zero-height grid row rather than left
+                  unrendered until it is asked for: the written-up studies are the only
+                  hard proof the site carries, and neither a crawler nor an answer engine
+                  clicks. The height is CSS rather than a measured Framer `height: auto`
+                  so the closed state is already in the server HTML — a measured
+                  animation would leave every study full-height until hydration. */}
+              <div
+                className={cn(
+                  "grid transition-[grid-template-rows] duration-500 ease-in-out",
+                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
-              </AnimatePresence>
+                inert={!isOpen}
+              >
+                <div className="overflow-hidden">
+                  <CaseStudyPanel
+                    id={panelId}
+                    copy={copy}
+                    isOpen={isOpen}
+                    sectorLabel={sectorLabels[caseStudy.sector]}
+                    caseStudyLabel={caseStudyLabel}
+                    labels={sectionLabels}
+                    contactHref={contactHrefForSector(caseStudy.sector)}
+                    sectorLink={{
+                      label: sectorLinkLabel,
+                      href: sectorHref[caseStudy.sector],
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           );
         })}

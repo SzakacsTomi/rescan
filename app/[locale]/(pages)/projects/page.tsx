@@ -114,10 +114,18 @@ export default async function ProjectsPage({ params }: PageProps) {
     logistics: t('sectorLabels.logistics'),
   };
 
-  // The four case studies are the stack's own headings and open on demand; the index is the
-  // page's flat, always-visible list of work, so it is what the CollectionPage enumerates.
+  // Two lists, because the page holds two kinds of work: the flat index of every property
+  // documented, which is names only, and the four written-up studies, whose figures are
+  // the page's proof and so are emitted as nodes of their own.
   const jsonLd = await resolvePageJsonLd(locale, 'projects', {
     listItems: projects.map(({ id }) => cards[id].title),
+    caseStudies: caseStudies.map(({ id, sector }) => ({
+      id,
+      name: cases[id].title,
+      description: cases[id].lead,
+      sector: sectorLabels[sector],
+      stats: cases[id].stats.map(({ label, value }) => ({ name: label, value })),
+    })),
   });
 
   return (

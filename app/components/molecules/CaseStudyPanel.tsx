@@ -30,6 +30,9 @@ export type CaseStudyCopy = {
 type CaseStudyPanelProps = {
   id: string;
   copy: CaseStudyCopy;
+  /** The panel stays mounted when closed so its copy is in the server HTML, so the blocks
+   *  are held at their hidden variant rather than being unmounted between reads. */
+  isOpen: boolean;
   /** `<sector> — Case study`, split so the sector half can stay a link. */
   sectorLabel: string;
   caseStudyLabel: string;
@@ -68,6 +71,7 @@ const PROSE = "max-w-160 text-note leading-copy text-pretty text-foreground/70 l
 export const CaseStudyPanel = ({
   id,
   copy,
+  isOpen,
   sectorLabel,
   caseStudyLabel,
   labels,
@@ -78,8 +82,7 @@ export const CaseStudyPanel = ({
     id={id}
     className="bg-background"
     initial="hidden"
-    animate="show"
-    exit="hidden"
+    animate={isOpen ? "show" : "hidden"}
     variants={GROUP}
   >
     <div className="mx-auto w-full max-w-shell px-6 py-16 sm:px-8 lg:py-20 lg:pr-10 lg:pl-spine">

@@ -32,6 +32,14 @@ export type SeoRoute = {
   /** The two sector pages describe an offering, so they also emit a schema.org Service
    *  whose name and type come from `metadata.pages.<key>.service*`. */
   hasServiceSchema?: boolean;
+  /**
+   * ISO date the page's copy was last actually reviewed, emitted as the WebPage's
+   * `dateModified`. Hand-authored and bumped by whoever changes the copy — deliberately
+   * not derived from the build or from git, for the same reason the sitemap carries no
+   * `lastModified`: a date that moves on every deploy without the words moving is a claim
+   * of freshness the page cannot support, and crawlers learn to discount the field.
+   */
+  contentReviewed: string;
 };
 
 export const seoRoutes: readonly SeoRoute[] = [
@@ -41,6 +49,7 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'monthly',
     priority: 1,
     pageType: 'WebPage',
+    contentReviewed: '2026-09-17',
     absoluteTitle: true,
   },
   {
@@ -49,6 +58,7 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'monthly',
     priority: 0.9,
     pageType: 'WebPage',
+    contentReviewed: '2026-09-17',
     hasServiceSchema: true,
   },
   {
@@ -57,6 +67,7 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'monthly',
     priority: 0.9,
     pageType: 'WebPage',
+    contentReviewed: '2026-09-17',
     hasServiceSchema: true,
   },
   {
@@ -65,6 +76,7 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'monthly',
     priority: 0.8,
     pageType: 'CollectionPage',
+    contentReviewed: '2026-09-17',
   },
   {
     key: 'about',
@@ -72,6 +84,7 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'yearly',
     priority: 0.5,
     pageType: 'AboutPage',
+    contentReviewed: '2026-09-17',
   },
   {
     key: 'contact',
@@ -79,6 +92,7 @@ export const seoRoutes: readonly SeoRoute[] = [
     changeFrequency: 'yearly',
     priority: 0.6,
     pageType: 'ContactPage',
+    contentReviewed: '2026-09-17',
   },
 ];
 
