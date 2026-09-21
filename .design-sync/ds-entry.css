@@ -4,8 +4,14 @@
 @import "tailwindcss" source(none);
 @source "../app";
 @source "../config";
+/* The reference cards live outside app/, so their classes need scanning too - without
+   these two the palette and type-ramp previews render unstyled. Scoped to the two exact
+   paths rather than the whole directory, so .cache/ (which holds the compiled CSS this
+   step writes) is never scanned back into itself. */
+@source "../.design-sync/ds-components.tsx";
+@source "../.design-sync/previews";
 
-@source inline("{bg,text,border,ring,fill,stroke,decoration,outline,caret,accent,shadow,from,via,to}-{accent,accent-foreground,accent-mid,accent-sky,background,border,card,card-foreground,destructive,fit,foreground,hairline,ink,ink-soft,input,muted,muted-foreground,paper,popover,popover-foreground,primary,primary-foreground,ring,secondary,secondary-foreground}");
+@source inline("{bg,text,border}-{accent,accent-foreground,accent-mid,accent-sky,background,border,card,card-foreground,destructive,fit,foreground,hairline,ink,ink-soft,input,muted,muted-foreground,paper,popover,popover-foreground,primary,primary-foreground,ring,secondary,secondary-foreground}");
 @source inline("{hover:,focus:,active:,group-hover:,dark:,focus-visible:}{bg,text,border}-{accent,accent-foreground,accent-mid,accent-sky,background,border,card,card-foreground,destructive,fit,foreground,hairline,ink,ink-soft,input,muted,muted-foreground,paper,popover,popover-foreground,primary,primary-foreground,ring,secondary,secondary-foreground}");
 @source inline("{bg,text,border}-{accent,accent-foreground,accent-mid,accent-sky,background,border,card,card-foreground,destructive,fit,foreground,hairline,ink,ink-soft,input,muted,muted-foreground,paper,popover,popover-foreground,primary,primary-foreground,ring,secondary,secondary-foreground}/{5,10,15,20,25,30,40,50,60,70,75,80,85,90,95}");
 @source inline("text-{body,body-lg,caption,display,display-2xs,display-lg,display-sm,display-xl,display-xs,h1,h1-lg,h2,h2-lg,h3,hero,hero-lg,lead,lead-lg,micro,mono-2xs,mono-xs,note,subhead,title,title-lg,title-sm}");

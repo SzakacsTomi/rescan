@@ -1,23 +1,28 @@
 # design-sync notes — Rescan
 
-## Shape: tokens-only, and deliberately so
+## Shape: foundations, not a component library
 
 This repo is a Next.js **application**, not a design-system package: `private: true`, no
-`main`/`module`/`exports`, no `dist/`, no Storybook. The converter's `[ZERO_MATCH]` path
-(`lib/source-kit.mjs`) treats it as a tokens-only DS, which is the intended outcome — what
-syncs is the visual language (colour, type, spacing, motion, fonts), not React components.
+`main`/`module`/`exports`, no `dist/`, no Storybook. What syncs is the visual language —
+colour, type, spacing, motion, fonts — plus three documentation cards so the system is
+browsable (see "The reference cards" below). **No Rescan UI components sync.**
 
-The JS entry is a stub: `.design-sync/.cache/empty-entry.ts` containing `export {};`. It
-exists only to give `package-build.mjs` something to bundle. Do not point `--entry` at
-`app/components/` — those are Server Components coupled to `next-intl`, `next/image` and
-the Cloudinary allowlist, and bundling them needs stubs nobody has written.
+The build entry is `.design-sync/ds-components.tsx`, which exports only those three
+reference cards. Do not point `--entry` at `app/components/` — those are Server Components
+coupled to `next-intl`, `next/image` and the Cloudinary allowlist, and bundling them needs
+stubs nobody has written.
+
+(An earlier iteration used a `.design-sync/.cache/empty-entry.ts` stub containing
+`export {};` for a pure tokens-only build. That path still works and is what
+`[ZERO_MATCH]` in `lib/source-kit.mjs` handles, but it produces a system the design picker
+labels "empty".)
 
 ## Run order — `build-css.mjs` BEFORE the converter
 
 ```
 node .design-sync/build-css.mjs
 node .ds-sync/resync.mjs --config .design-sync/config.json --node-modules ./node_modules \
-  --out ./ds-bundle --entry ./.design-sync/.cache/empty-entry.ts --no-render-check
+  --out ./ds-bundle --entry ./.design-sync/ds-components.tsx
 ```
 
 Skipping the first step uploads a stale stylesheet that no longer matches `app/globals.css`.
@@ -45,13 +50,13 @@ Skipping the first step uploads a stale stylesheet that no longer matches `app/g
 - **Fonts are self-hosted from Google Fonts** into `.design-sync/fonts/` (committed, 356 KB,
   11 faces). Subsets mirror `lib/fonts.ts` exactly — Montserrat `latin` only, IBM Plex Mono
   `latin` + `latin-ext`. Fetching all subsets instead gives 45 files / 1.4 MB for nothing.
-- **`--no-render-check` is correct here, not a shortcut.** A tokens-only bundle has zero
-  previews, so the render check has nothing to open. The stylesheet was instead verified in
-  a real browser (fonts loading, tokens resolving, utilities applying). Re-do that check by
-  hand if the CSS pipeline changes; `validate`'s warn line about it is expected.
-- **`@tailwindcss/cli` lives in the gitignored `.ds-sync/`.** A fresh clone must re-stage the
-  skill scripts and `npm i esbuild ts-morph @types/react @tailwindcss/cli` before
-  `build-css.mjs` will run.
+- **The render check runs and must stay running.** With three real previews, Playwright
+  actually verifies them, so do NOT pass `--no-render-check`. (It was correct only for the
+  earlier zero-preview build, where there was nothing to open.)
+- **`@tailwindcss/cli` and `playwright` live in the gitignored `.ds-sync/`.** A fresh clone
+  must re-stage the skill scripts, then
+  `npm i esbuild ts-morph @types/react @tailwindcss/cli playwright && npx playwright install chromium`
+  before `build-css.mjs` and the render check will run.
 - **Don't `pkill -f` a pattern containing the served port.** The pattern matches the killing
   shell's own command line and takes out the session. Stop the verification server by its
   task id instead.
@@ -79,9 +84,45 @@ Skipping the first step uploads a stale stylesheet that no longer matches `app/g
 - **Fonts were fetched over the network** from `fonts.googleapis.com`. A future re-fetch can
   pick up different font revisions; the committed `.woff2` files are the stable copy.
 
-## Not synced
+## The reference cards, and why they exist
 
-No component previews and no `components/` entries. Adding them is not a config change: a
-zero-component bundle fails `package-validate.mjs` if any `.html` card exists
-(`previews !== ver.componentCount`, line 370, not guarded by `tokensOnly`), so foundation
-cards would require real React components in the bundle.
+A pure tokens-only upload renders in the design picker as **"This design system is empty"**.
+The app's manifest indexed all 561 tokens and both font families correctly — but its pane is
+card-driven (`components`/`cards`/`startingPoints` all `[]`), so a system with no previews
+reads as unfinished no matter how complete its tokens are.
+
+`.design-sync/ds-components.tsx` exports three documentation components — `ColorPalette`,
+`TypeScale`, `SpacingScale` — purely so the system is browsable. They are **not** Rescan UI
+and deliberately mirror nothing in `app/components/`. They read their values off the live
+document via `getComputedStyle`, so a token renamed or revalued in `app/globals.css` shows
+up on the next sync without editing them.
+
+Wiring notes, each of which cost a build:
+
+- **`.d.ts` discovery finds nothing in synth-entry mode.** Component detection reads a
+  shipped `.d.ts` tree; there is none here, so `cfg.componentSrcMap` pins the three names
+  explicitly (`source-kit.mjs:83-95` — non-null entries *add* to the set).
+- **Prop extraction also fails without `.d.ts`**, emitting `[key: string]: unknown` — a
+  useless contract for the design agent. `cfg.dtsPropsFor` carries the real prop bodies.
+  Watch the quoting: a string-literal union must reach the config with its apostrophes
+  intact, or you get `family?: brand | semantic | all`, which *parses* as valid TypeScript
+  (three undefined type references) and sails through validate while being wrong.
+- **Group comes from doc frontmatter.** Without `cfg.docsDir`, everything lands in
+  `general`. `.design-sync/docs/<Name>.md` sets `category: Foundations` and doubles as the
+  component's `.prompt.md`.
+- **Renaming a group orphans the old remote paths.** `components/general/**` had to be
+  deleted by hand during reconciliation; anchor-based diffs can't see paths the anchor never
+  recorded.
+- **`.design-sync/` must be a Tailwind `@source`.** The cards' classes live outside `app/`,
+  so without the two scoped `@source` lines in `build-css.mjs` they render unstyled. Scoped
+  to exact paths, never the whole directory — `.cache/` holds the compiled CSS this step
+  writes, and scanning it back into itself is a loop.
+- **The safelist was originally too broad.** Crossing the full colour set with
+  `from/via/to/shadow/ring/fill/stroke` made the app register ~200 utility classes as
+  selectable "themes" (`From Accent`, `Shadow Ink`, `Via Transparent`), burying the real
+  `.dark`. Only `bg`/`text`/`border` are crossed now. Re-check the manifest's `themes` array
+  after any safelist change.
+
+Verification is real: `package-validate.mjs` runs the Playwright render check (3/3), and the
+previews were graded by measuring the DOM — 20 distinct swatch colours, 26 distinct type
+sizes from 10px to 104px, container bars ascending 900→1920px, spine exactly 126px.
