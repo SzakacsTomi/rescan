@@ -1,0 +1,12 @@
+{
+  "shape": "package",
+  "pkg": "rescan",
+  "globalName": "Rescan",
+  "projectId": "60e055f9-44c0-4bc7-8970-80db33ce19ea",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/.cache/ds-compiled.css",
+  "extraFonts": [
+    ".design-sync/fonts/fonts.css"
+  ],
+  "readmeHeader": ".design-sync/conventions.md"
+}
