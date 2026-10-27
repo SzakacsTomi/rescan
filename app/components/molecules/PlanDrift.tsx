@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
@@ -79,7 +79,7 @@ export const PlanDrift = ({ archiveLabel, actualLabel, className }: PlanDriftPro
           <path d={ARCHIVE_PARTITION} stroke="currentColor" strokeWidth="2" strokeDasharray="7 7" />
         </g>
 
-        <motion.g
+        <m.g
           initial={false}
           animate={{ opacity: play ? 1 : 0 }}
           transition={{ duration: 0.55, delay: reduceMotion ? 0 : DRIFT_DELAY }}
@@ -87,11 +87,11 @@ export const PlanDrift = ({ archiveLabel, actualLabel, className }: PlanDriftPro
           {DRIFT_REGIONS.map((d) => (
             <path key={d} d={d} fill={`url(#${HATCH_ID})`} />
           ))}
-        </motion.g>
+        </m.g>
 
         <g className="text-accent-sky">
           {ACTUAL_PARTS.map((d, i) => (
-            <motion.path
+            <m.path
               key={d}
               d={d}
               stroke="currentColor"

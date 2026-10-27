@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
@@ -89,14 +89,14 @@ export const CarouselHero = ({
         <div className="flex flex-col gap-10 py-16 sm:pt-20 lg:max-w-205 lg:py-24">
           <div>
             {eyebrow && <MonoLabel className="block text-primary">{eyebrow}</MonoLabel>}
-            <motion.h1
+            <m.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="mt-7 text-4xl sm:text-5xl lg:text-display-2xs font-bold leading-headline tracking-tight text-balance whitespace-pre-line"
             >
               {headline}
-            </motion.h1>
+            </m.h1>
             <p className="mt-7 max-w-155 text-lead leading-copy text-pretty text-foreground/60">
               {subheadline}
             </p>

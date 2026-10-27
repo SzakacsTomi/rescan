@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
@@ -44,7 +44,7 @@ export const LanguageSwitcher = ({ variant = 'light' }: LanguageSwitcherProps) =
             )}
           >
             {isActive && (
-              <motion.span
+              <m.span
                 layoutId="language-pill"
                 className="absolute inset-0 rounded-full bg-primary"
                 transition={PILL_SPRING_TRANSITION}

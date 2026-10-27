@@ -3,7 +3,7 @@
 import { useActionState, useId, useRef, useState, type ReactNode } from "react";
 
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
 
 import { submitContact, type ContactFormState } from "@/app/actions/contact";
@@ -129,13 +129,13 @@ export const ContactForm = ({ t, groups, rail, defaultSector }: ContactFormProps
           </option>
         ))}
       </select>
-      <motion.div
+      <m.div
         className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-muted-foreground"
         animate={{ rotate: focusedSelect === field ? 180 : 0 }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
         <ChevronDown className="h-4 w-4" />
-      </motion.div>
+      </m.div>
     </div>
   );
 

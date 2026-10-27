@@ -2,7 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 import { ImageStrip } from "@/app/components/atoms/ImageStrip";
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
@@ -148,13 +148,12 @@ export const CaseBand = ({
   return (
     <div
       ref={ref}
-      onClick={onToggle}
-      className={cn("group relative flex cursor-pointer flex-col overflow-hidden", BAND_HEIGHT)}
+      className={cn("group relative flex flex-col overflow-hidden", BAND_HEIGHT)}
       style={{ background: gradient }}
     >
       {images.length > 0 ? (
         <div className="absolute inset-0">
-          <motion.div
+          <m.div
             className="absolute inset-0"
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : undefined}
@@ -185,13 +184,13 @@ export const CaseBand = ({
             <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_CEILING_SCRIM }} />
             <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_FLOOR_SCRIM }} />
             <div className="pointer-events-none absolute inset-0" style={{ background: PHOTO_COPY_SCRIM }} />
-          </motion.div>
+          </m.div>
         </div>
       ) : (
         <div aria-hidden className="absolute inset-0" style={{ backgroundImage: CASE_HATCH }} />
       )}
 
-      <motion.div
+      <m.div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-0 w-24 mix-blend-screen"
         style={{
@@ -202,7 +201,7 @@ export const CaseBand = ({
         transition={{ duration: SCAN_DURATION_S, ease: SCAN_EASE }}
       />
 
-      <motion.div
+      <m.div
         className="pointer-events-none relative mx-auto flex w-full max-w-shell flex-1 flex-col px-6 pt-8 pb-10 lg:pr-10 lg:pl-spine"
         initial={{ clipPath: "inset(0 100% 0 0)" }}
         animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : undefined}
@@ -234,15 +233,15 @@ export const CaseBand = ({
             </p>
           </div>
 
+          {/* The whole band opens the study, but through this button's `::after` stretched over
+              the content layer rather than a click handler on the band: a keyboard reaches the
+              same control a pointer does, and there is no second, unfocusable way in. */}
           <button
             type="button"
-            onClick={(event) => {
-              event.stopPropagation();
-              onToggle();
-            }}
+            onClick={onToggle}
             aria-expanded={isOpen}
             aria-controls={panelId}
-            className="pointer-events-auto inline-flex w-fit shrink-0 cursor-pointer items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2.5 text-caption font-semibold text-white transition-colors group-hover:border-white/45 group-hover:bg-white/25"
+            className="pointer-events-auto inline-flex after:absolute after:inset-0 w-fit shrink-0 cursor-pointer items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2.5 text-caption font-semibold text-white transition-colors group-hover:border-white/45 group-hover:bg-white/25"
           >
             {/* Both labels stay mounted so each can be measured and the pair can cross-fade;
                 `w-max` holds each to its own width inside the box that animates between them,
@@ -284,7 +283,7 @@ export const CaseBand = ({
             />
           </button>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 };

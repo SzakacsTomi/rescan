@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 
 import { MonoLabel } from "@/app/components/atoms/MonoLabel";
 import { PENDING_ON_DARK, Pending } from "@/app/components/atoms/Pending";
@@ -78,7 +78,7 @@ export const CaseStudyPanel = ({
   contactHref,
   sectorLink,
 }: CaseStudyPanelProps) => (
-  <motion.div
+  <m.div
     id={id}
     className="bg-background"
     initial="hidden"
@@ -87,7 +87,7 @@ export const CaseStudyPanel = ({
   >
     <div className="mx-auto w-full max-w-shell px-6 py-16 sm:px-8 lg:py-20 lg:pr-10 lg:pl-spine">
       <div className="max-w-measure">
-        <motion.div variants={BLOCK}>
+        <m.div variants={BLOCK}>
           <MonoLabel className="text-primary">
             <Link href={sectorLink.href} className="hover:underline underline-offset-4">
               {sectorLabel}
@@ -101,9 +101,9 @@ export const CaseStudyPanel = ({
           <p className="mt-5 max-w-160 text-note leading-copy text-pretty text-foreground/55 lg:text-body">
             <Pending>{copy.lead}</Pending>
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.dl
+        <m.dl
           variants={BLOCK}
           /* One row of however many figures the write-up quotes, each column an equal
              share — a fixed four would leave a three-figure case short a cell and squeeze
@@ -120,9 +120,9 @@ export const CaseStudyPanel = ({
               </dd>
             </div>
           ))}
-        </motion.dl>
+        </m.dl>
 
-        <motion.div variants={BLOCK} className="mt-14">
+        <m.div variants={BLOCK} className="mt-14">
           <MonoLabel>{labels.challenge}</MonoLabel>
           {copy.challenge.headline !== "" && (
             <h4 className="mt-5 max-w-160 text-title-sm font-bold leading-title tracking-tight text-balance">
@@ -132,9 +132,9 @@ export const CaseStudyPanel = ({
           <p className={cn("mt-5", PROSE)}>
             <Pending>{copy.challenge.body}</Pending>
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           variants={BLOCK}
           className="mt-12 rounded-xl px-7 py-8 lg:px-10 lg:py-10"
           style={{ background: DEEP_BLUE_GRADIENT }}
@@ -150,16 +150,16 @@ export const CaseStudyPanel = ({
               {copy.change.body}
             </Pending>
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={BLOCK} className="mt-12">
+        <m.div variants={BLOCK} className="mt-12">
           <MonoLabel>{labels.outcome}</MonoLabel>
           <p className={cn("mt-5", PROSE)}>
             <Pending>{copy.outcome.body}</Pending>
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={BLOCK} className="mt-14 border-t border-border pt-10">
+        <m.div variants={BLOCK} className="mt-14 border-t border-border pt-10">
           <h4 className="text-title-sm font-bold leading-title tracking-tight text-balance">
             {copy.closing.headline}
           </h4>
@@ -181,8 +181,8 @@ export const CaseStudyPanel = ({
               {sectorLink.label}
             </Link>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
-  </motion.div>
+  </m.div>
 );

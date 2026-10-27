@@ -2,7 +2,7 @@
 
 import { useScrollToId } from "@/app/hooks/useScrollToId";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -16,7 +16,7 @@ export const ScrollArrow = ({ targetId, className }: ScrollArrowProps) => {
   const scrollToId = useScrollToId();
 
   return (
-    <motion.button
+    <m.button
       onClick={() => scrollToId(targetId)}
       aria-label={t("hero.scrollHint")}
       animate={{ y: [0, 8, 0] }}
@@ -28,6 +28,6 @@ export const ScrollArrow = ({ targetId, className }: ScrollArrowProps) => {
     >
       <span className="text-xs font-medium tracking-widest uppercase">{t("hero.scrollHint")}</span>
       <ChevronDown className="w-5 h-5 stroke-[2.5]" />
-    </motion.button>
+    </m.button>
   );
 };

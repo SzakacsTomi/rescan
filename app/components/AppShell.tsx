@@ -1,6 +1,7 @@
 import type { AbstractIntlMessages } from "next-intl";
 import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
+import { MotionProvider } from "@/app/components/atoms/MotionProvider";
 import { SmoothScroll } from "@/app/components/atoms/SmoothScroll";
 import { CookieBanner } from "@/app/components/organisms/CookieBanner";
 import { montserrat, plexMono } from "@/lib/fonts";
@@ -21,8 +22,10 @@ export const AppShell = ({ locale, messages, children }: AppShellProps) => (
   <html lang={locale}>
     <body className={`${montserrat.variable} ${plexMono.variable} antialiased`}>
       <NextIntlClientProvider messages={messages}>
-        <SmoothScroll>{children}</SmoothScroll>
-        <CookieBanner />
+        <MotionProvider>
+          <SmoothScroll>{children}</SmoothScroll>
+          <CookieBanner />
+        </MotionProvider>
       </NextIntlClientProvider>
     </body>
   </html>
