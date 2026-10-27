@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useRef, useState } from "react";
@@ -74,7 +74,7 @@ export const SectionCard = ({
   const flexValue = isHoverDevice ? (isHovered ? 1.55 : anyHovered ? 0.85 : 1) : 1;
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       animate={{ flex: flexValue }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -167,6 +167,6 @@ export const SectionCard = ({
           </span>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };

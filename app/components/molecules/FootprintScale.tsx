@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -40,7 +40,7 @@ export const FootprintScale = ({ share, sites, className }: FootprintScaleProps)
 
   return (
     <div ref={ref} aria-hidden className={cn("w-full", className)}>
-      <motion.div
+      <m.div
         className="flex h-22 gap-2"
         initial={false}
         animate={{ width: play ? width : 0 }}
@@ -53,7 +53,7 @@ export const FootprintScale = ({ share, sites, className }: FootprintScaleProps)
             style={{ backgroundImage: BAY_GRID }}
           />
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

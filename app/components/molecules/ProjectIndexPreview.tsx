@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, type MotionValue } from "framer-motion";
+import { AnimatePresence, m, type MotionValue } from "framer-motion";
 
 import { MediaPlaceholder } from "@/app/components/atoms/MediaPlaceholder";
 import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
@@ -23,14 +23,14 @@ type ProjectIndexPreviewProps = {
  * below that each row carries its image and this stays hidden.
  */
 export const ProjectIndexPreview = ({ project, x, y }: ProjectIndexPreviewProps) => (
-  <motion.div
+  <m.div
     aria-hidden
     style={{ x, y }}
     className="pointer-events-none fixed left-0 top-0 z-30 hidden lg:block"
   >
     <AnimatePresence>
       {project && (
-        <motion.div
+        <m.div
           key={project.id}
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -54,8 +54,8 @@ export const ProjectIndexPreview = ({ project, x, y }: ProjectIndexPreviewProps)
           ) : (
             <MediaPlaceholder stripe={PORTRAIT_STRIPE} className="absolute inset-0" />
           )}
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
-  </motion.div>
+  </m.div>
 );

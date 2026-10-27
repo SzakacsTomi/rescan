@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ArrowLeft, MapPin, Building2, Maximize2, Users } from "lucide-react";
 
 import { SKELETON_ON_DARK, SkeletonImage } from "@/app/components/atoms/SkeletonImage";
@@ -47,7 +47,7 @@ export const ProjectDetail = ({
   return (
     <AnimatePresence mode="wait">
       {project && translations && (
-        <motion.div
+        <m.div
           key={project.id}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -90,19 +90,19 @@ export const ProjectDetail = ({
                 {backLabel}
               </button>
               <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
-                <motion.h1
+                <m.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15, duration: 0.4 }}
                   className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl"
                 >
                   {translations.title}
-                </motion.h1>
+                </m.h1>
               </div>
             </div>
 
             <div className="bg-ink px-8 sm:px-12 lg:px-16 py-12 flex-1">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.4 }}
@@ -117,9 +117,9 @@ export const ProjectDetail = ({
                     <p className="text-white text-sm font-medium">{translations.detail[key]}</p>
                   </div>
                 ))}
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.4 }}
@@ -127,10 +127,10 @@ export const ProjectDetail = ({
                 <p className="text-white/70 text-base sm:text-lg leading-relaxed text-pretty w-full lg:max-w-[50%]">
                   {translations.detail.body}
                 </p>
-              </motion.div>
+              </m.div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

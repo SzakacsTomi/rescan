@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
@@ -42,6 +42,15 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
     };
   }, [isOpen, lenis]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
+
   return (
     <>
       <button
@@ -63,7 +72,10 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
           <AnimatePresence>
             {isOpen && (
               <>
-                <motion.div
+                {/* A pointer shortcut for the close button; Escape is its keyboard counterpart,
+                    so the scrim itself stays out of the accessibility tree. */}
+                <m.div
+                  aria-hidden
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -72,7 +84,7 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
                   onClick={() => setIsOpen(false)}
                 />
 
-                <motion.aside
+                <m.aside
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
@@ -97,7 +109,7 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
                     {links.map((link, i) => {
                       const isActive = pathname === link.href;
                       return (
-                        <motion.div
+                        <m.div
                           key={link.href}
                           initial={{ opacity: 0, x: 16 }}
                           animate={{ opacity: 1, x: 0 }}
@@ -115,7 +127,7 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
                           >
                             {link.label}
                           </Link>
-                        </motion.div>
+                        </m.div>
                       );
                     })}
                   </nav>
@@ -123,7 +135,7 @@ export const MobileMenu = ({ links, variant = "light" }: MobileMenuProps) => {
                   <div className="px-5 py-5 border-t border-border/60 shrink-0">
                     <LanguageSwitcher />
                   </div>
-                </motion.aside>
+                </m.aside>
               </>
             )}
           </AnimatePresence>,

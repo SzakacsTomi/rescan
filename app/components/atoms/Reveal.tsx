@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { ReactNode } from "react";
 
 const MOTION_TAG = {
-  div: motion.div,
-  li: motion.li,
-  dl: motion.dl,
+  div: m.div,
+  li: m.li,
+  dl: m.dl,
 } as const;
 
 type RevealProps = {

@@ -151,7 +151,10 @@
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy"
     },
-    "cookieSettings": "Cookie settings"
+    "cookieSettings": "Cookie settings",
+    "membership": {
+      "alt": "Member of the German-Swedish Chamber of Commerce"
+    }
   },
   "nav": {
     "retail": "Retail Property Portfolios",

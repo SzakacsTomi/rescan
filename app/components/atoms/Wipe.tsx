@@ -1,14 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 const MOTION_TAG = {
-  div: motion.div,
-  h2: motion.h2,
-  h3: motion.h3,
-  p: motion.p,
-  span: motion.span,
+  div: m.div,
+  h2: m.h2,
+  h3: m.h3,
+  p: m.p,
+  span: m.span,
 } as const;
 
 type WipeProps = {

@@ -1,0 +1,24 @@
+{
+  "shape": "package",
+  "pkg": "rescan",
+  "globalName": "Rescan",
+  "projectId": "60e055f9-44c0-4bc7-8970-80db33ce19ea",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/.cache/ds-compiled.css",
+  "extraFonts": [
+    ".design-sync/fonts/fonts.css"
+  ],
+  "readmeHeader": ".design-sync/conventions.md",
+  "srcDir": ".design-sync",
+  "componentSrcMap": {
+    "ColorPalette": ".design-sync/ds-components.tsx",
+    "TypeScale": ".design-sync/ds-components.tsx",
+    "SpacingScale": ".design-sync/ds-components.tsx"
+  },
+  "docsDir": ".design-sync/docs",
+  "dtsPropsFor": {
+    "ColorPalette": "/** Which family to show. Defaults to `all`. */\n  family?: 'brand' | 'semantic' | 'all';",
+    "TypeScale": "/** Cap the ramp at this step, e.g. `body-lg`. Defaults to the full ramp. */\n  upTo?: string;\n  /** Specimen text. */\n  sample?: string;",
+    "SpacingScale": "/** Show the container ramp. Defaults to true. */\n  containers?: boolean;"
+  }
+}

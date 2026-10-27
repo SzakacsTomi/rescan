@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { PILL_SPRING_TRANSITION } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 import { Link, usePathname } from '@/i18n/navigation';
@@ -32,7 +32,7 @@ export const NavLinks = ({ links, variant = 'light' }: NavLinksProps) => {
             )}
           >
             {isActive && (
-              <motion.span
+              <m.span
                 layoutId="nav-pill"
                 className="absolute inset-0 rounded-lg bg-primary"
                 transition={PILL_SPRING_TRANSITION}

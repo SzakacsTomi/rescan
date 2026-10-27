@@ -1,14 +1,14 @@
 "use client";
 
 import { Children, isValidElement, type ReactNode } from "react";
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 
 const MOTION_TAG = {
-  div: motion.div,
-  ul: motion.ul,
-  li: motion.li,
-  dl: motion.dl,
-  article: motion.article,
+  div: m.div,
+  ul: m.ul,
+  li: m.li,
+  dl: m.dl,
+  article: m.article,
 } as const;
 
 const ITEM_VARIANTS: Variants = {
@@ -27,7 +27,7 @@ type StaggerProps = {
 /**
  * The staggered sibling of `Reveal`: each child rises in turn as the group enters the
  * viewport, instead of the whole block fading together. Children keep their own tag —
- * a `li` child is promoted to `motion.li` so list semantics survive the animation.
+ * a `li` child is promoted to `m.li` so list semantics survive the animation.
  */
 export const Stagger = ({ children, className, as = "div", step = 0.1 }: StaggerProps) => {
   const Group = MOTION_TAG[as];
