@@ -151,7 +151,10 @@
       "privacy": "Integritetspolicy",
       "cookies": "Cookiepolicy"
     },
-    "cookieSettings": "Kakinställningar"
+    "cookieSettings": "Kakinställningar",
+    "membership": {
+      "alt": "Medlem i Tysk-Svenska Handelskammaren"
+    }
   },
   "nav": {
     "retail": "Handelsfastigheter",
